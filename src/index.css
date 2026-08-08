@@ -145,10 +145,20 @@
 /* Global Print Isolation Rules */
 @media print {
   /* When study page is active, hide all underlying home page content completely from print flow */
-  body.study-print-active .home-page-container,
-  body.study-print-active .study-print-hidden,
-  .study-print-active > *:not(.study-page-root) {
+  .home-page-container,
+  .study-print-hidden {
     display: none !important;
+  }
+
+  /* Ensure StudyPage root is visible and resets position for print document flow */
+  .study-page-root {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
   }
 }
 
