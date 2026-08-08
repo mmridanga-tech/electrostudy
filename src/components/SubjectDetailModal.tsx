@@ -9,12 +9,14 @@ interface SubjectDetailModalProps {
   subject: SubjectItem | null;
   onClose: () => void;
   currentLanguage: Language;
+  onOpenStudyTopic?: (topicId: string) => void;
 }
 
 export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
   subject,
   onClose,
-  currentLanguage
+  currentLanguage,
+  onOpenStudyTopic
 }) => {
   const t = UI_TRANSLATIONS[currentLanguage];
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
@@ -126,11 +128,17 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                                 return (
                                   <div
                                     key={tp.id}
-                                    onClick={() => hasLesson && setActiveLesson(tp.lesson!)}
-                                    className={`p-3 rounded-lg border transition-all flex items-center justify-between ${
+                                    onClick={() => {
+                                      if (onOpenStudyTopic) {
+                                        onOpenStudyTopic(tp.id);
+                                      } else if (hasLesson) {
+                                        setActiveLesson(tp.lesson!);
+                                      }
+                                    }}
+                                    className={`p-3 rounded-lg border transition-all flex items-center justify-between cursor-pointer ${
                                       hasLesson
-                                        ? 'bg-cyan-50/40 dark:bg-cyan-950/30 border-cyan-200 dark:border-cyan-800/80 hover:bg-cyan-100/60 dark:hover:bg-cyan-900/40 cursor-pointer shadow-2xs'
-                                        : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400'
+                                        ? 'bg-cyan-50/40 dark:bg-cyan-950/30 border-cyan-200 dark:border-cyan-800/80 hover:bg-cyan-100/60 dark:hover:bg-cyan-900/40 shadow-2xs'
+                                        : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80'
                                     }`}
                                   >
                                     <div className="flex items-center gap-2.5">

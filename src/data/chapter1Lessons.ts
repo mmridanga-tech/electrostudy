@@ -272,7 +272,7 @@ const LESSON_CURRENT: Lesson = {
       title: {
         en: 'Conventional Current vs Electron Drift',
         hi: 'पारंपरिक धारा बनाम इलेक्ट्रॉन ड्रिफ्ट',
-        bn: 'প্রচলিত কারেন্ট বনাম ইলেকট্রন ড্রাফট'
+        bn: 'প্রচলিত কারেন্ট বনাম ইলেকট্রন ড্রিপ্ট (Electron Drift)'
       },
       caption: {
         en: 'Conventional current flows from + to -, while electrons move from - to + when voltage is applied.',

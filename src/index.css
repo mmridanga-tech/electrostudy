@@ -23,11 +23,13 @@
   html[lang="hi"], :root[data-lang="hi"], .lang-hi {
     --font-sans: var(--font-hi-sans);
     --font-display: var(--font-hi-display);
+    line-height: 1.6;
   }
 
   html[lang="bn"], :root[data-lang="bn"], .lang-bn {
     --font-sans: var(--font-bn-sans);
     --font-display: var(--font-bn-display);
+    line-height: 1.65;
   }
 
   html[lang="en"], :root[data-lang="en"], .lang-en {

@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { Lesson, Language } from '../types';
 import { UI_TRANSLATIONS } from '../data/content';
+import { CircuitSchematicSvg } from './CircuitSchematicSvg';
+import { OhmsLawSimulation } from './interactive/OhmsLawSimulation';
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -160,6 +162,13 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
             </p>
           </div>
 
+          {/* Interactive Ohm's Law Simulation */}
+          {(lesson.topicId === 'tp-ohms-law' || lesson.id === 'lsn-ohms-law') && (
+            <div className="pt-1">
+              <OhmsLawSimulation currentLanguage={currentLanguage} />
+            </div>
+          )}
+
           {/* Schematic Diagram Preview */}
           {lesson.diagrams && lesson.diagrams.length > 0 && (
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-white space-y-3">
@@ -167,22 +176,10 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
                 <span>{lesson.diagrams[0].title[currentLanguage] || lesson.diagrams[0].title.en}</span>
                 <span className="text-[10px] text-slate-400">Interactive Circuit Schematic</span>
               </div>
-              <div className="p-4 rounded-lg bg-slate-950 border border-slate-800/80 flex flex-col items-center justify-center min-h-[140px] text-center space-y-3">
-                <div className="flex items-center justify-center gap-6">
-                  <div className="w-12 h-12 rounded-full border-2 border-cyan-400 text-cyan-300 flex items-center justify-center font-mono font-bold text-sm">
-                    V
-                  </div>
-                  <div className="h-0.5 w-12 bg-cyan-500/60 relative">
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-mono text-cyan-400">I (Current)</span>
-                  </div>
-                  <div className="w-12 h-12 rounded-lg border-2 border-emerald-400 text-emerald-300 flex items-center justify-center font-mono font-bold text-sm">
-                    R
-                  </div>
-                </div>
-                <p className="text-xs text-slate-300 max-w-md font-mono">
-                  {lesson.diagrams[0].caption[currentLanguage] || lesson.diagrams[0].caption.en}
-                </p>
-              </div>
+              <CircuitSchematicSvg 
+                svgType={lesson.diagrams[0].svgType} 
+                caption={lesson.diagrams[0].caption[currentLanguage] || lesson.diagrams[0].caption.en} 
+              />
             </div>
           )}
         </div>

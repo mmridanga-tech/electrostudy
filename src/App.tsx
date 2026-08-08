@@ -11,8 +11,10 @@ import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
 import { QuickToolModal } from './components/QuickToolModal';
 import { SubjectDetailModal } from './components/SubjectDetailModal';
+import { StudyPage } from './components/StudyPage';
 import { Language, Theme, ToolItem, SubjectItem } from './types';
 import { SUBJECTS_DATA, TOOLS_DATA } from './data/content';
+import { getTopicContext } from './data/learningData';
 
 export default function App() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
@@ -23,6 +25,28 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [activeToolModal, setActiveToolModal] = useState<ToolItem | null>(null);
   const [activeSubjectModal, setActiveSubjectModal] = useState<SubjectItem | null>(null);
+  const [activeStudyTopicId, setActiveStudyTopicId] = useState<string | null>(null);
+
+  // Hash route change listener for direct topic addressability
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash && (hash.startsWith('#study/') || hash.startsWith('#/study/') || hash.startsWith('#study?'))) {
+        const parts = hash.split('/');
+        const rawTopicId = parts[parts.length - 1].replace('?topic=', '');
+        if (rawTopicId) {
+          const ctx = getTopicContext(rawTopicId);
+          if (ctx) {
+            setActiveStudyTopicId(ctx.topic.id);
+          }
+        }
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Initialize theme from preference or default to light mode
   useEffect(() => {
@@ -127,8 +151,33 @@ export default function App() {
     }
   };
 
+  const handleOpenStudyTopic = (topicId: string) => {
+    setActiveStudyTopicId(topicId);
+    window.location.hash = `#study/${topicId}`;
+  };
+
+  const handleCloseStudyTopic = () => {
+    setActiveStudyTopicId(null);
+    if (window.location.hash.startsWith('#study')) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
+      
+      {/* FULL SCREEN STUDY PAGE REDESIGN */}
+      {activeStudyTopicId && (
+        <StudyPage
+          topicId={activeStudyTopicId}
+          currentLanguage={currentLanguage}
+          onLanguageChange={handleLanguageChange}
+          theme={theme}
+          onToggleTheme={handleToggleTheme}
+          onClose={handleCloseStudyTopic}
+          onSelectTopic={handleOpenStudyTopic}
+        />
+      )}
       
       {/* Sticky Header */}
       <Header
@@ -216,6 +265,7 @@ export default function App() {
         subject={activeSubjectModal}
         onClose={() => setActiveSubjectModal(null)}
         currentLanguage={currentLanguage}
+        onOpenStudyTopic={handleOpenStudyTopic}
       />
 
     </div>

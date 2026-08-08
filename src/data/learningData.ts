@@ -1,5 +1,6 @@
-import { DetailedSubject } from '../types';
+import { DetailedSubject, Chapter, Topic, Lesson } from '../types';
 import { CHAPTER_1_LESSONS } from './chapter1Lessons';
+import { CHAPTER_2_LESSONS } from './chapter2Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -1933,14 +1934,25 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
   return {
     ...subject,
     chapters: subject.chapters.map((chapter) => {
-      if (chapter.id !== 'ch-elec-fund') return chapter;
-      return {
-        ...chapter,
-        topics: chapter.topics.map((topic) => ({
-          ...topic,
-          lesson: CHAPTER_1_LESSONS[topic.id] || topic.lesson
-        }))
-      };
+      if (chapter.id === 'ch-elec-fund') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_1_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-ohms-circuits') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_2_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      return chapter;
     })
   };
 });
@@ -1948,3 +1960,42 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
 export function getDetailedSubject(subjectId: string): DetailedSubject | undefined {
   return DETAILED_SUBJECTS.find(s => s.id === subjectId || s.slug === subjectId);
 }
+
+export interface TopicContext {
+  subject: DetailedSubject;
+  chapter: Chapter;
+  topic: Topic;
+  lesson?: Lesson;
+  topicIndex: number;
+  totalTopics: number;
+  prevTopic?: Topic;
+  nextTopic?: Topic;
+}
+
+export function getTopicContext(topicId: string): TopicContext | undefined {
+  for (const subject of DETAILED_SUBJECTS) {
+    for (const chapter of subject.chapters) {
+      const topicIdx = chapter.topics.findIndex(t => 
+        t.id === topicId || 
+        (t.lesson && (t.lesson.id === topicId || t.lesson.topicId === topicId))
+      );
+      if (topicIdx !== -1) {
+        const topic = chapter.topics[topicIdx];
+        const prevTopic = topicIdx > 0 ? chapter.topics[topicIdx - 1] : undefined;
+        const nextTopic = topicIdx < chapter.topics.length - 1 ? chapter.topics[topicIdx + 1] : undefined;
+        return {
+          subject,
+          chapter,
+          topic,
+          lesson: topic.lesson,
+          topicIndex: topicIdx + 1,
+          totalTopics: chapter.topics.length,
+          prevTopic,
+          nextTopic
+        };
+      }
+    }
+  }
+  return undefined;
+}
+
