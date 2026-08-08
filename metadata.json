@@ -1,0 +1,6 @@
+{
+  "name": "ElectroStudy",
+  "description": "Free educational platform for Electrical Engineering, Diploma Electrical Engineering, and ITI Electrician students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

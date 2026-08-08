@@ -1,0 +1,128 @@
+export type Language = 'en' | 'hi' | 'bn';
+
+export type Theme = 'light' | 'dark';
+
+export type MultilingualText = Record<Language, string>;
+export type MultilingualList = Record<Language, string[]>;
+
+export interface FormulaItem {
+  symbol: string;
+  expression: string;
+  description: MultilingualText;
+}
+
+export interface LessonDiagram {
+  id: string;
+  title: MultilingualText;
+  caption: MultilingualText;
+  svgType?: string;
+}
+
+export interface SolvedExample {
+  id: string;
+  problem: MultilingualText;
+  solution: MultilingualText;
+  givenValues?: Record<string, string>;
+  finalAnswer?: MultilingualText;
+}
+
+export interface MCQOption {
+  id: string;
+  text: MultilingualText;
+}
+
+export interface MCQQuestion {
+  id: string;
+  question: MultilingualText;
+  options: MCQOption[];
+  correctOptionId: string;
+  explanation: MultilingualText;
+}
+
+export interface PracticeQuestion {
+  id: string;
+  question: MultilingualText;
+  hint?: MultilingualText;
+  answerKey: MultilingualText;
+}
+
+export interface Lesson {
+  id: string;
+  topicId: string;
+  order: number;
+  title: MultilingualText;
+  easyExplanation: MultilingualText;
+  detailedExplanation: MultilingualText;
+  formulas: FormulaItem[];
+  diagrams?: LessonDiagram[];
+  solvedExamples: SolvedExample[];
+  practicalApplications: MultilingualList;
+  importantPoints: MultilingualList;
+  commonMistakes: MultilingualList;
+  mcqs: MCQQuestion[];
+  practiceQuestions: PracticeQuestion[];
+}
+
+export interface Topic {
+  id: string;
+  chapterId: string;
+  order: number;
+  title: MultilingualText;
+  lesson?: Lesson;
+}
+
+export interface Chapter {
+  id: string;
+  subjectId: string;
+  order: number;
+  title: MultilingualText;
+  topics: Topic[];
+}
+
+export interface DetailedSubject {
+  id: string;
+  slug: string;
+  icon: string;
+  title: MultilingualText;
+  description: MultilingualText;
+  chapters: Chapter[];
+}
+
+export interface SubjectItem {
+  id: string;
+  name: Record<Language, string>;
+  description: Record<Language, string>;
+  icon: string;
+  topicsCount: number;
+  badge?: string;
+  color: string;
+}
+
+export interface ToolItem {
+  id: string;
+  name: Record<Language, string>;
+  description: Record<Language, string>;
+  icon: string;
+  category: string;
+  formula: string;
+}
+
+export interface PracticeItem {
+  id: string;
+  title: Record<Language, string>;
+  questionsCount: number;
+  difficulty: 'Basic' | 'Intermediate' | 'Advanced';
+  difficultyLabel: Record<Language, string>;
+  icon: string;
+  topics: string[];
+}
+
+export interface LanguageOption {
+  code: Language;
+  name: string;
+  nativeName: string;
+  region: string;
+  flagText: string;
+  description: string;
+}
+
