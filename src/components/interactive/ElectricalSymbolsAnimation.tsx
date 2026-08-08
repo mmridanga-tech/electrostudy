@@ -282,7 +282,7 @@ export const ElectricalSymbolsAnimation: React.FC<ElectricalSymbolsAnimationProp
               activeTab === 'board' ? 'bg-cyan-900 text-cyan-300' : 'text-slate-400'
             }`}
           >
-            Symbol Board
+            {t.symbolLibrary}
           </button>
           <button
             onClick={() => setActiveTab('builder')}
@@ -290,7 +290,7 @@ export const ElectricalSymbolsAnimation: React.FC<ElectricalSymbolsAnimationProp
               activeTab === 'builder' ? 'bg-cyan-900 text-cyan-300' : 'text-slate-400'
             }`}
           >
-            Circuit Builder
+            {t.buildCircuitTab}
           </button>
         </div>
       }

@@ -129,16 +129,18 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                                   <div
                                     key={tp.id}
                                     onClick={() => {
-                                      if (onOpenStudyTopic) {
-                                        onOpenStudyTopic(tp.id);
-                                      } else if (hasLesson) {
-                                        setActiveLesson(tp.lesson!);
+                                      if (hasLesson) {
+                                        if (onOpenStudyTopic) {
+                                          onOpenStudyTopic(tp.id);
+                                        } else {
+                                          setActiveLesson(tp.lesson!);
+                                        }
                                       }
                                     }}
-                                    className={`p-3 rounded-lg border transition-all flex items-center justify-between cursor-pointer ${
+                                    className={`p-3 rounded-lg border transition-all flex items-center justify-between ${
                                       hasLesson
-                                        ? 'bg-cyan-50/40 dark:bg-cyan-950/30 border-cyan-200 dark:border-cyan-800/80 hover:bg-cyan-100/60 dark:hover:bg-cyan-900/40 shadow-2xs'
-                                        : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80'
+                                        ? 'bg-cyan-50/40 dark:bg-cyan-950/30 border-cyan-200 dark:border-cyan-800/80 hover:bg-cyan-100/60 dark:hover:bg-cyan-900/40 shadow-2xs cursor-pointer'
+                                        : 'bg-slate-50 dark:bg-slate-800/40 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 opacity-80 cursor-default'
                                     }`}
                                   >
                                     <div className="flex items-center gap-2.5">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sliders, Play, Pause, RotateCcw, Activity } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface ElectricalEnergyAnimationProps {
   currentLanguage: Language;
@@ -62,9 +62,11 @@ export const ElectricalEnergyAnimation: React.FC<ElectricalEnergyAnimationProps>
   const [isRunning, setIsRunning] = useState<boolean>(true);
   const [simulatedSeconds, setSimulatedSeconds] = useState<number>(0);
 
+  const reducedMotion = useReducedMotion();
+
   // Meter accumulation loop
   useEffect(() => {
-    if (!isRunning) return;
+    if (!isRunning || reducedMotion) return;
 
     let animId: number;
     let lastTime = performance.now();

@@ -234,7 +234,7 @@ export const ElectricChargeAnimation: React.FC<ElectricChargeAnimationProps> = (
                     }`}
                     aria-label="Set Charge 1 Positive"
                   >
-                    + Positive
+                    {t.typePositive}
                   </button>
                   <button
                     onClick={() => setType1('neg')}
@@ -243,7 +243,7 @@ export const ElectricChargeAnimation: React.FC<ElectricChargeAnimationProps> = (
                     }`}
                     aria-label="Set Charge 1 Negative"
                   >
-                    - Negative
+                    {t.typeNegative}
                   </button>
                 </div>
               </div>

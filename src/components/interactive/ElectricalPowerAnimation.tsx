@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sliders, Sun, Flame, Cog } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface ElectricalPowerAnimationProps {
   currentLanguage: Language;
@@ -66,9 +66,11 @@ export const ElectricalPowerAnimation: React.FC<ElectricalPowerAnimationProps> =
   const power = voltage * current; // Watts
   const resistance = current > 0 ? voltage / current : 0;
 
+  const reducedMotion = useReducedMotion();
+
   // Motor rotation animation loop
   useEffect(() => {
-    if (loadType !== 'motor') return;
+    if (loadType !== 'motor' || reducedMotion) return;
 
     let animId: number;
     let lastTime = performance.now();
@@ -192,7 +194,7 @@ export const ElectricalPowerAnimation: React.FC<ElectricalPowerAnimationProps> =
                   aria-label="Select Lamp Load"
                 >
                   <Sun className="w-4 h-4 text-amber-400" />
-                  <span>Lamp</span>
+                  <span>{t.lamp}</span>
                 </button>
                 <button
                   onClick={() => setLoadType('heater')}
@@ -202,7 +204,7 @@ export const ElectricalPowerAnimation: React.FC<ElectricalPowerAnimationProps> =
                   aria-label="Select Heater Load"
                 >
                   <Flame className="w-4 h-4 text-rose-400" />
-                  <span>Heater</span>
+                  <span>{t.heater}</span>
                 </button>
                 <button
                   onClick={() => setLoadType('motor')}
@@ -212,7 +214,7 @@ export const ElectricalPowerAnimation: React.FC<ElectricalPowerAnimationProps> =
                   aria-label="Select Motor Load"
                 >
                   <Cog className="w-4 h-4 text-cyan-400" />
-                  <span>Motor</span>
+                  <span>{t.motor}</span>
                 </button>
               </div>
             </div>

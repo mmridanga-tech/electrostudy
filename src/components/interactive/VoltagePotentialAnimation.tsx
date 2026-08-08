@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sliders, ArrowDown, Activity } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface VoltagePotentialAnimationProps {
   currentLanguage: Language;
@@ -64,9 +64,11 @@ export const VoltagePotentialAnimation: React.FC<VoltagePotentialAnimationProps>
     setBallPos(0);
   };
 
+  const reducedMotion = useReducedMotion();
+
   // Charge rolling down slope animation
   useEffect(() => {
-    if (Math.abs(vDiff) < 0.1) return;
+    if (Math.abs(vDiff) < 0.1 || reducedMotion) return;
 
     let animId: number;
     let lastTime = performance.now();

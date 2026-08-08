@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sliders } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface ResistanceAnimationProps {
   currentLanguage: Language;
@@ -66,8 +66,11 @@ export const ResistanceAnimation: React.FC<ResistanceAnimationProps> = ({ curren
 
   const [electronOffsets, setElectronOffsets] = useState<number[]>([10, 40, 70, 100, 130, 160]);
 
+  const reducedMotion = useReducedMotion();
+
   // Motion animation
   useEffect(() => {
+    if (reducedMotion) return;
     let animId: number;
     let lastTime = performance.now();
 

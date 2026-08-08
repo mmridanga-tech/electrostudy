@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Sliders, Play, Pause, Activity } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface ElectricCurrentAnimationProps {
   currentLanguage: Language;
@@ -78,8 +78,10 @@ export const ElectricCurrentAnimation: React.FC<ElectricCurrentAnimationProps> =
     Array.from({ length: particleCount }, (_, i) => (i * 300) / particleCount)
   );
 
+  const reducedMotion = useReducedMotion();
+
   useEffect(() => {
-    if (!isRunning) return;
+    if (!isRunning || reducedMotion) return;
 
     let animId: number;
     let lastTime = performance.now();

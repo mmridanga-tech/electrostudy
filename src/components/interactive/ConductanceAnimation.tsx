@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sliders } from 'lucide-react';
 import { Language } from '../../types';
-import { InteractiveSimulationCard } from './InteractiveSimulationCard';
+import { InteractiveSimulationCard, useReducedMotion } from './InteractiveSimulationCard';
 
 interface ConductanceAnimationProps {
   currentLanguage: Language;
@@ -62,7 +62,10 @@ export const ConductanceAnimation: React.FC<ConductanceAnimationProps> = ({ curr
 
   const [particleOffsets, setParticleOffsets] = useState<number[]>([0, 30, 60, 90, 120, 150]);
 
+  const reducedMotion = useReducedMotion();
+
   useEffect(() => {
+    if (reducedMotion) return;
     let animId: number;
     let lastTime = performance.now();
 

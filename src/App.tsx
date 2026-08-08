@@ -42,7 +42,8 @@ export default function App() {
         const rawTopicId = parts[parts.length - 1].replace('?topic=', '');
         if (rawTopicId) {
           const ctx = getTopicContext(rawTopicId);
-          if (ctx) {
+          if (ctx && ctx.lesson) {
+            setActiveSubjectModal(null);
             setActiveStudyTopicId(ctx.topic.id);
           }
         }
@@ -170,8 +171,12 @@ export default function App() {
   };
 
   const handleOpenStudyTopic = (topicId: string) => {
-    setActiveStudyTopicId(topicId);
-    window.location.hash = `#study/${topicId}`;
+    const ctx = getTopicContext(topicId);
+    if (ctx && ctx.lesson) {
+      setActiveSubjectModal(null);
+      setActiveStudyTopicId(topicId);
+      window.location.hash = `#study/${topicId}`;
+    }
   };
 
   const handleCloseStudyTopic = () => {
