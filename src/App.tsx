@@ -27,6 +27,12 @@ export default function App() {
   const [activeSubjectModal, setActiveSubjectModal] = useState<SubjectItem | null>(null);
   const [activeStudyTopicId, setActiveStudyTopicId] = useState<string | null>(null);
 
+  // Synchronize document language attributes
+  useEffect(() => {
+    document.documentElement.setAttribute('lang', currentLanguage);
+    document.documentElement.setAttribute('data-lang', currentLanguage);
+  }, [currentLanguage]);
+
   // Hash route change listener for direct topic addressability
   useEffect(() => {
     const handleHashChange = () => {

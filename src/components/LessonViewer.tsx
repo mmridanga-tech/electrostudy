@@ -141,23 +141,23 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
       {activeTab === 'overview' && (
         <div className="space-y-5">
           {/* Easy Concept Card */}
-          <div className="p-4 rounded-xl bg-cyan-50/60 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-800/80 space-y-2">
+          <div className="p-5 sm:p-6 rounded-2xl bg-cyan-50/70 dark:bg-cyan-950/40 border border-cyan-200/90 dark:border-cyan-800/80 space-y-2.5">
             <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 font-bold text-xs uppercase tracking-wider">
               <Zap className="w-4 h-4 text-cyan-500" />
               <span>Easy Concept Explanation</span>
             </div>
-            <p className="text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-normal">
+            <p className="text-base sm:text-[17px] text-slate-800 dark:text-slate-200 leading-relaxed sm:leading-loose font-normal">
               {easyExp}
             </p>
           </div>
 
           {/* Detailed Engineering Explanation */}
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-2xs">
             <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider">
               <FileText className="w-4 h-4 text-cyan-500" />
               <span>Detailed Engineering Explanation</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="text-base sm:text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed sm:leading-loose font-normal">
               {detailedExp}
             </p>
           </div>

@@ -118,7 +118,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#f8fafc] text-slate-900 dark:bg-[#090d16] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-[#faf8f5] text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden">
       
       {/* PRINT STYLES inject */}
       <style>{`
