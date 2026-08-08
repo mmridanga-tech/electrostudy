@@ -78,6 +78,18 @@ export default function App() {
     document.documentElement.classList.add(`lang-${currentLanguage}`);
   }, [currentLanguage]);
 
+  // Synchronize study-print-active body class for print isolation
+  useEffect(() => {
+    if (activeStudyTopicId) {
+      document.body.classList.add('study-print-active');
+    } else {
+      document.body.classList.remove('study-print-active');
+    }
+    return () => {
+      document.body.classList.remove('study-print-active');
+    };
+  }, [activeStudyTopicId]);
+
   // Keyboard shortcut for Cmd+K or / search
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -170,7 +182,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
+    <div className={`min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 ${activeStudyTopicId ? 'study-print-active' : ''}`}>
       
       {/* FULL SCREEN STUDY PAGE REDESIGN */}
       {activeStudyTopicId && (
@@ -185,94 +197,99 @@ export default function App() {
         />
       )}
       
-      {/* Sticky Header */}
-      <Header
-        currentLanguage={currentLanguage}
-        onLanguageChange={handleLanguageChange}
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-        onOpenSearch={() => setIsSearchOpen(true)}
-        activeNav={activeNav}
-        onNavClick={scrollToSection}
-      />
-
-      {/* Main Page Layout */}
-      <main className="flex-grow">
+      {/* Underlying Home Page Content Container - completely hidden from print flow when StudyPage is active */}
+      <div className={`home-page-container flex-grow flex flex-col ${activeStudyTopicId ? 'study-print-hidden print:hidden' : ''}`}>
         
-        {/* Hero Section */}
-        <Hero
-          currentLanguage={currentLanguage}
-          onStartLearning={() => scrollToSection('subjects')}
-          onExploreTools={() => scrollToSection('tools')}
-        />
-
-        {/* Quick Stats Section */}
-        <Stats currentLanguage={currentLanguage} />
-
-        {/* Explore Electrical Engineering Section */}
-        <ExploreSubjects
-          currentLanguage={currentLanguage}
-          onSelectSubject={handleSelectSubject}
-        />
-
-        {/* Electrical Tools Section */}
-        <ToolsSection
-          currentLanguage={currentLanguage}
-          onOpenToolModal={(tool) => setActiveToolModal(tool)}
-          onViewAllTools={() => scrollToSection('tools')}
-        />
-
-        {/* MCQ / Practice Section */}
-        <PracticeSection
-          currentLanguage={currentLanguage}
-          onStartPractice={(practiceId) => handleSelectPractice(practiceId)}
-        />
-
-        {/* Language Learning Section */}
-        <LanguageSection
+        {/* Sticky Header */}
+        <Header
           currentLanguage={currentLanguage}
           onLanguageChange={handleLanguageChange}
+          theme={theme}
+          onToggleTheme={handleToggleTheme}
+          onOpenSearch={() => setIsSearchOpen(true)}
+          activeNav={activeNav}
+          onNavClick={scrollToSection}
         />
 
-        {/* Final CTA Section */}
-        <CTA
+        {/* Main Page Layout */}
+        <main className="flex-grow">
+          
+          {/* Hero Section */}
+          <Hero
+            currentLanguage={currentLanguage}
+            onStartLearning={() => scrollToSection('subjects')}
+            onExploreTools={() => scrollToSection('tools')}
+          />
+
+          {/* Quick Stats Section */}
+          <Stats currentLanguage={currentLanguage} />
+
+          {/* Explore Electrical Engineering Section */}
+          <ExploreSubjects
+            currentLanguage={currentLanguage}
+            onSelectSubject={handleSelectSubject}
+          />
+
+          {/* Electrical Tools Section */}
+          <ToolsSection
+            currentLanguage={currentLanguage}
+            onOpenToolModal={(tool) => setActiveToolModal(tool)}
+            onViewAllTools={() => scrollToSection('tools')}
+          />
+
+          {/* MCQ / Practice Section */}
+          <PracticeSection
+            currentLanguage={currentLanguage}
+            onStartPractice={(practiceId) => handleSelectPractice(practiceId)}
+          />
+
+          {/* Language Learning Section */}
+          <LanguageSection
+            currentLanguage={currentLanguage}
+            onLanguageChange={handleLanguageChange}
+          />
+
+          {/* Final CTA Section */}
+          <CTA
+            currentLanguage={currentLanguage}
+            onStartLearning={() => scrollToSection('subjects')}
+          />
+
+        </main>
+
+        {/* Footer */}
+        <Footer
           currentLanguage={currentLanguage}
-          onStartLearning={() => scrollToSection('subjects')}
+          onLanguageChange={handleLanguageChange}
+          onNavClick={scrollToSection}
         />
 
-      </main>
+        {/* Search Modal */}
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          currentLanguage={currentLanguage}
+          onSelectSubject={handleSelectSubject}
+          onSelectTool={handleSelectTool}
+          onSelectPractice={handleSelectPractice}
+        />
 
-      {/* Footer */}
-      <Footer
-        currentLanguage={currentLanguage}
-        onLanguageChange={handleLanguageChange}
-        onNavClick={scrollToSection}
-      />
+        {/* Quick Calculator Tool Modal */}
+        <QuickToolModal
+          tool={activeToolModal}
+          onClose={() => setActiveToolModal(null)}
+          currentLanguage={currentLanguage}
+        />
 
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        currentLanguage={currentLanguage}
-        onSelectSubject={handleSelectSubject}
-        onSelectTool={handleSelectTool}
-        onSelectPractice={handleSelectPractice}
-      />
+        {/* Subject Detail / Syllabus Breakdown Modal */}
+        <SubjectDetailModal
+          subject={activeSubjectModal}
+          onClose={() => setActiveSubjectModal(null)}
+          currentLanguage={currentLanguage}
+          onOpenStudyTopic={handleOpenStudyTopic}
+        />
 
-      {/* Quick Calculator Tool Modal */}
-      <QuickToolModal
-        tool={activeToolModal}
-        onClose={() => setActiveToolModal(null)}
-        currentLanguage={currentLanguage}
-      />
-
-      {/* Subject Detail / Syllabus Breakdown Modal */}
-      <SubjectDetailModal
-        subject={activeSubjectModal}
-        onClose={() => setActiveSubjectModal(null)}
-        currentLanguage={currentLanguage}
-        onOpenStudyTopic={handleOpenStudyTopic}
-      />
+      </div>
 
     </div>
   );

@@ -155,6 +155,14 @@ export const StudyPage: React.FC<StudyPageProps> = ({
           .print-hidden, header, nav, .study-sidebar, .study-header, .study-toolbar, .study-bottom-nav, button {
             display: none !important;
           }
+          /* Remove Home Page & background app content from print layout flow completely */
+          .home-page-container,
+          .study-print-hidden,
+          .study-non-print-content,
+          body.study-print-active .home-page-container,
+          .study-print-active > *:not(.study-page-root) {
+            display: none !important;
+          }
           .print-show {
             display: block !important;
           }

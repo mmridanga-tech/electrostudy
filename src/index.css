@@ -142,3 +142,13 @@
   box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.4);
 }
 
+/* Global Print Isolation Rules */
+@media print {
+  /* When study page is active, hide all underlying home page content completely from print flow */
+  body.study-print-active .home-page-container,
+  body.study-print-active .study-print-hidden,
+  .study-print-active > *:not(.study-page-root) {
+    display: none !important;
+  }
+}
+
