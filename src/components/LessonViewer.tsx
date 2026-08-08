@@ -28,6 +28,9 @@ import { ElectricalEnergyAnimation } from './interactive/ElectricalEnergyAnimati
 import { ElectricalWorkAnimation } from './interactive/ElectricalWorkAnimation';
 import { SIUnitsAnimation } from './interactive/SIUnitsAnimation';
 import { ElectricalSymbolsAnimation } from './interactive/ElectricalSymbolsAnimation';
+import { PMMCAnimation } from './interactive/PMMCAnimation';
+import { MovingIronAnimation } from './interactive/MovingIronAnimation';
+import { ElectrodynamometerAnimation } from './interactive/ElectrodynamometerAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -68,6 +71,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'tp-ohms-law' || lessonId === 'lsn-ohms-law') {
     return <OhmsLawSimulation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch3-pmmc-instruments' || lessonId === 'ch3-pmmc-instruments') {
+    return <PMMCAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch3-moving-iron' || topicId === 'ch3-moving-iron-instruments' || lessonId === 'ch3-moving-iron') {
+    return <MovingIronAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch3-electrodynamometer' || topicId === 'ch3-electrodynamometer-instruments' || lessonId === 'ch3-electrodynamometer') {
+    return <ElectrodynamometerAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

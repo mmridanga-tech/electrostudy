@@ -1,6 +1,7 @@
 import { DetailedSubject, Chapter, Topic, Lesson } from '../types';
 import { CHAPTER_1_LESSONS } from './chapter1Lessons';
 import { CHAPTER_2_LESSONS } from './chapter2Lessons';
+import { CHAPTER_3_LESSONS } from './chapter3Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -490,113 +491,213 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-power-energy',
+        id: 'ch-measurements',
         subjectId: 'basic-electrical',
         order: 3,
         title: {
-          en: 'Chapter 3: Electrical Power & Energy',
-          hi: 'अध्याय 3: विद्युत शक्ति एवं ऊर्जा',
-          bn: 'অধ্যায় ৩: বৈদ্যুতিক ক্ষমতা ও শক্তি'
+          en: 'Chapter 3: Electrical Measurements & Instrumentation',
+          hi: 'अध्याय 3: विद्युत मापन एवं इंस्ट्रूमेंटेशन',
+          bn: 'অধ্যায় ৩: বৈদ্যুতিক পরিমাপ ও ইনস্ট্রুমেন্টেশন'
         },
         topics: [
           {
-            id: 'tp-electrical-power',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-fundamentals-measurement',
+            chapterId: 'ch-measurements',
             order: 1,
             title: {
-              en: 'Electrical Power',
-              hi: 'विद्युत शक्ति',
-              bn: 'বৈদ্যুতিক ক্ষমতা'
+              en: 'Fundamentals of Measurement',
+              hi: 'मापन के मूल सिद्धांत (Fundamentals of Measurement)',
+              bn: 'পরিমাপের মৌলিক ভিত্তি (Fundamentals of Measurement)'
             }
           },
           {
-            id: 'tp-power-formula',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-measurement-errors',
+            chapterId: 'ch-measurements',
             order: 2,
             title: {
-              en: 'Power Formula',
-              hi: 'शक्ति का सूत्र',
-              bn: 'পাওয়ারের সূত্র'
+              en: 'Measurement Errors',
+              hi: 'मापन त्रुटियाँ (Measurement Errors)',
+              bn: 'পরিমাপের ত্রুটিসমূহ (Measurement Errors)'
             }
           },
           {
-            id: 'tp-dc-power',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-electrical-instruments',
+            chapterId: 'ch-measurements',
             order: 3,
             title: {
-              en: 'DC Power',
-              hi: 'डीसी पावर',
-              bn: 'ডিসি পাওয়ার'
+              en: 'Electrical Measuring Instruments',
+              hi: 'विद्युत मापन यंत्र (Electrical Measuring Instruments)',
+              bn: 'বৈদ্যুতিক পরিমাপক যন্ত্র (Electrical Measuring Instruments)'
             }
           },
           {
-            id: 'tp-ac-power-intro',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-pmmc-instruments',
+            chapterId: 'ch-measurements',
             order: 4,
             title: {
-              en: 'AC Power — Introduction',
-              hi: 'एसी पावर — परिचय',
-              bn: 'এসি পাওয়ার — পরিচিতি'
+              en: 'PMMC Instruments',
+              hi: 'पीएमएमसी उपकरण (PMMC Instruments)',
+              bn: 'পিএমএমসি যন্ত্র (PMMC Instruments)'
             }
           },
           {
-            id: 'tp-electrical-energy',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-moving-iron',
+            chapterId: 'ch-measurements',
             order: 5,
             title: {
-              en: 'Electrical Energy',
-              hi: 'विद्युत ऊर्जा',
-              bn: 'বৈদ্যুতিক শক্তি'
+              en: 'Moving Iron Instruments',
+              hi: 'मूविंग आयरन उपकरण (Moving Iron Instruments)',
+              bn: 'মুভিং আয়রন যন্ত্র (Moving Iron Instruments)'
             }
           },
           {
-            id: 'tp-kwh',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-electrodynamometer',
+            chapterId: 'ch-measurements',
             order: 6,
             title: {
-              en: 'kWh (Kilowatt-Hour)',
-              hi: 'किलोवाट-घंटा (kWh)',
-              bn: 'কিলাওয়াট-ঘণ্টা (kWh)'
+              en: 'Electrodynamometer Instruments',
+              hi: 'इलेक्ट्रोडायनेमोमीटर उपकरण (Electrodynamometer Instruments)',
+              bn: 'ইলেক্ট্রোডায়নামোমিটার যন্ত্র (Electrodynamometer Instruments)'
             }
           },
           {
-            id: 'tp-electricity-consumption',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-thermal-instruments',
+            chapterId: 'ch-measurements',
             order: 7,
             title: {
-              en: 'Electricity Consumption',
-              hi: 'बिजली की खपत की गणना',
-              bn: 'বিদ্যুৎ ব্যবহার ও খরচ'
+              en: 'Thermal Instruments',
+              hi: 'तापीय उपकरण (Thermal Instruments)',
+              bn: 'থার্মাল বা তাপীয় যন্ত্র (Thermal Instruments)'
             }
           },
           {
-            id: 'tp-energy-meter-concept',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-ammeter-voltmeter',
+            chapterId: 'ch-measurements',
             order: 8,
             title: {
-              en: 'Energy Meter — Basic Concept',
-              hi: 'एनर्जी मीटर — मूल अवधारणा',
-              bn: 'এনার্জি মিটার — মৌলিক ধারণা'
+              en: 'Ammeter & Voltmeter',
+              hi: 'अमीटर एवं वोल्टमीटर (Ammeter & Voltmeter)',
+              bn: 'অ্যামিটার ও ভোল্টমিটার (Ammeter & Voltmeter)'
             }
           },
           {
-            id: 'tp-power-rating',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-wattmeter-power',
+            chapterId: 'ch-measurements',
             order: 9,
             title: {
-              en: 'Power Rating',
-              hi: 'पावर रेटिंग',
-              bn: 'পাওয়ার রেটিং'
+              en: 'Wattmeter & Power Measurement',
+              hi: 'वाटमीटर एवं शक्ति मापन (Wattmeter & Power Measurement)',
+              bn: 'ওয়াটमीटर ও পাওয়ার পরিমাপ (Wattmeter & Power Measurement)'
             }
           },
           {
-            id: 'tp-efficiency',
-            chapterId: 'ch-power-energy',
+            id: 'ch3-energy-measurement',
+            chapterId: 'ch-measurements',
             order: 10,
             title: {
-              en: 'Efficiency',
-              hi: 'दक्षता (एफिशिएंसी)',
-              bn: 'দক্ষতা (ইফিসিয়েন্সি)'
+              en: 'Energy Measurement',
+              hi: 'ऊर्जा मापन (Energy Measurement)',
+              bn: 'এনার্জি বা শক্তি পরিমাপ (Energy Measurement)'
+            }
+          },
+          {
+            id: 'ch3-digital-instruments',
+            chapterId: 'ch-measurements',
+            order: 11,
+            title: {
+              en: 'Digital Measuring Instruments',
+              hi: 'डिजिटल मापन यंत्र (Digital Measuring Instruments)',
+              bn: 'ডিজিটাল পরিমাপক যন্ত্র (Digital Measuring Instruments)'
+            }
+          },
+          {
+            id: 'ch3-cro-oscilloscope',
+            chapterId: 'ch-measurements',
+            order: 12,
+            title: {
+              en: 'CRO & Oscilloscope',
+              hi: 'सीआरओ एवं ऑसिलोस्कोप (CRO & Oscilloscope)',
+              bn: 'সিআরও ও অসিলোস্কোপ (CRO & Oscilloscope)'
+            }
+          },
+          {
+            id: 'ch3-transducers',
+            chapterId: 'ch-measurements',
+            order: 13,
+            title: {
+              en: 'Transducers',
+              hi: 'ट्रांसड्यूसर (Transducers)',
+              bn: 'ট্রান্সডিউসার (Transducers)'
+            }
+          },
+          {
+            id: 'ch3-bridges-resistance',
+            chapterId: 'ch-measurements',
+            order: 14,
+            title: {
+              en: 'Bridges & Resistance Measurement',
+              hi: 'ब्रिज एवं प्रतिरोध मापन (Bridges & Resistance Measurement)',
+              bn: 'ব্রিজ ও রেজিস্ট্যান্স পরিমাপ (Bridges & Resistance Measurement)'
+            }
+          },
+          {
+            id: 'ch3-inductance-capacitance',
+            chapterId: 'ch-measurements',
+            order: 15,
+            title: {
+              en: 'Inductance & Capacitance Measurement',
+              hi: 'प्रेरकत्व एवं धारिता मापन (Inductance & Capacitance Measurement)',
+              bn: 'ইন্ডাকট্যান্স ও ক্যাপাসিট্যান্স পরিমাপ (Inductance & Capacitance Measurement)'
+            }
+          },
+          {
+            id: 'ch3-instrument-transformers',
+            chapterId: 'ch-measurements',
+            order: 16,
+            title: {
+              en: 'Instrument Transformers',
+              hi: 'इंस्ट्रूमेंट ट्रांसफॉर्मर (Instrument Transformers)',
+              bn: 'ইনস্ট্রুমেন্ট ট্রান্সফরমার (Instrument Transformers)'
+            }
+          },
+          {
+            id: 'ch3-frequency-phase',
+            chapterId: 'ch-measurements',
+            order: 17,
+            title: {
+              en: 'Measurement of Frequency & Phase',
+              hi: 'आवृत्ति एवं कला मापन (Measurement of Frequency & Phase)',
+              bn: 'ফ্রিকোয়েন্সি ও ফেজ পরিমাপ (Measurement of Frequency & Phase)'
+            }
+          },
+          {
+            id: 'ch3-calibration-testing',
+            chapterId: 'ch-measurements',
+            order: 18,
+            title: {
+              en: 'Calibration & Testing',
+              hi: 'कैलिब्रेशन एवं परीक्षण (Calibration & Testing)',
+              bn: 'ক্যালিব্রেশন ও টেস্টিং (Calibration & Testing)'
+            }
+          },
+          {
+            id: 'ch3-practical-safety',
+            chapterId: 'ch-measurements',
+            order: 19,
+            title: {
+              en: 'Practical Measurement & Safety',
+              hi: 'व्यावहारिक मापन एवं सुरक्षा (Practical Measurement & Safety)',
+              bn: 'ব্যবহারিক পরিমাপ ও নিরাপত্তা (Practical Measurement & Safety)'
+            }
+          },
+          {
+            id: 'ch3-troubleshooting',
+            chapterId: 'ch-measurements',
+            order: 20,
+            title: {
+              en: 'Measurement Applications & Troubleshooting',
+              hi: 'मापन अनुप्रयोग एवं ट्रबलशूटिंग (Measurement Applications & Troubleshooting)',
+              bn: 'পরিমাপের প্রয়োগ ও ট্রাবলশুটিং (Measurement Applications & Troubleshooting)'
             }
           }
         ]
@@ -1949,6 +2050,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_2_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-measurements' || chapter.id === 'ch-power-energy') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_3_LESSONS[topic.id] || topic.lesson
           }))
         };
       }
