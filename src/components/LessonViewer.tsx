@@ -17,6 +17,60 @@ import { Lesson, Language } from '../types';
 import { UI_TRANSLATIONS } from '../data/content';
 import { CircuitSchematicSvg } from './CircuitSchematicSvg';
 import { OhmsLawSimulation } from './interactive/OhmsLawSimulation';
+import { ElectricChargeAnimation } from './interactive/ElectricChargeAnimation';
+import { ElectricCurrentAnimation } from './interactive/ElectricCurrentAnimation';
+import { VoltagePotentialAnimation } from './interactive/VoltagePotentialAnimation';
+import { EmfAnimation } from './interactive/EmfAnimation';
+import { ResistanceAnimation } from './interactive/ResistanceAnimation';
+import { ConductanceAnimation } from './interactive/ConductanceAnimation';
+import { ElectricalPowerAnimation } from './interactive/ElectricalPowerAnimation';
+import { ElectricalEnergyAnimation } from './interactive/ElectricalEnergyAnimation';
+import { ElectricalWorkAnimation } from './interactive/ElectricalWorkAnimation';
+import { SIUnitsAnimation } from './interactive/SIUnitsAnimation';
+import { ElectricalSymbolsAnimation } from './interactive/ElectricalSymbolsAnimation';
+
+const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
+  const topicId = lesson.topicId || '';
+  const lessonId = lesson.id || '';
+
+  if (topicId === 'tp-charge' || lessonId === 'lsn-charge') {
+    return <ElectricChargeAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-current' || lessonId === 'lsn-current') {
+    return <ElectricCurrentAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-voltage' || lessonId === 'lsn-voltage') {
+    return <VoltagePotentialAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-emf' || lessonId === 'lsn-emf') {
+    return <EmfAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-resistance' || lessonId === 'lsn-resistance') {
+    return <ResistanceAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-conductance' || lessonId === 'lsn-conductance') {
+    return <ConductanceAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-power' || lessonId === 'lsn-power') {
+    return <ElectricalPowerAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-energy' || lessonId === 'lsn-energy') {
+    return <ElectricalEnergyAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-electrical-work' || lessonId === 'lsn-work') {
+    return <ElectricalWorkAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-units-si' || lessonId === 'lsn-units-si') {
+    return <SIUnitsAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-electrical-symbols' || lessonId === 'lsn-symbols') {
+    return <ElectricalSymbolsAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'tp-ohms-law' || lessonId === 'lsn-ohms-law') {
+    return <OhmsLawSimulation currentLanguage={currentLanguage} />;
+  }
+  return null;
+};
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -161,12 +215,10 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
           </p>
         </div>
 
-        {/* Interactive Ohm's Law Simulation */}
-        {(lesson.topicId === 'tp-ohms-law' || lesson.id === 'lsn-ohms-law') && (
-          <div className="pt-1 print-avoid-break">
-            <OhmsLawSimulation currentLanguage={currentLanguage} />
-          </div>
-        )}
+        {/* Interactive Topic Learning Animation System */}
+        <div className="pt-1 print-avoid-break">
+          {renderTopicAnimation(lesson, currentLanguage)}
+        </div>
 
         {/* Schematic Diagram Preview */}
         {lesson.diagrams && lesson.diagrams.length > 0 && (
