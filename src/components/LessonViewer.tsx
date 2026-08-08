@@ -62,7 +62,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
     <div className="space-y-6 animate-in fade-in duration-200">
       
       {/* Top Bar with Back Button */}
-      <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center justify-between gap-3 pb-3 border-b border-slate-200 dark:border-slate-800 print-hidden">
         <button
           onClick={onBack}
           className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/60 px-3 py-1.5 rounded-lg border border-cyan-200 dark:border-cyan-800 transition-all shadow-xs"
@@ -76,7 +76,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
       </div>
 
       {/* Lesson Header */}
-      <div>
+      <div className="print-hidden">
         <h3 className="text-xl sm:text-2xl font-extrabold font-display text-slate-900 dark:text-white tracking-tight">
           {title}
         </h3>
@@ -87,7 +87,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
       </div>
 
       {/* Navigation Tabs */}
-      <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+      <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 print-hidden">
         <button
           onClick={() => setActiveTab('overview')}
           className={`flex-1 min-w-[120px] px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
@@ -138,294 +138,282 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
       </div>
 
       {/* TAB 1: OVERVIEW & EXPLANATION */}
-      {activeTab === 'overview' && (
-        <div className="space-y-5">
-          {/* Easy Concept Card */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-cyan-50/70 dark:bg-cyan-950/40 border border-cyan-200/90 dark:border-cyan-800/80 space-y-2.5">
-            <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 font-bold text-xs uppercase tracking-wider">
-              <Zap className="w-4 h-4 text-cyan-500" />
-              <span>Easy Concept Explanation</span>
-            </div>
-            <p className="text-base sm:text-[17px] text-slate-800 dark:text-slate-200 leading-relaxed sm:leading-loose font-normal">
-              {easyExp}
-            </p>
+      <div className={activeTab === 'overview' ? 'space-y-5' : 'hidden print:block print:space-y-5'}>
+        {/* Easy Concept Card */}
+        <div className="p-5 sm:p-6 rounded-2xl bg-cyan-50/70 dark:bg-cyan-950/40 border border-cyan-200/90 dark:border-cyan-800/80 space-y-2.5 print-avoid-break">
+          <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 font-bold text-xs uppercase tracking-wider">
+            <Zap className="w-4 h-4 text-cyan-500" />
+            <span>Easy Concept Explanation</span>
           </div>
-
-          {/* Detailed Engineering Explanation */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-2xs">
-            <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider">
-              <FileText className="w-4 h-4 text-cyan-500" />
-              <span>Detailed Engineering Explanation</span>
-            </div>
-            <p className="text-base sm:text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed sm:leading-loose font-normal">
-              {detailedExp}
-            </p>
-          </div>
-
-          {/* Interactive Ohm's Law Simulation */}
-          {(lesson.topicId === 'tp-ohms-law' || lesson.id === 'lsn-ohms-law') && (
-            <div className="pt-1">
-              <OhmsLawSimulation currentLanguage={currentLanguage} />
-            </div>
-          )}
-
-          {/* Schematic Diagram Preview */}
-          {lesson.diagrams && lesson.diagrams.length > 0 && (
-            <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-white space-y-3">
-              <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center justify-between">
-                <span>{lesson.diagrams[0].title[currentLanguage] || lesson.diagrams[0].title.en}</span>
-                <span className="text-[10px] text-slate-400">Interactive Circuit Schematic</span>
-              </div>
-              <CircuitSchematicSvg 
-                svgType={lesson.diagrams[0].svgType} 
-                caption={lesson.diagrams[0].caption[currentLanguage] || lesson.diagrams[0].caption.en} 
-              />
-            </div>
-          )}
+          <p className="text-base sm:text-[17px] text-slate-800 dark:text-slate-200 leading-relaxed sm:leading-loose font-normal">
+            {easyExp}
+          </p>
         </div>
-      )}
+
+        {/* Detailed Engineering Explanation */}
+        <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-2xs print-avoid-break">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-xs uppercase tracking-wider">
+            <FileText className="w-4 h-4 text-cyan-500" />
+            <span>Detailed Engineering Explanation</span>
+          </div>
+          <p className="text-base sm:text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed sm:leading-loose font-normal">
+            {detailedExp}
+          </p>
+        </div>
+
+        {/* Interactive Ohm's Law Simulation */}
+        {(lesson.topicId === 'tp-ohms-law' || lesson.id === 'lsn-ohms-law') && (
+          <div className="pt-1 print-avoid-break">
+            <OhmsLawSimulation currentLanguage={currentLanguage} />
+          </div>
+        )}
+
+        {/* Schematic Diagram Preview */}
+        {lesson.diagrams && lesson.diagrams.length > 0 && (
+          <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-white space-y-3 print-avoid-break">
+            <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center justify-between">
+              <span>{lesson.diagrams[0].title[currentLanguage] || lesson.diagrams[0].title.en}</span>
+              <span className="text-[10px] text-slate-400">Interactive Circuit Schematic</span>
+            </div>
+            <CircuitSchematicSvg 
+              svgType={lesson.diagrams[0].svgType} 
+              caption={lesson.diagrams[0].caption[currentLanguage] || lesson.diagrams[0].caption.en} 
+            />
+          </div>
+        )}
+      </div>
 
       {/* TAB 2: FORMULAS & SOLVED EXAMPLES */}
-      {activeTab === 'formulas' && (
-        <div className="space-y-6">
-          {/* Formulas List */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Calculator className="w-4 h-4 text-cyan-500" />
-              <span>Core Mathematical Formulas</span>
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {lesson.formulas.map((item, idx) => (
-                <div key={idx} className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white space-y-1.5">
-                  <div className="text-lg font-bold font-mono text-cyan-300">{item.expression}</div>
-                  <p className="text-xs text-slate-400">
-                    {item.description[currentLanguage] || item.description.en}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Solved Examples */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-              <span>Step-by-Step Solved Example</span>
-            </h4>
-            {lesson.solvedExamples.map((ex) => (
-              <div key={ex.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
-                <div className="font-semibold text-sm text-slate-900 dark:text-white">
-                  <span className="text-cyan-600 dark:text-cyan-400 font-bold mr-2">Problem:</span>
-                  {ex.problem[currentLanguage] || ex.problem.en}
-                </div>
-
-                {ex.givenValues && (
-                  <div className="flex flex-wrap gap-2 text-xs font-mono">
-                    {Object.entries(ex.givenValues).map(([k, v]) => (
-                      <span key={k} className="px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
-                        {k}: <strong className="text-cyan-600 dark:text-cyan-300">{v}</strong>
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed">
-                  <span className="font-bold text-slate-900 dark:text-white block mb-1">Solution Steps:</span>
-                  {ex.solution[currentLanguage] || ex.solution.en}
-                </div>
-
-                {ex.finalAnswer && (
-                  <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-800 dark:text-emerald-300 font-mono font-bold">
-                    Result: {ex.finalAnswer[currentLanguage] || ex.finalAnswer.en}
-                  </div>
-                )}
+      <div className={activeTab === 'formulas' ? 'space-y-6' : 'hidden print:block print:space-y-6'}>
+        {/* Formulas List */}
+        <div className="space-y-3 print-avoid-break">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Calculator className="w-4 h-4 text-cyan-500" />
+            <span>Core Mathematical Formulas</span>
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {lesson.formulas.map((item, idx) => (
+              <div key={idx} className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-white space-y-1.5">
+                <div className="text-lg font-bold font-mono text-cyan-300">{item.expression}</div>
+                <p className="text-xs text-slate-400">
+                  {item.description[currentLanguage] || item.description.en}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      )}
+
+        {/* Solved Examples */}
+        <div className="space-y-3">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+            <span>Step-by-Step Solved Example</span>
+          </h4>
+          {lesson.solvedExamples.map((ex) => (
+            <div key={ex.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+              <div className="font-semibold text-sm text-slate-900 dark:text-white">
+                <span className="text-cyan-600 dark:text-cyan-400 font-bold mr-2">Problem:</span>
+                {ex.problem[currentLanguage] || ex.problem.en}
+              </div>
+
+              {ex.givenValues && (
+                <div className="flex flex-wrap gap-2 text-xs font-mono">
+                  {Object.entries(ex.givenValues).map(([k, v]) => (
+                    <span key={k} className="px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
+                      {k}: <strong className="text-cyan-600 dark:text-cyan-300">{v}</strong>
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed">
+                <span className="font-bold text-slate-900 dark:text-white block mb-1">Solution Steps:</span>
+                {ex.solution[currentLanguage] || ex.solution.en}
+              </div>
+
+              {ex.finalAnswer && (
+                <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-800 dark:text-emerald-300 font-mono font-bold">
+                  Result: {ex.finalAnswer[currentLanguage] || ex.finalAnswer.en}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* TAB 3: KEY POINTS & MISTAKES */}
-      {activeTab === 'keypoints' && (
-        <div className="space-y-6">
-          {/* Important Points */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Lightbulb className="w-4 h-4 text-amber-500" />
-              <span>Important Exam & Interview Points</span>
-            </h4>
-            <div className="space-y-2">
-              {importantPoints.map((point, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 flex items-start gap-2.5 text-xs text-amber-900 dark:text-amber-200">
-                  <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-                  <span className="leading-relaxed font-medium">{point}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Practical Applications */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Zap className="w-4 h-4 text-cyan-500" />
-              <span>Practical Field Applications</span>
-            </h4>
-            <div className="space-y-2">
-              {applications.map((app, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
-                  <span className="w-5 h-5 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 font-mono font-bold flex items-center justify-center shrink-0 text-[10px]">
-                    {idx + 1}
-                  </span>
-                  <span className="leading-relaxed font-medium">{app}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Common Mistakes */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <AlertCircle className="w-4 h-4 text-rose-500" />
-              <span>Common Student Mistakes to Avoid</span>
-            </h4>
-            <div className="space-y-2">
-              {commonMistakes.map((mistake, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/60 flex items-start gap-2.5 text-xs text-rose-900 dark:text-rose-200">
-                  <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
-                  <span className="leading-relaxed font-medium">{mistake}</span>
-                </div>
-              ))}
-            </div>
+      <div className={activeTab === 'keypoints' ? 'space-y-6' : 'hidden print:block print:space-y-6'}>
+        {/* Important Points */}
+        <div className="space-y-3 print-avoid-break">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Lightbulb className="w-4 h-4 text-amber-500" />
+            <span>Important Exam & Interview Points</span>
+          </h4>
+          <div className="space-y-2">
+            {importantPoints.map((point, idx) => (
+              <div key={idx} className="p-3 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 flex items-start gap-2.5 text-xs text-amber-900 dark:text-amber-200">
+                <CheckCircle2 className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                <span className="leading-relaxed font-medium">{point}</span>
+              </div>
+            ))}
           </div>
         </div>
-      )}
+
+        {/* Practical Applications */}
+        <div className="space-y-3 print-avoid-break">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Zap className="w-4 h-4 text-cyan-500" />
+            <span>Practical Field Applications</span>
+          </h4>
+          <div className="space-y-2">
+            {applications.map((app, idx) => (
+              <div key={idx} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300">
+                <span className="w-5 h-5 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 font-mono font-bold flex items-center justify-center shrink-0 text-[10px]">
+                  {idx + 1}
+                </span>
+                <span className="leading-relaxed font-medium">{app}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Common Mistakes */}
+        <div className="space-y-3 print-avoid-break">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <AlertCircle className="w-4 h-4 text-rose-500" />
+            <span>Common Student Mistakes to Avoid</span>
+          </h4>
+          <div className="space-y-2">
+            {commonMistakes.map((mistake, idx) => (
+              <div key={idx} className="p-3 rounded-xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/60 flex items-start gap-2.5 text-xs text-rose-900 dark:text-rose-200">
+                <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
+                <span className="leading-relaxed font-medium">{mistake}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* TAB 4: MCQs & PRACTICE QUESTIONS */}
-      {activeTab === 'practice' && (
-        <div className="space-y-6">
-          {/* MCQs Section */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <HelpCircle className="w-4 h-4 text-cyan-500" />
-              <span>Multiple Choice Practice Questions</span>
-            </h4>
+      <div className={activeTab === 'practice' ? 'space-y-6' : 'hidden print:block print:space-y-6'}>
+        {/* MCQs Section */}
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <HelpCircle className="w-4 h-4 text-cyan-500" />
+            <span>Multiple Choice Practice Questions</span>
+          </h4>
 
-            {lesson.mcqs.map((mcq, qIdx) => {
-              const qText = mcq.question[currentLanguage] || mcq.question.en;
-              const expText = mcq.explanation[currentLanguage] || mcq.explanation.en;
-              const userSelected = selectedAnswers[mcq.id];
+          {lesson.mcqs.map((mcq, qIdx) => {
+            const qText = mcq.question[currentLanguage] || mcq.question.en;
+            const expText = mcq.explanation[currentLanguage] || mcq.explanation.en;
+            const userSelected = selectedAnswers[mcq.id];
 
-              return (
-                <div key={mcq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
-                  <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
-                    <span className="text-cyan-600 dark:text-cyan-400 font-mono">Q{qIdx + 1}.</span>
-                    <span>{qText}</span>
-                  </div>
+            return (
+              <div key={mcq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+                <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
+                  <span className="text-cyan-600 dark:text-cyan-400 font-mono">Q{qIdx + 1}.</span>
+                  <span>{qText}</span>
+                </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                    {mcq.options.map((opt) => {
-                      const optText = opt.text[currentLanguage] || opt.text.en;
-                      const isSelected = userSelected === opt.id;
-                      const isCorrect = mcq.correctOptionId === opt.id;
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  {mcq.options.map((opt) => {
+                    const optText = opt.text[currentLanguage] || opt.text.en;
+                    const isSelected = userSelected === opt.id;
+                    const isCorrect = mcq.correctOptionId === opt.id;
 
-                      let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
-                      
-                      if (userSelected) {
-                        if (isCorrect) {
-                          btnStyle = "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold";
-                        } else if (isSelected) {
-                          btnStyle = "bg-rose-50 dark:bg-rose-950/80 border-rose-500 text-rose-800 dark:text-rose-200 font-bold";
-                        }
+                    let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
+                    
+                    if (userSelected) {
+                      if (isCorrect) {
+                        btnStyle = "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold";
+                      } else if (isSelected) {
+                        btnStyle = "bg-rose-50 dark:bg-rose-950/80 border-rose-500 text-rose-800 dark:text-rose-200 font-bold";
                       }
+                    }
 
-                      return (
-                        <button
-                          key={opt.id}
-                          onClick={() => handleSelectOption(mcq.id, opt.id)}
-                          className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle}`}
-                        >
-                          <span>
-                            <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400">({opt.id})</strong>
-                            {optText}
-                          </span>
-                          {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}
-                          {userSelected && isSelected && !isCorrect && <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 ml-2" />}
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {userSelected && (
-                    <div className="p-3 rounded-lg bg-cyan-50/80 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed font-mono">
-                      <strong className="block font-sans font-bold text-cyan-700 dark:text-cyan-300 mb-0.5">Explanation:</strong>
-                      {expText}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Descriptive Practice Questions */}
-          <div className="space-y-4 pt-2 border-t border-slate-200 dark:border-slate-800">
-            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-              <Award className="w-4 h-4 text-emerald-500" />
-              <span>Descriptive Examination Questions</span>
-            </h4>
-
-            {lesson.practiceQuestions.map((pq, pIdx) => {
-              const pqText = pq.question[currentLanguage] || pq.question.en;
-              const hintText = pq.hint ? (pq.hint[currentLanguage] || pq.hint.en) : null;
-              const ansText = pq.answerKey[currentLanguage] || pq.answerKey.en;
-              const showHint = revealedHints[pq.id];
-              const showAns = revealedAnswers[pq.id];
-
-              return (
-                <div key={pq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
-                  <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
-                    <span className="text-emerald-600 dark:text-emerald-400 font-mono">P{pIdx + 1}.</span>
-                    <span>{pqText}</span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {hintText && (
+                    return (
                       <button
-                        onClick={() => toggleHint(pq.id)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-3 py-1.5 rounded-lg border border-amber-200 dark:border-amber-800 transition-colors"
+                        key={opt.id}
+                        onClick={() => handleSelectOption(mcq.id, opt.id)}
+                        className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle} ${isCorrect ? 'print:border-emerald-600 print:bg-emerald-50 print:font-bold' : 'print:border-slate-300'}`}
                       >
-                        <Lightbulb className="w-3.5 h-3.5" />
-                        <span>{showHint ? 'Hide Hint' : 'View Hint'}</span>
-                        {showHint ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                        <span>
+                          <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({opt.id})</strong>
+                          {optText}
+                        </span>
+                        {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}
+                        {userSelected && isSelected && !isCorrect && <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 ml-2" />}
                       </button>
-                    )}
-
-                    <button
-                      onClick={() => toggleAnswer(pq.id)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800 transition-colors"
-                    >
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>{showAns ? 'Hide Answer Key' : 'Reveal Answer Key'}</span>
-                      {showAns ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                    </button>
-                  </div>
-
-                  {showHint && hintText && (
-                    <div className="p-3 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-800 dark:text-amber-300">
-                      <strong>Hint:</strong> {hintText}
-                    </div>
-                  )}
-
-                  {showAns && (
-                    <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-xs text-emerald-800 dark:text-emerald-300 font-mono">
-                      <strong>Answer Key:</strong> {ansText}
-                    </div>
-                  )}
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+
+                <div className={`p-3 rounded-lg bg-cyan-50/80 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed font-mono ${userSelected ? 'block' : 'hidden print:block'}`}>
+                  <strong className="block font-sans font-bold text-cyan-700 dark:text-cyan-300 mb-0.5">Explanation:</strong>
+                  {expText}
+                </div>
+              </div>
+            );
+          })}
         </div>
-      )}
+
+        {/* Descriptive Practice Questions */}
+        <div className="space-y-4 pt-2 border-t border-slate-200 dark:border-slate-800">
+          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <Award className="w-4 h-4 text-emerald-500" />
+            <span>Descriptive Examination Questions</span>
+          </h4>
+
+          {lesson.practiceQuestions.map((pq, pIdx) => {
+            const pqText = pq.question[currentLanguage] || pq.question.en;
+            const hintText = pq.hint ? (pq.hint[currentLanguage] || pq.hint.en) : null;
+            const ansText = pq.answerKey[currentLanguage] || pq.answerKey.en;
+            const showHint = revealedHints[pq.id];
+            const showAns = revealedAnswers[pq.id];
+
+            return (
+              <div key={pq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+                <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
+                  <span className="text-emerald-600 dark:text-emerald-400 font-mono">P{pIdx + 1}.</span>
+                  <span>{pqText}</span>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1 print-hidden">
+                  {hintText && (
+                    <button
+                      onClick={() => toggleHint(pq.id)}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-3 py-1.5 rounded-lg border border-amber-200 dark:border-amber-800 transition-colors"
+                    >
+                      <Lightbulb className="w-3.5 h-3.5" />
+                      <span>{showHint ? 'Hide Hint' : 'View Hint'}</span>
+                      {showHint ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                    </button>
+                  )}
+
+                  <button
+                    onClick={() => toggleAnswer(pq.id)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800 transition-colors"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>{showAns ? 'Hide Answer Key' : 'Reveal Answer Key'}</span>
+                    {showAns ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
+
+                {hintText && (
+                  <div className={`p-3 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-800 dark:text-amber-300 ${showHint ? 'block' : 'hidden print:block'}`}>
+                    <strong>Hint:</strong> {hintText}
+                  </div>
+                )}
+
+                <div className={`p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-xs text-emerald-800 dark:text-emerald-300 font-mono ${showAns ? 'block' : 'hidden print:block'}`}>
+                  <strong>Answer Key:</strong> {ansText}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
     </div>
   );

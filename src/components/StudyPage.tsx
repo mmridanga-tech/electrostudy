@@ -118,15 +118,39 @@ export const StudyPage: React.FC<StudyPageProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#faf8f5] text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden">
+    <div className="study-page-root fixed inset-0 z-50 bg-[#faf8f5] text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden">
       
       {/* PRINT STYLES inject */}
       <style>{`
         @media print {
+          @page {
+            size: A4;
+            margin: 16mm 14mm;
+          }
           body, html, #root {
             background: white !important;
             color: black !important;
             overflow: visible !important;
+            height: auto !important;
+            max-height: none !important;
+            position: static !important;
+          }
+          .study-page-root {
+            position: static !important;
+            inset: auto !important;
+            width: auto !important;
+            height: auto !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+            background: white !important;
+            color: black !important;
+          }
+          .study-body-wrapper {
+            position: static !important;
+            overflow: visible !important;
+            height: auto !important;
+            max-height: none !important;
+            display: block !important;
           }
           .print-hidden, header, nav, .study-sidebar, .study-header, .study-toolbar, .study-bottom-nav, button {
             display: none !important;
@@ -135,6 +159,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             display: block !important;
           }
           .print-container {
+            position: static !important;
             max-width: 100% !important;
             padding: 0 !important;
             margin: 0 !important;
@@ -142,6 +167,9 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             color: black !important;
             box-shadow: none !important;
             border: none !important;
+            overflow: visible !important;
+            height: auto !important;
+            max-height: none !important;
           }
           .print-container * {
             color: black !important;
@@ -149,6 +177,14 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             border-color: #cbd5e1 !important;
             box-shadow: none !important;
             text-shadow: none !important;
+          }
+          .print-avoid-break {
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
+          h1, h2, h3, h4 {
+            break-after: avoid !important;
+            page-break-after: avoid !important;
           }
         }
       `}</style>
@@ -276,7 +312,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
       </div>
 
       {/* MAIN BODY AREA: SIDEBAR + CONTENT */}
-      <div className="flex-1 flex overflow-hidden relative">
+      <div className="study-body-wrapper flex-1 flex overflow-hidden relative">
 
         {/* DESKTOP SIDEBAR */}
         <aside className="study-sidebar hidden lg:flex flex-col w-72 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xs p-4 overflow-y-auto print-hidden">
@@ -375,7 +411,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             </div>
 
             {/* SCREEN TOPIC CARD HEADER */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-3">
+            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 print-hidden">
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                   <BookOpen className="w-4 h-4 text-cyan-500" />

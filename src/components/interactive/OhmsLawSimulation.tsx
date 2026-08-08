@@ -193,7 +193,7 @@ export const OhmsLawSimulation: React.FC<OhmsLawSimulationProps> = ({ currentLan
         </div>
 
         {/* Reset & Flow Toggle Buttons */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap print-hidden">
           <button
             onClick={() => setFlowDirection(prev => prev === 'conventional' ? 'electron' : 'conventional')}
             className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-300 transition-colors flex items-center gap-1.5"
@@ -359,7 +359,7 @@ export const OhmsLawSimulation: React.FC<OhmsLawSimulationProps> = ({ currentLan
           </div>
 
           {/* Interactive Sliders */}
-          <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-4">
+          <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-4 print-hidden">
             
             {/* Voltage Slider */}
             <div className="space-y-1.5">
