@@ -617,7 +617,7 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             title: {
               en: 'CRO & Oscilloscope',
               hi: 'सीआरओ एवं ऑसिलोस्कोप (CRO & Oscilloscope)',
-              bn: 'সিআরও ও অসিলোস্কোপ (CRO & Oscilloscope)'
+              bn: 'সিআরও ও অসিলোস্কোপ (CRO & Oscilloscope)'
             }
           },
           {

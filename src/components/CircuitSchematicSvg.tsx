@@ -602,6 +602,267 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'cro-oscilloscope':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 160" className="w-full max-w-xl h-44">
+            {/* CRT Tube Envelope */}
+            <path d="M 20 50 L 160 50 L 380 20 L 380 140 L 160 110 L 20 110 Z" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            {/* Screen */}
+            <rect x="380" y="15" width="20" height="130" rx="4" fill="#065f46" stroke="#34d399" strokeWidth="2" />
+            
+            {/* Electron Gun */}
+            <rect x="30" y="70" width="40" height="20" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="50" y="83" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">Gun/Heater</text>
+
+            {/* Y Deflection Plates */}
+            <rect x="180" y="55" width="30" height="8" fill="#a855f7" />
+            <rect x="180" y="97" width="30" height="8" fill="#a855f7" />
+            <text x="195" y="48" textAnchor="middle" fill="#c084fc" fontSize="8">Y-Plates (Vertical)</text>
+
+            {/* X Deflection Plates */}
+            <rect x="250" y="60" width="8" height="40" fill="#38bdf8" />
+            <rect x="290" y="60" width="8" height="40" fill="#38bdf8" />
+            <text x="274" y="48" textAnchor="middle" fill="#38bdf8" fontSize="8">X-Plates (Timebase)</text>
+
+            {/* Electron Beam */}
+            <path d="M 70 80 Q 195 80 274 80 Q 330 60 380 50" fill="none" stroke="#22c55e" strokeWidth="2" strokeDasharray="3 2" />
+
+            {/* Waveform on Screen */}
+            <path d="M 382 30 Q 388 50 382 70 Q 388 90 382 110" fill="none" stroke="#4ade80" strokeWidth="3" />
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-1">{caption || "Cathode Ray Oscilloscope (CRO): Electron Gun, Deflection System & Phosphor Screen"}</p>
+        </div>
+      );
+
+    case 'transducer-bridge':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 130" className="w-full max-w-lg h-36">
+            <g transform="translate(20, 35)">
+              <rect width="80" height="50" rx="6" fill="#0f172a" stroke="#ef4444" strokeWidth="2" />
+              <text x="40" y="22" textAnchor="middle" fill="#f87171" fontSize="10" fontWeight="bold">Measurand</text>
+              <text x="40" y="36" textAnchor="middle" fill="#94a3b8" fontSize="8">(Temp/Force)</text>
+            </g>
+            <path d="M 100 60 L 125 60" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(125, 35)">
+              <rect width="85" height="50" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="42" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Transducer</text>
+              <text x="42" y="36" textAnchor="middle" fill="#f59e0b" fontSize="8">(LVDT/Strain)</text>
+            </g>
+            <path d="M 210 60 L 235 60" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(235, 35)">
+              <rect width="85" height="50" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="42" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Conditioning</text>
+              <text x="42" y="36" textAnchor="middle" fill="#38bdf8" fontSize="8">(Bridge/Amp)</text>
+            </g>
+            <path d="M 320 60 L 345 60" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(345, 35)">
+              <rect width="75" height="50" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="37.5" y="22" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Readout</text>
+              <text x="37.5" y="36" textAnchor="middle" fill="#34d399" fontSize="8">(Display/PLC)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Transducer Measurement System Chain"}</p>
+        </div>
+      );
+
+    case 'wheatstone-bridge':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 320 180" className="w-full max-w-md h-44">
+            {/* Diamond Bridge Outline */}
+            <polygon points="160,20 260,90 160,160 60,90" fill="none" stroke="#475569" strokeWidth="2" />
+            
+            {/* Resistor Arms */}
+            <text x="100" y="48" fill="#38bdf8" fontSize="11" fontWeight="bold">R₁</text>
+            <text x="210" y="48" fill="#38bdf8" fontSize="11" fontWeight="bold">R₂</text>
+            <text x="100" y="138" fill="#34d399" fontSize="11" fontWeight="bold">R₃</text>
+            <text x="210" y="138" fill="#f59e0b" fontSize="11" fontWeight="bold">R_x (Unknown)</text>
+
+            {/* Galvanometer across center */}
+            <line x1="60" y1="90" x2="260" y2="90" stroke="#e2e8f0" strokeWidth="1.5" strokeDasharray="3 3" />
+            <circle cx="160" cy="90" r="16" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+            <text x="160" y="94" textAnchor="middle" fill="#c084fc" fontSize="11" fontWeight="bold">G</text>
+
+            {/* DC Power Supply */}
+            <line x1="160" y1="20" x2="160" y2="5" stroke="#ef4444" strokeWidth="2" />
+            <line x1="160" y1="160" x2="160" y2="175" stroke="#ef4444" strokeWidth="2" />
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-1">{caption || "Wheatstone Bridge: R_x = R₃ × (R₂ / R₁) at Null Balance (I_g = 0)"}</p>
+        </div>
+      );
+
+    case 'lc-meter-bridge':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 320 180" className="w-full max-w-md h-44">
+            <polygon points="160,20 260,90 160,160 60,90" fill="none" stroke="#38bdf8" strokeWidth="2" />
+            <text x="95" y="48" fill="#38bdf8" fontSize="11" fontWeight="bold">Z₁ (L/C)</text>
+            <text x="205" y="48" fill="#38bdf8" fontSize="11" fontWeight="bold">Z₂</text>
+            <text x="95" y="138" fill="#34d399" fontSize="11" fontWeight="bold">Z₃</text>
+            <text x="205" y="138" fill="#f59e0b" fontSize="11" fontWeight="bold">Z_x (Unknown)</text>
+
+            {/* AC Detector */}
+            <circle cx="160" cy="90" r="16" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="160" y="94" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Det ~</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "AC Bridge Network for Inductance and Capacitance Measurement"}</p>
+        </div>
+      );
+
+    case 'instrument-ct-pt':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 420 160" className="w-full max-w-lg h-44">
+            {/* Primary High Voltage Busbar Line */}
+            <line x1="30" y1="40" x2="390" y2="40" stroke="#ef4444" strokeWidth="4" />
+            <text x="210" y="25" textAnchor="middle" fill="#ef4444" fontSize="11" fontWeight="bold">High Voltage Primary Busbar (11kV / 1000A)</text>
+
+            {/* Current Transformer CT */}
+            <g transform="translate(100, 40)">
+              <circle cx="0" cy="0" r="16" fill="none" stroke="#f59e0b" strokeWidth="3" />
+              <line x1="0" y1="16" x2="0" y2="70" stroke="#f59e0b" strokeWidth="2" />
+              <circle cx="0" cy="85" r="14" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="0" y="89" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">A</text>
+              <text x="22" y="89" fill="#f59e0b" fontSize="9">CT (5A Meter)</text>
+            </g>
+
+            {/* Potential Transformer PT */}
+            <g transform="translate(300, 40)">
+              <rect x="-15" y="10" width="30" height="40" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" rx="3" />
+              <line x1="0" y1="50" x2="0" y2="70" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="0" cy="85" r="14" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="89" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">V</text>
+              <text x="22" y="89" fill="#38bdf8" fontSize="9">PT (110V Meter)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Instrument Transformers: CT reduces heavy current to 5A; PT reduces high voltage to 110V"}</p>
+        </div>
+      );
+
+    case 'frequency-phase-wave':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 400 150" className="w-full max-w-lg h-40">
+            {/* Lissajous ellipse for phase shift */}
+            <g transform="translate(100, 75)">
+              <ellipse cx="0" cy="0" rx="45" ry="30" fill="none" stroke="#38bdf8" strokeWidth="3" transform="rotate(-30)" />
+              <text x="0" y="55" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Lissajous Ellipse (Phase φ)</text>
+            </g>
+
+            {/* Two Phase Shifted Waves */}
+            <g transform="translate(280, 75)">
+              <path d="M -80 0 Q -40 -40 0 0 Q 40 40 80 0" fill="none" stroke="#34d399" strokeWidth="2.5" />
+              <path d="M -60 0 Q -20 -40 20 0 Q 60 40 100 0" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeDasharray="4 2" />
+              <text x="0" y="55" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Phase Angle φ Shift</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-1">{caption || "Phase Angle Measurement via Lissajous Patterns and Dual Trace CRO"}</p>
+        </div>
+      );
+
+    case 'calibration-workflow':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 130" className="w-full max-w-lg h-36">
+            <g transform="translate(10, 40)">
+              <rect width="90" height="45" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="45" y="22" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Standard</text>
+              <text x="45" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">(High Accuracy)</text>
+            </g>
+            <path d="M 100 62 L 125 62" stroke="#34d399" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(125, 40)">
+              <rect width="90" height="45" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="45" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">IUT Meter</text>
+              <text x="45" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">(Under Test)</text>
+            </g>
+            <path d="M 215 62 L 240 62" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(240, 40)">
+              <rect width="90" height="45" rx="6" fill="#0f172a" stroke="#ef4444" strokeWidth="2" />
+              <text x="45" y="22" textAnchor="middle" fill="#f87171" fontSize="10" fontWeight="bold">Error Calc</text>
+              <text x="45" y="34" textAnchor="middle" fill="#f87171" fontSize="8">E = V_iut - V_std</text>
+            </g>
+            <path d="M 330 62 L 355 62" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(355, 40)">
+              <rect width="75" height="45" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="37.5" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Certificate</text>
+              <text x="37.5" y="34" textAnchor="middle" fill="#38bdf8" fontSize="8">(Issued)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Traceable Calibration Procedure Workflow"}</p>
+        </div>
+      );
+
+    case 'electrical-safety':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 420 150" className="w-full max-w-lg h-40">
+            {/* Safe Box */}
+            <g transform="translate(10, 20)">
+              <rect width="190" height="110" rx="6" fill="#064e3b" stroke="#10b981" strokeWidth="2" />
+              <text x="95" y="22" textAnchor="middle" fill="#34d399" fontSize="11" fontWeight="bold">SAFE: Ammeter in SERIES</text>
+              <line x1="20" y1="60" x2="170" y2="60" stroke="#34d399" strokeWidth="2" />
+              <circle cx="95" cy="60" r="14" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="95" y="64" textAnchor="middle" fill="#34d399" fontSize="11" fontWeight="bold">A</text>
+              <text x="95" y="95" textAnchor="middle" fill="#a7f3d0" fontSize="9">R_internal ≈ 0 Ω</text>
+            </g>
+
+            {/* Unsafe Short Box */}
+            <g transform="translate(220, 20)">
+              <rect width="190" height="110" rx="6" fill="#7f1d1d" stroke="#ef4444" strokeWidth="2" />
+              <text x="95" y="22" textAnchor="middle" fill="#f87171" fontSize="11" fontWeight="bold">DANGER: Parallel Ammeter</text>
+              <line x1="30" y1="45" x2="160" y2="45" stroke="#f87171" strokeWidth="2" />
+              <line x1="30" y1="85" x2="160" y2="85" stroke="#f87171" strokeWidth="2" />
+              <line x1="95" y1="45" x2="95" y2="85" stroke="#f87171" strokeWidth="3" />
+              <text x="95" y="102" textAnchor="middle" fill="#fca5a5" fontSize="9" fontWeight="bold">SHORT CIRCUIT BLAST!</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-1">{caption || "Electrical Safety: Always connect Ammeters in Series and Voltmeters in Parallel"}</p>
+        </div>
+      );
+
+    case 'troubleshooting-flow':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 130" className="w-full max-w-lg h-36">
+            <g transform="translate(10, 40)">
+              <rect width="75" height="45" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="37.5" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">1. Symptom</text>
+              <text x="37.5" y="34" textAnchor="middle" fill="#94a3b8" fontSize="8">(Motor Off)</text>
+            </g>
+            <path d="M 85 62 L 105 62" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(105, 40)">
+              <rect width="80" height="45" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="40" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">2. Voltage</text>
+              <text x="40" y="34" textAnchor="middle" fill="#38bdf8" fontSize="8">(415V Test)</text>
+            </g>
+            <path d="M 185 62 L 205 62" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(205, 40)">
+              <rect width="80" height="45" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+              <text x="40" y="22" textAnchor="middle" fill="#c084fc" fontSize="10" fontWeight="bold">3. Fuse/Relay</text>
+              <text x="40" y="34" textAnchor="middle" fill="#c084fc" fontSize="8">(Continuity)</text>
+            </g>
+            <path d="M 285 62 L 305 62" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(305, 40)">
+              <rect width="125" height="45" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="62.5" y="22" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">4. Megger & Repair</text>
+              <text x="62.5" y="34" textAnchor="middle" fill="#34d399" fontSize="8">(Insulation Test)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Systematic Diagnostic Troubleshooting Methodology Flowchart"}</p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
