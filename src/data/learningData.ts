@@ -2,6 +2,7 @@ import { DetailedSubject, Chapter, Topic, Lesson } from '../types';
 import { CHAPTER_1_LESSONS } from './chapter1Lessons';
 import { CHAPTER_2_LESSONS } from './chapter2Lessons';
 import { CHAPTER_3_LESSONS } from './chapter3Lessons';
+import { CHAPTER_4_LESSONS } from './chapter4Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -703,83 +704,193 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-kirchhoffs-laws',
+        id: 'ch-dc-network-analysis',
         subjectId: 'basic-electrical',
         order: 4,
         title: {
-          en: 'Chapter 4: Kirchhoff\'s Laws',
-          hi: 'अध्याय 4: किरचॉफ के नियम',
-          bn: 'অধ্যায় ৪: কার্শফের সূত্রসমূহ'
+          en: 'Chapter 4: DC Circuits & Network Analysis',
+          hi: 'अध्याय 4: डीसी परिपथ एवं नेटवर्क विश्लेषण',
+          bn: 'অধ্যায় ৪: ডিসি সার্কিট ও নেটওয়ার্ক অ্যানালিসিস'
         },
         topics: [
           {
-            id: 'tp-kcl',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-dc-network-fundamentals',
+            chapterId: 'ch-dc-network-analysis',
             order: 1,
             title: {
-              en: 'Kirchhoff\'s Current Law (KCL)',
-              hi: 'किरचॉफ का धारा नियम (KCL)',
-              bn: 'কার্শফের কারেন্ট সূত্র (KCL)'
+              en: 'DC Network Fundamentals & Circuit Terminology',
+              hi: 'डीसी नेटवर्क के मूल सिद्धांत एवं शब्दावली',
+              bn: 'ডিসি নেটওয়ার্কের মৌলিক ভিত্তি ও সার্কিট পরিভাষা'
             }
           },
           {
-            id: 'tp-kvl',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-kcl',
+            chapterId: 'ch-dc-network-analysis',
             order: 2,
             title: {
-              en: 'Kirchhoff\'s Voltage Law (KVL)',
-              hi: 'किरचॉफ का वोल्टेज नियम (KVL)',
-              bn: 'কার্শফের ভোল্টেজ সূত্র (KVL)'
+              en: "Kirchhoff's Current Law (KCL)",
+              hi: 'किरचॉफ का धारा नियम (KCL)',
+              bn: 'কার্শফের কারেন্ট सूत्र (KCL)'
             }
           },
           {
-            id: 'tp-junction-rule',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-kvl',
+            chapterId: 'ch-dc-network-analysis',
             order: 3,
             title: {
-              en: 'Junction Rule',
-              hi: 'जंक्शन नियम',
-              bn: 'জংশন রুল'
+              en: "Kirchhoff's Voltage Law (KVL)",
+              hi: 'किरचॉफ का वोल्टेज नियम (KVL)',
+              bn: 'কার্शফের ভোল্টেজ সূত্র (KVL)'
             }
           },
           {
-            id: 'tp-loop-rule',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-node-branch',
+            chapterId: 'ch-dc-network-analysis',
             order: 4,
             title: {
-              en: 'Loop Rule',
-              hi: 'लूप नियम',
-              bn: 'লুপ রুল'
+              en: 'Node, Branch, and Loop Concepts',
+              hi: 'नोड, शाखा (ब्रांच) एवं लूप की अवधारणाएँ',
+              bn: 'নোড, ব্রাঞ্চ এবং লুপের ধারণা'
             }
           },
           {
-            id: 'tp-kcl-apps',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-nodal-analysis',
+            chapterId: 'ch-dc-network-analysis',
             order: 5,
             title: {
-              en: 'KCL Applications',
-              hi: 'केसीएल के अनुप्रयोग',
-              bn: 'KCL-এর প্রয়োগ'
+              en: 'Nodal Analysis Method',
+              hi: 'नोडल विश्लेषण विधि (Nodal Analysis)',
+              bn: 'নোডাল অ্যানালিসিস পদ্ধতি'
             }
           },
           {
-            id: 'tp-kvl-apps',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-mesh-analysis',
+            chapterId: 'ch-dc-network-analysis',
             order: 6,
             title: {
-              en: 'KVL Applications',
-              hi: 'केवीएल के अनुप्रयोग',
-              bn: 'KVL-এর প্রয়োগ'
+              en: 'Mesh and Loop Analysis Method',
+              hi: 'मेष एवं लूप विश्लेषण विधि (Mesh Analysis)',
+              bn: 'মেশ ও লুপ অ্যানালিসিস পদ্ধতি'
             }
           },
           {
-            id: 'tp-simple-circuit-problems',
-            chapterId: 'ch-kirchhoffs-laws',
+            id: 'ch4-network-reduction',
+            chapterId: 'ch-dc-network-analysis',
             order: 7,
             title: {
-              en: 'Simple Circuit Problems',
-              hi: 'सरल परिपथ समस्याएँ',
-              bn: 'সহজ সার্কিট সমস্যানাবলি'
+              en: 'Series and Parallel Network Reduction',
+              hi: 'श्रेणी एवं समानांतर नेटवर्क रिडक्शन',
+              bn: 'সিরিজ ও প্যারালাল নেটওয়ার্ক রিডাকশন'
+            }
+          },
+          {
+            id: 'ch4-divider-networks',
+            chapterId: 'ch-dc-network-analysis',
+            order: 8,
+            title: {
+              en: 'Voltage and Current Division in Complex Networks',
+              hi: 'जटिल नेटवर्कों में वोल्टेज एवं धारा विभाजन',
+              bn: 'জটিল নেটওয়ার্কে ভোল্টেজ ও কারেন্ট ডিভিশন'
+            }
+          },
+          {
+            id: 'ch4-star-delta',
+            chapterId: 'ch-dc-network-analysis',
+            order: 9,
+            title: {
+              en: 'Star-Delta (Delta-Wye) Transformation',
+              hi: 'स्टार-डेल्टा (स्टार-डेल्टा) रूपांतरण',
+              bn: 'স্টার-ডেল্টা (স্টার-ডেল্টা) রূপান্তর'
+            }
+          },
+          {
+            id: 'ch4-network-theorems-intro',
+            chapterId: 'ch-dc-network-analysis',
+            order: 10,
+            title: {
+              en: 'Introduction to Network Theorems',
+              hi: 'नेटवर्क प्रमेयों का परिचय',
+              bn: 'নেটওয়ার্ক উপপাদ্যের পরিচিতি'
+            }
+          },
+          {
+            id: 'ch4-thevenins-theorem',
+            chapterId: 'ch-dc-network-analysis',
+            order: 11,
+            title: {
+              en: "Thevenin's Theorem",
+              hi: "थेवेनिन का प्रमेय (Thevenin's Theorem)",
+              bn: "থেভেনিনের উপপাদ্য (Thevenin's Theorem)"
+            }
+          },
+          {
+            id: 'ch4-nortons-theorem',
+            chapterId: 'ch-dc-network-analysis',
+            order: 12,
+            title: {
+              en: "Norton's Theorem",
+              hi: "नॉर्टन का प्रमेय (Norton's Theorem)",
+              bn: "নর্টনের উপপাদ্য (Norton's Theorem)"
+            }
+          },
+          {
+            id: 'ch4-superposition-theorem',
+            chapterId: 'ch-dc-network-analysis',
+            order: 13,
+            title: {
+              en: 'Superposition Theorem',
+              hi: 'सुपरपोजिशन प्रमेय (Superposition Theorem)',
+              bn: 'সুপারপজিশন উপপাদ্য (Superposition Theorem)'
+            }
+          },
+          {
+            id: 'ch4-max-power-transfer',
+            chapterId: 'ch-dc-network-analysis',
+            order: 14,
+            title: {
+              en: 'Maximum Power Transfer Theorem',
+              hi: 'अधिकतम शक्ति हस्तांतरण प्रमेय',
+              bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার উপপাদ্য'
+            }
+          },
+          {
+            id: 'ch4-reciprocity-theorem',
+            chapterId: 'ch-dc-network-analysis',
+            order: 15,
+            title: {
+              en: 'Reciprocity Theorem',
+              hi: 'रेसीप्रोसिटी (पारस्परिकता) प्रमेय',
+              bn: 'রেসিপ্রোসিটি উপপাদ্য'
+            }
+          },
+          {
+            id: 'ch4-source-transformation',
+            chapterId: 'ch-dc-network-analysis',
+            order: 16,
+            title: {
+              en: 'Source Transformation Techniques',
+              hi: 'स्रोत रूपांतरण तकनीक (Source Transformation)',
+              bn: 'সোর্স ট্রান্সফরমেশন পদ্ধতি'
+            }
+          },
+          {
+            id: 'ch4-dc-fault-analysis',
+            chapterId: 'ch-dc-network-analysis',
+            order: 17,
+            title: {
+              en: 'DC Network Fault Analysis & Bridge Networks',
+              hi: 'डीसी नेटवर्क फॉल्ट विश्लेषण एवं ब्रिज नेटवर्क',
+              bn: 'ডিসি নেটওয়ার্ক ফল্ট অ্যানালিসিস ও ব্রিজ নেটওয়ার্ক'
+            }
+          },
+          {
+            id: 'ch4-practical-dc-applications',
+            chapterId: 'ch-dc-network-analysis',
+            order: 18,
+            title: {
+              en: 'Practical DC Circuit & Industrial Applications',
+              hi: 'व्यावहारिक डीसी सर्किट एवं औद्योगिक अनुप्रयोग',
+              bn: 'ব্যবহারিক ডিসি সার্কিট ও শিল্প প্রয়োগ'
             }
           }
         ]
@@ -2059,6 +2170,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_3_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-dc-network-analysis') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_4_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

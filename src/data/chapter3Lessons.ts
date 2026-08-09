@@ -526,7 +526,8 @@ export const LESSON_ELECTRICAL_INSTRUMENTS: Lesson = {
         en: 'Schematic illustrating Indicating, Recording, and Integrating mechanisms alongside Deflecting, Controlling, and Damping forces.',
         hi: 'इंडीकेटिंग, रिकॉर्डिंग और इंटीग्रेटिंग तंत्र के साथ विक्षेपक, नियंत्रक और मंदक बलों का चित्र।',
         bn: 'ইন্ডিকেটিং, রেকর্ডারিং ও ইন্টিগ্রেটিং মেকানিজম এবং ডিফ্লেক্টিং, কন্ট্রোলিং ও ড্যাম্পিং বলের চিত্র।'
-      }
+      },
+      svgType: 'instrument-classification'
     }
   ],
   solvedExamples: [
@@ -755,7 +756,8 @@ caption: {
 en: 'Diagram showing Permanent Magnets, Radial Soft Iron Core, Moving Coil, Hairsprings, and Linear Dial.',
         hi: 'स्थायी चुंबक, नरम लोहे का कोर, मूविंग कॉइल, हेयरस्प्रिंग एवं रैखिक डायल का आरेख।',
         bn: 'স্থায়ী চুম্বক, নরম লোহার কোর, মুভিং কয়েল, স্প্রিং ও রৈখিক স্কেলের চিত্র।'
-}
+},
+svgType: 'instrument-pmmc'
 }
 ],
 solvedExamples: [
@@ -987,7 +989,8 @@ caption: {
 en: 'Diagrams illustrating solenoid coil, soft iron vanes, air damping chamber, and non-linear scale.',
         hi: 'सोलेनोइड कॉइल, लोहे की पत्ती, वायु मंदन कक्ष एवं अरैखिक पैमाने का आरेख।',
         bn: 'সোলেনয়েড কয়েল, নরম লোহার পাত, এয়ার ড্যাম্পিং চেম্বার ও অরৈখিক স্কেলের চিত্র।'
-}
+},
+svgType: 'instrument-mi'
 }
 ],
 solvedExamples: [

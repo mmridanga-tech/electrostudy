@@ -31,6 +31,15 @@ import { ElectricalSymbolsAnimation } from './interactive/ElectricalSymbolsAnima
 import { PMMCAnimation } from './interactive/PMMCAnimation';
 import { MovingIronAnimation } from './interactive/MovingIronAnimation';
 import { ElectrodynamometerAnimation } from './interactive/ElectrodynamometerAnimation';
+import { KCLNodeAnimation } from './interactive/KCLNodeAnimation';
+import { KVLLoopAnimation } from './interactive/KVLLoopAnimation';
+import { NodalAnalysisAnimation } from './interactive/NodalAnalysisAnimation';
+import { MeshAnalysisAnimation } from './interactive/MeshAnalysisAnimation';
+import { NetworkReductionAnimation } from './interactive/NetworkReductionAnimation';
+import { DividerNetworkAnimation } from './interactive/DividerNetworkAnimation';
+import { StarDeltaAnimation } from './interactive/StarDeltaAnimation';
+import { TheveninEquivalentAnimation } from './interactive/TheveninEquivalentAnimation';
+import { NortonEquivalentAnimation } from './interactive/NortonEquivalentAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -80,6 +89,33 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch3-electrodynamometer' || topicId === 'ch3-electrodynamometer-instruments' || lessonId === 'ch3-electrodynamometer') {
     return <ElectrodynamometerAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-kcl' || lessonId === 'lsn-ch4-kcl') {
+    return <KCLNodeAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-kvl' || lessonId === 'lsn-ch4-kvl') {
+    return <KVLLoopAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-nodal-analysis' || lessonId === 'lsn-ch4-nodal-analysis') {
+    return <NodalAnalysisAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-mesh-analysis' || lessonId === 'lsn-ch4-mesh-analysis') {
+    return <MeshAnalysisAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-network-reduction' || lessonId === 'lsn-ch4-network-reduction') {
+    return <NetworkReductionAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-divider-networks' || lessonId === 'lsn-ch4-divider-networks') {
+    return <DividerNetworkAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-star-delta' || lessonId === 'lsn-ch4-star-delta') {
+    return <StarDeltaAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-thevenins-theorem' || lessonId === 'lsn-ch4-thevenins-theorem') {
+    return <TheveninEquivalentAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-nortons-theorem' || lessonId === 'lsn-ch4-nortons-theorem') {
+    return <NortonEquivalentAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

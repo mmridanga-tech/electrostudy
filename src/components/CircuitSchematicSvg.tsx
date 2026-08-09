@@ -828,6 +828,176 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'instrument-thermal':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 420 150" className="w-full max-w-lg h-40">
+            {/* Heating Wire */}
+            <line x1="40" y1="75" x2="260" y2="75" stroke="#ef4444" strokeWidth="3" />
+            <text x="150" y="60" textAnchor="middle" fill="#ef4444" fontSize="10" fontWeight="bold">Hot Wire (I²R Heating)</text>
+
+            {/* Thermocouple Junction */}
+            <circle cx="150" cy="75" r="4" fill="#f59e0b" />
+            <line x1="150" y1="75" x2="150" y2="115" stroke="#f59e0b" strokeWidth="2" />
+            
+            {/* Millivoltmeter PMMC Display */}
+            <circle cx="150" cy="125" r="14" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="150" y="129" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">mV</text>
+
+            {/* Scale */}
+            <text x="320" y="70" fill="#34d399" fontSize="10" fontWeight="bold">True RMS (AC/DC)</text>
+            <text x="320" y="88" fill="#94a3b8" fontSize="8">θ ∝ I²_rms</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Thermal Instrument: Hot-Wire & Thermocouple True RMS Measurement"}</p>
+        </div>
+      );
+
+    case 'instrument-ammeter-voltmeter':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 150" className="w-full max-w-lg h-40">
+            {/* Ammeter Shunt Extension */}
+            <g transform="translate(10, 20)">
+              <rect width="195" height="110" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="97.5" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Ammeter: Low Resistance Shunt (R_sh || R_m)</text>
+              <line x1="30" y1="50" x2="165" y2="50" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="30" y1="90" x2="165" y2="90" stroke="#38bdf8" strokeWidth="2" />
+              <rect x="75" y="82" width="45" height="16" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" rx="2" />
+              <text x="97.5" y="94" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">R_sh (Manganin)</text>
+              <circle cx="97.5" cy="50" r="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="97.5" y="54" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">A</text>
+            </g>
+
+            {/* Voltmeter Multiplier Extension */}
+            <g transform="translate(225, 20)">
+              <rect width="205" height="110" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="1.5" />
+              <text x="102.5" y="22" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Voltmeter: Series Multiplier (R_s + R_m)</text>
+              <line x1="25" y1="65" x2="60" y2="65" stroke="#34d399" strokeWidth="2" />
+              <rect x="60" y="57" width="50" height="16" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" rx="2" />
+              <text x="85" y="69" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">R_multiplier</text>
+              <line x1="110" y1="65" x2="140" y2="65" stroke="#34d399" strokeWidth="2" />
+              <circle cx="155" cy="65" r="12" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="155" y="69" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">V</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Range Extension: Ammeter Shunt (Parallel) & Voltmeter Multiplier (Series)"}</p>
+        </div>
+      );
+
+    case 'instrument-wattmeter':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 420 150" className="w-full max-w-lg h-40">
+            {/* Mains Line */}
+            <line x1="30" y1="40" x2="390" y2="40" stroke="#ef4444" strokeWidth="3" />
+            <line x1="30" y1="120" x2="390" y2="120" stroke="#38bdf8" strokeWidth="3" />
+
+            {/* Current Coil in Series */}
+            <g transform="translate(130, 40)">
+              <rect x="-25" y="-10" width="50" height="20" fill="#1e293b" stroke="#ef4444" strokeWidth="2" rx="3" />
+              <text x="0" y="4" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="bold">CC (Current)</text>
+            </g>
+
+            {/* Pressure Coil in Parallel */}
+            <g transform="translate(250, 80)">
+              <line x1="0" y1="-40" x2="0" y2="40" stroke="#f59e0b" strokeWidth="2" />
+              <rect x="-12" y="-20" width="24" height="40" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="3" />
+              <text x="0" y="4" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">PC</text>
+            </g>
+
+            {/* Load */}
+            <g transform="translate(350, 80)">
+              <rect x="-15" y="-25" width="30" height="50" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="4" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">LOAD</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Electrodynamometer Wattmeter: Current Coil (CC in Series) and Potential Coil (PC in Parallel)"}</p>
+        </div>
+      );
+
+    case 'instrument-energy-meter':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 420 150" className="w-full max-w-lg h-40">
+            {/* Pressure Magnet / Shunt Magnet */}
+            <rect x="180" y="20" width="60" height="35" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" rx="4" />
+            <text x="210" y="42" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Shunt Coil (V)</text>
+
+            {/* Rotating Aluminum Disc */}
+            <ellipse cx="210" cy="75" rx="140" ry="12" fill="#475569" stroke="#cbd5e1" strokeWidth="2" />
+            <text x="210" y="78" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">Rotating Aluminum Disc (Eddy Currents)</text>
+
+            {/* Series Current Magnet */}
+            <rect x="180" y="95" width="60" height="35" fill="#1e293b" stroke="#ef4444" strokeWidth="2" rx="4" />
+            <text x="210" y="117" textAnchor="middle" fill="#ef4444" fontSize="9" fontWeight="bold">Series Coil (I)</text>
+
+            {/* Permanent Brake Magnet */}
+            <path d="M 320 60 L 350 60 L 350 90 L 320 90 Z" fill="#991b1b" stroke="#f87171" strokeWidth="1.5" />
+            <text x="335" y="80" textAnchor="middle" fill="#ffffff" fontSize="7" fontWeight="bold">Brake Magnet</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Single-Phase Induction Energy Meter: Shunt Magnet, Series Magnet, Aluminum Disc & Brake Magnet"}</p>
+        </div>
+      );
+
+    case 'instrument-digital-dvm':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 120" className="w-full max-w-lg h-36">
+            <g transform="translate(10, 35)">
+              <rect width="80" height="50" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="40" y="24" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Input</text>
+              <text x="40" y="38" textAnchor="middle" fill="#94a3b8" fontSize="8">Attenuator</text>
+            </g>
+            <path d="M 90 60 L 115 60" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(115, 35)">
+              <rect width="85" height="50" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="42" y="24" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Analog-Digital</text>
+              <text x="42" y="38" textAnchor="middle" fill="#f59e0b" fontSize="8">Converter (ADC)</text>
+            </g>
+            <path d="M 200 60 L 225 60" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(225, 35)">
+              <rect width="85" height="50" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+              <text x="42" y="24" textAnchor="middle" fill="#c084fc" fontSize="10" fontWeight="bold">Counter &</text>
+              <text x="42" y="38" textAnchor="middle" fill="#c084fc" fontSize="8">Latch Circuit</text>
+            </g>
+            <path d="M 310 60 L 335 60" stroke="#a855f7" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            <g transform="translate(335, 35)">
+              <rect width="95" height="50" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="47.5" y="24" textAnchor="middle" fill="#34d399" fontSize="12" fontWeight="bold" fontFamily="monospace">230.5 V</text>
+              <text x="47.5" y="38" textAnchor="middle" fill="#34d399" fontSize="8">7-Seg LED Display</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Digital Voltmeter (DVM) Architecture: Attenuator -> ADC -> Latch -> Digital Display"}</p>
+        </div>
+      );
+
+    case 'transducers-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 140" className="w-full max-w-lg h-36">
+            {/* Active Transducers */}
+            <g transform="translate(20, 20)">
+              <rect width="185" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="92.5" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Active Transducers (Self-Generating)</text>
+              <text x="92.5" y="45" textAnchor="middle" fill="#94a3b8" fontSize="8">No External Power Required</text>
+              <text x="92.5" y="65" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">Piezoelectric, Thermocouple, Solar Cell</text>
+            </g>
+
+            {/* Passive Transducers */}
+            <g transform="translate(235, 20)">
+              <rect width="185" height="100" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="92.5" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Passive Transducers (Externally Powered)</text>
+              <text x="92.5" y="45" textAnchor="middle" fill="#94a3b8" fontSize="8">Requires External DC Source</text>
+              <text x="92.5" y="65" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="bold">LVDT, Strain Gauge, RTD, Thermistor</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Transducer Classification: Active (Self-Generating) vs Passive (Requires Auxiliary Power)"}</p>
+        </div>
+      );
+
     case 'troubleshooting-flow':
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
@@ -860,6 +1030,598 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
             </g>
           </svg>
           <p className="text-xs font-mono text-cyan-300 mt-1">{caption || "Systematic Diagnostic Troubleshooting Methodology Flowchart"}</p>
+        </div>
+      );
+
+    case 'circuit-dc-network-terminology':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 220" className="w-full max-w-lg h-auto">
+            {/* Outer Mesh Loop */}
+            <rect x="50" y="30" width="360" height="150" rx="6" fill="none" stroke="#38bdf8" strokeWidth="3" />
+            {/* Center Branch Line */}
+            <line x1="230" y1="30" x2="230" y2="180" stroke="#38bdf8" strokeWidth="3" />
+
+            {/* Nodes */}
+            <circle cx="230" cy="30" r="7" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+            <text x="230" y="18" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Essential Node A (3 Branches)</text>
+
+            <circle cx="230" cy="180" r="7" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
+            <text x="230" y="198" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Essential Node B (Reference)</text>
+
+            {/* Active Element (DC Source) */}
+            <g transform="translate(50, 105)">
+              <circle cx="0" cy="0" r="18" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="0" y="-3" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">+</text>
+              <text x="0" y="11" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">-</text>
+              <text x="-25" y="4" textAnchor="end" fill="#38bdf8" fontSize="10" fontWeight="bold">V_s (Active)</text>
+            </g>
+
+            {/* Passive Linear Element (R1) */}
+            <g transform="translate(140, 30)">
+              <rect x="-22" y="-12" width="44" height="24" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R₁ (Linear)</text>
+            </g>
+
+            {/* Non-Linear / Unilateral Element (Diode in Branch 2) */}
+            <g transform="translate(230, 105)">
+              <polygon points="0,-12 -12,12 12,12" fill="#1e293b" stroke="#ec4899" strokeWidth="2" transform="rotate(180)" />
+              <line x1="-12" y1="12" x2="12" y2="12" stroke="#ec4899" strokeWidth="2.5" />
+              <text x="22" y="4" fill="#f472b6" fontSize="10" fontWeight="bold">Diode (Unilateral)</text>
+            </g>
+
+            {/* Passive Bilateral Element (R2 in Branch 3) */}
+            <g transform="translate(320, 30)">
+              <rect x="-22" y="-12" width="44" height="24" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R₂ (Bilateral)</text>
+            </g>
+
+            {/* Mesh 1 & Mesh 2 labels */}
+            <text x="140" y="110" textAnchor="middle" fill="#a855f7" fontSize="11" fontWeight="bold">Mesh 1 (Loop 1)</text>
+            <text x="320" y="110" textAnchor="middle" fill="#a855f7" fontSize="11" fontWeight="bold">Mesh 2 (Loop 2)</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center">
+            {caption || "DC Network Topology: Active/Passive, Linear/Non-linear, Bilateral/Unilateral, Nodes & Meshes"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-kcl-node':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 380 200" className="w-full max-w-md h-auto">
+            {/* Central Node */}
+            <circle cx="190" cy="100" r="12" fill="#38bdf8" stroke="#ffffff" strokeWidth="3" />
+            <text x="190" y="104" textAnchor="middle" fill="#0f172a" fontSize="10" fontWeight="bold">N</text>
+
+            {/* Incoming Branch 1 */}
+            <line x1="50" y1="40" x2="190" y2="100" stroke="#38bdf8" strokeWidth="3" />
+            <polygon points="120,70 110,62 112,74" fill="#38bdf8" />
+            <text x="70" y="45" fill="#38bdf8" fontSize="11" fontWeight="bold">I₁ (In)</text>
+
+            {/* Incoming Branch 2 */}
+            <line x1="50" y1="160" x2="190" y2="100" stroke="#34d399" strokeWidth="3" />
+            <polygon points="120,130 112,126 110,138" fill="#34d399" />
+            <text x="70" y="170" fill="#34d399" fontSize="11" fontWeight="bold">I₂ (In)</text>
+
+            {/* Outgoing Branch 3 */}
+            <line x1="190" y1="100" x2="330" y2="40" stroke="#f59e0b" strokeWidth="3" />
+            <polygon points="260,70 268,62 270,74" fill="#f59e0b" />
+            <text x="310" y="45" fill="#f59e0b" fontSize="11" fontWeight="bold">I₃ (Out)</text>
+
+            {/* Outgoing Branch 4 */}
+            <line x1="190" y1="100" x2="330" y2="160" stroke="#ec4899" strokeWidth="3" />
+            <polygon points="260,130 270,126 268,138" fill="#ec4899" />
+            <text x="310" y="170" fill="#ec4899" fontSize="11" fontWeight="bold">I₄ (Out)</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1 text-center font-bold">
+            {caption || "Kirchhoff's Current Law (KCL): ΣI_in = ΣI_out  ⇒  I₁ + I₂ = I₃ + I₄"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-kvl-loop':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 380 200" className="w-full max-w-md h-auto">
+            <rect x="50" y="30" width="280" height="140" rx="8" fill="none" stroke="#38bdf8" strokeWidth="3" />
+
+            {/* Loop CW Arrow */}
+            <path d="M 170,100 A 20,20 0 1,1 210,100" fill="none" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <text x="190" y="104" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Loop CW</text>
+
+            {/* Voltage Source V_S */}
+            <g transform="translate(50, 100)">
+              <circle cx="0" cy="0" r="18" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="0" y="-3" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">+</text>
+              <text x="0" y="11" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">-</text>
+              <text x="-25" y="4" textAnchor="end" fill="#38bdf8" fontSize="10" fontWeight="bold">V_s (+ Rise)</text>
+            </g>
+
+            {/* Resistor R1 */}
+            <g transform="translate(190, 30)">
+              <rect x="-25" y="-12" width="50" height="24" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R₁ (- Drop)</text>
+            </g>
+
+            {/* Resistor R2 */}
+            <g transform="translate(330, 100)">
+              <rect x="-12" y="-25" width="24" height="50" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="18" y="4" fill="#34d399" fontSize="10" fontWeight="bold">R₂ (- Drop)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-1 text-center font-bold">
+            {caption || "Kirchhoff's Voltage Law (KVL): ΣV = 0  ⇒  V_s - V_R1 - V_R2 = 0"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-node-branch-topology':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 240" className="w-full max-w-lg h-auto">
+            {/* Outer Circuit Rect */}
+            <rect x="50" y="30" width="360" height="160" rx="8" fill="none" stroke="#475569" strokeWidth="2.5" />
+            
+            {/* Middle Branch Line */}
+            <line x1="230" y1="30" x2="230" y2="190" stroke="#475569" strokeWidth="2.5" />
+
+            {/* Essential Nodes (3+ elements) */}
+            <circle cx="230" cy="30" r="8" fill="#eab308" stroke="#fef08a" strokeWidth="2" />
+            <text x="230" y="16" textAnchor="middle" fill="#fef08a" fontSize="11" fontWeight="bold">Essential Node N1</text>
+
+            <circle cx="230" cy="190" r="8" fill="#38bdf8" stroke="#93c5fd" strokeWidth="2" />
+            <text x="230" y="212" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Ref Ground Node N0 (0V)</text>
+
+            {/* Non-essential Nodes (2 elements) */}
+            <circle cx="50" cy="110" r="5" fill="#94a3b8" />
+            <text x="35" y="114" textAnchor="end" fill="#cbd5e1" fontSize="10">Node A (Simple)</text>
+
+            <circle cx="410" cy="110" r="5" fill="#94a3b8" />
+            <text x="425" y="114" textAnchor="start" fill="#cbd5e1" fontSize="10">Node B (Simple)</text>
+
+            {/* Element Branches */}
+            <g transform="translate(140, 30)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Branch 1 (R₁)</text>
+            </g>
+
+            <g transform="translate(320, 30)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Branch 2 (R₂)</text>
+            </g>
+
+            <g transform="translate(230, 110)">
+              <rect x="-10" y="-20" width="20" height="40" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#34d399" fontSize="10" fontWeight="bold">Branch 3 (R₃)</text>
+            </g>
+
+            <g transform="translate(50, 110)">
+              <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="0" y="4" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Vs1</text>
+            </g>
+
+            {/* Loops & Meshes Highlights */}
+            <path d="M 120,80 A 18,18 0 1,1 150,80" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+            <text x="135" y="84" textAnchor="middle" fill="#fde047" fontSize="10" fontWeight="bold">Mesh 1</text>
+
+            <path d="M 300,80 A 18,18 0 1,1 330,80" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+            <text x="315" y="84" textAnchor="middle" fill="#fde047" fontSize="10" fontWeight="bold">Mesh 2</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Network Topology: Essential Nodes (3+ elements) | Independent Meshes M = B - N + 1"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-nodal-analysis':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 220" className="w-full max-w-lg h-auto">
+            {/* Ground Line */}
+            <line x1="60" y1="180" x2="380" y2="180" stroke="#475569" strokeWidth="3" />
+            <line x1="220" y1="180" x2="220" y2="200" stroke="#38bdf8" strokeWidth="3" />
+            <line x1="205" y1="200" x2="235" y2="200" stroke="#38bdf8" strokeWidth="3" />
+            <text x="220" y="215" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Reference Node (0 V)</text>
+
+            {/* Essential Nodes Va and Vb */}
+            <line x1="60" y1="50" x2="380" y2="50" stroke="#64748b" strokeWidth="2.5" />
+            <circle cx="150" cy="50" r="7" fill="#eab308" stroke="#fef08a" strokeWidth="2" />
+            <text x="150" y="32" textAnchor="middle" fill="#fef08a" fontSize="11" fontWeight="bold">Node Va</text>
+
+            <circle cx="290" cy="50" r="7" fill="#eab308" stroke="#fef08a" strokeWidth="2" />
+            <text x="290" y="32" textAnchor="middle" fill="#fef08a" fontSize="11" fontWeight="bold">Node Vb</text>
+
+            {/* Resistor Branches */}
+            <g transform="translate(220, 50)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R_shared</text>
+            </g>
+
+            <line x1="150" y1="50" x2="150" y2="180" stroke="#64748b" strokeWidth="2.5" />
+            <g transform="translate(150, 115)">
+              <rect x="-10" y="-20" width="20" height="40" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="15" y="4" fill="#34d399" fontSize="10" fontWeight="bold">R_g1</text>
+            </g>
+
+            <line x1="290" y1="50" x2="290" y2="180" stroke="#64748b" strokeWidth="2.5" />
+            <g transform="translate(290, 115)">
+              <rect x="-10" y="-20" width="20" height="40" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="15" y="4" fill="#34d399" fontSize="10" fontWeight="bold">R_g2</text>
+            </g>
+
+            {/* KCL Current Arrows */}
+            <path d="M 160,50 L 190,50" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="175" y="42" textAnchor="middle" fill="#38bdf8" fontSize="9">I = (Va - Vb)/R</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Nodal Analysis Formulation: Apply KCL at non-reference essential nodes Va and Vb"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-mesh-analysis':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 220" className="w-full max-w-lg h-auto">
+            <rect x="50" y="30" width="340" height="150" rx="6" fill="none" stroke="#475569" strokeWidth="2.5" />
+            <line x1="220" y1="30" x2="220" y2="180" stroke="#475569" strokeWidth="2.5" />
+
+            {/* Resistors */}
+            <g transform="translate(135, 30)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R₁</text>
+            </g>
+
+            <g transform="translate(305, 30)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="3" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R₂</text>
+            </g>
+
+            <g transform="translate(220, 105)">
+              <rect x="-10" y="-20" width="20" height="40" fill="#1e293b" stroke="#eab308" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#fef08a" fontSize="10" fontWeight="bold">R_m (Shared)</text>
+            </g>
+
+            {/* Mesh 1 CW Loop */}
+            <g transform="translate(135, 105)">
+              <path d="M -20,0 A 20,20 0 1,1 20,0" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+              <polygon points="20,0 15,-5 22,-2" fill="#f59e0b" />
+              <text x="0" y="4" textAnchor="middle" fill="#fde047" fontSize="10" fontWeight="bold">Mesh 1 (I₁)</text>
+            </g>
+
+            {/* Mesh 2 CW Loop */}
+            <g transform="translate(305, 105)">
+              <path d="M -20,0 A 20,20 0 1,1 20,0" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+              <polygon points="20,0 15,-5 22,-2" fill="#f59e0b" />
+              <text x="0" y="4" textAnchor="middle" fill="#fde047" fontSize="10" fontWeight="bold">Mesh 2 (I₂)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Mesh Analysis Formulation: KVL in Mesh 1 and Mesh 2 with shared drop R_m(I₁ - I₂)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-network-reduction':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 180" className="w-full max-w-lg h-auto">
+            <rect x="40" y="30" width="360" height="120" rx="6" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+            
+            {/* Source */}
+            <g transform="translate(40, 90)">
+              <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="4" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Vs</text>
+            </g>
+
+            {/* R1 Series */}
+            <g transform="translate(130, 30)">
+              <rect x="-20" y="-10" width="40" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="3" />
+              <text x="0" y="-15" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">R1 (Series)</text>
+            </g>
+
+            {/* Block 1 Parallel */}
+            <line x1="220" y1="30" x2="220" y2="150" stroke="#475569" strokeWidth="2" />
+            <g transform="translate(220, 60)">
+              <rect x="-10" y="-15" width="20" height="30" fill="#1e293b" stroke="#a855f7" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#d8b4fe" fontSize="10" fontWeight="bold">R2</text>
+            </g>
+            <g transform="translate(220, 120)">
+              <rect x="-10" y="-15" width="20" height="30" fill="#1e293b" stroke="#a855f7" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#d8b4fe" fontSize="10" fontWeight="bold">R3</text>
+            </g>
+
+            {/* Block 2 Parallel */}
+            <line x1="330" y1="30" x2="330" y2="150" stroke="#475569" strokeWidth="2" />
+            <g transform="translate(330, 60)">
+              <rect x="-10" y="-15" width="20" height="30" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#fef08a" fontSize="10" fontWeight="bold">R4</text>
+            </g>
+            <g transform="translate(330, 120)">
+              <rect x="-10" y="-15" width="20" height="30" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="3" />
+              <text x="16" y="4" fill="#fef08a" fontSize="10" fontWeight="bold">R5+R6</text>
+            </g>
+
+            {/* Reduction Arrow */}
+            <path d="M 370,90 L 395,90" stroke="#f43f5e" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="382" y="80" textAnchor="middle" fill="#f43f5e" fontSize="9" fontWeight="bold">Reduce → Req</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Multi-Stage Network Reduction: Combine parallel blocks from load toward source terminals"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-divider-networks':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 180" className="w-full max-w-lg h-auto">
+            {/* Voltage Divider Left */}
+            <g transform="translate(20, 0)">
+              <rect x="20" y="30" width="160" height="120" rx="6" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="20" cy="90" r="14" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="20" y="94" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Vs</text>
+              <g transform="translate(100, 30)">
+                <rect x="-15" y="-8" width="30" height="16" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="2" />
+                <text x="0" y="18" textAnchor="middle" fill="#34d399" fontSize="9">R1</text>
+              </g>
+              <g transform="translate(180, 90)">
+                <rect x="-8" y="-15" width="16" height="30" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="2" />
+                <text x="14" y="4" fill="#34d399" fontSize="9">R2 (Vx)</text>
+              </g>
+              <text x="100" y="165" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">VDR: Vx = Vs · R2/(R1+R2)</text>
+            </g>
+
+            {/* Divider Line */}
+            <line x1="225" y1="20" x2="225" y2="160" stroke="#334155" strokeWidth="2" strokeDasharray="4 4" />
+
+            {/* Current Divider Right */}
+            <g transform="translate(230, 0)">
+              <rect x="20" y="30" width="160" height="120" rx="6" fill="none" stroke="#f59e0b" strokeWidth="2" />
+              <g transform="translate(20, 90)">
+                <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+                <text x="0" y="4" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Is</text>
+              </g>
+              <line x1="100" y1="30" x2="100" y2="150" stroke="#475569" strokeWidth="2" />
+              <line x1="160" y1="30" x2="160" y2="150" stroke="#475569" strokeWidth="2" />
+              <g transform="translate(100, 90)">
+                <rect x="-8" y="-15" width="16" height="30" fill="#1e293b" stroke="#a855f7" strokeWidth="2" rx="2" />
+                <text x="-12" y="4" textAnchor="end" fill="#d8b4fe" fontSize="9">R1 (I1)</text>
+              </g>
+              <g transform="translate(160, 90)">
+                <rect x="-8" y="-15" width="16" height="30" fill="#1e293b" stroke="#a855f7" strokeWidth="2" rx="2" />
+                <text x="12" y="4" fill="#d8b4fe" fontSize="9">R2 (I2)</text>
+              </g>
+              <text x="100" y="165" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">CDR: I1 = Is · R2/(R1+R2)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Voltage Divider (Series) vs Current Divider (Parallel) Principles"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-star-delta':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 440 180" className="w-full max-w-lg h-auto">
+            {/* Delta Triangle Left */}
+            <g transform="translate(90, 90)">
+              <polygon points="0,-50 50,40 -50,40" fill="none" stroke="#a855f7" strokeWidth="2.5" />
+              <circle cx="0" cy="-50" r="4" fill="#a855f7" />
+              <text x="0" y="-58" textAnchor="middle" fill="#d8b4fe" fontSize="10" fontWeight="bold">A</text>
+
+              <circle cx="50" cy="40" r="4" fill="#a855f7" />
+              <text x="60" y="44" textAnchor="start" fill="#d8b4fe" fontSize="10" fontWeight="bold">B</text>
+
+              <circle cx="-50" cy="40" r="4" fill="#a855f7" />
+              <text x="-60" y="44" textAnchor="end" fill="#d8b4fe" fontSize="10" fontWeight="bold">C</text>
+
+              <text x="32" y="-10" fill="#f472b6" fontSize="9" fontWeight="bold">RAB</text>
+              <text x="0" y="55" textAnchor="middle" fill="#f472b6" fontSize="9" fontWeight="bold">RBC</text>
+              <text x="-32" y="-10" textAnchor="end" fill="#f472b6" fontSize="9" fontWeight="bold">RCA</text>
+              <text x="0" y="0" textAnchor="middle" fill="#a855f7" fontSize="12" fontWeight="bold">Delta (Δ)</text>
+            </g>
+
+            {/* Transform Symbol Middle */}
+            <g transform="translate(220, 90)">
+              <path d="M -20,-10 L 20,-10 M 10,-18 L 20,-10 L 10,-2" stroke="#38bdf8" strokeWidth="2.5" />
+              <path d="M 20,10 L -20,10 M -10,2 L -20,10 L -10,18" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="0" y="-24" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Δ ↔ Y</text>
+            </g>
+
+            {/* Star Wye Right */}
+            <g transform="translate(350, 90)">
+              <circle cx="0" cy="0" r="4" fill="#38bdf8" />
+              <text x="10" y="4" fill="#93c5fd" fontSize="9">N</text>
+
+              <line x1="0" y1="0" x2="0" y2="-50" stroke="#38bdf8" strokeWidth="2.5" />
+              <circle cx="0" cy="-50" r="4" fill="#38bdf8" />
+              <text x="0" y="-58" textAnchor="middle" fill="#93c5fd" fontSize="10" fontWeight="bold">A</text>
+
+              <line x1="0" y1="0" x2="45" y2="35" stroke="#38bdf8" strokeWidth="2.5" />
+              <circle cx="45" cy="35" r="4" fill="#38bdf8" />
+              <text x="55" y="40" textAnchor="start" fill="#93c5fd" fontSize="10" fontWeight="bold">B</text>
+
+              <line x1="0" y1="0" x2="-45" y2="35" stroke="#38bdf8" strokeWidth="2.5" />
+              <circle cx="-45" cy="35" r="4" fill="#38bdf8" />
+              <text x="-55" y="40" textAnchor="end" fill="#93c5fd" fontSize="10" fontWeight="bold">C</text>
+
+              <text x="8" y="-25" fill="#34d399" fontSize="9" fontWeight="bold">RA</text>
+              <text x="22" y="10" fill="#34d399" fontSize="9" fontWeight="bold">RB</text>
+              <text x="-22" y="10" textAnchor="end" fill="#34d399" fontSize="9" fontWeight="bold">RC</text>
+              <text x="0" y="60" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">Star (Y)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Terminal Equivalence Transformation between Delta (Δ) Mesh and Star (Y) Wye Configuration"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-network-theorems-map':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 520 220" className="w-full max-w-xl h-auto">
+            {/* Center Box: Complex Network */}
+            <rect x="180" y="20" width="160" height="40" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="260" y="44" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">Complex Linear Network</text>
+
+            {/* Downward Lines */}
+            <path d="M 260,60 L 260,85 M 260,85 L 60,85 L 60,110 M 260,85 L 160,85 L 160,110 M 260,85 L 260,110 M 260,85 L 360,85 L 360,110 M 260,85 L 460,85 L 460,110" stroke="#475569" strokeWidth="2" fill="none" />
+
+            {/* Theorem Cards */}
+            {/* 1. Thevenin */}
+            <g transform="translate(60, 110)">
+              <rect x="-45" y="0" width="90" height="85" rx="5" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="18" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Thevenin</text>
+              <line x1="-35" y1="26" x2="35" y2="26" stroke="#334155" strokeWidth="1" />
+              <text x="0" y="42" textAnchor="middle" fill="#cbd5e1" fontSize="9">Replaces with</text>
+              <text x="0" y="56" textAnchor="middle" fill="#93c5fd" fontSize="9" fontWeight="bold">Vth + Rth series</text>
+              <text x="0" y="70" textAnchor="middle" fill="#64748b" fontSize="8">Loads & Power</text>
+            </g>
+
+            {/* 2. Norton */}
+            <g transform="translate(160, 110)">
+              <rect x="-45" y="0" width="90" height="85" rx="5" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" />
+              <text x="0" y="18" textAnchor="middle" fill="#f59e0b" fontSize="11" fontWeight="bold">Norton</text>
+              <line x1="-35" y1="26" x2="35" y2="26" stroke="#334155" strokeWidth="1" />
+              <text x="0" y="42" textAnchor="middle" fill="#cbd5e1" fontSize="9">Replaces with</text>
+              <text x="0" y="56" textAnchor="middle" fill="#fef08a" fontSize="9" fontWeight="bold">IN || RN parallel</text>
+              <text x="0" y="70" textAnchor="middle" fill="#64748b" fontSize="8">Parallel Analysis</text>
+            </g>
+
+            {/* 3. Superposition */}
+            <g transform="translate(260, 110)">
+              <rect x="-45" y="0" width="90" height="85" rx="5" fill="#1e293b" stroke="#a855f7" strokeWidth="2" />
+              <text x="0" y="18" textAnchor="middle" fill="#a855f7" fontSize="10" fontWeight="bold">Superposition</text>
+              <line x1="-35" y1="26" x2="35" y2="26" stroke="#334155" strokeWidth="1" />
+              <text x="0" y="42" textAnchor="middle" fill="#cbd5e1" fontSize="9">Analyzes</text>
+              <text x="0" y="56" textAnchor="middle" fill="#d8b4fe" fontSize="9" fontWeight="bold">1 source at a time</text>
+              <text x="0" y="70" textAnchor="middle" fill="#64748b" fontSize="8">Multi-Source</text>
+            </g>
+
+            {/* 4. Max Power Transfer */}
+            <g transform="translate(360, 110)">
+              <rect x="-45" y="0" width="90" height="85" rx="5" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <text x="0" y="18" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Max Power</text>
+              <line x1="-35" y1="26" x2="35" y2="26" stroke="#334155" strokeWidth="1" />
+              <text x="0" y="42" textAnchor="middle" fill="#cbd5e1" fontSize="9">Finds RL for</text>
+              <text x="0" y="56" textAnchor="middle" fill="#6ee7b7" fontSize="9" fontWeight="bold">Pmax when RL=Rth</text>
+              <text x="0" y="70" textAnchor="middle" fill="#64748b" fontSize="8">Matching Load</text>
+            </g>
+
+            {/* 5. Reciprocity */}
+            <g transform="translate(460, 110)">
+              <rect x="-45" y="0" width="90" height="85" rx="5" fill="#1e293b" stroke="#ec4899" strokeWidth="2" />
+              <text x="0" y="18" textAnchor="middle" fill="#ec4899" fontSize="10" fontWeight="bold">Reciprocity</text>
+              <line x1="-35" y1="26" x2="35" y2="26" stroke="#334155" strokeWidth="1" />
+              <text x="0" y="42" textAnchor="middle" fill="#cbd5e1" fontSize="9">Interchanges</text>
+              <text x="0" y="56" textAnchor="middle" fill="#f472b6" fontSize="9" fontWeight="bold">Source & Response</text>
+              <text x="0" y="70" textAnchor="middle" fill="#64748b" fontSize="8">Symmetric Nets</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Overview Map of Fundamental Network Theorems and Their Engineering Roles"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-thevenin-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 480 160" className="w-full max-w-lg h-auto">
+            {/* Step 1: Original */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="90" height="70" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="45" y="30" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Complex</text>
+              <text x="45" y="45" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Network</text>
+              <line x1="90" y1="20" x2="110" y2="20" stroke="#475569" strokeWidth="2" />
+              <line x1="90" y1="50" x2="110" y2="50" stroke="#475569" strokeWidth="2" />
+              <rect x="110" y="10" width="16" height="50" fill="#1e293b" stroke="#ec4899" strokeWidth="2" rx="2" />
+              <text x="118" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">1. Original Network</text>
+            </g>
+
+            {/* Arrow 1 */}
+            <path d="M 160,55 L 180,55" stroke="#f43f5e" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            {/* Step 2: Open Terminal */}
+            <g transform="translate(190, 20)">
+              <rect x="0" y="0" width="90" height="70" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="45" y="30" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Complex</text>
+              <text x="45" y="45" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Network</text>
+              <line x1="90" y1="20" x2="120" y2="20" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="90" y1="50" x2="120" y2="50" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="120" cy="20" r="3" fill="#f43f5e" />
+              <circle cx="120" cy="50" r="3" fill="#f43f5e" />
+              <text x="65" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">2. Find Voc & Rth</text>
+            </g>
+
+            {/* Arrow 2 */}
+            <path d="M 325,55 L 345,55" stroke="#f43f5e" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            {/* Step 3: Thevenin Equivalent */}
+            <g transform="translate(350, 20)">
+              <rect x="0" y="0" width="110" height="80" rx="4" fill="none" stroke="#34d399" strokeWidth="2" strokeDasharray="4 3" />
+              <circle cx="20" cy="40" r="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="20" y="43" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold">Vth</text>
+              <rect x="50" y="10" width="30" height="14" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="2" />
+              <text x="65" y="21" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">Rth</text>
+              <text x="55" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">3. Thevenin Equivalent</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Transformation Sequence: Any linear two-terminal network reduces to Vth in series with Rth"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-norton-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 480 160" className="w-full max-w-lg h-auto">
+            {/* Step 1: Original */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="90" height="70" rx="4" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="45" y="30" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Complex</text>
+              <text x="45" y="45" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Network</text>
+              <line x1="90" y1="20" x2="110" y2="20" stroke="#475569" strokeWidth="2" />
+              <line x1="90" y1="50" x2="110" y2="50" stroke="#475569" strokeWidth="2" />
+              <rect x="110" y="10" width="16" height="50" fill="#1e293b" stroke="#ec4899" strokeWidth="2" rx="2" />
+              <text x="118" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">1. Original Network</text>
+            </g>
+
+            {/* Arrow 1 */}
+            <path d="M 160,55 L 180,55" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            {/* Step 2: Shorted Terminals */}
+            <g transform="translate(190, 20)">
+              <rect x="0" y="0" width="90" height="70" rx="4" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="45" y="30" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Complex</text>
+              <text x="45" y="45" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Network</text>
+              <line x1="90" y1="20" x2="120" y2="20" stroke="#f59e0b" strokeWidth="2" />
+              <line x1="90" y1="50" x2="120" y2="50" stroke="#f59e0b" strokeWidth="2" />
+              <line x1="120" y1="20" x2="120" y2="50" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="65" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">2. Find Isc & RN</text>
+            </g>
+
+            {/* Arrow 2 */}
+            <path d="M 325,55 L 345,55" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrow)" />
+
+            {/* Step 3: Norton Equivalent */}
+            <g transform="translate(350, 20)">
+              <rect x="0" y="0" width="110" height="80" rx="4" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 3" />
+              <circle cx="25" cy="40" r="12" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="25" y="43" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">IN</text>
+              <rect x="70" y="25" width="14" height="30" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="2" />
+              <text x="77" y="68" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">RN</text>
+              <text x="55" y="105" textAnchor="middle" fill="#cbd5e1" fontSize="9">3. Norton Equivalent</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-bold">
+            {caption || "Transformation Sequence: Any linear two-terminal network reduces to IN in parallel with RN"}
+          </p>
         </div>
       );
 
