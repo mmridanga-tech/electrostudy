@@ -58,6 +58,9 @@ import { ReactanceComparisonAnimation } from './interactive/ReactanceComparisonA
 import { SeriesRLRCAnimation } from './interactive/SeriesRLRCAnimation';
 import { SeriesRLCAnimation } from './interactive/SeriesRLCAnimation';
 import { ImpedanceAdmittanceAnimation } from './interactive/ImpedanceAdmittanceAnimation';
+import { SeriesParallelACAnimation } from './interactive/SeriesParallelACAnimation';
+import { ResonanceAnimation } from './interactive/ResonanceAnimation';
+import { ResonanceQBandwidthAnimation } from './interactive/ResonanceQBandwidthAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -188,6 +191,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-ac-impedance-admittance' || lessonId === 'lsn-ch5-ac-impedance-admittance') {
     return <ImpedanceAdmittanceAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-series-parallel' || lessonId === 'lsn-ch5-ac-series-parallel') {
+    return <SeriesParallelACAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-resonance' || lessonId === 'lsn-ch5-resonance') {
+    return <ResonanceAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-resonant-frequency-q' || lessonId === 'lsn-ch5-resonant-frequency-q') {
+    return <ResonanceQBandwidthAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

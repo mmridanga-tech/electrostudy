@@ -2,6 +2,9 @@ import { Lesson } from '../types';
 import { LESSON_SERIES_RL_RC } from './chapter5Lesson10';
 import { LESSON_SERIES_RLC } from './chapter5Lesson11';
 import { LESSON_AC_IMPEDANCE_ADMITTANCE } from './chapter5Lesson12';
+import { LESSON_AC_SERIES_PARALLEL } from './chapter5Lesson13';
+import { LESSON_RESONANCE } from './chapter5Lesson14';
+import { LESSON_RESONANT_FREQUENCY_Q } from './chapter5Lesson15';
 
 export const LESSON_AC_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch5-ac-fundamentals',
@@ -2556,7 +2559,14 @@ export const LESSON_REACTANCE_COMPARISON: Lesson = {
   ]
 };
 
-export { LESSON_SERIES_RL_RC, LESSON_SERIES_RLC, LESSON_AC_IMPEDANCE_ADMITTANCE };
+export {
+  LESSON_SERIES_RL_RC,
+  LESSON_SERIES_RLC,
+  LESSON_AC_IMPEDANCE_ADMITTANCE,
+  LESSON_AC_SERIES_PARALLEL,
+  LESSON_RESONANCE,
+  LESSON_RESONANT_FREQUENCY_Q
+};
 
 export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-ac-fundamentals': LESSON_AC_FUNDAMENTALS,
@@ -2570,5 +2580,8 @@ export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-inductive-reactance': LESSON_REACTANCE_COMPARISON,
   'ch5-series-rl-rc': LESSON_SERIES_RL_RC,
   'ch5-series-rlc': LESSON_SERIES_RLC,
-  'ch5-ac-impedance-admittance': LESSON_AC_IMPEDANCE_ADMITTANCE
+  'ch5-ac-impedance-admittance': LESSON_AC_IMPEDANCE_ADMITTANCE,
+  'ch5-ac-series-parallel': LESSON_AC_SERIES_PARALLEL,
+  'ch5-resonance': LESSON_RESONANCE,
+  'ch5-resonant-frequency-q': LESSON_RESONANT_FREQUENCY_Q
 };
