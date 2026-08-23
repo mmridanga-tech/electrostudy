@@ -78,6 +78,9 @@ import { DCMotorTypesAnimation } from './interactive/DCMotorTypesAnimation';
 import { DCMotorStarterAnimation } from './interactive/DCMotorStarterAnimation';
 import { DCMotorSpeedControlAnimation } from './interactive/DCMotorSpeedControlAnimation';
 import { DCMotorBrakingAnimation } from './interactive/DCMotorBrakingAnimation';
+import { TransformerEMFAnimation } from './interactive/TransformerEMFAnimation';
+import { TransformerConstructionCoolingAnimation } from './interactive/TransformerConstructionCoolingAnimation';
+import { TransformerEquivalentCircuitAnimation } from './interactive/TransformerEquivalentCircuitAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -268,6 +271,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch6-dc-motor-braking' || lessonId === 'lsn-ch6-dc-motor-braking') {
     return <DCMotorBrakingAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-fundamentals' || lessonId === 'lsn-ch6-transformer-fundamentals') {
+    return <TransformerEMFAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-types-construction' || lessonId === 'lsn-ch6-transformer-types-construction') {
+    return <TransformerConstructionCoolingAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-equivalent-circuit' || lessonId === 'lsn-ch6-transformer-equivalent-circuit') {
+    return <TransformerEquivalentCircuitAnimation language={currentLanguage} />;
   }
   return null;
 };

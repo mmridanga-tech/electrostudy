@@ -3268,6 +3268,278 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'transformer-basic':
+    case 'circuit-transformer-basic':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-lg h-56">
+            <defs>
+              <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#334155" />
+                <stop offset="50%" stopColor="#1e293b" />
+                <stop offset="100%" stopColor="#0f172a" />
+              </linearGradient>
+              <marker id="fluxArrow" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#38bdf8" />
+              </marker>
+            </defs>
+
+            {/* Laminated Silicon Steel Core (Outer & Inner Window) */}
+            <rect x="140" y="25" width="260" height="170" rx="8" fill="url(#coreGrad)" stroke="#64748b" strokeWidth="2.5" />
+            <rect x="200" y="55" width="140" height="110" rx="4" fill="#020617" stroke="#475569" strokeWidth="2" />
+            
+            {/* Core Label */}
+            <text x="270" y="105" textAnchor="middle" fill="#94a3b8" fontSize="10" fontWeight="bold">Laminated CRGO</text>
+            <text x="270" y="120" textAnchor="middle" fill="#64748b" fontSize="9">Silicon Steel Core</text>
+
+            {/* Alternating Flux Path (Dashed with arrows) */}
+            <path d="M 170 40 L 370 40 A 10 10 0 0 1 380 50 L 380 170 A 10 10 0 0 1 370 180 L 170 180 A 10 10 0 0 1 160 170 L 160 50 A 10 10 0 0 1 170 40 Z" 
+                  fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="6 4" />
+            <path d="M 260 40 L 280 40" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#fluxArrow)" />
+            <path d="M 380 100 L 380 120" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#fluxArrow)" />
+            <path d="M 280 180 L 260 180" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#fluxArrow)" />
+            <path d="M 160 120 L 160 100" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#fluxArrow)" />
+            <text x="270" y="34" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Mutual Flux Φ(t) = Φm sin(ωt)</text>
+
+            {/* Primary Winding (Left Limb) */}
+            <g transform="translate(130, 60)">
+              {/* Primary Coils */}
+              {[0, 18, 36, 54, 72, 90].map((y, i) => (
+                <g key={`p-${i}`}>
+                  <rect x="0" y={y} width="20" height="12" rx="4" fill="#d97706" stroke="#fbbf24" strokeWidth="1.5" />
+                  <ellipse cx="10" cy={y + 6} rx="5" ry="3" fill="#b45309" />
+                </g>
+              ))}
+              {/* Primary Leads */}
+              <path d="M 0 0 L -80 0" stroke="#fbbf24" strokeWidth="2" />
+              <path d="M 0 102 L -80 102" stroke="#fbbf24" strokeWidth="2" />
+              <circle cx="-80" cy="0" r="4" fill="#fbbf24" />
+              <circle cx="-80" cy="102" r="4" fill="#fbbf24" />
+              <text x="-90" y="5" textAnchor="end" fill="#fbbf24" fontSize="10" fontWeight="bold">V1 (AC Source)</text>
+              <text x="-90" y="55" textAnchor="end" fill="#fbbf24" fontSize="10" fontWeight="bold">Primary (N1)</text>
+              <text x="-90" y="70" textAnchor="end" fill="#fbbf24" fontSize="9">I1 → Winding</text>
+              <text x="-90" y="85" textAnchor="end" fill="#38bdf8" fontSize="9">E1 = 4.44 f N1 Φm</text>
+            </g>
+
+            {/* Secondary Winding (Right Limb) */}
+            <g transform="translate(390, 60)">
+              {/* Secondary Coils */}
+              {[0, 15, 30, 45, 60, 75, 90, 105].map((y, i) => (
+                <g key={`s-${i}`}>
+                  <rect x="0" y={y} width="20" height="10" rx="4" fill="#2563eb" stroke="#60a5fa" strokeWidth="1.5" />
+                  <ellipse cx="10" cy={y + 5} rx="5" ry="2.5" fill="#1d4ed8" />
+                </g>
+              ))}
+              {/* Secondary Leads */}
+              <path d="M 20 0 L 100 0" stroke="#60a5fa" strokeWidth="2" />
+              <path d="M 20 115 L 100 115" stroke="#60a5fa" strokeWidth="2" />
+              <circle cx="100" cy="0" r="4" fill="#60a5fa" />
+              <circle cx="100" cy="115" r="4" fill="#60a5fa" />
+              <text x="110" y="5" fill="#60a5fa" fontSize="10" fontWeight="bold">V2 / Load Terminals</text>
+              <text x="110" y="55" fill="#60a5fa" fontSize="10" fontWeight="bold">Secondary (N2)</text>
+              <text x="110" y="70" fill="#60a5fa" fontSize="9">I2 → Connected Load</text>
+              <text x="110" y="85" fill="#38bdf8" fontSize="9">E2 = 4.44 f N2 Φm</text>
+            </g>
+
+            {/* Transformation Ratio Banner */}
+            <rect x="180" y="193" width="180" height="22" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="1" />
+            <text x="270" y="208" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold" fontFamily="monospace">
+              E2 / E1 = N2 / N1 = a = V2 / V1
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Single-Phase Transformer Working Principle & Alternating Flux Mutual Induction"}
+          </p>
+        </div>
+      );
+
+    case 'transformer-construction':
+    case 'circuit-transformer-construction':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 560 230" className="w-full max-w-xl h-60">
+            {/* Left: Core Type vs Shell Type */}
+            <g transform="translate(10, 10)">
+              {/* Core Type */}
+              <rect x="0" y="0" width="165" height="195" rx="6" fill="#090d16" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="82" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">1. Core-Type Design</text>
+              
+              {/* 2-legged Core */}
+              <rect x="25" y="35" width="115" height="110" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+              <rect x="55" y="55" width="55" height="70" fill="#020617" stroke="#475569" strokeWidth="1.5" />
+              
+              {/* Windings on both limbs */}
+              <rect x="18" y="60" width="14" height="60" rx="3" fill="#d97706" stroke="#fbbf24" />
+              <rect x="34" y="65" width="14" height="50" rx="3" fill="#2563eb" stroke="#60a5fa" />
+              <rect x="117" y="60" width="14" height="60" rx="3" fill="#d97706" stroke="#fbbf24" />
+              <rect x="133" y="65" width="14" height="50" rx="3" fill="#2563eb" stroke="#60a5fa" />
+
+              <text x="82" y="160" textAnchor="middle" fill="#94a3b8" fontSize="8">Windings surround core</text>
+              <text x="82" y="175" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">High Voltage Transmission</text>
+            </g>
+
+            <g transform="translate(185, 10)">
+              {/* Shell Type */}
+              <rect x="0" y="0" width="165" height="195" rx="6" fill="#090d16" stroke="#a855f7" strokeWidth="1.5" />
+              <text x="82" y="20" textAnchor="middle" fill="#c084fc" fontSize="10" fontWeight="bold">2. Shell-Type Design</text>
+              
+              {/* 3-legged Core */}
+              <rect x="15" y="35" width="135" height="110" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+              <rect x="38" y="55" width="30" height="70" fill="#020617" stroke="#475569" strokeWidth="1.5" />
+              <rect x="97" y="55" width="30" height="70" fill="#020617" stroke="#475569" strokeWidth="1.5" />
+              
+              {/* Central Winding */}
+              <rect x="70" y="60" width="12" height="60" rx="2" fill="#d97706" stroke="#fbbf24" />
+              <rect x="83" y="60" width="12" height="60" rx="2" fill="#2563eb" stroke="#60a5fa" />
+
+              <text x="82" y="160" textAnchor="middle" fill="#94a3b8" fontSize="8">Core surrounds windings</text>
+              <text x="82" y="175" textAnchor="middle" fill="#c084fc" fontSize="8" fontWeight="bold">High Mechanical Strength</text>
+            </g>
+
+            {/* Right: Oil Cooling System & Conservator */}
+            <g transform="translate(360, 10)">
+              <rect x="0" y="0" width="190" height="195" rx="6" fill="#090d16" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="95" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="bold">3. Oil Cooling (ONAN/ONAF)</text>
+
+              {/* Transformer Main Tank */}
+              <rect x="35" y="75" width="90" height="90" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
+              <rect x="38" y="78" width="84" height="84" fill="#0369a1" opacity="0.3" />
+              
+              {/* Core & Winding inside tank */}
+              <rect x="60" y="95" width="40" height="50" rx="3" fill="#b45309" stroke="#fbbf24" strokeWidth="1" />
+              <text x="80" y="125" textAnchor="middle" fill="#fff" fontSize="8" fontWeight="bold">Active Unit</text>
+
+              {/* Conservator Tank on top */}
+              <rect x="45" y="35" width="50" height="20" rx="6" fill="#475569" stroke="#94a3b8" strokeWidth="1.5" />
+              <text x="70" y="48" textAnchor="middle" fill="#fff" fontSize="7" fontWeight="bold">Conservator</text>
+
+              {/* Pipe connecting main tank to conservator with Buchholz relay */}
+              <path d="M 60 75 L 60 55" stroke="#94a3b8" strokeWidth="3" />
+              <circle cx="60" cy="65" r="4" fill="#ef4444" stroke="#fff" strokeWidth="1" />
+              <text x="48" y="68" textAnchor="end" fill="#ef4444" fontSize="7" fontWeight="bold">Buchholz</text>
+
+              {/* Silica Gel Breather */}
+              <path d="M 95 45 L 110 45 L 110 65" stroke="#94a3b8" strokeWidth="2" fill="none" />
+              <rect x="105" y="65" width="10" height="15" rx="2" fill="#0284c7" stroke="#38bdf8" strokeWidth="1" />
+              <text x="120" y="76" fill="#38bdf8" fontSize="7" fontWeight="bold">Breather</text>
+
+              {/* Radiator Cooling Tubes */}
+              <path d="M 125 90 C 145 90, 145 150, 125 150" stroke="#f59e0b" strokeWidth="3" fill="none" />
+              <path d="M 125 100 C 155 100, 155 140, 125 140" stroke="#f59e0b" strokeWidth="3" fill="none" />
+              <text x="150" y="123" textAnchor="middle" fill="#f59e0b" fontSize="7" fontWeight="bold">Radiator</text>
+
+              {/* Cooling Fans for ONAF */}
+              <circle cx="165" cy="120" r="10" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="165" y="123" textAnchor="middle" fill="#10b981" fontSize="7" fontWeight="bold">Fan</text>
+
+              <text x="95" y="180" textAnchor="middle" fill="#10b981" fontSize="8" fontWeight="bold">Dielectric Oil + Convection</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Transformer Structural Types (Core vs Shell) and Industrial Cooling Subsystems"}
+          </p>
+        </div>
+      );
+
+    case 'transformer-equivalent-circuit':
+    case 'circuit-transformer-equivalent-circuit':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 560 220" className="w-full max-w-xl h-56">
+            {/* Input Terminals V1 */}
+            <circle cx="30" cy="50" r="4" fill="#38bdf8" />
+            <circle cx="30" cy="170" r="4" fill="#38bdf8" />
+            <text x="25" y="115" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">V1</text>
+            
+            {/* Primary Main Line */}
+            <path d="M 30 50 L 70 50" stroke="#38bdf8" strokeWidth="2" />
+            <path d="M 30 170 L 530 170" stroke="#64748b" strokeWidth="2" />
+
+            {/* Primary Resistance R1 */}
+            <g transform="translate(70, 50)">
+              <rect x="0" y="-10" width="30" height="20" rx="3" fill="#1e293b" stroke="#fbbf24" strokeWidth="1.5" />
+              <text x="15" y="-15" textAnchor="middle" fill="#fbbf24" fontSize="9" fontWeight="bold">R1</text>
+              <text x="15" y="5" textAnchor="middle" fill="#fff" fontSize="8">Copper</text>
+            </g>
+
+            {/* Primary Leakage Reactance X1 */}
+            <g transform="translate(110, 50)">
+              <path d="M 0 0 L 10 0 C 15 -12, 25 -12, 30 0 C 35 -12, 45 -12, 50 0 L 60 0" stroke="#38bdf8" strokeWidth="2" fill="none" />
+              <text x="30" y="-15" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">jX1</text>
+            </g>
+
+            {/* Node before Shunt Branch */}
+            <circle cx="190" cy="50" r="3.5" fill="#fff" />
+            <circle cx="190" cy="170" r="3.5" fill="#fff" />
+            <path d="M 170 50 L 190 50 L 190 70" stroke="#38bdf8" strokeWidth="2" />
+            <path d="M 190 150 L 190 170" stroke="#38bdf8" strokeWidth="2" />
+
+            {/* Shunt Core Branch (Rc || jXm) */}
+            <g transform="translate(165, 70)">
+              {/* Branch split */}
+              <path d="M 25 0 L 5 0 L 5 15" stroke="#94a3b8" strokeWidth="1.5" />
+              <path d="M 25 0 L 45 0 L 45 15" stroke="#94a3b8" strokeWidth="1.5" />
+
+              {/* Rc (Core Loss) */}
+              <rect x="-5" y="15" width="20" height="40" rx="2" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="5" y="38" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">Rc</text>
+              <text x="-8" y="38" textAnchor="end" fill="#f59e0b" fontSize="7">Ic</text>
+
+              {/* Xm (Magnetizing) */}
+              <path d="M 45 15 C 55 20, 55 30, 45 35 C 55 40, 55 50, 45 55" stroke="#38bdf8" strokeWidth="1.5" fill="none" />
+              <text x="58" y="38" fill="#38bdf8" fontSize="8" fontWeight="bold">jXm</text>
+              <text x="38" y="38" textAnchor="end" fill="#38bdf8" fontSize="7">Im</text>
+
+              {/* Branch join */}
+              <path d="M 5 55 L 5 70 L 25 70" stroke="#94a3b8" strokeWidth="1.5" />
+              <path d="M 45 55 L 45 70 L 25 70" stroke="#94a3b8" strokeWidth="1.5" />
+              <text x="25" y="85" textAnchor="middle" fill="#c084fc" fontSize="8" fontWeight="bold">No-Load I0</text>
+            </g>
+
+            {/* Referred Secondary Line (Primary Referred Model) */}
+            <path d="M 190 50 L 280 50" stroke="#38bdf8" strokeWidth="2" />
+            <path d="M 235 45 L 245 50 L 235 55 Z" fill="#38bdf8" />
+            <text x="240" y="40" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold">I2' = I2/a</text>
+
+            {/* Referred Secondary Resistance R2' */}
+            <g transform="translate(280, 50)">
+              <rect x="0" y="-10" width="35" height="20" rx="3" fill="#1e293b" stroke="#10b981" strokeWidth="1.5" />
+              <text x="17" y="-15" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="bold">R2' = a²R2</text>
+              <text x="17" y="5" textAnchor="middle" fill="#fff" fontSize="8">Referred</text>
+            </g>
+
+            {/* Referred Secondary Reactance X2' */}
+            <g transform="translate(325, 50)">
+              <path d="M 0 0 L 10 0 C 15 -12, 25 -12, 30 0 C 35 -12, 45 -12, 50 0 L 60 0" stroke="#10b981" strokeWidth="2" fill="none" />
+              <text x="30" y="-15" textAnchor="middle" fill="#10b981" fontSize="9" fontWeight="bold">jX2' = ja²X2</text>
+            </g>
+
+            {/* Output Load Terminal V2' */}
+            <path d="M 385 50 L 460 50" stroke="#38bdf8" strokeWidth="2" />
+            <g transform="translate(460, 50)">
+              <rect x="0" y="15" width="30" height="90" rx="4" fill="#0f172a" stroke="#a855f7" strokeWidth="2" />
+              <text x="15" y="55" textAnchor="middle" fill="#c084fc" fontSize="9" fontWeight="bold">ZL'</text>
+              <text x="15" y="70" textAnchor="middle" fill="#94a3b8" fontSize="8">Load</text>
+              <path d="M 15 0 L 15 15" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 15 105 L 15 120" stroke="#64748b" strokeWidth="2" />
+            </g>
+
+            <circle cx="510" cy="50" r="4" fill="#c084fc" />
+            <circle cx="510" cy="170" r="4" fill="#c084fc" />
+            <text x="525" y="115" fill="#c084fc" fontSize="11" fontWeight="bold">V2' = aV2</text>
+
+            {/* Equivalent Formulas Summary at Bottom */}
+            <rect x="40" y="185" width="480" height="24" rx="4" fill="#090d16" stroke="#334155" />
+            <text x="280" y="201" textAnchor="middle" fill="#38bdf8" fontSize="9.5" fontFamily="monospace">
+              Req1 = R1 + a²R2  |  Xeq1 = X1 + a²X2  |  |Zeq1| = √(Req1² + Xeq1²)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Complete Transformer Equivalent Circuit Referred to Primary Side (Exact Model)"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

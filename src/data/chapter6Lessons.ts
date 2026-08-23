@@ -11,6 +11,9 @@ import { LESSON_DC_MOTOR_TYPES } from './chapter6Lesson9';
 import { LESSON_DC_MOTOR_STARTING } from './chapter6Lesson10';
 import { LESSON_DC_MOTOR_SPEED_CONTROL } from './chapter6Lesson11';
 import { LESSON_DC_MOTOR_BRAKING } from './chapter6Lesson12';
+import { LESSON_TRANSFORMER_FUNDAMENTALS } from './chapter6Lesson13';
+import { LESSON_TRANSFORMER_TYPES_CONSTRUCTION } from './chapter6Lesson14';
+import { LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT } from './chapter6Lesson15';
 
 export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-electrical-machines-fundamentals': LESSON_ELECTRICAL_MACHINES_FUNDAMENTALS,
@@ -25,6 +28,9 @@ export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-dc-motor-starting': LESSON_DC_MOTOR_STARTING,
   'ch6-dc-motor-speed-control': LESSON_DC_MOTOR_SPEED_CONTROL,
   'ch6-dc-motor-braking': LESSON_DC_MOTOR_BRAKING,
+  'ch6-transformer-fundamentals': LESSON_TRANSFORMER_FUNDAMENTALS,
+  'ch6-transformer-types-construction': LESSON_TRANSFORMER_TYPES_CONSTRUCTION,
+  'ch6-transformer-equivalent-circuit': LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT,
 };
 
 export {
@@ -40,5 +46,8 @@ export {
   LESSON_DC_MOTOR_STARTING,
   LESSON_DC_MOTOR_SPEED_CONTROL,
   LESSON_DC_MOTOR_BRAKING,
+  LESSON_TRANSFORMER_FUNDAMENTALS,
+  LESSON_TRANSFORMER_TYPES_CONSTRUCTION,
+  LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT,
 };
 
