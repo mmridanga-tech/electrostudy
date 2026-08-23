@@ -64,6 +64,8 @@ import { ResonanceQBandwidthAnimation } from './interactive/ResonanceQBandwidthA
 import { ACPowerTriangleAnimation } from './interactive/ACPowerTriangleAnimation';
 import { PowerFactorCorrectionAnimation } from './interactive/PowerFactorCorrectionAnimation';
 import { ThreePhaseACAnimation } from './interactive/ThreePhaseACAnimation';
+import { ThreePhaseStarDeltaAnimation } from './interactive/ThreePhaseStarDeltaAnimation';
+import { ACIndustrialCaseStudyAnimation } from './interactive/ACIndustrialCaseStudyAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -212,6 +214,12 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-three-phase-intro' || lessonId === 'lsn-ch5-three-phase-intro') {
     return <ThreePhaseACAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-star-delta-ac' || lessonId === 'lsn-ch5-star-delta-ac') {
+    return <ThreePhaseStarDeltaAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-practical-applications' || lessonId === 'lsn-ch5-ac-practical-applications') {
+    return <ACIndustrialCaseStudyAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

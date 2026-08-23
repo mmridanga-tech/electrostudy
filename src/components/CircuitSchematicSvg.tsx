@@ -2199,6 +2199,139 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-star-delta-connections':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-2xl h-60">
+            {/* Left Box: Star (Wye) Configuration */}
+            <g transform="translate(10, 10)">
+              <rect x="0" y="0" width="250" height="200" rx="8" fill="#0b1120" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="125" y="20" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Star (Y) Connection [4-Wire]</text>
+              <line x1="10" y1="28" x2="240" y2="28" stroke="#1e293b" strokeWidth="1" />
+              
+              {/* Star branches */}
+              <circle cx="125" cy="110" r="5" fill="#ffffff" stroke="#94a3b8" strokeWidth="2" />
+              <text x="135" y="113" fill="#ffffff" fontSize="9" fontWeight="bold">N</text>
+              
+              {/* Branch R */}
+              <line x1="70" y1="50" x2="125" y2="110" stroke="#ef4444" strokeWidth="2.5" />
+              <circle cx="70" cy="50" r="5" fill="#ef4444" />
+              <text x="55" y="53" fill="#f87171" fontSize="10" fontWeight="bold">R</text>
+
+              {/* Branch Y */}
+              <line x1="70" y1="170" x2="125" y2="110" stroke="#eab308" strokeWidth="2.5" />
+              <circle cx="70" cy="170" r="5" fill="#eab308" />
+              <text x="55" y="173" fill="#facc15" fontSize="10" fontWeight="bold">Y</text>
+
+              {/* Branch B */}
+              <line x1="180" y1="110" x2="125" y2="110" stroke="#3b82f6" strokeWidth="2.5" />
+              <circle cx="180" cy="110" r="5" fill="#3b82f6" />
+              <text x="190" y="113" fill="#60a5fa" fontSize="10" fontWeight="bold">B</text>
+
+              {/* Formulas */}
+              <rect x="15" y="145" width="220" height="45" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1" />
+              <text x="25" y="162" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">V_L = √3 · V_ph &nbsp;(V_ph = V_L / 1.732)</text>
+              <text x="25" y="178" fill="#a7f3d0" fontSize="9" fontWeight="bold" fontFamily="monospace">I_L = I_ph &nbsp;|&nbsp; Neutral I_N = 0 A</text>
+            </g>
+
+            {/* Right Box: Delta (Mesh) Configuration */}
+            <g transform="translate(280, 10)">
+              <rect x="0" y="0" width="250" height="200" rx="8" fill="#0b1120" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="125" y="20" textAnchor="middle" fill="#fbbf24" fontSize="11" fontWeight="bold">Delta (Δ) Connection [3-Wire]</text>
+              <line x1="10" y1="28" x2="240" y2="28" stroke="#1e293b" strokeWidth="1" />
+
+              {/* Delta triangle */}
+              {/* Vertex R (125, 45), Vertex Y (185, 140), Vertex B (65, 140) */}
+              <line x1="125" y1="45" x2="185" y2="140" stroke="#f59e0b" strokeWidth="2.5" />
+              <line x1="185" y1="140" x2="65" y2="140" stroke="#10b981" strokeWidth="2.5" />
+              <line x1="65" y1="140" x2="125" y2="45" stroke="#8b5cf6" strokeWidth="2.5" />
+
+              <circle cx="125" cy="45" r="5" fill="#ef4444" />
+              <text x="125" y="38" textAnchor="middle" fill="#f87171" fontSize="10" fontWeight="bold">R</text>
+
+              <circle cx="185" cy="140" r="5" fill="#eab308" />
+              <text x="195" y="145" fill="#facc15" fontSize="10" fontWeight="bold">Y</text>
+
+              <circle cx="65" cy="140" r="5" fill="#3b82f6" />
+              <text x="45" y="145" fill="#60a5fa" fontSize="10" fontWeight="bold">B</text>
+
+              {/* Formulas */}
+              <rect x="15" y="145" width="220" height="45" rx="4" fill="#0f172a" stroke="#334155" strokeWidth="1" />
+              <text x="25" y="162" fill="#fbbf24" fontSize="9" fontWeight="bold" fontFamily="monospace">V_L = V_ph &nbsp;(100% Line Voltage)</text>
+              <text x="25" y="178" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">I_L = √3 · I_ph &nbsp;(I_ph = I_L / 1.732)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-bold">
+            {caption || "Three-Phase Star (Wye) vs. Delta (Mesh) Topology: Line vs. Phase Quantities & Voltage/Current Transformations"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ac-industrial-applications':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-2xl h-60">
+            {/* Grid background */}
+            <rect width="540" height="220" fill="#090d16" rx="8" />
+
+            {/* Industrial Plant Feeder Busbar */}
+            <line x1="30" y1="30" x2="510" y2="30" stroke="#ef4444" strokeWidth="3" />
+            <line x1="30" y1="42" x2="510" y2="42" stroke="#eab308" strokeWidth="3" />
+            <line x1="30" y1="54" x2="510" y2="54" stroke="#3b82f6" strokeWidth="3" />
+            <line x1="30" y1="66" x2="510" y2="66" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 2" />
+
+            <text x="270" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="bold" fontFamily="monospace">
+              400 V / 50 Hz Three-Phase 4-Wire Industrial Feeder Bus (R-Y-B-N)
+            </text>
+
+            {/* Branch 1: Induction Motor Load */}
+            <g transform="translate(40, 80)">
+              <rect x="0" y="0" width="130" height="120" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="65" y="18" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">1. Induction Motor</text>
+              <line x1="10" y1="26" x2="120" y2="26" stroke="#1e293b" strokeWidth="1" />
+              <circle cx="65" cy="55" r="20" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="65" y="58" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">M</text>
+              <text x="65" y="66" textAnchor="middle" fill="#94a3b8" fontSize="7">3-Phase</text>
+              <text x="65" y="92" textAnchor="middle" fill="#fca5a5" fontSize="8" fontFamily="monospace">P = √3·V_L·I_L·cosφ</text>
+              <text x="65" y="105" textAnchor="middle" fill="#94a3b8" fontSize="7">Lagging PF (0.75-0.88)</text>
+              {/* Dropper lines from bus */}
+              <line x1="65" y1="-14" x2="65" y2="0" stroke="#38bdf8" strokeWidth="1.5" />
+            </g>
+
+            {/* Branch 2: APFC Capacitor Bank */}
+            <g transform="translate(205, 80)">
+              <rect x="0" y="0" width="130" height="120" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="65" y="18" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">2. APFC Cap Bank</text>
+              <line x1="10" y1="26" x2="120" y2="26" stroke="#1e293b" strokeWidth="1" />
+              {/* Capacitor symbol */}
+              <line x1="45" y1="50" x2="85" y2="50" stroke="#10b981" strokeWidth="2" />
+              <line x1="45" y1="56" x2="85" y2="56" stroke="#10b981" strokeWidth="2" />
+              <text x="65" y="75" textAnchor="middle" fill="#a7f3d0" fontSize="8" fontWeight="bold">Δ-Bank (kVAR)</text>
+              <text x="65" y="92" textAnchor="middle" fill="#34d399" fontSize="8" fontFamily="monospace">Q_c = P(tanφ₁-tanφ₂)</text>
+              <text x="65" y="105" textAnchor="middle" fill="#94a3b8" fontSize="7">Raises PF → 0.98</text>
+              {/* Dropper lines */}
+              <line x1="65" y1="-14" x2="65" y2="0" stroke="#10b981" strokeWidth="1.5" />
+            </g>
+
+            {/* Branch 3: Power Quality & Diagnostics */}
+            <g transform="translate(370, 80)">
+              <rect x="0" y="0" width="130" height="120" rx="6" fill="#0f172a" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="65" y="18" textAnchor="middle" fill="#c084fc" fontSize="9" fontWeight="bold">3. Diagnostics / LOTO</text>
+              <line x1="10" y1="26" x2="120" y2="26" stroke="#1e293b" strokeWidth="1" />
+              <rect x="40" y="38" width="50" height="28" rx="3" fill="#1e293b" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="65" y="55" textAnchor="middle" fill="#e9d5ff" fontSize="8" fontWeight="bold">True-RMS</text>
+              <text x="65" y="92" textAnchor="middle" fill="#e9d5ff" fontSize="8" fontFamily="monospace">10-Step Workflow</text>
+              <text x="65" y="105" textAnchor="middle" fill="#fbbf24" fontSize="7">NFPA 70E / OSHA</text>
+              {/* Dropper lines */}
+              <line x1="65" y1="-14" x2="65" y2="0" stroke="#c084fc" strokeWidth="1.5" />
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-bold">
+            {caption || "Complete Industrial AC Distribution System: Motor Loads, APFC Power Factor Correction, and Diagnostic Monitoring"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

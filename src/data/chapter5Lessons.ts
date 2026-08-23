@@ -8,6 +8,8 @@ import { LESSON_RESONANT_FREQUENCY_Q } from './chapter5Lesson15';
 import { LESSON_AC_POWER } from './chapter5Lesson16';
 import { LESSON_POWER_FACTOR } from './chapter5Lesson17';
 import { LESSON_THREE_PHASE_INTRO } from './chapter5Lesson18';
+import { LESSON_STAR_DELTA_AC } from './chapter5Lesson19';
+import { LESSON_AC_PRACTICAL_APPLICATIONS } from './chapter5Lesson20';
 
 export const LESSON_AC_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch5-ac-fundamentals',
@@ -2571,7 +2573,9 @@ export {
   LESSON_RESONANT_FREQUENCY_Q,
   LESSON_AC_POWER,
   LESSON_POWER_FACTOR,
-  LESSON_THREE_PHASE_INTRO
+  LESSON_THREE_PHASE_INTRO,
+  LESSON_STAR_DELTA_AC,
+  LESSON_AC_PRACTICAL_APPLICATIONS
 };
 
 export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
@@ -2592,5 +2596,7 @@ export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-resonant-frequency-q': LESSON_RESONANT_FREQUENCY_Q,
   'ch5-ac-power': LESSON_AC_POWER,
   'ch5-power-factor': LESSON_POWER_FACTOR,
-  'ch5-three-phase-intro': LESSON_THREE_PHASE_INTRO
+  'ch5-three-phase-intro': LESSON_THREE_PHASE_INTRO,
+  'ch5-star-delta-ac': LESSON_STAR_DELTA_AC,
+  'ch5-ac-practical-applications': LESSON_AC_PRACTICAL_APPLICATIONS
 };
