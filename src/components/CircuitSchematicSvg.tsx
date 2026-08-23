@@ -2674,6 +2674,204 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'dc-generator-emf':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Magnetic Pole Pair */}
+            <path d="M 40 40 L 110 40 L 110 200 L 40 200 Z" fill="#ef4444" stroke="#991b1b" strokeWidth="2" />
+            <text x="75" y="125" textAnchor="middle" fill="#ffffff" fontSize="22" fontWeight="bold">N</text>
+
+            <path d="M 430 40 L 500 40 L 500 200 L 430 200 Z" fill="#3b82f6" stroke="#1d4ed8" strokeWidth="2" />
+            <text x="465" y="125" textAnchor="middle" fill="#ffffff" fontSize="22" fontWeight="bold">S</text>
+
+            {/* Flux Lines */}
+            <g stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="5,4" opacity="0.7">
+              <line x1="110" y1="70" x2="430" y2="70" />
+              <line x1="110" y1="100" x2="430" y2="100" />
+              <line x1="110" y1="140" x2="430" y2="140" />
+              <line x1="110" y1="170" x2="430" y2="170" />
+            </g>
+            <text x="270" y="32" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">Magnetic Flux Φ (Weber / Pole)</text>
+
+            {/* Rotating Armature Coil Loop */}
+            <g transform="translate(270, 120)">
+              <rect x="-80" y="-45" width="160" height="90" rx="4" fill="none" stroke="#f59e0b" strokeWidth="3" />
+              <circle cx="-80" cy="0" r="5" fill="#f59e0b" />
+              <circle cx="80" cy="0" r="5" fill="#f59e0b" />
+              
+              {/* Velocity Vectors */}
+              <line x1="-80" y1="-45" x2="-80" y2="-75" stroke="#10b981" strokeWidth="2.5" />
+              <polygon points="-84,-75 -80,-85 -76,-75" fill="#10b981" />
+              <text x="-95" y="-60" fill="#10b981" fontSize="11" fontWeight="bold">v</text>
+
+              <line x1="80" y1="45" x2="80" y2="75" stroke="#10b981" strokeWidth="2.5" />
+              <polygon points="76,75 80,85 84,75" fill="#10b981" />
+              <text x="95" y="65" fill="#10b981" fontSize="11" fontWeight="bold">v</text>
+
+              {/* EMF Formula Center Badge */}
+              <rect x="-105" y="-16" width="210" height="32" rx="6" fill="#0f172a" stroke="#fbbf24" strokeWidth="1.5" />
+              <text x="0" y="5" textAnchor="middle" fill="#fbbf24" fontSize="12" fontWeight="bold" fontFamily="monospace">
+                Eg = (P · Φ · Z · N) / (60 · A)
+              </text>
+            </g>
+
+            {/* Winding Types Sub-badge */}
+            <g transform="translate(270, 220)">
+              <text x="0" y="0" textAnchor="middle" fill="#94a3b8" fontSize="10">
+                Lap: <tspan fill="#38bdf8" fontWeight="bold">A = P</tspan> (High Current) | Wave: <tspan fill="#38bdf8" fontWeight="bold">A = 2</tspan> (High Voltage)
+              </text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Generator EMF Generation Principle: Coil Rotating at Speed N cutting Magnetic Flux Φ inducing Eg"}
+          </p>
+        </div>
+      );
+
+    case 'dc-generator-types':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Shunt Generator Topology */}
+            <g transform="translate(30, 25)">
+              <rect x="0" y="0" width="220" height="190" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="110" y="22" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">DC Shunt Generator</text>
+              
+              {/* Circuit loop */}
+              <line x1="40" y1="50" x2="180" y2="50" stroke="#64748b" strokeWidth="2" />
+              <line x1="40" y1="155" x2="180" y2="155" stroke="#64748b" strokeWidth="2" />
+              
+              {/* Armature */}
+              <circle cx="110" cy="102" r="18" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+              <text x="110" y="106" textAnchor="middle" fill="#ffffff" fontSize="10" fontWeight="bold">A</text>
+              <line x1="110" y1="50" x2="110" y2="84" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="110" y1="120" x2="110" y2="155" stroke="#38bdf8" strokeWidth="2" />
+              
+              {/* Shunt Field */}
+              <path d="M 40 70 C 55 70 55 85 40 85 C 55 85 55 100 40 100 C 55 100 55 115 40 115 C 55 115 55 130 40 130" stroke="#f59e0b" strokeWidth="2" fill="none" />
+              <line x1="40" y1="50" x2="40" y2="70" stroke="#64748b" strokeWidth="2" />
+              <line x1="40" y1="130" x2="40" y2="155" stroke="#64748b" strokeWidth="2" />
+              <text x="25" y="105" textAnchor="end" fill="#f59e0b" fontSize="8" fontWeight="bold">Rsh</text>
+
+              {/* Load */}
+              <line x1="180" y1="50" x2="180" y2="80" stroke="#64748b" strokeWidth="2" />
+              <rect x="174" y="80" width="12" height="44" fill="#334155" stroke="#10b981" strokeWidth="1.5" />
+              <line x1="180" y1="124" x2="180" y2="155" stroke="#64748b" strokeWidth="2" />
+              <text x="192" y="105" fill="#10b981" fontSize="8" fontWeight="bold">Load</text>
+
+              <text x="110" y="176" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace">Ia = IL + Ish</text>
+            </g>
+
+            {/* Compound Generator Topology (Long Shunt) */}
+            <g transform="translate(290, 25)">
+              <rect x="0" y="0" width="220" height="190" rx="8" fill="#0f172a" stroke="#a855f7" strokeWidth="1.5" />
+              <text x="110" y="22" textAnchor="middle" fill="#a855f7" fontSize="11" fontWeight="bold">Compound Generator (Long Shunt)</text>
+
+              <line x1="40" y1="50" x2="180" y2="50" stroke="#64748b" strokeWidth="2" />
+              <line x1="40" y1="155" x2="180" y2="155" stroke="#64748b" strokeWidth="2" />
+
+              {/* Armature */}
+              <circle cx="85" cy="102" r="16" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+              <text x="85" y="106" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">A</text>
+              <line x1="85" y1="50" x2="85" y2="86" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="85" y1="118" x2="85" y2="155" stroke="#38bdf8" strokeWidth="2" />
+
+              {/* Series Field in top rail */}
+              <path d="M 115 50 C 115 40 127 40 127 50 C 127 40 139 40 139 50 C 139 40 151 40 151 50" stroke="#a855f7" strokeWidth="2" fill="none" />
+              <text x="133" y="38" textAnchor="middle" fill="#a855f7" fontSize="8" fontWeight="bold">Rse</text>
+
+              {/* Shunt Field */}
+              <path d="M 40 70 C 55 70 55 85 40 85 C 55 85 55 100 40 100 C 55 100 55 115 40 115 C 55 115 55 130 40 130" stroke="#f59e0b" strokeWidth="2" fill="none" />
+              <line x1="40" y1="50" x2="40" y2="70" stroke="#64748b" strokeWidth="2" />
+              <line x1="40" y1="130" x2="40" y2="155" stroke="#64748b" strokeWidth="2" />
+              <text x="25" y="105" textAnchor="end" fill="#f59e0b" fontSize="8" fontWeight="bold">Rsh</text>
+
+              {/* Load */}
+              <line x1="180" y1="50" x2="180" y2="80" stroke="#64748b" strokeWidth="2" />
+              <rect x="174" y="80" width="12" height="44" fill="#334155" stroke="#10b981" strokeWidth="1.5" />
+              <line x1="180" y1="124" x2="180" y2="155" stroke="#64748b" strokeWidth="2" />
+              <text x="192" y="105" fill="#10b981" fontSize="8" fontWeight="bold">Load</text>
+
+              <text x="110" y="176" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace">Eg = V + Ia(Ra+Rse)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Generator Circuit Configurations: Shunt and Long-Shunt Compound Topologies"}
+          </p>
+        </div>
+      );
+
+    case 'dc-generator-characteristics':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* OCC and Build-Up on Left */}
+            <g transform="translate(30, 20)">
+              <rect x="0" y="0" width="230" height="200" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="115" y="20" textAnchor="middle" fill="#10b981" fontSize="11" fontWeight="bold">OCC & Critical Resistance (Rc)</text>
+              
+              {/* Axes */}
+              <line x1="30" y1="165" x2="210" y2="165" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="30" y1="165" x2="30" y2="35" stroke="#64748b" strokeWidth="1.5" />
+              
+              {/* OCC curve */}
+              <path d="M 30 152 Q 90 70 200 60" fill="none" stroke="#10b981" strokeWidth="2.5" />
+              <text x="185" y="52" fill="#10b981" fontSize="8" fontWeight="bold">OCC (E0)</text>
+
+              {/* Air-gap / Critical Resistance line */}
+              <line x1="30" y1="152" x2="160" y2="35" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3,3" />
+              <text x="165" y="40" fill="#f59e0b" fontSize="8" fontWeight="bold">Rc Tangent</text>
+
+              {/* Field Resistance Line Rf */}
+              <line x1="30" y1="165" x2="190" y2="55" stroke="#38bdf8" strokeWidth="2" />
+              <text x="195" y="70" fill="#38bdf8" fontSize="8" fontWeight="bold">Rf Line</text>
+
+              {/* Intersection Point P */}
+              <circle cx="160" cy="65" r="4" fill="#fbbf24" />
+              <text x="165" y="80" fill="#fbbf24" fontSize="9" fontWeight="bold">P (V_NL)</text>
+
+              <text x="115" y="186" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace">Condition: Rf &lt; Rc &amp; N &gt; Nc</text>
+            </g>
+
+            {/* External Load Curves on Right */}
+            <g transform="translate(280, 20)">
+              <rect x="0" y="0" width="230" height="200" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="115" y="20" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">External Load Curves (V vs IL)</text>
+
+              {/* Axes */}
+              <line x1="30" y1="165" x2="210" y2="165" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="30" y1="165" x2="30" y2="35" stroke="#64748b" strokeWidth="1.5" />
+
+              {/* No-load reference */}
+              <line x1="30" y1="75" x2="210" y2="75" stroke="#475569" strokeWidth="1" strokeDasharray="2,2" />
+              <text x="35" y="70" fill="#94a3b8" fontSize="7">V_NL</text>
+
+              {/* Over-comp */}
+              <path d="M 30 75 Q 110 50 190 60" fill="none" stroke="#10b981" strokeWidth="2" />
+              <text x="195" y="60" fill="#10b981" fontSize="7" fontWeight="bold">Over-Comp</text>
+
+              {/* Flat-comp */}
+              <line x1="30" y1="75" x2="190" y2="75" stroke="#38bdf8" strokeWidth="2" />
+              <text x="195" y="77" fill="#38bdf8" fontSize="7" fontWeight="bold">Flat-Comp</text>
+
+              {/* Shunt */}
+              <path d="M 30 75 Q 110 90 190 110" fill="none" stroke="#fbbf24" strokeWidth="2" />
+              <text x="195" y="112" fill="#fbbf24" fontSize="7" fontWeight="bold">Shunt</text>
+
+              {/* Differential */}
+              <path d="M 30 75 Q 80 130 140 160" fill="none" stroke="#f43f5e" strokeWidth="2" />
+              <text x="145" y="158" fill="#f43f5e" fontSize="7" fontWeight="bold">Diff (Welding)</text>
+
+              <text x="115" y="186" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace">IL (Load Current) →</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Generator Characteristic Curves: Open Circuit Characteristic (OCC) and Terminal Voltage vs Load Current (V vs IL)"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

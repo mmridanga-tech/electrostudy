@@ -69,6 +69,9 @@ import { ACIndustrialCaseStudyAnimation } from './interactive/ACIndustrialCaseSt
 import { MachineEnergyConversionAnimation } from './interactive/MachineEnergyConversionAnimation';
 import { MagneticCircuitAnimation } from './interactive/MagneticCircuitAnimation';
 import { DCMachineConstructionAnimation } from './interactive/DCMachineConstructionAnimation';
+import { DCGeneratorEMFAnimation } from './interactive/DCGeneratorEMFAnimation';
+import { DCGeneratorTypesAnimation } from './interactive/DCGeneratorTypesAnimation';
+import { DCGeneratorCharacteristicsAnimation } from './interactive/DCGeneratorCharacteristicsAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -232,6 +235,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch6-dc-machine-construction' || lessonId === 'lsn-ch6-dc-machine-construction') {
     return <DCMachineConstructionAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-generator-emf' || lessonId === 'lsn-ch6-dc-generator-emf') {
+    return <DCGeneratorEMFAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-generator-types' || lessonId === 'lsn-ch6-dc-generator-types') {
+    return <DCGeneratorTypesAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-generator-characteristics' || lessonId === 'lsn-ch6-dc-generator-characteristics') {
+    return <DCGeneratorCharacteristicsAnimation language={currentLanguage} />;
   }
   return null;
 };
