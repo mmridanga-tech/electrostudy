@@ -1769,6 +1769,150 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ac-fundamentals':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Waveform Canvas */}
+            <line x1="40" y1="85" x2="420" y2="85" stroke="#475569" strokeWidth="1.5" />
+            <line x1="60" y1="20" x2="60" y2="150" stroke="#475569" strokeWidth="1.5" />
+            <text x="60" y="16" textAnchor="middle" fill="#94a3b8" fontSize="9" fontWeight="bold">+v(t)</text>
+            <text x="425" y="89" fill="#94a3b8" fontSize="9" fontWeight="bold">Time (t) / θ</text>
+
+            {/* Sine Wave 1 Full Cycle */}
+            <path
+              d="M 60 85 Q 125 15, 190 85 T 320 85"
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="3"
+            />
+            {/* Second partial cycle */}
+            <path
+              d="M 320 85 Q 355 45, 390 85"
+              fill="none"
+              stroke="#38bdf8"
+              strokeWidth="2"
+              strokeDasharray="3 3"
+            />
+
+            {/* Peak Annotations */}
+            <line x1="125" y1="85" x2="125" y2="20" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" />
+            <circle cx="125" cy="20" r="3.5" fill="#f59e0b" />
+            <text x="132" y="32" fill="#f59e0b" fontSize="9" fontWeight="bold">Peak (+Vm)</text>
+
+            <line x1="255" y1="85" x2="255" y2="150" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" />
+            <circle cx="255" cy="150" r="3.5" fill="#f59e0b" />
+            <text x="262" y="148" fill="#f59e0b" fontSize="9" fontWeight="bold">Peak (-Vm)</text>
+
+            {/* Time Period Dimension */}
+            <line x1="60" y1="160" x2="320" y2="160" stroke="#34d399" strokeWidth="1.5" />
+            <line x1="60" y1="155" x2="60" y2="165" stroke="#34d399" strokeWidth="1.5" />
+            <line x1="320" y1="155" x2="320" y2="165" stroke="#34d399" strokeWidth="1.5" />
+            <text x="190" y="157" textAnchor="middle" fill="#34d399" fontSize="9.5" fontWeight="bold">1 Full Cycle (Time Period T = 1/f)</text>
+
+            {/* Half Cycle Labels */}
+            <text x="125" y="102" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold">+ Half Cycle</text>
+            <text x="255" y="75" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold">- Half Cycle</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Sinusoidal AC Waveform Anatomy: Amplitude Vm, Period T, and Frequency f = 1/T"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-sinusoidal-phasor':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Rotating Generator Circle */}
+            <g transform="translate(100, 85)">
+              <circle cx="0" cy="0" r="55" fill="none" stroke="#334155" strokeWidth="1.5" strokeDasharray="3 3" />
+              <line x1="-65" y1="0" x2="65" y2="0" stroke="#475569" strokeWidth="1" />
+              <line x1="0" y1="-65" x2="0" y2="65" stroke="#475569" strokeWidth="1" />
+              
+              {/* Rotating vector */}
+              <line x1="0" y1="0" x2="40" y2="-38" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+              <circle cx="40" cy="-38" r="3" fill="#38bdf8" />
+              <text x="20" y="-22" fill="#38bdf8" fontSize="9" fontWeight="bold">Vm</text>
+              <path d="M 20 0 A 20 20 0 0 0 14 -14" fill="none" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="24" y="-8" fill="#f59e0b" fontSize="8.5" fontWeight="bold">ωt</text>
+              
+              {/* Projection Line */}
+              <line x1="40" y1="-38" x2="110" y2="-38" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="2 2" />
+            </g>
+
+            {/* Generated Waveform */}
+            <g transform="translate(210, 85)">
+              <line x1="0" y1="0" x2="230" y2="0" stroke="#475569" strokeWidth="1" />
+              <line x1="0" y1="-65" x2="0" y2="65" stroke="#475569" strokeWidth="1" />
+              
+              {/* Sine Wave */}
+              <path
+                d="M 0 0 Q 40 -60, 80 0 T 160 0 T 220 0"
+                fill="none"
+                stroke="#38bdf8"
+                strokeWidth="2.5"
+              />
+              {/* Projected point */}
+              <circle cx="28" cy="-38" r="4" fill="#f59e0b" />
+              <text x="36" y="-42" fill="#f59e0b" fontSize="9" fontWeight="bold">v(t) = Vm·sin(ωt)</text>
+              
+              <text x="80" y="16" textAnchor="middle" fill="#94a3b8" fontSize="8">π (180°)</text>
+              <text x="160" y="16" textAnchor="middle" fill="#94a3b8" fontSize="8">2π (360°)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Sinusoidal Generation from Phasor Projection: Instantaneous Value v(t) = Vm · sin(ωt)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-rms-average':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Waveform Axis */}
+            <line x1="30" y1="100" x2="260" y2="100" stroke="#475569" strokeWidth="1.5" />
+            <line x1="50" y1="15" x2="50" y2="145" stroke="#475569" strokeWidth="1.5" />
+
+            {/* Positive half wave */}
+            <path
+              d="M 50 100 Q 130 15, 210 100"
+              fill="rgba(56, 189, 248, 0.15)"
+              stroke="#38bdf8"
+              strokeWidth="2.5"
+            />
+
+            {/* Peak Line */}
+            <line x1="50" y1="25" x2="210" y2="25" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 3" />
+            <text x="215" y="29" fill="#f59e0b" fontSize="9" fontWeight="bold">Peak (1.000 Vm)</text>
+
+            {/* RMS Line */}
+            <line x1="50" y1="47" x2="210" y2="47" stroke="#34d399" strokeWidth="2" />
+            <text x="215" y="51" fill="#34d399" fontSize="9" fontWeight="bold">RMS (0.707 Vm)</text>
+
+            {/* Average Line */}
+            <line x1="50" y1="52" x2="210" y2="52" stroke="#c084fc" strokeWidth="1.5" strokeDasharray="2 2" />
+            <text x="215" y="67" fill="#c084fc" fontSize="9" fontWeight="bold">Avg (0.637 Vm)</text>
+
+            {/* Summary Box */}
+            <g transform="translate(305, 20)">
+              <rect x="0" y="0" width="145" height="125" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="72" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Standard Sine Ratios</text>
+              <line x1="10" y1="28" x2="135" y2="28" stroke="#334155" strokeWidth="1" />
+              
+              <text x="12" y="46" fill="#34d399" fontSize="9" fontWeight="bold">Vrms = Vm / √2 ≈ 0.707 Vm</text>
+              <text x="12" y="66" fill="#c084fc" fontSize="9" fontWeight="bold">Vavg = 2Vm / π ≈ 0.637 Vm</text>
+              <text x="12" y="86" fill="#fbbf24" fontSize="9" fontWeight="bold">Form Factor Kf = 1.11</text>
+              <text x="12" y="106" fill="#f43f5e" fontSize="9" fontWeight="bold">Peak Factor Kp = 1.414</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Sine Wave Values: Peak (Vm), Effective Heating RMS (0.707 Vm), and Half-Cycle Average (0.637 Vm)"}
+          </p>
+        </div>
+      );
+
     case 'circuit-phase-difference':
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
