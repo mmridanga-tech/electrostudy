@@ -2053,6 +2053,152 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ac-power-triangle':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 200" className="w-full max-w-lg h-auto">
+            {/* Power Triangle Graphic */}
+            <g transform="translate(40, 20)">
+              <polygon points="20,140 180,140 180,30" fill="rgba(14, 165, 233, 0.15)" stroke="none" />
+              {/* Right angle symbol */}
+              <path d="M 168 140 L 168 128 L 180 128" fill="none" stroke="#64748b" strokeWidth="1.5" />
+              {/* Angle arc phi */}
+              <path d="M 50 140 A 30 30 0 0 0 46 118" fill="none" stroke="#fbbf24" strokeWidth="2" />
+              <text x="56" y="132" fill="#fbbf24" fontSize="10" fontWeight="bold" fontFamily="monospace">φ</text>
+
+              {/* Horizontal Base: Active Power P */}
+              <line x1="20" y1="140" x2="180" y2="140" stroke="#10b981" strokeWidth="3" />
+              <text x="100" y="156" textAnchor="middle" fill="#34d399" fontSize="11" fontWeight="bold" fontFamily="monospace">P = V·I·cos φ (W / kW)</text>
+
+              {/* Vertical Side: Reactive Power Q */}
+              <line x1="180" y1="140" x2="180" y2="30" stroke="#06b6d4" strokeWidth="3" />
+              <text x="188" y="85" textAnchor="start" fill="#38bdf8" fontSize="11" fontWeight="bold" fontFamily="monospace">Q = V·I·sin φ (VAR)</text>
+
+              {/* Hypotenuse: Apparent Power S */}
+              <line x1="20" y1="140" x2="180" y2="30" stroke="#f59e0b" strokeWidth="3" strokeDasharray="5,2" />
+              <text x="85" y="75" textAnchor="end" fill="#fbbf24" fontSize="11" fontWeight="bold" fontFamily="monospace">S = V·I (VA)</text>
+            </g>
+
+            {/* Summary Box */}
+            <g transform="translate(260, 20)">
+              <rect x="0" y="0" width="180" height="150" rx="6" fill="#0f172a" stroke="#0ea5e9" strokeWidth="1.5" />
+              <text x="90" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">AC Power Relationships</text>
+              <line x1="10" y1="28" x2="170" y2="28" stroke="#334155" strokeWidth="1" />
+              <text x="12" y="46" fill="#fbbf24" fontSize="9" fontWeight="bold" fontFamily="monospace">S² = P² + Q²</text>
+              <text x="12" y="66" fill="#34d399" fontSize="9" fontWeight="bold" fontFamily="monospace">P = S · cos φ</text>
+              <text x="12" y="86" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">Q = S · sin φ</text>
+              <text x="12" y="106" fill="#c084fc" fontSize="9" fontWeight="bold" fontFamily="monospace">cos φ = P / S (PF)</text>
+              <text x="12" y="126" fill="#f43f5e" fontSize="9" fontWeight="bold" fontFamily="monospace">tan φ = Q / P</text>
+              <text x="12" y="142" fill="#94a3b8" fontSize="8" fontFamily="monospace">Complex: S = P + jQ</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "AC Power Triangle: Geometric representation of Active Power (P in Watts), Reactive Power (Q in VAR), Apparent Power (S in VA), and Power Factor (cos φ)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-power-factor-correction':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 200" className="w-full max-w-lg h-auto">
+            {/* Shunt Capacitor PFC Diagram */}
+            <g transform="translate(30, 20)">
+              {/* Uncorrected Large Triangle (Rose) */}
+              <polygon points="20,140 180,140 180,20" fill="rgba(244, 63, 94, 0.08)" stroke="none" />
+              {/* Corrected Smaller Triangle (Cyan) */}
+              <polygon points="20,140 180,140 180,80" fill="rgba(6, 182, 212, 0.18)" stroke="none" />
+
+              {/* Base Line P */}
+              <line x1="20" y1="140" x2="180" y2="140" stroke="#10b981" strokeWidth="3" />
+              <text x="100" y="156" textAnchor="middle" fill="#34d399" fontSize="10.5" fontWeight="bold" fontFamily="monospace">P = Active Load Power (kW)</text>
+
+              {/* S1 Hypotenuse */}
+              <line x1="20" y1="140" x2="180" y2="20" stroke="#f43f5e" strokeWidth="2.5" strokeDasharray="4,2" />
+              <text x="85" y="65" textAnchor="end" fill="#fb7185" fontSize="9.5" fontWeight="bold" fontFamily="monospace">S₁ (Poor PF)</text>
+
+              {/* S2 Hypotenuse */}
+              <line x1="20" y1="140" x2="180" y2="80" stroke="#06b6d4" strokeWidth="3" />
+              <text x="105" y="105" textAnchor="end" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">S₂ (Corrected)</text>
+
+              {/* Q2 Vertical Line */}
+              <line x1="180" y1="140" x2="180" y2="80" stroke="#06b6d4" strokeWidth="3" />
+              <text x="186" y="115" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">Q₂</text>
+
+              {/* Qc Compensation Vector */}
+              <line x1="192" y1="20" x2="192" y2="80" stroke="#10b981" strokeWidth="3" />
+              <polygon points="192,85 188,77 196,77" fill="#10b981" />
+              <text x="200" y="55" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Qc = Q₁ - Q₂</text>
+            </g>
+
+            {/* Formulas Box */}
+            <g transform="translate(265, 20)">
+              <rect x="0" y="0" width="180" height="150" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="90" y="20" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Capacitor Bank Sizing</text>
+              <line x1="10" y1="28" x2="170" y2="28" stroke="#334155" strokeWidth="1" />
+              <text x="12" y="46" fill="#fbbf24" fontSize="8.5" fontWeight="bold" fontFamily="monospace">Q₁ = P · tan φ₁</text>
+              <text x="12" y="66" fill="#38bdf8" fontSize="8.5" fontWeight="bold" fontFamily="monospace">Q₂ = P · tan φ₂</text>
+              <text x="12" y="86" fill="#34d399" fontSize="8.5" fontWeight="bold" fontFamily="monospace">Qc = P(tan φ₁ - tan φ₂)</text>
+              <text x="12" y="106" fill="#c084fc" fontSize="8.5" fontWeight="bold" fontFamily="monospace">C = Qc / (2π f V²)</text>
+              <text x="12" y="126" fill="#f43f5e" fontSize="8.5" fontWeight="bold" fontFamily="monospace">I₂ = (cos φ₁ / cos φ₂) · I₁</text>
+              <text x="12" y="142" fill="#94a3b8" fontSize="8" fontFamily="monospace">S₁ &gt; S₂ | I₁ &gt; I₂ | P is constant</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-bold">
+            {caption || "Power Factor Correction: Installing shunt capacitor bank Qc reduces reactive demand from Q₁ to Q₂ and relieves line current from I₁ to I₂"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-three-phase-intro':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 200" className="w-full max-w-lg h-auto">
+            {/* 3-Phase Rotor Phasor and Star/Delta Comparison */}
+            <g transform="translate(30, 20)">
+              {/* Phasor Circle */}
+              <circle cx="80" cy="75" r="55" fill="#0f172a" stroke="#334155" strokeWidth="1" strokeDasharray="3,3" />
+              <circle cx="80" cy="75" r="3" fill="#94a3b8" />
+
+              {/* Phase A (0 deg - Red) */}
+              <line x1="80" y1="75" x2="135" y2="75" stroke="#f43f5e" strokeWidth="2.5" />
+              <polygon points="138,75 131,71 131,79" fill="#f43f5e" />
+              <text x="142" y="78" fill="#f43f5e" fontSize="9.5" fontWeight="bold" fontFamily="monospace">V_A (0°)</text>
+
+              {/* Phase B (-120 deg - Yellow) */}
+              <line x1="80" y1="75" x2="52.5" y2="122.6" stroke="#facc15" strokeWidth="2.5" />
+              <polygon points="50,126 50,118 57,122" fill="#facc15" />
+              <text x="36" y="140" fill="#facc15" fontSize="9.5" fontWeight="bold" fontFamily="monospace">V_B (-120°)</text>
+
+              {/* Phase C (+120 deg - Blue) */}
+              <line x1="80" y1="75" x2="52.5" y2="27.4" stroke="#3b82f6" strokeWidth="2.5" />
+              <polygon points="50,24 57,28 50,32" fill="#3b82f6" />
+              <text x="34" y="20" fill="#3b82f6" fontSize="9.5" fontWeight="bold" fontFamily="monospace">V_C (+120°)</text>
+            </g>
+
+            {/* Star vs Delta Summary Box */}
+            <g transform="translate(230, 20)">
+              <rect x="0" y="0" width="210" height="150" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="105" y="20" textAnchor="middle" fill="#fbbf24" fontSize="10" fontWeight="bold">Star (Y) vs. Delta (Δ) Systems</text>
+              <line x1="10" y1="28" x2="200" y2="28" stroke="#334155" strokeWidth="1" />
+              
+              <text x="12" y="46" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">Star (Y): V_L = √3 · V_ph | I_L = I_ph</text>
+              <text x="12" y="64" fill="#94a3b8" fontSize="8" fontFamily="monospace">  Neutral wire available (4-wire)</text>
+              
+              <text x="12" y="86" fill="#10b981" fontSize="9" fontWeight="bold" fontFamily="monospace">Delta (Δ): V_L = V_ph | I_L = √3 · I_ph</text>
+              <text x="12" y="104" fill="#94a3b8" fontSize="8" fontFamily="monospace">  No neutral wire (3-wire industrial)</text>
+              
+              <line x1="10" y1="112" x2="200" y2="112" stroke="#1e293b" strokeWidth="1" />
+              <text x="12" y="128" fill="#fbbf24" fontSize="9" fontWeight="bold" fontFamily="monospace">Total P = √3 · V_L · I_L · cos φ</text>
+              <text x="12" y="142" fill="#c084fc" fontSize="9" fontWeight="bold" fontFamily="monospace">Total S = √3 · V_L · I_L (VA)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-bold">
+            {caption || "Three-Phase AC Generation: Symmetrical 120° spatial and electrical displacement delivering smooth constant power and rotating magnetic fields"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

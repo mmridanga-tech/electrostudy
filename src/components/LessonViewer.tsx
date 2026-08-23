@@ -61,6 +61,9 @@ import { ImpedanceAdmittanceAnimation } from './interactive/ImpedanceAdmittanceA
 import { SeriesParallelACAnimation } from './interactive/SeriesParallelACAnimation';
 import { ResonanceAnimation } from './interactive/ResonanceAnimation';
 import { ResonanceQBandwidthAnimation } from './interactive/ResonanceQBandwidthAnimation';
+import { ACPowerTriangleAnimation } from './interactive/ACPowerTriangleAnimation';
+import { PowerFactorCorrectionAnimation } from './interactive/PowerFactorCorrectionAnimation';
+import { ThreePhaseACAnimation } from './interactive/ThreePhaseACAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -200,6 +203,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-resonant-frequency-q' || lessonId === 'lsn-ch5-resonant-frequency-q') {
     return <ResonanceQBandwidthAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-power' || lessonId === 'lsn-ch5-ac-power') {
+    return <ACPowerTriangleAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-power-factor' || lessonId === 'lsn-ch5-power-factor') {
+    return <PowerFactorCorrectionAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-three-phase-intro' || lessonId === 'lsn-ch5-three-phase-intro') {
+    return <ThreePhaseACAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

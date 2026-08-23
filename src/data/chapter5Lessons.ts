@@ -5,6 +5,9 @@ import { LESSON_AC_IMPEDANCE_ADMITTANCE } from './chapter5Lesson12';
 import { LESSON_AC_SERIES_PARALLEL } from './chapter5Lesson13';
 import { LESSON_RESONANCE } from './chapter5Lesson14';
 import { LESSON_RESONANT_FREQUENCY_Q } from './chapter5Lesson15';
+import { LESSON_AC_POWER } from './chapter5Lesson16';
+import { LESSON_POWER_FACTOR } from './chapter5Lesson17';
+import { LESSON_THREE_PHASE_INTRO } from './chapter5Lesson18';
 
 export const LESSON_AC_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch5-ac-fundamentals',
@@ -2565,7 +2568,10 @@ export {
   LESSON_AC_IMPEDANCE_ADMITTANCE,
   LESSON_AC_SERIES_PARALLEL,
   LESSON_RESONANCE,
-  LESSON_RESONANT_FREQUENCY_Q
+  LESSON_RESONANT_FREQUENCY_Q,
+  LESSON_AC_POWER,
+  LESSON_POWER_FACTOR,
+  LESSON_THREE_PHASE_INTRO
 };
 
 export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
@@ -2583,5 +2589,8 @@ export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-ac-impedance-admittance': LESSON_AC_IMPEDANCE_ADMITTANCE,
   'ch5-ac-series-parallel': LESSON_AC_SERIES_PARALLEL,
   'ch5-resonance': LESSON_RESONANCE,
-  'ch5-resonant-frequency-q': LESSON_RESONANT_FREQUENCY_Q
+  'ch5-resonant-frequency-q': LESSON_RESONANT_FREQUENCY_Q,
+  'ch5-ac-power': LESSON_AC_POWER,
+  'ch5-power-factor': LESSON_POWER_FACTOR,
+  'ch5-three-phase-intro': LESSON_THREE_PHASE_INTRO
 };
