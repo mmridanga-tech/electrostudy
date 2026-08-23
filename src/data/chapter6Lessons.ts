@@ -14,6 +14,9 @@ import { LESSON_DC_MOTOR_BRAKING } from './chapter6Lesson12';
 import { LESSON_TRANSFORMER_FUNDAMENTALS } from './chapter6Lesson13';
 import { LESSON_TRANSFORMER_TYPES_CONSTRUCTION } from './chapter6Lesson14';
 import { LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT } from './chapter6Lesson15';
+import { LESSON_TRANSFORMER_LOSSES_EFFICIENCY } from './chapter6Lesson16';
+import { LESSON_TRANSFORMER_TESTS } from './chapter6Lesson17';
+import { LESSON_TRANSFORMER_PARALLEL_OPERATION } from './chapter6Lesson18';
 
 export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-electrical-machines-fundamentals': LESSON_ELECTRICAL_MACHINES_FUNDAMENTALS,
@@ -31,6 +34,9 @@ export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-transformer-fundamentals': LESSON_TRANSFORMER_FUNDAMENTALS,
   'ch6-transformer-types-construction': LESSON_TRANSFORMER_TYPES_CONSTRUCTION,
   'ch6-transformer-equivalent-circuit': LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT,
+  'ch6-transformer-losses-efficiency': LESSON_TRANSFORMER_LOSSES_EFFICIENCY,
+  'ch6-transformer-tests': LESSON_TRANSFORMER_TESTS,
+  'ch6-transformer-parallel-operation': LESSON_TRANSFORMER_PARALLEL_OPERATION,
 };
 
 export {
@@ -49,5 +55,8 @@ export {
   LESSON_TRANSFORMER_FUNDAMENTALS,
   LESSON_TRANSFORMER_TYPES_CONSTRUCTION,
   LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT,
+  LESSON_TRANSFORMER_LOSSES_EFFICIENCY,
+  LESSON_TRANSFORMER_TESTS,
+  LESSON_TRANSFORMER_PARALLEL_OPERATION,
 };
 

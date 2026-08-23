@@ -81,6 +81,9 @@ import { DCMotorBrakingAnimation } from './interactive/DCMotorBrakingAnimation';
 import { TransformerEMFAnimation } from './interactive/TransformerEMFAnimation';
 import { TransformerConstructionCoolingAnimation } from './interactive/TransformerConstructionCoolingAnimation';
 import { TransformerEquivalentCircuitAnimation } from './interactive/TransformerEquivalentCircuitAnimation';
+import { TransformerLossEfficiencyAnimation } from './interactive/TransformerLossEfficiencyAnimation';
+import { TransformerTestsAnimation } from './interactive/TransformerTestsAnimation';
+import { TransformerParallelOperationAnimation } from './interactive/TransformerParallelOperationAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -280,6 +283,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch6-transformer-equivalent-circuit' || lessonId === 'lsn-ch6-transformer-equivalent-circuit') {
     return <TransformerEquivalentCircuitAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-losses-efficiency' || lessonId === 'lsn-ch6-transformer-losses-efficiency') {
+    return <TransformerLossEfficiencyAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-tests' || lessonId === 'lsn-ch6-transformer-tests') {
+    return <TransformerTestsAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-parallel-operation' || lessonId === 'lsn-ch6-transformer-parallel-operation') {
+    return <TransformerParallelOperationAnimation language={currentLanguage} />;
   }
   return null;
 };
