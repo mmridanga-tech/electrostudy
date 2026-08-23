@@ -3,6 +3,7 @@ import { CHAPTER_1_LESSONS } from './chapter1Lessons';
 import { CHAPTER_2_LESSONS } from './chapter2Lessons';
 import { CHAPTER_3_LESSONS } from './chapter3Lessons';
 import { CHAPTER_4_LESSONS } from './chapter4Lessons';
+import { CHAPTER_5_LESSONS } from './chapter5Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -896,113 +897,213 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-resistors',
+        id: 'ch-alternating-current',
         subjectId: 'basic-electrical',
         order: 5,
         title: {
-          en: 'Chapter 5: Resistance & Resistors',
-          hi: 'अध्याय 5: प्रतिरोध एवं प्रतिरोधक',
-          bn: 'অধ্যায় ৫: রোধ ও রেজিস্টর'
+          en: 'Chapter 5: AC Circuits & Alternating Current',
+          hi: 'अध्याय 5: एसी परिपथ एवं प्रत्यावर्ती धारा',
+          bn: 'অধ্যায় ৫: এসি সার্কিট ও অল্টারনেটিং কারেন্ট'
         },
         topics: [
           {
-            id: 'tp-types-resistance',
-            chapterId: 'ch-resistors',
+            id: 'ch5-ac-fundamentals',
+            chapterId: 'ch-alternating-current',
             order: 1,
             title: {
-              en: 'Types of Resistance',
-              hi: 'प्रतिरोध के प्रकार',
-              bn: 'রোধের প্রকারভেদ'
+              en: 'AC Fundamentals & Waveform Characteristics',
+              hi: 'एसी के मूल सिद्धांत एवं वेवफॉर्म विशेषताएँ',
+              bn: 'এসি-র মৌলিক ধারণা ও ওয়েভফর্মের বৈশিষ্ট্য'
             }
           },
           {
-            id: 'tp-fixed-resistors',
-            chapterId: 'ch-resistors',
+            id: 'ch5-sinusoidal-waveform',
+            chapterId: 'ch-alternating-current',
             order: 2,
             title: {
-              en: 'Fixed Resistors',
-              hi: 'फिक्स्ड प्रतिरोधक',
-              bn: 'ফিক্সড রেজিস্টর'
+              en: 'Sinusoidal Waveform & Mathematical Representation',
+              hi: 'साइनसॉइडल वेवफॉर्म एवं गणितीय निरूपण',
+              bn: 'সাইনুসয়েডাল ওয়েভফর্ম ও গাণিতিক প্রকাশ'
             }
           },
           {
-            id: 'tp-variable-resistors',
-            chapterId: 'ch-resistors',
+            id: 'ch5-rms-average-values',
+            chapterId: 'ch-alternating-current',
             order: 3,
             title: {
-              en: 'Variable Resistors',
-              hi: 'परिवर्तनीय प्रतिरोधक (वेरिएबल)',
-              bn: 'ভ্যারিয়েবল রেজিস্টর'
+              en: 'RMS, Average, Form Factor & Peak Factor',
+              hi: 'RMS, औसत मान, फॉर्म फैक्टर एवं पीक फैक्टर',
+              bn: 'RMS, গড় মান, ফর্ম ফ্যাক্টর ও পিক ফ্যাক্টর'
             }
           },
           {
-            id: 'tp-resistor-colour-code',
-            chapterId: 'ch-resistors',
+            id: 'ch5-phase-phase-difference',
+            chapterId: 'ch-alternating-current',
             order: 4,
             title: {
-              en: 'Resistor Colour Code',
-              hi: 'प्रतिरोधक कलर कोड',
-              bn: 'রেজিস্টর কালার কোড'
+              en: 'Phase, Phase Difference & Phasors',
+              hi: 'फेज, फेज अंतर एवं फेजर',
+              bn: 'ফেজ, ফেজ পার্থক্য ও ফেজর'
             }
           },
           {
-            id: 'tp-resistance-tolerance',
-            chapterId: 'ch-resistors',
+            id: 'ch5-complex-numbers',
+            chapterId: 'ch-alternating-current',
             order: 5,
             title: {
-              en: 'Resistance Tolerance',
-              hi: 'प्रतिरोध सहष्णुता (टॉलरेंस)',
-              bn: 'রেজিস্ট্যান্স টলারেন্স'
+              en: 'Complex Numbers & Rectangular/Polar Form',
+              hi: 'कॉम्प्लेक्स संख्या एवं आयताकार/ध्रुवीय रूप',
+              bn: 'কমপ্লেক্স সংখ্যা ও আয়তাকার/পোলার রূপ'
             }
           },
           {
-            id: 'tp-temp-effect-resistance',
-            chapterId: 'ch-resistors',
+            id: 'ch5-ac-resistance',
+            chapterId: 'ch-alternating-current',
             order: 6,
             title: {
-              en: 'Temperature Effect on Resistance',
-              hi: 'प्रतिरोध पर तापमान का प्रभाव',
-              bn: 'রোধের উপর তাপমাত্রার প্রভাব'
+              en: 'Purely Resistive AC Circuit',
+              hi: 'शुद्ध प्रतिरोधी एसी परिपथ',
+              bn: 'বিশুদ্ধ রেজিস্টিভ এসি সার্কিট'
             }
           },
           {
-            id: 'tp-temp-coefficient',
-            chapterId: 'ch-resistors',
+            id: 'ch5-ac-inductor',
+            chapterId: 'ch-alternating-current',
             order: 7,
             title: {
-              en: 'Temperature Coefficient',
-              hi: 'तापमान गुणांक',
-              bn: 'তাপমাত্রা গুণাঙ্ক'
+              en: 'Pure Inductive AC Circuit',
+              hi: 'शुद्ध इंडक्टिव एसी परिपथ',
+              bn: 'বিশুদ্ধ ইন্ডাক্টিভ এসি সার্কিট'
             }
           },
           {
-            id: 'tp-resistors-series',
-            chapterId: 'ch-resistors',
+            id: 'ch5-ac-capacitor',
+            chapterId: 'ch-alternating-current',
             order: 8,
             title: {
-              en: 'Resistors in Series',
-              hi: 'श्रेणी क्रम में प्रतिरोधक',
-              bn: 'সিরিজে সংযুক্ত রেজিস্টর'
+              en: 'Pure Capacitive AC Circuit',
+              hi: 'शुद्ध कैपेसिटिव एसी परिपथ',
+              bn: 'বিশুদ্ধ ক্যাপাসিটিভ এসি সার্কিট'
             }
           },
           {
-            id: 'tp-resistors-parallel',
-            chapterId: 'ch-resistors',
+            id: 'ch5-inductive-reactance',
+            chapterId: 'ch-alternating-current',
             order: 9,
             title: {
-              en: 'Resistors in Parallel',
-              hi: 'समानांतर क्रम में प्रतिरोधक',
-              bn: 'প্যারালালে সংযুক্ত রেজিস্টর'
+              en: 'Inductive Reactance & Capacitive Reactance',
+              hi: 'इंडक्टिव रिएक्टेंस एवं कैपेसिटिव रिएक्टेंस',
+              bn: 'ইন্ডাক্টিভ রিঅ্যাকট্যান্স ও ক্যাপাসিটিভ রিঅ্যাকট্যান্স'
             }
           },
           {
-            id: 'tp-equivalent-resistance',
-            chapterId: 'ch-resistors',
+            id: 'ch5-series-rl-rc',
+            chapterId: 'ch-alternating-current',
             order: 10,
             title: {
-              en: 'Equivalent Resistance',
-              hi: 'तुल्य प्रतिरोध',
-              bn: 'সমতুল্য রোধ (ইকুয়ালেন্ট রেজিস্ট্যান্স)'
+              en: 'Series RL and RC Circuits',
+              hi: 'सीरीज RL एवं RC परिपथ',
+              bn: 'সিরিজ RL ও RC সার্কিট'
+            }
+          },
+          {
+            id: 'ch5-series-rlc',
+            chapterId: 'ch-alternating-current',
+            order: 11,
+            title: {
+              en: 'Series RLC Circuit & Impedance',
+              hi: 'सीरीज RLC परिपथ एवं प्रतिबाधा',
+              bn: 'সিরিজ RLC সার্কিট ও ইম্পিড্যান্স'
+            }
+          },
+          {
+            id: 'ch5-ac-impedance-admittance',
+            chapterId: 'ch-alternating-current',
+            order: 12,
+            title: {
+              en: 'Impedance, Admittance, Conductance & Susceptance',
+              hi: 'इम्पीडेंस, एडमिटेंस, कंडक्टेंस एवं ससेप्टेंस',
+              bn: 'ইম্পিড্যান্স, অ্যাডমিট্যান্স, কন্ডাক্ট্যান্স ও সাসেপ্ট্যান্স'
+            }
+          },
+          {
+            id: 'ch5-ac-series-parallel',
+            chapterId: 'ch-alternating-current',
+            order: 13,
+            title: {
+              en: 'Series-Parallel AC Networks',
+              hi: 'सीरीज-पैरेलल एसी नेटवर्क',
+              bn: 'সিরিজ-প্যারালাল এসি নেটওয়ার্ক'
+            }
+          },
+          {
+            id: 'ch5-resonance',
+            chapterId: 'ch-alternating-current',
+            order: 14,
+            title: {
+              en: 'Series & Parallel Resonance',
+              hi: 'सीरीज एवं पैरेलल रेजोनेंस',
+              bn: 'সিরিজ ও প্যারালাল রেজোন্যান্স'
+            }
+          },
+          {
+            id: 'ch5-resonant-frequency-q',
+            chapterId: 'ch-alternating-current',
+            order: 15,
+            title: {
+              en: 'Resonant Frequency, Q-Factor & Bandwidth',
+              hi: 'रेजोनेंट फ्रीक्वेंसी, Q-फैक्टर एवं बैंडविड्थ',
+              bn: 'রেজোন্যান্ট ফ্রিকোয়েন্সি, Q-ফ্যাক্টর ও ব্যান্ডউইথ'
+            }
+          },
+          {
+            id: 'ch5-ac-power',
+            chapterId: 'ch-alternating-current',
+            order: 16,
+            title: {
+              en: 'AC Power: Active, Reactive & Apparent Power',
+              hi: 'एसी पावर: सक्रिय, प्रतिक्रियाशील एवं प्रत्यक्ष शक्ति',
+              bn: 'এসি পাওয়ার: অ্যাক্টিভ, রিঅ্যাক্টিভ ও অ্যাপারেন্ট পাওয়ার'
+            }
+          },
+          {
+            id: 'ch5-power-factor',
+            chapterId: 'ch-alternating-current',
+            order: 17,
+            title: {
+              en: 'Power Factor & Power Factor Correction',
+              hi: 'पावर फैक्टर एवं पावर फैक्टर सुधार',
+              bn: 'পাওয়ার ফ্যাক্টর ও পাওয়ার ফ্যাক্টর কারেকশন'
+            }
+          },
+          {
+            id: 'ch5-three-phase-intro',
+            chapterId: 'ch-alternating-current',
+            order: 18,
+            title: {
+              en: 'Introduction to Three-Phase AC Systems',
+              hi: 'थ्री-फेज एसी सिस्टम का परिचय',
+              bn: 'থ্রি-ফেজ এসি সিস্টেমের পরিচিতি'
+            }
+          },
+          {
+            id: 'ch5-star-delta-ac',
+            chapterId: 'ch-alternating-current',
+            order: 19,
+            title: {
+              en: 'Three-Phase Star and Delta Connections',
+              hi: 'थ्री-फेज स्टार एवं डेल्टा कनेक्शन',
+              bn: 'থ্রি-ফেজ স্টার ও ডেল্টা কানেকশন'
+            }
+          },
+          {
+            id: 'ch5-ac-practical-applications',
+            chapterId: 'ch-alternating-current',
+            order: 20,
+            title: {
+              en: 'Practical AC Circuits & Industrial Applications',
+              hi: 'व्यावहारिक एसी परिपथ एवं औद्योगिक अनुप्रयोग',
+              bn: 'ব্যবহারিক এসি সার্কিট ও শিল্প প্রয়োগ'
             }
           }
         ]
@@ -2179,6 +2280,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_4_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-alternating-current') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_5_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

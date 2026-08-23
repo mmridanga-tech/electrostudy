@@ -1625,6 +1625,150 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-superposition-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 520 150" className="w-full max-w-lg h-auto">
+            {/* Step 1: Full Circuit (V1 + V2) */}
+            <g transform="translate(10, 15)">
+              <rect x="0" y="0" width="130" height="90" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="65" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Full Circuit</text>
+              <circle cx="25" cy="55" r="12" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="25" y="58" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">V1</text>
+              <rect x="55" y="45" width="20" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" rx="2" />
+              <text x="65" y="58" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">RL</text>
+              <circle cx="105" cy="55" r="12" fill="#1e293b" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="105" y="58" textAnchor="middle" fill="#c084fc" fontSize="8" fontWeight="bold">V2</text>
+              <text x="65" y="112" textAnchor="middle" fill="#cbd5e1" fontSize="9" fontWeight="bold">I_total = I′_L + I″_L</text>
+            </g>
+
+            <text x="160" y="65" textAnchor="middle" fill="#38bdf8" fontSize="18" fontWeight="bold">=</text>
+
+            {/* Step 2: V1 Only (V2 Shorted) */}
+            <g transform="translate(180, 15)">
+              <rect x="0" y="0" width="130" height="90" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="65" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">V1 Only (V2 Shorted)</text>
+              <circle cx="25" cy="55" r="12" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="25" y="58" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">V1</text>
+              <rect x="55" y="45" width="20" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" rx="2" />
+              <text x="65" y="58" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">RL</text>
+              <line x1="100" y1="55" x2="110" y2="55" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="65" y="112" textAnchor="middle" fill="#cbd5e1" fontSize="9" fontWeight="bold">I′_L (From V1)</text>
+            </g>
+
+            <text x="330" y="65" textAnchor="middle" fill="#38bdf8" fontSize="18" fontWeight="bold">+</text>
+
+            {/* Step 3: V2 Only (V1 Shorted) */}
+            <g transform="translate(350, 15)">
+              <rect x="0" y="0" width="130" height="90" rx="6" fill="#0f172a" stroke="#c084fc" strokeWidth="2" />
+              <text x="65" y="22" textAnchor="middle" fill="#c084fc" fontSize="10" fontWeight="bold">V2 Only (V1 Shorted)</text>
+              <line x1="20" y1="55" x2="30" y2="55" stroke="#ef4444" strokeWidth="2.5" />
+              <rect x="55" y="45" width="20" height="20" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" rx="2" />
+              <text x="65" y="58" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">RL</text>
+              <circle cx="105" cy="55" r="12" fill="#1e293b" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="105" y="58" textAnchor="middle" fill="#c084fc" fontSize="8" fontWeight="bold">V2</text>
+              <text x="65" y="112" textAnchor="middle" fill="#cbd5e1" fontSize="9" fontWeight="bold">I″_L (From V2)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Superposition Method: Total Response = Algebraic Sum of Individual Source Responses"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-maxpower-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 160" className="w-full max-w-lg h-auto">
+            {/* Thevenin Source connected to RL */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="200" height="110" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="2" />
+              <text x="100" y="20" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Thevenin Equivalent + Load</text>
+
+              <circle cx="30" cy="65" r="14" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="30" y="68" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Vth</text>
+
+              <rect x="70" y="35" width="30" height="16" fill="#1e293b" stroke="#34d399" strokeWidth="2" rx="2" />
+              <text x="85" y="47" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">Rth</text>
+
+              <rect x="150" y="50" width="16" height="30" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="2" />
+              <text x="158" y="93" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">RL</text>
+
+              <line x1="30" y1="51" x2="30" y2="43" stroke="#475569" strokeWidth="2" />
+              <line x1="30" y1="43" x2="70" y2="43" stroke="#475569" strokeWidth="2" />
+              <line x1="100" y1="43" x2="158" y2="43" stroke="#475569" strokeWidth="2" />
+              <line x1="158" y1="43" x2="158" y2="50" stroke="#475569" strokeWidth="2" />
+              <line x1="30" y1="79" x2="30" y2="95" stroke="#475569" strokeWidth="2" />
+              <line x1="30" y1="95" x2="158" y2="95" stroke="#475569" strokeWidth="2" />
+              <line x1="158" y1="95" x2="158" y2="80" stroke="#475569" strokeWidth="2" />
+            </g>
+
+            {/* Mathematical Summary Box */}
+            <g transform="translate(240, 20)">
+              <rect x="0" y="0" width="200" height="110" rx="6" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="100" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Max Power Equations</text>
+              <line x1="15" y1="30" x2="185" y2="30" stroke="#334155" strokeWidth="1" />
+              <text x="15" y="48" textAnchor="start" fill="#fbbf24" fontSize="10" fontWeight="bold">1. Condition: RL = Rth</text>
+              <text x="15" y="68" textAnchor="start" fill="#34d399" fontSize="10" fontWeight="bold">2. Pmax = Vth² / (4 · Rth)</text>
+              <text x="15" y="88" textAnchor="start" fill="#a855f7" fontSize="10" fontWeight="bold">3. Efficiency η = 50% at Pmax</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-bold">
+            {caption || "Maximum Power Transfer Condition: Load Resistance RL = Internal Thevenin Resistance Rth"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-reciprocity-concept':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 480 150" className="w-full max-w-lg h-auto">
+            {/* Case A Box */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="200" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="100" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Case A: Source at Port 1</text>
+
+              <circle cx="25" cy="55" r="12" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="25" y="58" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold">Vs</text>
+
+              <rect x="65" y="40" width="70" height="30" fill="#1e293b" stroke="#475569" strokeWidth="1.5" rx="3" />
+              <text x="100" y="58" textAnchor="middle" fill="#cbd5e1" fontSize="9">Passive Net</text>
+
+              <circle cx="175" cy="55" r="12" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" />
+              <text x="175" y="58" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">A2</text>
+
+              <text x="100" y="90" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Response: I2A</text>
+            </g>
+
+            {/* Arrow Interchange */}
+            <g transform="translate(228, 60)">
+              <path d="M 0,-10 L 24,-10 L 24,-15 L 32,-5 L 24,5 L 24,0 L 0,0 Z" fill="#ec4899" />
+              <path d="M 32,10 L 8,10 L 8,5 L 0,15 L 8,25 L 8,20 L 32,20 Z" fill="#ec4899" />
+            </g>
+
+            {/* Case B Box */}
+            <g transform="translate(260, 20)">
+              <rect x="0" y="0" width="200" height="100" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="100" y="20" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Case B: Source at Port 2</text>
+
+              <circle cx="25" cy="55" r="12" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" />
+              <text x="25" y="58" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">A1</text>
+
+              <rect x="65" y="40" width="70" height="30" fill="#1e293b" stroke="#475569" strokeWidth="1.5" rx="3" />
+              <text x="100" y="58" textAnchor="middle" fill="#cbd5e1" fontSize="9">Passive Net</text>
+
+              <circle cx="175" cy="55" r="12" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="175" y="58" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">Vs</text>
+
+              <text x="100" y="90" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="bold">Response: I1B</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-pink-300 mt-2 text-center font-bold">
+            {caption || "Reciprocity Theorem Principle: I2A / Vs = I1B / Vs in Linear Bilateral Passive Networks"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

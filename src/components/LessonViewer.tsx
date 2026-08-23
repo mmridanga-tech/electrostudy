@@ -40,6 +40,15 @@ import { DividerNetworkAnimation } from './interactive/DividerNetworkAnimation';
 import { StarDeltaAnimation } from './interactive/StarDeltaAnimation';
 import { TheveninEquivalentAnimation } from './interactive/TheveninEquivalentAnimation';
 import { NortonEquivalentAnimation } from './interactive/NortonEquivalentAnimation';
+import { SuperpositionAnimation } from './interactive/SuperpositionAnimation';
+import { MaximumPowerTransferAnimation } from './interactive/MaximumPowerTransferAnimation';
+import { ReciprocityAnimation } from './interactive/ReciprocityAnimation';
+import { SourceTransformationAnimation } from './interactive/SourceTransformationAnimation';
+import { DCFaultAnalysisAnimation } from './interactive/DCFaultAnalysisAnimation';
+import { DCPracticalCaseStudyAnimation } from './interactive/DCPracticalCaseStudyAnimation';
+import { ACWaveformAnimation } from './interactive/ACWaveformAnimation';
+import { SinusoidalWaveformAnimation } from './interactive/SinusoidalWaveformAnimation';
+import { RMSAverageAnimation } from './interactive/RMSAverageAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -116,6 +125,33 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch4-nortons-theorem' || lessonId === 'lsn-ch4-nortons-theorem') {
     return <NortonEquivalentAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-superposition-theorem' || lessonId === 'lsn-ch4-superposition-theorem') {
+    return <SuperpositionAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-max-power-transfer' || lessonId === 'lsn-ch4-max-power-transfer') {
+    return <MaximumPowerTransferAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-reciprocity-theorem' || lessonId === 'lsn-ch4-reciprocity-theorem') {
+    return <ReciprocityAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-source-transformation' || lessonId === 'lsn-ch4-source-transformation') {
+    return <SourceTransformationAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-dc-fault-analysis' || lessonId === 'lsn-ch4-dc-fault-analysis') {
+    return <DCFaultAnalysisAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch4-practical-dc-applications' || lessonId === 'lsn-ch4-practical-dc-applications') {
+    return <DCPracticalCaseStudyAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-fundamentals' || lessonId === 'lsn-ch5-ac-fundamentals') {
+    return <ACWaveformAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-sinusoidal-waveform' || lessonId === 'lsn-ch5-sinusoidal-waveform') {
+    return <SinusoidalWaveformAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-rms-average-values' || lessonId === 'lsn-ch5-rms-average-values') {
+    return <RMSAverageAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

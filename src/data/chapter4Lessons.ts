@@ -2653,6 +2653,1647 @@ export const LESSON_NORTON: Lesson = {
     ]
   }
 };
+
+export const LESSON_SUPERPOSITION: Lesson = {
+  id: 'lsn-ch4-superposition-theorem',
+  topicId: 'ch4-superposition-theorem',
+  order: 13,
+  title: {
+    en: 'Superposition Theorem',
+    hi: 'सुपरपोजिशन प्रमेय (Superposition Theorem)',
+    bn: 'সুপারপজিশন উপপাদ্য (Superposition Theorem)'
+  },
+  easyExplanation: {
+    en: 'The Superposition Theorem states that in a linear network containing multiple independent sources, the total current or voltage in any branch is equal to the algebraic sum of currents or voltages produced by each independent source acting alone while all other independent sources are deactivated.',
+    hi: 'सुपरपोजिशन प्रमेय बताता है कि कई स्वतंत्र स्रोतों वाले किसी रैखिक नेटवर्क में, किसी भी शाखा में कुल धारा या वोल्टेज प्रत्येक स्वतंत्र स्रोत द्वारा अकेले उत्पन्न धाराओं या वोल्टेज के बीजगणितीय योग के बराबर होता है, जब अन्य सभी स्वतंत्र स्रोत निष्क्रिय कर दिए जाते हैं।',
+    bn: 'সুপারপজিশন উপপাদ্য অনুসারে একাধিক স্বাধীন সোর্সযুক্ত একটি রৈখিক নেটওয়ার্কে যেকোনো ব্রাঞ্চে মোট কারেন্ট বা ভোল্টেজ হলো প্রতিটি স্বাধীন সোর্স এককভাবে সক্রিয় রেখে (অন্যান্য সোর্স নিষ্ক্রিয় করে) প্রাপ্ত কারেন্ট বা ভোল্টেজের বীজগণিতীয় যোগফল।'
+  },
+  detailedExplanation: {
+    en: '1. Theorem Principle & Definition: In any linear bilateral circuit driven by more than one independent source, the response (voltage or current) at any point is the algebraic sum of responses caused by each independent source operating independently.\n\n2. Deactivation Rules for Independent Sources:\n- Independent Voltage Sources: Deactivated by replacing them with a short circuit (internal impedance = 0 Ω).\n- Independent Current Sources: Deactivated by replacing them with an open circuit (internal impedance = ∞ Ω).\n- Internal Source Resistance: Practical internal source resistances must remain in the circuit during source deactivation.\n\n3. Dependent (Controlled) Sources Rule: CRITICAL RULE — Dependent (controlled) voltage or current sources MUST NEVER be deactivated or turned off. They remain active in the circuit because their output depends on voltages or currents controlled elsewhere.\n\n4. One-Source-at-a-Time Procedure:\n- Step 1: Select one independent source to remain active.\n- Step 2: Deactivate all other independent sources (short voltage sources, open current sources).\n- Step 3: Calculate the branch current or node voltage response (e.g., I1\').\n- Step 4: Repeat Steps 1–3 for every independent source in turn (obtaining I1\'\', I1\'\'\', etc.).\n- Step 5: Sum all partial responses algebraically considering direction/polarity: I_total = I1\' + I1\'\' + ...\n\n5. Power Calculation Warning: Superposition CANNOT be directly applied to power calculations (P ≠ P1 + P2). Power is a non-linear quadratic function of current/voltage (P = I²R = V²/R). To find total power dissipated in a resistor, you must first determine the total current or voltage using superposition, and then compute P = (I_total)² · R.',
+    hi: '1. प्रमेय का सिद्धांत एवं परिभाषा: एक से अधिक स्वतंत्र स्रोतों वाले रैखिक द्विपक्षीय परिपथ में, किसी भी बिंदु पर कुल अनुक्रिया (वोल्टेज या धारा) प्रत्येक स्वतंत्र स्रोत द्वारा अकेले कार्य करने पर उत्पन्न अनुक्रियाओं का बीजगणितीय योग होती है।\n\n2. स्वतंत्र स्रोतों को निष्क्रिय करने के नियम:\n- स्वतंत्र वोल्टेज स्रोत: इन्हें शॉर्ट सर्किट (आंतरिक प्रतिरोध = 0 Ω) से बदला जाता है।\n- स्वतंत्र धारा स्रोत: इन्हें ओपन सर्किट (आंतरिक प्रतिरोध = ∞ Ω) से बदला जाता है।\n- व्यावहारिक आंतरिक प्रतिरोध परिपथ में बना रहता है।\n\n3. निर्भर (नियंत्रित) स्रोतों का नियम: अत्यंत महत्वपूर्ण — निर्भर स्रोतों को कभी भी बंद या निष्क्रिय नहीं किया जाता है। वे परिपथ में सक्रिय बने रहते हैं।\n\n4. एक-समय-पर-एक-स्रोत प्रक्रिया:\n- चरण 1: एक स्वतंत्र स्रोत को सक्रिय चुनें।\n- चरण 2: अन्य सभी स्वतंत्र स्रोतों को निष्क्रिय करें (वोल्टेज स्रोत शॉर्ट, धारा स्रोत ओपन)।\n- चरण 3: लक्ष्य शाखा की धारा या वोल्टेज ज्ञात करें (जैसे I1\')।\n- चरण 4: प्रत्येक स्वतंत्र स्रोत के लिए इसे दोहराएं (I1\'\', I1\'\'\' आदि प्राप्त करें)।\n- चरण 5: दिशा और ध्रुवता का ध्यान रखते हुए बीजगणितीय योग करें: I_total = I1\' + I1\'\' + ...\n\n5. शक्ति गणना चेतावनी: सुपरपोजिशन सीधे शक्ति गणना पर लागू नहीं होता है (P ≠ P1 + P2)। शक्ति एक गैर-रेखीय द्विघात फलन है (P = I²R)। कुल शक्ति ज्ञात करने के लिए पहले सुपरपोजिशन से कुल धारा I_total ज्ञात करें, फिर P = (I_total)² · R निकालें।',
+    bn: '১. উপপাদ্যের মূল নীতি ও সংজ্ঞা: একাধিক স্বাধীন সোর্স দ্বারা পরিচালিত যেকোনো লিনিয়ার বাইল্যাটারাল সার্কিটে যেকোনো উপাদানের রেসপন্স (কারেন্ট বা ভোল্টেজ) হলো প্রতিটি সোর্স পৃথকভাবে কার্যকর রেখে প্রাপ্ত রেসপন্সসমূহের বীজগণিতীয় যোগফল।\n\n২. স্বাধীন সোর্স নিষ্ক্রিয় করার নিয়ম:\n- স্বাধীন ভোল্টেজ সোর্স: শর্ট সার্কিট (অভ্যন্তরীণ রেজিস্ট্যান্স = ০ Ω) দ্বারা প্রতিস্থাপিত হয়।\n- স্বাধীন কারেন্ট সোর্স: ওপেন সার্কিট (অভ্যন্তরীণ রেজিস্ট্যান্স = ∞ Ω) দ্বারা প্রতিস্থাপিত হয়।\n- সোর্সের ব্যবহারিক অভ্যন্তরীণ রেজিস্ট্যান্স সার্কিটে বিদ্যমান থাকে।\n\n৩. নির্ভরশীল (ডিপেনডেন্ট) সোর্সের নিয়ম: অত্যন্ত গুরুত্বপূর্ণ — নির্ভরশীল ভোল্টেজ বা কারেন্ট সোর্স কোনো অবস্থাতেই বন্ধ বা নিষ্ক্রিয় করা যাবে না।\n\n৪. ধাপে ধাপে হিসাব করার পদ্ধতি:\n- ধাপ ১: একটি স্বাধীন সোর্স নির্বাচন করুন।\n- ধাপ ২: অন্য সব স্বাধীন সোর্স নিষ্ক্রিয় করুন (ভোল্টেজ সোর্স শর্ট, কারেন্ট সোর্স ওপেন)।\n- ধাপ ৩: কাঙ্ক্ষিত ব্রাঞ্চের কারেন্ট বা ভোল্টেজ নির্ণয় করুন (যেমন I1\')।\n- ধাপ ৪: প্রতিটি স্বাধীন সোর্সের জন্য এই প্রক্রিয়া পুনরাবৃত্তি করুন (I1\'\', I1\'\'\' নির্ণয় করুন)।\n- ধাপ ৫: অভিমুখ ও দিক বিবেচনা করে বীজগণিতীয় যোগ করুন: I_total = I1\' + I1\'\' + ...\n\n৫. পাওয়ার হিসাবের সতর্কতা: সুপারপজিশন সরাসরি পাওয়ার বা শক্তির হিসাবে প্রয়োগ করা যায় না (P ≠ P1 + P2)। কারণ পাওয়ার হলো কারেন্ট বা ভোল্টেজের অ-রৈখিক দ্বিঘাত ফাংশন (P = I²R)। তাই প্রথমে মোট কারেন্ট বা ভোল্টেজ নির্ণয় করে তারপর P = (I_total)² · R বের করতে হবে।'
+  },
+  formulas: [
+    {
+      symbol: 'I_{total}',
+      expression: 'I_{total} = \\sum_{k=1}^{n} I_k\' = I_1\' + I_1\'\' + I_1\'\'\' + \\dots',
+      description: {
+        en: 'Total branch current equal to the algebraic sum of component currents from each independent source',
+        hi: 'प्रत्येक स्वतंत्र स्रोत से प्राप्त घटक धाराओं के बीजगणितीय योग के बराबर कुल शाखा धारा',
+        bn: 'প্রতিটি স্বাধীন সোর্স থেকে প্রাপ্ত কারেন্টের বীজগণিতীয় যোগফলের সমান মোট ব্রাঞ্চ কারেন্ট'
+      }
+    },
+    {
+      symbol: 'V_{total}',
+      expression: 'V_{total} = \\sum_{k=1}^{n} V_k\' = V_1\' + V_1\'\' + V_1\'\'\' + \\dots',
+      description: {
+        en: 'Total node voltage equal to the algebraic sum of component voltages',
+        hi: 'घटक वोल्टेज के बीजगणितीय योग के बराबर कुल नोड वोल्टेज',
+        bn: 'উপাদান ভোল্টেজের বীজগণিতীয় যোগফলের সমান মোট নোড ভোল্টেজ'
+      }
+    },
+    {
+      symbol: 'P_{total}',
+      expression: 'P_{total} = (I_{total})^2 \\cdot R \\neq P_1 + P_2 + \\dots',
+      description: {
+        en: 'Total electrical power dissipated in a resistor calculated using total superimposed current (Power is non-linear)',
+        hi: 'कुल सुपरइम्पोज़्ड धारा का उपयोग करके प्रतिरोधक में कुल शक्ति खपत (शक्ति गैर-रेखीय होती है)',
+        bn: 'মোট সুপারইম্পোজড কারেন্ট ব্যবহার করে রেজিস্টরে অপচয়কৃত মোট শক্তি (শক্তি অ-রৈখিক)'
+      }
+    }
+  ],
+  diagrams: [
+    {
+      id: 'diag-superposition-theorem',
+      title: {
+        en: 'Superposition Theorem Deactivation & Decomposition Model',
+        hi: 'सुपरपोजिशन प्रमेय का विखंडन एवं स्रोत निष्क्रिएशन मॉडल',
+        bn: 'সুপারপজিশন উপপাদ্যের সোর্স নিষ্ক্রিয়করণ ও উপাদান বিভাজন মডেল'
+      },
+      caption: {
+        en: 'Decomposing a multi-source network into single-source sub-circuits by short-circuiting voltage sources and open-circuiting current sources.',
+        hi: 'वोल्टेज स्रोतों को शॉर्ट और धारा स्रोतों को ओपन करके बहु-स्रोत परिपथ को एकल-स्रोत उप-परिपथों में विभाजित करना।',
+        bn: 'ভোল্টেজ সোর্স শর্ট ও কারেন্ট সোর্স ওপেন করে বহুমাত্রিক সার্কিটকে একক সোর্স সার্কিটে রূপান্তর চিত্র।'
+      },
+      svgType: 'circuit-superposition-concept'
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-super-1',
+      problem: {
+        en: 'A DC circuit contains two voltage sources V1 = 24 V and V2 = 12 V connected with resistors R1 = 6 Ω, R2 = 12 Ω, and load RL = 4 Ω in a T-network. Calculate the current IL flowing through load RL using the Superposition Theorem.',
+        hi: 'एक डीसी परिपथ में दो वोल्टेज स्रोत V1 = 24 V और V2 = 12 V प्रतिरोधकों R1 = 6 Ω, R2 = 12 Ω, तथा लोड RL = 4 Ω के साथ जुड़े हैं। सुपरपोजिशन प्रमेय का उपयोग करके लोड RL से बहने वाली धारा IL ज्ञात करें।',
+        bn: 'একটি ডিসি সার্কিটে দুটি ভোল্টেজ সোর্স V1 = 24 V এবং V2 = 12 V, রেজিস্টর R1 = 6 Ω, R2 = 12 Ω এবং লোড RL = 4 Ω যুক্ত রয়েছে। সুপারপজিশন উপপাদ্য প্রয়োগ করে লোড RL এর কারেন্ট IL নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Given:\n- V1 = 24 V, V2 = 12 V\n- R1 = 6 Ω, R2 = 12 Ω, RL = 4 Ω\n\nStep 1: Case 1 — V1 Active (24 V), V2 Shorted (0 V)\n- Parallel combination of R2 and RL: R2 || RL = (12 · 4) / (12 + 4) = 48 / 16 = 3.0 Ω\n- Total circuit resistance seen by V1: R_total1 = R1 + (R2 || RL) = 6 + 3 = 9.0 Ω\n- Total supply current from V1: I_s1 = V1 / R_total1 = 24 / 9 = 2.667 A\n- Load current component IL\' via Current Divider Rule:\n  IL\' = I_s1 · [R2 / (R2 + RL)] = (24/9) · [12 / (12 + 4)] = (8/3) · (3/4) = 2.0 A (downward)\n\nStep 2: Case 2 — V2 Active (12 V), V1 Shorted (0 V)\n- Parallel combination of R1 and RL: R1 || RL = (6 · 4) / (6 + 4) = 24 / 10 = 2.4 Ω\n- Total circuit resistance seen by V2: R_total2 = R2 + (R1 || RL) = 12 + 2.4 = 14.4 Ω\n- Total supply current from V2: I_s2 = V2 / R_total2 = 12 / 14.4 = 0.833 A\n- Load current component IL\'\' via Current Divider Rule:\n  IL\'\' = I_s2 · [R1 / (R1 + RL)] = (12 / 14.4) · [6 / (6 + 4)] = (1/1.2) · 0.6 = 0.5 A (downward)\n\nStep 3: Algebraic Superposition\n- Total Load Current IL = IL\' + IL\'\' = 2.0 A + 0.5 A = 2.5 A (downward)\n\nFinal Answer: Load Current IL = 2.5 A',
+        hi: 'चरण 1: V1 सक्रिय (24 V), V2 शॉर्ट:\nR2 || RL = (12 × 4) / 16 = 3.0 Ω\nR_total1 = 6 + 3 = 9.0 Ω\nI_s1 = 24 / 9 = 2.667 A\nIL\' = 2.667 × (12 / 16) = 2.0 A (नीचे की ओर)\n\nचरण 2: V2 सक्रिय (12 V), V1 शॉर्ट:\nR1 || RL = (6 × 4) / 10 = 2.4 Ω\nR_total2 = 12 + 2.4 = 14.4 Ω\nI_s2 = 12 / 14.4 = 0.833 A\nIL\'\' = 0.833 × (6 / 10) = 0.5 A (नीचे की ओर)\n\nचरण 3: सुपरपोजिशन योग:\nIL = 2.0 A + 0.5 A = 2.5 A',
+        bn: 'ধাপ ১: V1 সক্রিয় (24 V), V2 শর্ট:\nR2 || RL = (12 × 4) / 16 = 3.0 Ω\nR_total1 = 6 + 3 = 9.0 Ω\nI_s1 = 24 / 9 = 2.667 A\nIL\' = 2.667 × (12 / 16) = 2.0 A (নিচের দিকে)\n\nধাপ ২: V2 সক্রিয় (12 V), V1 শর্ট:\nR1 || RL = (6 × 4) / 10 = 2.4 Ω\nR_total2 = 12 + 2.4 = 14.4 Ω\nI_s2 = 12 / 14.4 = 0.833 A\nIL\'\' = 0.833 × (6 / 10) = 0.5 A (নিচের দিকে)\n\nধাপ ৩: সুপারপজিশন যোগফল:\nIL = 2.0 A + 0.5 A = 2.5 A'
+      },
+      givenValues: {
+        'V1, V2': '24 V, 12 V',
+        'R1, R2, RL': '6 Ω, 12 Ω, 4 Ω'
+      },
+      finalAnswer: {
+        en: 'Load Current IL = 2.5 A',
+        hi: 'लोड धारा IL = 2.5 A',
+        bn: 'লোড কারেন্ট IL = ২.৫ A'
+      }
+    },
+    {
+      id: 'ex-super-2',
+      problem: {
+        en: 'A network contains a voltage source VS = 20 V and an independent current source IS = 4 A connected across resistors R1 = 10 Ω and R2 = 10 Ω in parallel with a load RL = 10 Ω. Find the voltage VL across load RL using the Superposition Theorem.',
+        hi: 'एक नेटवर्क में वोल्टेज स्रोत VS = 20 V और स्वतंत्र धारा स्रोत IS = 4 A प्रतिरोधकों R1 = 10 Ω, R2 = 10 Ω और लोड RL = 10 Ω से जुड़े हैं। सुपरपोजिशन का उपयोग करके RL का वोल्टेज VL ज्ञात करें।',
+        bn: 'একটি নেটওয়ার্কে ভোল্টেজ সোর্স VS = 20 V এবং স্বাধীন কারেন্ট সোর্স IS = 4 A, রেজিস্টর R1 = 10 Ω, R2 = 10 Ω এবং লোড RL = 10 Ω এর সাথে যুক্ত। সুপারপজিশন প্রয়োগ করে RL এর ভোল্টেজ VL নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Given:\n- Voltage Source VS = 20 V\n- Current Source IS = 4 A\n- Resistors R1 = 10 Ω, R2 = 10 Ω, RL = 10 Ω\n\nStep 1: Case 1 — Voltage Source VS Active (20 V), Current Source IS Open (0 A)\n- Since IS is open, circuit is a simple series-parallel voltage divider.\n- Parallel combination of R2 and RL: R2 || RL = (10 · 10) / (10 + 10) = 5.0 Ω\n- Load Voltage component VL\':\n  VL\' = VS · [(R2 || RL) / (R1 + (R2 || RL))] = 20 · [5.0 / (10 + 5.0)] = 20 · (5/15) = 6.667 V\n\nStep 2: Case 2 — Current Source IS Active (4 A), Voltage Source VS Shorted (0 V)\n- With VS shorted, R1 is connected in parallel with R2 and RL across the node.\n- Equivalent parallel resistance: R_p = R1 || R2 || RL = 10 || 10 || 10 = 10 / 3 = 3.333 Ω\n- Load Voltage component VL\'\':\n  VL\'\' = IS · R_p = 4.0 A · (10 / 3) Ω = 40 / 3 = 13.333 V\n\nStep 3: Algebraic Summation\n- Total Load Voltage VL = VL\' + VL\'\' = 6.667 V + 13.333 V = 20.0 V\n\nFinal Answer: Load Voltage VL = 20.0 V',
+        hi: 'चरण 1: VS सक्रिय (20 V), IS ओपन (0 A):\n(R2 || RL) = 5.0 Ω\nVL\' = 20 × (5 / 15) = 6.667 V\n\nचरण 2: IS सक्रिय (4 A), VS शॉर्ट (0 V):\nR_p = 10 || 10 || 10 = 3.333 Ω\nVL\'\' = 4 × 3.333 = 13.333 V\n\nचरण 3: बीजगणितीय योग:\nVL = 6.667 + 13.333 = 20.0 V',
+        bn: 'ধাপ ১: VS সক্রিয় (20 V), IS ওপেন (0 A):\n(R2 || RL) = 5.0 Ω\nVL\' = 20 × (5 / 15) = 6.667 V\n\nধাপ ২: IS সক্রিয় (4 A), VS শর্ট (0 V):\nR_p = 10 || 10 || 10 = 3.333 Ω\nVL\'\' = 4 × 3.333 = 13.333 V\n\nধাপ ৩: বীজগণিতীয় যোগফল:\nVL = 6.667 + 13.333 = 20.0 V'
+      },
+      givenValues: {
+        'VS, IS': '20 V, 4 A',
+        'R1, R2, RL': '10 Ω, 10 Ω, 10 Ω'
+      },
+      finalAnswer: {
+        en: 'Load Voltage VL = 20.0 V',
+        hi: 'लोड वोल्टेज VL = 20.0 V',
+        bn: 'লোড ভোল্টেজ VL = ২০.০ V'
+      }
+    },
+    {
+      id: 'ex-super-3',
+      problem: {
+        en: 'Demonstrate why Superposition Theorem cannot be directly applied to calculate power. A 5 Ω resistor carries partial currents I1\' = 3 A and I2\'\' = 2 A due to two separate DC sources acting independently. Calculate: (a) Total superimposed current, (b) True total power dissipated, and (c) Sum of individual powers (P1 + P2) to verify inequality.',
+        hi: 'प्रदर्शित करें कि शक्ति की गणना के लिए सीधे सुपरपोजिशन क्यों नहीं लगाया जा सकता। 5 Ω का प्रतिरोधक स्वतंत्र रूप से कार्य करने वाले दो डीसी स्रोतों के कारण I1\' = 3 A और I2\'\' = 2 A धाराएँ ले जाता है। गणना करें: (a) कुल धारा, (b) वास्तविक कुल शक्ति, और (c) व्यक्तिगत शक्तियों का योग (P1 + P2)।',
+        bn: 'পাওয়ার হিসাবের ক্ষেত্রে কেন সরাসরি সুপারপজিশন প্রয়োগ করা যায় না তা প্রদর্শন করুন। ৫ Ω এর একটি রেজিস্টরে দুটি আলাদা সোর্সের জন্য কারেন্ট যথাক্রমে I1\' = ৩ A এবং I2\'\' = ২ A। বের করুন: (ক) মোট কারেন্ট, (খ) প্রকৃত মোট পাওয়ার, এবং (গ) পৃথক পাওয়ারের যোগফল (P1 + P2)।'
+      },
+      solution: {
+        en: 'Given:\n- Resistor R = 5 Ω\n- Partial current from Source 1: I1\' = 3.0 A\n- Partial current from Source 2: I2\'\' = 2.0 A\n\nPart (a): Total Superimposed Current\nI_total = I1\' + I2\'\' = 3.0 + 2.0 = 5.0 A\n\nPart (b): True Total Power Dissipated P_total\nP_total = (I_total)² · R = (5.0)² · 5 = 25 · 5 = 125.0 Watts\n\nPart (c): Sum of Individual Powers (P1 + P2)\n- Power from Source 1 alone: P1 = (I1\')² · R = (3.0)² · 5 = 9 · 5 = 45 Watts\n- Power from Source 2 alone: P2 = (I2\'\')² · R = (2.0)² · 5 = 4 · 5 = 20 Watts\n- Sum P1 + P2 = 45 + 20 = 65.0 Watts\n\nComparison & Verification:\nP_total (125 W) ≠ P1 + P2 (65 W)\nThis clearly proves that P_total = (I1\' + I2\'\')² · R = (I1\')²R + (I2\'\')²R + 2·I1\'·I2\'\'·R = P1 + P2 + 2·I1\'·I2\'\'·R.\nThe cross-term 2·I1\'·I2\'\'·R makes power non-linear, so superposition must be applied to current/voltage first.',
+        hi: '(a) कुल धारा I_total = 3 + 2 = 5 A\n(b) वास्तविक कुल शक्ति P_total = 5² × 5 = 125 वाट\n(c) अलग-अलग शक्ति P1 = 3² × 5 = 45 W, P2 = 2² × 5 = 20 W\nयोग P1 + P2 = 45 + 20 = 65 वाट\n\nनिष्कर्ष: 125 W ≠ 65 W। शक्ति अ-रेखीय है, इसलिए सुपरपोजिशन केवल धारा/वोल्टेज पर लागू होता है।',
+        bn: '(ক) মোট কারেন্ট I_total = ৩ + ২ = ৫ A\n(খ) প্রকৃত মোট পাওয়ার P_total = ৫² × ৫ = ১২৫ ওয়াট\n(গ) পৃথক পাওয়ার P1 = ৩² × ৫ = ৪৫ W, P2 = ২² × ৫ = ২০ W\nযোগফল P1 + P2 = ৪৫ + ২০ = ৬৫ ওয়াট\n\nউপসংহার: ১২৫ W ≠ ৬৫ W। সুতরাং পাওয়ারের ওপর সরাসরি সুপারপজিশন খাটে না।'
+      },
+      givenValues: {
+        'R': '5 Ω',
+        'I1\', I2\'\'': '3 A, 2 A'
+      },
+      finalAnswer: {
+        en: 'Total Power P_total = 125 W, while P1 + P2 = 65 W (Proving P_total ≠ P1 + P2)',
+        hi: 'कुल शक्ति P_total = 125 W, जबकि P1 + P2 = 65 W (सिद्ध हुआ P_total ≠ P1 + P2)',
+        bn: 'মোট পাওয়ার P_total = ১২৫ W, কিন্তু P1 + P2 = ৬৫ W (প্রমাণিত P_total ≠ P1 + P2)'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Multi-source analog sensor circuit and operational amplifier summer node analysis',
+      'Power supply grid analysis with multiple distributed generating stations',
+      'Communication receiver RF front-end mixing and intermodulation signal analysis'
+    ],
+    hi: [
+      'बहु-स्रोत एनालॉग सेंसर परिपथ तथा सेशन ऑप-एम्प समर नोड विश्लेषण',
+      'कई वितरित जनरेटिंग स्टेशनों के साथ पावर सप्लाई ग्रिड विश्लेषण',
+      'संचार रिसीवर आरएफ फ्रंट-एंड मिक्सिंग तथा सिग्नल विश्लेषण'
+    ],
+    bn: [
+      'মাল্টি-সোর্স অ্যানালগ সেন্সর সার্কিট এবং অপ-অ্যাম্প সামিং নোড বিশ্লেষণ',
+      'একাধিক ডিস্ট্রিবিউটেড জেনারেটিং স্টেশনযুক্ত পাওয়ার গ্রিড বিশ্লেষণ',
+      'কমিউনিকেশন রিসিভার আরএফ ফ্রন্ট-এন্ড মিক্সিং ও সিগন্যাল বিশ্লেষণ'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'Superposition Theorem applies ONLY to linear bilateral networks.',
+      'Voltage sources are deactivated by replacing with short circuits (0 Ω); current sources by open circuits (∞ Ω).',
+      'Dependent (controlled) sources MUST NEVER be deactivated during analysis.',
+      'Superposition CANNOT be directly applied to power calculations due to non-linear P = I²R relationship.'
+    ],
+    hi: [
+      'सुपरपोजिशन प्रमेय केवल रैखिक द्विपक्षीय नेटवर्कों पर लागू होता है।',
+      'वोल्टेज स्रोतों को शॉर्ट सर्किट (0 Ω) और धारा स्रोतों को ओपन सर्किट (∞ Ω) से बदला जाता है।',
+      'निर्भर (नियंत्रित) स्रोतों को कभी भी बंद नहीं किया जाना चाहिए।',
+      'गैर-रेखीय P = I²R संबंध के कारण शक्ति गणना पर सीधे सुपरपोजिशन लागू नहीं हो सकता।'
+    ],
+    bn: [
+      'সুপারপজিশন উপপাদ্য কেবল লিনিয়ার বাইল্যাটারাল সার্কিটে প্রযোজ্য।',
+      'ভোল্টেজ সোর্স শর্ট সার্কিট (০ Ω) এবং কারেন্ট সোর্স ওপেন সার্কিট (∞ Ω) করতে হয়।',
+      'নির্ভরশীল সোর্স বিশ্লেষণকালে কোনো অবস্থাতেই বন্ধ করা যাবে না।',
+      'অ-রৈখিক P = I²R সম্পর্কের কারণে সরাসরি পাওয়ার হিসাবে সুপারপজিশন প্রয়োগ করা যায় না।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Deactivating dependent sources along with independent sources during sub-circuit setup',
+      'Attempting to sum individual component powers (P1 + P2) directly instead of computing total current first',
+      'Ignoring polarity and current direction when algebraically summing component responses'
+    ],
+    hi: [
+      'स्वतंत्र स्रोतों के साथ-साथ निर्भर स्रोतों को भी गलती से बंद कर देना',
+      'पहले कुल धारा ज्ञात किए बिना व्यक्तिगत शक्तियों (P1 + P2) को सीधे जोड़ने का प्रयास करना',
+      'घटक अनुक्रियाओं का योग करते समय धारा की दिशा और ध्रुवता की उपेक्षा करना'
+    ],
+    bn: [
+      'স্বাধীন সোর্সের সাথে সাথে ভুলবশত নির্ভরশীল সোর্সও বন্ধ করে ফেলা',
+      'মোট কারেন্ট বের না করে সরাসরি পৃথক পাওয়ার (P1 + P2) যোগ করে ফেলা',
+      'কারেন্টের অভিমুখ ও চিহ্ন বিবেচনা না করে উপাদান রেসপন্স যোগ করা'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-super-1',
+      question: {
+        en: 'When applying Superposition Theorem, an ideal independent voltage source is deactivated by replacing it with a:',
+        hi: 'सुपरपोजिशन प्रमेय लागू करते समय, एक आदर्श स्वतंत्र वोल्टेज स्रोत को किससे बदलकर निष्क्रिय किया जाता है?',
+        bn: 'সুপারপজিশন উপপাদ্য প্রয়োগে একটি আদর্শ স্বাধীন ভোল্টেজ সোর্স নিষ্ক্রিয় করতে এটি কী দিয়ে প্রতিস্থাপন করা হয়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Open circuit (∞ Ω)', hi: 'ओपन सर्किट (∞ Ω)', bn: 'ওপেন সার্কিট (∞ Ω)' } },
+        { id: 'opt-b', text: { en: 'Short circuit (0 Ω)', hi: 'शॉर्ट सर्किट (0 Ω)', bn: 'শর্ট সার্কিট (০ Ω)' } },
+        { id: 'opt-c', text: { en: 'Resistor equal to load resistance', hi: 'लोड प्रतिरोध के बराबर प्रतिरोधक', bn: 'লোড রেজিস্ট্যান্সের সমান রেজিস্টর' } },
+        { id: 'opt-d', text: { en: 'Capacitor of infinite capacitance', hi: 'अनंत धारिता का संधारित्र', bn: 'অসীম ক্যাপাসিট্যান্সের ক্যাপাসিটর' } }
+      ],
+      correctOptionId: 'opt-b',
+      explanation: {
+        en: 'Ideal voltage sources have zero internal resistance, so deactivating them requires replacing them with a short circuit (0 Ω).',
+        hi: 'आदर्श वोल्टेज स्रोतों का आंतरिक प्रतिरोध शून्य होता है, इसलिए उन्हें शॉर्ट सर्किट (0 Ω) से बदला जाता है।',
+        bn: 'আদর্শ ভোল্টেজ সোর্সের অভ্যন্তরীণ রেজিস্ট্যান্স শূন্য, তাই এটি শর্ট সার্কিট (০ Ω) দ্বারা প্রতিস্থাপিত হয়।'
+      }
+    },
+    {
+      id: 'mcq-super-2',
+      question: {
+        en: 'Why can Superposition Theorem NOT be applied directly to calculate electrical power in a resistor?',
+        hi: 'प्रतिरोधक में विद्युत शक्ति की गणना के लिए सीधे सुपरपोजिशन प्रमेय क्यों लागू नहीं किया जा सकता?',
+        bn: 'রেজিস্টরে পাওয়ার বা শক্তির হিসাব করতে কেন সরাসরি সুপারপজিশন উপপাদ্য প্রয়োগ করা যায় না?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Power is an AC parameter only', hi: 'शक्ति केवल एक एसी पैरामीटर है', bn: 'পাওয়ার কেবলমাত্র একটি এসি প্যারামিটার' } },
+        { id: 'opt-b', text: { en: 'Power depends on frequency', hi: 'शक्ति आवृत्ति पर निर्भर करती है', bn: 'পাওয়ার ফ্রিকোয়েন্সির ওপর নির্ভর করে' } },
+        { id: 'opt-c', text: { en: 'Power is a non-linear quadratic function of current/voltage (P = I²R)', hi: 'शक्ति धारा/वोल्टेज का एक गैर-रेखीय द्विघात फलन है (P = I²R)', bn: 'পাওয়ার হলো কারেন্ট বা ভোল্টেজের অ-রৈখিক দ্বিঘাত ফাংশন (P = I²R)' } },
+        { id: 'opt-d', text: { en: 'Power is always zero in linear DC circuits', hi: 'रेखीय डीसी परिपथों में शक्ति हमेशा शून्य होती है', bn: 'লিনিয়ার ডিসি সার্কিটে পাওয়ার সর্বদা শূন্য' } }
+      ],
+      correctOptionId: 'opt-c',
+      explanation: {
+        en: 'Superposition applies strictly to linear relationships (V = IR). Power P = I²R is non-linear, so P_total ≠ P1 + P2.',
+        hi: 'सुपरपोजिशन केवल रेखीय संबंधों (V = IR) पर लागू होता है। शक्ति P = I²R गैर-रेखीय है, इसलिए P_total ≠ P1 + P2।',
+        bn: 'সুপারপজিশন কেবল রৈখিক সম্পর্কের ক্ষেত্রে প্রযোজ্য। পাওয়ার P = I²R একটি অ-রৈখিক সমীকরণ, তাই P_total ≠ P1 + P2।'
+      }
+    },
+    {
+      id: 'mcq-super-3',
+      question: {
+        en: 'What happens to dependent (controlled) sources when applying the Superposition Theorem?',
+        hi: 'सुपरपोजिशन प्रमेय लागू करते समय निर्भर (नियंत्रित) स्रोतों का क्या होता है?',
+        bn: 'সুপারপজিশন উপপাদ্য প্রয়োগের সময় নির্ভরশীল (ডিপেনডেন্ট) সোর্সের কী ঘটে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'They are short-circuited like voltage sources', hi: 'उन्हें वोल्टेज स्रोतों की तरह शॉर्ट किया जाता है', bn: 'ভোল্টেজ সোর্সের মতো শর্ট করা হয়' } },
+        { id: 'opt-b', text: { en: 'They are open-circuited like current sources', hi: 'उन्हें धारा स्रोतों की तरह ओपन किया जाता है', bn: 'কারেন্ট সোর্সের মতো ওপেন করা হয়' } },
+        { id: 'opt-c', text: { en: 'They remain active in the circuit throughout the analysis', hi: 'वे पूरे विश्लेषण के दौरान परिपथ में सक्रिय बने रहते हैं', bn: 'তারা পুরো বিশ্লেষণজুড়ে সার্কিটে সক্রিয় থাকে' } },
+        { id: 'opt-d', text: { en: 'They are replaced with independent 1V sources', hi: 'उन्हें स्वतंत्र 1V स्रोतों से बदल दिया जाता है', bn: 'স্বাধীন ১V সোর্স দিয়ে প্রতিস্থাপন করা হয়' } }
+      ],
+      correctOptionId: 'opt-c',
+      explanation: {
+        en: 'Dependent sources depend on voltages/currents elsewhere in the network and MUST NEVER be deactivated.',
+        hi: 'निर्भर स्रोत परिपथ के अन्य भागों पर निर्भर करते हैं और उन्हें कभी भी निष्क्रिय नहीं किया जाना चाहिए।',
+        bn: 'নির্ভরশীল সোর্স সার্কিটের ওপর নির্ভরশীল তাই এদের কখনোই নিষ্ক্রিয় করা যায় না।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-super-1',
+      question: {
+        en: 'A network has three independent DC voltage sources. State the step-by-step procedure to determine the voltage across a target resistor using Superposition Theorem.',
+        hi: 'तीन स्वतंत्र डीसी वोल्टेज स्रोतों वाले नेटवर्क में सुपरपोजिशन प्रमेय द्वारा लक्ष्य प्रतिरोधक के वोल्टेज ज्ञात करने की चरणबद्ध प्रक्रिया लिखें।',
+        bn: 'তিনটি স্বাধীন ডিসি ভোল্টেজ সোর্সযুক্ত সার্কিটে সুপারপজিশন উপপাদ্যের সাহায্যে কোনো নির্দিষ্ট রেজিস্টরের ভোল্টেজ বের করার ধাপে ধাপে পদ্ধতি বর্ণনা করুন।'
+      },
+      hint: {
+        en: 'Explain deactivating 2 sources at a time while keeping 1 active, calculating 3 partial responses, and summing algebraically.',
+        hi: 'एक समय में 1 स्रोत सक्रिय रखते हुए 2 को बंद करने, 3 आंशिक वोल्टेज ज्ञात करने और योग करने का वर्णन करें।',
+        bn: 'একবারে ১টি সোর্স চালু রেখে বাকি ২টি সোর্স শর্ট করে ৩টি আংশিক ভোল্টেজ বের করার নিয়ম লিখুন।'
+      },
+      answerKey: {
+        en: '1. Keep V1 active, short V2 & V3 -> find V1\'. 2. Keep V2 active, short V1 & V3 -> find V2\'. 3. Keep V3 active, short V1 & V2 -> find V3\'. 4. Algebraic Sum: V_total = V1\' + V2\' + V3\'.',
+        hi: '1. V1 सक्रिय रखें, V2 और V3 शॉर्ट करें -> V1\' ज्ञात करें। 2. V2 सक्रिय रखें, V1 और V3 शॉर्ट करें -> V2\' ज्ञात करें। 3. V3 सक्रिय रखें -> V3\' ज्ञात करें। 4. कुल योग: V_total = V1\' + V2\' + V3\'।',
+        bn: '১. V1 চালু, V2 ও V3 শর্ট -> V1\'। ২. V2 চালু, V1 ও V3 শর্ট -> V2\'। ৩. V3 চালু, V1 ও V2 শর্ট -> V3\'। ৪. মোট ভোল্টেজ: V_total = V1\' + V2\' + V3\'।'
+      }
+    },
+    {
+      id: 'pq-super-2',
+      question: {
+        en: 'Explain why Superposition Theorem is not applicable to non-linear circuit elements such as semiconductor diodes or thermistors.',
+        hi: 'समझाइए कि सेमीकंडक्टर डायोड या थर्मिस्टर जैसे गैर-रेखीय घटकों पर सुपरपोजिशन लागू क्यों नहीं होता है।',
+        bn: 'সেমিকন্ডাক্টর ডায়োড বা থার্মিস্টরের মতো অ-রৈখিক উপাদানে কেন সুপারপজিশন প্রযোজ্য নয় ব্যাখ্যা করুন।'
+      },
+      hint: {
+        en: 'Consider whether the resistance of non-linear devices remains constant when multiple sources change.',
+        hi: 'विचार करें कि क्या स्रोतों के बदलने पर गैर-रेखीय घटकों का प्रतिरोध स्थिर रहता है या बदलता है।',
+        bn: 'সোর্স পরিবর্তনের সাথে সাথে অ-রৈখিক উপাদানের রেজিস্ট্যান্স পরিবর্তনশীল কিনা চিন্তা করুন।'
+      },
+      answerKey: {
+        en: 'Superposition relies on the mathematical principle of linearity f(x+y) = f(x) + f(y). In non-linear devices, dynamic resistance varies with operating voltage/current, violating proportionality and additivity.',
+        hi: 'सुपरपोजिशन रेखीयता सिद्धांत f(x+y) = f(x) + f(y) पर आधारित है। गैर-रेखीय घटकों में प्रतिरोध धारा/वोल्टेज के साथ बदलता है, जिससे यह नियम विफल हो जाता है।',
+        bn: 'সুপারপজিশন রৈখিকতা নীতি মেনে চলে। কিন্তু অ-রৈখিক উপাদানে রেজিস্ট্যান্স পরিবর্তনশীল হওয়ায় অনুপাত ও সংযোজনশীলতার নিয়ম ভঙ্গ হয়।'
+      }
+    }
+  ]
+};
+
+export const LESSON_MAX_POWER: Lesson = {
+  id: 'lsn-ch4-max-power-transfer',
+  topicId: 'ch4-max-power-transfer',
+  order: 14,
+  title: {
+    en: 'Maximum Power Transfer Theorem',
+    hi: 'अधिकतम शक्ति हस्तांतरण प्रमेय (Maximum Power Transfer Theorem)',
+    bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার উপপাদ্য (Maximum Power Transfer Theorem)'
+  },
+  easyExplanation: {
+    en: 'The Maximum Power Transfer Theorem states that maximum electrical power is transferred from a driving source network to a load resistance when the load resistance (RL) equals the internal Thevenin resistance (Rth) of the source network.',
+    hi: 'अधिकतम शक्ति हस्तांतरण प्रमेय बताता है कि किसी स्रोत नेटवर्क से लोड प्रतिरोध में अधिकतम विद्युत शक्ति तब स्थानांतरित होती है जब लोड प्रतिरोध (RL) स्रोत के आंतरिक थेवेनिन प्रतिरोध (Rth) के बराबर होता है।',
+    bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার উপপাদ্য অনুসারে একটি ড্রাইভ সোর্স নেটওয়ার্ক থেকে লোডে সর্বোচ্চ পাওয়ার স্থানান্তরিত হয় যখন লোড রেজিস্ট্যান্স (RL) সোর্সের অভ্যন্তরীণ থেভেনিন রেজিস্ট্যান্সের (Rth) সমান হয়।'
+  },
+  detailedExplanation: {
+    en: '1. Theorem Statement & Matching Condition: In any active DC network represented by its Thevenin equivalent circuit (Vth in series with Rth), the power transferred to an adjustable load resistor RL reaches its maximum value when:\n   RL = Rth (Load Resistance = Internal Source Resistance)\n\n2. Mathematical Derivation:\n- Load Current: IL = Vth / (Rth + RL)\n- Power dissipated in Load RL: PL = IL² · RL = [Vth / (Rth + RL)]² · RL\n- To maximize PL with respect to variable RL, set derivative dPL / dRL = 0:\n  dPL / dRL = Vth² · [(Rth + RL)² - 2·RL·(Rth + RL)] / (Rth + RL)⁴ = 0\n  (Rth + RL) - 2·RL = 0  =>  RL = Rth\n\n3. Maximum Power Formula Pmax:\nSubstituting RL = Rth into power equation:\nPmax = [Vth / (2·Rth)]² · Rth = (Vth² / 4·Rth² ) · Rth\nPmax = Vth² / (4 · Rth)\n\n4. Load Parameters at Maximum Power Point:\n- Load Current at Max Power: IL = Vth / (2 · Rth)\n- Terminal Load Voltage at Max Power: VL = IL · RL = (Vth / 2·Rth) · Rth = Vth / 2\n\n5. Electrical Efficiency (η) Analysis:\n- Total Power generated by source: P_total = IL² · (Rth + RL)\n- Efficiency η = (P_load / P_total) × 100% = [RL / (Rth + RL)] × 100%\n- At Maximum Power Transfer (RL = Rth):\n  η = [Rth / (Rth + Rth)] × 100% = (1 / 2) × 100% = 50%\n\n6. Power vs Efficiency Engineering Trade-off:\n- At maximum power transfer, efficiency is EXACTLY 50%. Half the total generated power is lost as internal heat in Rth.\n- Power Distribution Systems (Power Grids): Operate at RL >> Rth to achieve high efficiency (>90–95%), minimizing energy loss.\n- Communication, Audio & Signal Systems: Operate at impedance matching (RL = Rth) to maximize signal voltage/power transfer regardless of 50% efficiency.',
+    hi: '1. प्रमेय का कथन एवं मैचिंग शर्त: थेवेनिन समतुल्य परिपथ (Vth और Rth) द्वारा दर्शाए गए किसी भी सक्रिय डीसी नेटवर्क में, परिवर्तनशील लोड RL को स्थानांतरित शक्ति तब अधिकतम होती है जब:\n   RL = Rth (लोड प्रतिरोध = आंतरिक थेवेनिन प्रतिरोध)\n\n2. गणितीय व्युत्पत्ति:\n- लोड धारा: IL = Vth / (Rth + RL)\n- लोड शक्ति: PL = IL² · RL = [Vth / (Rth + RL)]² · RL\n- अधिकतम शक्ति के लिए dPL / dRL = 0 करने पर: RL = Rth\n\n3. अधिकतम शक्ति का सूत्र Pmax:\nRL = Rth रखने पर:\nPmax = Vth² / (4 · Rth)\n\n4. अधिकतम शक्ति बिंदु पर लोड पैरामीटर:\n- लोड धारा: IL = Vth / (2 · Rth)\n- लोड वोल्टेज: VL = Vth / 2\n\n5. विद्युत दक्षता (η) विश्लेषण:\n- दक्षता η = [RL / (Rth + RL)] × 100%\n- अधिकतम शक्ति हस्तांतरण पर (RL = Rth):\n  η = 50%\n\n6. शक्ति बनाम दक्षता इंजीनियरिंग समझौता:\n- अधिकतम शक्ति हस्तांतरण पर दक्षता ठीक 50% होती है। आधी ऊर्जा आंतरिक Rth में ऊष्मा के रूप में नष्ट हो जाती है।\n- पावर ग्रिड प्रणालियाँ उच्च दक्षता (>90%) के लिए RL >> Rth पर कार्य करती हैं।\n- संचार एवं ऑडियो प्रणालियाँ सिग्नल शक्ति को अधिकतम करने के लिए प्रतिबाधा मिलान (RL = Rth) पर कार्य करती हैं।',
+    bn: '১. উপপাদ্য ও কন্ডিশন: থেভেনিন সমতুল্য পরিপথের (Vth ও Rth) ক্ষেত্রে পরিবর্তনশীল লোড RL এ সর্বোচ্চ পাওয়ার স্থানান্তরিত হবে যখন:\n   RL = Rth (লোড রেজিস্ট্যান্স = অভ্যন্তরীণ থেভেনিন রেজিস্ট্যান্স)\n\n২. গাণিতিক প্রমাণ:\n- লোড কারেন্ট: IL = Vth / (Rth + RL)\n- লোড পাওয়ার: PL = [Vth / (Rth + RL)]² · RL\n- সর্বোচ্চ পাওয়ারের জন্য dPL / dRL = 0 বসালে পাওয়া যায়: RL = Rth\n\n৩. সর্বোচ্চ পাওয়ারের সূত্র Pmax:\nRL = Rth বসালে:\nPmax = Vth² / (4 · Rth)\n\n৪. সর্বোচ্চ পাওয়ার পয়েন্টে প্যারামিটার:\n- লোড কারেন্ট: IL = Vth / (2 · Rth)\n- লোড ভোল্টেজ: VL = Vth / 2\n\n৫. বৈদুতিক দক্ষতা (η):\n- দক্ষতা η = [RL / (Rth + RL)] × 100%\n- সর্বোচ্চ পাওয়ার ট্রান্সফারে (RL = Rth):\n  η = ৫০%\n\n৬. পাওয়ার বনাম দক্ষতার তুলনা:\n- সর্বোচ্চ পাওয়ার ট্রান্সফারে এফিসিয়েন্সি বা দক্ষতা ঠিক ৫০% হয়। অর্ধেকাংশ সোর্সের ভেতর নষ্ট হয়।\n- পাওয়ার গ্রিড সিস্টেমে উচ্চ দক্ষতার জন্য (>৯০%) RL >> Rth রাখা হয়।\n- অডিও ও কমিউনিকেশন সিস্টেমে সিগন্যাল পাওয়ার বাড়াতে RL = Rth ব্যবহার করা হয়।'
+  },
+  formulas: [
+    {
+      symbol: 'R_L',
+      expression: 'R_L = R_{th}',
+      description: {
+        en: 'Matching condition required for maximum power transfer',
+        hi: 'अधिकतम शक्ति हस्तांतरण के लिए आवश्यक मैचिंग शर्त',
+        bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফারের জন্য প্রয়োজনীয় কন্ডিশন'
+      }
+    },
+    {
+      symbol: 'P_{max}',
+      expression: 'P_{max} = \\frac{V_{th}^2}{4 \\cdot R_{th}}',
+      description: {
+        en: 'Maximum power transferred to the load at RL = Rth match',
+        hi: 'RL = Rth मैचिंग पर लोड को स्थानांतरित अधिकतम शक्ति',
+        bn: 'RL = Rth কন্ডিশনে লোডে স্থানান্তরিত সর্বোচ্চ পাওয়ার'
+      }
+    },
+    {
+      symbol: '\\eta',
+      expression: '\\eta = \\frac{R_L}{R_{th} + R_L} \\times 100\\% \\quad (\\eta = 50\\% \\text{ at } R_L = R_{th})',
+      description: {
+        en: 'Electrical efficiency equal to exactly 50% under maximum power transfer condition',
+        hi: 'अधिकतम शक्ति हस्तांतरण स्थिति के तहत ठीक 50% के बराबर विद्युत दक्षता',
+        bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার অবস্থায় ঠিক ৫০% এর সমান বৈদুতিক दक्षता'
+      }
+    }
+  ],
+  diagrams: [
+    {
+      id: 'diag-max-power-transfer',
+      title: {
+        en: 'Maximum Power Transfer Curve & Equivalent Circuit',
+        hi: 'अधिकतम शक्ति हस्तांतरण वक्र एवं समतुल्य परिपथ',
+        bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার কার্ভ ও সমতুল্য সার্কিট'
+      },
+      caption: {
+        en: 'Plot of Load Power PL vs RL showing peak Pmax occurring precisely when RL = Rth.',
+        hi: 'RL = Rth पर सटीक रूप से Pmax शिखर दर्शाने वाला PL बनाम RL ग्राफ।',
+        bn: 'RL = Rth বিন্দুতে পিক Pmax প্রদর্শনকারী PL বনাম RL গ্রাফ চিত্র।'
+      },
+      svgType: 'circuit-maxpower-concept'
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-maxp-1',
+      problem: {
+        en: 'A DC source network has a Thevenin voltage Vth = 24 V and Thevenin internal resistance Rth = 8 Ω. Determine: (a) Value of load resistance RL for maximum power transfer, (b) Maximum power Pmax delivered to the load, and (c) Total power supplied by the source at maximum power point.',
+        hi: 'एक डीसी स्रोत नेटवर्क का थेवेनिन वोल्टेज Vth = 24 V और आंतरिक प्रतिरोध Rth = 8 Ω है। ज्ञात करें: (a) अधिकतम शक्ति के लिए RL का मान, (b) लोड को दी गई अधिकतम शक्ति Pmax, और (c) स्रोत द्वारा आपूर्ति की गई कुल शक्ति।',
+        bn: 'একটি ডিসি নেটওয়ার্কের থেভেনিন ভোল্টেজ Vth = 24 V এবং অভ্যন্তরীণ রেজিস্ট্যান্স Rth = 8 Ω। বের করুন: (ক) সর্বোচ্চ পাওয়ারের জন্য RL এর মান, (খ) লোডে প্রাপ্ত সর্বোচ্চ পাওয়ার Pmax, এবং (গ) সোর্স কর্তৃক প্রদত্ত মোট পাওয়ার।'
+      },
+      solution: {
+        en: 'Given:\n- Thevenin Voltage Vth = 24 V\n- Thevenin Resistance Rth = 8 Ω\n\nPart (a): Load Resistance RL for Max Power\nRL = Rth = 8.0 Ω\n\nPart (b): Maximum Power Pmax Delivered to Load\nPmax = Vth² / (4 · Rth) = (24)² / (4 · 8) = 576 / 32 = 18.0 Watts\n\nPart (c): Total Power Supplied by Source P_total\n- At RL = Rth = 8 Ω, total circuit resistance R_total = Rth + RL = 8 + 8 = 16 Ω\n- Circuit current IL = Vth / R_total = 24 / 16 = 1.5 A\n- Total Power P_total = Vth · IL = 24 V · 1.5 A = 36.0 Watts\n- Notice that Efficiency η = Pmax / P_total = 18 W / 36 W = 50.0%\n\nFinal Answer: RL = 8.0 Ω, Pmax = 18.0 W, P_total = 36.0 W',
+        hi: '(a) RL = Rth = 8.0 Ω\n(b) Pmax = 24² / (4 × 8) = 576 / 32 = 18.0 वाट\n(c) IL = 24 / 16 = 1.5 A\nP_total = 24 × 1.5 = 36.0 वाट (दक्षता η = 50%)',
+        bn: '(ক) RL = Rth = ৮.০ Ω\n(খ) Pmax = ২৪² / (৪ × ৮) = ৫৭৬ / ৩২ = ১৮.০ ওয়াট\n(গ) IL = ২৪ / ১৬ = ১.৫ A\nP_total = ২৪ × ১.৫ = ৩৬.০ ওয়াট (দক্ষতা η = ৫০%)'
+      },
+      givenValues: {
+        'Vth': '24 V',
+        'Rth': '8 Ω'
+      },
+      finalAnswer: {
+        en: 'RL = 8.0 Ω, Pmax = 18.0 Watts, Total Source Power = 36.0 Watts',
+        hi: 'RL = 8.0 Ω, Pmax = 18.0 वाट, कुल स्रोत शक्ति = 36.0 वाट',
+        bn: 'RL = ৮.০ Ω, Pmax = ১৮.০ ওয়াট, মোট সোর্স পাওয়ার = ৩৬.০ ওয়াট'
+      }
+    },
+    {
+      id: 'ex-maxp-2',
+      problem: {
+        en: 'A circuit consists of a Vs = 30 V source connected with series resistor R1 = 10 Ω and parallel resistor R2 = 40 Ω. An adjustable load RL is connected across terminals A-B. Find the value of RL to absorb maximum power and calculate Pmax.',
+        hi: 'एक परिपथ में Vs = 30 V स्रोत R1 = 10 Ω के श्रेणी तथा R2 = 40 Ω के समानांतर है। A-B पर परिवर्तनशील लोड RL जुड़ा है। अधिकतम शक्ति अवशोषित करने के लिए RL का मान और Pmax ज्ञात करें।',
+        bn: 'একটি সার্কিটে Vs = 30 V সোর্স R1 = 10 Ω এর সাথে সিরিজে এবং R2 = 40 Ω এর সাথে প্যারালালে যুক্ত। A-B টার্মিনালে পরিবর্তনশীল লোড RL যুক্ত রয়েছে। সর্বোচ্চ পাওয়ারের জন্য RL এবং Pmax নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Given:\n- Vs = 30 V, R1 = 10 Ω, R2 = 40 Ω\n\nStep 1: Calculate Open-Circuit Thevenin Voltage Vth across A-B\nVth = Vs · [R2 / (R1 + R2)] = 30 · [40 / (10 + 40)] = 30 · (40/50) = 24.0 V\n\nStep 2: Calculate Thevenin Resistance Rth (Deactivate Vs by shorting)\nRth = R1 || R2 = (10 · 40) / (10 + 40) = 400 / 50 = 8.0 Ω\n\nStep 3: Condition for Max Power Transfer\nRL = Rth = 8.0 Ω\n\nStep 4: Calculate Maximum Load Power Pmax\nPmax = Vth² / (4 · Rth) = (24)² / (4 · 8) = 576 / 32 = 18.0 Watts\n\nFinal Answer: RL = 8.0 Ω, Pmax = 18.0 W',
+        hi: 'Vth = 30 × (40 / 50) = 24.0 V\nRth = (10 × 40) / 50 = 8.0 Ω\nRL = Rth = 8.0 Ω\nPmax = 24² / (4 × 8) = 18.0 वाट',
+        bn: 'Vth = ৩০ × (৪০ / ৫০) = ২৪.০ V\nRth = (১০ × ৪০) / ৫০ = ৮.০ Ω\nRL = Rth = ৮.০ Ω\nPmax = ২৪² / (৪ × ৮) = ১৮.০ ওয়াট'
+      },
+      givenValues: {
+        'Vs': '30 V',
+        'R1, R2': '10 Ω, 40 Ω'
+      },
+      finalAnswer: {
+        en: 'RL = 8.0 Ω, Pmax = 18.0 W',
+        hi: 'RL = 8.0 Ω, Pmax = 18.0 वाट',
+        bn: 'RL = ৮.০ Ω, Pmax = ১৮.০ W'
+      }
+    },
+    {
+      id: 'ex-maxp-3',
+      problem: {
+        en: 'An audio amplifier module has an internal output impedance Rth = 8 Ω and delivers an open-circuit audio signal Vth = 16 V. Compare the power delivered to three different speakers: (a) RL = 4 Ω, (b) RL = 8 Ω, and (c) RL = 16 Ω to verify that power peaks at RL = 8 Ω.',
+        hi: 'एक ऑडियो एम्पलीफायर का आंतरिक प्रतिरोध Rth = 8 Ω है और Vth = 16 V देता है। तीन अलग-अलग स्पीकर: (a) RL = 4 Ω, (b) RL = 8 Ω, और (c) RL = 16 Ω को दी गई शक्ति की तुलना करें।',
+        bn: 'একটি অডিও অ্যাম্প্লিফায়ারের অভ্যন্তরীণ ইম্পিডেন্স Rth = 8 Ω এবং Vth = 16 V। তিনটি স্পিকারের প্রাপ্ত পাওয়ার তুলনা করুন: (ক) RL = 4 Ω, (খ) RL = 8 Ω, এবং (গ) RL = 16 Ω।'
+      },
+      solution: {
+        en: 'Given:\n- Amplifier Vth = 16 V, Rth = 8 Ω\n\nCase (a): RL = 4 Ω\n- Current IL = Vth / (Rth + RL) = 16 / (8 + 4) = 16 / 12 = 1.333 A\n- Power P_4 = IL² · RL = (1.333)² · 4 = 1.778 · 4 = 7.11 Watts\n\nCase (b): RL = 8 Ω (RL = Rth Match)\n- Current IL = 16 / (8 + 8) = 16 / 16 = 1.0 A\n- Power P_8 = IL² · RL = (1.0)² · 8 = 8.0 Watts (PEAK MAXIMUM POWER)\n\nCase (c): RL = 16 Ω\n- Current IL = 16 / (8 + 16) = 16 / 24 = 0.667 A\n- Power P_16 = IL² · RL = (0.667)² · 16 = 0.444 · 16 = 7.11 Watts\n\nComparison:\nP_8 (8.0 W) > P_4 (7.11 W) and P_16 (7.11 W).\nThis confirms that maximum audio signal power is delivered when load impedance equals source output impedance (8 Ω).',
+        hi: '(a) RL = 4 Ω: IL = 16/12 = 1.333 A -> P = 7.11 वाट\n(b) RL = 8 Ω: IL = 16/16 = 1.0 A -> P = 8.0 वाट (अधिकतम)\n(c) RL = 16 Ω: IL = 16/24 = 0.667 A -> P = 7.11 वाट',
+        bn: '(ক) RL = 4 Ω: IL = ১৬/১২ = ১.৩৩৩ A -> P = ৭.১১ ওয়াট\n(খ) RL = 8 Ω: IL = ১৬/১৬ = ১.০ A -> P = ৮.০ ওয়াট (সর্বোচ্চ)\n(গ) RL = 16 Ω: IL = ১৬/২৪ = ০.৬৬৭ A -> P = ৭.১১ ওয়াট'
+      },
+      givenValues: {
+        'Vth, Rth': '16 V, 8 Ω',
+        'RL values': '4 Ω, 8 Ω, 16 Ω'
+      },
+      finalAnswer: {
+        en: 'Power delivered: 7.11 W at 4 Ω, 8.0 W at 8 Ω (Peak Max), 7.11 W at 16 Ω',
+        hi: 'दी गई शक्ति: 4 Ω पर 7.11 W, 8 Ω पर 8.0 W (अधिकतम), 16 Ω पर 7.11 W',
+        bn: 'প্রাপ্ত পাওয়ার: ৪ Ω এ ৭.১১ W, ৮ Ω এ ৮.০ W (সর্বোচ্চ), ১৬ Ω এ ৭.১১ W'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Audio amplifier and loudspeaker impedance matching (4 Ω, 8 Ω, 16 Ω speakers)',
+      'RF antenna and coaxial transmission line impedance matching (50 Ω / 75 Ω)',
+      'Solar PV panel Maximum Power Point Tracking (MPPT) electronic charge controllers'
+    ],
+    hi: [
+      'ऑडियो एम्पलीफायर और लाउडस्पीकर प्रतिबाधा मिलान (4 Ω, 8 Ω, 16 Ω)',
+      'आरएफ एंटीना और कोएक्सिएल ट्रांसमिशन लाइन प्रतिबाधा मिलान (50 Ω / 75 Ω)',
+      'सोलर पीवी पैनल मैक्सिमम पावर पॉइंट ट्रैकिंग (MPPT) चार्ज कंट्रोलर'
+    ],
+    bn: [
+      'অডিও অ্যাম্প্লিফায়ার ও লাউডস্পিকার ইম্পিডেন্স ম্যাচিং (৪, ৮, ১৬ ওহম)',
+      'আরএফ অ্যান্টেন ও কোঅ্যাক্সিয়াল লাইন ইম্পিডেন্স ম্যাচিং (৫০ / ৭৫ ওহম)',
+      'সোলার পিভি প্যানেল ম্যাক্সিমাম পাওয়ার পয়েন্ট ট্র্যাকিং (MPPT) চার্জ কন্ট্রোলার'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'Maximum power transfer occurs when load resistance RL equals Thevenin resistance Rth (RL = Rth).',
+      'Maximum power Pmax = Vth² / (4 · Rth).',
+      'Electrical efficiency at maximum power point is ALWAYS exactly 50%.',
+      'Power distribution grids DO NOT use maximum power transfer because 50% loss is unacceptable; they use RL >> Rth.'
+    ],
+    hi: [
+      'अधिकतम शक्ति हस्तांतरण तब होता है जब लोड प्रतिरोध RL थेवेनिन प्रतिरोध Rth के बराबर होता है।',
+      'अधिकतम शक्ति Pmax = Vth² / (4 · Rth)।',
+      'अधिकतम शक्ति बिंदु पर विद्युत दक्षता हमेशा ठीक 50% होती है।',
+      'पावर ग्रिड में इसका उपयोग नहीं किया जाता क्योंकि 50% ऊर्जा हानि अस्वीकार्य है; वे RL >> Rth का उपयोग करते हैं।'
+    ],
+    bn: [
+      'সর্বোচ্চ পাওয়ার ট্রান্সফার ঘটে যখন লোড রেজিস্ট্যান্স RL সমান থেভেনিন রেজিস্ট্যান্স Rth হয়।',
+      'সর্বোচ্চ পাওয়ার Pmax = Vth² / (4 · Rth)।',
+      'সর্বোচ্চ পাওয়ার পয়েন্টে বৈদুতিক এফিসিয়েন্সি সর্বদা ঠিক ৫০%।',
+      'পাওয়ার গ্রিডে ৫০% অপচয় গ্রহণযোগ্য নয় তাই সেখানে RL >> Rth রাখা হয়।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Assuming efficiency is 100% at maximum power transfer instead of 50%',
+      'Confusing internal source resistance Rth with variable load resistance RL when deriving Pmax',
+      'Applying Maximum Power Transfer Theorem directly to power transmission utility grids'
+    ],
+    hi: [
+      'यह मान लेना कि अधिकतम शक्ति हस्तांतरण पर दक्षता 50% के बजाय 100% होती है',
+      'Pmax व्युत्पन्न करते समय आंतरिक प्रतिरोध Rth को लोड प्रतिरोध RL से भ्रमित करना',
+      'पावर ट्रांसमिशन यूटिलिटी ग्रिड पर सीधे इस प्रमेय को लागू करना'
+    ],
+    bn: [
+      'সর্বোচ্চ পাওয়ার ট্রান্সফারে দক্ষতা ৫০% এর বদলে ১০০% মনে করে ভুল করা',
+      'Pmax প্রমাণের সময় সোর্সের Rth এবং পরিবর্তনশীল RL গুলিয়ে ফেলা',
+      'পাওয়ার ডিস্ট্রিবিউশন গ্রিডে সরাসরি এই উপপাদ্য প্রয়োগের ভুল চিন্তাধারা'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-maxp-1',
+      question: {
+        en: 'Under the condition of maximum power transfer, what is the electrical efficiency of the system?',
+        hi: 'अधिकतम शक्ति हस्तांतरण की स्थिति के तहत, प्रणाली की विद्युत दक्षता क्या होती है?',
+        bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফারের শর্তে সার্কিটের বৈদুতিক এফিসিয়েন্সি বা দক্ষতা কত হয়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '100%', hi: '100%', bn: '১০০%' } },
+        { id: 'opt-b', text: { en: '75%', hi: '75%', bn: '৭৫%' } },
+        { id: 'opt-c', text: { en: '50%', hi: '50%', bn: '৫০%' } },
+        { id: 'opt-d', text: { en: '25%', hi: '25%', bn: '২৫%' } }
+      ],
+      correctOptionId: 'opt-c',
+      explanation: {
+        en: 'At RL = Rth, efficiency η = [RL / (Rth + RL)] × 100% = [Rth / (2·Rth)] × 100% = 50%.',
+        hi: 'RL = Rth पर, दक्षता η = [Rth / (2·Rth)] × 100% = 50% होती है।',
+        bn: 'RL = Rth হলে, এফিসিয়েন্সি η = [Rth / (২·Rth)] × ১০০% = ৫০%।'
+      }
+    },
+    {
+      id: 'mcq-maxp-2',
+      question: {
+        en: 'If a DC network has a Thevenin resistance Rth = 10 Ω and Vth = 20 V, what is the maximum power that can be delivered to an adjustable load RL?',
+        hi: 'यदि किसी परिपथ में Rth = 10 Ω और Vth = 20 V है, तो परिवर्तनशील लोड RL को दी जाने वाली अधिकतम शक्ति क्या है?',
+        bn: 'একটি ডিসি সার্কিটে Rth = 10 Ω এবং Vth = 20 V হলে, পরিবর্তনশীল লোড RL এ স্থানান্তরিত সর্বোচ্চ পাওয়ার কত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '40 Watts', hi: '40 वाट', bn: '৪০ ওয়াট' } },
+        { id: 'opt-b', text: { en: '10 Watts', hi: '10 वाट', bn: '১০ वाट' } },
+        { id: 'opt-c', text: { en: '20 Watts', hi: '20 वाट', bn: '২০ ওয়াট' } },
+        { id: 'opt-d', text: { en: '5 Watts', hi: '5 वाट', bn: '৫ ওয়াট' } }
+      ],
+      correctOptionId: 'opt-b',
+      explanation: {
+        en: 'Pmax = Vth² / (4 · Rth) = (20)² / (4 · 10) = 400 / 40 = 10 Watts.',
+        hi: 'Pmax = Vth² / (4 · Rth) = (20)² / (4 · 10) = 400 / 40 = 10 वाट।',
+        bn: 'Pmax = Vth² / (৪ · Rth) = (২০)² / (৪ · ১০) = ৪০০ / ৪০ = ১০ ওয়াট।'
+      }
+    },
+    {
+      id: 'mcq-maxp-3',
+      question: {
+        en: 'Why do electrical power transmission utility companies NOT design distribution grids for maximum power transfer?',
+        hi: 'विद्युत शक्ति वितरण कंपनियाँ वितरण ग्रिडों को अधिकतम शक्ति हस्तांतरण के लिए क्यों डिजाइन नहीं करती हैं?',
+        bn: 'বৈদ্যুতিক পাওয়ার ডিস্ট্রিবিউশন কোম্পানিগুলো কেন সর্বোচ্চ পাওয়ার ট্রান্সফারের জন্য গ্রিড ডিজাইন করে না?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Because voltage would become infinite', hi: 'क्योंकि वोल्टेज अनंत हो जाएगा', bn: 'কারণ ভোল্টেজ অসীম হয়ে যাবে' } },
+        { id: 'opt-b', text: { en: 'Because efficiency is only 50%, resulting in huge 50% power loss in internal lines', hi: 'क्योंकि दक्षता केवल 50% होती है, जिससे आंतरिक लाइनों में 50% भारी ऊर्जा हानि होगी', bn: 'কারণ এতে এফিসিয়েন্সি মাত্র ৫০%, যার ফলে লাইনে ৫০% শক্তি অপচয় হবে' } },
+        { id: 'opt-c', text: { en: 'Because load resistance cannot be measured', hi: 'क्योंकि लोड प्रतिरोध मापा नहीं जा सकता', bn: 'কারণ লোড রেজিস্ট্যান্স মেপে বের করা যায় না' } },
+        { id: 'opt-d', text: { en: 'Because current becomes zero at maximum power', hi: 'क्योंकि अधिकतम शक्ति पर धारा शून्य हो जाती है', bn: 'কারণ সর্বোচ্চ পাওয়ারে কারেন্ট শূন্য হয়ে যায়' } }
+      ],
+      correctOptionId: 'opt-b',
+      explanation: {
+        en: 'Power transmission systems prioritize high efficiency (>90%), making 50% line loss completely unacceptable.',
+        hi: 'पावर ट्रांसमिशन सिस्टम उच्च दक्षता (>90%) को प्राथमिकता देते हैं, जिससे 50% हानि अस्वीकार्य है।',
+        bn: 'পাওয়ার সিস্টেমে উচ্চ এফিসিয়েন্সি (>৯০%) প্রধান লক্ষ্য, তাই ৫০% অপচয় একেবারেই অগ্রহণযোগ্য।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-maxp-1',
+      question: {
+        en: 'Derive the formula for Maximum Power Pmax = Vth² / (4 · Rth) starting from the load power expression PL = IL² · RL.',
+        hi: 'लोड शक्ति व्यंजक PL = IL² · RL से शुरू करते हुए अधिकतम शक्ति Pmax = Vth² / (4 · Rth) के सूत्र का व्युत्पत्ति करें।',
+        bn: 'লোড পাওয়ারের সমীকরণ PL = IL² · RL থেকে শুরু করে সর্বোচ্চ পাওয়ার Pmax = Vth² / (4 · Rth) সূত্রের গাণিতিক প্রমাণ লিখুন।'
+      },
+      hint: {
+        en: 'Substitute IL = Vth / (Rth + RL), differentiate PL with respect to RL, set dPL/dRL = 0 to get RL = Rth, then substitute back.',
+        hi: 'IL = Vth / (Rth + RL) रखें, RL के सापेक्ष अवकलन करें, dPL/dRL = 0 रखकर RL = Rth प्राप्त करें।',
+        bn: 'IL = Vth / (Rth + RL) বসিয়ে dPL/dRL = 0 ধরে RL = Rth বের করে মূল সমীকরণে বসান।'
+      },
+      answerKey: {
+        en: '1. PL = [Vth / (Rth + RL)]² · RL. 2. dPL/dRL = 0 gives (Rth + RL) - 2RL = 0 => RL = Rth. 3. Pmax = [Vth / (2Rth)]² · Rth = Vth² / (4Rth).',
+        hi: '1. PL = [Vth / (Rth + RL)]² · RL। 2. dPL/dRL = 0 से RL = Rth। 3. Pmax = [Vth / (2Rth)]² · Rth = Vth² / (4Rth)।',
+        bn: '১. PL = [Vth / (Rth + RL)]² · RL। ২. dPL/dRL = 0 বসালে RL = Rth। ৩. Pmax = [Vth / (2Rth)]² · Rth = Vth² / (4Rth)।'
+      }
+    },
+    {
+      id: 'pq-maxp-2',
+      question: {
+        en: 'Explain the fundamental difference between operating goals of power distribution grids vs electronic communication matching networks.',
+        hi: 'पावर वितरण ग्रिड बनाम इलेक्ट्रॉनिक संचार मैचिंग नेटवर्क के संचालन लक्ष्यों के बीच मूलभूत अंतर समझाइए।',
+        bn: 'পাওয়ার ডিস্ট্রিবিউশন গ্রিড এবং ইলেকট্রনিক্স কমিউনিকেশন সার্কিটের মূল লক্ষ্যগত পার্থক্য ব্যাখ্যা করুন।'
+      },
+      hint: {
+        en: 'Focus on efficiency (>90% vs 50%) and primary parameter being transmitted (energy vs signal power).',
+        hi: 'दक्षता (>90% बनाम 50%) और मुख्य लक्ष्य (ऊर्जा संरक्षण बनाम सिग्नल पावर) पर ध्यान केंद्रित करें।',
+        bn: 'দক্ষতা (>৯০% বনাম ৫০%) এবং মূল লক্ষ্য (শক্তি সাশ্রয় বনাম সিগন্যাল পাওয়া) বিবেচনা করুন।'
+      },
+      answerKey: {
+        en: 'Power grids aim to minimize energy loss and maximize efficiency (η > 90%, operating at RL >> Rth). Communication networks aim to maximize signal power transfer to the load (RL = Rth), accepting 50% efficiency because signal voltage level is critical.',
+        hi: 'पावर ग्रिड ऊर्जा हानि को कम करने और उच्च दक्षता (η > 90%, RL >> Rth) पर कार्य करते हैं। संचार नेटवर्क सिग्नल शक्ति को अधिकतम करने के लिए RL = Rth पर कार्य करते हैं, जहाँ 50% दक्षता स्वीकार्य है।',
+        bn: 'পাওয়ার গ্রিডের প্রধান লক্ষ্য অপচয় কমিয়ে উচ্চ দক্ষতা (>৯০%, RL >> Rth) অর্জন করা। কমিউনিকেশন সার্কিটের লক্ষ্য সিগন্যাল পাওয়ার সর্বোচ্চ করা (RL = Rth), যেখানে ৫০% দক্ষতা গ্রহণযোগ্য।'
+      }
+    }
+  ]
+};
+
+export const LESSON_RECIPROCITY: Lesson = {
+  id: 'lsn-ch4-reciprocity-theorem',
+  topicId: 'ch4-reciprocity-theorem',
+  order: 15,
+  title: {
+    en: 'Reciprocity Theorem',
+    hi: 'रेसीप्रोसिटी (पारस्परिकता) प्रमेय',
+    bn: 'রেসিপ্রোসিটি উপপাদ্য (Reciprocity Theorem)'
+  },
+  easyExplanation: {
+    en: 'The Reciprocity Theorem states that in any linear, bilateral, passive network driven by a single independent source, the ratio of excitation (voltage or current source) at Port 1 to the resulting response (current or voltage) at Port 2 remains unchanged when the positions of excitation and response are interchanged.',
+    hi: 'रेसीप्रोसिटी प्रमेय बताता है कि केवल एक स्वतंत्र स्रोत द्वारा संचालित किसी भी रैखिक, द्विपक्षीय, निष्क्रीय नेटवर्क में, पोर्ट 1 पर उत्तेजना (स्रोतः वोल्टेज/धारा) और पोर्ट 2 पर अनुक्रिया (धारा/वोल्टेज) का अनुपात समान रहता है जब उत्तेजना और अनुक्रिया के स्थानों को आपस में बदल दिया जाता है।',
+    bn: 'রেসিপ্রোসিটি উপপাদ্য অনুসারে একটি স্বাধীন সোর্সযুক্ত যেকোনো রৈখিক, দ্বিপক্ষীয় ও নিষ্ক্রিয় নেটওয়ার্কে পোর্ট ১ এ সোর্স প্রয়োগে পোর্ট ২ এ প্রাপ্ত রেসপন্সের অনুপাত, সোর্স ও রেসপন্সের অবস্থান অদল-বদল করলেও অভিন্ন থাকে।'
+  },
+  detailedExplanation: {
+    en: '1. Theorem Definition & Principle: In a linear bilateral passive network containing a single independent voltage source V connected at mesh/port 1 that produces a short-circuit current I at mesh/port 2, removing V from port 1 and placing an identical source V at port 2 will produce the EXACT same short-circuit current I at port 1.\n\n2. Transfer Admittance & Impedance Expression:\n- Transfer Admittance Case A (Source V at Port 1, Ammeter at Port 2): Y21 = I2A / V1\n- Transfer Admittance Case B (Source V at Port 2, Ammeter at Port 1): Y12 = I1B / V2\n- According to Reciprocity Theorem: Y21 = Y12  =>  (I2A / V1) = (I1B / V2)\n- If V1 = V2 = V, then I2A = I1B.\n\n3. Verification Procedure:\n- Step 1: Connect independent voltage source V at Port 1. Connect an ideal Ammeter (short circuit) across Port 2. Measure response current I2A.\n- Step 2: Calculate transfer admittance Y21 = I2A / V.\n- Step 3: Remove source from Port 1 and replace Port 1 with an ideal Ammeter. Place identical voltage source V at Port 2. Measure response current I1B.\n- Step 4: Calculate transfer admittance Y12 = I1B / V.\n- Step 5: Verify that I2A = I1B (and Y21 = Y12).\n\n4. Network Requirements & Conditions:\n- Must be Linear: Resistors, inductors, capacitors must obey linear Ohm\'s law.\n- Must be Bilateral: Conduction must be identical in both forward and reverse directions (e.g., pure resistors).\n- Must be Passive: Network must contain NO internal energy sources (no independent batteries inside).\n- Single Independent Source: Reciprocity applies with one independent excitation at a time.\n- Initial Energy Storage MUST be zero.\n\n5. Limitations & Non-Reciprocal Networks:\n- Unilateral Elements: Networks containing diodes, transistors, or rectifiers ARE NOT reciprocal.\n- Dependent Sources: Networks containing controlled sources (VCVS, VCCS, etc.) ARE NOT reciprocal.\n- Non-linear Elements: Varistors, thermistors, magnetic cores break reciprocity.',
+    hi: '1. प्रमेय की परिभाषा एवं सिद्धांत: किसी रैखिक द्विपक्षीय निष्क्रीय नेटवर्क में जब पोर्ट 1 पर वोल्टेज स्रोत V लगाने पर पोर्ट 2 पर शॉर्ट-सर्किट धारा I प्राप्त होती है, तो स्रोत V को पोर्ट 2 पर लगाने पर पोर्ट 1 पर ठीक वही शॉर्ट-सर्किट धारा I प्राप्त होगी।\n\n2. ट्रांसफर एडमिटेंस एवं व्यंजक:\n- केस A (पोर्ट 1 पर स्रोत V, पोर्ट 2 पर अमीटर): Y21 = I2A / V1\n- केस B (पोर्ट 2 पर स्रोत V, पोर्ट 1 पर अमीटर): Y12 = I1B / V2\n- रेसीप्रोसिटी नियम अनुसार: Y21 = Y12  =>  I2A = I1B (यदि V1 = V2)।\n\n3. सत्यापन प्रक्रिया:\n- चरण 1: पोर्ट 1 पर V जोड़ें, पोर्ट 2 पर अमीटर जोड़ें। धारा I2A मापें।\n- चरण 2: Y21 = I2A / V ज्ञात करें।\n- चरण 3: पोर्ट 1 पर अमीटर और पोर्ट 2 पर वही स्रोत V लगाएं। धारा I1B मापें।\n- चरण 4: सत्यापित करें कि I2A = I1B है।\n\n4. परिपथ की आवश्यक शर्तें:\n- रैखिक होना चाहिए (Linear)।\n- द्विपक्षीय होना चाहिए (Bilateral)।\n- निष्क्रीय होना चाहिए (Passive - कोई आंतरिक स्वतंत्र स्रोत नहीं)।\n- प्रारंभिक ऊर्जा शून्य होनी चाहिए।\n\n5. सीमाएँ:\n- एकतरफा घटक (डायोड, ट्रांजिस्टर) रेसीप्रोकल नहीं होते।\n- निर्भर स्रोत (Dependent sources) होने पर यह नियम लागू नहीं होता।',
+    bn: '১. উপপাদ্যের মূল নীতি: একটি লিনিয়ার বাইল্যাটারাল প্যাসিভ নেটওয়ার্কে পোর্ট ১ এ ভোল্টেজ সোর্স V দিলে পোর্ট ২ এ শর্ট-সার্কিট কারেন্ট I পাওয়া গেলে, সোর্স V কে পোর্ট ২ এ স্থানান্তর করলে পোর্ট ১ এ ঠিক একই শর্ট-সার্কিট কারেন্ট I পাওয়া যাবে।\n\n২. ট্রান্সফার অ্যাডমিট্যান্স সূত্র:\n- কেস A (পোর্ট ১ এ সোর্স V, পোর্ট ২ এ অ্যামিটার): Y21 = I2A / V1\n- কেস B (পোর্ট ২ এ সোর্স V, পোর্ট ১ এ অ্যামিটার): Y12 = I1B / V2\n- রেসিপ্রোসিটি উপপাদ্য অনুযায়ী: Y21 = Y12  =>  I2A = I1B (যদি V1 = V2 হয়)।\n\n৩. প্রমাণ করার নিয়ম:\n- ধাপ ১: পোর্ট ১ এ সোর্স V এবং পোর্ট ২ এ অ্যামিটার যুক্ত করে I2A বের করুন।\n- ধাপ ২: ট্রান্সফার অ্যাডমিট্যান্স Y21 = I2A / V হিসাব করুন।\n- ধাপ ৩: সোর্স ও অ্যামিটারের স্থান অদল-বদল করে পোর্ট ১ এর কারেন্ট I1B মেপে দেখুন।\n- ধাপ ৪: নিশ্চিত করুন যে I2A = I1B (এবং Y21 = Y12)।\n\n৪. প্রয়োজনীয় শর্তাবলী:\n- রৈখিক (Linear) হতে হবে।\n- দ্বিপক্ষীয় (Bilateral) হতে হবে।\n- নিষ্ক্রিয় (Passive) হতে হবে (অভ্যন্তরীণ কোনো সোর্স থাকা যাবে না)।\n\n৫. সীমাবদ্ধতা:\n- একমুখী উপাদান (ডায়োড, ট্রানজিস্টর) থাকলে রেসিপ্রোসিটি কাজ করে না।\n- নির্ভরশীল সোর্স (Dependent sources) থাকলে এটি খাটে না।'
+  },
+  formulas: [
+    {
+      symbol: 'Y_{21} = Y_{12}',
+      expression: '\\frac{I_{2A}}{V_1} = \\frac{I_{1B}}{V_2} \\quad (\\text{Transfer Admittance Symmetry})',
+      description: {
+        en: 'Equality of forward and reverse transfer admittances in a linear bilateral passive network',
+        hi: 'रैखिक द्विपक्षीय निष्क्रीय नेटवर्क में फॉरवर्ड और रिवर्स ट्रांसफर एडमिटेंस की समानता',
+        bn: 'লিনিয়ার বাইল্যাটারাল প্যাসিভ সার্কিটে ফরওয়ার্ড ও রিভার্স ট্রান্সফার অ্যাডমিট্যান্সের সমতা'
+      }
+    },
+    {
+      symbol: 'Z_{21} = Z_{12}',
+      expression: '\\frac{V_{2A}}{I_1} = \\frac{V_{1B}}{I_2} \\quad (\\text{Transfer Impedance Symmetry})',
+      description: {
+        en: 'Equality of forward and reverse transfer impedances under open-circuit response conditions',
+        hi: 'ओपन-सर्किट अनुक्रिया स्थितियों के तहत फॉरवर्ड और रिवर्स ट्रांसफर प्रतिबाधा की समानता',
+        bn: 'ওপেন-সার্কিট রেসপন্স অবস্থায় ফরওয়ার্ড ও রিভার্স ট্রান্সফার ইম্পিডেন্সের সমতা'
+      }
+    }
+  ],
+  diagrams: [
+    {
+      id: 'diag-reciprocity-theorem',
+      title: {
+        en: 'Reciprocity Theorem Port Interchange Diagram',
+        hi: 'रेसीप्रोसिटी प्रमेय पोर्ट अदला-बदली आरेख',
+        bn: 'রেসিপ্রোসিটি উপপাদ্য পোর্ট বিনিময় চিত্র'
+      },
+      caption: {
+        en: 'Interchanging excitation V and response I between Port 1 and Port 2 demonstrating I2A = I1B.',
+        hi: 'पोर्ट 1 और पोर्ट 2 के बीच उत्तेजना V और अनुक्रिया I की अदला-बदली दर्शाने वाला आरेख।',
+        bn: 'পোর্ট ১ ও পোর্ট ২ এর মাঝে সোর্স V ও রেসপন্স I বিনিময়ে I2A = I1B প্রদর্শনী চিত্র।'
+      },
+      svgType: 'circuit-reciprocity-concept'
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-recip-1',
+      problem: {
+        en: 'A symmetric T-network consists of series resistors R1 = 10 Ω, R2 = 15 Ω, and shunt resistor R3 = 20 Ω. Calculate: (a) Case A short-circuit current I2A at Port 2 when a V1 = 20 V DC source is connected at Port 1, (b) Case B short-circuit current I1B at Port 1 when the V2 = 20 V DC source is moved to Port 2, and (c) Verify Reciprocity Theorem.',
+        hi: 'एक टी-नेटवर्क में R1 = 10 Ω, R2 = 15 Ω, और शंट R3 = 20 Ω हैं। ज्ञात करें: (a) केस A में पोर्ट 1 पर V1 = 20 V लगाने पर पोर्ट 2 की धारा I2A, (b) केस B में पोर्ट 2 पर V2 = 20 V लगाने पर पोर्ट 1 की धारा I1B, और (c) रेसीप्रोसिटी का सत्यापन करें।',
+        bn: 'একটি টি-নেটওয়ার্কে R1 = 10 Ω, R2 = 15 Ω, এবং শান্ট R3 = 20 Ω। বের করুন: (ক) কেস A তে পোর্ট ১ এ V1 = 20 V দিলে পোর্ট ২ এর কারেন্ট I2A, (খ) কেস B তে পোর্ট ২ এ V2 = 20 V দিলে পোর্ট ১ এর কারেন্ট I1B, এবং (গ) রেসিপ্রোসিটি উপপাদ্য প্রমাণ করুন।'
+      },
+      solution: {
+        en: 'Given:\n- R1 = 10 Ω, R2 = 15 Ω, R3 = 20 Ω\n- Excitation Source Voltage V = 20 V\n\nStep 1: Case A — Source V1 = 20 V at Port 1, Ammeter at Port 2 (Port 2 shorted)\n- With Port 2 shorted, R2 is in parallel with R3: R2 || R3 = (15 · 20) / (15 + 20) = 300 / 35 = 8.5714 Ω\n- Total input resistance seen by V1: R_inA = R1 + (R2 || R3) = 10 + 8.5714 = 18.5714 Ω\n- Total supply current from Port 1: I_sA = V1 / R_inA = 20 / 18.5714 = 1.0769 A\n- Short-circuit current I2A at Port 2 via Current Divider Rule:\n  I2A = I_sA · [R3 / (R2 + R3)] = 1.0769 · [20 / (15 + 20)] = 1.0769 · (20/35) = 0.6154 A\n\nStep 2: Case B — Source V2 = 20 V at Port 2, Ammeter at Port 1 (Port 1 shorted)\n- With Port 1 shorted, R1 is in parallel with R3: R1 || R3 = (10 · 20) / (10 + 20) = 200 / 30 = 6.6667 Ω\n- Total input resistance seen by V2: R_inB = R2 + (R1 || R3) = 15 + 6.6667 = 21.6667 Ω\n- Total supply current from Port 2: I_sB = V2 / R_inB = 20 / 21.6667 = 0.9231 A\n- Short-circuit current I1B at Port 1 via Current Divider Rule:\n  I1B = I_sB · [R3 / (R1 + R3)] = 0.9231 · [20 / (10 + 20)] = 0.9231 · (20/30) = 0.6154 A\n\nStep 3: Reciprocity Verification\n- I2A = 0.6154 A and I1B = 0.6154 A\n- Transfer Admittance Y21 = I2A / V1 = 0.6154 / 20 = 0.03077 S\n- Transfer Admittance Y12 = I1B / V2 = 0.6154 / 20 = 0.03077 S\n- Since Y21 = Y12 (and I2A = I1B), Reciprocity Theorem is VERIFIED.',
+        hi: 'केस A: R2 || R3 = 8.5714 Ω\nR_inA = 18.5714 Ω -> I_sA = 1.0769 A\nI2A = 1.0769 × (20 / 35) = 0.6154 A\n\nकेस B: R1 || R3 = 6.6667 Ω\nR_inB = 21.6667 Ω -> I_sB = 0.9231 A\nI1B = 0.9231 × (20 / 30) = 0.6154 A\n\nI2A = I1B = 0.6154 A। रेसीप्रोसिटी प्रमेय सिद्ध हुआ।',
+        bn: 'কেস A: R2 || R3 = ৮.৫৭১৪ Ω\nR_inA = ১৮.৫৭১৪ Ω -> I_sA = ১.০৭৬৯ A\nI2A = ১.০৭৬৯ × (২০ / ৩৫) = ০.৬১৫৪ A\n\nকেস B: R1 || R3 = ৬.৬৬৬৭ Ω\nR_inB = ২১.৬৬৬৭ Ω -> I_sB = ০.৯২৩১ A\nI1B = ০.৯২৩১ × (২০ / ৩০) = ০.৬১৫৪ A\n\nI2A = I1B = ০.৬১৫৪ A। রেসিপ্রোসিটি উপপাদ্য প্রমাণিত।'
+      },
+      givenValues: {
+        'V': '20 V',
+        'R1, R2, R3': '10 Ω, 15 Ω, 20 Ω'
+      },
+      finalAnswer: {
+        en: 'Case A Current I2A = 0.6154 A, Case B Current I1B = 0.6154 A (I2A = I1B Verified)',
+        hi: 'केस A धारा I2A = 0.6154 A, केस B धारा I1B = 0.6154 A (I2A = I1B सिद्ध)',
+        bn: 'কেস A কারেন্ট I2A = ০.৬১৫৪ A, কেস B কারেন্ট I1B = ০.৬১৫৪ A (I2A = I1B প্রমাণিত)'
+      }
+    },
+    {
+      id: 'ex-recip-2',
+      problem: {
+        en: 'A Pi-network has series resistor R_a = 10 Ω connected between Port 1 and Port 2, with shunt resistor R_b = 20 Ω at Port 1 and shunt resistor R_c = 20 Ω at Port 2. Verify Reciprocity Theorem by evaluating transfer admittance Y21 and Y12 when a 10 V source is applied.',
+        hi: 'एक पाई-नेटवर्क में पोर्ट 1 और 2 के बीच R_a = 10 Ω, पोर्ट 1 पर शंट R_b = 20 Ω तथा पोर्ट 2 पर शंट R_c = 20 Ω हैं। 10 V स्रोत के लिए ट्रांसफर एडमिटेंस Y21 और Y12 ज्ञात करके रेसीप्रोसिटी सत्यापित करें।',
+        bn: 'একটি পাই-নেটওয়ার্কে R_a = 10 Ω, পোর্ট ১ এ R_b = 20 Ω এবং পোর্ট ২ এ R_c = 20 Ω। ১০ V সোর্সের জন্য Y21 এবং Y12 হিসাব করে রেসিপ্রোসিটি প্রমাণ করুন।'
+      },
+      solution: {
+        en: 'Given:\n- Pi-network parameters: R_a = 10 Ω, R_b = 20 Ω, R_c = 20 Ω\n- Excitation Voltage V = 10 V\n\nStep 1: Case A — V1 = 10 V at Port 1, Port 2 Shorted\n- With Port 2 shorted, shunt resistor R_c is short-circuited (0 V across it).\n- Resistor R_a connects directly from Port 1 to the shorted Port 2.\n- Current I2A through shorted Port 2 comes entirely through series branch R_a:\n  I2A = V1 / R_a = 10 V / 10 Ω = 1.0 A\n- Transfer Admittance Y21 = I2A / V1 = 1.0 A / 10 V = 0.10 Siemens (S)\n\nStep 2: Case B — V2 = 10 V at Port 2, Port 1 Shorted\n- With Port 1 shorted, shunt resistor R_b is short-circuited.\n- Resistor R_a connects directly from Port 2 to the shorted Port 1.\n- Current I1B through shorted Port 1 comes entirely through series branch R_a:\n  I1B = V2 / R_a = 10 V / 10 Ω = 1.0 A\n- Transfer Admittance Y12 = I1B / V2 = 1.0 A / 10 V = 0.10 Siemens (S)\n\nConclusion:\nSince Y21 = Y12 = 0.10 S (and I2A = I1B = 1.0 A), Reciprocity Theorem is fully verified.',
+        hi: 'केस A: I2A = 10 / 10 = 1.0 A -> Y21 = 1.0 / 10 = 0.10 S\nकेस B: I1B = 10 / 10 = 1.0 A -> Y12 = 1.0 / 10 = 0.10 S\nY21 = Y12 = 0.10 S। सिद्ध हुआ।',
+        bn: 'কেস A: I2A = ১০ / ১০ = ১.০ A -> Y21 = ১.০ / ১০ = ০.১০ S\nকেস B: I1B = ১০ / ১০ = ১.০ A -> Y12 = ১.০ / ১০ = ০.১০ S\nY21 = Y12 = ০.১০ S। প্রমাণিত।'
+      },
+      givenValues: {
+        'V': '10 V',
+        'R_a, R_b, R_c': '10 Ω, 20 Ω, 20 Ω'
+      },
+      finalAnswer: {
+        en: 'Y21 = Y12 = 0.10 Siemens, I2A = I1B = 1.0 A (Reciprocity Verified)',
+        hi: 'Y21 = Y12 = 0.10 सीमेंस, I2A = I1B = 1.0 A (रेसीप्रोसिटी सिद्ध)',
+        bn: 'Y21 = Y12 = ০.১০ সিমেন্স, I2A = I1B = ১.০ A (রেসিপ্রোসিটি প্রমাণিত)'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Two-port network parameter matrix (Z-parameters, Y-parameters, h-parameters) modeling',
+      'Antenna radiation pattern reciprocity (transmitting vs receiving radiation resistance and gain)',
+      'Acoustic transducer and sonar transducer calibration (microphone/speaker duality)'
+    ],
+    hi: [
+      'टू-पोर्ट नेटवर्क पैरामीटर मैट्रिक्स (Z-पैरामीटर, Y-पैरामीटर) मॉडलिंग',
+      'एंटीना विकिरण पैटर्न पारस्परिकता (प्रसारण बनाम रिसेप्शन गेन)',
+      'ध्वनिक ट्रांसड्यूसर और सोनार ट्रांसड्यूसर कैलिब्रेशन'
+    ],
+    bn: [
+      'টু-পোর্ট নেটওয়ার্ক প্যারামিটার ম্যাট্রিক্স (Z-প্যারামিটার, Y-প্যারামিটার) মডেলিং',
+      'অ্যান্টেনা বিকিরণ প্যাটার্ন রেসিপ্রোসিটি (ট্রান্সমিটিং ও রিসিভিং গেইন)',
+      'অ্যাকোস্টিক ট্র্যান্সডিউসার ও সোনার ক্যাালিব্রেশন'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'Reciprocity Theorem applies strictly to linear, bilateral, passive networks.',
+      'The ratio of excitation to response is identical before and after interchanging source and ammeter (Y21 = Y12).',
+      'Initial energy storage must be zero.',
+      'Networks containing unilateral components (diodes, transistors) or dependent sources are NOT reciprocal.'
+    ],
+    hi: [
+      'रेसीप्रोसिटी प्रमेय केवल रैखिक, द्विपक्षीय, निष्क्रीय नेटवर्कों पर लागू होता है।',
+      'स्रोत और अमीटर की अदला-बदली से पहले और बाद में उत्तेजना और अनुक्रिया का अनुपात समान रहता है (Y21 = Y12)।',
+      'प्रारंभिक ऊर्जा शून्य होनी चाहिए।',
+      'एकतरफा घटकों (डायोड) या निर्भर स्रोतों वाले नेटवर्क रेसीप्रोकल नहीं होते।'
+    ],
+    bn: [
+      'রেসিপ্রোসিটি উপপাদ্য কেবলমাত্র লিনিয়ার, বাইল্যাটারাল, প্যাসিভ সার্কিটে প্রযোজ্য।',
+      'সোর্স ও অ্যামিটার অদল-বদলের পূর্বে ও পরে অনুপাত অভিন্ন থাকে (Y21 = Y12)।',
+      'প্রাথমিক সঞ্চিত শক্তি শূন্য হতে হবে।',
+      'একমুখী উপাদান (ডায়োড, ট্রানজিস্টর) বা নির্ভরশীল সোর্স থাকলে এটি কাজ করে না।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Attempting to apply Reciprocity Theorem to networks containing PN junction diodes or transistors',
+      'Applying the theorem to circuits containing controlled (dependent) sources',
+      'Failing to keep internal branch impedances unchanged when relocating the excitation source'
+    ],
+    hi: [
+      'पीएन जंक्शन डायोड या ट्रांजिस्टर वाले नेटवर्कों पर रेसीप्रोसिटी लागू करने का प्रयास करना',
+      'नियंत्रित (निर्भर) स्रोतों वाले परिपथों पर प्रमेय लागू करना',
+      'स्रोत को स्थानांतरित करते समय आंतरिक शाखा प्रतिरोधों को अपरिवर्तित रखने में विफल रहना'
+    ],
+    bn: [
+      'পিএন জংশন ডায়োড বা ট্রানজিস্টরযুক্ত সার্কিটে রেসিপ্রোসিটি প্রয়োগের চেষ্টা করা',
+      'নির্ভরশীল সোর্স থাকা সত্ত্বেও ভুলবশত উপপাদ্য প্রয়োগ করা',
+      'সোর্স সরানোর সময় সংশ্লিষ্ট শাখার অভ্যন্তরীণ রেজিস্ট্যান্স একই না রাখা'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-recip-1',
+      question: {
+        en: 'The Reciprocity Theorem is applicable ONLY to networks that are:',
+        hi: 'रेसीप्रोसिटी प्रमेय केवल उन नेटवर्कों पर लागू होता है जो हैं:',
+        bn: 'রেসিপ্রোসিটি উপপাদ্য কেবলমাত্র সেই সব সার্কিটে প্রযোজ্য যেগুলো হলো:'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Non-linear and unilateral', hi: 'गैर-रेखीय और एकतरफा', bn: 'অ-রৈখিক ও একমুখী' } },
+        { id: 'opt-b', text: { en: 'Linear, bilateral, and passive', hi: 'रैखिक, द्विपक्षीय, और निष्क्रीय', bn: 'রৈখিক, দ্বিপক্ষীয় ও নিষ্ক্রিয়' } },
+        { id: 'opt-c', text: { en: 'Active with dependent sources', hi: 'निर्भर स्रोतों वाले सक्रिय', bn: 'নির্ভরশীল সোর্সযুক্ত সক্রিয়' } },
+        { id: 'opt-d', text: { en: 'Unilateral with initial energy storage', hi: 'प्रारंभिक ऊर्जा वाले एकतरफा', bn: 'প্রাথমিক শক্তিযুক্ত একমুখী' } }
+      ],
+      correctOptionId: 'opt-b',
+      explanation: {
+        en: 'Reciprocity requires linear Ohm\'s law behavior, identical bidirectional conduction (bilateral), and no internal active sources (passive).',
+        hi: 'रेसीप्रोसिटी के लिए रैखिक व्यवहार, दोनों दिशाओं में समान संचालन (द्विपक्षीय) और कोई आंतरिक सक्रिय स्रोत नहीं (निष्क्रीय) होना आवश्यक है।',
+        bn: 'রেসিপ্রোসিটির জন্য রৈখিক আচরণ, উভমুখী পরিবহন (বাইল্যাটারাল) এবং কোনো অভ্যন্তরীণ অ্যাক্টিভ সোর্স না থাকা (প্যাসিভ) বাধ্যতামূলক।'
+      }
+    },
+    {
+      id: 'mcq-recip-2',
+      question: {
+        en: 'Which component presence in a network breaks the validity of the Reciprocity Theorem?',
+        hi: 'परिपथ में किस घटक की उपस्थिति रेसीप्रोसिटी प्रमेय की वैधता को समाप्त कर देती है?',
+        bn: 'সার্কিটে নিচের কোন উপাদানটি থাকলে রেসিপ্রোসিটি উপপাদ্য অকার্যকর হয়ে যায়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Pure Carbon Resistor', hi: 'शुद्ध कार्बन प्रतिरोधक', bn: 'বিশুদ্ধ কার্বন রেজিস্টর' } },
+        { id: 'opt-b', text: { en: 'Air-core Inductor', hi: 'एयर-कोर प्रेरक', bn: 'এয়ার-কোর ইনডাক্টর' } },
+        { id: 'opt-c', text: { en: 'PN Junction Diode', hi: 'पीएन जंक्शन डायोड', bn: 'पीएन जंक्शन डायोड' } },
+        { id: 'opt-d', text: { en: 'Mica Capacitor', hi: 'मायका संधारित्र', bn: 'মাইকা ক্যাপাসিটর' } }
+      ],
+      correctOptionId: 'opt-c',
+      explanation: {
+        en: 'Diodes are unilateral semiconductor components that conduct current in only one direction, violating bilateral symmetry.',
+        hi: 'डायोड एकतरफा सेमीकंडक्टर घटक हैं जो केवल एक दिशा में धारा प्रवाहित करते हैं, जिससे द्विपक्षीय समरूपता समाप्त हो जाती है।',
+        bn: 'ডায়োড একমুখী সেমিকন্ডাক্টর যা কেবল একদিকে কারেন্ট পাঠায়, ফলে বাইল্যাটারাল সামঞ্জস্য নষ্ট হয়।'
+      }
+    },
+    {
+      id: 'mcq-recip-3',
+      question: {
+        en: 'In terms of two-port network parameters, Reciprocity Theorem guarantees that:',
+        hi: 'टू-पोर्ट नेटवर्क पैरामीटर के संदर्भ में, रेसीप्रोसिटी प्रमेय गारंटी देता है कि:',
+        bn: 'টু-পোর্ট নেটওয়ার্ক প্যারামিটারের ক্ষেত্রে, রেসিপ্রোসিটি উপপাদ্য কী নিশ্চিত করে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Y21 = Y12 and Z21 = Z12', hi: 'Y21 = Y12 और Z21 = Z12', bn: 'Y21 = Y12 এবং Z21 = Z12' } },
+        { id: 'opt-b', text: { en: 'Y11 = Y22 and Z11 = Z22', hi: 'Y11 = Y22 और Z11 = Z22', bn: 'Y11 = Y22 এবং Z11 = Z22' } },
+        { id: 'opt-c', text: { en: 'Z11 = 0 and Z22 = 0', hi: 'Z11 = 0 और Z22 = 0', bn: 'Z11 = 0 এবং Z22 = 0' } },
+        { id: 'opt-d', text: { en: 'Y21 = -Y12', hi: 'Y21 = -Y12', bn: 'Y21 = -Y12' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Symmetry of transfer admittances (Y21 = Y12) and transfer impedances (Z21 = Z12) is the fundamental mathematical expression of reciprocity.',
+        hi: 'ट्रांसफर एडमिटेंस (Y21 = Y12) और ट्रांसफर प्रतिबाधा (Z21 = Z12) की समरूपता रेसीप्रोसिटी का मूल गणितीय व्यंजक है।',
+        bn: 'ট্রান্সফার অ্যাডমিট্যান্স (Y21 = Y12) এবং ইম্পিডেন্সের (Z21 = Z12) সমতা হলো রেসিপ্রোসিটির মূল গাণিতিক রূপ।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-recip-1',
+      question: {
+        en: 'State the Reciprocity Theorem and list four necessary circuit conditions required for its validity.',
+        hi: 'रेसीप्रोसिटी प्रमेय लिखिए और इसकी वैधता के लिए आवश्यक चार परिपथ शर्तें सूचीबद्ध करें।',
+        bn: 'রেসিপ্রোসিটি উপপাদ্যটি বিবৃত করুন এবং এটি কার্যকর হওয়ার চারটি প্রয়োজনীয় শর্ত লিখুন।'
+      },
+      hint: {
+        en: 'Recall requirements regarding linearity, bilateral conduction, passive elements, and independent source count.',
+        hi: 'रैखिक, द्विपक्षीय, निष्क्रीय घटक और स्वतंत्र स्रोतों की संख्या संबंधी आवश्यकताओं को याद करें।',
+        bn: 'রৈখিকতা, দ্বিপক্ষীয় বৈশিষ্ট্য, নিষ্ক্রিয় উপাদান ও স্বাধীন সোর্সের শর্ত মনে করুন।'
+      },
+      answerKey: {
+        en: 'Theorem: Ratio of excitation at Port 1 to response at Port 2 equals ratio when source & response are swapped. Conditions: 1. Linear elements only. 2. Bilateral conduction. 3. Passive network (no active internal sources). 4. Single independent excitation source.',
+        hi: 'प्रमेय: पोर्ट 1 पर स्रोत और पोर्ट 2 की अनुक्रिया का अनुपात अदला-बदली के बाद समान रहता है। शर्तें: 1. केवल रैखिक घटक। 2. द्विपक्षीय संचालन। 3. निष्क्रीय परिपथ। 4. केवल एक स्वतंत्र स्रोत।',
+        bn: 'উপপাদ্য: সোর্স ও রেসপন্সের স্থান বিনিময়ের পূর্বে ও পরে অনুপাত অভিন্ন থাকে। শর্তাবলী: ১. কেবল লিনিয়ার উপাদান। ২. বাইল্যাটারাল পরিবহন। ৩. প্যাসিভ সার্কিট। ৪. একটিমাত্র স্বাধীন সোর্স।'
+      }
+    },
+    {
+      id: 'pq-recip-2',
+      question: {
+        en: 'Explain why antenna radiation patterns satisfy reciprocity between transmitting and receiving modes.',
+        hi: 'समझाइए कि एंटीना विकिरण पैटर्न ट्रांसमिटिंग और रिसीविंग मोड के बीच पारस्परिकता का पालन क्यों करते हैं।',
+        bn: 'ট্রান্সমিটিং ও রিসিভিং উভয় মোডে অ্যান্টেনার রেডিয়েশন প্যাটার্ন কেন রেসিপ্রোসিটি মেনে চলে ব্যাখ্যা করুন।'
+      },
+      hint: {
+        en: 'Consider electromagnetic wave propagation and passive linear antenna conductor properties.',
+        hi: 'विद्युत चुम्बकीय तरंग प्रसार और निष्क्रीय रैखिक एंटीना चालकों के गुणों पर विचार करें।',
+        bn: 'ইলেক্ট্রোম্যাগনেটিক ওয়েভ এবং প্যাসিভ লিনিয়ার অ্যান্টেনা কন্ডাক্টরের ধর্ম চিন্তা করুন।'
+      },
+      answerKey: {
+        en: 'Antenna conductors and free space form a linear bilateral passive electromagnetic medium. By Reciprocity Theorem, directional gain, radiation impedance, and effective aperture are identical whether transmitting or receiving.',
+        hi: 'एंटीना चालक और मुक्त आकाश एक रैखिक द्विपक्षीय निष्क्रीय माध्यम बनाते हैं। रेसीप्रोसिटी नियम से, दिशात्मक गेन और प्रतिबाधा ट्रांसमिटिंग और रिसीविंग दोनों में समान होती है।',
+        bn: 'অ্যান্টেনা ও ফাকা স্থান একটি লিনিয়ার বাইল্যাটারাল প্যাসিভ মাধ্যম গঠন করে। রেসিপ্রোসিটি উপপাদ্য অনুযায়ী ডিরেকশনাল গেইন ও ইম্পিডেন্স উভয় মোডেই অভিন্ন থাকে।'
+      }
+    }
+  ]
+};
+
+export const LESSON_SOURCE_TRANSFORMATION: Lesson = {
+  id: 'lsn-ch4-source-transformation',
+  topicId: 'ch4-source-transformation',
+  order: 16,
+  title: {
+    en: 'Source Transformation Techniques',
+    hi: 'स्रोत रूपांतरण तकनीक (Source Transformation)',
+    bn: 'সোর্স ট্রান্সফরমেশন পদ্ধতি'
+  },
+  easyExplanation: {
+    en: 'Source transformation is an electrical simplification technique that allows us to replace a practical voltage source (voltage source in series with a resistor) with an equivalent practical current source (current source in parallel with a resistor), and vice versa, without altering voltages or currents in the rest of the circuit.',
+    hi: 'स्रोत रूपांतरण एक विद्युत सरलीकरण तकनीक है जिसके द्वारा एक व्यवहार्य वोल्टेज स्रोत (श्रृंखला प्रतिरोध युक्त वोल्टेज स्रोत) को एक समानांतर प्रतिरोध वाले व्यवहार्य धारा स्रोत में या इसके विपरीत बदला जा सकता है, जिससे शेष परिपथ पर कोई प्रभाव नहीं पड़ता।',
+    bn: 'সোর্স ট্রান্সফরমেশন হলো একটি সার্কিট সহজীকরণ পদ্ধতি যার মাধ্যমে একটি ব্যবহারিক ভোল্টেজ সোর্সকে (সিরিজ রেজিস্টরসহ) একটি সমতুল্য ব্যবহারিক কারেন্ট সোর্সে (প্যারালাল রেজিস্টরসহ) এবং এর বিপরীত রূপান্তর করা যায়, যা বহিস্থ সার্কিটের ভোল্টেজ বা কারেন্ট অপরিবর্তিত রাখে।'
+  },
+  detailedExplanation: {
+    en: 'A practical voltage source consists of an ideal independent voltage source Vs in series with an internal resistance Rs. An equivalent practical current source consists of an ideal independent current source Is in parallel with an internal resistance Rp.\n\nAccording to Ohm\'s Law, the equivalence relationship between the parameters is:\nIs = Vs / Rs  or  Vs = Is × Rp\nand Rp = Rs.\n\nKey Engineering Principles:\n1. Terminal Equivalence: At terminals A-B, both sources produce identical open-circuit voltage (Voc = Vs) and identical short-circuit current (Isc = Is).\n2. Dual Transformation: Transformation works in both directions (Voltage Source ↔ Current Source).\n3. Internal Resistance Value: The numerical value of the series resistance Rs remains exactly equal to the parallel resistance Rp.\n4. Arrow and Polarity Direction: The current arrow of the equivalent current source points toward the positive terminal (+) of the original voltage source.',
+    hi: 'एक व्यावहारिक वोल्टेज स्रोत में एक आदर्श वोल्टेज स्रोत Vs के साथ श्रेणी में आंतरिक प्रतिरोध Rs जुड़ा होता है। एक समतुल्य व्यवहार्य धारा स्रोत में आदर्श धारा स्रोत Is के समानांतर में प्रतिरोध Rp जुड़ा होता है।\n\nओम के नियम के अनुसार, संबंधों का सूत्र है:\nIs = Vs / Rs  अथवा  Vs = Is × Rp\nतथा Rp = Rs।\n\nमूल सिद्धांत:\n1. टर्मिनल समतुल्यता: टर्मिनल A-B पर दोनों स्रोत समान ओपन-सर्किट वोल्टेज (Voc = Vs) और समान शॉर्ट-सर्किट धारा (Isc = Is) उत्पन्न करते हैं।\n2. द्विमार्गी रूपांतरण: रूपांतरण दोनों दिशाओं में संभव है (वोल्टेज स्रोत ↔ धारा स्रोत)।\n3. आंतरिक प्रतिरोध का मान: श्रेणी प्रतिरोध Rs का मान समानांतर प्रतिरोध Rp के समान रहता है।\n4. धारा की दिशा: धारा स्रोत के तीर की दिशा मूल वोल्टेज स्रोत के धनात्मक (+) टर्मिनल की ओर होती है।',
+    bn: 'একটি ব্যবহারিক ভোল্টেজ সোর্সে আদর্শ ভোল্টেজ সোর্স Vs এর সাথে সিরিজে অভ্যন্তরীণ রেজিস্ট্যান্স Rs যুক্ত থাকে। এর সমতুল্য ব্যবহারিক কারেন্ট সোর্সে একটি কারেন্ট সোর্স Is এর সাথে প্যারালালে রেজিস্ট্যান্স Rp যুক্ত থাকে।\n\nওহমের সূত্রের মাধ্যমে পারস্পরিক গাণিতিক সম্পর্ক হলো:\nIs = Vs / Rs  অথবা  Vs = Is × Rp\nএবং Rp = Rs।\n\nমূল ইঞ্জিনিয়ারিং নীতিমালা:\n১. টার্মিনাল সমতুল্যতা: A-B টার্মিনালে উভয় সোর্সই অভিন্ন ওপেন-সার্কিট ভোল্টেজ (Voc = Vs) এবং অভিন্ন শর্ট-সার্কিট কারেন্ট (Isc = Is) প্রদান করে।\n২. উভমুখী রূপান্তর: ভোল্টেজ সোর্স থেকে কারেন্ট সোর্স এবং কারেন্ট সোর্স থেকে ভোল্টেজ সোর্সে রূপান্তর উভয়ই সম্ভব।\n৩. রেজিস্ট্যান্সের মান: সিরিজ রেজিস্ট্যান্স Rs এর মান প্যারালাল রেজিস্ট্যান্স Rp এর সমান থাকে।\n৪. দিকনির্দেশনা: কারেন্ট সোর্সের তীরের দিক মূল ভোল্টেজ সোর্সের ধনাত্মক (+) টার্মিনালের দিকে নির্দেশ করে।'
+  },
+  formulas: [
+    {
+      symbol: 'Is',
+      expression: 'Is = Vs / Rs',
+      description: {
+        en: 'Equivalent current source value derived from voltage source Vs and series resistance Rs',
+        hi: 'वोल्टेज स्रोत Vs और श्रेणी प्रतिरोध Rs से प्राप्त समतुल्य धारा स्रोत मान',
+        bn: 'ভোল্টেজ সোর্স Vs ও সিরিজ রেজিস্ট্যান্স Rs থেকে প্রাপ্ত সমতুল্য কারেন্ট সোর্সের মান'
+      }
+    },
+    {
+      symbol: 'Vs',
+      expression: 'Vs = Is × Rp',
+      description: {
+        en: 'Equivalent voltage source value derived from current source Is and parallel resistance Rp',
+        hi: 'धारा स्रोत Is और समानांतर प्रतिरोध Rp से प्राप्त समतुल्य वोल्टेज स्रोत मान',
+        bn: 'কারেন্ট সোর্স Is ও প্যারালাল রেজিস্ট্যান্স Rp থেকে প্রাপ্ত সমতুল্য ভোল্টেজ সোর্সের মান'
+      }
+    },
+    {
+      symbol: 'Rp = Rs',
+      expression: 'Rp = Rs',
+      description: {
+        en: 'Internal resistance magnitude remains invariant during source transformation',
+        hi: 'स्रोत रूपांतरण के दौरान आंतरिक प्रतिरोध का मान अपरिवर्तित रहता है',
+        bn: 'সোর্স ট্রান্সফরমেশনের সময় অভ্যন্তরীণ রেজিস্ট্যান্স অপরিবর্তित থাকে'
+      }
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-st-1',
+      problem: {
+        en: 'Convert a practical voltage source with Vs = 24V and series resistance Rs = 6 Ω into an equivalent practical current source.',
+        hi: 'Vs = 24V और श्रेणी प्रतिरोध Rs = 6 Ω वाले एक व्यावहारिक वोल्टेज स्रोत को समतुल्य धारा स्रोत में बदलें।',
+        bn: 'Vs = 24V এবং সিরিজ রেজিস্ট্যান্স Rs = 6 Ω বিশিষ্ট ভোল্টেজ সোর্সকে সমতুল্য কারেন্ট সোর্সে রূপান্তর করুন।'
+      },
+      solution: {
+        en: 'Step 1: Calculate equivalent current source magnitude:\nIs = Vs / Rs = 24V / 6 Ω = 4.0 A.\nStep 2: Determine parallel resistance value:\nRp = Rs = 6.0 Ω.\nConclusion: The equivalent source consists of a 4.0 A current source in parallel with a 6.0 Ω resistor.',
+        hi: 'चरण 1: समतुल्य धारा स्रोत मान की गणना करें:\nIs = Vs / Rs = 24V / 6 Ω = 4.0 A।\nचरण 2: समानांतर प्रतिरोध मान ज्ञात करें:\nRp = Rs = 6.0 Ω।\nनिष्कर्ष: समतुल्य स्रोत में 4.0 A का धारा स्रोत 6.0 Ω के समानांतर प्रतिरोध के साथ जुड़ा होगा।',
+        bn: 'ধাপ ১: সমতুল্য কারেন্ট সোর্সের মান হিসাব করুন:\nIs = Vs / Rs = 24V / 6 Ω = 4.0 A।\nধাপ ২: প্যারালাল রেজিস্ট্যান্সের মান নির্ধারণ করুন:\nRp = Rs = 6.0 Ω।\nসিদ্ধান্ত: সমতুল্য সোর্সে একটি 4.0 A কারেন্ট সোর্স 6.0 Ω প্যারালাল রেজিস্টরের সাথে যুক্ত থাকবে।'
+      },
+      givenValues: { 'Vs': '24 V', 'Rs': '6 Ω' },
+      finalAnswer: {
+        en: 'Is = 4.0 A in parallel with Rp = 6.0 Ω',
+        hi: 'Is = 4.0 A समानांतर में Rp = 6.0 Ω के साथ',
+        bn: 'Is = 4.0 A প্যারালালে Rp = 6.0 Ω এর সাথে'
+      }
+    },
+    {
+      id: 'ex-st-2',
+      problem: {
+        en: 'A current source of Is = 5.0 A is connected in parallel with Rp = 10 Ω. Convert this into an equivalent voltage source and find the terminal voltage across a load resistor RL = 15 Ω.',
+        hi: 'Is = 5.0 A का धारा स्रोत Rp = 10 Ω के समानांतर में जुड़ा है। इसे समतुल्य वोल्टेज स्रोत में बदलें और RL = 15 Ω लोड पर वोल्टेज ज्ञात करें।',
+        bn: 'Is = 5.0 A কারেন্ট সোর্স Rp = 10 Ω এর সাথে প্যারালালে যুক্ত। একে সমতুল্য ভোল্টেজ সোর্সে রূপান্তর করুন এবং RL = 15 Ω লোডের টার্মিনাল ভোল্টেজ নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Step 1: Calculate equivalent voltage Vs:\nVs = Is × Rp = 5.0 A × 10 Ω = 50 V.\nStep 2: Equivalent series resistance Rs = Rp = 10 Ω.\nStep 3: Calculate load terminal voltage VL across RL = 15 Ω:\nVL = Vs × [RL / (Rs + RL)] = 50 V × [15 / (10 + 15)] = 50 × (15/25) = 30.0 V.',
+        hi: 'चरण 1: समतुल्य वोल्टेज Vs की गणना करें:\nVs = Is × Rp = 5.0 A × 10 Ω = 50 V।\nचरण 2: श्रेणी प्रतिरोध Rs = Rp = 10 Ω।\nचरण 3: RL = 15 Ω पर टर्मिनल वोल्टेज VL ज्ञात करें:\nVL = Vs × [RL / (Rs + RL)] = 50 V × [15 / (10 + 15)] = 30.0 V।',
+        bn: 'ধাপ ১: সমতুল্য ভোল্টেজ Vs হিসাব করুন:\nVs = Is × Rp = 5.0 A × 10 Ω = 50 V।\nধাপ ২: সিরিজ রেজিস্ট্যান্স Rs = Rp = 10 Ω।\nধাপ ৩: RL = 15 Ω লোডের টার্মিনাল ভোল্টেজ VL হিসাব করুন:\nVL = Vs × [RL / (Rs + RL)] = 50 V × [15 / (10 + 15)] = 30.0 V।'
+      },
+      givenValues: { 'Is': '5.0 A', 'Rp': '10 Ω', 'RL': '15 Ω' },
+      finalAnswer: {
+        en: 'Vs = 50 V, Rs = 10 Ω, VL = 30.0 V',
+        hi: 'Vs = 50 V, Rs = 10 Ω, VL = 30.0 V',
+        bn: 'Vs = 50 V, Rs = 10 Ω, VL = 30.0 V'
+      }
+    },
+    {
+      id: 'ex-st-3',
+      problem: {
+        en: 'Use repeated source transformations to simplify a network containing a 12V source in series with 3 Ω, connected in parallel with a 2A source having 6 Ω parallel resistance, and find current through a 4 Ω load.',
+        hi: 'बारंबार स्रोत रूपांतरण का उपयोग करके 12V श्रेणी 3 Ω और 2A समानांतर 6 Ω वाले परिपथ को सरल बनाएं और 4 Ω लोड धारा ज्ञात करें।',
+        bn: 'পুনরাবৃত্ত সোর্স ট্রান্সফরমেশন ব্যবহার করে ১২V সোর্স (৩ Ω সিরিজে) এবং ২A সোর্স (৬ Ω প্যারালালে) এর সার্কিট সহজ করে ৪ Ω লোড কারেন্ট বের করুন।'
+      },
+      solution: {
+        en: 'Step 1: Convert 12V + 3 Ω voltage source to current source:\nIs1 = 12 / 3 = 4 A, Rp1 = 3 Ω.\nStep 2: Combine parallel current sources and resistors:\nTotal Is = Is1 + Is2 = 4 A + 2 A = 6 A.\nTotal Rp = (3 Ω || 6 Ω) = (3 × 6) / (3 + 6) = 2 Ω.\nStep 3: Convert back to single equivalent voltage source:\nVs_eq = 6 A × 2 Ω = 12 V, Rs_eq = 2 Ω.\nStep 4: Calculate current through 4 Ω load:\nI_load = Vs_eq / (Rs_eq + R_load) = 12 V / (2 + 4) = 2.0 A.',
+        hi: 'चरण 1: 12V + 3 Ω वोल्टेज स्रोत को धारा स्रोत में बदलें:\nIs1 = 12 / 3 = 4 A, Rp1 = 3 Ω।\nचरण 2: समानांतर धारा स्रोतों और प्रतिरोधों को जोड़ें:\nकुल Is = 4 A + 2 A = 6 A।\nकुल Rp = (3 || 6) = 2 Ω।\nचरण 3: पुनः एकल वोल्टेज स्रोत में बदलें:\nVs_eq = 6 A × 2 Ω = 12 V, Rs_eq = 2 Ω।\nचरण 4: 4 Ω लोड धारा ज्ञात करें:\nI_load = 12 / (2 + 4) = 2.0 A।',
+        bn: 'ধাপ ১: ১২V + ৩ Ω সোর্সকে কারেন্ট সোর্সে রূপান্তর:\nIs1 = 12 / 3 = 4 A, Rp1 = 3 Ω।\nধাপ ২: প্যারালাল সোর্স ও রেজিস্টর যুক্তকরণ:\nমোট Is = 4 A + 2 A = 6 A।\nমোট Rp = (3 || 6) = 2 Ω।\nধাপ ৩: পুনরায় একক ভোল্টেজ সোর্সে রূপান্তর:\nVs_eq = 6 A × 2 Ω = 12 V, Rs_eq = 2 Ω।\nধাপ ৪: ৪ Ω লোড কারেন্ট নির্ণয়:\nI_load = 12 / (2 + 4) = 2.0 A।'
+      },
+      givenValues: { 'Vs1': '12 V', 'Rs1': '3 Ω', 'Is2': '2 A', 'Rp2': '6 Ω', 'RL': '4 Ω' },
+      finalAnswer: {
+        en: 'Equivalent Vs = 12V, Rs = 2 Ω; Load Current = 2.0 A',
+        hi: 'समतुल्य Vs = 12V, Rs = 2 Ω; लोड धारा = 2.0 A',
+        bn: 'সমতুল্য Vs = 12V, Rs = 2 Ω; লোড কারেন্ট = 2.0 A'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Simplifying complex multi-source active node ladder networks into single equivalent sources.',
+      'Analyzing transistor and FET amplifier small-signal equivalent circuits (converting Hybrid-pi to Norton/Thevenin models).',
+      'Power supply design for converting constant-voltage grid lines into constant-current LED drivers.',
+      'IC design where current-steering DACs are converted into equivalent driving voltage signals.'
+    ],
+    hi: [
+      'जटिल बहु-स्रोत सक्रिय नेटवर्क को एकल समतुल्य स्रोत में सरल बनाना।',
+      'ट्रांजिस्टर और FET एम्पलीफायर स्मॉल-सिग्नल सर्किट का विश्लेषण करना।',
+      'कॉन्स्टेंट-वोल्टेज ग्रिड लाइनों को कॉन्स्टेंट-करंट एलईडी ड्राइवरों में बदलना।',
+      'आईसी डिजाइन में करंट-स्टीयर्ड DAC को वोल्टेज सिग्नल में परिवर्तित करना।'
+    ],
+    bn: [
+      'জটিল মাল্টি-সোর্স অ্যানালিসিসে সার্কিট ছোট ও সহজ করে রূপান্তর করা।',
+      'ট্রানজিস্টর ও FET অ্যাম্প্লিফায়ার সার্কিটের স্মল-সিগন্যাল ইকুয়ালেন্ট অ্যানালিসিস।',
+      'পাওয়ার সাপ্লাই ডিজাইনে কনস্ট্যান্ট ভোল্টেজকে এলইডির জন্য কনস্ট্যান্ট কারেন্টে রূপান্তর।',
+      'আইসি ডিজাইনে কারেন্ট-স্টিয়ারিং DAC রূপান্তর।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'Source transformation is valid ONLY for practical sources with non-zero internal resistance.',
+      'Ideal voltage sources (Rs = 0) and ideal current sources (Rp = ∞) CANNOT be transformed directly.',
+      'The value of internal resistance remains identical in numerical magnitude (Rs = Rp).',
+      'External load voltage and current are unaffected, but internal power dissipation inside the source differs between models.'
+    ],
+    hi: [
+      'स्रोत रूपांतरण केवल गैर-शून्य आंतरिक प्रतिरोध वाले व्यवहार्य स्रोतों पर लागू होता है।',
+      'आदर्श वोल्टेज स्रोतों (Rs = 0) और आदर्श धारा स्रोतों (Rp = ∞) का सीधा रूपांतरण संभव नहीं है।',
+      'आंतरिक प्रतिरोध का संख्यात्मक मान समान रहता है (Rs = Rp)।',
+      'बाहरी लोड वोल्टेज और धारा समान रहते हैं, परंतु स्रोत के भीतर आंतरिक शक्ति खपत दोनों मॉडलों में भिन्न होती है।'
+    ],
+    bn: [
+      'সোর্স ট্রান্সফরমেশন কেবল অ-শূন্য অভ্যন্তরীণ রেজিস্ট্যান্স থাকা ব্যবহারিক সোর্সে কার্যকর।',
+      'আদর্শ ভোল্টেজ সোর্স (Rs = 0) এবং আদর্শ কারেন্ট সোর্সকে (Rp = ∞) সরাসরি রূপান্তর করা যায় না।',
+      'অভ্যন্তরীণ রেজিস্ট্যান্সের মান সমান থাকে (Rs = Rp)।',
+      'বহিস্থ লোডের ভোল্টেজ ও কারেন্ট অপরিবর্তিত থাকলেও সোর্সের ভেতরের নিজস্ব পাওয়ার অপচয় দুই মডেলে ভিন্ন হতে পারে।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Attempting to transform an ideal voltage source without any series resistance.',
+      'Changing the numeric value of internal resistance when moving from series to parallel configuration.',
+      'Reversing the polarity of the current arrow during voltage-to-current transformation.',
+      'Assuming that internal power loss in the source resistor is identical in both models.'
+    ],
+    hi: [
+      'बिना श्रेणी प्रतिरोध वाले आदर्श वोल्टेज स्रोत को रूपांतरित करने का प्रयास करना।',
+      'श्रेणी से समानांतर में जाते समय आंतरिक प्रतिरोध का मान बदल देना।',
+      'वोल्टेज से धारा रूपांतरण के दौरान धारा के तीर की दिशा उल्टी कर देना।',
+      'यह मान लेना कि दोनों मॉडलों में आंतरिक शक्ति खपत समान होती है।'
+    ],
+    bn: [
+      'সিরিজ রেজিস্টর ছাড়া আদর্শ ভোল্টেজ সোর্সকে রূপান্তরের চেষ্টা করা।',
+      'সিরিজ থেকে প্যারালালে রূপান্তরের সময় রেজিস্ট্যান্সের মান বদলে ফেলা।',
+      'ভোল্টেজ থেকে কারেন্ট সোর্স রূপান্তরে কারেন্টের তীর চিহ্ন বিপরীত দিকে দেওয়া।',
+      'ধরে নেওয়া যে সোর্স রেজিস্টরের ভেতরের পাওয়ার অপচয় উভয় মডেলেই অভিন্ন।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-st-1',
+      question: {
+        en: 'A practical voltage source of 20 V with an internal series resistance of 4 Ω is equivalent to a current source of:',
+        hi: '4 Ω आंतरिक श्रेणी प्रतिरोध वाले 20 V के व्यवहार्य वोल्टेज स्रोत का समतुल्य धारा स्रोत क्या होगा?',
+        bn: '৪ Ω সিরিজ রেজিস্ট্যান্সসহ ২০ V ভোল্টেজ সোর্সের সমতুল্য কারেন্ট সোর্স কত হবে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '5 A in parallel with 4 Ω', hi: '5 A समानांतर में 4 Ω के साथ', bn: '৫ A প্যারালালে ৪ Ω এর সাথে' } },
+        { id: 'opt-b', text: { en: '5 A in series with 4 Ω', hi: '5 A श्रेणी में 4 Ω के साथ', bn: '৫ A সিরিজে ৪ Ω এর সাথে' } },
+        { id: 'opt-c', text: { en: '80 A in parallel with 4 Ω', hi: '80 A समानांतर में 4 Ω के साथ', bn: '৮০ A প্যারালালে ৪ Ω এর সাথে' } },
+        { id: 'opt-d', text: { en: '20 A in parallel with 0.25 Ω', hi: '20 A समानांतर में 0.25 Ω के साथ', bn: '২০ A প্যারালালে ০.২৫ Ω এর সাথে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Is = Vs / Rs = 20 V / 4 Ω = 5 A, and parallel resistance Rp = Rs = 4 Ω.',
+        hi: 'Is = Vs / Rs = 20 V / 4 Ω = 5 A, तथा समानांतर प्रतिरोध Rp = Rs = 4 Ω।',
+        bn: 'Is = Vs / Rs = ২০ V / ৪ Ω = ৫ A, এবং প্যারালাল রেজিস্ট্যান্স Rp = Rs = ৪ Ω।'
+      }
+    },
+    {
+      id: 'mcq-st-2',
+      question: {
+        en: 'Source transformation is based primarily on which fundamental electrical law?',
+        hi: 'स्रोत रूपांतरण मुख्य रूप से किस मूल विद्युत नियम पर आधारित है?',
+        bn: 'সোর্স ট্রান্সফরমেশন প্রধানত কোন মৌলিক সূত্রের ওপর প্রতিষ্ঠিত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Faraday\'s Law of Induction', hi: 'फैराडे का प्रेरण नियम', bn: 'ফ্যারাডের আবেশ সূত্র' } },
+        { id: 'opt-b', text: { en: 'Ohm\'s Law (V = I × R)', hi: 'ओम का नियम (V = I × R)', bn: 'ওহমের সূত্র (V = I × R)' } },
+        { id: 'opt-c', text: { en: 'Ampere\'s Circuital Law', hi: 'एम्पीयर का नियम', bn: 'অ্যাম্পিয়ারের সূত্র' } },
+        { id: 'opt-d', text: { en: 'Gauss\'s Law', hi: 'गाउस का नियम', bn: 'গাউসের সূত্র' } }
+      ],
+      correctOptionId: 'opt-b',
+      explanation: {
+        en: 'Source transformation directly uses Ohm\'s law (Vs = Is × R) to interconvert equivalent voltage and current models.',
+        hi: 'स्रोत रूपांतरण सीधे ओम के नियम (Vs = Is × R) का उपयोग करता है।',
+        bn: 'সোর্স ট্রান্সফরমেশন সরাসরি ওহমের সূত্রের (Vs = Is × R) ওপর ভিত্তি করে কাজ করে।'
+      }
+    },
+    {
+      id: 'mcq-st-3',
+      question: {
+        en: 'Why can an IDEAL voltage source NOT be transformed into an equivalent current source?',
+        hi: 'एक आदर्श वोल्टेज स्रोत को समतुल्य धारा स्रोत में रूपांतरित क्यों नहीं किया जा सकता है?',
+        bn: 'একটি আদর্শ ভোল্টেজ সোর্সকে কেন সরাসরি কারেন্ট সোর্সে রূপান্তর করা যায় না?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Because its internal series resistance is zero, leading to division by zero (Is = Vs / 0)', hi: 'क्योंकि इसका श्रेणी प्रतिरोध शून्य होता है, जिससे शून्य से विभाजन (Is = Vs / 0) होता है', bn: 'কারণ এর সিরিজ রেজিস্ট্যান্স শূন্য, ফলে শূন্য দিয়ে ভাগ (Is = Vs / 0) তৈরি হয়' } },
+        { id: 'opt-b', text: { en: 'Because ideal sources violate energy conservation', hi: 'क्योंकि आदर्श स्रोत ऊर्जा संरक्षण का उल्लंघन करते हैं', bn: 'কারণ আদর্শ সোর্স শক্তি সংরক্ষণ নীতি লঙ্ঘন করে' } },
+        { id: 'opt-c', text: { en: 'Because ideal current sources do not exist in practice', hi: 'क्योंकि आदर्श धारा स्रोत व्यवहार में मौजूद नहीं हैं', bn: 'কারণ আদর্শ কারেন্ট সোর্স বাস্তবজগতে নেই' } },
+        { id: 'opt-d', text: { en: 'Because internal power loss is infinite', hi: 'क्योंकि आंतरिक शक्ति हानि अनंत है', bn: 'কারণ অভ্যন্তরীণ পাওয়ার অপচয় অসীম' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'For an ideal voltage source, Rs = 0. Converting yields Is = Vs / 0 = ∞, which is mathematically undefined.',
+        hi: 'आदर्श वोल्टेज स्रोत के लिए Rs = 0 होता है, जिससे Is = Vs / 0 = ∞ (अपरिभाषित) बनता है।',
+        bn: 'আদর্শ ভোল্টেজ সোর্সে Rs = 0, ফলে Is = Vs / 0 = অসীম বা অসংজ্ঞায়িত হয়।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-st-1',
+      question: {
+        en: 'State the procedure for source transformation and explain why external load conditions remain unchanged.',
+        hi: 'स्रोत रूपांतरण की प्रक्रिया लिखिए और समझाइए कि बाहरी लोड स्थितियां अपरिवर्तित क्यों रहती हैं।',
+        bn: 'সোর্স ট্রান্সফরমেশন পদ্ধতি বর্ণনা করুন এবং কারণ লিখুন কেন বহিস্থ লোডের অবস্থা অপরিবর্তিত থাকে।'
+      },
+      hint: {
+        en: 'Focus on open-circuit voltage Voc and short-circuit current Isc equivalence at terminals A-B.',
+        hi: 'टर्मिनल A-B पर ओपन-सर्किट वोल्टेज Voc और शॉर्ट-सर्किट धारा Isc समतुल्यता पर ध्यान केंद्रित करें।',
+        bn: 'A-B টার্মিনালে ওপেন-সার্কিট ভোল্টেজ ও শর্ট-সার্কিট কারেন্টের সমতার ওপর আলোকপাত করুন।'
+      },
+      answerKey: {
+        en: 'Procedure: Replace Vs in series with Rs by Is = Vs/Rs in parallel with Rp = Rs. Equivalence: Terminal characteristics V-I line equation V = Vs - I*Rs is identical for both configurations.',
+        hi: 'प्रक्रिया: Vs और श्रेणी Rs को Is = Vs/Rs और समानांतर Rp = Rs से बदलें। समतुल्यता: टर्मिनल V-I समीकरण V = Vs - I*Rs दोनों रूपों में समान रहता है।',
+        bn: 'পদ্ধতি: সিরিজে থাকা Vs ও Rs কে প্যারালালে থাকা Is = Vs/Rs ও Rp = Rs দ্বারা প্রতিস্থাপন করা হয়। সমতুল্যতা: উভয় মডেলেই টার্মিনাল V-I সমীকরণ V = Vs - I*Rs অভিন্ন থাকে।'
+      }
+    },
+    {
+      id: 'pq-st-2',
+      question: {
+        en: 'A 48V DC battery with 2 Ω internal resistance powers a variable load RL. Calculate the load power when transformed into a current source model with RL = 10 Ω.',
+        hi: '2 Ω आंतरिक प्रतिरोध वाली 48V DC बैटरी RL = 10 Ω लोड को शक्ति देती है। धारा स्रोत मॉडल का उपयोग करके लोड शक्ति की गणना करें।',
+        bn: '২ Ω অভ্যন্তরীণ বাধা বিশিষ্ট ৪৮V ডিসি ব্যাটারি ১০ Ω লোডকে শক্তি যোগায়। কারেন্ট সোর্স মডেল ব্যবহার করে লোডের পাওয়ার নির্ণয় করুন।'
+      },
+      hint: {
+        en: 'Convert to Is = 24A, Rp = 2 Ω, then calculate load current IL using current divider rule.',
+        hi: 'Is = 24A, Rp = 2 Ω में बदलें, फिर धारा विभाजन नियम से IL ज्ञात करें।',
+        bn: 'Is = 24A, Rp = 2 Ω এ রূপান্তর করুন, তারপর কারেন্ট ডিভাইডার সূত্রে IL বের করুন।'
+      },
+      answerKey: {
+        en: 'Is = 48/2 = 24 A, Rp = 2 Ω. IL = 24 × [2 / (2 + 10)] = 4.0 A. Load Power PL = IL² × RL = (4.0)² × 10 = 160.0 W.',
+        hi: 'Is = 24 A, Rp = 2 Ω। IL = 24 × (2/12) = 4.0 A। लोड शक्ति PL = 4² × 10 = 160.0 W।',
+        bn: 'Is = 24 A, Rp = 2 Ω। IL = 24 × (2/12) = 4.0 A। লোড পাওয়ার PL = (4.0)² × 10 = 160.0 W।'
+      }
+    }
+  ]
+};
+
+export const LESSON_DC_FAULT_ANALYSIS: Lesson = {
+  id: 'lsn-ch4-dc-fault-analysis',
+  topicId: 'ch4-dc-fault-analysis',
+  order: 17,
+  title: {
+    en: 'DC Network Fault Analysis & Bridge Networks',
+    hi: 'डीसी नेटवर्क फॉल्ट विश्लेषण एवं ब्रिज नेटवर्क',
+    bn: 'ডিসি নেটওয়ার্ক ফল্ট অ্যানালিসিস ও ব্রিজ নেটওয়ার্ক'
+  },
+  easyExplanation: {
+    en: 'DC fault analysis involves systematically identifying open circuits, short circuits, and high-resistance connection degradations in electrical networks. Bridge networks, particularly the Wheatstone bridge, provide ultra-precise measurements of unknown resistances and fault diagnostics.',
+    hi: 'डीसी फॉल्ट विश्लेषण में परिपथ में ओपन सर्किट, शॉर्ट सर्किट और उच्च प्रतिरोध दोषों की पहचान की जाती है। व्हीटस्टोन ब्रिज जैसे नेटवर्क अज्ञात प्रतिरोधों और फॉल्ट के अति-सटीक माप में मदद करते हैं।',
+    bn: 'ডিসি ফল্ট অ্যানালিসিস হলো ইলেকট্রিক্যাল নেটওয়ার্কে ওপেন সার্কিট, শর্ট সার্কিট এবং হাই-রেজিস্ট্যান্স সংযোগের ত্রুটি শনাক্তকরণের পদ্ধতি। হুইটস্টোন ব্রিজের মাধ্যমে অজানা রেজিস্ট্যান্স ও ফল্ট অত্যন্ত নিখুঁতভাবে পরিমাপ করা যায়।'
+  },
+  detailedExplanation: {
+    en: 'Fault Types in DC Networks:\n1. Open-Circuit Fault: Complete interruption of current flow in a branch (R = ∞). Terminal voltage across the open break jumps to the supply rail voltage Vs, while branch current drops to 0 A.\n2. Short-Circuit Fault: Zero or near-zero resistance fault path (R ≈ 0). Causes extreme current surge (I = Vs / R_line), voltage collapse across the shorted element to 0 V, and tripping of protective fuses/breakers.\n3. High-Resistance Fault: Partial degradation due to terminal oxidation or loose contacts, inserting abnormal resistance into the branch and causing localized heating and undervoltage.\n\nWheatstone Bridge Network Principle:\nA Wheatstone bridge consists of four resistance arms (R1, R2, R3, R4) forming a closed ring powered by supply Vs, with a sensitive galvanometer connected across nodes C and D.\n\nBridge Balance Condition:\nThe bridge is balanced when zero current flows through the detector (ID = 0 mA):\nV_C = V_D  ⇒  R1 / R2 = R3 / R4  ⇒  R1 × R4 = R2 × R3.\n\nUnder balanced condition, unknown resistance Rx = R3 × (R2 / R1).',
+    hi: 'डीसी नेटवर्क में फॉल्ट के प्रकार:\n1. ओपन-सर्किट फॉल्ट: शाखा में धारा प्रवाह पूर्णतः बंद हो जाना (R = ∞)। ओपन सिरे के पार टर्मिनल वोल्टेज सप्लाई के बराबर हो जाता है और धारा 0 A हो जाती है।\n2. शॉर्ट-सर्किट फॉल्ट: शून्य प्रतिरोध पथ (R ≈ 0)। इससे अत्यधिक धारा प्रवाहित होती है और शॉर्ट घटक के पार वोल्टेज 0 V हो जाता है।\n3. उच्च-प्रतिरोध फॉल्ट: ढीले संपर्कों के कारण अतिरिक्त प्रतिरोध उत्पन्न होना जो वोल्टेज ड्रॉप बढ़ाता है।\n\nव्हीटस्टोन ब्रिज सिद्धांत:\nव्हीटस्टोन ब्रिज में चार प्रतिरोध भुजाएँ होती हैं। जब डिटेक्टर से शून्य धारा (ID = 0) प्रवाहित होती है, तो ब्रिज संतुलित कहलाता है:\nR1 / R2 = R3 / R4  ⇒  R1 × R4 = R2 × R3।',
+    bn: 'ডিসি নেটওয়ার্কে ফল্টের ধরন:\n১. ওপেন-সার্কিট ফল্ট: ব্রাঞ্চে কারেন্ট প্রবাহ সম্পূর্ণ বন্ধ হয়ে যাওয়া (R = ∞)। বিচ্ছিন্ন প্রান্তের ভোল্টেজ সোর্স ভোল্টেজের সমান হয় এবং কারেন্ট 0 A হয়।\n২. শর্ট-সার্কিট ফল্ট: প্রায় শূন্য রেজিস্ট্যান্সের পথ তৈরি হওয়া (R ≈ 0)। এর ফলে উচ্চমানের কারেন্ট প্রবাহিত হয় এবং ভোল্টেজ 0 V এ নেমে আসে।\n৩. হাই-রেজিস্ট্যান্স ফল্ট: টার্মিনাল অক্সিডেশন বা লুজ কন্টাক্টের ফলে অপ্রয়োজনীয় রেজিস্ট্যান্স তৈরি হওয়া।\n\nহুইটস্টোন ব্রিজ নীতি:\nচারটি রেজিস্ট্যান্স বাহু নিয়ে গঠিত ব্রিজ সার্কিটে যখন ডিটেক্টরের কারেন্ট শূন্য হয় (ID = 0 mA), তখন ব্রিজটি সাম্য অবস্থায় থাকে:\nR1 / R2 = R3 / R4  ⇒  R1 × R4 = R2 × R3।'
+  },
+  formulas: [
+    {
+      symbol: 'R1/R2 = R3/R4',
+      expression: 'R1 × R4 = R2 × R3',
+      description: {
+        en: 'Wheatstone bridge balance condition for zero galvanometer current',
+        hi: 'शून्य गैल्वेनोमीटर धारा के लिए व्हीटस्टोन ब्रिज संतुलन शर्त',
+        bn: 'শূন্য গ্যালভানোমিটার কারেন্টের জন্য হুইটস্টোন ব্রিজ সাম্যাবস্থা শর্ত'
+      }
+    },
+    {
+      symbol: 'Rx',
+      expression: 'Rx = R3 × (R2 / R1)',
+      description: {
+        en: 'Unknown resistance calculation in a balanced Wheatstone bridge',
+        hi: 'संतुलित व्हीटस्टोन ब्रिज में अज्ञात प्रतिरोध की गणना',
+        bn: 'সাম্য অবস্থায় হুইটস্টোন ব্রিজে অজানা রেজিস্ট্যান্স নির্ণয়'
+      }
+    },
+    {
+      symbol: 'V_CD',
+      expression: 'V_CD = Vs × [ (R2 / (R1 + R2)) - (R4 / (R3 + R4)) ]',
+      description: {
+        en: 'Unbalanced Wheatstone bridge output voltage across nodes C and D',
+        hi: 'असंतुलित व्हीटस्टोन ब्रिज के नोड C और D के बीच आउटपुट वोल्टेज',
+        bn: 'অসাম্য অবস্থায় হুইটস্টোন ব্রিজের C ও D নোডের মধ্যকার ভোল্টেজ'
+      }
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-df-1',
+      problem: {
+        en: 'In a balanced Wheatstone bridge, R1 = 100 Ω, R2 = 500 Ω, and R3 = 80 Ω. Calculate the value of the unknown resistance Rx (R4).',
+        hi: 'एक संतुलित व्हीटस्टोन ब्रिज में R1 = 100 Ω, R2 = 500 Ω और R3 = 80 Ω हैं। अज्ञात प्रतिरोध Rx (R4) का मान ज्ञात करें।',
+        bn: 'একটি সাম্য অবস্থার হুইটস্টোন ব্রিজে R1 = 100 Ω, R2 = 500 Ω এবং R3 = 80 Ω হলে অজানা রেজিস্ট্যান্স Rx (R4) এর মান বের করুন।'
+      },
+      solution: {
+        en: 'Step 1: Apply Wheatstone bridge balance formula:\nR1 / R2 = R3 / R4  ⇒  R4 = R3 × (R2 / R1).\nStep 2: Substitute values:\nRx = 80 Ω × (500 Ω / 100 Ω) = 80 × 5 = 400.0 Ω.',
+        hi: 'चरण 1: व्हीटस्टोन ब्रिज संतुलन सूत्र लागू करें:\nR1 / R2 = R3 / R4  ⇒  R4 = R3 × (R2 / R1)।\nचरण 2: मान रखें:\nRx = 80 Ω × (500 / 100) = 400.0 Ω।',
+        bn: 'ধাপ ১: হুইটস্টোন ব্রিজ সাম্যাবস্থা সূত্র প্রয়োগ করুন:\nR1 / R2 = R3 / R4  ⇒  R4 = R3 × (R2 / R1)।\nধাপ ২: মান বসান:\nRx = 80 Ω × (500 / 100) = 400.0 Ω।'
+      },
+      givenValues: { 'R1': '100 Ω', 'R2': '500 Ω', 'R3': '80 Ω' },
+      finalAnswer: {
+        en: 'Rx (R4) = 400.0 Ω',
+        hi: 'Rx (R4) = 400.0 Ω',
+        bn: 'Rx (R4) = 400.0 Ω'
+      }
+    },
+    {
+      id: 'ex-df-2',
+      problem: {
+        en: 'A 24V DC circuit supplies two parallel branches: Branch 1 (R1 = 12 Ω in series with R2 = 24 Ω) and Branch 2 (R3 = 12 Ω in series with R4 = 24 Ω). If R2 develops an OPEN-CIRCUIT fault, calculate the new voltage at the node between R1 and R2.',
+        hi: '24V DC परिपथ दो समानांतर शाखाओं को आपूर्ति करता है। यदि R2 में ओपन-सर्किट फॉल्ट उत्पन्न होता है, तो R1 और R2 के बीच नोड पर नया वोल्टेज ज्ञात करें।',
+        bn: '২৪V ডিসি সার্কিটে R2 তে ওপেন-সার্কিট ফল্ট ঘটলে R1 ও R2 এর মধ্যকার নোড ভোল্টেজ কত হবে তা নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Step 1: Under normal condition, V_node = 24V × [24 / (12 + 24)] = 16.0 V.\nStep 2: When R2 becomes open circuit (R2 = ∞), branch current drops to 0 A.\nStep 3: Voltage drop across R1 = I × R1 = 0 A × 12 Ω = 0 V.\nStep 4: Node voltage jumps to full supply potential: V_node = Vs - 0V = 24.0 V DC.',
+        hi: 'चरण 1: सामान्य अवस्था में V_node = 24V × (24/36) = 16.0 V।\nचरण 2: R2 ओपन (R2 = ∞) होने पर धारा 0 A हो जाती है।\nचरण 3: R1 के पार वोल्टेज ड्रॉप = 0 V।\nचरण 4: नोड वोल्टेज सप्लाई वोल्टेज के बराबर हो जाता है: V_node = 24.0 V DC।',
+        bn: 'ধাপ ১: স্বাভাবিক অবস্থায় V_node = ২৪V × (২৪/৩৬) = ১৬.০ V।\nধাপ ২: R2 ওপেন হলে কারেন্ট ০ A হয়ে যায়।\nধাপ ৩: R1 এর ভোল্টেজ ড্রপ = ০ V।\nধাপ ৪: নোড ভোল্টেজ সরাসরি সোর্স ভোল্টেজে উন্নীত হয়: V_node = ২৪.০ V DC।'
+      },
+      givenValues: { 'Vs': '24 V', 'R1': '12 Ω', 'R2_fault': 'Open (∞)' },
+      finalAnswer: {
+        en: 'Node Voltage V_node = 24.0 V DC (Pulled to Vs)',
+        hi: 'नोड वोल्टेज V_node = 24.0 V DC (सप्लाई वोल्टेज के बराबर)',
+        bn: 'নোড ভোল্টেজ V_node = ২৪.০ V DC (সোর্স ভোল্টেজের সমান)'
+      }
+    },
+    {
+      id: 'ex-df-3',
+      problem: {
+        en: 'An unbalanced Wheatstone bridge powered by Vs = 12V has R1 = 100 Ω, R2 = 200 Ω, R3 = 100 Ω, and R4 = 300 Ω. Calculate the open-circuit output voltage V_CD across nodes C and D.',
+        hi: '12V से संचालित असंतुलित व्हीटस्टोन ब्रिज में R1 = 100 Ω, R2 = 200 Ω, R3 = 100 Ω और R4 = 300 Ω हैं। C और D के बीच आउटपुट वोल्टेज V_CD ज्ञात करें।',
+        bn: '১২V সোর্সের অসাম্য হুইটস্টোন ব্রিজে R1 = 100 Ω, R2 = 200 Ω, R3 = 100 Ω এবং R4 = 300 Ω। C ও D নোডের মধ্যবর্তী ভোল্টেজ V_CD নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Step 1: Calculate Node C voltage VC:\nVC = Vs × [R2 / (R1 + R2)] = 12 V × [200 / (100 + 200)] = 12 × (2/3) = 8.0 V.\nStep 2: Calculate Node D voltage VD:\nVD = Vs × [R4 / (R3 + R4)] = 12 V × [300 / (100 + 300)] = 12 × (3/4) = 9.0 V.\nStep 3: Calculate difference V_CD = VC - VD = 8.0 V - 9.0 V = -1.0 V (or 1.0 V magnitude).',
+        hi: 'चरण 1: नोड C वोल्टेज VC ज्ञात करें:\nVC = 12 × (200/300) = 8.0 V।\nचरण 2: नोड D वोल्टेज VD ज्ञात करें:\nVD = 12 × (300/400) = 9.0 V।\nचरण 3: अंतर V_CD = 8.0 - 9.0 = -1.0 V (परिमाण 1.0 V)।',
+        bn: 'ধাপ ১: নোড C ভোল্টেজ VC হিসাব করুন:\nVC = ১২ × (২০০/৩০০) = ৮.০ V।\nধাপ ২: নোড D ভোল্টেজ VD হিসাব করুন:\nVD = ১২ × (৩০০/৪০০) = ৯.০ V।\nধাপ ৩: পার্থক্য V_CD = ৮.০ - ৯.০ = -১.০ V (মান ১.০ V)।'
+      },
+      givenValues: { 'Vs': '12 V', 'R1': '100 Ω', 'R2': '200 Ω', 'R3': '100 Ω', 'R4': '300 Ω' },
+      finalAnswer: {
+        en: 'V_CD = -1.0 V (Node D is 1.0V higher than Node C)',
+        hi: 'V_CD = -1.0 V (नोड D, नोड C से 1.0V अधिक है)',
+        bn: 'V_CD = -১.০ V (নোড D, নোড C অপেক্ষা ১.০V বেশি)'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Industrial strain gauge and load cell weight measurement instrumentation.',
+      'Precision Resistance Temperature Detector (RTD Pt100) temperature sensing bridges.',
+      'Underground cable fault localization using Murray Loop and Varley Loop bridge tests.',
+      'Quality control testing of motor winding and transformer DC resistance.'
+    ],
+    hi: [
+      'औद्योगिक स्ट्रेन गेज और लोड सेल वजन मापन उपकरण।',
+      'सटीक आरटीडी (RTD Pt100) तापमान संवेदन ब्रिज।',
+      'मरे लूप और वार्ले लूप टेस्ट द्वारा भूमिगत केबल फॉल्ट की स्थिति ज्ञात करना।',
+      'मोटर वाइंडिंग और ट्रांसफार्मर डीसी प्रतिरोध का गुणवत्ता परीक्षण।'
+    ],
+    bn: [
+      'শিল্পক্ষেত্রে স্ট্রেন গেজ ও লোড সেল ওজন পরিমাপক যন্ত্রে ব্যবহার।',
+      'নিখুঁত আরটিডি (RTD Pt100) তাপমাত্রা সেন্সিং ব্রিজ।',
+      'আন্ডারগ্রাউন্ড কেবল ফল্ট শনাক্তকরণে মারে লুপ ও ভার্লে লুপ টেস্ট।',
+      'মোটর ওয়াইন্ডিং ও ট্র্যান্সফরমারের ডিসি রেজিস্ট্যান্স মান নিশ্চিতকরণ।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'In an open-circuit fault, branch current drops to zero while terminal break voltage rises to full supply voltage.',
+      'In a short-circuit fault, voltage collapses to zero while current surges to high values limited only by line resistance.',
+      'Wheatstone bridge sensitivity is maximum when all four arm resistances are approximately equal (R1 = R2 = R3 = R4).',
+      'Ohmmeter resistance measurements MUST be taken on completely DE-ENERGIZED circuits only.'
+    ],
+    hi: [
+      'ओपन-सर्किट फॉल्ट में धारा शून्य हो जाती है जबकि ब्रेक पर टर्मिनल वोल्टेज पूरे सप्लाई वोल्टेज तक बढ़ जाता है।',
+      'शॉर्ट-सर्किट फॉल्ट में वोल्टेज शून्य हो जाता है जबकि धारा अत्यधिक बढ़ जाती है।',
+      'व्हीटस्टोन ब्रिज की संवेदनशीलता तब अधिकतम होती है जब चारों भुजाओं के प्रतिरोध लगभग समान हों।',
+      'ओहममीटर द्वारा प्रतिरोध का माप केवल पूरी तरह से पावर बंद (De-energized) परिपथ पर ही किया जाना चाहिए।'
+    ],
+    bn: [
+      'ওপেন-সার্কিট ফল্টে কারেন্ট শূন্য হয় কিন্তু খোলা প্রান্তের ভোল্টেজ সোর্স ভোল্টেজে উঠে যায়।',
+      'শর্ট-সার্কিট ফল্টে ভোল্টেজ শূন্যে নেমে আসে কিন্তু কারেন্ট মারাত্মকভাবে বেড়ে যায়।',
+      'চারটি বাহুর রেজিস্ট্যান্স সমান হলে হুইটস্টোন ব্রিজের সংবেদনশীলতা সর্বাধিক হয়।',
+      'ওহমমিটার দিয়ে রেজিস্ট্যান্স টেস্ট কেবল পাওয়ার সম্পূর্ণ বন্ধ (De-energized) সার্কিটে করা বাধ্যতামূলক।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Connecting an ohmmeter to a live energized circuit, causing instrument damage and false readings.',
+      'Confusing open-circuit voltage (Vs) with short-circuit current (Isc) characteristics during troubleshooting.',
+      'Neglecting lead wire resistance when measuring very low resistances using a standard Wheatstone bridge (requires Kelvin Double Bridge).',
+      'Assuming a Wheatstone bridge remains linear when highly unbalanced.'
+    ],
+    hi: [
+      'लाइव (चालू) परिपथ में ओहममीटर जोड़ना, जिससे मीटर जल सकता है।',
+      'ट्रबलशूटिंग के दौरान ओपन-सर्किट वोल्टेज और शॉर्ट-सर्किट धारा के लक्षणों में भ्रमित होना।',
+      'कम प्रतिरोध मापते समय केबल लीड प्रतिरोध की उपेक्षा करना (इसके लिए केल्विन डबल ब्रिज चाहिए)।',
+      'अत्यधिक असंतुलित होने पर भी व्हीटस्टोन ब्रिज को रेखीय मान लेना।'
+    ],
+    bn: [
+      'চালু সার্কিটে ওহমমিটার যুক্ত করা, যা মিটার নষ্ট করে দেয়।',
+      'ট্রাবলশুটিংকালে ওপেন-সার্কিট ভোল্টেজ ও শর্ট-সার্কিট কারেন্টের বৈশিষ্ট্যে বিভ্রান্ত হওয়া।',
+      'অতি ক্ষুদ্র রেজিস্ট্যান্স মাপে সাধারণ হুইটস্টোন ব্রিজ ব্যবহার করা (কেলভিন ডাবল ব্রিজ প্রয়োজন)।',
+      'অতিরিক্ত অসাম্য অবস্থায় হুইটস্টোন ব্রিজকে লিনিয়ার মনে করা।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-df-1',
+      question: {
+        en: 'When a branch in a DC circuit suffers an OPEN-CIRCUIT fault, what happens to the branch current and terminal voltage across the break?',
+        hi: 'जब किसी डीसी परिपथ शाखा में ओपन-सर्किट फॉल्ट होता है, तो शाखा धारा और टर्मिनल वोल्टेज पर क्या प्रभाव पड़ता है?',
+        bn: 'ডিসি সার্কিটের কোনো ব্রাঞ্চে ওপেন-সার্কিট ফল্ট হলে ব্রাঞ্চ কারেন্ট ও টার্মিনাল ভোল্টেজের কী ঘটে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Current becomes zero, terminal voltage equals supply voltage', hi: 'धारा शून्य हो जाती है, टर्मिनल वोल्टेज सप्लाई वोल्टेज के बराबर होता है', bn: 'কারেন্ট শূন্য হয়, টার্মিনাল ভোল্টেজ সোর্স ভোল্টেজের সমান হয়' } },
+        { id: 'opt-b', text: { en: 'Current becomes infinite, terminal voltage becomes zero', hi: 'धारा अनंत हो जाती है, टर्मिनल वोल्टेज शून्य हो जाता है', bn: 'কারেন্ট অসীম হয়, টার্মিনাল ভোল্টেজ শূন্য হয়' } },
+        { id: 'opt-c', text: { en: 'Both current and voltage become zero', hi: 'धारा और वोल्टेज दोनों शून्य हो जाते हैं', bn: 'কারেন্ট ও ভোল্টেজ উভয়ই শূন্য হয়' } },
+        { id: 'opt-d', text: { en: 'Current doubles, voltage halves', hi: 'धारा दोगुनी हो जाती है, वोल्टेज आधा हो जाता है', bn: 'কারেন্ট দ্বিগুণ হয়, ভোল্টেজ অর্ধেক হয়' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'In an open circuit, infinite resistance drops branch current to 0 A. By KVL, the full supply voltage appears across the open gap.',
+        hi: 'ओपन परिपथ में अनंत प्रतिरोध धारा को 0 A कर देता है तथा KVL के अनुसार पूरा सप्लाई वोल्टेज ओपन गैप के पार आ जाता है।',
+        bn: 'ওপেন সার্কিটে অসীম বাধার কারণে কারেন্ট ০ A হয় এবং KVL অনুযায়ী পূর্ণ সোর্স ভোল্টেজ বিচ্ছিন্ন প্রান্তে অবস্থান করে।'
+      }
+    },
+    {
+      id: 'mcq-df-2',
+      question: {
+        en: 'A Wheatstone bridge is balanced when:',
+        hi: 'व्हीटस्टोन ब्रिज संतुलित होता है जब:',
+        bn: 'হুইটস্টোন ব্রিজ সাম্য অবস্থায় থাকে যখন:'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Galvanometer detector current is zero (ID = 0)', hi: 'गैल्वेनोमीटर डिटेक्टर धारा शून्य होती है (ID = 0)', bn: 'গ্যালভানোমিটার ডিটেক্টর কারেন্ট শূন্য হয় (ID = 0)' } },
+        { id: 'opt-b', text: { en: 'Supply current is zero', hi: 'सप्लाई धारा शून्य होती है', bn: 'সোর্স কারেন্ট শূন্য হয়' } },
+        { id: 'opt-c', text: { en: 'All four resistors are burned out', hi: 'चारों प्रतिरोधक जल जाते हैं', bn: 'চারটি রেজিস্টর পুড়ে যায়' } },
+        { id: 'opt-d', text: { en: 'Output voltage across detector equals supply voltage', hi: 'डिटेक्टर पर आउटपुट वोल्टेज सप्लाई वोल्टेज के बराबर होता है', bn: 'ডিটেক্টর আউটপুট ভোল্টেজ সোর্স ভোল্টেজের সমান হয়' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Bridge balance by definition means zero potential difference between detector nodes C and D, causing zero detector current.',
+        hi: 'ब्रिज संतुलन का अर्थ है डिटेक्टर नोड C और D के बीच शून्य विभवांतर होना, जिससे धारा शून्य होती है।',
+        bn: 'সাম্যাবস্থার সংজ্ঞানুযায়ী C ও D নোডের বিভব পার্থক্য শূন্য হওয়ায় ডিটেক্টর কারেন্ট শূন্য হয়।'
+      }
+    },
+    {
+      id: 'mcq-df-3',
+      question: {
+        en: 'Which bridge modification is used for measuring extremely low resistances (< 1 Ω) to eliminate lead contact resistance errors?',
+        hi: 'अत्यधिक कम प्रतिरोधों (< 1 Ω) को मापने के लिए किस ब्रिज का उपयोग किया जाता है?',
+        bn: 'অতি ক্ষুদ্র রেজিস্ট্যান্স (< ১ Ω) নিখুঁতভাবে মাপার জন্য কোন ব্রিজের পরিবর্তিত রূপ ব্যবহার করা হয়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Kelvin Double Bridge', hi: 'केल्विन डबल ब्रिज', bn: 'কেলভিন ডাবল ব্রিজ' } },
+        { id: 'opt-b', text: { en: 'Maxwell Bridge', hi: 'मैक्सवेल ब्रिज', bn: 'ম্যাক্সওয়েল ব্রিজ' } },
+        { id: 'opt-c', text: { en: 'Schering Bridge', hi: 'शेरिंग ब्रिज', bn: 'শেরিং ব্রিজ' } },
+        { id: 'opt-d', text: { en: 'Wien Bridge', hi: 'वीन ब्रिज', bn: 'উইন ব্রিজ' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'The Kelvin Double Bridge uses two sets of ratio arms to eliminate lead wire and contact resistance errors when measuring sub-ohm resistances.',
+        hi: 'केल्विन डबल ब्रिज sub-ohm प्रतिरोध मापते समय केबल लीड और संपर्क प्रतिरोध त्रुटियों को समाप्त करता है।',
+        bn: 'কেলভিন ডাবল ব্রিজে দুই সেট রেশিও আর্ম ব্যবহার করে ক্ষুদ্র রেজিস্ট্যান্স মাপে কানেক্টিং তারের বাধা দূর করা হয়।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-df-1',
+      question: {
+        en: 'Derive the balance equation R1/R2 = R3/R4 for a Wheatstone bridge starting from node potentials VC and VD.',
+        hi: 'नोड विभव VC और VD से प्रारंभ करके व्हीटस्टोन ब्रिज का संतुलन समीकरण R1/R2 = R3/R4 व्युत्पन्न करें।',
+        bn: 'নোড বিভব VC ও VD থেকে শুরু করে হুইটস্টোন ব্রিজের সাম্যাবস্থা সমীকরণ R1/R2 = R3/R4 প্রতিপাদন করুন।'
+      },
+      hint: {
+        en: 'Set VC = VD, express VC and VD using voltage divider rule, and simplify.',
+        hi: 'VC = VD रखें, वोल्टेज डिवाइडर नियम का उपयोग करके व्यक्त करें और सरल बनाएं।',
+        bn: 'VC = VD ধরুন, ভোল্টেজ ডিভাইডার সূত্র দিয়ে প্রকাশ করে সরলীকরণ করুন।'
+      },
+      answerKey: {
+        en: 'VC = Vs*(R2/(R1+R2)), VD = Vs*(R4/(R3+R4)). For ID=0, VC=VD ⇒ R2/(R1+R2) = R4/(R3+R4) ⇒ R2*(R3+R4) = R4*(R1+R2) ⇒ R2*R3 = R1*R4 ⇒ R1/R2 = R3/R4.',
+        hi: 'VC = Vs*(R2/(R1+R2)), VD = Vs*(R4/(R3+R4))। ID=0 के लिए VC=VD ⇒ R1/R2 = R3/R4।',
+        bn: 'VC = Vs*(R2/(R1+R2)), VD = Vs*(R4/(R3+R4))। ID=0 এর জন্য VC=VD ⇒ R1/R2 = R3/R4।'
+      }
+    },
+    {
+      id: 'pq-df-2',
+      question: {
+        en: 'Explain the three-step troubleshooting workflow for diagnosing an unknown DC control circuit failure.',
+        hi: 'अज्ञात डीसी नियंत्रण परिपथ विफलता का निदान करने के लिए तीन-चरण ट्रबलशूटिंग वर्कफ़्लो की व्याख्या करें।',
+        bn: 'একটি অজানা ডিসি কন্ট্রোল সার্কিট বিকল হলে ডায়াগনস্টিকের তিন ধাপের ট্রাবলশুটিং পদ্ধতি ব্যাখ্যা করুন।'
+      },
+      hint: {
+        en: 'Step 1: Visual & Power verification; Step 2: Node Voltage mapping; Step 3: Isolated De-energized Resistance test.',
+        hi: 'चरण 1: दृश्य व पावर जांच; चरण 2: नोड वोल्टेज मैपिंग; चरण 3: डी-एनर्जाइज्ड प्रतिरोध परीक्षण।',
+        bn: 'ধাপ ১: ভিজ্যুয়াল ও সোর্স ভোল্টেজ পরীক্ষা; ধাপ ২: নোড ভোল্টেজ ট্র্যাকিং; ধাপ ৩: পাওয়ার বন্ধ করে রেজিস্ট্যান্স টেস্ট।'
+      },
+      answerKey: {
+        en: 'Step 1: Supply Check (Verify Vs at terminals). Step 2: Live Voltage Mapping (Measure node voltages against GND to locate open/short branches). Step 3: De-energized Resistance Test (Isolate component and measure with ohmmeter to confirm root cause).',
+        hi: 'चरण 1: सप्लाई जांच। चरण 2: लाइव नोड वोल्टेज मैपिंग (ओपन/शॉर्ट का पता लगाने के लिए)। चरण 3: डी-एनर्जाइज्ड प्रतिरोध परीक्षण (मूल कारण की पुष्टि के लिए)।',
+        bn: 'ধাপ ১: সোর্স ভোল্টেজ টেস্ট। ধাপ ২: লাইভ নোড ভোল্টেজ ট্র্যাকিং (ওপেন বা শর্ট চিহ্নিত করতে)। ধাপ ৩: পাওয়ার বন্ধ রেখে রেজিস্ট্যান্স টেস্ট (মূল ত্রুটি নিশ্চিত করতে)।'
+      }
+    }
+  ]
+};
+
+export const LESSON_PRACTICAL_DC_APPLICATIONS: Lesson = {
+  id: 'lsn-ch4-practical-dc-applications',
+  topicId: 'ch4-practical-dc-applications',
+  order: 18,
+  title: {
+    en: 'Practical DC Circuit & Industrial Applications',
+    hi: 'व्यावहारिक डीसी सर्किट एवं औद्योगिक अनुप्रयोग',
+    bn: 'ব্যবহারিক ডিসি সার্কিট ও শিল্প প্রয়োগ'
+  },
+  easyExplanation: {
+    en: 'This capstone lesson connects all Chapter 4 DC circuit analysis techniques (KCL, KVL, Nodal, Mesh, Thevenin, Norton, Superposition, Source Transformation) to real-world industrial systems including automation control loops, substation DC battery banks, solar PV arrays, and factory PLC power distribution networks.',
+    hi: 'यह पाठ अध्याय 4 के सभी डीसी सर्किट विश्लेषण तकनीकों (KCL, KVL, नोडल, मेष, थेवेनिन, नॉर्टन, सुपरपोजिशन) को वास्तविक औद्योगिक प्रणालियों जैसे स्वचालन नियंत्रण, सबस्टेशन डीसी बैटरी बैंक, सौर पीवी ऐरे और फैक्ट्री पीएलसी नेटवर्क से जोड़ता है।',
+    bn: 'এই পাঠে অধ্যায় ৪ এর সকল ডিসি সার্কিট অ্যানালিসিস পদ্ধতিসমূহকে (KCL, KVL, নোডাল, মেশ, থেভেনিন, নর্টন, সুপারপজিশন, সোর্স ট্রান্সফরমেশন) শিল্পকারখানার বাস্তব সিস্টেম যেমন অটোমেশন কন্ট্রোল, সাবস্টেশন ডিসি ব্যাকআপ, সোলার পিভি অ্যারে এবং পিএলসি প্যানেল সিস্টেমের সাথে সম্পর্কিত করা হয়েছে।'
+  },
+  detailedExplanation: {
+    en: 'Industrial DC Electrical Engineering Applications:\n1. Factory Automation Control Loops (24V DC / 4-20mA Loops):\nIndustrial sensors use 4-20mA current loops powered by 24V DC supplies. The current loop model utilizes Norton equivalence where loop current represents the measured process variable regardless of line resistance.\n\n2. Electrical Substation Auxiliary DC Power:\nHigh-voltage substations rely on 110V or 220V DC battery banks to power protection trip coils and circuit breaker operating mechanisms. Battery sizing and branch load sharing require DC network loop mesh analysis.\n\n3. Commercial Solar Photovoltaic (PV) Arrays:\nSolar arrays are modeled as non-linear DC current sources in parallel with diodes. Strings of PV modules are connected in series/parallel, requiring source transformation and maximum power point tracking (MPPT).\n\n4. PLC Power Panel Distribution & Noise Decoupling:\nFactory PLCs require isolated DC rails. Inductive load switching (solenoids, contactors) generates high back-EMF (e = -L di/dt), requiring flywheel freewheeling diodes and branch isolation filter networks.',
+    hi: 'औद्योगिक डीसी इलेक्ट्रिकल एप्लीकेशन:\n1. फैक्ट्री ऑटोमेशन कंट्रोल लूप्स (24V DC / 4-20mA लूप्स):\nऔद्योगिक सेंसर 24V DC सप्लाई से संचालित 4-20mA करंट लूप्स का उपयोग करते हैं जो लाइन प्रतिरोध से अप्रभावित रहते हैं।\n\n2. सबस्टेशन सहायक डीसी पावर:\nउच्च-वोल्टेज सबस्टेशन सुरक्षा ट्रिप कॉइल को पावर देने के लिए 110V या 220V डीसी बैटरी बैंक पर निर्भर होते हैं।\n\n3. सोलर फोटोवोल्टिक (पीवी) ऐरे:\nसोलर पैनलों को गैर-रेखीय डीसी धारा स्रोतों के रूप में तैयार किया जाता है जो अधिकतम शक्ति बिंदु (MPPT) पर कार्य करते हैं।\n\n4. पीएलसी पावर पैनल वितरण और शोर पृथक्करण:\nइंडक्टिव स्विचिंग (सोलेनोइड्स) से उत्पन्न बैक-EMF स्पाइक्स को रोकने के लिए फ्लाईव्हील डायोड का उपयोग किया जाता है।',
+    bn: 'শিল্পকারখানার ডিসি ইলেকট্রিক্যাল অ্যাপ্লিকেশন:\n১. ফ্যাক্টরি অটোমেশন কন্ট্রোল লুপস (২৪V DC / ৪-২০mA লুপস):\nইন্ডাস্ট্রিয়াল সেন্সরে ২৪V DC থেকে পরিচালিত ৪-২০mA কারেন্ট লুপ ব্যবহৃত হয় যা কেবল রেজিস্ট্যান্স দ্বারা প্রভাবিত হয় না।\n\n২. বৈদ্যুতিক সাবস্টেশন সহায়ক ডিসি পাওয়ার:\nউচ্চ-ভোল্টেজ সাবস্টেশনে প্রোটেকশন ট্রিপ কয়েল চালানোর জন্য ১১০V বা ২২০V ডিসি ব্যাটারি ব্যাংক ব্যবহৃত হয়।\n\n৩. কমার্শিয়াল সোলার ফটোভোলটাইক (পিভি) অ্যারে:\nসোলার প্যানেলগুলোকে নন-লিনিয়ার ডিসি কারেন্ট সোর্স হিসেবে মডেল করা হয় যার ম্যাক্সিমাম পাওয়ার পয়েন্ট ট্র্যাক (MPPT) প্রয়োজন।\n\n৪. পিএলসি পাওয়ার প্যানেল ডিস্ট্রিবিউশন ও নয়েজ ফিল্টারিং:\nসলিনয়েড চালুর সময় সৃষ্ট ব্যাক-EMF ভোল্টেজ স্পাইক দূর করতে ফ্লাইহুইল ডায়োড ব্যবহৃত হয়।'
+  },
+  formulas: [
+    {
+      symbol: 'V_loop',
+      expression: 'V_loop = I_loop × (R_line + R_sense) ≤ V_supply',
+      description: {
+        en: 'Industrial 4-20mA current loop voltage compliance limit',
+        hi: 'औद्योगिक 4-20mA करंट लूप वोल्टेज अनुपालन सीमा',
+        bn: 'ইন্ডাস্ট্রিয়াল ৪-২০mA কারেন্ট লুপের ভোল্টেজ সীমা'
+      }
+    },
+    {
+      symbol: 'e_back_emf',
+      expression: 'e = -L × (di / dt)',
+      description: {
+        en: 'Inductive back-EMF spike generated across switched DC solenoid coils',
+        hi: 'डीसी सोलेनोइड कॉइल स्विचिंग के दौरान उत्पन्न इंडक्टिव बैक-EMF',
+        bn: 'স্যুইচড ডিসি সলিনয়েড কয়েলে সৃষ্ট ইনডাক্টর ব্যাক-EMF স্পাইক'
+      }
+    },
+    {
+      symbol: 'P_array',
+      expression: 'P_array = V_mp × I_mp = N_series × V_cell × N_parallel × I_cell',
+      description: {
+        en: 'Total solar PV array peak DC output power calculation',
+        hi: 'कुल सोलर पीवी ऐरे पीक डीसी आउटपुट पावर गणना',
+        bn: 'মোট সোলার পিভি অ্যারের সর্বোচ্চ ডিসি পাওয়ার আউটপুট হিসাব'
+      }
+    }
+  ],
+  solvedExamples: [
+    {
+      id: 'ex-prac-1',
+      problem: {
+        en: 'An industrial pressure transmitter outputs a 4-20mA current signal powered by a 24V DC supply. The loop wire resistance R_line is 250 Ω and the PLC input sensing resistor R_sense is 250 Ω. Calculate the sensing voltage V_sense at minimum (4mA) and maximum (20mA) process measurement.',
+        hi: '24V DC सप्लाई द्वारा संचालित औद्योगिक प्रेशर ट्रांसमीटर 4-20mA करंट सिग्नल आउटपुट देता है। लाइन प्रतिरोध 250 Ω और PLC इनपुट सेंसिंग प्रतिरोध 250 Ω है। न्यूनतम (4mA) और अधिकतम (20mA) पर सेंसिंग वोल्टेज V_sense की गणना करें।',
+        bn: '২৪V DC সোর্সের একটি ইন্ডাস্ট্রিয়াল প্রেসার ট্রান্সমিটার ৪-২০mA কারেন্ট সংকেত পাঠায়। লাইন রেজিস্ট্যান্স ২৫০ Ω এবং PLC ইনপুট সেন্সিং রেজিস্টর ২৫০ Ω হলে সর্বনিম্ন (৪mA) ও সর্বোচ্চ (২০mA) সিগন্যালে V_sense নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Step 1: Calculate sensing voltage V_sense = I_loop × R_sense.\nStep 2: At minimum signal (4 mA = 0.004 A):\nV_sense_min = 0.004 A × 250 Ω = 1.0 V DC.\nStep 3: At maximum signal (20 mA = 0.020 A):\nV_sense_max = 0.020 A × 250 Ω = 5.0 V DC.\nStep 4: Verify loop compliance voltage drop:\nTotal V_drop = 20mA × (250 + 250) = 0.020 A × 500 Ω = 10.0 V ≤ 24.0 V (Compliant).',
+        hi: 'चरण 1: V_sense = I_loop × R_sense की गणना करें।\nचरण 2: न्यूनतम पर (4 mA): V_sense_min = 0.004 × 250 = 1.0 V DC।\nचरण 3: अधिकतम पर (20 mA): V_sense_max = 0.020 × 250 = 5.0 V DC।\nचरण 4: कुल लूप ड्रॉप = 20mA × 500 Ω = 10.0 V ≤ 24 V (अनुपालित)।',
+        bn: 'ধাপ ১: সেন্সিং ভোল্টেজ V_sense = I_loop × R_sense।\nধাপ ২: সর্বনিম্ন সিগন্যালে (৪ mA): V_sense_min = ০.০০৪ × ২৫০ = ১.০ V DC।\nধাপ ৩: সর্বোচ্চ সিগন্যালে (২০ mA): V_sense_max = ০.০২০ × ২৫০ = ৫.০ V DC।\nধাপ ৪: মোট ড্রপ = ২০mA × ৫০০ Ω = ১০.০ V ≤ ২৪ V (সঠিক)।'
+      },
+      givenValues: { 'Vs': '24 V', 'I_min': '4 mA', 'I_max': '20 mA', 'R_line': '250 Ω', 'R_sense': '250 Ω' },
+      finalAnswer: {
+        en: 'V_sense = 1.0V DC (at 4mA) to 5.0V DC (at 20mA)',
+        hi: 'V_sense = 1.0V DC (4mA पर) से 5.0V DC (20mA पर)',
+        bn: 'V_sense = ১.০V DC (৪mA তে) থেকে ৫.০V DC (২০mA তে)'
+      }
+    },
+    {
+      id: 'ex-prac-2',
+      problem: {
+        en: 'A 24V DC solenoid valve coil has inductance L = 0.5 H and internal resistance R = 48 Ω. Calculate the steady-state coil current and the theoretical back-EMF spike magnitude if current is interrupted in dt = 1.0 ms without a flywheel diode.',
+        hi: '24V DC सोलेनोइड कॉइल का प्रेरकत्व L = 0.5 H और प्रतिरोध R = 48 Ω है। स्थिर-अवस्था धारा और बिना फ्लाईव्हील डायोड के dt = 1.0 ms में धारा बंद होने पर बैक-EMF स्पाइक का परिमाण ज्ञात करें।',
+        bn: '২৪V ডিসি সলিনয়েড কয়েলের ইনডাক্ট্যান্স L = ০.৫ H এবং রেজিস্ট্যান্স R = ৪৮ Ω। কারেন্ট বন্ধে ফ্লাইহুইল ডায়োড ছাড়া dt = ১.০ ms সময়ে তত্ত্বীয় ব্যাক-EMF স্পাইক নির্ণয় করুন।'
+      },
+      solution: {
+        en: 'Step 1: Calculate steady-state DC current I_ss:\nI_ss = V / R = 24 V / 48 Ω = 0.50 A.\nStep 2: Calculate back-EMF magnitude during current break:\ne = L × (di / dt) = 0.5 H × (0.50 A / 0.001 s) = 0.5 × 500 = 250.0 V DC.\nConclusion: The 250V spike is > 10x supply voltage, proving why freewheeling diodes are essential to protect PLC output transistors.',
+        hi: 'चरण 1: स्थिर-अवस्था धारा I_ss ज्ञात करें:\nI_ss = 24 / 48 = 0.50 A।\nचरण 2: बैक-EMF की गणना करें:\ne = L × (di/dt) = 0.5 H × (0.50 A / 0.001 s) = 250.0 V DC।\nनिष्कर्ष: 250V स्पाइक सप्लाई वोल्टेज का > 10 गुना है, जिससे फ्लाईव्हील डायोड अनिवार्य हो जाता है।',
+        bn: 'ধাপ ১: স্থির অবস্থা কারেন্ট I_ss বের করুন:\nI_ss = ২৪ / ৪৮ = ০.৫০ A।\nধাপ ২: ব্যাক-EMF মান হিসাব করুন:\ne = L × (di/dt) = ০.৫ H × (০.৫০ A / ০.০০১ s) = ২৫০.০ V DC।\nসিদ্ধান্ত: ২৫০V স্পাইক সোর্স ভোল্টেজের ১০ গুণেরও বেশি, যা সিওএস ট্রানজিস্টর সুরক্ষায় ফ্লাইহুইল ডায়োডের প্রয়োজনীয়তা প্রমাণ করে।'
+      },
+      givenValues: { 'V': '24 V', 'L': '0.5 H', 'R': '48 Ω', 'dt': '1.0 ms' },
+      finalAnswer: {
+        en: 'I_ss = 0.50 A, Back-EMF Spike = 250.0 V DC',
+        hi: 'I_ss = 0.50 A, बैक-EMF स्पाइक = 250.0 V DC',
+        bn: 'I_ss = ০.৫০ A, ব্যাক-EMF স্পাইক = ২৫০.০ V DC'
+      }
+    },
+    {
+      id: 'ex-prac-3',
+      problem: {
+        en: 'A commercial solar rooftop installation consists of 4 parallel strings of PV modules, each producing Voc = 800V DC and I_sc = 9.0A. Calculate total array short-circuit current and open-circuit voltage at the DC combiner busbar.',
+        hi: 'सोलर रूफटॉप प्लांट में PV मॉड्यूल की 4 समानांतर स्ट्रिंग्स हैं, प्रत्येक में Voc = 800V DC और I_sc = 9.0A है। DC कंबाइनर बसबार पर कुल शॉर्ट-सर्किट धारा और ओपन-सर्किट वोल्टेज ज्ञात करें।',
+        bn: 'একটি কমার্শিয়াল সোলার প্ল্যান্টে পিভি মডিউলের ৪টি প্যারালাল স্ট্রিং রয়েছে, প্রতিটিতে Voc = ৮০০V DC এবং I_sc = ৯.০A। ডিসি কম্বাইনার বাসবারে মোট শর্ট-সার্কিট কারেন্ট ও ওপেন-সার্কিট ভোল্টেজ কত হবে?'
+      },
+      solution: {
+        en: 'Step 1: Open-circuit voltage Voc in parallel connections equals individual string voltage:\nVoc_total = Voc_string = 800.0 V DC.\nStep 2: Short-circuit current Isc in parallel connections adds up across all 4 strings:\nIsc_total = 4 × I_sc_string = 4 × 9.0 A = 36.0 A DC.\nStep 3: Total short-circuit DC power capability = Voc × Isc = 800 V × 36 A = 28.8 kW.',
+        hi: 'चरण 1: समानांतर कनेक्शन में Voc प्रत्येक स्ट्रिंग के समान रहता है: Voc_total = 800.0 V DC।\nचरण 2: समानांतर में कुल धारा जुड़ती है: Isc_total = 4 × 9.0 A = 36.0 A DC।\nचरण 3: कुल शक्ति क्षमता = 800V × 36A = 28.8 kW।',
+        bn: 'ধাপ ১: প্যারালাল সংযোগে ওপেন-সার্কিট ভোল্টেজ প্রতিটি স্ট্রিংয়ের সমান থাকে: Voc_total = ৮০০.০ V DC।\nধাপ ২: প্যারালালে কারেন্ট যুক্ত হয়: Isc_total = ৪ × ৯.০ A = ৩৬.০ A DC।\nধাপ ৩: মোট ডিসি ক্ষমতা = ৮০০V × ৩৬A = ২৮.৮ kW।'
+      },
+      givenValues: { 'N_parallel': '4', 'Voc_string': '800 V', 'Isc_string': '9.0 A' },
+      finalAnswer: {
+        en: 'Voc_total = 800.0 V DC, Isc_total = 36.0 A DC',
+        hi: 'Voc_total = 800.0 V DC, Isc_total = 36.0 A DC',
+        bn: 'Voc_total = ৮০০.০ V DC, Isc_total = ৩৬.০ A DC'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Factory automation 24V DC instrumentation and PLC I/O wiring design.',
+      'Electric vehicle (EV) traction battery pack module balancing and BMS protection.',
+      'Data center high-availability 48V DC telecom power rack distribution.',
+      'Solar PV farm DC combiner box sizing and reverse-current protection diode sizing.'
+    ],
+    hi: [
+      'फैक्ट्री ऑटोमेशन 24V DC इंस्ट्रूमेंटेशन और PLC I/O वायरिंग डिजाइन।',
+      'इलेक्ट्रिक वाहन (EV) बैटरी पैक मॉड्यूल संतुलन और BMS सुरक्षा।',
+      'डेटा सेंटर 48V DC टेलीकॉम पावर रैक वितरण।',
+      'सोलर पीवी फार्म डीसी कंबाइनर बॉक्स और रिवर्स-करंट प्रोटेक्शन डायोड साइजिंग।'
+    ],
+    bn: [
+      'ফ্যাক্টরি অটোমেশন ২৪V DC ইনস্ট্রুমেন্টেশন ও PLC I/O ওয়ারিং ডিজাইন।',
+      'ইলেকট্রিক যান (EV) ব্যাটারি প্যাক মডিউল ব্যালেন্সিং ও BMS নিরাপত্তা।',
+      'ডাটা সেন্টার ৪৮V DC টেলিকম পাওয়ার রাক ডিস্ট্রিবিউশন।',
+      'সোলার পিভি ফার্ম ডিসি কম্বাইনার বক্স ও রিভার্স কারেন্ট ডায়োড সাইজিং।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'Industrial 4-20mA current loops are immune to line wire resistance up to the power supply compliance limit.',
+      'Inductive DC loads (solenoids, relays, contactors) MUST always have freewheeling flywheel diodes installed across their terminals.',
+      'DC battery banks require strict cell internal resistance matching to prevent thermal runaway and current hogging in parallel strings.',
+      'Always isolate DC power supplies before performing continuity or ohmmeter resistance measurements.'
+    ],
+    hi: [
+      'औद्योगिक 4-20mA करंट लूप पावर सप्लाई अनुपालन सीमा तक केबल प्रतिरोध से अप्रभावित रहते हैं।',
+      'इंडक्टिव डीसी लोड (सोलेनोइड्स, रिले) के टर्मिनलों पर हमेशा फ्लाईव्हील डायोड स्थापित होना चाहिए।',
+      'डीसी बैटरी बैंकों में तापीय असंतुलन रोकने के लिए सेल आंतरिक प्रतिरोध का मिलान आवश्यक है।',
+      'कंटिन्यूटी या ओहममीटर माप करने से पहले हमेशा डीसी पावर सप्लाई को अलग करें।'
+    ],
+    bn: [
+      'ইন্ডাস্ট্রিয়াল ৪-২০mA কারেন্ট লুপ সোর্সের ক্ষমতা পর্যন্ত লাইন রেজিস্ট্যান্স দ্বারা প্রভাবিত হয় না।',
+      'ইন্ডাক্টিভ ডিসি লোডের (সলিনয়েড, রিলে) টার্মিনালে সর্বদা অ্যান্টি-প্যারালাল ফ্লাইহুইল ডায়োড লাগানো বাধ্যতামূলক।',
+      'ডিসি ব্যাটারি ব্যাংকে থার্মাল সমস্যা এড়াতে সেলগুলোর অভ্যন্তরীণ বাধার সামঞ্জস্য থাকা জরুরি।',
+      'ওহমমিটার টেস্টের পূর্বে ডিসি পাওয়ার সাপ্লাই বিচ্ছিন্ন করা নিশ্চিত করুন।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Omitting freewheeling diodes across DC inductive solenoid valves, leading to destroyed PLC output transistor channels.',
+      'Connecting 4-20mA current loop transmitters into voltage-mode high-impedance PLC input channels without a 250 Ω sense resistor.',
+      'Connecting unequal voltage battery strings in parallel, causing massive circulating equalizing currents.',
+      'Using AC circuit breakers or switches on DC lines without verifying DC arc-quenching voltage ratings.'
+    ],
+    hi: [
+      'डीसी इंडक्टिव सोलेनोइड वाल्व के पार फ्लाईव्हील डायोड न लगाना, जिससे PLC आउटपुट ट्रांजिस्टर जल जाते हैं।',
+      'बिना 250 Ω सेंस प्रतिरोध के 4-20mA ट्रांसमीटर को हाई-इम्पीडेंस PLC चैनल से जोड़ना।',
+      'असमान वोल्टेज वाली बैटरी स्ट्रिंग्स को समानांतर में जोड़ना, जिससे अत्यधिक परिसंचारी धारा बहती है।',
+      'डीसी रेटिंग का सत्यापन किए बिना डीसी लाइनों पर एसी सर्किट ब्रेकर का उपयोग करना।'
+    ],
+    bn: [
+      'ডিসি সলিনয়েড ভালভে ফ্লাইহুইল ডায়োড না লাগানো, যার ফলে PLC আউটপুট ট্রানজিস্টর পুড়ে যায়।',
+      '২৫০ Ω সেন্সিং রেজিস্টর ছাড়া ৪-২০mA ট্রান্সমিটারকে PLC ভোল্টেজ চ্যানেলে যুক্ত করা।',
+      'অসমান ভোল্টেজের ব্যাটারি স্ট্রিং প্যারালালে যুক্ত করা, যা মারাত্মক সার্কুলেটিং কারেন্ট তৈরি করে।',
+      'ডিসি আর্ক রেটিং যাচাই না করে ডিসি লাইনে এসি সার্কিট ব্রেকার ব্যবহার করা।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'mcq-prac-1',
+      question: {
+        en: 'Why are 4-20mA current loops widely preferred over 0-10V voltage signals for long-distance industrial sensor wiring?',
+        hi: 'लंबी दूरी की औद्योगिक सेंसर वायरिंग के लिए 0-10V वोल्टेज सिग्नल की तुलना में 4-20mA करंट लूप को व्यापक रूप से प्राथमिकता क्यों दी जाती है?',
+        bn: 'দীর্ঘ দূরত্বের শিল্প সেন্সর ওয়ারিংয়ে ০-১০V ভোল্টেজ সিগন্যালের চেয়ে ৪-২০mA কারেন্ট লুপ কেন বহুল ব্যবহৃত হয়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Current signal is independent of cable line resistance voltage drops', hi: 'करंट सिग्नल केबल लाइन प्रतिरोध के कारण होने वाले वोल्टेज ड्रॉप से अप्रभावित रहता है', bn: 'কারেন্ট সংকেত কেবলের বাধার কারণে ভোল্টেজ ড্রপ দ্বারা প্রভাবিত হয় না' } },
+        { id: 'opt-b', text: { en: 'Current signals consume zero electrical power', hi: 'करंट सिग्नल शून्य विद्युत शक्ति की खपत करते हैं', bn: 'কারেন্ট সংকেত কোনো পাওয়ার খরচ করে না' } },
+        { id: 'opt-c', text: { en: 'Voltage signals require fiber optic cables', hi: 'वोल्टेज सिग्नल के लिए फाइबर ऑप्टिक केबल की आवश्यकता होती है', bn: 'ভোল্টেজ সংকেতের জন্য ফাইবার অপটিক কেবল লাগে' } },
+        { id: 'opt-d', text: { en: 'Current signals operate at 1000V AC', hi: 'करंट सिग्नल 1000V AC पर कार्य करते हैं', bn: 'কারেন্ট সংকেত ১০০০V AC তে চলে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'By Kirchhoff\'s Current Law, current in a single loop is constant everywhere. The transmitter automatically boosts voltage to maintain exact loop current despite cable resistance.',
+        hi: 'KCL के अनुसार, एकल लूप में धारा सभी स्थानों पर समान रहती है। ट्रांसमीटर केबल प्रतिरोध के बावजूद सटीक धारा बनाए रखने के लिए वोल्टेज समायोजित करता है।',
+        bn: 'KCL অনুযায়ী একটি লুপে কারেন্ট সর্বত্র সমান। ট্রান্সমিটার কেবলের বাধা সত্ত্বেও সঠিক কারেন্ট পাঠাতে স্বয়ংক্রিয়ভাবে ভোল্টেজ অ্যাডজাস্ট করে।'
+      }
+    },
+    {
+      id: 'mcq-prac-2',
+      question: {
+        en: 'What is the primary purpose of connecting a freewheeling (flywheel) diode across a DC relay or solenoid coil?',
+        hi: 'डीसी रिले या सोलेनोइड कॉइल के पार फ्लाईव्हील डायोड जोड़ने का प्राथमिक उद्देश्य क्या है?',
+        bn: 'ডিসি রিলে বা সলিনয়েড কয়েলের টার্মিনালে ফ্লাইহুইল ডায়োড যুক্ত করার মূল উদ্দেশ্য কী?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'To clamp high inductive back-EMF voltage spikes when current is switched off', hi: 'धारा बंद होने पर उच्च इंडक्टिव बैक-EMF वोल्टेज स्पाइक्स को दबाना', bn: 'কারেন্ট বন্ধের সময় সৃষ্ট ক্ষতিকর ব্যাক-EMF ভোল্টেজ স্পাইক প্রশমিত করা' } },
+        { id: 'opt-b', text: { en: 'To increase coil operating temperature', hi: 'कॉइल ऑपरेटिंग तापमान बढ़ाना', bn: 'কয়েলের তাপমাত্রা বৃদ্ধি করা' } },
+        { id: 'opt-c', text: { en: 'To convert DC voltage into AC voltage', hi: 'डीसी वोल्टेज को एसी वोल्टेज में बदलना', bn: 'ডিসি ভোল্টেজকে এসি ভোল্টেজে রূপান্তর করা' } },
+        { id: 'opt-d', text: { en: 'To double the steady-state operating current', hi: 'स्थिर-अवस्था ऑपरेटिंग धारा को दोगुना करना', bn: 'স্থির অবস্থার অপারেটিং কারেন্ট দ্বিগুণ করা' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'When coil current is interrupted (di/dt < 0), the inductor generates a reverse voltage spike e = -L(di/dt). The freewheel diode provides a safe discharge path.',
+        hi: 'जब कॉइल धारा बंद होती है, तो इंडक्टर विपरीत वोल्टेज स्पाइक उत्पन्न करता है। फ्लाईव्हील डायोड इसे सुरक्षित रूप से डिस्चार्ज होने का मार्ग प्रदान करता है।',
+        bn: 'কয়েল কারেন্ট বিচ্ছিন্ন হলে ইনডাক্টর বিপরীত ভোল্টেজ স্পাইক তৈরি করে। ফ্লাইহুইল ডায়োড নিরাপদে সেই বিদ্যুৎ ক্ষয়ের পথ প্রদান করে।'
+      }
+    },
+    {
+      id: 'mcq-prac-3',
+      question: {
+        en: 'In a 4-20mA industrial current loop, what does a measured current reading of 0.0mA indicate?',
+        hi: '4-20mA औद्योगिक करंट लूप में 0.0mA की मापी गई धारा क्या दर्शाती है?',
+        bn: 'একটি ৪-২০mA ইন্ডাস্ট্রিয়াল কারেন্ট লুপে ০.০mA কারেন্ট রিডিং কী নির্দেশ করে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'A broken wire or open-circuit fault in the loop (Live Zero concept)', hi: 'लूप में टूटी हुई तार या ओपन-सर्किट फॉल्ट (लाइव ज़ीरो अवधारणा)', bn: 'লুপের তারের বিচ্ছিন্নতা বা ওপেন-সার্কিট ফল্ট (লাইভ জিরো ধারণা)' } },
+        { id: 'opt-b', text: { en: 'Process measurement is at 0% (normal minimum)', hi: 'प्रक्रिया माप 0% पर है (सामान्य न्यूनतम)', bn: 'প্রসেস মান ০% তে রয়েছে (স্বাভাবিক সর্বনিম্ন)' } },
+        { id: 'opt-c', text: { en: 'Process measurement is at 100% (maximum)', hi: 'प्रक्रिया माप 100% पर है (अधिकतम)', bn: 'প্রসেস মান ১০০% তে রয়েছে (সর্বোচ্চ)' } },
+        { id: 'opt-d', text: { en: 'Transmitter is operating normally', hi: 'ट्रांसमीटर सामान्य रूप से काम कर रहा है', bn: 'ট্রান্সমিটার স্বাভাবিকভাবে কাজ করছে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: '4-20mA loops use "Live Zero" where 4mA represents 0% process value. A reading of 0mA indicates a loop fault (wire break/power loss).',
+        hi: '4-20mA लूप्स "लाइव ज़ीरो" का उपयोग करते हैं जहां 4mA = 0% माप। 0mA पढ़ना लूप फॉल्ट (तार टूटना) दर्शाता है।',
+        bn: '৪-২০mA লুপে "লাইভ জিরো" ব্যবহৃত হয় যেখানে ৪mA মানে ০% মান। ০.০mA রিডিং মানে কেবল কাটা বা ফল্ট রয়েছে।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-prac-1',
+      question: {
+        en: 'Explain the "Live Zero" concept in 4-20mA industrial instrumentation and why it enables wire break fault detection.',
+        hi: '4-20mA औद्योगिक इंस्ट्रूमेंटेशन में "लाइव ज़ीरो" अवधारणा की व्याख्या करें और समझाइए कि यह तार टूटने के फॉल्ट का पता लगाने में कैसे मदद करती है।',
+        bn: '৪-২০mA ইন্ডাস্ট্রিয়াল ইনস্ট্রুমেন্টেশনে "লাইভ জিরো" ধারণাটি ব্যাখ্যা করুন এবং কীভাবে এটি তার কাটার ফল্ট শনাক্ত করে তা লিখুন।'
+      },
+      hint: {
+        en: 'Compare 4mA (normal 0% signal) with 0mA (dead open circuit wire break).',
+        hi: '4mA (सामान्य 0% सिग्नल) की तुलना 0mA (ओपन सर्किट वायर ब्रेक) से करें।',
+        bn: '৪mA (স্বাভাবিক ০% সংকেত) এর সাথে ০mA (তার কাটার ফল্ট) তুলনা করুন।'
+      },
+      answerKey: {
+        en: 'In 4-20mA, 4mA corresponds to 0% measurement and 20mA corresponds to 100%. Because 0mA is never used for valid signals, a current reading of 0mA immediately indicates a physical wire break or power failure fault.',
+        hi: '4-20mA में, 4mA = 0% तथा 20mA = 100% होता है। चूंकि 0mA का उपयोग सामान्य सिग्नल के लिए नहीं किया जाता, इसलिए 0mA तुरंत तार टूटने या पावर विफलता का संकेत देता है।',
+        bn: '৪-২০mA তে, ৪mA নির্দেশ করে ০% প্রসেস মান এবং ২০mA নির্দেশ করে ১০০% মান। যেহেতু ০mA কোনো বৈধ সংকেত নয়, তাই ০mA রিডিং দেখা মাত্রই তা তার বিচ্ছিন্নতা বা পাওয়ার কাট স্পষ্ট নির্দেশ করে।'
+      }
+    },
+    {
+      id: 'pq-prac-2',
+      question: {
+        en: 'A 110V DC substation battery string powers a protection relay trip coil rated at 220 W. Calculate the current drawn during trip coil actuation and the voltage drop across a 0.5 Ω cable loop.',
+        hi: '110V DC सबस्टेशन बैटरी स्ट्रिंग 220 W रेटेड ट्रिप कॉइल को पावर देती है। ट्रिप कॉइल एक्टिवेशन के दौरान धारा और 0.5 Ω केबल लूप में वोल्टेज ड्रॉप की गणना करें।',
+        bn: '১১০V DC সাবস্টেশন ব্যাটারি স্ট্রিং ২২০ W ক্ষমতার প্রোটেকশন ট্রিপ কয়েল চালায়। কয়েল সচল অবস্থায় কারেন্ট ও ০.৫ Ω কেবলে ভোল্টেজ ড্রপ নির্ণয় করুন।'
+      },
+      hint: {
+        en: 'Calculate I = P / V, then calculate V_drop = I × R_cable.',
+        hi: 'I = P / V की गणना करें, फिर V_drop = I × R_cable ज्ञात करें।',
+        bn: 'I = P / V বের করুন, তারপর V_drop = I × R_cable হিসাব করুন।'
+      },
+      answerKey: {
+        en: 'Trip Coil Current I = P / V = 220 W / 110 V = 2.0 A DC. Cable Voltage Drop V_drop = I × R_cable = 2.0 A × 0.5 Ω = 1.0 V DC. Terminal voltage at coil = 109.0 V DC.',
+        hi: 'ट्रिप कॉइल धारा I = 220 / 110 = 2.0 A DC। केबल वोल्टेज ड्रॉप = 2.0 × 0.5 = 1.0 V DC। कॉइल पर वोल्टेज = 109.0 V DC।',
+        bn: 'ট্রিপ কয়েল কারেন্ট I = ২২০ / ১১০ = ২.০ A DC। কেবল ভোল্টেজ ড্রপ = ২.০ × ০.৫ = ১.০ V DC। কয়েলে অবশিষ্ট ভোল্টেজ = ১০৯.০ V DC।'
+      }
+    }
+  ]
+};
+
 export const CHAPTER_4_LESSONS: Record<string, Lesson> = {
   'ch4-dc-network-fundamentals': LESSON_DC_NETWORK_FUNDAMENTALS,
   'ch4-kcl': LESSON_KCL,
@@ -2665,5 +4306,12 @@ export const CHAPTER_4_LESSONS: Record<string, Lesson> = {
   'ch4-star-delta': LESSON_STAR_DELTA,
   'ch4-network-theorems-intro': LESSON_NETWORK_THEOREMS_INTRO,
   'ch4-thevenins-theorem': LESSON_THEVENIN,
-  'ch4-nortons-theorem': LESSON_NORTON
+  'ch4-nortons-theorem': LESSON_NORTON,
+  'ch4-superposition-theorem': LESSON_SUPERPOSITION,
+  'ch4-max-power-transfer': LESSON_MAX_POWER,
+  'ch4-reciprocity-theorem': LESSON_RECIPROCITY,
+  'ch4-source-transformation': LESSON_SOURCE_TRANSFORMATION,
+  'ch4-dc-fault-analysis': LESSON_DC_FAULT_ANALYSIS,
+  'ch4-practical-dc-applications': LESSON_PRACTICAL_DC_APPLICATIONS
 };
+
