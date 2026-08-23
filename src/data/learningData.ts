@@ -1392,51 +1392,51 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             }
           },
           {
-            id: 'ch6-three-phase-transformer',
+            id: 'ch6-transformer-parallel-operation',
             chapterId: 'ch-electrical-machines',
             order: 18,
             level: 'Engineering',
             title: {
-              en: 'Three-Phase Transformers & Connections',
-              hi: 'थ्री-फेज ट्रांसफॉर्मर एवं कनेक्शन',
-              bn: 'থ্রি-ফেজ ট্রান্সফর্মার ও কানেকশন'
+              en: 'Transformer Parallel Operation & Load Sharing',
+              hi: 'ट्रांसफॉर्मरों का समानांतर संचालन एवं लोड शेयरिंग',
+              bn: 'ট্রান্সফর্মারের সমান্তরাল সংযোগ ও লোড শেয়ারিং'
             },
             description: {
-              en: 'Three-phase bank vs single three-phase core unit, connection configurations: Star-Star (Y-Y), Delta-Delta (Δ-Δ), Star-Delta (Y-Δ), Delta-Star (Δ-Y), Scott connection for 3-phase to 2-phase conversion, phase displacement, and vector groups (Dyn11, Ynd1).',
-              hi: 'थ्री-फेज ट्रांसफॉर्मर संरचना, कनेक्शन प्रकार: स्टार-स्टार (Y-Y), डेल्टा-डेल्टा (Δ-Δ), स्टार-डेल्टा (Y-Δ), डेल्टा-स्टार (Δ-Y), स्कॉट (Scott) T-T कनेक्शन, फेज विस्थापन एवं वेक्टर ग्रुप (Dyn11, Ynd1)।',
-              bn: 'থ্রি-ফেজ ট্রান্সফরমার কাঠামো, প্রধান সংযোগ পদ্ধতি: স্টার-স্টার (Y-Y), ডেল্টা-ডেল্টা (Δ-Δ), স্টার-ডেল্টা (Y-Δ), ডেল্টা-স্টার (Δ-Y), স্কট কানেকশন (৩-ফেজ থেকে ২-ফেজ রূপান্তর), ফেজ পার্থক্য ও ভেক্টর গ্রুপ।'
+              en: 'Engineering principles and analytical conditions for operating single-phase and three-phase transformers in parallel: mandatory safety criteria (identical polarity, equal voltage ratio, same phase sequence, matching vector groups), desirable criteria (per-unit impedances inversely proportional to kVA ratings, identical X/R ratios), no-load circulating currents, and complex kVA load sharing.',
+              hi: 'सिंगल-फेज एवं थ्री-फेज ट्रांसफॉर्मरों के समानांतर संचालन के तकनीकी सिद्धांत एवं शर्तें: अनिवार्य सुरक्षा शर्तें (समान पोलैरिटी, समान वोल्टेज अनुपात, समान फेज अनुक्रम, संगत वेक्टर ग्रुप), आदर्श लोड शेयरिंग शर्तें (p.u. प्रतिबाधा kVA रेटिंग के व्युत्क्रमानुपाती, समान X/R अनुपात), नो-लोड परिसंचारी धाराएँ एवं kVA लोड शेयरिंग।',
+              bn: 'সিঙ্গেল ও থ্রি-ফেজ ট্রান্সফর্মারের সমান্তরাল সংযোগের প্রযুক্তিগত প্রয়োজনীয়তা ও গাণিতিক শর্তাবলী: অপরিহার্য নিরাপত্তা শর্ত (অভিন্ন পোলারিটি, সমান ভোল্টেজ অনুপাত, একই ফেজ সিকোয়েন্স, অভিন্ন ভেক্টর গ্রুপ), আদর্শ লোড শেয়ারিং শর্ত (পার-ইউনিট ইম্পিড্যান্স kVA রেটিংয়ের ব্যস্তানুপাতিক), নো-লোড সার্কুলেটিং কারেন্ট ও লোড শেয়ারিং সমীকরণ।'
             }
           },
           {
-            id: 'ch6-transformer-parallel-operation',
+            id: 'ch6-transformer-protection-maintenance',
             chapterId: 'ch-electrical-machines',
             order: 19,
-            level: 'Practical',
+            level: 'Engineering',
             title: {
-              en: 'Parallel Operation of Transformers & Load Sharing',
-              hi: 'ट्रांसफॉर्मरों का समानांतर संचालन एवं लोड शेयरिंग',
-              bn: 'ট্রান্সফর্মারের parallel operation ও load sharing'
+              en: 'Transformer Protection, Faults & Maintenance',
+              hi: 'ट्रांसफॉर्मर सुरक्षा, फॉल्ट विश्लेषण एवं रखरखाव',
+              bn: 'ট্রান্সফর্মার প্রটেকশন, ফল্ট ও রক্ষণাবেক্ষণ'
             },
             description: {
-              en: 'Necessity of parallel operation for reliability and expansion, mandatory conditions: identical polarity, equal voltage ratio, equal per-unit impedance and X/R ratio, same phase sequence and vector group, circulating currents, and load sharing equations.',
-              hi: 'समानांतर संचालन की आवश्यकता एवं लाभ, अनिवार्य शर्तें: समान ध्रुवीयता (Polarity), समान वोल्टेज अनुपात, समान प्रति-इकाई प्रतिबाधा (p.u. Impedance) एवं X/R अनुपात, समान फेज अनुक्रम, परिसंचारी धाराएँ (Circulating Currents) एवं लोड शेयरिंग।',
-              bn: 'সমান্তরাল সংযোগের প্রয়োজনীয়তা ও সুবিধা, অপরিহার্য শর্তাবলী: অভিন্ন পোলারিটি, সমান ভোল্টেজ অনুপাত, সমান পার-ইউনিট ইম্পিড্যান্স ও X/R অনুপাত, একই ফেজ সিকোয়েন্স, সার্কুলেটিং কারেন্ট প্রতিরোধ ও লোড শেয়ারিং সমীকরণ।'
+              en: 'Comprehensive engineering principles of transformer fault classification (internal winding, inter-turn, core, and ground faults vs external through-faults and overloads), protection systems (87T biased differential relay, Buchholz gas/surge relay, 50/51 overcurrent, 51N/REF restricted earth fault, OTI/WTI thermal replicas, PRD, and ZnO surge arresters), transformer oil condition monitoring (BDV, DGA, moisture, acidity), preventive maintenance workflows, safety protocols (LOTO, grounding), and systematic diagnostic troubleshooting.',
+              hi: 'ट्रांसफॉर्मर फॉल्ट वर्गीकरण के तकनीकी सिद्धांत (आंतरिक वाइंडिंग, इंटर-टर्न, कोर एवं अर्थ फॉल्ट बनाम बाह्य थ्रू-फॉल्ट व ओवरलोड), सुरक्षा प्रणालियाँ (87T बायस्ड डिफरेंशियल रिले, बुखोल्ज़ गैस व ऑयल सर्ज रिले, 50/51 ओवरकरंट, 51N/REF अर्थ फॉल्ट, OTI/WTI थर्मल सेंसर, PRD एवं ZnO लाइटनिंग अरेस्टर), ट्रांसफॉर्मर तेल विश्लेषण (BDV, DGA), निवारक रखरखाव एवं LOTO सुरक्षा नियम।',
+              bn: 'ট্রান্সফর্মার ফল্ট শ্রেণিবিন্যাস (অভ্যন্তরীণ ওয়াইন্ডিং, ইন্টার-টার্ন, কোর ও আর্থ ফল্ট বনাম বাহ্যিক থ্রু-ফল্ট ও ওভারলোড), প্রটেকশন সিস্টেম (87T বায়াসড ডিফারেনশিয়াল রিলে, বুকহলজ রিলে, 50/51 ওভারকারেন্ট, 51N/REF আর্থ ফল্ট, OTI/WTI থার্মাল সেন্সর, PRD ও ZnO সার্জ অ্যারেস্টার), তেলের গুণমান পরীক্ষা (BDV, DGA) এবং প্রতিরোধমূলক রক্ষণাবেক্ষণ ও নিরাপত্তা ব্যবস্থা।'
             }
           },
           {
-            id: 'ch6-machines-practical-applications',
+            id: 'ch6-transformer-applications',
             chapterId: 'ch-electrical-machines',
             order: 20,
             level: 'Practical',
             title: {
-              en: 'DC Machines & Transformers — Practical Industrial Applications',
-              hi: 'डीसी मशीन एवं ट्रांसफॉर्मर — व्यावहारिक औद्योगिक अनुप्रयोग',
-              bn: 'ডিসি মেশিন ও ট্রান্সফর্মার — ব্যবহারিক শিল্প প্রয়োগ'
+              en: 'Transformer Applications & Industrial Power Systems (Capstone)',
+              hi: 'ट्रांसफॉर्मर अनुप्रयोग एवं औद्योगिक विद्युत प्रणालियाँ (अध्याय 6 समापन)',
+              bn: 'ট্রান্সফর্মার প্রয়োগ ও শিল্প বিদ্যুৎ ব্যবস্থা (অধ্যায় ৬ সমাপনী)'
             },
             description: {
-              en: 'Heavy industrial drives (cranes, electric traction, hoists, steel rolling mills, battery charging), distribution and power transformer substations, oil testing (dielectric breakdown voltage), winding temperature monitoring, Buchholz relay, insulation resistance (Megger test), preventive maintenance, and electrical safety standards.',
-              hi: 'भारी औद्योगिक ड्राइव (क्रेन, इलेक्ट्रिक ट्रैक्शन, रोलिंग मिल, बैटरी चार्जिंग), वितरण एवं पावर ट्रांसफॉर्मर सबस्टेशन, ट्रांसफॉर्मर तेल परीक्षण (BDV टेस्ट), बुखोल्ज़ रिले, इंसुलेशन प्रतिरोध (मेगर टेस्ट), निवारक रखरखाव एवं सुरक्षा मानक।',
-              bn: 'ভারী শিল্প ড্রাইভ (ক্রেন, ইলেকট্রিক ট্র্যাকশন, রোলিং মিল, ব্যাটারি চার্জিং), ডিস্ট্রিবিউশন ও পাওয়ার সাবস্টেশন, ট্রান্সফরমার তেল পরীক্ষা (BDV টেস্ট), বুকহলজ রিলে, ইনসুলেশন রেজিস্ট্যান্স (মেগার টেস্ট), প্রিভেন্টিভ রক্ষণাবেক্ষণ ও সুরক্ষা বিধি।'
+              en: 'Capstone engineering lesson on power, distribution, and specialized industrial transformers (furnace, rectifier, drive duty, 1:1 isolation, solar PV inverter-duty with electrostatic shielding, and BESS storage interfaces), transformer selection criteria, power-flow loss modeling, 5 industrial case studies, 5 fully solved numerical problems, and a comprehensive master revision of Chapter 6 (DC Machines & Transformers).',
+              hi: 'पावर, वितरण एवं विशेष औद्योगिक ट्रांसफॉर्मर (फर्नेस, रेक्टिफायर, 1:1 आइसोलेशन, सोलर इनवर्टर ड्यूटी एवं बैटरी BESS), ट्रांसफॉर्मर चयन मानदंड, पावर-फ्लो गणना, 5 औद्योगिक केस स्टडीज, 5 हल किए गए संख्यात्मक प्रश्न एवं अध्याय 6 (DC मशीनें व ट्रांसफॉर्मर) का संपूर्ण मास्टर रिवीजन।',
+              bn: 'পাওয়ার, ডিস্ট্রিবিউশন ও বিশেষ শিল্প ট্রান্সফরমার (ফার্নেস, রেকটিফায়ার, ১:১ আইসোলেশন, সোলার ইনভার্টার ডিউটি ও BESS স্টোরেজ), ট্রান্সফরমার নির্বাচন মানদণ্ড, ৫টি শিল্প কেস স্টাডি, ৫টি সম্পূর্ণ সমাধানকৃত গাণিতিক সমস্যা এবং অধ্যায় ৬ (DC মেশিন ও ট্রান্সফরমার) এর পূর্ণাঙ্গ মাস্টার রিভিশন।'
             }
           }
         ]

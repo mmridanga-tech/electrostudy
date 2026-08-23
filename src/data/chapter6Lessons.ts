@@ -17,6 +17,8 @@ import { LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT } from './chapter6Lesson15';
 import { LESSON_TRANSFORMER_LOSSES_EFFICIENCY } from './chapter6Lesson16';
 import { LESSON_TRANSFORMER_TESTS } from './chapter6Lesson17';
 import { LESSON_TRANSFORMER_PARALLEL_OPERATION } from './chapter6Lesson18';
+import { LESSON_TRANSFORMER_PROTECTION_MAINTENANCE } from './chapter6Lesson19';
+import { LESSON_TRANSFORMER_APPLICATIONS } from './chapter6Lesson20';
 
 export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-electrical-machines-fundamentals': LESSON_ELECTRICAL_MACHINES_FUNDAMENTALS,
@@ -37,6 +39,8 @@ export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-transformer-losses-efficiency': LESSON_TRANSFORMER_LOSSES_EFFICIENCY,
   'ch6-transformer-tests': LESSON_TRANSFORMER_TESTS,
   'ch6-transformer-parallel-operation': LESSON_TRANSFORMER_PARALLEL_OPERATION,
+  'ch6-transformer-protection-maintenance': LESSON_TRANSFORMER_PROTECTION_MAINTENANCE,
+  'ch6-transformer-applications': LESSON_TRANSFORMER_APPLICATIONS,
 };
 
 export {
@@ -58,5 +62,7 @@ export {
   LESSON_TRANSFORMER_LOSSES_EFFICIENCY,
   LESSON_TRANSFORMER_TESTS,
   LESSON_TRANSFORMER_PARALLEL_OPERATION,
+  LESSON_TRANSFORMER_PROTECTION_MAINTENANCE,
+  LESSON_TRANSFORMER_APPLICATIONS,
 };
 

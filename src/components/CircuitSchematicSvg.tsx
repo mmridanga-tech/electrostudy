@@ -3540,6 +3540,232 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'transformer-protection':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-xl border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 560 260" className="w-full max-w-2xl h-56">
+            <defs>
+              <linearGradient id="protOilGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#0284c7" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#0369a1" stopOpacity="0.45" />
+              </linearGradient>
+            </defs>
+
+            {/* Differential Protection Zone Boundary (87T) */}
+            <rect x="35" y="15" width="490" height="230" rx="10" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="6 4" />
+            <rect x="45" y="6" width="180" height="18" rx="3" fill="#451a03" stroke="#b45309" strokeWidth="1" />
+            <text x="135" y="19" textAnchor="middle" fill="#fbbf24" fontSize="9" fontWeight="bold" fontFamily="monospace">
+              DIFFERENTIAL ZONE (87T)
+            </text>
+
+            {/* Main Transformer Tank */}
+            <rect x="140" y="80" width="280" height="145" rx="8" fill="url(#protOilGrad)" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="280" y="215" textAnchor="middle" fill="#94a3b8" fontSize="10" fontWeight="bold">Main Tank (Mineral Oil Filled)</text>
+
+            {/* Core & Windings inside */}
+            <rect x="180" y="115" width="55" height="75" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+            <rect x="187" y="122" width="41" height="61" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="207" y="156" textAnchor="middle" fill="#fcd34d" fontSize="9" fontWeight="bold">HV</text>
+
+            <rect x="325" y="115" width="55" height="75" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+            <rect x="332" y="122" width="41" height="61" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+            <text x="352" y="156" textAnchor="middle" fill="#7dd3fc" fontSize="9" fontWeight="bold">LV</text>
+
+            <rect x="250" y="120" width="60" height="65" rx="2" fill="#334155" stroke="#94a3b8" strokeWidth="1" />
+            <text x="280" y="156" textAnchor="middle" fill="#e2e8f0" fontSize="8.5">Core</text>
+
+            {/* Conservator Tank */}
+            <rect x="285" y="26" width="115" height="34" rx="10" fill="#1e293b" stroke="#0ea5e9" strokeWidth="2" />
+            <text x="342" y="47" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Conservator Tank</text>
+
+            {/* Pipe to conservator */}
+            <path d="M 270 80 L 270 50 L 285 50" fill="none" stroke="#0ea5e9" strokeWidth="4" />
+
+            {/* Buchholz Relay on Pipe */}
+            <rect x="256" y="55" width="28" height="20" rx="3" fill="#7f1d1d" stroke="#ef4444" strokeWidth="1.5" />
+            <text x="270" y="68" textAnchor="middle" fill="#fca5a5" fontSize="7.5" fontWeight="bold">BUCH</text>
+
+            {/* Silica Gel Breather */}
+            <path d="M 400 43 L 425 43 L 425 68" fill="none" stroke="#64748b" strokeWidth="2" />
+            <rect x="415" y="68" width="20" height="28" rx="3" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.5" />
+            <text x="425" y="85" textAnchor="middle" fill="#a5b4fc" fontSize="6.5">Breather</text>
+
+            {/* Pressure Relief Device (PRD) */}
+            <rect x="155" y="65" width="24" height="15" rx="2" fill="#831843" stroke="#f43f5e" strokeWidth="1.5" />
+            <text x="167" y="76" textAnchor="middle" fill="#fda4af" fontSize="7" fontWeight="bold">PRD</text>
+
+            {/* OTI / WTI Temperature Probes */}
+            <circle cx="230" cy="95" r="7" fill="#b45309" stroke="#fbbf24" strokeWidth="1.5" />
+            <text x="230" y="98" textAnchor="middle" fill="#fff" fontSize="6" fontWeight="bold">T°</text>
+
+            {/* Primary Bushing & CT (HV Side) */}
+            <rect x="195" y="70" width="24" height="15" rx="3" fill="#475569" stroke="#94a3b8" />
+            <line x1="207" y1="70" x2="207" y2="40" stroke="#f59e0b" strokeWidth="2.5" />
+            <line x1="207" y1="40" x2="60" y2="40" stroke="#f59e0b" strokeWidth="2.5" />
+            
+            {/* Primary Current Transformer CT1 */}
+            <circle cx="95" cy="40" r="11" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+            <text x="95" y="43" textAnchor="middle" fill="#fcd34d" fontSize="7" fontWeight="bold">CT₁</text>
+
+            {/* Primary Surge Arrester */}
+            <path d="M 60 40 L 60 65" stroke="#f59e0b" strokeWidth="2" />
+            <rect x="52" y="65" width="16" height="22" rx="2" fill="#312e81" stroke="#a78bfa" strokeWidth="1.5" />
+            <line x1="60" y1="87" x2="60" y2="95" stroke="#64748b" strokeWidth="1.5" />
+            <path d="M 54 95 L 66 95 M 56 98 L 64 98 M 58 101 L 62 101" stroke="#64748b" strokeWidth="1.5" />
+            <text x="60" y="112" textAnchor="middle" fill="#c4b5fd" fontSize="7">LA</text>
+
+            {/* Secondary Bushing & CT (LV Side) */}
+            <rect x="340" y="70" width="24" height="15" rx="3" fill="#475569" stroke="#94a3b8" />
+            <line x1="352" y1="70" x2="352" y2="40" stroke="#38bdf8" strokeWidth="2.5" />
+            <line x1="352" y1="40" x2="495" y2="40" stroke="#38bdf8" strokeWidth="2.5" />
+
+            {/* Secondary Current Transformer CT2 */}
+            <circle cx="465" cy="40" r="11" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="465" y="43" textAnchor="middle" fill="#7dd3fc" fontSize="7" fontWeight="bold">CT₂</text>
+
+            {/* Differential Relay Unit (87T) */}
+            <g transform="translate(230, 220)">
+              <rect x="0" y="0" width="100" height="28" rx="4" fill="#090d16" stroke="#fbbf24" strokeWidth="1.5" />
+              <text x="50" y="13" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="bold">87T DIFFERENTIAL</text>
+              <text x="50" y="23" textAnchor="middle" fill="#94a3b8" fontSize="7">Id = |I1_sec - I2_sec|</text>
+            </g>
+
+            {/* Wiring from CTs to 87T */}
+            <path d="M 95 51 L 95 234 L 230 234" fill="none" stroke="#f59e0b" strokeWidth="1.2" strokeDasharray="3 3" />
+            <path d="M 465 51 L 465 234 L 330 234" fill="none" stroke="#38bdf8" strokeWidth="1.2" strokeDasharray="3 3" />
+
+            {/* Radiator Cooling Fins */}
+            <rect x="120" y="105" width="20" height="85" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+            <line x1="120" y1="125" x2="140" y2="125" stroke="#38bdf8" strokeWidth="1" />
+            <line x1="120" y1="145" x2="140" y2="145" stroke="#38bdf8" strokeWidth="1" />
+            <line x1="120" y1="165" x2="140" y2="165" stroke="#38bdf8" strokeWidth="1" />
+            <text x="130" y="202" textAnchor="middle" fill="#64748b" fontSize="7">Fins</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Comprehensive Transformer Protection Architecture (87T Zone, Buchholz, PRD, OTI/WTI & CTs)"}
+          </p>
+        </div>
+      );
+
+    case 'transformer-industrial-applications':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-xl border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 600 260" className="w-full max-w-2xl h-56">
+            <defs>
+              <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#0369a1" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#059669" stopOpacity="0.8" />
+              </linearGradient>
+            </defs>
+
+            {/* Power Flow Path (Left to Right) */}
+            {/* 1. Generation & Step-Up GSU */}
+            <g transform="translate(20, 30)">
+              <circle cx="30" cy="30" r="22" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="30" y="34" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">GEN</text>
+              <text x="30" y="64" textAnchor="middle" fill="#94a3b8" fontSize="8">11 kV</text>
+
+              {/* Step-Up Transformer (GSU) */}
+              <line x1="52" y1="30" x2="85" y2="30" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="95" cy="30" r="10" fill="none" stroke="#f59e0b" strokeWidth="2" />
+              <circle cx="107" cy="30" r="10" fill="none" stroke="#f59e0b" strokeWidth="2" />
+              <text x="101" y="55" textAnchor="middle" fill="#fcd34d" fontSize="7.5" fontWeight="bold">Step-Up GSU</text>
+              <text x="101" y="65" textAnchor="middle" fill="#cbd5e1" fontSize="7">11/220 kV</text>
+            </g>
+
+            {/* 2. HV Transmission Line */}
+            <g transform="translate(145, 30)">
+              <line x1="0" y1="30" x2="110" y2="30" stroke="#f59e0b" strokeWidth="2.5" />
+              <text x="55" y="20" textAnchor="middle" fill="#fcd34d" fontSize="8" fontWeight="bold">HV Grid: 220 kV</text>
+            </g>
+
+            {/* 3. Primary Grid Substation Transformer */}
+            <g transform="translate(265, 30)">
+              <circle cx="10" cy="30" r="10" fill="none" stroke="#10b981" strokeWidth="2" />
+              <circle cx="22" cy="30" r="10" fill="none" stroke="#10b981" strokeWidth="2" />
+              <text x="16" y="55" textAnchor="middle" fill="#34d399" fontSize="7.5" fontWeight="bold">Substation Tr.</text>
+              <text x="16" y="65" textAnchor="middle" fill="#cbd5e1" fontSize="7">220/33 kV</text>
+              <line x1="32" y1="30" x2="85" y2="30" stroke="#10b981" strokeWidth="2.5" />
+            </g>
+
+            {/* 4. Medium Voltage Industrial Feeder */}
+            <g transform="translate(360, 30)">
+              <text x="35" y="20" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold">MV: 33 kV Feeder</text>
+              
+              {/* Distribution Transformer */}
+              <circle cx="85" cy="30" r="9" fill="none" stroke="#a855f7" strokeWidth="2" />
+              <circle cx="97" cy="30" r="9" fill="none" stroke="#a855f7" strokeWidth="2" />
+              <text x="91" y="55" textAnchor="middle" fill="#c084fc" fontSize="7.5" fontWeight="bold">Dist. Tr.</text>
+              <text x="91" y="65" textAnchor="middle" fill="#cbd5e1" fontSize="7">33 kV/415 V</text>
+            </g>
+
+            {/* 5. Industrial Plant Low Voltage Busbar (415 V) */}
+            <line x1="475" y1="100" x2="575" y2="100" stroke="#38bdf8" strokeWidth="4" />
+            <text x="525" y="90" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">415 V / 240 V Plant Bus</text>
+
+            {/* Connections down to loads */}
+            <path d="M 470 60 L 470 100" stroke="#a855f7" strokeWidth="2" />
+            
+            {/* Load 1: Induction Motors / Drives */}
+            <g transform="translate(485, 100)">
+              <line x1="0" y1="0" x2="0" y2="35" stroke="#38bdf8" strokeWidth="2" />
+              <rect x="-15" y="35" width="30" height="24" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="0" y="50" textAnchor="middle" fill="#38bdf8" fontSize="7.5" fontWeight="bold">Motors</text>
+            </g>
+
+            {/* Load 2: Plant Lighting & Auxiliary */}
+            <g transform="translate(530, 100)">
+              <line x1="0" y1="0" x2="0" y2="35" stroke="#38bdf8" strokeWidth="2" />
+              <rect x="-15" y="35" width="30" height="24" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="0" y="50" textAnchor="middle" fill="#fcd34d" fontSize="7.5" fontWeight="bold">Lighting</text>
+            </g>
+
+            {/* Load 3: 1:1 Isolation Transformer for Sensitive CNC / PLC */}
+            <g transform="translate(565, 100)">
+              <line x1="0" y1="0" x2="0" y2="15" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="0" cy="20" r="5" fill="none" stroke="#ec4899" strokeWidth="1.5" />
+              <circle cx="0" cy="26" r="5" fill="none" stroke="#ec4899" strokeWidth="1.5" />
+              <rect x="-12" y="35" width="24" height="24" rx="3" fill="#1e293b" stroke="#ec4899" strokeWidth="1.5" />
+              <text x="0" y="49" textAnchor="middle" fill="#f472b6" fontSize="6.5" fontWeight="bold">PLC/CNC</text>
+            </g>
+
+            {/* 6. Renewable Solar PV & Inverter-Duty Transformer Branch */}
+            <g transform="translate(60, 150)">
+              <rect x="0" y="0" width="90" height="50" rx="4" fill="#0f172a" stroke="#eab308" strokeWidth="1.5" />
+              <text x="45" y="18" textAnchor="middle" fill="#fde047" fontSize="8" fontWeight="bold">Solar PV Field</text>
+              <text x="45" y="30" textAnchor="middle" fill="#94a3b8" fontSize="7">DC Power</text>
+              <rect x="12" y="36" width="66" height="8" rx="1" fill="#eab308" opacity="0.3" />
+
+              {/* Inverter */}
+              <line x1="90" y1="25" x2="120" y2="25" stroke="#eab308" strokeWidth="2" />
+              <rect x="120" y="10" width="55" height="30" rx="3" fill="#1e293b" stroke="#06b6d4" strokeWidth="1.5" />
+              <text x="147" y="24" textAnchor="middle" fill="#22d3ee" fontSize="7.5" fontWeight="bold">Inverter</text>
+              <text x="147" y="34" textAnchor="middle" fill="#94a3b8" fontSize="6.5">DC → 800V AC</text>
+
+              {/* Solar Inverter-Duty Step-Up Transformer */}
+              <line x1="175" y1="25" x2="200" y2="25" stroke="#06b6d4" strokeWidth="2" />
+              <circle cx="208" cy="25" r="8" fill="none" stroke="#22c55e" strokeWidth="1.5" />
+              <circle cx="218" cy="25" r="8" fill="none" stroke="#22c55e" strokeWidth="1.5" />
+              <text x="213" y="47" textAnchor="middle" fill="#4ade80" fontSize="7" fontWeight="bold">Solar Step-Up</text>
+              <text x="213" y="57" textAnchor="middle" fill="#94a3b8" fontSize="6.5">0.8 kV / 33 kV</text>
+
+              {/* Tie line into 33 kV MV feeder */}
+              <path d="M 226 25 L 340 25 L 340 -90" fill="none" stroke="#22c55e" strokeWidth="2" strokeDasharray="3 3" />
+              <text x="280" y="18" textAnchor="middle" fill="#4ade80" fontSize="7">Green Grid Feed (33 kV)</text>
+            </g>
+
+            {/* Summary Tag */}
+            <rect x="30" y="225" width="540" height="24" rx="4" fill="#090d16" stroke="#334155" />
+            <text x="300" y="241" textAnchor="middle" fill="#38bdf8" fontSize="9" fontFamily="monospace">
+              Generation (GSU 11/220kV) → Grid (220/33kV) → Plant (33kV/415V) + Solar Inverter Duty (0.8/33kV)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Single-Line Diagram of Complete Power Flow from Generation to Industrial Distribution & Solar Interface"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

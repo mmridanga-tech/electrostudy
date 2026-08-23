@@ -84,6 +84,8 @@ import { TransformerEquivalentCircuitAnimation } from './interactive/Transformer
 import { TransformerLossEfficiencyAnimation } from './interactive/TransformerLossEfficiencyAnimation';
 import { TransformerTestsAnimation } from './interactive/TransformerTestsAnimation';
 import { TransformerParallelOperationAnimation } from './interactive/TransformerParallelOperationAnimation';
+import { TransformerProtectionAnimation } from './interactive/TransformerProtectionAnimation';
+import { TransformerIndustrialApplicationAnimation } from './interactive/TransformerIndustrialApplicationAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -292,6 +294,17 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch6-transformer-parallel-operation' || lessonId === 'lsn-ch6-transformer-parallel-operation') {
     return <TransformerParallelOperationAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-transformer-protection-maintenance' || lessonId === 'lsn-ch6-transformer-protection-maintenance') {
+    return <TransformerProtectionAnimation language={currentLanguage} />;
+  }
+  if (
+    topicId === 'ch6-transformer-applications' || 
+    lessonId === 'lsn-ch6-transformer-applications' ||
+    topicId === 'ch6-machines-practical-applications' ||
+    lessonId === 'lsn-ch6-machines-practical-applications'
+  ) {
+    return <TransformerIndustrialApplicationAnimation language={currentLanguage} />;
   }
   return null;
 };
