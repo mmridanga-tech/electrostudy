@@ -55,6 +55,9 @@ import { PureResistiveACAnimation } from './interactive/PureResistiveACAnimation
 import { PureInductiveACAnimation } from './interactive/PureInductiveACAnimation';
 import { PureCapacitiveACAnimation } from './interactive/PureCapacitiveACAnimation';
 import { ReactanceComparisonAnimation } from './interactive/ReactanceComparisonAnimation';
+import { SeriesRLRCAnimation } from './interactive/SeriesRLRCAnimation';
+import { SeriesRLCAnimation } from './interactive/SeriesRLCAnimation';
+import { ImpedanceAdmittanceAnimation } from './interactive/ImpedanceAdmittanceAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -176,6 +179,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-inductive-reactance' || lessonId === 'lsn-ch5-inductive-reactance') {
     return <ReactanceComparisonAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-series-rl-rc' || lessonId === 'lsn-ch5-series-rl-rc') {
+    return <SeriesRLRCAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-series-rlc' || lessonId === 'lsn-ch5-series-rlc') {
+    return <SeriesRLCAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-impedance-admittance' || lessonId === 'lsn-ch5-ac-impedance-admittance') {
+    return <ImpedanceAdmittanceAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

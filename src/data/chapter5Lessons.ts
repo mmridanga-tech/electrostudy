@@ -1,4 +1,7 @@
 import { Lesson } from '../types';
+import { LESSON_SERIES_RL_RC } from './chapter5Lesson10';
+import { LESSON_SERIES_RLC } from './chapter5Lesson11';
+import { LESSON_AC_IMPEDANCE_ADMITTANCE } from './chapter5Lesson12';
 
 export const LESSON_AC_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch5-ac-fundamentals',
@@ -2553,6 +2556,8 @@ export const LESSON_REACTANCE_COMPARISON: Lesson = {
   ]
 };
 
+export { LESSON_SERIES_RL_RC, LESSON_SERIES_RLC, LESSON_AC_IMPEDANCE_ADMITTANCE };
+
 export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-ac-fundamentals': LESSON_AC_FUNDAMENTALS,
   'ch5-sinusoidal-waveform': LESSON_SINUSOIDAL_WAVEFORM,
@@ -2562,5 +2567,8 @@ export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-ac-resistance': LESSON_AC_RESISTANCE,
   'ch5-ac-inductor': LESSON_AC_INDUCTOR,
   'ch5-ac-capacitor': LESSON_AC_CAPACITOR,
-  'ch5-inductive-reactance': LESSON_REACTANCE_COMPARISON
+  'ch5-inductive-reactance': LESSON_REACTANCE_COMPARISON,
+  'ch5-series-rl-rc': LESSON_SERIES_RL_RC,
+  'ch5-series-rlc': LESSON_SERIES_RLC,
+  'ch5-ac-impedance-admittance': LESSON_AC_IMPEDANCE_ADMITTANCE
 };
