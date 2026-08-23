@@ -794,27 +794,27 @@ export const LESSON_RMS_AVERAGE: Lesson = {
       'पूर्ण चक्र पर सममित साइन वेव का औसत मान सदैव शून्य (0) होता है।',
       'साइनसॉइडल वेव का अर्ध-चक्र औसत मान Vavg = 2Vm / π ≈ 0.6366 · Vm होता है।',
       'शुद्ध साइन वेव का फॉर्म फैक्टर Kf = 1.11 होता है।',
-      'शुद्ध साइन वेव का पीक फैक्टर Kp = √2 ≈ 1.414 होता है।',
-      'मानक ग्रिड वोल्टेज (230V, 415V, 11kV) सदैव RMS मान में व्यक्त किए जाते हैं।'
+      'पीक फैक्टर (क्रेस्ट फैक्टर) Kp = Vm / Vrms = √2 ≈ 1.414 होता है।',
+      'मानक ग्रिड वोल्टेज (जैसे 230 V, 415 V) हमेशा RMS में व्यक्त किए जाते हैं।'
     ],
     bn: [
-      'RMS মান হলো তাপীয় সমতুল্য মান: বিশুদ্ধ সাইন তরঙ্গে Vrms = Vm / √2 ≈ ০.৭০৭১ · Vm।',
-      'পূর্ণ সাইকেলে প্রতিসম এসি তরঙ্গের গড় মান সর্বদা শূন্য (0)।',
-      'সাইন তরঙ্গের অর্ধ-সাইকেল গড় মান Vavg = 2Vm / π ≈ ০.৬৩৬৬ · Vm।',
-      'বিশুদ্ধ সাইন তরঙ্গের ফর্ম ফ্যাক্টর Kf = ১.১১।',
-      'বিশুদ্ধ সাইন তরঙ্গের পিক ফ্যাক্টর Kp = √২ ≈ ১.৪১৪।',
-      'জাতীয় গ্রিডের সকল ভোল্টেজ (২৩০V, ৪১৫V, ১১kV) সর্বদা RMS মানে প্রকাশিত হয়।'
+      'RMS মান হলো তাপীয় সমতুল্য DC মান: সাইন তরঙ্গের জন্য Vrms = Vm / √2 ≈ 0.7071 · Vm।',
+      'একটি পূর্ণ সাইকেলে প্রতিসম এসি তরঙ্গের গড় মান সর্বদা শূন্য (0)।',
+      'সাইন তরঙ্গের অর্ধ-সাইকেল গড় মান Vavg = 2Vm / π ≈ 0.6366 · Vm।',
+      'বিশুদ্ধ সাইন তরঙ্গের ফর্ম ফ্যাক্টর Kf = Vrms / Vavg = ১.১১।',
+      'পিক ফ্যাক্টর (ক্রেস্ট ফ্যাক্টর) Kp = Vm / Vrms = √2 ≈ ১.৪১৪।',
+      'স্ট্যান্ডার্ড পাওয়ার গ্রিড ভোল্টেজ (যেমন ২৩০ V, ৪১৫ V) সর্বদা RMS মানে প্রকাশিত হয়।'
     ]
   },
   commonMistakes: {
     en: [
-      'Stating that full-cycle average of a sine wave is 2Vm/π: The FULL-cycle average is 0 V; 2Vm/π is the HALF-cycle average.',
-      'Confusing RMS with the arithmetic mean: RMS involves squaring, taking the mean, and square rooting; it is NOT the simple average.',
-      'Forgetting that Form Factor = RMS / Average and Peak Factor = Peak / RMS.',
-      'Designing equipment insulation for RMS rather than Peak voltage: Peak voltage is 1.414 × RMS, which dielectric must withstand.'
+      'Stating average value over a full cycle as 2Vm/π: The full cycle average is 0 V; 2Vm/π is only for a half cycle.',
+      'Confusing RMS with simple arithmetic mean: RMS involves squaring, taking the mean, and square-rooting.',
+      'Swapping Form factor (RMS / Avg) and Peak factor (Peak / RMS) formulas.',
+      'Designing insulation for RMS voltage: Insulation must always withstand the peak voltage (1.414 × RMS).'
     ],
     hi: [
-      'यह कहना कि पूर्ण चक्र का औसत 2Vm/π है: पूर्ण चक्र का औसत 0 V होता है; 2Vm/π केवल अर्ध-चक्र का औसत है।',
+      'पूर्ण चक्र पर औसत मान को 2Vm/π बताना: पूर्ण चक्र औसत 0 V होता है; 2Vm/π केवल अर्ध-चक्र का औसत है।',
       'RMS को साधारण अंकगणितीय औसत समझना: RMS में वर्ग, माध्य और वर्गमूल शामिल होता है।',
       'फॉर्म फैक्टर (RMS / औसत) और पीक फैक्टर (शिखर / RMS) के सूत्रों में भ्रमित होना।',
       'इन्सुलेशन को RMS वोल्टेज के लिए डिज़ाइन करना: इन्सुलेशन को सदैव शिखर वोल्टेज (1.414 × RMS) के लिए डिज़ाइन किया जाना चाहिए।'
@@ -1224,14 +1224,14 @@ export const LESSON_COMPLEX_NUMBERS: Lesson = {
   detailedExplanation: {
     en: '1. Why Complex Numbers in AC Analysis?\nIn AC circuits, voltages and currents oscillate at angular frequency ω with both magnitude and phase angle. Instead of solving trigonometric differential equations (Kirchhoff\'s integro-differential equations), Steinmetz introduced complex phasors and impedance vectors: Z = R + jX.\n\n2. The Engineering Operator j:\nIn electrical engineering, the letter "j" is strictly used instead of "i" (to avoid confusion with instantaneous electric current i):\n- j = √(-1)\n- j² = -1\n- j³ = -j\n- j⁴ = +1\n- 1 / j = -j (multiplying by -j rotates a phasor 90° clockwise; multiplying by +j rotates 90° counter-clockwise).\n\n3. Rectangular Form (Cartesian):\nZ = a + jb\n- a = Real Part (represents resistance R in ohms or in-phase active component).\n- b = Imaginary Part (represents net reactance X = XL - XC in ohms or quadrature reactive component).\n\n4. Polar Form (Trigonometric / Exponential):\nZ = |Z| ∠ θ = |Z| · e^(jθ) = |Z|(cos θ + j sin θ)\n- |Z| = Magnitude / Modulus: |Z| = √(a² + b²)\n- θ = Phase Angle / Argument: θ = tan⁻¹(b / a) in radians or degrees.\n\n5. Quadrant Rules for Angle θ = atan2(b, a):\n- Quadrant I (a > 0, b > 0): θ = tan⁻¹(b/a) [0° to +90°, Inductive Load]\n- Quadrant II (a < 0, b > 0): θ = 180° - tan⁻¹(|b/a|) [+90° to +180°]\n- Quadrant III (a < 0, b < 0): θ = -180° + tan⁻¹(|b/a|) [-180° to -90°]\n- Quadrant IV (a > 0, b < 0): θ = -tan⁻¹(|b|/a) [-90° to 0°, Capacitive Load]\n\n6. Coordinate Conversions:\n- Rectangular to Polar: |Z| = √(a² + b²), θ = tan⁻¹(b / a)\n- Polar to Rectangular: a = |Z| · cos θ, b = |Z| · sin θ\n\n7. Fundamental Complex Arithmetic in AC Circuits:\n- Addition (Prefer Rectangular): Z₁ + Z₂ = (a₁ + a₂) + j(b₁ + b₂)\n- Subtraction (Prefer Rectangular): Z₁ - Z₂ = (a₁ - a₂) + j(b₁ - b₂)\n- Multiplication (Prefer Polar): Z₁ × Z₂ = (|Z₁| · |Z₂|) ∠ (θ₁ + θ₂)\n- Division (Prefer Polar): Z₁ / Z₂ = (|Z₁| / |Z₂|) ∠ (θ₁ - θ₂)\n\n8. Complex Conjugate (Z*):\nIf Z = a + jb = |Z| ∠ θ, its complex conjugate is Z* = a - jb = |Z| ∠ -θ.\nKey property: Z · Z* = a² + b² = |Z|² (purely real quantity).\n\n9. AC Ohm\'s Law and Impedance Application:\nV = I · Z   |   I = V / Z   |   Z = V / I',
     hi: '1. एसी विश्लेषण में सम्मिश्र संख्याएँ क्यों?\nएसी परिपथों में परिमाण और फेज दोनों होते हैं। स्टेनमेट्ज़ ने फेजर और प्रतिबाधा (Z = R + jX) के लिए सम्मिश्र संख्याओं का प्रयोग प्रस्तुत किया।\n\n2. इंजीनियरिंग ऑपरेटर j:\nधारा i से भ्रम से बचने के लिए इलेक्ट्रिकल में j का उपयोग करते हैं:\n- j = √(-1)\n- j² = -1, 1/j = -j।\n\n3. आयताकार रूप (Rectangular Form):\nZ = a + jb (a = वास्तविक भाग/प्रतिरोध R, b = काल्पनिक भाग/प्रतिघात X)।\n\n4. ध्रुवीय रूप (Polar Form):\nZ = |Z| ∠ θ, जहाँ |Z| = √(a² + b²) और θ = tan⁻¹(b/a)।\n\n5. रूपांतरण:\n- आयताकार से ध्रुवीय: |Z| = √(a² + b²), θ = tan⁻¹(b/a)\n- ध्रुवीय से आयताकार: a = |Z| cos θ, b = |Z| sin θ।\n\n6. अंकगणितीय नियम:\n- योग एवं घटाव: आयताकार रूप सर्वोत्तम है: (a₁±a₂) + j(b₁±b₂)।\n- गुणा एवं भाग: ध्रुवीय रूप सर्वोत्तम है: (|Z₁||Z₂|) ∠ (θ₁+θ₂) एवं (|Z₁|/|Z₂|) ∠ (θ₁-θ₂)।\n\n7. सम्मिश्र संयुग्मी (Conjugate):\nZ = a + jb का संयुग्मी Z* = a - jb = |Z| ∠ -θ होता है।',
-    bn: '১. এসি বিশ্লেষণে জটিল সংখ্যার প্রয়োজনীয়তা:\nএসি সার্কিটে ভোল্টেজ ও কারেন্টের মান এবং ফেজ উভয়ই থাকে। ডিফারেনশিয়াল সমীকরণের জটিলতা এড়াতে জটিল রাশি Z = R + jX ব্যবহার করা হয়।\n\n২. অপারেটর j:\nতড়িৎ প্রবাহ i এর সাথে বিভ্রান্তি এড়াতে ইঞ্জিনিয়ারিংয়ে j ব্যবহৃত হয়:\n- j = √(-১), j² = -১, ১/j = -j।\n\n৩. রেকট্যাঙ্গুলার রূপ:\nZ = a + jb (a = বাস্তব অংশ/রোধ R, b = কাল্পনিক অংশ/রিয়্যাক্ট্যান্স X)।\n\n৪. পোলার রূপ:\nZ = |Z| ∠ θ, যেখানে |Z| = √(a² + b²) এবং θ = tan⁻¹(b/a)।\n\n৫. রূপান্তর সূত্রাবলী:\n- রেকট্যাঙ্গুলার থেকে পোলার: |Z| = √(a² + b²), θ = tan⁻¹(b/a)\n- পোলার থেকে রেকট্যাঙ্গুলার: a = |Z| cos θ, b = |Z| sin θ।\n\n৬. গাণিতিক নিয়মাবলী:\n- যোগ ও বিয়োগের ক্ষেত্রে রেকট্যাঙ্গুলার রূপ সহজ: (a₁±a₂) + j(b₁±b₂)।\n- গুণ ও ভাগের ক্ষেত্রে পোলার রূপ সর্বোত্তম: গুণ করলে কোণ যোগ হয় (|Z₁||Z₂| ∠ θ₁+θ₂) এবং ভাগ করলে কোণ বিয়োগ হয় (|Z₁|/|Z₂| ∠ θ₁-θ₂)।\n\n৭. অনুবন্ধী জটিল সংখ্যা (Conjugate):\nZ = a + jb এর অনুবন্ধী Z* = a - jb = |Z| ∠ -θ।'
+    bn: '১. এসি বিশ্লেষণে জটিল সংখ্যার প্রয়োজনীয়তা:\nএসি সার্কিটে ভোল্টেজ ও কারেন্টের মান এবং ফেজ উভয়ই থাকে। ডিফারেনশিয়াল সমীকরণের সমাধানের পরিবর্তে স্টেইনমেটজ ফেজর ও ইম্পিডেন্স ভেক্টরের (Z = R + jX) জন্য জটিল সংখ্যা ব্যবহারের সূচনা করেন।\n\n২. ইঞ্জিনিয়ারিং অপারেটর j:\nতড়িৎ প্রবাহ i এর সাথে বিভ্রান্তি এড়াতে j ব্যবহৃত হয়:\n- j = √(-1)\n- j² = -1, 1/j = -j।\n\n৩. রেকট্যাঙ্গুলার রূপ (Rectangular Form):\nZ = a + jb (a = বাস্তব অংশ/রোধ R, b = কাল্পনিক অংশ/রিয়্যাক্ট্যান্স X)।\n\n৪. পোলার রূপ (Polar Form):\nZ = |Z| ∠ θ, যেখানে |Z| = √(a² + b²) এবং θ = tan⁻¹(b/a)।\n\n৫. রূপান্তর:\n- রেকট্যাঙ্গুলার থেকে পোলার: |Z| = √(a² + b²), θ = tan⁻¹(b/a)\n- পোলার থেকে রেকট্যাঙ্গুলার: a = |Z| cos θ, b = |Z| sin θ।\n\n৬. গাণিতিক অপারেশন:\n- যোগ ও বিয়োগ: রেকট্যাঙ্গুলার রূপ সুবিধাজনক: (a₁±a₂) + j(b₁±b₂)।\n- গুণ ও ভাগ: পোলার রূপ সুবিধাজনক: (|Z₁||Z₂|) ∠ (θ₁+θ₂) এবং (|Z₁|/|Z₂|) ∠ (θ₁-θ₂)।\n\n৭. জটিল অনুবন্ধী (Conjugate):\nZ = a + jb এর অনুবন্ধী Z* = a - jb = |Z| ∠ -θ।'
   },
   formulas: [
     {
       symbol: '|Z|',
       expression: '|Z| = \\sqrt{a^2 + b^2}',
       description: {
-        en: 'Magnitude of complex impedance vector Z = a + jb',
+        en: 'Magnitude (modulus) of complex impedance vector Z = a + jb',
         hi: 'सम्मिश्र प्रतिबाधा वेक्टर Z = a + jb का परिमाण',
         bn: 'জটিল ইম্পিডেন্স ভেক্টর Z = a + jb এর পরম মান'
       }
@@ -1488,8 +1488,26 @@ export const LESSON_COMPLEX_NUMBERS: Lesson = {
       },
       answerKey: {
         en: '1. Numerator Product: Z₁ = 10 ∠ 36.87° Ω, Z₂ = 10 ∠ -53.13° Ω\nZ₁ · Z₂ = 100 ∠ (36.87° - 53.13°) = 100 ∠ -16.26° Ω²\n\n2. Denominator Sum:\nZ₁ + Z₂ = (8 + 6) + j(6 - 8) = 14 - j2 Ω\nPolar: |Z_sum| = √(14² + (-2)²) = √200 = 14.142 Ω, θ = tan⁻¹(-2/14) = -8.13°\nZ₁ + Z₂ = 14.142 ∠ -8.13° Ω\n\n3. Equivalent Impedance:\nZ_eq = (100 ∠ -16.26°) / (14.142 ∠ -8.13°) = 7.071 ∠ (-16.26° - (-8.13°)) = 7.071 ∠ -8.13° Ω\nIn Rectangular: 7.071 · cos(-8.13°) + j 7.071 · sin(-8.13°) = 7.00 - j1.00 Ω.\n\nAnswer: Z_eq = 7.07 ∠ -8.13° Ω = 7.0 - j1.0 Ω.',
-        hi: '1. अंश: Z₁ · Z₂ = 100 ∠ -16.26°\n2. हर: Z₁ + Z₂ = 14 - j2 = 14.142 ∠ -8.13°\n3. Z_eq = (100/14.142) ∠ (-16.26° + 8.13°) = 7.071 ∠ -8.13° Ω = 7.0 - j1.0 Ω।',
-        bn: '১. লব: Z₁ · Z₂ = ১০০ ∠ -১৬.২৬°\n২. হর: Z₁ + Z₂ = ১৪ - j২ = ১৪.১৪২ ∠ -৮.১৩°\n৩. Z_eq = (১০০/১৪.১৪২) ∠ (-১৬.২৬° + ৮.১৩°) = ৭.০৭১ ∠ -৮.১৩° Ω = ৭.০ - j১.০ Ω।'
+        hi: '1. अंश: Z₁ · Z₂ = 100 ∠ -16.26°\n2. हर: Z₁ + Z₂ = 14 - j2 = 14.142 ∠ -8.13°\n3. Z_eq = (100/14.142) ∠ (-16.26° - (-8.13°)) = 7.071 ∠ -8.13° Ω = 7.0 - j1.0 Ω।',
+        bn: '১. লবের গুণফল: Z₁ · Z₂ = ১০০ ∠ -১৬.২৬° Ω²\n২. হরের যোগফল: Z₁ + Z₂ = ১৪ - j২ = ১৪.১৪২ ∠ -৮.১৩° Ω\n৩. সমতুল্য ইম্পিডেন্স: Z_eq = ৭.০৭১ ∠ -৮.১৩° Ω = ৭.০ - j১.০ Ω।'
+      }
+    },
+    {
+      id: 'pq-ch5-l5-2',
+      question: {
+        en: 'Explain why multiplication and division are significantly easier in polar form than in rectangular form for AC circuit calculations.',
+        hi: 'स्पष्ट करें कि एसी परिपथ गणना में आयताकार रूप की तुलना में ध्रुवीय रूप में गुणा और भाग करना काफी आसान क्यों है।',
+        bn: 'এসি সার্কিট গণনায় রেকট্যাঙ্গুলার রূপের চেয়ে পোলার রূপে গুণ ও ভাগ করা কেন উল্লেখযোগ্যভাবে সহজ তা ব্যাখ্যা করুন।'
+      },
+      hint: {
+        en: 'In polar form, magnitudes simply multiply/divide, and phase angles add/subtract.',
+        hi: 'ध्रुवीय रूप में केवल परिमाणों का गुणा/भाग और कोणों का जोड़/घटाव होता है।',
+        bn: 'পোলার রূপে কেবল মানগুলোর গুণ/ভাগ এবং কোণগুলোর যোগ/বিয়োগ হয়।'
+      },
+      answerKey: {
+        en: 'In polar form Z = |Z| ∠ θ, multiplication requires multiplying magnitudes and adding angles (|Z₁||Z₂| ∠ θ₁+θ₂), and division requires dividing magnitudes and subtracting angles (|Z₁|/|Z₂| ∠ θ₁-θ₂). In contrast, rectangular multiplication requires FOIL binomial expansion with j² = -1, and division requires multiplying both numerator and denominator by the complex conjugate to rationalize the denominator.',
+        hi: 'ध्रुवीय रूप में गुणा करने पर परिमाणों का सीधा गुणा और कोणों का जोड़ होता है, तथा भाग में परिमाणों का भाग और कोणों का घटाव होता है। जबकि आयताकार रूप में भाग करने के लिए हर के संयुग्मी (conjugate) से गुणा करना पड़ता है जो अधिक जटिल है।',
+        bn: 'পোলার রূপে গুণ করার সময় মানগুলো গুণ এবং কোণগুলো যোগ হয়, আর ভাগের সময় মান ভাগ ও কোণ বিয়োগ হয়। কিন্তু রেকট্যাঙ্গুলার রূপে ভাগ করতে জটিল অনুবন্ধী (Conjugate) দিয়ে হর ও লবকে গুণ করে বাস্তব সংখ্যায় আনতে হয় যা অনেক দীর্ঘ ও জটিল।'
       }
     }
   ]
@@ -1500,14 +1518,14 @@ export const LESSON_AC_RESISTANCE: Lesson = {
   topicId: 'ch5-ac-resistance',
   order: 6,
   title: {
-    en: 'Purely Resistive AC Circuit',
-    hi: 'शुद्ध प्रतिरोधी एसी परिपथ',
-    bn: 'বিশুদ্ধ রোধীয় এসি বর্তনী'
+    en: 'AC Through Pure Resistance',
+    hi: 'शुद्ध प्रतिरोध में प्रत्यावर्ती धारा',
+    bn: 'বিশুদ্ধ রোধের মধ্য দিয়ে এসি'
   },
   easyExplanation: {
-    en: 'In a purely resistive AC circuit, an alternating voltage applied across a pure resistor produces an alternating current that is strictly in-phase with the voltage, meaning both voltage and current cross zero and reach their positive and negative peaks at the exact same instant, resulting in a unity power factor (cos φ = 1.0).',
-    hi: 'एक शुद्ध प्रतिरोधी एसी परिपथ में, शुद्ध प्रतिरोधक पर लगाया गया प्रत्यावर्ती वोल्टेज एक ऐसी धारा उत्पन्न करता है जो वोल्टेज के पूर्णतः समान फेज (in-phase) में होती है, जिससे दोनों एक साथ शून्य और शिखर मान प्राप्त करते हैं तथा पावर फैक्टर यूनिटी (1.0) होता है।',
-    bn: 'একটি বিশুদ্ধ রোধযুক্ত এসি সার্কিটে প্রযুক্ত অল্টারনেটিং ভোল্টেজ এমন একটি কারেন্ট তৈরি করে যা ভোল্টেজের সম্পূর্ণ ইন-ফেজে থাকে; অর্থাৎ কারেন্ট ও ভোল্টেজ একই সাথে শূন্য ও পিক মানে পৌঁছায় এবং পাওয়ার ফ্যাক্টর হয় ১.০ (ইউনিটি)।'
+    en: 'In a purely resistive AC circuit, current and voltage rise and fall in perfect synchronization with zero phase angle difference, maintaining a unity power factor of 1.0.',
+    hi: 'एक शुद्ध प्रतिरोधी एसी परिपथ में, धारा और वोल्टेज बिना किसी फेज अंतर के एक साथ बढ़ते और घटते हैं, जिससे पावर फैक्टर 1.0 (यूनिटी) रहता है।',
+    bn: 'একটি বিশুদ্ধ রোধীয় এসি সার্কিটে, কারেন্ট ও ভোল্টেজ কোনো ফেজ পার্থক্য ছাড়াই সম্পূর্ণ সমলয়ে ওঠানামা করে, যার ফলে পাওয়ার ফ্যাক্টর ১.০ (ইউনিটি) হয়।'
   },
   detailedExplanation: {
     en: '1. Circuit Configuration:\nA purely resistive AC circuit consists solely of a non-inductive, non-capacitive pure resistor R connected across an ideal sinusoidal AC voltage source: v(t) = Vm · sin(ωt).\n\n2. AC Ohm\'s Law and Instantaneous Current:\nAccording to Ohm\'s law at every instantaneous point in time:\ni(t) = v(t) / R = (Vm / R) · sin(ωt) = Im · sin(ωt)\nWhere maximum peak current Im = Vm / R, and RMS current Irms = Vrms / R.\n\n3. Phase Relationship (Zero Phase Difference):\nComparing the voltage v(t) = Vm · sin(ωt + 0°) and current i(t) = Im · sin(ωt + 0°):\n- Phase angle of voltage φ_v = 0°\n- Phase angle of current φ_i = 0°\n- Phase difference φ = φ_v - φ_i = 0.0°\nHence, in a pure resistor, alternating current is STRICTLY IN-PHASE with alternating voltage.\n\n4. Phasor Representation & Impedance:\n- Voltage Phasor: V = Vrms ∠ 0°\n- Current Phasor: I = Irms ∠ 0° (drawn collinear along the same positive real axis as V)\n- Complex Impedance: Z = R + j0 = R ∠ 0° Ω.\n\n5. Power in Purely Resistive AC Circuit:\nThe instantaneous power p(t) delivered to the resistor is the product of instantaneous voltage and current:\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [Im · sin(ωt)]\np(t) = Vm · Im · sin²(ωt)\nUsing the trigonometric identity sin²(ωt) = (1 - cos 2ωt) / 2:\np(t) = (Vm · Im / 2) · (1 - cos 2ωt) = Vrms · Irms · (1 - cos 2ωt) = P_avg - P_avg · cos(2ωt)\n\n6. Key Power Characteristics in Pure Resistor:\n- Constant Component: P_avg = Vrms · Irms = Irms² · R = Vrms² / R.\n- Pulsating Component: -Vrms · Irms · cos(2ωt), oscillating at DOUBLE the supply frequency (2f).\n- Non-Negative Property (p(t) ≥ 0): Because sin²(ωt) is always ≥ 0, instantaneous power is NEVER negative. Energy flows unidirectionally from the source to the resistor, converting electrical energy into heat at every instant of the AC cycle.\n- Peak Instantaneous Power: P_peak = 2 · P_avg = Vm · Im.\n\n7. Power Factor:\nThe power factor is defined as cos φ = cos(0°) = 1.0 (Unity Power Factor). All apparent power (S = V·I VA) is converted entirely into true active power (P = V·I Watts); reactive power is strictly zero (Q = 0 VAR).\n\n8. Practical Applications & Real-World Resistive Loads:\n- Incandescent / Tungsten filament lamps.\n- Electric heating elements: toasters, room heaters, water geysers, soldering irons, electric kettles.\n- Precision measurement shunt and series dropping resistors.',
@@ -1784,11 +1802,765 @@ export const LESSON_AC_RESISTANCE: Lesson = {
   ]
 };
 
+export const LESSON_AC_INDUCTOR: Lesson = {
+  id: 'lsn-ch5-ac-inductor',
+  topicId: 'ch5-ac-inductor',
+  chapterId: 'ch-alternating-current',
+  title: {
+    en: 'Pure Inductive AC Circuit',
+    hi: 'शुद्ध इंडक्टिव एसी परिपथ',
+    bn: 'বিশুদ্ধ ইন্ডাক্টিভ এসি বর্তনী'
+  },
+  description: {
+    en: 'Comprehensive analysis of pure inductive AC circuits: inductive reactance XL = 2πfL, current lagging voltage by 90°, magnetic energy storage, zero active power dissipation, and frequency response.',
+    hi: 'शुद्ध इंडक्टिव एसी परिपथ का गहन अध्ययन: इंडक्टिव रिएक्टेंस XL = 2πfL, धारा का वोल्टेज से 90° लैग, चुंबकीय ऊर्जा संचय, शून्य सक्रिय शक्ति क्षय एवं आवृत्ति अनुक्रिया।',
+    bn: 'বিশুদ্ধ ইন্ডাক্টিভ এসি বর্তনীর বিশদ বিশ্লেষণ: ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL = 2πfL, কারেন্টের ভোল্টেজের তুলনায় ৯০° পশ্চাদপসরণ (ল্যাগ), চৌম্বক শক্তি সঞ্চয়, শূন্য সক্রিয় ক্ষমতা অপচয় এবং কম্পাঙ্ক নির্ভরতা।'
+  },
+  estimatedMinutes: 28,
+  sections: [
+    {
+      id: 'sec-ch5-l7-1',
+      title: {
+        en: '1. Concept of an Ideal Pure Inductor in AC Circuits',
+        hi: '1. एसी परिपथ में आदर्श शुद्ध प्रेरक (Pure Inductor) की अवधारणा',
+        bn: '১. এসি বর্তনীতে আদর্শ বিশুদ্ধ আবেশকের (Pure Inductor) ধারণা'
+      },
+      content: {
+        en: 'A pure inductive AC circuit consists of a coil with pure self-inductance L (measured in Henries, H) and strictly zero electrical resistance (R = 0 Ω). In reality, every physical wire coil possesses some internal winding resistance; however, in theoretical circuit analysis and superconducting or heavy copper choke coils, resistance is neglected to isolate purely inductive phenomena.\n\nWhen connected across a sinusoidal alternating voltage source v(t) = Vm · sin(ωt), an alternating current begins to flow through the coil. According to Faraday’s Law of Electromagnetic Induction and Lenz’s Law, any time-varying current produces a changing magnetic flux, which induces a counter-electromotive force (self-induced back EMF) e_L(t) = -L(di/dt) in the coil. This self-induced EMF constantly opposes the rate of change of current, creating an electrical opposition to AC current called Inductive Reactance (XL).',
+        hi: 'एक शुद्ध इंडक्टिव एसी परिपथ में एक ऐसा प्रेरक (कॉइल) होता है जिसका स्व-प्रेरकत्व L (हेनरी, H में) होता है और जिसका प्रतिरोध पूरी तरह शून्य (R = 0 Ω) माना जाता है। व्यावहारिक रूप से प्रत्येक तार में कुछ न कुछ आंतरिक प्रतिरोध होता है, किन्तु सैद्धांतिक विश्लेषण में शुद्ध चुंबकीय प्रभावों को समझने के लिए प्रतिरोध को नगण्य माना जाता है।\n\nजब इस प्रेरक पर एक ज्यावक्रीय प्रत्यावर्ती वोल्टेज v(t) = Vm · sin(ωt) लगाया जाता है, तो कॉइल में प्रत्यावर्ती धारा प्रवाहित होने लगती है। फैराडे के विद्युत चुम्बकीय प्रेरण के नियम एवं लेन्ज के नियम के अनुसार, बदलती धारा बदलते चुंबकीय फ्लक्स को जन्म देती है, जिससे कॉइल में एक विरोधी विद्युत वाहक बल (Back EMF) e_L(t) = -L(di/dt) उत्पन्न होता है। यह विरोधी EMF धारा के परिवर्तन की दर का लगातार विरोध करता है, जिसे इंडक्टिव रिएक्टेंस (XL) कहा जाता है।',
+        bn: 'একটি বিশুদ্ধ ইন্ডাক্টিভ এসি বর্তনী শুধুমাত্র স্বকীয় আবেশাঙ্ক L (হেনরি, H) বিশিষ্ট একটি কয়েল নিয়ে গঠিত যার বৈদ্যুতিক রোধ সম্পূর্ণরূপে শূন্য (R = ০ Ω)। বাস্তবে কয়েলের তারের নিজস্ব কিছু রোধ থাকে, তবে তাত্ত্বিক সার্কিট বিশ্লেষণে বিশুদ্ধ চৌম্বকীয় প্রভাব পর্যবেক্ষণের জন্য রোধকে শূন্য ধরা হয়।\n\nযখন কয়েলে একটি সাইনোসয়ডাল পরিবর্তনশীল ভোল্টেজ v(t) = Vm · sin(ωt) প্রয়োগ করা হয়, তখন কয়েলের মধ্য দিয়ে পরিবর্তনশীল কারেন্ট প্রবাহিত হয়। ফ্যারাডের তড়িচ্চৌম্বকীয় আবেশ এবং লেঞ্জের সূত্রানুসারে, এই পরিবর্তনশীল কারেন্ট কয়েলে একটি বিপরীত তড়িচ্চালক বল (Back EMF) e_L(t) = -L(di/dt) তৈরি করে। এই ব্যাক-ইএমএফ কারেন্টের পরিবর্তনের হারকে বাধা প্রদান করে, যা ইন্ডাক্টিভ রিঅ্যাকট্যান্স (XL) নামে পরিচিত।'
+      },
+      schematicId: 'circuit-pure-inductor'
+    },
+    {
+      id: 'sec-ch5-l7-2',
+      title: {
+        en: '2. Mathematical Derivation of Voltage-Current Phase Lag (90°)',
+        hi: '2. वोल्टेज-धारा 90° फेज लैग का गणितीय निगमन',
+        bn: '২. ভোল্টেজ-কারেন্ট ৯০° ফেজ ল্যাগের গাণিতিক প্রতিপাদন'
+      },
+      content: {
+        en: 'To establish the quantitative relationship between voltage and current in a pure inductor, we apply Kirchhoff\'s Voltage Law (KVL) around the closed single loop:\n\nv(t) + e_L(t) = 0  ⟹  v(t) - L (di/dt) = 0  ⟹  v(t) = L (di/dt)\n\nSubstituting the sinusoidal applied voltage v(t) = Vm · sin(ωt):\n\nL (di/dt) = Vm · sin(ωt)  ⟹  di = (Vm / L) · sin(ωt) dt\n\nIntegrating both sides with respect to time t:\n\ni(t) = (Vm / L) ∫ sin(ωt) dt = -(Vm / (ωL)) · cos(ωt)\n\nUsing the fundamental trigonometric identity -cos(θ) = sin(θ - 90°) = sin(θ - π/2):\n\ni(t) = (Vm / (ωL)) · sin(ωt - 90°) = Im · sin(ωt - π/2)\n\nWhere the peak current is defined as Im = Vm / (ωL) = Vm / XL, and inductive reactance is XL = ωL = 2πfL (in Ohms, Ω).\n\nPhysical Significance: The resulting equation proves mathematically that in a pure inductive AC circuit, the alternating current i(t) strictly lags behind the applied alternating voltage v(t) by exactly 90° (π/2 radians or a quarter of a full cycle, T/4). The voltage reaches its positive peak first, and current reaches its positive peak 90° later.',
+        hi: 'शुद्ध प्रेरक में वोल्टेज और धारा के बीच सटीक संबंध प्राप्त करने के लिए किरचॉफ का वोल्टेज नियम (KVL) लगाते हैं:\n\nv(t) + e_L(t) = 0  ⟹  v(t) = L (di/dt)\n\nप्रत्यावर्ती वोल्टेज v(t) = Vm · sin(ωt) का मान रखने पर:\n\ndi = (Vm / L) · sin(ωt) dt\n\nदोनों पक्षों का समय t के सापेक्ष समाकलन (Integration) करने पर:\n\ni(t) = (Vm / L) ∫ sin(ωt) dt = -(Vm / (ωL)) · cos(ωt)\n\nत्रिकोणमितीय सूत्र -cos(θ) = sin(θ - 90°) का उपयोग करने पर:\n\ni(t) = (Vm / (ωL)) · sin(ωt - 90°) = Im · sin(ωt - π/2)\n\nजहाँ शिखर धारा Im = Vm / (ωL) = Vm / XL, तथा इंडक्टिव रिएक्टेंस XL = ωL = 2πfL (ओम, Ω) है।\n\nभौतिक निष्कर्ष: यह समीकरण सिद्ध करता है कि एक शुद्ध इंडक्टिव परिपथ में प्रत्यावर्ती धारा i(t) आरोपित वोल्टेज v(t) से ठीक 90° (π/2 रेडियन या एक-चौथाई चक्र T/4) पीछे (लैग) रहती है। वोल्टेज पहले अपने शिखर पर पहुँचता है, और धारा 90° बाद शिखर मान प्राप्त करती है।',
+        bn: 'বিশুদ্ধ আবেশকে ভোল্টেজ ও কারেন্টের সম্পর্ক নির্ণয়ে কার্শফের ভোল্টেজ সূত্র (KVL) প্রয়োগ করা হয়:\n\nv(t) + e_L(t) = ০  ⟹  v(t) = L (di/dt)\n\nসাইনোসয়ডাল ভোল্টেজ v(t) = Vm · sin(ωt) বসিয়ে পাই:\n\ndi = (Vm / L) · sin(ωt) dt\n\nসময় t এর সাপেক্ষে সমাকলন (ইনটিগ্রেশন) করে:\n\ni(t) = (Vm / L) ∫ sin(ωt) dt = -(Vm / (ωL)) · cos(ωt)\n\nত্রিকোণমিতিক রূপান্তর -cos(θ) = sin(θ - ৯০°) প্রয়োগ করে:\n\ni(t) = (Vm / (ωL)) · sin(ωt - ৯০°) = Im · sin(ωt - π/২)\n\nযেখানে পিক কারেন্ট Im = Vm / (ωL) = Vm / XL, এবং ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL = ωL = 2πfL (ওহম, Ω)।\n\nভৌত তাৎপর্য: এই গাণিতিক সম্পর্কটি প্রমাণ করে যে বিশুদ্ধ ইন্ডাক্টিভ এসি সার্কিটে প্রবাহিত কারেন্ট i(t) সর্বদা প্রযুক্ত ভোল্টেজ v(t) এর চেয়ে ঠিক ৯০° (π/২ রেডিয়ান বা চক্রের এক-চতুর্থাংশ T/4 সময়) পিছিয়ে (ল্যাগ করে) চলে।'
+      },
+      keyEquations: [
+        'v(t) = Vm · sin(ωt)',
+        'i(t) = Im · sin(ωt - 90°)',
+        'XL = 2πfL = ωL (Ω)',
+        'Im = Vm / XL  |  Irms = Vrms / XL',
+        'ZL = +j XL = XL ∠ +90° Ω'
+      ]
+    },
+    {
+      id: 'sec-ch5-l7-3',
+      title: {
+        en: '3. Inductive Reactance (XL) and Frequency Dependence',
+        hi: '3. इंडक्टिव रिएक्टेंस (XL) एवं आवृत्ति निर्भरता',
+        bn: '৩. ইন্ডাক্টিভ রিঅ্যাকট্যান্স (XL) এবং ফ্রিকোয়েন্সি নির্ভরতা'
+      },
+      content: {
+        en: 'Inductive reactance XL is the opposition offered by an inductor to the flow of alternating current. It is expressed in Ohms (Ω) and given by the formula:\n\nXL = 2πfL = ωL\n\nKey Engineering Behaviors Across Frequencies:\n1. Direct Proportionality (XL ∝ f): At higher supply frequencies, current changes much more rapidly (larger di/dt). Consequently, the induced opposing EMF is higher, resulting in directly proportional growth of reactance. If frequency doubles from 50 Hz to 100 Hz, XL exactly doubles.\n\n2. Direct Current Behavior (f = 0 Hz): For a steady DC source, frequency is zero (f = 0). Thus, XL = 2π(0)L = 0 Ω. A pure inductor presents strictly zero opposition to steady direct current once steady state is reached, behaving as an ideal short circuit.\n\n3. High-Frequency Behavior (f → ∞): At extremely high frequencies (e.g. radio frequency RF signals), XL becomes extraordinarily high (XL → ∞ Ω), behaving as an open circuit that effectively chokes and blocks high-frequency AC components (Choke Inductors / RF Filters).',
+        hi: 'इंडक्टिव रिएक्टेंस (XL) किसी प्रेरक द्वारा प्रत्यावर्ती धारा के प्रवाह में प्रस्तुत किया गया विरोध है। इसका मात्रक ओम (Ω) होता है और इसका सूत्र है:\n\nXL = 2πfL = ωL\n\nविभिन्न आवृत्तियों पर मुख्य व्यवहार:\n1. सीधा समानुपाती संबंध (XL ∝ f): उच्च आपूर्ति आवृत्ति पर धारा में परिवर्तन बहुत तीव्र होता है (बड़ा di/dt)। अतः प्रेरित विरोधी बैक EMF भी अधिक होता है, जिससे रिएक्टेंस आवृत्ति के समानुपात में बढ़ता है। यदि आवृत्ति 50 Hz से 100 Hz दोगुनी हो जाए, तो XL भी ठीक दोगुना हो जाता है।\n\n2. दिष्ट धारा (DC) पर व्यवहार (f = 0 Hz): स्थिर डीसी के लिए आवृत्ति शून्य होती है (f = 0)। अतः XL = 2π(0)L = 0 Ω। स्थिर अवस्था में शुद्ध प्रेरक डीसी धारा को शून्य विरोध प्रस्तुत करता है और आदर्श शॉर्ट सर्किट की तरह कार्य करता है।\n\n3. उच्च आवृत्ति व्यवहार (f → ∞): अत्यंत उच्च आवृत्तियों पर XL बहुत विशाल हो जाता है (XL → ∞ Ω), जिससे प्रेरक एक ओपन सर्किट की तरह कार्य करके उच्च आवृत्ति एसी सिग्नल को ब्लॉक (चोक) कर देता है।',
+        bn: 'ইন্ডাক্টিভ রিঅ্যাকট্যান্স (XL) হলো পরিবর্তনশীল এসি কারেন্ট প্রবাহে আবেশক কর্তৃক সৃষ্ট কার্যকর বাধা। এর একক ওহম (Ω) এবং এর সূত্র:\n\nXL = 2πfL = ωL\n\nবিভিন্ন কম্পাঙ্কে এর আচরণ:\n১. সরাসরি সমানুপাতিক (XL ∝ f): কম্পাঙ্ক বৃদ্ধি পেলে কারেন্ট পরিবর্তনের হার (di/dt) বৃদ্ধি পায়। ফলে উৎপন্ন ব্যাক-ইএমএফ বৃদ্ধি পাওয়ায় রিঅ্যাকট্যান্স সরাসরি সমানুপাতিক হারে বৃদ্ধি পায়। ফ্রিকোয়েন্সি ৫০ Hz থেকে দ্বিগুণ হয়ে ১০০ Hz হলে XL ও দ্বিগুণ হয়।\n\n২. সরাসরি ডিসি প্রবাহে আচরণ (f = ০ Hz): স্থির ডিসি উৎসের জন্য কম্পাঙ্ক শূন্য (f = ০)। অতএব XL = ২π(০)L = ০ Ω। ফলে বিশুদ্ধ আবেশক ডিসির জন্য শূন্য বাধা প্রদান করে এবং শর্ট সার্কিট হিসেবে কাজ করে।\n\n৩. উচ্চ কম্পাঙ্কে আচরণ (f → ∞): অতি উচ্চ ফ্রিকোয়েন্সিতে XL অসীম বা অত্যন্ত বৃহৎ হয়ে যায়, ফলে আবেশক ওপেন সার্কিটের ন্যায় আচরণ করে উচ্চ কম্পাঙ্কের এসি সিগন্যালকে বাধা (ব্লক/চোক) দেয়।'
+      }
+    },
+    {
+      id: 'sec-ch5-l7-4',
+      title: {
+        en: '4. Instantaneous Power, Zero Active Power & Magnetic Energy Storage',
+        hi: '4. तात्कालिक शक्ति, शून्य सक्रिय शक्ति एवं चुंबकीय ऊर्जा संचय',
+        bn: '৪. তাৎক্ষণিক ক্ষমতা, শূন্য সক্রিয় ক্ষমতা এবং চৌম্বক শক্তি সঞ্চয়'
+      },
+      content: {
+        en: 'The instantaneous power p(t) absorbed by the pure inductor is the product of instantaneous voltage and instantaneous current:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [Im · sin(ωt - 90°)] = [Vm · sin(ωt)] · [-Im · cos(ωt)]\n\nUsing the double-angle identity sin(2θ) = 2 sin(θ) cos(θ):\n\np(t) = -(Vm · Im / 2) · sin(2ωt) = -Vrms · Irms · sin(2ωt)\n\nCritical Scientific Insights on Inductive Power:\n1. Double-Frequency Oscillation (2f): Instantaneous power oscillates at twice the source frequency (2ω = 4πf). For a 50 Hz system, power pulses at 100 Hz.\n\n2. Zero Average Active Power (P = 0 W): The instantaneous power curve has perfectly symmetrical positive and negative half-cycles. Integrating over one complete period yields an average value of zero:\n\nP = Vrms · Irms · cos(-90°) = Vrms · Irms · (0) = 0 Watts.\nAn ideal inductor consumes zero net active electrical energy and converts zero energy into heat.\n\n3. Magnetic Energy Exchange: During the first quarter-cycle (when v and i have the same polarity, p > 0), electrical energy is drawn from the AC source and stored in the inductor’s magnetic field: W = ½ L [i(t)]². During the next quarter-cycle (when polarity reverses, p < 0), the magnetic field collapses and 100% of the stored energy is returned to the AC generator. This reversible sloshing of energy is quantified as Reactive Power (Q = Vrms · Irms in VAR, lagging).',
+        hi: 'शुद्ध प्रेरक द्वारा अवशोषित तात्कालिक शक्ति p(t) तात्कालिक वोल्टेज और धारा का गुणनफल होती है:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [-Im · cos(ωt)] = -(Vm · Im / 2) · sin(2ωt) = -Vrms · Irms · sin(2ωt)\n\nइंडक्टिव पावर के महत्वपूर्ण वैज्ञानिक तथ्य:\n1. दोगुनी आवृत्ति पर दोलन (2f): तात्कालिक शक्ति स्रोत की आवृत्ति से दोगुनी आवृत्ति पर दोलन करती है (50 Hz प्रणाली में 100 Hz पर)।\n\n2. शून्य औसत सक्रिय शक्ति (P = 0 W): तात्कालिक शक्ति वक्र के धनात्मक और ऋणात्मक अर्ध-चक्र पूर्णतः समान होते हैं। एक पूर्ण चक्र पर औसत शक्ति शून्य होती है:\n\nP = Vrms · Irms · cos(-90°) = 0 वाट।\nएक आदर्श प्रेरक कभी भी सक्रिय शक्ति का क्षय (ऊष्मा के रूप में) नहीं करता।\n\n3. चुंबकीय ऊर्जा विनिमय: पहले चौथाई चक्र में (p > 0) स्रोत से ऊर्जा लेकर चुंबकीय क्षेत्र W = ½ L i² के रूप में संचित होती है। अगले चौथाई चक्र में (p < 0) चुंबकीय फ्लक्स समाप्त होकर 100% ऊर्जा स्रोत को वापस लौट जाती है। इस ऊर्जा के दोलन को रिएक्टिव पावर (Q = V · I VAR, लैगिंग) कहा जाता है।',
+        bn: 'বিশুদ্ধ আবেশকে শোষিত তাৎক্ষণিক ক্ষমতা p(t) হলো তাৎক্ষণিক ভোল্টেজ ও কারেন্টের গুণফল:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [-Im · cos(ωt)] = -(Vm · Im / ২) · sin(২ωt) = -Vrms · Irms · sin(২ωt)\n\nপাওয়ার সম্পর্কিত মূল সিদ্ধান্তসমূহ:\n১. দ্বিগুণ কম্পাঙ্কে স্পন্দন (2f): তাৎক্ষণিক ক্ষমতা মূল এসি উৎসের দ্বিগুণ ফ্রিকোয়েন্সিতে স্পন্দিত হয় (৫০ Hz উৎসের জন্য ১০০ Hz)।\n\n২. শূন্য গড় সক্রিয় ক্ষমতা (P = ০ W): তাৎক্ষণিক পাওয়ার তরঙ্গের ধনাত্মক ও ঋণাত্মক উভয় অর্ধাংশ সম্পূর্ণ সমান ক্ষেত্রফলবিশিষ্ট। ফলে এক পূর্ণ চক্রে গড় সক্রিয় ক্ষমতা:\n\nP = Vrms · Irms · cos(-৯০°) = ০ ওয়াট।\nএকটি আদর্শ আবেশক কার্যকরভাবে কোনো শক্তি অপচয় বা তাপে রূপান্তর করে না।\n\n৩. চৌম্বক শক্তি বিনিময়: চক্রের প্রথম এক-চতুর্থাংশে কয়েলে চৌম্বক ক্ষেত্র W = ½ L i² তৈরি হয়ে শক্তি সঞ্চিত হয় (p > ০)। পরবর্তী এক-চতুর্থাংশে চৌম্বক ক্ষেত্র ভেঙে পড়ে সঞ্চিত শক্তি সম্পূর্ণ উৎসে ফিরে যায় (p < ০)। এই শক্তি আদান-প্রদানকে রিঅ্যাক্টিভ ক্ষমতা (Q = V · I VAR) বলে।'
+      },
+      keyEquations: [
+        'p(t) = -Vrms · Irms · sin(2ωt)',
+        'P_avg = Vrms · Irms · cos(-90°) = 0 W',
+        'Power Factor = cos(-90°) = 0.0 (Lagging)',
+        '|Q| = Vrms · Irms (VAR, Lagging)',
+        'W_max = ½ L Im² (Joules)'
+      ]
+    }
+  ],
+  formulas: [
+    {
+      symbol: 'X_L',
+      expression: 'X_L = 2 · \\pi · f · L = \\omega · L',
+      description: {
+        en: 'Inductive Reactance: calculates the opposition in Ohms offered by an inductor of inductance L at frequency f.',
+        hi: 'इंडक्टिव रिएक्टेंस: आवृत्ति f पर L प्रेरकत्व वाले प्रेरक द्वारा प्रस्तुत विरोध (ओम में) की गणना करता है।',
+        bn: 'ইন্ডাক্টিভ রিঅ্যাকট্যান্স: f কম্পাঙ্কে L মানের আবেশকের ওহমিক বাধা গণনা করে।'
+      }
+    },
+    {
+      symbol: 'I_{rms}',
+      expression: 'I_{rms} = \\frac{V_{rms}}{X_L} = \\frac{V_{rms}}{2\\pi f L}',
+      description: {
+        en: 'Inductive RMS Current: determines the effective alternating current flowing through the inductor from RMS voltage and reactance.',
+        hi: 'इंडक्टिव RMS धारा: RMS वोल्टेज और रिएक्टेंस से प्रेरक में प्रवाहित होने वाली प्रभावी प्रत्यावर्ती धारा की गणना करता है।',
+        bn: 'ইন্ডাক্টিভ আরএমএস কারেন্ট: আরএমএস ভোল্টেজ ও রিঅ্যাকট্যান্সের সাহায্যে আবেশকে প্রবাহিত কার্যকরী কারেন্ট নির্ণয় করে।'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'AC Filter Chokes: Used in rectifier power supplies to attenuate high-frequency AC ripple while freely passing pure DC.',
+      'Fluorescent Lamp Ballasts: Traditional inductive ballasts limit operating lamp arc current without wasting power as heat (unlike resistors).',
+      'Induction Motors & Transformers: Stator and primary windings operate primarily on inductive magnetization principles.',
+      'Current-Limiting Reactors: Heavy industrial air-core reactors installed in substations to limit prospective short-circuit fault currents.'
+    ],
+    hi: [
+      'एसी फिल्टर चोक: रेक्टिफायर पावर सप्लाई में उच्च आवृत्ति एसी रिपल को रोककर शुद्ध डीसी को आगे जाने देने के लिए।',
+      'फ्लोरोसेंट लैंप बैलास्ट: पारंपरिक चोक कॉइल बिना ऊष्मा अपव्यय किए लैंप करंट को सुरक्षित रूप से सीमित करती है।',
+      'इंडक्शन मोटर और ट्रांसफार्मर: इनके प्राथमिक वाइंडिंग चुंबकीय फ्लक्स स्थापित करने के लिए शुद्ध प्रेरकत्व सिद्धांत पर कार्य करते हैं।',
+      'करंट-लिमिटिंग रिएक्टर: सबस्टेशनों में शॉर्ट-सर्किट फॉल्ट करंट को सुरक्षित सीमा में रखने के लिए स्थापित विशाल रिएक्टर।'
+    ],
+    bn: [
+      'এসি ফিল্টার চোক: রেকটিফায়ার পাওয়ার সাপ্লাইয়ে উচ্চ কম্পাঙ্কের এসি রিপল দমন করে বিশুদ্ধ ডিসি নির্গমনে ব্যবহৃত হয়।',
+      'টিউবলাইট ব্যালাস্ট: রোধকের মতো তাপ অপচয় না করে নিরাপদ কারেন্ট নিয়ন্ত্রক হিসেবে কাজ করে।',
+      'ইন্ডাকশন মোটর ও ট্রান্সফরমার: প্রাইমারি ওয়াইন্ডিংয়ে চৌম্বক ফ্লাক্স তৈরিতে আবেশক ক্রিয়া ব্যবহৃত হয়।',
+      'কারেন্ট লিমিটিং রিঅ্যাক্টর: সাবস্টেশনে শর্ট-সার্কিট ত্রুটির সময় বিপজ্জনক অতিরিক্ত কারেন্ট নিয়ন্ত্রণে ব্যবহৃত হয়।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'In a pure inductor, current strictly lags applied voltage by 90° (φ = -90° or -π/2 radians).',
+      'Inductive reactance XL = 2πfL is directly proportional to frequency (XL ∝ f).',
+      'An ideal inductor acts as a short circuit (XL = 0 Ω) to direct current (DC, f = 0 Hz).',
+      'Average active power dissipated is strictly zero (P = 0 W, Power Factor = 0.0 lagging).',
+      'Instantaneous power oscillates at twice the supply frequency (2f) between +V·I and -V·I.'
+    ],
+    hi: [
+      'शुद्ध प्रेरक में धारा वोल्टेज से ठीक 90° पीछे (लैग) रहती है (φ = -90°)।',
+      'इंडक्टिव रिएक्टेंस XL = 2πfL आवृत्ति के सीधे समानुपाती होता है (XL ∝ f)।',
+      'स्थिर दिष्ट धारा (DC, f = 0 Hz) के लिए आदर्श प्रेरक शॉर्ट सर्किट (XL = 0 Ω) का कार्य करता है।',
+      'औसत सक्रिय शक्ति क्षय शून्य होता है (P = 0 W, पावर फैक्टर = 0.0 लैगिंग)।',
+      'तात्कालिक शक्ति आपूर्ति आवृत्ति की दोगुनी आवृत्ति (2f) पर दोलन करती है।'
+    ],
+    bn: [
+      'বিশুদ্ধ আবেশকে প্রবাহিত কারেন্ট ভোল্টেজের চেয়ে ঠিক ৯০° পিছিয়ে (ল্যাগ করে) থাকে (φ = -৯০°)।',
+      'ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL = 2πfL ফ্রিকোয়েন্সির সরাসরি সমানুপাতিক (XL ∝ f)।',
+      'স্থির ডিসি (f = ০ Hz) উৎসের জন্য আদর্শ আবেশক শর্ট সার্কিট (XL = ০ Ω) হিসেবে কাজ করে।',
+      'গড় সক্রিয় ক্ষমতা ক্ষয় শূন্য (P = ০ W, পাওয়ার ফ্যাক্টর = ০.০ ল্যাগিং)।',
+      'তাৎক্ষণিক ক্ষমতা মূল কম্পাঙ্কের দ্বিগুণ (2f) হারে স্পন্দিত হয়।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Confusing phase direction: saying "voltage lags current" instead of the correct fact that "current lags voltage by 90°" (remember mnemonic ELI: E leads I in L).',
+      'Assuming an inductor dissipates active thermal energy: an ideal inductor consumes 0 Watts; energy is stored in magnetic fields, not converted to heat.',
+      'Forgetting that XL depends on frequency: assuming an inductor behaves the same at 50 Hz as at 500 Hz or DC.'
+    ],
+    hi: [
+      'फेज दिशा में भ्रम: "वोल्टेज धारा से लैग करता है" कहना, जबकि सही तथ्य यह है कि "धारा वोल्टेज से 90° लैग करती है" (याद रखें ELI: L में E आगे है I से)।',
+      'यह मान लेना कि प्रेरक ऊष्मा पैदा करता है: आदर्श प्रेरक 0 वाट सक्रिय शक्ति लेता है; ऊर्जा केवल चुंबकीय रूप में संचित होती है।',
+      'यह भूल जाना कि XL आवृत्ति पर निर्भर करता है: 50 Hz और 500 Hz पर विरोध अलग-अलग होगा।'
+    ],
+    bn: [
+      'ফেজের দিক গুলিয়ে ফেলা: কারেন্ট ভোল্টেজের চেয়ে ৯০° পিছিয়ে থাকে, ভোল্টেজ নয় (স্মরণ রাখুন ELI: L-এ E বা ভোল্টেজ I এর চেয়ে এগিয়ে)।',
+      'মনে করা আবেশক তাপ শক্তি অপচয় করে: একটি আদর্শ আবেশক ০ ওয়াট শক্তি ব্যয় করে; শক্তি শুধু চৌম্বক ক্ষেত্রে জমা থাকে।',
+      'XL এর ফ্রিকোয়েন্সি নির্ভরতা উপেক্ষা করা: ৫০ Hz এবং ৫০০ Hz এ এর বাধা সম্পূর্ণ ভিন্ন হবে।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'quiz-ch5-l7-1',
+      question: {
+        en: 'In a pure inductive AC circuit, the phase relationship between current and voltage is:',
+        hi: 'एक शुद्ध इंडक्टिव एसी परिपथ में धारा और वोल्टेज के बीच फेज संबंध क्या होता है?',
+        bn: 'একটি বিশুদ্ধ ইন্ডাক্টিভ এসি সার্কিটে কারেন্ট ও ভোল্টেজের মধ্যকার ফেজ সম্পর্ক কোনটি?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Current lags voltage by 90° (π/2 rad)', hi: 'धारा वोल्टेज से 90° लैग करती है', bn: 'কারেন্ট ভোল্টেজের চেয়ে ৯০° ল্যাগ করে' } },
+        { id: 'opt-b', text: { en: 'Current leads voltage by 90° (π/2 rad)', hi: 'धारा वोल्टेज से 90° लीड करती है', bn: 'কারেন্ট ভোল্টেজের চেয়ে ৯০° লিড করে' } },
+        { id: 'opt-c', text: { en: 'Current is in phase with voltage (0°)', hi: 'धारा और वोल्टेज समान फेज में होते हैं (0°)', bn: 'কারেন্ট ও ভোল্টেজ একই ফেজে থাকে (০°)' } },
+        { id: 'opt-d', text: { en: 'Current lags voltage by 180° (π rad)', hi: 'धारा वोल्टेज से 180° लैग करती है', bn: 'কারেন্ট ভোল্টেজের চেয়ে ১৮০° ল্যাগ করে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'By Faraday\'s and Lenz\'s laws, back EMF causes current i(t) = Im sin(ωt - 90°), which strictly lags voltage by 90° (ELI mnemonic).',
+        hi: 'फैराडे और लेन्ज के नियम के अनुसार i(t) = Im sin(ωt - 90°) होता है, जिससे धारा वोल्टेज से ठीक 90° पीछे (लैग) रहती है।',
+        bn: 'ফ্যারাডে ও লেঞ্জের সূত্রানুযায়ী ব্যাক-ইএমএফ এর কারণে কারেন্ট i(t) = Im sin(ωt - ৯০°), যা ভোল্টেজের চেয়ে ৯০° ল্যাগ করে।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l7-2',
+      question: {
+        en: 'If the AC supply frequency connected to a pure inductor is tripled (3f), its inductive reactance (XL) will:',
+        hi: 'यदि किसी शुद्ध प्रेरक से जुड़े एसी स्रोत की आवृत्ति तीन गुनी (3f) कर दी जाए, तो इसका इंडक्टिव रिएक्टेंस (XL):',
+        bn: 'বিশুদ্ধ আবেশকে যুক্ত এসি উৎসের কম্পাঙ্ক তিনগুণ (3f) করা হলে এর ইন্ডাক্টিভ রিঅ্যাকট্যান্স (XL):'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Become 3 times larger', hi: '3 गुना बढ़ जाएगा', bn: '৩ গুণ বৃদ্ধি পাবে' } },
+        { id: 'opt-b', text: { en: 'Reduce to one-third (1/3)', hi: 'एक-तिहाई (1/3) रह जाएगा', bn: 'এক-তৃতীয়াংশ (১/৩) হবে' } },
+        { id: 'opt-c', text: { en: 'Remain unchanged', hi: 'अपरिवर्तित रहेगा', bn: 'অপরিবর্তিত থাকবে' } },
+        { id: 'opt-d', text: { en: 'Become 9 times larger', hi: '9 गुना बढ़ जाएगा', bn: '৯ গুণ বৃদ্ধি পাবে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Since XL = 2πfL, reactance is directly proportional to frequency (XL ∝ f). Tripling f triples XL.',
+        hi: 'चूँकि XL = 2πfL होता है, अतः XL आवृत्ति के सीधे समानुपाती है। f को 3 गुना करने पर XL भी 3 गुना हो जाएगा।',
+        bn: 'যেহেতু XL = 2πfL, তাই রিঅ্যাকট্যান্স ফ্রিকোয়েন্সির সরাসরি সমানুপাতিক। f তিনগুণ হলে XL ও ৩ গুণ হবে।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l7-3',
+      question: {
+        en: 'The average active power (P) dissipated by a pure inductor connected across a 230 V, 50 Hz AC supply is:',
+        hi: '230 V, 50 Hz एसी स्रोत से जुड़े शुद्ध प्रेरक द्वारा क्षयित औसत सक्रिय शक्ति (P) कितनी होती है?',
+        bn: '২৩০ V, ৫০ Hz এসি উৎসের সাথে যুক্ত একটি বিশুদ্ধ আবেশকের অপচয়িত গড় সক্রিয় ক্ষমতা কত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '0 Watts', hi: '0 वाट', bn: '০ ওয়াট' } },
+        { id: 'opt-b', text: { en: '230 Watts', hi: '230 वाट', bn: '২৩০ ওয়াট' } },
+        { id: 'opt-c', text: { en: '115 Watts', hi: '115 वाट', bn: '১১৫ ওয়াট' } },
+        { id: 'opt-d', text: { en: 'Infinity', hi: 'अनंत', bn: 'অসীম' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'P = V · I · cos(φ). For a pure inductor, φ = -90°, so cos(-90°) = 0.0. Average active power is strictly 0 W.',
+        hi: 'P = V · I · cos(-90°) = V · I · (0) = 0 W। शुद्ध प्रेरक कोई सक्रिय शक्ति नष्ट नहीं करता।',
+        bn: 'P = V · I · cos(-৯০°) = ০ W। বিশুদ্ধ আবেশকে গড় সক্রিয় ক্ষমতার কোনো অপচয় হয় না।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-ch5-l7-1',
+      question: {
+        en: 'A pure inductor having an inductance of L = 0.318 H (approx 1/π H) is connected across a 230 V, 50 Hz AC supply. Calculate: (a) Inductive reactance XL, (b) RMS current Irms, (c) Peak current Im, (d) Active power P, (e) Reactive power Q, (f) Write the instantaneous equations for voltage v(t) and current i(t).',
+        hi: 'L = 0.318 H (लगभग 1/π H) का एक शुद्ध प्रेरक 230 V, 50 Hz एसी स्रोत से जुड़ा है। गणना करें: (a) इंडक्टिव रिएक्टेंस XL, (b) RMS धारा Irms, (c) शिखर धारा Im, (d) सक्रिय शक्ति P, (e) रिएक्टिव शक्ति Q, (f) वोल्टेज v(t) एवं धारा i(t) के तात्कालिक समीकरण लिखें।',
+        bn: 'L = ০.৩১৮ H মানের একটি বিশুদ্ধ আবেশক ২৩০ V, ৫০ Hz এসি লাইনের সাথে সংযুক্ত। নির্ণয় করুন: (a) ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL, (b) আরএমএস কারেন্ট Irms, (c) শীর্ষ কারেন্ট Im, (d) সক্রিয় ক্ষমতা P, (e) রিঅ্যাক্টিভ ক্ষমতা Q, (f) ভোল্টেজ v(t) ও কারেন্ট i(t) এর তাৎক্ষণিক সমীকরণ।'
+      },
+      hint: {
+        en: 'XL = 2 · π · 50 · 0.318 = 100 Ω. Irms = 230 / 100 = 2.3 A. Im = √2 · 2.3 = 3.25 A. Vm = √2 · 230 = 325.27 V. P = 0 W. Q = 230 × 2.3 = 529 VAR lagging.',
+        hi: 'XL = 2π × 50 × 0.318 = 100 Ω। Irms = 230 / 100 = 2.3 A। Im = 2.3 × √2 = 3.25 A। v(t) = 325.3 sin(314.16 t), i(t) = 3.25 sin(314.16 t - 90°)।',
+        bn: 'XL = ২π × ৫০ × ০.৩১৮ = ১০০ Ω। Irms = ২৩০ / ১০০ = ২.৩ A। Im = ২.৩ × √২ = ৩.২৫ A। P = ০ W, Q = ৫২৯ VAR ল্যাগিং।'
+      },
+      answerKey: {
+        en: '(a) Inductive Reactance XL = 2πfL = 2 × π × 50 × 0.3183 = 100.0 Ω.\n(b) RMS Current Irms = Vrms / XL = 230 / 100.0 = 2.30 A.\n(c) Peak Current Im = √2 × Irms = 1.4142 × 2.30 = 3.253 A.\n(d) Active Power P = Vrms · Irms · cos(-90°) = 230 × 2.30 × 0 = 0.0 W.\n(e) Reactive Power Q = Vrms · Irms = 230 × 2.30 = 529.0 VAR (Lagging).\n(f) Peak voltage Vm = √2 × 230 = 325.27 V, ω = 2π(50) = 314.16 rad/s.\n  v(t) = 325.27 sin(314.16 t) V\n  i(t) = 3.253 sin(314.16 t - 90°) A (or -3.253 cos(314.16 t) A).',
+        hi: '(a) इंडक्टिव रिएक्टेंस XL = 2π(50)(0.318) = 100 Ω।\n(b) RMS धारा Irms = 230 / 100 = 2.30 A।\n(c) शिखर धारा Im = √2 × 2.30 = 3.25 A।\n(d) सक्रिय शक्ति P = 0 W।\n(e) रिएक्टिव शक्ति Q = 230 × 2.30 = 529 VAR (लैगिंग)।\n(f) v(t) = 325.3 sin(314.16 t) V, i(t) = 3.25 sin(314.16 t - 90°) A।',
+        bn: '(a) ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL = ২π × ৫০ × ০.৩১৮ = ১০০ Ω।\n(b) আরএমএস কারেন্ট Irms = ২৩০ / ১০০ = ২.৩০ A।\n(c) পিক কারেন্ট Im = √২ × ২.৩০ = ৩.২৫ A।\n(d) সক্রিয় ক্ষমতা P = ০ W।\n(e) রিঅ্যাক্টিভ ক্ষমতা Q = ৫২৯ VAR (ল্যাগিং)।\n(f) v(t) = ৩২৫.৩ sin(৩১৪.১৬ t) V, i(t) = ৩.২৫ sin(৩১৪.১৬ t - ৯০°) A।'
+      }
+    }
+  ]
+};
+
+export const LESSON_AC_CAPACITOR: Lesson = {
+  id: 'lsn-ch5-ac-capacitor',
+  topicId: 'ch5-ac-capacitor',
+  chapterId: 'ch-alternating-current',
+  title: {
+    en: 'Pure Capacitive AC Circuit',
+    hi: 'शुद्ध कैपेसिटिव एसी परिपथ',
+    bn: 'বিশুদ্ধ ক্যাপাসিটিভ এসি বর্তনী'
+  },
+  description: {
+    en: 'In-depth engineering analysis of pure capacitive AC circuits: capacitive reactance XC = 1/(2πfC), current leading voltage by 90°, electrostatic field energy exchange, zero active power dissipation, and DC blocking behavior.',
+    hi: 'शुद्ध कैपेसिटिव एसी परिपथ का गहन इंजीनियरिंग विश्लेषण: कैपेसिटिव रिएक्टेंस XC = 1/(2πfC), धारा का वोल्टेज से 90° लीड, स्थिरवैद्युत क्षेत्र ऊर्जा विनिमय, शून्य सक्रिय शक्ति एवं डीसी ब्लॉकिंग व्यवहार।',
+    bn: 'বিশুদ্ধ ক্যাপাসিটিভ এসি বর্তনীর পূর্ণাঙ্গ বিশ্লেষণ: ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC = 1/(2πfC), কারেন্টের ভোল্টেজের তুলনায় ৯০° অগ্রগমন (লিড), স্থিরবৈদ্যুতিক শক্তি বিনিময়, শূন্য সক্রিয় ক্ষমতা অপচয় এবং ডিসি ব্লকিং বৈশিষ্ট্য।'
+  },
+  estimatedMinutes: 28,
+  sections: [
+    {
+      id: 'sec-ch5-l8-1',
+      title: {
+        en: '1. Concept of an Ideal Pure Capacitor in AC Circuits',
+        hi: '1. एसी परिपथ में आदर्श शुद्ध संधारित्र (Pure Capacitor) की अवधारणा',
+        bn: '১. এসি বর্তনীতে আদর্শ বিশুদ্ধ ধারকের (Pure Capacitor) ধারণা'
+      },
+      content: {
+        en: 'A pure capacitive AC circuit comprises a capacitor of capacitance C (measured in Farads, F) separated by an ideal dielectric having infinite insulation resistance (leakage resistance R_leak = ∞ Ω) and strictly zero series lead resistance (ESR = 0 Ω).\n\nWhen connected to a constant DC source, a capacitor draws current only briefly until charged to the source voltage, after which the steady DC current drops to zero because the dielectric forms a physical open circuit. However, when connected to an alternating voltage source v(t) = Vm · sin(ωt), the continuous rise and fall of applied voltage forces electric charge q(t) to flow continuously back and forth between the conductive plates. This continuous charging and discharging constitutes alternating current flow in the external circuit, even though no electrons actually pass across the insulating dielectric.',
+        hi: 'एक शुद्ध कैपेसिटिव एसी परिपथ में एक ऐसा संधारित्र (कैपेसिटर) होता है जिसकी धारिता C (फैराड, F) होती है और जिसकी प्लेटों के बीच का परावैद्युत (Dielectric) पूर्णतः आदर्श होता है (अनंत इन्सुलेशन प्रतिरोध R_leak = ∞ Ω तथा शून्य समतुल्य श्रेणी प्रतिरोध ESR = 0 Ω)।\n\nजब संधारित्र को किसी डीसी स्रोत से जोड़ा जाता है, तो वह केवल चार्ज होने तक क्षणिक धारा लेता है और फिर पूर्णतः धारा को रोक देता है (ओपन सर्किट बन जाता है)। किन्तु जब इस पर प्रत्यावर्ती वोल्टेज v(t) = Vm · sin(ωt) लगाया जाता है, तो वोल्टेज के निरंतर बदलने के कारण संधारित्र की प्लेटों पर आवेश q(t) लगातार घटता-बढ़ता रहता है। इस निरंतर चार्जिंग और डिस्चार्जिंग प्रक्रिया के कारण बाह्य परिपथ में निरंतर एसी धारा प्रवाहित होती रहती है, यद्यपि कोई भी इलेक्ट्रॉन परावैद्युत माध्यम के आर-पार नहीं जाता।',
+        bn: 'একটি বিশুদ্ধ ক্যাপাসিটিভ এসি বর্তনী C ধারকত্ববিশিষ্ট (ফ্যারাড, F) একটি ক্যাপাসিটর নিয়ে গঠিত যার দুই পাতের মাঝের ডাই-ইলেকট্রিক মাধ্যমটি সম্পূর্ণ ত্রুটিহীন (অসীম ইনসুলেশন রোধ R_leak = ∞ Ω এবং শূন্য অভ্যন্তরীণ রোধ ESR = ০ Ω)।\n\nস্থির ডিসি উৎসের সাথে যুক্ত থাকলে ক্যাপাসিটরটি চার্জ হওয়া পর্যন্ত ক্ষণিকের জন্য কারেন্ট নেয় এবং পূর্ণ চার্জিত হয়ে ডিসি কারেন্ট সম্পূর্ণ বন্ধ করে দেয় (ওপেন সার্কিট হিসেবে থাকে)। কিন্তু যখন পরিবর্তনশীল এসি ভোল্টেজ v(t) = Vm · sin(ωt) প্রয়োগ করা হয়, তখন ভোল্টেজের ক্রমাগত হ্রাস-বৃদ্ধির ফলে ক্যাপাসিটরের পাতে চার্জ q(t) অনবরত জমা ও নির্গত হতে থাকে। এই অবিরাম চার্জ ও ডিসচার্জ প্রক্রিয়ার ফলেই বহিস্থ সার্কিটে নিরবচ্ছিন্ন এসি কারেন্ট প্রবাহিত হয়।'
+      },
+      schematicId: 'circuit-pure-capacitor'
+    },
+    {
+      id: 'sec-ch5-l8-2',
+      title: {
+        en: '2. Mathematical Derivation of Voltage-Current Phase Lead (+90°)',
+        hi: '2. वोल्टेज-धारा +90° फेज लीड का गणितीय निगमन',
+        bn: '২. ভোল্টেজ-কারেন্ট +৯০° ফেজ লিডের গাণিতিক প্রতিপাদন'
+      },
+      content: {
+        en: 'At any instant of time t, the electric charge stored on the capacitor plates is proportional to the instantaneous voltage v(t) across it:\n\nq(t) = C · v(t) = C · [Vm · sin(ωt)]\n\nBy fundamental definition, electric current is the time rate of change of electric charge:\n\ni(t) = dq/dt = d/dt [C · Vm · sin(ωt)] = C · Vm · ω · cos(ωt)\n\nUsing the fundamental trigonometric identity cos(θ) = sin(θ + 90°) = sin(θ + π/2):\n\ni(t) = (ω C Vm) · sin(ωt + 90°) = [Vm / (1 / (ωC))] · sin(ωt + π/2)\n\nDefining Capacitive Reactance as XC = 1 / (ωC) = 1 / (2πfC) (in Ohms, Ω), and peak current as Im = Vm / XC:\n\ni(t) = Im · sin(ωt + 90°) = Im · sin(ωt + π/2)\n\nPhysical Significance: In a pure capacitive circuit, alternating current i(t) strictly leads the applied voltage v(t) by exactly 90° (+π/2 radians or a quarter of a period, T/4). When the voltage is passing through zero and rising at maximum speed (maximum dv/dt), the current is already at its positive peak.',
+        hi: 'किसी भी क्षण t पर संधारित्र प्लेटों पर संचित आवेश उस पर आरोपित तात्कालिक वोल्टेज v(t) के समानुपाती होता है:\n\nq(t) = C · v(t) = C · [Vm · sin(ωt)]\n\nविद्युत धारा की मूल परिभाषा के अनुसार, धारा आवेश के प्रवाह की समय दर है:\n\ni(t) = dq/dt = d/dt [C · Vm · sin(ωt)] = ω C Vm · cos(ωt)\n\nत्रिकोणमितीय सूत्र cos(θ) = sin(θ + 90°) का उपयोग करने पर:\n\ni(t) = [Vm / (1 / (ωC))] · sin(ωt + 90°) = Im · sin(ωt + π/2)\n\nजहाँ कैपेसिटिव रिएक्टेंस XC = 1 / (ωC) = 1 / (2πfC) (ओम, Ω), तथा शिखर धारा Im = Vm / XC है।\n\nभौतिक निष्कर्ष: शुद्ध कैपेसिटिव परिपथ में प्रत्यावर्ती धारा i(t) आरोपित वोल्टेज v(t) से ठीक 90° (+π/2 रेडियन या T/4 चक्र) आगे (लीड) रहती है। जब वोल्टेज शून्य से गुजर रहा होता है और उसके बदलने की दर dv/dt सर्वाधिक होती है, उस समय धारा अपने अधिकतम शिखर पर होती है।',
+        bn: 'যেকোনো সময় t-তে ক্যাপাসিটরের পাতে জমা চার্জ প্রযুক্ত তাৎক্ষণিক ভোল্টেজ v(t) এর সমানুপাতিক:\n\nq(t) = C · v(t) = C · [Vm · sin(ωt)]\n\nতড়িৎ প্রবাহের সংজ্ঞানুযায়ী কারেন্ট হলো সময়ের সাপেক্ষে চার্জের পরিবর্তনের হার:\n\ni(t) = dq/dt = d/dt [C · Vm · sin(ωt)] = ω C Vm · cos(ωt)\n\nত্রিকোণমিতিক সূত্র cos(θ) = sin(θ + ৯০°) প্রয়োগ করে পাই:\n\ni(t) = [Vm / (১ / (ωC))] · sin(ωt + ৯০°) = Im · sin(ωt + π/২)\n\nযেখানে ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC = 1 / (ωC) = 1 / (2πfC) (ওহম, Ω), এবং শীর্ষ কারেন্ট Im = Vm / XC।\n\nভৌত তাৎপর্য: বিশুদ্ধ ক্যাপাসিটিভ সার্কিটে এসি কারেন্ট i(t) প্রযুক্ত ভোল্টেজ v(t) এর চেয়ে ঠিক ৯০° (+π/২ রেডিয়ান বা চক্রের এক-চতুর্থাংশ T/4 সময়) এগিয়ে (লিড করে) থাকে।'
+      },
+      keyEquations: [
+        'v(t) = Vm · sin(ωt)',
+        'i(t) = Im · sin(ωt + 90°)',
+        'XC = 1 / (2πfC) = 1 / (ωC) (Ω)',
+        'Im = Vm / XC  |  Irms = Vrms / XC',
+        'ZC = -j XC = XC ∠ -90° Ω'
+      ]
+    },
+    {
+      id: 'sec-ch5-l8-3',
+      title: {
+        en: '3. Capacitive Reactance (XC) and Frequency Response',
+        hi: '3. कैपेसिटिव रिएक्टेंस (XC) एवं आवृत्ति अनुक्रिया',
+        bn: '৩. ক্যাপাসিটিভ রিঅ্যাকট্যান্স (XC) এবং ফ্রিকোয়েন্সি নির্ভরতা'
+      },
+      content: {
+        en: 'Capacitive reactance XC represents the opposition offered by a capacitor to the flow of alternating current. It is measured in Ohms (Ω) and given by:\n\nXC = 1 / (2πfC) = 1 / (ωC)\n\nCritical Engineering Principles Across Frequencies:\n1. Inverse Proportionality (XC ∝ 1/f): Reactance is inversely proportional to frequency. As frequency increases, the capacitor charges and discharges much faster per unit time, resulting in higher current flow for the same voltage and consequently lower reactance. If frequency doubles, XC is halved.\n\n2. DC Blocking / Open Circuit (f = 0 Hz): For a steady direct current source (f = 0 Hz), XC = 1 / [2π(0)C] = 1 / 0 → ∞ Ω. A capacitor presents infinite resistance to steady DC, making it an ideal DC-blocking element (coupling capacitor in amplifiers).\n\n3. High-Frequency Bypass / Short Circuit (f → ∞): As supply frequency approaches very high frequencies, XC approaches zero (XC → 0 Ω). The capacitor acts as a dynamic AC short circuit, easily bypassing high-frequency noise and AC signals to ground (Bypass / Decoupling Capacitors).',
+        hi: 'कैपेसिटिव रिएक्टेंस (XC) प्रत्यावर्ती धारा के प्रवाह में संधारित्र द्वारा प्रस्तुत विरोध है। इसका मात्रक ओम (Ω) होता है और सूत्र है:\n\nXC = 1 / (2πfC) = 1 / (ωC)\n\nविभिन्न आवृत्तियों पर मुख्य गुणधर्म:\n1. व्युत्क्रमानुपाती संबंध (XC ∝ 1/f): कैपेसिटिव रिएक्टेंस आवृत्ति के व्युत्क्रमानुपाती होता है। उच्च आवृत्ति पर चार्जिंग-डिस्चार्जिंग चक्र बहुत तेज होता है, जिससे अधिक धारा प्रवाहित होती है और विरोध घट जाता है। यदि आवृत्ति दोगुनी कर दी जाए, तो XC आधा रह जाता है।\n\n2. डीसी ब्लॉकिंग / ओपन सर्किट (f = 0 Hz): स्थिर डीसी के लिए f = 0 होता है, जिससे XC = 1 / 0 = ∞ Ω हो जाता है। अतः संधारित्र डीसी के लिए अनंत विरोध प्रस्तुत करता है और डीसी को पूरी तरह ब्लॉक कर देता है।\n\n3. उच्च आवृत्ति बाईपास / शॉर्ट सर्किट (f → ∞): अत्यंत उच्च आवृत्ति पर XC लगभग शून्य (XC → 0 Ω) हो जाता है। संधारित्र उच्च आवृत्ति एसी तरंगों के लिए शॉर्ट सर्किट की तरह कार्य करके उन्हें आसानी से बाईपास कर देता है।',
+        bn: 'ক্যাপাসিটিভ রিঅ্যাকট্যান্স (XC) হলো এসি কারেন্ট প্রবাহে ক্যাপাসিটর কর্তৃক সৃষ্ট কার্যকর ওহমিক বাধা। এর একক ওহম (Ω) এবং এর সূত্র:\n\nXC = 1 / (2πfC) = 1 / (ωC)\n\nকম্পাঙ্ক পরিবর্তনের ফলাফল:\n১. ব্যস্তানুপাতিক সম্পর্ক (XC ∝ 1/f): কম্পাঙ্ক বৃদ্ধি পেলে চার্জিং ও ডিসচার্জিংয়ের হার দ্রুততর হয়, ফলে বেশি কারেন্ট প্রবাহিত হওয়ায় বাধা হ্রাস পায়। ফ্রিকোয়েন্সি দ্বিগুণ হলে XC অর্ধেক হয়ে যায়।\n\n২. ডিসি ব্লকিং / ওপেন সার্কিট (f = ০ Hz): স্থির ডিসির ক্ষেত্রে কম্পাঙ্ক শূন্য (f = ০), ফলে XC = ১ / ০ = ∞ Ω। অর্থাৎ ক্যাপাসিটর ডিসি প্রবাহকে সম্পূর্ণ আটকে দেয় (ব্লক করে)।\n\n৩. উচ্চ কম্পাঙ্কে বাইপাস (f → ∞): অতি উচ্চ কম্পাঙ্কে XC শূন্যের কাছাকাছি চলে আসে (XC → ০ Ω)। ফলে ক্যাপাসিটরটি উচ্চ কম্পাঙ্কের সিগন্যালের জন্য শর্ট সার্কিট হিসেবে কাজ করে সহজেই বাইপাস তৈরি করে দেয়।'
+      }
+    },
+    {
+      id: 'sec-ch5-l8-4',
+      title: {
+        en: '4. Instantaneous Power, Zero Active Dissipation & Electrostatic Energy Cycles',
+        hi: '4. तात्कालिक शक्ति, शून्य सक्रिय क्षय एवं स्थिरवैद्युत ऊर्जा चक्र',
+        bn: '৪. তাৎক্ষণিক ক্ষমতা, শূন্য সক্রিয় অপচয় এবং স্থিরবৈদ্যুতিক শক্তি চক্র'
+      },
+      content: {
+        en: 'The instantaneous power p(t) delivered to a pure capacitor is given by:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [Im · cos(ωt)] = (Vm · Im / 2) · sin(2ωt) = Vrms · Irms · sin(2ωt)\n\nEssential Physical Observations:\n1. Symmetrical Power Oscillation (2f): Instantaneous power is a pure sine wave pulsing at twice the line frequency (2f) with zero vertical offset.\n\n2. Zero Net Active Power (P = 0 W): The average power consumed over a complete cycle is strictly zero:\n\nP = Vrms · Irms · cos(+90°) = Vrms · Irms · (0) = 0 Watts.\nAn ideal capacitor dissipates zero active thermal energy.\n\n3. Reversible Electrostatic Field Storage: During charging (when v and i share identical polarities, p > 0), the source pumps energy into the capacitor dielectric, storing it in the electrostatic electric field: W = ½ C [v(t)]². During discharging (when polarities oppose, p < 0), the electric field discharges and returns 100% of stored energy back to the supply. This reactive power exchange is characterized as leading reactive power (Q < 0 or Leading VAR).',
+        hi: 'शुद्ध संधारित्र को दी गई तात्कालिक शक्ति p(t) का समीकरण है:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [Im · cos(ωt)] = (Vm · Im / 2) · sin(2ωt) = Vrms · Irms · sin(2ωt)\n\nप्रमुख भौतिक निष्कर्ष:\n1. सममित दोलन (2f): तात्कालिक शक्ति स्रोत की आवृत्ति से दोगुनी आवृत्ति (2f) पर एक शुद्ध ज्यावक्रीय तरंग के रूप में दोलन करती है।\n\n2. शून्य सक्रिय शक्ति (P = 0 W): एक पूर्ण चक्र में औसत शक्ति:\n\nP = Vrms · Irms · cos(+90°) = 0 वाट।\nएक आदर्श संधारित्र कोई वास्तविक तापीय ऊर्जा नष्ट नहीं करता।\n\n3. स्थिरवैद्युत ऊर्जा संचय: चार्जिंग के दौरान (p > 0) स्रोत से ऊर्जा लेकर परावैद्युत क्षेत्र में W = ½ C v² के रूप में संचित होती है। डिस्चार्जिंग के दौरान (p < 0) यह संचित ऊर्जा शत-प्रतिशत एसी स्रोत को वापस लौट जाती है। इसे लीडिंग रिएक्टिव पावर (Leading VAR) कहा जाता है।',
+        bn: 'বিশুদ্ধ ক্যাপাসিটরে প্রদত্ত তাৎক্ষণিক ক্ষমতার সমীকরণ:\n\np(t) = v(t) · i(t) = [Vm · sin(ωt)] · [Im · cos(ωt)] = (Vm · Im / ২) · sin(২ωt) = Vrms · Irms · sin(২ωt)\n\nবৈজ্ঞানিক সিদ্ধান্তসমূহ:\n১. দ্বিগুণ কম্পাঙ্কে স্পন্দন (2f): তাৎক্ষণিক ক্ষমতা মূল এসি লাইনের দ্বিগুণ কম্পাঙ্কে (2f) কোনো অফসেট ছাড়াই বিশুদ্ধ সাইন তরঙ্গ হিসেবে স্পন্দিত হয়।\n\n২. শূন্য গড় সক্রিয় ক্ষমতা (P = ০ W): এক পূর্ণ চক্রে গড় সক্রিয় ক্ষমতার মান:\n\nP = Vrms · Irms · cos(+৯০°) = ০ ওয়াট।\nএকটি আদর্শ ক্যাপাসিটরে কোনো তাপীয় সক্রিয় ক্ষমতার অপচয় হয় না।\n\n৩. স্থিরবৈদ্যুতিক শক্তি চক্র: চার্জিংয়ের সময় ক্যাপাসিটরের পাতে W = ½ C v² স্থিরবৈদ্যুতিক শক্তি সঞ্চিত হয় (p > ০)। ডিসচার্জিংয়ের সময় এই শক্তি সম্পূর্ণ উৎসে ফেরত চলে যায় (p < ০)। এই শক্তি আদান-প্রদানকে লিডিং রিঅ্যাক্টিভ ক্ষমতা (Leading VAR) বলা হয়।'
+      },
+      keyEquations: [
+        'p(t) = Vrms · Irms · sin(2ωt)',
+        'P_avg = Vrms · Irms · cos(+90°) = 0 W',
+        'Power Factor = cos(+90°) = 0.0 (Leading)',
+        '|Q| = Vrms · Irms (VAR, Leading)',
+        'W_max = ½ C Vm² (Joules)'
+      ]
+    }
+  ],
+  formulas: [
+    {
+      id: 'f-ch5-l8-1',
+      title: {
+        en: 'Capacitive Reactance',
+        hi: 'कैपेसिटिव रिएक्टेंस',
+        bn: 'ক্যাপাসিটিভ রিঅ্যাকট্যান্স'
+      },
+      formula: 'XC = 1 / (2 · π · f · C) = 1 / (ω · C)',
+      description: {
+        en: 'Calculates the opposition in Ohms offered by a capacitor of capacitance C at frequency f.',
+        hi: 'आवृत्ति f पर धारिता C वाले संधारित्र द्वारा प्रस्तुत विरोध (ओम में) की गणना करता है।',
+        bn: 'f কম্পাঙ্কে C ধারকত্ববিশিষ্ট ক্যাপাসিটরের ওহমিক বাধা গণনা করে।'
+      },
+      variables: [
+        { symbol: 'XC', name: { en: 'Capacitive Reactance (Ω)', hi: 'कैपेसिटिव रिएक्टेंस (Ω)', bn: 'ক্যাপাসিটিভ রিঅ্যাকট্যান্স (Ω)' } },
+        { symbol: 'f', name: { en: 'Frequency (Hz)', hi: 'आवृत्ति (Hz)', bn: 'কম্পাঙ্ক (Hz)' } },
+        { symbol: 'C', name: { en: 'Capacitance (F)', hi: 'धारिता (F)', bn: 'ধারকত্ব (F)' } },
+        { symbol: 'ω', name: { en: 'Angular Frequency (rad/s)', hi: 'कोणीय आवृत्ति (rad/s)', bn: 'কৌণিক কম্পাঙ্ক (rad/s)' } }
+      ]
+    },
+    {
+      id: 'f-ch5-l8-2',
+      title: {
+        en: 'Capacitive RMS Current',
+        hi: 'कैपेसिटिव RMS धारा',
+        bn: 'ক্যাপাসিটিভ আরএমএস কারেন্ট'
+      },
+      formula: 'Irms = Vrms / XC = Vrms · (2πfC)',
+      description: {
+        en: 'Calculates the effective current drawn by a capacitor connected across an AC voltage source.',
+        hi: 'एसी वोल्टेज स्रोत से जुड़े संधारित्र द्वारा ली जाने वाली प्रभावी धारा की गणना करता है।',
+        bn: 'এসি ভোল্টেজ উৎসের সাথে যুক্ত ক্যাপাসিটরের কার্যকরী কারেন্ট নির্ণয় করে।'
+      },
+      variables: [
+        { symbol: 'Irms', name: { en: 'RMS Current (A)', hi: 'RMS धारा (A)', bn: 'আরএমএস কারেন্ট (A)' } },
+        { symbol: 'Vrms', name: { en: 'RMS Voltage (V)', hi: 'RMS वोल्टेज (V)', bn: 'আরএমএস ভোল্টেজ (V)' } },
+        { symbol: 'XC', name: { en: 'Capacitive Reactance (Ω)', hi: 'कैपेसिटिव रिएक्टेंस (Ω)', bn: 'ক্যাপাসিটিভ রিঅ্যাকট্যান্স (Ω)' } }
+      ]
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Power Factor Correction: Shunt capacitor banks installed in industrial plants supply leading reactive power to cancel lagging inductive currents from induction motors.',
+      'Single-Phase Motor Starting: Run and start capacitors create an artificial 90° auxiliary phase shift in ceiling fans and domestic water pumps to generate starting torque.',
+      'DC Blocking and AC Coupling: Coupling capacitors in audio amplifiers pass alternating audio signals between stages while completely blocking DC bias voltages.',
+      'High-Frequency Noise Filtering: Bypass capacitors route high-frequency electrical switching noise directly to ground, stabilizing digital electronics.'
+    ],
+    hi: [
+      'पावर फैक्टर सुधार: औद्योगिक संयंत्रों में शंट कैपेसिटर बैंक इंडक्शन मोटरों के लैगिंग करंट को निष्प्रभावी करने के लिए लीडिंग रिएक्टिव पावर देते हैं।',
+      'सिंगल-फेज मोटर स्टार्टिंग: सीलिंग फैन और घरेलू पंपों में सहायक वाइंडिंग में 90° फेज शिफ्ट पैदा करके शुरुआती टॉर्क उत्पन्न करने के लिए।',
+      'डीसी ब्लॉकिंग एवं एसी कपलिंग: ऑडियो एम्पलीफायर में डीसी बायस वोल्टेज को रोकते हुए केवल एसी ऑडियो सिग्नल को आगे बढ़ाने के लिए।',
+      'शोर फिल्टरिंग: डिजिटल सर्किट में उच्च आवृत्ति के विद्युत शोर को सीधे ग्राउंड में बाईपास करने के लिए।'
+    ],
+    bn: [
+      'পাওয়ার ফ্যাক্টর উন্নতি: শিল্প কারখানায় ইন্ডাকশন মোটরের ল্যাগিং কারেন্ট প্রশমিত করতে শান্ট ক্যাপাসিটর ব্যাংক ব্যবহৃত হয়।',
+      'সিঙ্গেল-ফেজ মোটর স্টার্ট: সিলিং ফ্যান ও পাম্পের অক্সিলিয়ারি ওয়াইন্ডিংয়ে ৯০° ফেজ পার্থক্য সৃষ্টি করে স্টার্টিং টর্ক তৈরি করে।',
+      'ডিসি ব্লকিং ও এসি কাপলিং: অডিও অ্যামপ্লিফায়ারে ডিসি বায়াস ভোল্টেজ ব্লক করে শুধুমাত্র এসি অডিও সিগন্যাল পারাপারে ব্যবহৃত হয়।',
+      'উচ্চ কম্পাঙ্ক নয়েজ ফিল্টারিং: ডিজিটাল সার্কিটে ক্ষতিকারক উচ্চ কম্পাঙ্কের নয়েজ সরাসরি গ্রাউন্ডে বাইপাস করতে ব্যবহৃত হয়।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'In a pure capacitor, current strictly leads voltage by 90° (φ = +90° or +π/2 radians; mnemonic ICE: I leads E in C).',
+      'Capacitive reactance XC = 1/(2πfC) is inversely proportional to frequency (XC ∝ 1/f).',
+      'A capacitor blocks direct current completely (XC = ∞ Ω at f = 0 Hz, open circuit to DC).',
+      'Average active power dissipated in a pure capacitor is strictly zero (P = 0 W, Power Factor = 0.0 leading).',
+      'Instantaneous power oscillates at twice the supply frequency (2f) between +V·I and -V·I.'
+    ],
+    hi: [
+      'शुद्ध संधारित्र में धारा वोल्टेज से ठीक 90° आगे (लीड) रहती है (φ = +90°; याद रखें ICE: C में I आगे है E से)।',
+      'कैपेसिटिव रिएक्टेंस XC = 1/(2πfC) आवृत्ति के व्युत्क्रमानुपाती होता है (XC ∝ 1/f)।',
+      'संधारित्र दिष्ट धारा (DC) को पूरी तरह ब्लॉक कर देता है (f = 0 पर XC = ∞ Ω, ओपन सर्किट)।',
+      'औसत सक्रिय शक्ति क्षय शून्य होता है (P = 0 W, पावर फैक्टर = 0.0 लीडिंग)।',
+      'तात्कालिक शक्ति आपूर्ति आवृत्ति की दोगुनी आवृत्ति (2f) पर दोलन करती है।'
+    ],
+    bn: [
+      'বিশুদ্ধ ক্যাপাসিটরে কারেন্ট ভোল্টেজের চেয়ে ঠিক ৯০° এগিয়ে (লিড করে) থাকে (φ = +৯০°; স্মরণ রাখুন ICE: C-তে I বা কারেন্ট E এর চেয়ে এগিয়ে)।',
+      'ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC = 1/(2πfC) ফ্রিকোয়েন্সির ব্যস্তানুপাতিক (XC ∝ 1/f)।',
+      'ক্যাপাসিটর ডিসি প্রবাহকে সম্পূর্ণ ব্লক করে দেয় (f = ০ Hz এ XC = ∞ Ω, ওপেন সার্কিট)।',
+      'গড় সক্রিয় ক্ষমতা অপচয় শূন্য (P = ০ W, পাওয়ার ফ্যাক্টর = ০.০ লিডিং)।',
+      'তাৎক্ষণিক ক্ষমতা দ্বিগুণ ফ্রিকোয়েন্সিতে (2f) স্পন্দিত হয়।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Confusing phase lead vs lag: asserting that "voltage leads current" in a capacitor (remember ICE: Current I leads Voltage E in Capacitance C).',
+      'Assuming XC increases with frequency: XC decreases when frequency rises, unlike XL which increases.',
+      'Treating a capacitor as an open circuit to AC: a capacitor acts as an open circuit only to steady DC, not to alternating current.'
+    ],
+    hi: [
+      'लीड और लैग में भ्रम: संधारित्र में "वोल्टेज आगे है" समझ लेना (याद रखें ICE: संधारित्र C में धारा I वोल्टेज E से आगे होती है)।',
+      'यह सोचना कि आवृत्ति बढ़ने पर XC बढ़ता है: आवृत्ति बढ़ने पर XC घटता है, जबकि XL बढ़ता है।',
+      'एसी में संधारित्र को ओपन सर्किट समझ लेना: संधारित्र केवल स्थिर डीसी के लिए ओपन सर्किट होता है, एसी के लिए नहीं।'
+    ],
+    bn: [
+      'লিড ও ল্যাগের বিভ্রান্তি: ক্যাপাসিটরে ভোল্টেজ এগিয়ে থাকে ভাবা (স্মরণ রাখুন ICE: ক্যাপাসিটরে কারেন্ট ভোল্টেজের চেয়ে এগিয়ে)।',
+      'মনে করা ফ্রিকোয়েন্সি বাড়লে XC বাড়ে: ফ্রিকোয়েন্সি বাড়লে XC কমে, যেখানে XL বৃদ্ধি পায়।',
+      'এসি বর্তনীতে ক্যাপাসিটরকে ওপেন সার্কিট মনে করা: ক্যাপাসিটর কেবল স্থির ডিসির জন্য ওপেন সার্কিট।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'quiz-ch5-l8-1',
+      question: {
+        en: 'In a pure capacitive AC circuit, the phase angle between voltage and current is:',
+        hi: 'एक शुद्ध कैपेसिटिव एसी परिपथ में वोल्टेज और धारा के बीच का फेज कोण कितना होता है?',
+        bn: 'একটি বিশুদ্ধ ক্যাপাসিটিভ এসি সার্কিটে ভোল্টেজ ও কারেন্টের মধ্যবর্তী ফেজ কোণ কত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Current leads voltage by 90° (+π/2 rad)', hi: 'धारा वोल्टेज से 90° लीड करती है', bn: 'কারেন্ট ভোল্টেজের চেয়ে ৯০° এগিয়ে (লিড) থাকে' } },
+        { id: 'opt-b', text: { en: 'Current lags voltage by 90° (-π/2 rad)', hi: 'धारा वोल्टेज से 90° लैग करती है', bn: 'কারেন্ট ভোল্টেজের চেয়ে ৯০° পিছিয়ে (ল্যাগ) থাকে' } },
+        { id: 'opt-c', text: { en: 'Current and voltage are in phase (0°)', hi: 'धारा और वोल्टेज समान फेज में होते हैं (0°)', bn: 'কারেন্ট ও ভোল্টেজ ইন-ফেজে থাকে (০°)' } },
+        { id: 'opt-d', text: { en: 'Current is 180° out of phase with voltage', hi: 'धारा वोल्टेज से 180° विपरीत फेज में होती है', bn: 'কারেন্ট ভোল্টেজের সাথে ১৮০° বিপরীত ফেজে থাকে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Since current is proportional to dv/dt, i(t) = Im sin(ωt + 90°). Current leads voltage by 90° (ICE mnemonic).',
+        hi: 'चूँकि धारा i(t) = C(dv/dt) = Im sin(ωt + 90°) होती है, अतः धारा वोल्टेज से 90° आगे (लीड) रहती है।',
+        bn: 'যেহেতু কারেন্ট i(t) = C(dv/dt) = Im sin(ωt + ৯০°), তাই কারেন্ট ভোল্টেজের চেয়ে ৯০° লিড করে।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l8-2',
+      question: {
+        en: 'When a pure capacitor is connected across a steady DC voltage source (f = 0 Hz), its capacitive reactance is:',
+        hi: 'जब एक शुद्ध संधारित्र को स्थिर डीसी वोल्टेज स्रोत (f = 0 Hz) से जोड़ा जाता है, तो इसका कैपेसिटिव रिएक्टेंस कितना होता है?',
+        bn: 'যখন একটি বিশুদ্ধ ক্যাপাসিটরকে স্থির ডিসি ভোল্টেজ উৎসের (f = ০ Hz) সাথে যুক্ত করা হয়, তখন এর ক্যাপাসিটিভ রিঅ্যাকট্যান্স কত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Infinite (∞ Ω, blocks DC completely)', hi: 'अनंत (∞ Ω, डीसी को पूरी तरह रोकता है)', bn: 'অসীম (∞ Ω, ডিসি সম্পূর্ণ ব্লক করে)' } },
+        { id: 'opt-b', text: { en: 'Zero (0 Ω, short circuit)', hi: 'शून्य (0 Ω, शॉर्ट सर्किट)', bn: 'শূন্য (০ Ω, শর্ট সার্কিট)' } },
+        { id: 'opt-c', text: { en: '100 Ω', hi: '100 Ω', bn: '১০০ Ω' } },
+        { id: 'opt-d', text: { en: '1.0 Ω', hi: '1.0 Ω', bn: '১.০ Ω' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'XC = 1 / (2πfC). For DC, f = 0, so XC = 1 / 0 = ∞ Ω. The capacitor acts as an open circuit to steady DC.',
+        hi: 'XC = 1 / (2πfC)। डीसी के लिए f = 0 होने से XC = 1 / 0 = ∞ Ω होता है (ओपन सर्किट)।',
+        bn: 'XC = ১ / (২πfC)। ডিসির জন্য f = ০ হওয়ায় XC = ১ / ০ = ∞ Ω হয় (ওপেন সার্কিট)।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l8-3',
+      question: {
+        en: 'If the supply frequency to a capacitive circuit is doubled from 50 Hz to 100 Hz with constant voltage, the RMS current will:',
+        hi: 'यदि स्थिर वोल्टेज पर किसी कैपेसिटिव परिपथ की आपूर्ति आवृत्ति 50 Hz से बढ़ाकर 100 Hz (दोगुनी) कर दी जाए, तो RMS धारा:',
+        bn: 'স্থির ভোল্টেজে একটি ক্যাপাসিটিভ সার্কিটের কম্পাঙ্ক ৫০ Hz থেকে দ্বিগুণ করে ১০০ Hz করা হলে আরএমএস কারেন্ট:'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Double (become 2 times larger)', hi: 'दोगुनी (2 गुना) हो जाएगी', bn: 'দ্বিগুণ (২ গুণ) হবে' } },
+        { id: 'opt-b', text: { en: 'Halve (become 0.5 times)', hi: 'आधी (0.5 गुना) रह जाएगी', bn: 'অর্ধেক (০.৫ গুণ) হবে' } },
+        { id: 'opt-c', text: { en: 'Remain the same', hi: 'समान रहेगी', bn: 'একই থাকবে' } },
+        { id: 'opt-d', text: { en: 'Quadruple (become 4 times larger)', hi: 'चार गुनी हो जाएगी', bn: 'চার গুণ হবে' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Irms = Vrms / XC = Vrms · (2πfC). Current is directly proportional to frequency (I ∝ f). Doubling frequency doubles the current.',
+        hi: 'Irms = V · (2πfC)। धारा आवृत्ति के समानुपाती है। आवृत्ति दोगुनी होने पर धारा भी दोगुनी हो जाएगी।',
+        bn: 'Irms = V · (২πfC)। কারেন্ট ফ্রিকোয়েন্সির সরাসরি সমানুপাতিক। কম্পাঙ্ক দ্বিগুণ হলে কারেন্টও দ্বিগুণ হবে।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-ch5-l8-1',
+      question: {
+        en: 'A 31.83 µF capacitor (approx 100/π µF) is connected to a 230 V, 50 Hz AC supply. Calculate: (a) Capacitive reactance XC, (b) RMS current Irms, (c) Peak current Im, (d) Active power P, (e) Reactive power Q, (f) Write the instantaneous expressions for applied voltage v(t) and current i(t).',
+        hi: '31.83 µF का एक संधारित्र (लगभग 100/π µF) 230 V, 50 Hz एसी स्रोत से जुड़ा है। गणना करें: (a) कैपेसिटिव रिएक्टेंस XC, (b) RMS धारा Irms, (c) शिखर धारा Im, (d) सक्रिय शक्ति P, (e) रिएक्टिव शक्ति Q, (f) आरोपित वोल्टेज v(t) एवं धारा i(t) के तात्कालिक व्यंजक लिखें।',
+        bn: 'একটি ৩১.৮৩ µF ক্যাপাসিটর ২৩০ V, ৫০ Hz এসি উৎসের সাথে যুক্ত। নির্ণয় করুন: (a) ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC, (b) আরএমএস কারেন্ট Irms, (c) শীর্ষ কারেন্ট Im, (d) সক্রিয় ক্ষমতা P, (e) রিঅ্যাক্টিভ ক্ষমতা Q, (f) প্রযুক্ত ভোল্টেজ v(t) ও কারেন্ট i(t) এর তাৎক্ষণিক সমীকরণ।'
+      },
+      hint: {
+        en: 'XC = 1 / (2 · π · 50 · 31.83 × 10⁻⁶) = 100 Ω. Irms = 230 / 100 = 2.3 A. Im = √2 · 2.3 = 3.25 A. P = 0 W. Q = 529 VAR leading.',
+        hi: 'XC = 1 / (2π × 50 × 31.83×10⁻⁶) = 100 Ω। Irms = 230 / 100 = 2.3 A। Im = 3.25 A। P = 0 W। Q = 529 VAR (लीडिंग)।',
+        bn: 'XC = ১ / (২π × ৫০ × ৩১.৮৩×১০⁻⁶) = ১০০ Ω। Irms = ২৩০ / ১০০ = ২.৩ A। Im = ৩.২৫ A। P = ০ W। Q = ৫২৯ VAR (লিডিং)।'
+      },
+      answerKey: {
+        en: '(a) Capacitive Reactance XC = 1 / (2πfC) = 1 / (2 × π × 50 × 31.831 × 10⁻⁶) = 100.0 Ω.\n(b) RMS Current Irms = Vrms / XC = 230 / 100.0 = 2.30 A.\n(c) Peak Current Im = √2 × Irms = 1.4142 × 2.30 = 3.253 A.\n(d) Active Power P = Vrms · Irms · cos(+90°) = 230 × 2.30 × 0 = 0.0 W.\n(e) Reactive Power Q = Vrms · Irms = 230 × 2.30 = 529.0 VAR (Leading).\n(f) Peak voltage Vm = √2 × 230 = 325.27 V, ω = 2π(50) = 314.16 rad/s.\n  v(t) = 325.27 sin(314.16 t) V\n  i(t) = 3.253 sin(314.16 t + 90°) A (or +3.253 cos(314.16 t) A).',
+        hi: '(a) कैपेसिटिव रिएक्टेंस XC = 1 / (2π × 50 × 31.83×10⁻⁶) = 100.0 Ω।\n(b) RMS धारा Irms = 230 / 100 = 2.30 A।\n(c) शिखर धारा Im = √2 × 2.30 = 3.25 A।\n(d) सक्रिय शक्ति P = 0 W।\n(e) रिएक्टिव शक्ति Q = 230 × 2.30 = 529 VAR (लीडिंग)।\n(f) v(t) = 325.3 sin(314.16 t) V, i(t) = 3.25 sin(314.16 t + 90°) A।',
+        bn: '(a) ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC = ১০০.০ Ω।\n(b) আরএমএস কারেন্ট Irms = ২.৩০ A।\n(c) পিক কারেন্ট Im = ৩.২৫ A।\n(d) সক্রিয় ক্ষমতা P = ০ W।\n(e) রিঅ্যাক্টিভ ক্ষমতা Q = ৫২৯ VAR (লিডিং)।\n(f) v(t) = ৩২৫.৩ sin(৩১৪.১৬ t) V, i(t) = ৩.২৫ sin(৩১৪.১৬ t + ৯০°) A।'
+      }
+    }
+  ]
+};
+
+export const LESSON_REACTANCE_COMPARISON: Lesson = {
+  id: 'lsn-ch5-inductive-reactance',
+  topicId: 'ch5-inductive-reactance',
+  chapterId: 'ch-alternating-current',
+  title: {
+    en: 'Inductive Reactance vs. Capacitive Reactance',
+    hi: 'इंडक्टिव रिएक्टेंस बनाम कैपेसिटिव रिएक्टेंस',
+    bn: 'ইন্ডাক্টিভ রিঅ্যাকট্যান্স বনাম ক্যাপাসিটিভ রিঅ্যাকট্যান্স'
+  },
+  description: {
+    en: 'Comparative synthesis of inductive (XL = 2πfL) and capacitive (XC = 1/(2πfC)) reactances: physical nature, frequency dependency curves, complex impedance representations, and the equal reactance crossover frequency f₀.',
+    hi: 'इंडक्टिव (XL = 2πfL) और कैपेसिटिव (XC = 1/(2πfC)) रिएक्टेंस का तुलनात्मक विश्लेषण: भौतिक प्रकृति, आवृत्ति वक्र, सम्मिश्र प्रतिबाधा निरूपण एवं समान रिएक्टेंस क्रॉसओवर आवृत्ति f₀।',
+    bn: 'ইন্ডাক্টিভ (XL = 2πfL) এবং ক্যাপাসিটিভ (XC = 1/(2πfC)) রিঅ্যাকট্যান্সের তুলনামূলক বিশ্লেষণ: ভৌত প্রকৃতি, কম্পাঙ্ক নির্ভরতা রেখাচিত্র, জটিল ইম্পিড্যান্স এবং সমান রিঅ্যাকট্যান্স ক্রসওভার ফ্রিকোয়েন্সি f₀।'
+  },
+  estimatedMinutes: 26,
+  sections: [
+    {
+      id: 'sec-ch5-l9-1',
+      title: {
+        en: '1. The Physical Nature of Reactance (Opposition to AC)',
+        hi: '1. रिएक्टेंस की भौतिक प्रकृति (एसी का विरोध)',
+        bn: '১. রিঅ্যাকট্যান্সের ভৌত প্রকৃতি (এসি কারেন্টের বাধা)'
+      },
+      content: {
+        en: 'In electrical engineering, Reactance (symbol X, measured in Ohms, Ω) is the non-dissipative opposition offered by inductive and capacitive elements to the flow of alternating current. Unlike electrical Resistance (R), which irreversibly converts electrical energy into thermal heat energy via Joule heating (P = I²R), pure reactance stores electrical energy temporarily in electromagnetic fields and returns it completely to the circuit during every alternate quarter-cycle.\n\nTwo Fundamental Forms of Reactance Exist:\n1. Inductive Reactance (XL = 2πfL = ωL): Arises from the back electromotive force generated by a changing magnetic field in an inductor. In complex notation, its impedance is positive imaginary: ZL = +j XL = XL ∠ +90° Ω.\n\n2. Capacitive Reactance (XC = 1/(2πfC) = 1/(ωC)): Arises from the opposing electric potential established by accumulated electrostatic charge on capacitor plates. In complex notation, its impedance is negative imaginary: ZC = -j XC = (1/jωC) = XC ∠ -90° Ω.',
+        hi: 'विद्युत इंजीनियरिंग में, रिएक्टेंस (प्रतीक X, मात्रक ओम Ω) प्रेरकत्व एवं धारिता द्वारा प्रत्यावर्ती धारा के प्रवाह में प्रस्तुत किया जाने वाला गैर-तापीय (Non-dissipative) विरोध है। विद्युत प्रतिरोध (R) के विपरीत, जो विद्युत ऊर्जा को जूल प्रभाव (P = I²R) द्वारा अपरिवर्तनीय रूप से ऊष्मा में बदल देता है, शुद्ध रिएक्टेंस ऊर्जा को विद्युत-चुंबकीय क्षेत्रों में अस्थायी रूप से संचित करता है और अगले ही चौथाई चक्र में शत-प्रतिशत ऊर्जा परिपथ को वापस लौटा देता है।\n\nरिएक्टेंस के दो मूल रूप होते हैं:\n1. इंडक्टिव रिएक्टेंस (XL = 2πfL = ωL): बदलते चुंबकीय क्षेत्र द्वारा उत्पन्न विरोधी बैक EMF के कारण होता है। सम्मिश्र रूप में इसकी प्रतिबाधा धनात्मक काल्पनिक होती है: ZL = +j XL = XL ∠ +90° Ω।\n\n2. कैपेसिटिव रिएक्टेंस (XC = 1/(2πfC) = 1/(ωC)): संधारित्र प्लेटों पर संचित स्थिरवैद्युत आवेश द्वारा उत्पन्न विरोधी वोल्टेज के कारण होता है। सम्मिश्र रूप में इसकी प्रतिबाधा ऋणात्मक काल्पनिक होती है: ZC = -j XC = XC ∠ -90° Ω।',
+        bn: 'তড়িৎ প্রকৌশলে রিঅ্যাকট্যান্স (প্রতীক X, একক ওহম Ω) হলো আবেশক ও ধারক কর্তৃক পরিবর্তনশীল এসি কারেন্ট প্রবাহে প্রদত্ত অ-তাপীয় বাধা। রোধ (R) যেমন বিদ্যুৎ শক্তিকে তাপে (P = I²R) অপচয় করে, রিঅ্যাকট্যান্স তা করে না; বরং শক্তিকে সাময়িকভাবে তড়িচ্চৌম্বকীয় ক্ষেত্রে জমা রাখে এবং পরবর্তী এক-চতুর্থাংশ চক্রে সম্পূর্ণ শক্তি সার্কিটে ফেরত দেয়।\n\nরিঅ্যাকট্যান্সের দুটি মৌলিক রূপ:\n১. ইন্ডাক্টিভ রিঅ্যাকট্যান্স (XL = 2πfL = ωL): পরিবর্তনশীল চৌম্বক ক্ষেত্রজনিত ব্যাক-ইএমএফ এর কারণে সৃষ্টি হয়। জটিল রাশিতে এর মান ধনাত্মক কাল্পনিক: ZL = +j XL = XL ∠ +৯০° Ω।\n\n২. ক্যাপাসিটিভ রিঅ্যাকট্যান্স (XC = 1/(2πfC) = 1/(ωC)): ক্যাপাসিটর পাতে জমা হওয়া চার্জজনিত বিপরীত বিভবের কারণে সৃষ্টি হয়। জটিল রাশিতে এর মান ঋণাত্মক কাল্পনিক: ZC = -j XC = XC ∠ -৯০° Ω।'
+      },
+      schematicId: 'circuit-reactance-comparison'
+    },
+    {
+      id: 'sec-ch5-l9-2',
+      title: {
+        en: '2. Comparative Frequency Response Curves: XL vs. XC',
+        hi: '2. तुलनात्मक आवृत्ति अनुक्रिया वक्र: XL बनाम XC',
+        bn: '২. তুলনামূলক ফ্রিকোয়েন্সি রেসপন্স লেখচিত্র: XL বনাম XC'
+      },
+      content: {
+        en: 'The most defining contrast between XL and XC is their diametrically opposite variation with supply frequency f:\n\n1. Linear Proportionality of Inductive Reactance (XL ∝ f):\nPlotting XL against frequency produces a straight line passing through the origin (slope = 2πL). At f = 0 Hz (DC), XL = 0 Ω (short circuit). As f increases toward infinity, XL grows without bound (XL → ∞), increasingly suffocating high-frequency alternating currents.\n\n2. Rectangular Hyperbola of Capacitive Reactance (XC ∝ 1/f):\nPlotting XC against frequency produces an inverse rectangular hyperbola. At f = 0 Hz (DC), XC = 1/0 = ∞ Ω (open circuit). As f increases toward infinity, XC asymptotically plunges toward zero (XC → 0 Ω), freely conducting high-frequency currents.\n\nDual Engineering Complementarity: Inductors block high frequencies and pass DC, whereas capacitors block DC and pass high frequencies. This complementary duality forms the foundation of all electrical filter designs, audio crossovers, power factor correction systems, and tuned circuits.',
+        hi: 'XL और XC के बीच सबसे प्रमुख अंतर आपूर्ति आवृत्ति f के साथ उनके विपरीत व्यवहार का है:\n\n1. इंडक्टिव रिएक्टेंस का रैखिक संबंध (XL ∝ f):\nXL और आवृत्ति के बीच का ग्राफ मूल बिंदु से गुजरने वाली एक सीधी रेखा (ढाल = 2πL) होती है। f = 0 Hz (DC) पर XL = 0 Ω (शॉर्ट सर्किट) होता है। जैसे-जैसे आवृत्ति बढ़ती है, XL अनंत (XL → ∞) की ओर बढ़ता है और उच्च आवृत्ति को रोकता है।\n\n2. कैपेसिटिव रिएक्टेंस का व्युत्क्रमानुपाती वक्र (XC ∝ 1/f):\nXC और आवृत्ति का ग्राफ एक आयताकार हाइपरबोला (Hyperbola) होता है। f = 0 Hz (DC) पर XC = ∞ Ω (ओपन सर्किट) होता है। जैसे-जैसे आवृत्ति बढ़ती है, XC तेजी से घटकर शून्य (XC → 0 Ω) की ओर जाता है और उच्च आवृत्ति को सुगमता से प्रवाहित होने देता है।\n\nपूरक इंजीनियरिंग सिद्धांत: प्रेरक उच्च आवृत्ति को रोकता है और डीसी को जाने देता है, जबकि संधारित्र डीसी को रोकता है और उच्च आवृत्ति को जाने देता है। यह पूरक गुणधर्म सभी इलेक्ट्रिकल फिल्टर और ट्यून्ड सर्किट का आधार है।',
+        bn: 'XL ও XC এর মধ্যকার সবচেয়ে স্পষ্ট পার্থক্য হলো কম্পাঙ্ক f এর সাথে এদের বিপরীতমুখী আচরণ:\n\n১. ইন্ডাক্টিভ রিঅ্যাকট্যান্সের রৈখিক সম্পর্ক (XL ∝ f):\nকম্পাঙ্কের বিপরীতে XL এর লেখচিত্রটি মূলবিন্দুগামী একটি সরলরেখা (ঢাল = ২πL)। f = ০ Hz (ডিসি) এ XL = ০ Ω (শর্ট সার্কিট)। কম্পাঙ্ক বৃদ্ধির সাথে সাথে XL অসীম বা অতি উচ্চ মানে পৌঁছায় এবং উচ্চ কম্পাঙ্কের কারেন্টকে ব্লক করে।\n\n২. ক্যাপাসিটিভ রিঅ্যাকট্যান্সের হাইপারবোলিক সম্পর্ক (XC ∝ 1/f):\nকম্পাঙ্কের বিপরীতে XC এর লেখচিত্র একটি ব্যস্তানুপাতিক হাইপারবোলা। f = ০ Hz (ডিসি) এ XC = ∞ Ω (ওপেন সার্কিট)। কম্পাঙ্ক বৃদ্ধির সাথে সাথে XC দ্রুত হ্রাস পেয়ে শূন্যের দিকে যায় এবং উচ্চ কম্পাঙ্কের কারেন্টকে সহজে পার করে দেয়।\n\nপরিপূরক নীতি: আবেশক উচ্চ কম্পাঙ্ক আটকে ডিসি পার করে, আর ক্যাপাসিটর ডিসি আটকে উচ্চ কম্পাঙ্ক পার করে। এই বিপরীত ধর্মই সকল ইলেকট্রিক্যাল ফিল্টার ও অডিও ক্রসওভারের মূল ভিত্তি।'
+      },
+      keyEquations: [
+        'XL = 2πfL (Linear, passing through origin)',
+        'XC = 1 / (2πfC) (Inverse hyperbola)',
+        'At DC (f = 0): XL = 0 Ω (Short) | XC = ∞ Ω (Open)',
+        'At High Freq (f → ∞): XL → ∞ (Block) | XC → 0 Ω (Pass)',
+        'Xnet = XL - XC'
+      ]
+    },
+    {
+      id: 'sec-ch5-l9-3',
+      title: {
+        en: '3. Equal Reactance Crossover Frequency (f₀) and Circuit Regimes',
+        hi: '3. समान रिएक्टेंस क्रॉसओवर आवृत्ति (f₀) एवं परिपथ व्यवहार क्षेत्र',
+        bn: '৩. সমান রিঅ্যাকট্যান্স ক্রসওভার কম্পাঙ্ক (f₀) এবং সার্কিট অঞ্চল'
+      },
+      content: {
+        en: 'When the linear rising line XL = 2πfL and the hyperbolic falling curve XC = 1/(2πfC) are plotted on the same axes, they intersect at exactly one unique frequency f₀ where both reactances are identical in magnitude (XL = XC):\n\n2π f₀ L = 1 / (2π f₀ C)  ⟹  (2π f₀)² = 1 / (LC)  ⟹  f₀ = 1 / (2π √(LC))\n\nThree Distinct Operating Regimes in AC Circuits:\n\n1. Low-Frequency Regime (f < f₀):\nHere, capacitive reactance exceeds inductive reactance (XC > XL). The net reactance Xnet = XL - XC is negative (-j). The overall circuit exhibits capacitive dominant behavior: current leads the supply voltage (φ > 0).\n\n2. Crossover / Equal Reactance Frequency (f = f₀):\nAt this exact frequency, XL = XC. In a series combination, the positive imaginary impedance +jXL and negative imaginary impedance -jXC cancel each other out completely: Znet = +jXL - jXC = 0 Ω. Net reactance vanishes, leaving only the circuit\'s real resistance. This equal-reactance balance is the cornerstone of AC Series Resonance, which will be explored in exhaustive depth in Lesson 14.\n\n3. High-Frequency Regime (f > f₀):\nHere, inductive reactance exceeds capacitive reactance (XL > XC). The net reactance Xnet = XL - XC is positive (+j). The overall circuit exhibits inductive dominant behavior: current lags the supply voltage (φ < 0).',
+        hi: 'जब एक ही ग्राफ पर बढ़ती हुई रेखा XL = 2πfL और घटता हुआ वक्र XC = 1/(2πfC) खींचे जाते हैं, तो वे एक अद्वितीय बिंदु पर प्रतिच्छेद करते हैं जहाँ दोनों का परिमाण बिल्कुल बराबर होता है (XL = XC):\n\n2π f₀ L = 1 / (2π f₀ C)  ⟹  f₀ = 1 / (2π √(LC))\n\nएसी परिपथ के तीन स्पष्ट कार्यक्षेत्र:\n\n1. निम्न-आवृत्ति क्षेत्र (f < f₀):\nयहाँ XC > XL होता है। शुद्ध रिएक्टेंस Xnet = XL - XC ऋणात्मक (-j) होता है। परिपथ कैपेसिटिव प्रधान व्यवहार करता है और धारा वोल्टेज से लीड करती है (φ > 0)।\n\n2. क्रॉसओवर / समान रिएक्टेंस आवृत्ति (f = f₀):\nइस सटीक आवृत्ति पर XL = XC होता है। सीरीज संयोजन में +jXL और -jXC एक दूसरे को पूर्णतः निरस्त कर देते हैं: Znet = +jXL - jXC = 0 Ω। परिपथ का शुद्ध रिएक्टेंस शून्य हो जाता है। यह स्थिति एसी सीरीज अनुनाद (Resonance) की मूल शर्त है, जिसका विस्तृत अध्ययन पाठ 14 में किया जाएगा।\n\n3. उच्च-आवृत्ति क्षेत्र (f > f₀):\nयहाँ XL > XC होता है। शुद्ध रिएक्टेंस धनात्मक (+j) होता है। परिपथ इंडक्टिव प्रधान व्यवहार करता है और धारा वोल्टेज से लैग करती है (φ < 0)।',
+        bn: 'যখন একই অক্ষে ঊর্ধ্বমুখী সরলরেখা XL = 2πfL এবং নিম্নমুখী বক্ররেখা XC = 1/(2πfC) আঁকা হয়, তখন তারা ঠিক একটি নির্দিষ্ট বিন্দুতে পরস্পরকে ছেদ করে যেখানে উভয়ের মান সমান হয় (XL = XC):\n\n২π f₀ L = ১ / (২π f₀ C)  ⟹  f₀ = ১ / (২π √(LC))\n\nসার্কিটের তিনটি সুস্পষ্ট কার্যকাল:\n\n১. নিম্ন কম্পাঙ্ক অঞ্চল (f < f₀):\nএখানে XC > XL। নেট রিঅ্যাকট্যান্স ঋণাত্মক (-j)। সার্কিটটি মূলত ক্যাপাসিটিভ আচরণ প্রকাশ করে এবং কারেন্ট ভোল্টেজের চেয়ে এগিয়ে থাকে (φ > ০)।\n\n২. ক্রসওভার / সমান রিঅ্যাকট্যান্স কম্পাঙ্ক (f = f₀):\nএই কম্পাঙ্কে XL = XC। সিরিজ সার্কিটে +jXL ও -jXC পরস্পরকে সম্পূর্ণ বাতিল করে দেয়: Znet = ০ Ω। ফলে সার্কিটের নেট রিঅ্যাকট্যান্স শূন্য হয়ে যায়। এই ভারসাম্যের অবস্থাই হলো এসি রেজোন্যান্সের ভিত্তি যা পাঠ ১৪-এ বিস্তারিতভাবে আলোচিত হবে।\n\n৩. উচ্চ কম্পাঙ্ক অঞ্চল (f > f₀):\nএখানে XL > XC। নেট রিঅ্যাকট্যান্স ধনাত্মক (+j)। সার্কিটটি ইন্ডাক্টিভ আচরণ প্রকাশ করে এবং কারেন্ট ভোল্টেজের চেয়ে পিছিয়ে থাকে (φ < ০)।'
+      },
+      keyEquations: [
+        'f₀ = 1 / (2π √(LC)) (Hz)',
+        'f < f₀ ⟹ XC > XL (Capacitive Dominant, I leads V)',
+        'f = f₀ ⟹ XL = XC (Equal Reactance Point, Znet = 0)',
+        'f > f₀ ⟹ XL > XC (Inductive Dominant, I lags V)'
+      ]
+    }
+  ],
+  formulas: [
+    {
+      symbol: 'X_{net}',
+      expression: 'X_{net} = X_L - X_C = 2\\pi f L - \\frac{1}{2\\pi f C}',
+      description: {
+        en: 'Net Reactance: calculates algebraic net imaginary reactance of a series circuit combining inductive and capacitive components.',
+        hi: 'शुद्ध रिएक्टेंस: इंडक्टिव एवं कैपेसिटिव घटकों वाले परिपथ के कुल शुद्ध काल्पनिक रिएक्टेंस की गणना करता है।',
+        bn: 'নেট রিঅ্যাকট্যান্স: ইন্ডাক্টিভ ও ক্যাপাসিটিভ উপাদানের সমন্বয়ে গঠিত সার্কিটের মোট নেট রিঅ্যাকট্যান্স নির্ণয় করে।'
+      }
+    },
+    {
+      symbol: 'f_0',
+      expression: 'f_0 = \\frac{1}{2 · \\pi · \\sqrt{L · C}}',
+      description: {
+        en: 'Equal Reactance Crossover Frequency: calculates the specific frequency at which inductive and capacitive reactances are mathematically equal in magnitude.',
+        hi: 'समान रिएक्टेंस क्रॉसओवर आवृत्ति: वह विशिष्ट आवृत्ति जिस पर इंडक्टिव और कैपेसिटिव रिएक्टेंस का परिमाण बराबर होता है।',
+        bn: 'সমান রিঅ্যাকট্যান্স ক্রসওভার কম্পাঙ্ক: যে নির্দিষ্ট কম্পাঙ্কে ইন্ডাক্টিভ ও ক্যাপাসিটিভ রিঅ্যাকট্যান্সের মান সমান হয়।'
+      }
+    }
+  ],
+  practicalApplications: {
+    en: [
+      'Audio Speaker Crossover Networks: Low-pass inductor filters route bass frequencies to woofers while high-pass capacitor filters route treble frequencies to tweeters.',
+      'Power Factor Neutralization: Installing power factor correction capacitors exactly balances the inductive lagging VARs generated by heavy factory induction motors.',
+      'Harmonic Trap Filters: Tuned LC combinations trap and shunt destructive harmonic frequencies (e.g. 3rd, 5th, 7th harmonics) safely to ground.',
+      'Radio & Communication Tuning: Variable inductors and capacitors set the crossover frequency to select desired radio transmission channels.'
+    ],
+    hi: [
+      'ऑडियो स्पीकर क्रॉसओवर नेटवर्क: लो-पास इंडक्टर फिल्टर बास ध्वनियों को वूफर तक भेजते हैं और हाई-पास कैपेसिटर फिल्टर ट्रेबल ध्वनियों को ट्वीटर तक भेजते हैं।',
+      'पावर फैक्टर न्यूट्रलाइजेशन: कैपेसिटर बैंक लगाकर औद्योगिक इंडक्शन मोटरों के लैगिंग रिएक्टिव पावर को संतुलित करना।',
+      'हार्मोनिक ट्रैप फिल्टर: विशिष्ट आवृत्ति पर XL और XC को बराबर करके हानिकारक हार्मोनिक तरंगों को सुरक्षित रूप से ग्राउंड करना।',
+      'रेडियो ट्यूनिंग: वेरिएबल इंडक्टर और कैपेसिटर के संयोजन द्वारा वांछित चैनल को चुनना।'
+    ],
+    bn: [
+      'অডিও স্পিকার ক্রসওভার নেটওয়ার্ক: লো-পাস ইনডাক্টর ফিল্টার নিম্ন কম্পাঙ্কের বেস শব্দ উফারে পাঠায় এবং হাই-পাস ক্যাপাসিটর ফিল্টার উচ্চ কম্পাঙ্কের ট্রেবল শব্দ টুইটারে পাঠায়।',
+      'পাওয়ার ফ্যাক্টর ব্যালান্সিং: ফ্যাক্টরির মোটরের ক্ষতিকর ল্যাগিং রিঅ্যাক্টিভ ক্ষমতা প্রশমিত করতে ক্যাপাসিটর ব্যাংক সংযোগ করা।',
+      'হারমোনিক ফিল্টার: নির্দিষ্ট কম্পাঙ্কে টিউন করা LC সার্কিট দিয়ে ক্ষতিকর হারমোনিক গ্রাউন্ডে অপসারণ করা।',
+      'রেডিও রিসিভার টিউনিং: নির্দিষ্ট রেডিও স্টেশন বা চ্যানেল বাছাই করতে এল-সি সমন্বয় ব্যবহার করা।'
+    ]
+  },
+  importantPoints: {
+    en: [
+      'XL = 2πfL is directly proportional to frequency (XL ∝ f, linear slope).',
+      'XC = 1/(2πfC) is inversely proportional to frequency (XC ∝ 1/f, hyperbola).',
+      'Complex impedance of an inductor is ZL = +j XL (current lags by 90°).',
+      'Complex impedance of a capacitor is ZC = -j XC (current leads by 90°).',
+      'At crossover frequency f₀ = 1/(2π√LC), XL = XC and their +j and -j reactances cancel completely.'
+    ],
+    hi: [
+      'XL = 2πfL आवृत्ति के सीधे समानुपाती होता है (रैखिक ढाल)।',
+      'XC = 1/(2πfC) आवृत्ति के व्युत्क्रमानुपाती होता है (हाइपरबोला वक्र)।',
+      'प्रेरक की सम्मिश्र प्रतिबाधा ZL = +j XL होती है (धारा 90° लैग करती है)।',
+      'संधारित्र की सम्मिश्र प्रतिबाधा ZC = -j XC होती है (धारा 90° लीड करती है)।',
+      'क्रॉसओवर आवृत्ति f₀ = 1/(2π√LC) पर XL = XC होता है और दोनों +j व -j रिएक्टेंस एक दूसरे को निरस्त कर देते हैं।'
+    ],
+    bn: [
+      'XL = 2πfL ফ্রিকোয়েন্সির সরাসরি সমানুপাতিক (রৈখিক রেখা)।',
+      'XC = 1/(2πfC) ফ্রিকোয়েন্সির ব্যস্তানুপাতিক (হাইপারবোলিক বক্ররেখা)।',
+      'আবেশকের জটিল ইম্পিড্যান্স ZL = +j XL (কারেন্ট ৯০° ল্যাগ করে)।',
+      'ক্যাপাসিটরের জটিল ইম্পিড্যান্স ZC = -j XC (কারেন্ট ৯০° লিড করে)।',
+      'ক্রসওভার কম্পাঙ্ক f₀ = 1/(2π√LC) এ XL = XC হয় এবং +j ও -j রিঅ্যাকট্যান্স একে অপরকে প্রশমিত করে।'
+    ]
+  },
+  commonMistakes: {
+    en: [
+      'Adding reactances arithmetically instead of vectorially: forgetting that inductive is +j and capacitive is -j, so net reactance in series is XL - XC, not XL + XC.',
+      'Assuming crossover frequency depends on voltage: f₀ = 1/(2π√LC) depends purely on L and C, completely independent of voltage or current.',
+      'Treating DC resistance and reactance as the same: resistance converts energy to heat (dissipative), whereas reactance stores and returns field energy (non-dissipative).'
+    ],
+    hi: [
+      'रिएक्टेंस को साधारण रूप से जोड़ देना: यह भूल जाना कि इंडक्टिव +j है और कैपेसिटिव -j है, अतः शुद्ध मान XL - XC होता है, न कि XL + XC।',
+      'यह सोचना कि क्रॉसओवर आवृत्ति वोल्टेज पर निर्भर करती है: f₀ केवल L और C पर निर्भर करती है, वोल्टेज या करंट पर नहीं।',
+      'प्रतिरोध और रिएक्टेंस को समान समझना: प्रतिरोध ऊर्जा को ऊष्मा में बदलता है, जबकि रिएक्टेंस ऊर्जा को केवल संचित और वापस करता है।'
+    ],
+    bn: [
+      'বীজগণিতীয়ভাবে রিঅ্যাকট্যান্স যোগ করা: আবেশক হলো +j এবং ধারক হলো -j, তাই সিরিজ সার্কিটে নেট রিঅ্যাকট্যান্স হলো XL - XC, যোগফল নয়।',
+      'মনে করা ক্রসওভার কম্পাঙ্ক ভোল্টেজের ওপর নির্ভরশীল: f₀ শুধুমাত্র L এবং C এর মানের ওপর নির্ভর করে।',
+      'রোধ ও রিঅ্যাকট্যান্সকে একই মনে করা: রোধ তাপ অপচয় করে, আর রিঅ্যাকট্যান্স শক্তি অপচয় না করে সংরক্ষণ ও ফেরত দেয়।'
+    ]
+  },
+  mcqs: [
+    {
+      id: 'quiz-ch5-l9-1',
+      question: {
+        en: 'In complex j-notation, the electrical impedances of a pure inductor and a pure capacitor are represented respectively as:',
+        hi: 'सम्मिश्र j-संकेतन में, एक शुद्ध प्रेरक और शुद्ध संधारित्र की विद्युत प्रतिबाधा को क्रमशः कैसे दर्शाया जाता है?',
+        bn: 'জটিল j-পদ্ধতিতে একটি বিশুদ্ধ আবেশক ও বিশুদ্ধ ধারকের বৈদ্যুতিক ইম্পিড্যান্সকে যথাক্রমে কীভাবে প্রকাশ করা হয়?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '+j XL and -j XC', hi: '+j XL एवं -j XC', bn: '+j XL এবং -j XC' } },
+        { id: 'opt-b', text: { en: '-j XL and +j XC', hi: '-j XL एवं +j XC', bn: '-j XL এবং +j XC' } },
+        { id: 'opt-c', text: { en: '+j XL and +j XC', hi: '+j XL एवं +j XC', bn: '+j XL এবং +j XC' } },
+        { id: 'opt-d', text: { en: 'XL and XC (Real scalars)', hi: 'XL एवं XC (वास्तविक अदिश)', bn: 'XL এবং XC (বাস্তব স্কেলার)' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'Inductive impedance leads by +90° (ZL = +j XL), while capacitive impedance lags by -90° (ZC = -j XC = 1/(jωC)).',
+        hi: 'इंडक्टिव प्रतिबाधा +90° होती है (ZL = +j XL) और कैपेसिटिव प्रतिबाधा -90° होती है (ZC = -j XC)।',
+        bn: 'ইন্ডাক্টিভ ইম্পিড্যান্স ধনাত্মক কাল্পনিক (+j XL) এবং ক্যাপাসিটিভ ইম্পিড্যান্স ঋণাত্মক কাল্পনিক (-j XC)।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l9-2',
+      question: {
+        en: 'At a frequency below the crossover frequency (f < f₀), a circuit containing both L and C behaves as:',
+        hi: 'क्रॉसओवर आवृत्ति से कम आवृत्ति पर (f < f₀), L और C दोनों वाला परिपथ कैसा व्यवहार करता है?',
+        bn: 'ক্রসওভার কম্পাঙ্কের চেয়ে কম কম্পাঙ্কে (f < f₀), L এবং C উভয় উপাদানযুক্ত সার্কিটটি কেমন আচরণ প্রকাশ করে?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: 'Capacitive dominant (XC > XL, current leads voltage)', hi: 'कैपेसिटिव प्रधान (XC > XL, धारा वोल्टेज से लीड करती है)', bn: 'ক্যাপাসিটিভ প্রধান (XC > XL, কারেন্ট ভোল্টেজের চেয়ে এগিয়ে থাকে)' } },
+        { id: 'opt-b', text: { en: 'Inductive dominant (XL > XC, current lags voltage)', hi: 'इंडक्टिव प्रधान (XL > XC, धारा वोल्टेज से लैग करती है)', bn: 'ইন্ডাক্টিভ প্রধান (XL > XC, কারেন্ট ভোল্টেজের চেয়ে পিছিয়ে থাকে)' } },
+        { id: 'opt-c', text: { en: 'Purely resistive with zero impedance', hi: 'शून्य प्रतिबाधा के साथ शुद्ध प्रतिरोधी', bn: 'সম্পূর্ণ রোধীয়' } },
+        { id: 'opt-d', text: { en: 'Open circuit', hi: 'ओपन सर्किट', bn: 'ওপেন সার্কিট' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'When f < f₀, XC = 1/(2πfC) is large while XL = 2πfL is small. Thus XC > XL, making the circuit capacitive dominant.',
+        hi: 'जब f < f₀ होता है, तब XC बड़ा और XL छोटा होता है (XC > XL)। अतः परिपथ कैपेसिटिव प्रधान व्यवहार करता है।',
+        bn: 'যখন f < f₀ হয়, তখন XC এর মান বড় এবং XL এর মান কম থাকে (XC > XL)। ফলে সার্কিটটি ক্যাপাসিটিভ প্রধান হয়।'
+      }
+    },
+    {
+      id: 'quiz-ch5-l9-3',
+      question: {
+        en: 'If an inductor L = 100 mH and capacitor C = 10 µF are connected together, their equal reactance crossover frequency f₀ is approximately:',
+        hi: 'यदि एक प्रेरक L = 100 mH और संधारित्र C = 10 µF एक साथ जुड़े हैं, तो उनकी समान रिएक्टेंस क्रॉसओवर आवृत्ति f₀ लगभग कितनी होगी?',
+        bn: 'যদি একটি আবেশক L = ১০০ mH এবং ধারক C = ১০ µF একসাথে যুক্ত থাকে, তবে তাদের সমান রিঅ্যাকট্যান্স ক্রসওভার কম্পাঙ্ক f₀ প্রায় কত?'
+      },
+      options: [
+        { id: 'opt-a', text: { en: '159.15 Hz', hi: '159.15 Hz', bn: '১৫৯.১৫ Hz' } },
+        { id: 'opt-b', text: { en: '50.00 Hz', hi: '50.00 Hz', bn: '৫০.০০ Hz' } },
+        { id: 'opt-c', text: { en: '1000.00 Hz', hi: '1000.00 Hz', bn: '১০০০.০০ Hz' } },
+        { id: 'opt-d', text: { en: '318.30 Hz', hi: '318.30 Hz', bn: '৩১৮.৩০ Hz' } }
+      ],
+      correctOptionId: 'opt-a',
+      explanation: {
+        en: 'f₀ = 1 / (2π√(LC)) = 1 / (2π √(0.100 × 10 × 10⁻⁶)) = 1 / (2π √(10⁻⁶)) = 1 / (2π × 10⁻³) = 1000 / (2π) = 159.15 Hz.',
+        hi: 'f₀ = 1 / (2π√(LC)) = 1 / (2π √(0.1 × 10⁻⁵)) = 1000 / 2π = 159.15 Hz।',
+        bn: 'f₀ = ১ / (২π√(LC)) = ১০০০ / (২π) = ১৫৯.১৫ Hz।'
+      }
+    }
+  ],
+  practiceQuestions: [
+    {
+      id: 'pq-ch5-l9-1',
+      question: {
+        en: 'An AC circuit contains an inductor L = 0.20 H and a capacitor C = 50 µF connected in series with a 200 V variable-frequency AC source. Calculate: (a) Inductive reactance XL at 50 Hz, (b) Capacitive reactance XC at 50 Hz, (c) Net reactance Xnet at 50 Hz, (d) The crossover frequency f₀ where XL = XC, (e) The reactance magnitude XL = XC at crossover frequency f₀.',
+        hi: 'एक एसी परिपथ में L = 0.20 H का प्रेरक और C = 50 µF का संधारित्र 200 V परिवर्ती-आवृत्ति एसी स्रोत के साथ श्रेणी में जुड़े हैं। गणना करें: (a) 50 Hz पर इंडक्टिव रिएक्टेंस XL, (b) 50 Hz पर कैपेसिटिव रिएक्टेंस XC, (c) 50 Hz पर शुद्ध रिएक्टेंस Xnet, (d) क्रॉसओवर आवृत्ति f₀ जहाँ XL = XC हो, (e) f₀ पर रिएक्टेंस का मान।',
+        bn: 'একটি এসি সার্কিটে L = ০.২০ H আবেশক এবং C = ৫০ µF ধারক একটি ২০০ V পরিবর্তনশীল কম্পাঙ্কের এসি উৎসের সাথে সিরিজে যুক্ত। নির্ণয় করুন: (a) ৫০ Hz এ ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL, (b) ৫০ Hz এ ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC, (c) ৫০ Hz এ নেট রিঅ্যাকট্যান্স Xnet, (d) ক্রসওভার কম্পাঙ্ক f₀ যেখানে XL = XC, (e) f₀ কম্পাঙ্কে রিঅ্যাকট্যান্সের মান।'
+      },
+      hint: {
+        en: 'At 50 Hz: XL = 2π(50)(0.2) = 62.83 Ω. XC = 1/(2π × 50 × 50×10⁻⁶) = 63.66 Ω. Xnet = 62.83 - 63.66 = -0.83 Ω (Capacitive). f₀ = 1 / (2π√(0.2 × 50×10⁻⁶)) = 1 / (2π × 0.003162) = 50.33 Hz. XL(f₀) = 2π(50.33)(0.2) = 63.25 Ω.',
+        hi: '50 Hz पर: XL = 62.83 Ω, XC = 63.66 Ω, Xnet = -0.83 Ω। f₀ = 1 / (2π√(0.2 × 50×10⁻⁶)) = 50.33 Hz। f₀ पर XL = XC = 63.25 Ω।',
+        bn: '৫০ Hz এ: XL = ৬২.৮৩ Ω, XC = ৬৩.৬৬ Ω, Xnet = -০.৮৩ Ω। f₀ = ৫০.৩৩ Hz। f₀ এ XL = XC = ৬৩.২৫ Ω।'
+      },
+      answerKey: {
+        en: '(a) At 50 Hz, Inductive Reactance XL = 2π × 50 × 0.20 = 62.83 Ω.\n(b) At 50 Hz, Capacitive Reactance XC = 1 / (2π × 50 × 50 × 10⁻⁶) = 63.66 Ω.\n(c) Net Reactance Xnet = XL - XC = 62.83 - 63.66 = -0.83 Ω (Slightly Capacitive dominant, current leads by almost 90° if R=0).\n(d) Crossover frequency f₀ = 1 / (2π √(L·C)) = 1 / (2π √(0.20 × 50 × 10⁻⁶)) = 1 / (2π √(10⁻⁵)) = 1 / (2π × 3.1623 × 10⁻³) = 50.33 Hz.\n(e) Reactance magnitude at f₀ = 2π × 50.33 × 0.20 = 63.25 Ω (and XC = 1 / (2π × 50.33 × 50 × 10⁻⁶) = 63.25 Ω).',
+        hi: '(a) 50 Hz पर इंडक्टिव रिएक्टेंस XL = 62.83 Ω।\n(b) 50 Hz पर कैपेसिटिव रिएक्टेंस XC = 63.66 Ω।\n(c) शुद्ध रिएक्टेंस Xnet = 62.83 - 63.66 = -0.83 Ω (हल्का कैपेसिटिव)।\n(d) क्रॉसओवर आवृत्ति f₀ = 50.33 Hz।\n(e) f₀ पर रिएक्टेंस का परिमाण XL = XC = 63.25 Ω।',
+        bn: '(a) ৫০ Hz এ ইন্ডাক্টিভ রিঅ্যাকট্যান্স XL = ৬২.৮৩ Ω।\n(b) ৫০ Hz এ ক্যাপাসিটিভ রিঅ্যাকট্যান্স XC = ৬৩.৬৬ Ω।\n(c) নেট রিঅ্যাকট্যান্স Xnet = ৬২.৮৩ - ৬৩.৬৬ = -০.৮৩ Ω (ক্যাপাসিটিভ)।\n(d) ক্রসওভার কম্পাঙ্ক f₀ = ৫০.৩৩ Hz।\n(e) f₀ এ রিঅ্যাকট্যান্স XL = XC = ৬৩.২৫ Ω।'
+      }
+    }
+  ]
+};
+
 export const CHAPTER_5_LESSONS: Record<string, Lesson> = {
   'ch5-ac-fundamentals': LESSON_AC_FUNDAMENTALS,
   'ch5-sinusoidal-waveform': LESSON_SINUSOIDAL_WAVEFORM,
   'ch5-rms-average-values': LESSON_RMS_AVERAGE,
   'ch5-phase-phase-difference': LESSON_PHASE_DIFFERENCE,
   'ch5-complex-numbers': LESSON_COMPLEX_NUMBERS,
-  'ch5-ac-resistance': LESSON_AC_RESISTANCE
+  'ch5-ac-resistance': LESSON_AC_RESISTANCE,
+  'ch5-ac-inductor': LESSON_AC_INDUCTOR,
+  'ch5-ac-capacitor': LESSON_AC_CAPACITOR,
+  'ch5-inductive-reactance': LESSON_REACTANCE_COMPARISON
 };

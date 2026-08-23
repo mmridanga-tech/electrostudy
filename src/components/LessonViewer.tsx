@@ -52,6 +52,9 @@ import { RMSAverageAnimation } from './interactive/RMSAverageAnimation';
 import { PhasorPhaseAnimation } from './interactive/PhasorPhaseAnimation';
 import { ComplexNumberAnimation } from './interactive/ComplexNumberAnimation';
 import { PureResistiveACAnimation } from './interactive/PureResistiveACAnimation';
+import { PureInductiveACAnimation } from './interactive/PureInductiveACAnimation';
+import { PureCapacitiveACAnimation } from './interactive/PureCapacitiveACAnimation';
+import { ReactanceComparisonAnimation } from './interactive/ReactanceComparisonAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -165,6 +168,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   if (topicId === 'ch5-ac-resistance' || lessonId === 'lsn-ch5-ac-resistance') {
     return <PureResistiveACAnimation currentLanguage={currentLanguage} />;
   }
+  if (topicId === 'ch5-ac-inductor' || lessonId === 'lsn-ch5-ac-inductor') {
+    return <PureInductiveACAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-capacitor' || lessonId === 'lsn-ch5-ac-capacitor') {
+    return <PureCapacitiveACAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-inductive-reactance' || lessonId === 'lsn-ch5-inductive-reactance') {
+    return <ReactanceComparisonAnimation currentLanguage={currentLanguage} />;
+  }
   return null;
 };
 
@@ -201,12 +213,12 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
     setRevealedAnswers(prev => ({ ...prev, [pqId]: !prev[pqId] }));
   };
 
-  const title = lesson.title[currentLanguage] || lesson.title.en;
-  const easyExp = lesson.easyExplanation[currentLanguage] || lesson.easyExplanation.en;
-  const detailedExp = lesson.detailedExplanation[currentLanguage] || lesson.detailedExplanation.en;
-  const applications = lesson.practicalApplications[currentLanguage] || lesson.practicalApplications.en;
-  const importantPoints = lesson.importantPoints[currentLanguage] || lesson.importantPoints.en;
-  const commonMistakes = lesson.commonMistakes[currentLanguage] || lesson.commonMistakes.en;
+  const title = lesson.title?.[currentLanguage] || lesson.title?.en || '';
+  const easyExp = lesson.easyExplanation?.[currentLanguage] || lesson.easyExplanation?.en || lesson.description?.[currentLanguage] || lesson.description?.en || '';
+  const detailedExp = lesson.detailedExplanation?.[currentLanguage] || lesson.detailedExplanation?.en || (lesson.sections ? lesson.sections.map(s => `${s.title?.[currentLanguage] || s.title?.en || ''}\n\n${s.content?.[currentLanguage] || s.content?.en || ''}`).join('\n\n') : '');
+  const applications = lesson.practicalApplications?.[currentLanguage] || lesson.practicalApplications?.en || [];
+  const importantPoints = lesson.importantPoints?.[currentLanguage] || lesson.importantPoints?.en || [];
+  const commonMistakes = lesson.commonMistakes?.[currentLanguage] || lesson.commonMistakes?.en || [];
 
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
@@ -357,7 +369,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
             <CheckCircle2 className="w-4 h-4 text-emerald-500" />
             <span>Step-by-Step Solved Example</span>
           </h4>
-          {lesson.solvedExamples.map((ex) => (
+          {(lesson.solvedExamples || []).map((ex) => (
             <div key={ex.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
               <div className="font-semibold text-sm text-slate-900 dark:text-white">
                 <span className="text-cyan-600 dark:text-cyan-400 font-bold mr-2">Problem:</span>

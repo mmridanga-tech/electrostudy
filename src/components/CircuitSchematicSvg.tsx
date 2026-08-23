@@ -1905,6 +1905,154 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-pure-inductor':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Circuit Schematic */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="180" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="90" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Pure Inductive AC Circuit</text>
+
+              {/* AC Source */}
+              <circle cx="35" cy="75" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 27 75 Q 31 68 35 75 Q 39 82 43 75" fill="none" stroke="#38bdf8" strokeWidth="1.8" />
+              <text x="35" y="105" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold" fontFamily="monospace">v(t)=Vm sin ωt</text>
+
+              {/* Inductor Coil */}
+              <path d="M 139 50 C 148 48 148 58 139 58 C 148 56 148 66 139 66 C 148 64 148 74 139 74 C 148 72 148 82 139 82 C 148 80 148 90 139 90" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" />
+              <text x="139" y="112" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="bold" fontFamily="monospace">L (Ideal Inductor)</text>
+
+              {/* Wiring */}
+              <line x1="35" y1="59" x2="35" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="40" x2="139" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="40" x2="139" y2="50" stroke="#475569" strokeWidth="2" />
+
+              <line x1="35" y1="91" x2="35" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="120" x2="139" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="120" x2="139" y2="90" stroke="#475569" strokeWidth="2" />
+
+              {/* Current Arrow */}
+              <line x1="75" y1="40" x2="95" y2="40" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" />
+              <text x="85" y="34" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="bold" fontFamily="monospace">i(t) [Lag 90°]</text>
+            </g>
+
+            {/* Inductive Characteristics Box */}
+            <g transform="translate(230, 20)">
+              <rect x="0" y="0" width="210" height="130" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="105" y="22" textAnchor="middle" fill="#10b981" fontSize="10" fontWeight="bold">Key Inductive Equations</text>
+              <line x1="15" y1="30" x2="195" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">1. Reactance: XL = 2πfL = ωL</text>
+              <text x="15" y="68" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">2. Impedance: ZL = +jXL = XL∠+90°</text>
+              <text x="15" y="88" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">3. Current: i(t) = Im·sin(ωt - 90°)</text>
+              <text x="15" y="108" fill="#ec4899" fontSize="9.5" fontWeight="bold" fontFamily="monospace">4. Power Factor: cos(-90°) = 0 Lag</text>
+              <text x="15" y="124" fill="#c084fc" fontSize="8.5" fontWeight="bold" fontFamily="monospace">5. Active P = 0 W | Stored W = ½LI²</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-bold">
+            {caption || "Pure Inductive AC Circuit: Current strictly lags applied voltage by 90° (φ = -90°, Zero Power Factor Lagging)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-pure-capacitor':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Circuit Schematic */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="180" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="90" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Pure Capacitive AC Circuit</text>
+
+              {/* AC Source */}
+              <circle cx="35" cy="75" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 27 75 Q 31 68 35 75 Q 39 82 43 75" fill="none" stroke="#38bdf8" strokeWidth="1.8" />
+              <text x="35" y="105" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold" fontFamily="monospace">v(t)=Vm sin ωt</text>
+
+              {/* Capacitor Parallel Plates */}
+              <line x1="125" y1="63" x2="153" y2="63" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" />
+              <line x1="125" y1="77" x2="153" y2="77" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" />
+              <text x="139" y="112" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold" fontFamily="monospace">C (Ideal Capacitor)</text>
+
+              {/* Wiring */}
+              <line x1="35" y1="59" x2="35" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="40" x2="139" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="40" x2="139" y2="63" stroke="#475569" strokeWidth="2" />
+
+              <line x1="35" y1="91" x2="35" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="120" x2="139" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="120" x2="139" y2="77" stroke="#475569" strokeWidth="2" />
+
+              {/* Current Arrow */}
+              <line x1="75" y1="40" x2="95" y2="40" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" />
+              <text x="85" y="34" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="bold" fontFamily="monospace">i(t) [Lead 90°]</text>
+            </g>
+
+            {/* Capacitive Characteristics Box */}
+            <g transform="translate(230, 20)">
+              <rect x="0" y="0" width="210" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="105" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Key Capacitive Equations</text>
+              <line x1="15" y1="30" x2="195" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">1. Reactance: XC = 1/(2πfC) = 1/ωC</text>
+              <text x="15" y="68" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">2. Impedance: ZC = -jXC = XC∠-90°</text>
+              <text x="15" y="88" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">3. Current: i(t) = Im·sin(ωt + 90°)</text>
+              <text x="15" y="108" fill="#ec4899" fontSize="9.5" fontWeight="bold" fontFamily="monospace">4. Power Factor: cos(+90°) = 0 Lead</text>
+              <text x="15" y="124" fill="#c084fc" fontSize="8.5" fontWeight="bold" fontFamily="monospace">5. Active P = 0 W | Stored W = ½CV²</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Pure Capacitive AC Circuit: Current strictly leads applied voltage by 90° (φ = +90°, Zero Power Factor Leading)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-reactance-comparison':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Dual Reactance Curves Graphic */}
+            <g transform="translate(30, 20)">
+              <rect x="0" y="0" width="180" height="130" rx="6" fill="#0f172a" stroke="#475569" strokeWidth="1.5" />
+              <line x1="25" y1="110" x2="165" y2="110" stroke="#475569" strokeWidth="1.5" />
+              <line x1="25" y1="15" x2="25" y2="110" stroke="#475569" strokeWidth="1.5" />
+              
+              <text x="165" y="122" textAnchor="end" fill="#94a3b8" fontSize="8" fontFamily="monospace">f (Hz) →</text>
+              <text x="22" y="14" textAnchor="end" fill="#94a3b8" fontSize="8" fontFamily="monospace">X (Ω) ↑</text>
+
+              {/* XL Line (Green) */}
+              <line x1="25" y1="110" x2="155" y2="25" stroke="#10b981" strokeWidth="2.5" />
+              <text x="135" y="22" fill="#10b981" fontSize="8.5" fontWeight="bold" fontFamily="monospace">XL ∝ f</text>
+
+              {/* XC Curve (Blue) */}
+              <path d="M 32 20 Q 55 75 155 105" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="130" y="98" fill="#38bdf8" fontSize="8.5" fontWeight="bold" fontFamily="monospace">XC ∝ 1/f</text>
+
+              {/* Crossover Point */}
+              <circle cx="85" cy="65" r="4" fill="#c084fc" />
+              <text x="92" y="62" fill="#c084fc" fontSize="8" fontWeight="bold" fontFamily="monospace">f₀ (XL = XC)</text>
+            </g>
+
+            {/* Comparison Summary Box */}
+            <g transform="translate(230, 20)">
+              <rect x="0" y="0" width="210" height="130" rx="6" fill="#0f172a" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="105" y="22" textAnchor="middle" fill="#c084fc" fontSize="10" fontWeight="bold">Reactance Opposites</text>
+              <line x1="15" y1="30" x2="195" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#10b981" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Inductive: ZL = +j 2πfL</text>
+              <text x="15" y="68" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Capacitive: ZC = -j / (2πfC)</text>
+              <text x="15" y="88" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">f &lt; f₀: Capacitive Dominant</text>
+              <text x="15" y="108" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">f &gt; f₀: Inductive Dominant</text>
+              <text x="15" y="124" fill="#c084fc" fontSize="8.5" fontWeight="bold" fontFamily="monospace">f = f₀: Equal Reactance (Resonance)</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-purple-300 mt-2 text-center font-bold">
+            {caption || "Reactance Comparison: Inductive Reactance (XL ∝ f) vs Capacitive Reactance (XC ∝ 1/f) and the Crossover Point f₀"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

@@ -5,10 +5,27 @@ export type Theme = 'light' | 'dark';
 export type MultilingualText = Record<Language, string>;
 export type MultilingualList = Record<Language, string[]>;
 
-export interface FormulaItem {
+export interface FormulaVariable {
   symbol: string;
-  expression: string;
+  name: MultilingualText;
+}
+
+export interface FormulaItem {
+  id?: string;
+  symbol?: string;
+  expression?: string;
+  formula?: string;
+  title?: MultilingualText;
   description: MultilingualText;
+  variables?: FormulaVariable[];
+}
+
+export interface LessonSection {
+  id: string;
+  title: MultilingualText;
+  content: MultilingualText;
+  schematicId?: string;
+  keyEquations?: string[];
 }
 
 export interface LessonDiagram {
@@ -49,13 +66,17 @@ export interface PracticeQuestion {
 export interface Lesson {
   id: string;
   topicId: string;
-  order: number;
+  chapterId?: string;
+  order?: number;
   title: MultilingualText;
-  easyExplanation: MultilingualText;
-  detailedExplanation: MultilingualText;
+  description?: MultilingualText;
+  estimatedMinutes?: number;
+  easyExplanation?: MultilingualText;
+  detailedExplanation?: MultilingualText;
   formulas: FormulaItem[];
+  sections?: LessonSection[];
   diagrams?: LessonDiagram[];
-  solvedExamples: SolvedExample[];
+  solvedExamples?: SolvedExample[];
   practicalApplications: MultilingualList;
   importantPoints: MultilingualList;
   commonMistakes: MultilingualList;
