@@ -89,6 +89,8 @@ export interface Topic {
   chapterId: string;
   order: number;
   title: MultilingualText;
+  description?: MultilingualText;
+  level?: string;
   lesson?: Lesson;
 }
 

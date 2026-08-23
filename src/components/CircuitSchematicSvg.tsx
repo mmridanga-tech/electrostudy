@@ -2476,6 +2476,204 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'machine-energy-conversion':
+      return (
+        <div id="schematic-machine-energy-conversion" className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 600 200" className="w-full max-w-xl h-48">
+            <defs>
+              <linearGradient id="elecBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0284c7" />
+                <stop offset="100%" stopColor="#0369a1" />
+              </linearGradient>
+              <linearGradient id="fieldBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#7c3aed" />
+                <stop offset="100%" stopColor="#6d28d9" />
+              </linearGradient>
+              <linearGradient id="mechBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#059669" />
+                <stop offset="100%" stopColor="#047857" />
+              </linearGradient>
+              <marker id="arrowHeadSchem" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#38bdf8" />
+              </marker>
+              <marker id="arrowHeadLoss" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#ef4444" />
+              </marker>
+            </defs>
+
+            {/* Electrical Stage */}
+            <g transform="translate(30, 40)">
+              <rect x="0" y="0" width="130" height="90" rx="8" fill="url(#elecBoxGrad)" stroke="#38bdf8" strokeWidth="2" />
+              <text x="65" y="32" textAnchor="middle" fill="#ffffff" fontSize="12" fontWeight="bold">Electrical System</text>
+              <text x="65" y="52" textAnchor="middle" fill="#bae6fd" fontSize="10">V, I, cos(φ)</text>
+              <text x="65" y="74" textAnchor="middle" fill="#e0f2fe" fontSize="9" fontFamily="monospace">P_elec = √3·V·I·cosφ</text>
+            </g>
+
+            {/* Coupling Magnetic Field */}
+            <g transform="translate(235, 30)">
+              <rect x="0" y="0" width="130" height="110" rx="10" fill="url(#fieldBoxGrad)" stroke="#c084fc" strokeWidth="2" />
+              <text x="65" y="30" textAnchor="middle" fill="#ffffff" fontSize="11" fontWeight="bold">Magnetic Field</text>
+              <text x="65" y="48" textAnchor="middle" fill="#e9d5ff" fontSize="10">Coupling Medium</text>
+              <circle cx="65" cy="72" r="16" fill="#3b0764" stroke="#e879f9" strokeWidth="1.5" />
+              <text x="65" y="77" textAnchor="middle" fill="#facc15" fontSize="12" fontWeight="bold">B · Φ</text>
+              <text x="65" y="100" textAnchor="middle" fill="#fbcfe8" fontSize="8">Energy Storage</text>
+            </g>
+
+            {/* Mechanical Stage */}
+            <g transform="translate(440, 40)">
+              <rect x="0" y="0" width="130" height="90" rx="8" fill="url(#mechBoxGrad)" stroke="#34d399" strokeWidth="2" />
+              <text x="65" y="32" textAnchor="middle" fill="#ffffff" fontSize="12" fontWeight="bold">Mechanical System</text>
+              <text x="65" y="52" textAnchor="middle" fill="#a7f3d0" fontSize="10">Torque T, Speed ω</text>
+              <text x="65" y="74" textAnchor="middle" fill="#d1fae5" fontSize="9" fontFamily="monospace">P_mech = T · ω</text>
+            </g>
+
+            {/* Forward Flow (Motor Action) */}
+            <line x1="165" y1="70" x2="227" y2="70" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrowHeadSchem)" />
+            <line x1="370" y1="70" x2="432" y2="70" stroke="#34d399" strokeWidth="3" markerEnd="url(#arrowHeadSchem)" />
+            <text x="300" y="18" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">Motor Action → (Electrical to Mechanical)</text>
+
+            {/* Reverse Flow (Generator Action) */}
+            <line x1="432" y1="100" x2="370" y2="100" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 2" markerEnd="url(#arrowHeadSchem)" />
+            <line x1="227" y1="100" x2="165" y2="100" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 2" markerEnd="url(#arrowHeadSchem)" />
+
+            {/* Losses Drop */}
+            <line x1="300" y1="145" x2="300" y2="175" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrowHeadLoss)" />
+            <text x="300" y="190" textAnchor="middle" fill="#f87171" fontSize="9" fontWeight="bold">Internal Losses: Copper (I²R) + Core (Iron) + Mech Friction</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electromechanical Energy Conversion: Coupling Magnetic Field, Energy Flow Paths & Loss Partitioning"}
+          </p>
+        </div>
+      );
+
+    case 'magnetic-circuit':
+      return (
+        <div id="schematic-magnetic-circuit" className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-lg h-48">
+            <defs>
+              <linearGradient id="coreIron" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#334155" />
+                <stop offset="100%" stopColor="#1e293b" />
+              </linearGradient>
+            </defs>
+
+            {/* Magnetic Core Rectangle */}
+            <rect x="60" y="25" width="220" height="170" rx="10" fill="url(#coreIron)" stroke="#64748b" strokeWidth="3" />
+            <rect x="115" y="65" width="110" height="90" rx="6" fill="#020617" stroke="#334155" strokeWidth="2" />
+
+            {/* Air Gap on Right Arm */}
+            <rect x="235" y="95" width="50" height="20" fill="#020617" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+            <text x="260" y="90" textAnchor="middle" fill="#fcd34d" fontSize="8" fontWeight="bold">Air Gap (l_g)</text>
+
+            {/* Excitation Coil on Left Arm */}
+            <g transform="translate(52, 50)">
+              {[0, 16, 32, 48, 64, 80].map((y, idx) => (
+                <g key={idx}>
+                  <rect x="0" y={y} width="14" height="10" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+                  <line x1="7" y1={y + 5} x2="68" y2={y + 10} stroke="#f59e0b" strokeWidth="2" />
+                  <rect x="61" y={y} width="14" height="10" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+                </g>
+              ))}
+              <text x="-4" y="10" fill="#38bdf8" fontSize="9" fontWeight="bold">I</text>
+              <text x="-4" y="95" fill="#38bdf8" fontSize="8">N turns</text>
+            </g>
+
+            {/* Magnetic Flux Path */}
+            <rect x="88" y="45" width="164" height="130" rx="6" fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="6 4" />
+            <text x="170" y="115" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold" fontFamily="monospace">Φ = F / ℜ_tot</text>
+
+            {/* Electrical Equivalent Circuit on Right */}
+            <g transform="translate(340, 30)">
+              <rect x="0" y="0" width="180" height="160" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="90" y="22" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Equivalent Magnetic Circuit</text>
+
+              {/* MMF Source */}
+              <circle cx="35" cy="80" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="35" y="76" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">+</text>
+              <text x="35" y="88" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">−</text>
+              <text x="35" y="108" textAnchor="middle" fill="#bae6fd" fontSize="8">F = N·I</text>
+
+              {/* Core Reluctance Resistor symbol */}
+              <rect x="80" y="42" width="60" height="16" fill="#1e293b" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="110" y="54" textAnchor="middle" fill="#e9d5ff" fontSize="8" fontWeight="bold">ℜ_core = l_c/μA</text>
+
+              {/* Air Gap Reluctance Resistor symbol */}
+              <rect x="80" y="102" width="60" height="16" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="110" y="114" textAnchor="middle" fill="#fef08a" fontSize="8" fontWeight="bold">ℜ_gap = l_g/μ₀A</text>
+
+              {/* Wiring */}
+              <polyline points="35,64 35,50 80,50" fill="none" stroke="#64748b" strokeWidth="1.5" />
+              <polyline points="140,50 160,50 160,110 140,110" fill="none" stroke="#64748b" strokeWidth="1.5" />
+              <polyline points="80,110 35,110 35,96" fill="none" stroke="#64748b" strokeWidth="1.5" />
+
+              <text x="90" y="148" textAnchor="middle" fill="#34d399" fontSize="9" fontFamily="monospace">ℜ_total = ℜ_core + ℜ_gap</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Magnetic Circuit and Electrical Equivalent: MMF Source, Core Reluctance, and Air-Gap Series Reluctance"}
+          </p>
+        </div>
+      );
+
+    case 'dc-machine-construction':
+      return (
+        <div id="schematic-dc-machine-construction" className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-lg h-52">
+            {/* Outer Yoke Frame */}
+            <circle cx="180" cy="125" r="110" fill="#0f172a" stroke="#475569" strokeWidth="12" />
+
+            {/* Field Poles (North Top, South Bottom) */}
+            <path d="M 145 22 L 215 22 L 215 55 Q 180 70 145 55 Z" fill="#334155" stroke="#ef4444" strokeWidth="2" />
+            <text x="180" y="44" textAnchor="middle" fill="#ef4444" fontSize="12" fontWeight="bold">N</text>
+
+            <path d="M 145 228 L 215 228 L 215 195 Q 180 180 145 195 Z" fill="#334155" stroke="#3b82f6" strokeWidth="2" />
+            <text x="180" y="214" textAnchor="middle" fill="#3b82f6" fontSize="12" fontWeight="bold">S</text>
+
+            {/* Field Windings */}
+            <rect x="133" y="26" width="10" height="24" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+            <rect x="217" y="26" width="10" height="24" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+            <rect x="133" y="200" width="10" height="24" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+            <rect x="217" y="200" width="10" height="24" rx="2" fill="#b45309" stroke="#f59e0b" strokeWidth="1" />
+
+            {/* Armature Rotor */}
+            <circle cx="180" cy="125" r="54" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
+
+            {/* Armature Conductors */}
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, i) => {
+              const rad = (ang * Math.PI) / 180;
+              const x = 180 + 44 * Math.cos(rad);
+              const y = 125 + 44 * Math.sin(rad);
+              return (
+                <circle key={i} cx={x} cy={y} r="4" fill="#f59e0b" stroke="#d97706" strokeWidth="1" />
+              );
+            })}
+
+            {/* Commutator & Brushes */}
+            <circle cx="180" cy="125" r="24" fill="#78350f" stroke="#fbbf24" strokeWidth="2" />
+            <rect x="146" y="119" width="10" height="12" fill="#18181b" stroke="#e2e8f0" strokeWidth="1" />
+            <rect x="204" y="119" width="10" height="12" fill="#18181b" stroke="#e2e8f0" strokeWidth="1" />
+            <circle cx="180" cy="125" r="10" fill="#94a3b8" />
+
+            {/* Callouts on the Right */}
+            <g transform="translate(320, 20)">
+              <rect x="0" y="0" width="200" height="205" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="100" y="24" textAnchor="middle" fill="#38bdf8" fontSize="12" fontWeight="bold">Key DC Machine Elements</text>
+              
+              <text x="15" y="52" fill="#e2e8f0" fontSize="10">1. <tspan fill="#38bdf8" fontWeight="bold">Yoke</tspan>: Frame & Flux Return</text>
+              <text x="15" y="74" fill="#e2e8f0" fontSize="10">2. <tspan fill="#ef4444" fontWeight="bold">Poles & Shoes</tspan>: Flux Dispersion</text>
+              <text x="15" y="96" fill="#e2e8f0" fontSize="10">3. <tspan fill="#f59e0b" fontWeight="bold">Field Coils</tspan>: MMF Excitation</text>
+              <text x="15" y="118" fill="#e2e8f0" fontSize="10">4. <tspan fill="#34d399" fontWeight="bold">Armature Core</tspan>: Slotted Rotor</text>
+              <text x="15" y="140" fill="#e2e8f0" fontSize="10">5. <tspan fill="#fbbf24" fontWeight="bold">Commutator</tspan>: Mechanical Inverter</text>
+              <text x="15" y="162" fill="#e2e8f0" fontSize="10">6. <tspan fill="#e2e8f0" fontWeight="bold">Carbon Brushes</tspan>: Current Collector</text>
+              <text x="15" y="184" fill="#e2e8f0" fontSize="10">7. <tspan fill="#94a3b8" fontWeight="bold">Shaft</tspan>: Rotational Power Output</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Machine Cross-Section: Stator Yoke, Salient Field Poles, Armature Core, Commutator Segments and Carbon Brushes"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

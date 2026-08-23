@@ -66,6 +66,9 @@ import { PowerFactorCorrectionAnimation } from './interactive/PowerFactorCorrect
 import { ThreePhaseACAnimation } from './interactive/ThreePhaseACAnimation';
 import { ThreePhaseStarDeltaAnimation } from './interactive/ThreePhaseStarDeltaAnimation';
 import { ACIndustrialCaseStudyAnimation } from './interactive/ACIndustrialCaseStudyAnimation';
+import { MachineEnergyConversionAnimation } from './interactive/MachineEnergyConversionAnimation';
+import { MagneticCircuitAnimation } from './interactive/MagneticCircuitAnimation';
+import { DCMachineConstructionAnimation } from './interactive/DCMachineConstructionAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -220,6 +223,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-ac-practical-applications' || lessonId === 'lsn-ch5-ac-practical-applications') {
     return <ACIndustrialCaseStudyAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch6-electrical-machines-fundamentals' || lessonId === 'lsn-ch6-electrical-machines-fundamentals') {
+    return <MachineEnergyConversionAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch6-magnetic-circuits' || lessonId === 'lsn-ch6-magnetic-circuits') {
+    return <MagneticCircuitAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-machine-construction' || lessonId === 'lsn-ch6-dc-machine-construction') {
+    return <DCMachineConstructionAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

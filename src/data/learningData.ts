@@ -4,6 +4,7 @@ import { CHAPTER_2_LESSONS } from './chapter2Lessons';
 import { CHAPTER_3_LESSONS } from './chapter3Lessons';
 import { CHAPTER_4_LESSONS } from './chapter4Lessons';
 import { CHAPTER_5_LESSONS } from './chapter5Lessons';
+import { CHAPTER_6_LESSONS } from './chapter6Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -1109,93 +1110,333 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-electrical-sources',
+        id: 'ch-electrical-machines',
         subjectId: 'basic-electrical',
         order: 6,
         title: {
-          en: 'Chapter 6: Electrical Sources',
-          hi: 'अध्याय 6: विद्युत स्रोत',
-          bn: 'অধ্যায় ৬: বৈদ্যুতিক সোর্স'
+          en: 'Chapter 6: DC Machines & Transformers',
+          hi: 'अध्याय 6: डीसी मशीन एवं ट्रांसफॉर्मर',
+          bn: 'অধ্যায় ৬: ডিসি মেশিন ও ট্রান্সফর্মার'
         },
         topics: [
           {
-            id: 'tp-voltage-source',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-electrical-machines-fundamentals',
+            chapterId: 'ch-electrical-machines',
             order: 1,
+            level: 'Foundation',
             title: {
-              en: 'Voltage Source',
-              hi: 'वोल्टेज स्रोत',
-              bn: 'ভোল্টেজ সোর্স'
+              en: 'Electrical Machines Fundamentals & Energy Conversion',
+              hi: 'विद्युत मशीनों के मूल सिद्धांत एवं ऊर्जा रूपांतरण',
+              bn: 'ইলেকট্রিক্যাল মেশিনের মৌলিক ধারণা ও শক্তি রূপান্তর'
+            },
+            description: {
+              en: 'Electromechanical energy conversion principles, magnetic fields, electrical to mechanical and mechanical to electrical conversions, generator action, motor action, stationary transformer action, and basic machine classifications.',
+              hi: 'विद्युत-यांत्रिक ऊर्जा रूपांतरण सिद्धांत, चुंबकीय क्षेत्र, विद्युत से यांत्रिक एवं यांत्रिक से विद्युत ऊर्जा रूपांतरण, जनरेटर क्रिया, मोटर क्रिया, ट्रांसफॉर्मर क्रिया एवं मशीनों का वर्गीकरण।',
+              bn: 'ইলেক্ট্রোমেকানিক্যাল শক্তি রূপান্তর নীতি, চৌম্বক ক্ষেত্র, বৈদ্যুতিক থেকে যান্ত্রিক এবং যান্ত্রিক থেকে বৈদ্যুতিক রূপান্তর, জেনারেটর ক্রিয়া, মোটর ক্রিয়া, ট্রান্সফরমার ক্রিয়া ও মেশিনের প্রাথমিক শ্রেণিবিন্যাস।'
             }
           },
           {
-            id: 'tp-current-source',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-magnetic-circuits',
+            chapterId: 'ch-electrical-machines',
             order: 2,
+            level: 'Diploma',
             title: {
-              en: 'Current Source',
-              hi: 'धारा स्रोत (करंट सोर्स)',
-              bn: 'কারেন্ট সোর্স'
+              en: 'Magnetic Circuits & Electromagnetic Principles',
+              hi: 'चुंबकीय परिपथ एवं विद्युतचुंबकीय सिद्धांत',
+              bn: 'ম্যাগনেটিক সার্কিট ও ইলেক্ট্রোম্যাগনেটিক নীতি'
+            },
+            description: {
+              en: 'Magnetomotive force (MMF), reluctance, magnetic flux, permeability, Faraday’s laws of electromagnetic induction, Lenz’s law, and Fleming’s right-hand and left-hand rules.',
+              hi: 'चुंबकवाहक बल (MMF), रिलक्टेंस, चुंबकीय फ्लक्स, पारगम्यता (Permeability), फैराडे के विद्युतचुंबकीय प्रेरण के नियम, लेन्ज का नियम एवं फ्लेमिंग के नियम।',
+              bn: 'ম্যাগনেটোমোটিভ ফোর্স (MMF), রিলাক্ট্যান্স, চৌম্বক ফ্লাক্স, প্রবেশ্যতা, ফ্যারাডের তড়িচ্চুম্বকীয় আবেশের সূত্রাবলী, লেঞ্জের সূত্র এবং ফ্লেমিংয়ের নিয়মসমূহ।'
             }
           },
           {
-            id: 'tp-ideal-source',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-machine-construction',
+            chapterId: 'ch-electrical-machines',
             order: 3,
+            level: 'Diploma',
             title: {
-              en: 'Ideal Source',
-              hi: 'आदर्श स्रोत',
-              bn: 'আইডিয়াল সোর্স'
+              en: 'DC Machine Construction & Working Principle',
+              hi: 'डीसी मशीन की संरचना एवं कार्य सिद्धांत',
+              bn: 'ডিসি মেশিনের গঠন ও কার্যপ্রণালী'
+            },
+            description: {
+              en: 'Stator yoke, field poles and pole shoes, field winding, armature core and windings, commutator, carbon brushes, bearings, and basic generator and motor operational principles.',
+              hi: 'योक (Yoke), पोल एवं पोल शू, फील्ड वाइंडिंग, आर्मेचर कोर एवं वाइंडिंग, कम्यूटेटर, कार्बन ब्रश, बेयरिंग तथा जनरेटर एवं मोटर की कार्यप्रणाली।',
+              bn: 'ইয়োক (Yoke), পোল ও পোল শু, ফিল্ড ওয়াইন্ডিং, আর্মেচার কোর ও ওয়াইন্ডিং, কমিউটেটর, কার্বন ব্রাশ, বিয়ারিং এবং জেনারেটর ও মোটরের মূল কার্যপ্রণালী।'
             }
           },
           {
-            id: 'tp-practical-source',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-generator-emf',
+            chapterId: 'ch-electrical-machines',
             order: 4,
+            level: 'Engineering',
             title: {
-              en: 'Practical Source',
-              hi: 'व्यावहारिक स्रोत',
-              bn: 'প্র্যাকটিক্যাল সোর্স'
+              en: 'DC Generator EMF Equation & Generation Principle',
+              hi: 'डीसी जनरेटर EMF समीकरण एवं जनरेशन सिद्धांत',
+              bn: 'ডিসি জেনারেটরের EMF সমীকরণ ও জেনারেশন নীতি'
+            },
+            description: {
+              en: 'Derivation of generated EMF equation Eg = (P·Φ·Z·N)/(60·A), magnetic flux per pole, rotational speed, total armature conductors, parallel paths (A = P for Lap, A = 2 for Wave).',
+              hi: 'उत्पन्न EMF समीकरण Eg = (P·Φ·Z·N)/(60·A) का निगमन, चुंबकीय फ्लक्स, घूर्णन गति, कुल आर्मेचर चालक, लैप (A = P) एवं वेव वाइंडिंग (A = 2) में समानांतर पथ।',
+              bn: 'উৎপন্ন EMF সমীকরণ Eg = (P·Φ·Z·N)/(60·A) প্রতিপাদন, চৌম্বক ফ্লাক্স, ঘূর্ণন গতি, মোট কন্ডাক্টর সংখ্যা, ল্যাপ (A = P) ও ওয়েভ (A = 2) ওয়াইন্ডিংয়ে সমান্তরাল পথ।'
             }
           },
           {
-            id: 'tp-independent-source',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-generator-types',
+            chapterId: 'ch-electrical-machines',
             order: 5,
+            level: 'Diploma',
             title: {
-              en: 'Independent Source',
-              hi: 'स्वतंत्र स्रोत',
-              bn: 'ইন্ডিপেন্ডেন্ট সোর্স'
+              en: 'Types of DC Generators & Excitation Methods',
+              hi: 'डीसी जनरेटर के प्रकार एवं उत्तेजन विधियाँ',
+              bn: 'ডিসি জেনারেটরের প্রকারভেদ ও এক্সাইটেশন পদ্ধতি'
+            },
+            description: {
+              en: 'Separately excited, self-excited shunt, series, cumulative compound, and differential compound DC generators with circuit topologies and field excitation comparisons.',
+              hi: 'प्रथक उत्तेजित (Separately Excited), शंट, सीरीज, संचयी यौगिक (Cumulative Compound) एवं विभेदी यौगिक (Differential Compound) डीसी जनरेटर तथा उत्तेजन विधियों की तुलना।',
+              bn: 'পৃথক উত্তেজিত (Separately Excited), সান্ট, সিরিজ, কিউমুলেটিভ কম্পাউন্ড এবং ডিফারেনশিয়াল কম্পাউন্ড ডিসি জেনারেটরের সার্কিট টপোলজি ও এক্সাইটেশন তুলনা।'
             }
           },
           {
-            id: 'tp-dependent-source-intro',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-generator-characteristics',
+            chapterId: 'ch-electrical-machines',
             order: 6,
+            level: 'Engineering',
             title: {
-              en: 'Dependent Source — Introduction',
-              hi: 'निर्भर स्रोत — परिचय',
-              bn: 'ডিপেন্ডেন্ট সোর্স — পরিচিতি'
+              en: 'DC Generator Characteristics & Voltage Build-Up',
+              hi: 'डीसी जनरेटर की विशेषताएँ एवं वोल्टेज बिल्ड-अप',
+              bn: 'ডিসি জেনারেটরের বৈশিষ্ট্য ও ভোল্টেজ বিল্ড-আপ'
+            },
+            description: {
+              en: 'Open circuit characteristic (OCC / Magnetization curve), internal and external load characteristics, critical field resistance, critical speed, residual magnetism, and voltage build-up conditions.',
+              hi: 'ओपन सर्किट विशेषता (OCC), आंतरिक एवं बाह्य लोड विशेषताएँ, क्रांतिक फील्ड प्रतिरोध, क्रांतिक गति, अवशिष्ट चुंबकत्व तथा सेल्फ-एक्साइटेड वोल्टेज बिल्ड-अप की शर्तें।',
+              bn: 'ওপেন সার্কিট বৈশিষ্ট্য (OCC), অভ্যন্তরীণ ও বাহ্যিক লোড বৈশিষ্ট্য রেখা, সংকট ফিল্ড রোধ, সংকট গতি, অবশিষ্ট চুম্বকত্ব এবং ভোল্টেজ বিল্ড-আপের প্রয়োজনীয় শর্তাবলী।'
             }
           },
           {
-            id: 'tp-emf-internal-resistance',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-generator-losses-efficiency',
+            chapterId: 'ch-electrical-machines',
             order: 7,
+            level: 'Engineering',
             title: {
-              en: 'EMF and Internal Resistance',
-              hi: 'विद्युत वाहक बल एवं आंतरिक प्रतिरोध',
-              bn: 'ইএমএফ ও অভ্যন্তরীণ রোধ'
+              en: 'DC Generator Losses, Efficiency & Applications',
+              hi: 'डीसी जनरेटर की हानियाँ, दक्षता एवं अनुप्रयोग',
+              bn: 'ডিসি জেনারেটরের ক্ষতি, दक्षता ও ব্যবহার'
+            },
+            description: {
+              en: 'Copper losses (I²R), iron losses (hysteresis and eddy current), mechanical friction and windage losses, stray load loss, efficiency derivation, condition for maximum efficiency, and practical applications.',
+              hi: 'कॉपर हानियाँ (I²R), लौह हानियाँ (हिस्टैरिसीस एवं भंवर धारा), यांत्रिक हानियाँ, स्ट्रे लोड हानि, दक्षता समीकरण, अधिकतम दक्षता की शर्त एवं औद्योगिक अनुप्रयोग।',
+              bn: 'কপার লস (I²R), আয়রন লস (হিস্টেরেসিস ও এডি কারেন্ট), যান্ত্রিক ঘর্ষণ ক্ষতি, স্ট্রে লোড ক্ষতি, কর্মদক্ষতা গণনা, সর্বোচ্চ দক্ষতার শর্ত এবং ব্যবহারিক প্রয়োগ।'
             }
           },
           {
-            id: 'tp-source-transformation-intro',
-            chapterId: 'ch-electrical-sources',
+            id: 'ch6-dc-motor-principle',
+            chapterId: 'ch-electrical-machines',
             order: 8,
+            level: 'Engineering',
             title: {
-              en: 'Source Transformation — Introduction',
-              hi: 'स्रोत परिवर्तन — परिचय',
-              bn: 'সোর্স ট্রান্সফরমেশন — পরিচিতি'
+              en: 'DC Motor Principle, Back EMF & Torque Equation',
+              hi: 'डीसी मोटर सिद्धांत, बैक EMF एवं टॉर्क समीकरण',
+              bn: 'ডিসি মোটরের নীতি, ব্যাক EMF ও টর্ক সমীকরণ'
+            },
+            description: {
+              en: 'Motor action by Lorentz force, back EMF Eb = V - Ia·Ra, self-regulating governor action of Eb, electromagnetic torque equation Ta ∝ Φ·Ia, and shaft torque vs armature torque.',
+              hi: 'लोरेंट्ज़ बल द्वारा मोटर क्रिया, बैक EMF Eb = V - Ia·Ra का स्व-नियमन सिद्धांत, विद्युतचुंबकीय टॉर्क समीकरण Ta ∝ Φ·Ia तथा शाफ्ट टॉर्क संबंध।',
+              bn: 'লরেন্টজ বল দ্বারা মোটর ক্রিয়া, ব্যাক EMF Eb = V - Ia·Ra ও এর স্বয়ংক্রিয় নিয়ন্ত্রণ ব্যবস্থা, ইলেক্ট্রোম্যাগনেটিক টর্ক সমীকরণ Ta ∝ Φ·Ia এবং শ্যাফট টর্ক।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-types',
+            chapterId: 'ch-electrical-machines',
+            order: 9,
+            level: 'Diploma',
+            title: {
+              en: 'Types of DC Motors & Characteristics',
+              hi: 'डीसी मोटरों के प्रकार एवं विशेषताएँ',
+              bn: 'ডিসি মোটরের প্রকারভেদ ও বৈশিষ্ট্য'
+            },
+            description: {
+              en: 'DC shunt, series, and compound motors, torque-armature current (T vs Ia), speed-armature current (N vs Ia), speed-torque (N vs T) characteristics, and motor selection criteria.',
+              hi: 'डीसी शंट, सीरीज एवं कंपाउंड मोटर, टॉर्क-आर्मेचर धारा, गति-आर्मेचर धारा, गति-टॉर्क विशेषता वक्र तथा विभिन्न औद्योगिक अनुप्रयोगों के लिए मोटर चयन।',
+              bn: 'ডিসি সান্ট, সিরিজ ও কম্পাউন্ড মোটর, টর্ক-আর্মেচার কারেন্ট, গতি-আর্মেচার কারেন্ট, গতি-টর্ক বৈশিষ্ট্য এবং উপযুক্ত মোটর নির্বাচনের মানদণ্ড।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-starting',
+            chapterId: 'ch-electrical-machines',
+            order: 10,
+            level: 'Practical',
+            title: {
+              en: 'DC Motor Starting Methods & Starters',
+              hi: 'डीसी मोटर स्टार्टिंग विधियाँ एवं स्टार्टर',
+              bn: 'ডিসি মোটর স্টার্টিং পদ্ধতি ও স্টার্টার'
+            },
+            description: {
+              en: 'Need for starters due to absence of back EMF at standstill, high starting current surges, 2-point starter for series motors, 3-point and 4-point starters for shunt/compound motors with No-Volt Release (NVR) and Overload Release (OLR).',
+              hi: 'स्टार्टिंग में बैक EMF की अनुपस्थिति और उच्च धारा के कारण स्टार्टर की आवश्यकता, 2-पॉइंट, 3-पॉइंट एवं 4-पॉइंट स्टार्टर की संरचना, No-Volt Release (NVR) एवं ओवरलोड सुरक्षा।',
+              bn: 'শুরুতে ব্যাক EMF শূন্য থাকায় উচ্চ স্টার্টিং কারেন্ট প্রবাহ রোধে স্টার্টারের প্রয়োজনীয়তা, ২-পয়েন্ট, ৩-পয়েন্ট ও ৪-পয়েন্ট স্টার্টার, নো-ভোল্ট রিলিজ ও ওভারলোড প্রটেকশন।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-speed-control',
+            chapterId: 'ch-electrical-machines',
+            order: 11,
+            level: 'Engineering',
+            title: {
+              en: 'DC Motor Speed Control Methods',
+              hi: 'डीसी मोटर गति नियंत्रण विधियाँ',
+              bn: 'ডিসি মোটরের গতি নিয়ন্ত্রণ পদ্ধতি'
+            },
+            description: {
+              en: 'Flux control (field rheostat method for above base speed), armature resistance control (rheostatic method for below base speed), armature voltage control (Ward-Leonard system), constant torque and constant power operating regions.',
+              hi: 'फ्लक्स नियंत्रण (बेस गति से ऊपर के लिए), आर्मेचर प्रतिरोध नियंत्रण (बेस गति से नीचे के लिए), आर्मेचर वोल्टेज नियंत्रण (वार्ड-लियोनार्ड प्रणाली), स्थिर टॉर्क एवं स्थिर शक्ति क्षेत्र।',
+              bn: 'ফ্লাক্স নিয়ন্ত্রণ (বেস স্পিডের উপরে), আর্মেচার রোধ নিয়ন্ত্রণ (বেস স্পিডের নিচে), আর্মেচার ভোল্টেজ নিয়ন্ত্রণ (ওয়ার্ড-লিওনার্ড পদ্ধতি), ধ্রুবক টর্ক ও ধ্রুবক পাওয়ার কার্যসীমা।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-braking',
+            chapterId: 'ch-electrical-machines',
+            order: 12,
+            level: 'Practical',
+            title: {
+              en: 'DC Motor Braking & Industrial Drives',
+              hi: 'डीसी मोटर ब्रेकिंग एवं औद्योगिक ड्राइव',
+              bn: 'ডিসি মোটর ব্রেকিং ও ইন্ডাস্ট্রিয়াল ড্রাইভ'
+            },
+            description: {
+              en: 'Electric braking methods for DC machines: Plugging (reverse voltage braking), dynamic/rheostatic braking, regenerative braking with energy recovery, braking torque calculations, and industrial drive safety.',
+              hi: 'डीसी मोटरों की विद्युत ब्रेकिंग विधियाँ: प्लगिंग (रिवर्स वोल्टेज ब्रेकिंग), डायनामिक/रियोस्टैटिक ब्रेकिंग, रीजेनरेटिव ब्रेकिंग (ऊर्जा पुनरुत्पादन), ब्रेकिंग टॉर्क एवं औद्योगिक सुरक्षा।',
+              bn: 'ডিসি মোটরের বৈদ্যুতিক ব্রেকিং পদ্ধতি: প্লাগিং (রিভার্স ভোল্টেজ), ডায়নামিক/রিহোস্ট্যাটিক ব্রেকিং, রিজেনারেটিভ ব্রেকিং (শক্তি পুনরুদ্ধার), ব্রেকিং টর্ক ও শিল্প ড্রাইভ নিরাপত্তা।'
+            }
+          },
+          {
+            id: 'ch6-transformer-fundamentals',
+            chapterId: 'ch-electrical-machines',
+            order: 13,
+            level: 'Foundation',
+            title: {
+              en: 'Transformer Fundamentals, Construction & EMF Equation',
+              hi: 'ट्रांसफॉर्मर के मूल सिद्धांत, संरचना एवं EMF समीकरण',
+              bn: 'ট্রান্সফর্মারের মৌলিক ধারণা, গঠন ও EMF সমীকরণ'
+            },
+            description: {
+              en: 'Working principle of static transformers based on Faraday’s mutual induction, laminated silicon steel core, primary and secondary windings, EMF equations E1 = 4.44·f·N1·Φm, E2 = 4.44·f·N2·Φm, transformation ratio K = V2/V1 = N2/N1 = I1/I2.',
+              hi: 'पारस्परिक प्रेरण (Mutual Induction) पर आधारित ट्रांसफॉर्मर सिद्धांत, सिलिकॉन स्टील लैमिनेटेड कोर, प्राइमरी एवं सेकेंडरी वाइंडिंग, EMF समीकरण E = 4.44·f·N·Φm तथा रूपांतरण अनुपात K।',
+              bn: 'পারস্পরিক আবেশের উপর প্রতিষ্ঠিত ট্রান্সফরমারের কার্যনীতি, সিলিকন স্টিল কোর, প্রাইমারি ও সেকেন্ডারি ওয়াইন্ডিং, EMF সমীকরণ E = 4.44·f·N·Φm এবং ট্রান্সফরমেশন অনুপাত K।'
+            }
+          },
+          {
+            id: 'ch6-transformer-types-construction',
+            chapterId: 'ch-electrical-machines',
+            order: 14,
+            level: 'Diploma',
+            title: {
+              en: 'Transformer Types, Construction & Cooling Methods',
+              hi: 'ट्रांसफॉर्मर के प्रकार, संरचना एवं कूलिंग विधियाँ',
+              bn: 'ট্রান্সফর্মারের প্রকারভেদ, গঠন ও কুলিং পদ্ধতি'
+            },
+            description: {
+              en: 'Core type and shell type constructions, single-phase and three-phase transformers, dry-type vs oil-immersed transformers, cooling classifications: ONAN, ONAF, OFAF, OFWF, and conservator tank with silica gel breather.',
+              hi: 'कोर टाइप एवं शेल टाइप संरचना, सिंगल-फेज एवं थ्री-फेज ट्रांसफॉर्मर, ऑयल-इमर्स्ड एवं ड्राई टाइप ट्रांसफॉर्मर, कूलिंग विधियाँ (ONAN, ONAF, OFAF), कंज़र्वेटर टैंक एवं सिलिका जेल ब्रीदर।',
+              bn: 'কোর টাইপ ও শেল টাইপ গঠন, সিঙ্গেল ও থ্রি-ফেজ ট্রান্সফরমার, ড্রাই ও অয়েল-ইমার্সড ট্রান্সফরমার, শীতলীকরণ পদ্ধতি (ONAN, ONAF, OFAF), কনজারভেটর ট্যাংক ও সিলিকা জেল ব্রিদার।'
+            }
+          },
+          {
+            id: 'ch6-transformer-equivalent-circuit',
+            chapterId: 'ch-electrical-machines',
+            order: 15,
+            level: 'Engineering',
+            title: {
+              en: 'Transformer Equivalent Circuit & Phasor Analysis',
+              hi: 'ट्रांसफॉर्मर समतुल्य परिपथ एवं फेजर विश्लेषण',
+              bn: 'ট্রান্সফর্মারের equivalent circuit ও phasor analysis'
+            },
+            description: {
+              en: 'Exact and approximate equivalent circuits, primary and secondary winding resistances, leakage reactances, core-loss resistance (Rc), magnetizing reactance (Xm), parameter referral across turns ratio (K² scaling), and complete loaded phasor diagrams.',
+              hi: 'सटीक एवं अनुमानित समतुल्य परिपथ, वाइंडिंग प्रतिरोध, लीकेज रिएक्टेंस, कोर-लॉस प्रतिरोध Rc, मैग्नेटाइजिंग रिएक्टेंस Xm, प्राइमरी या सेकेंडरी के संदर्भ में मान (K² स्केलिंग) एवं फेजर आरेख।',
+              bn: 'নির্ভুল ও আনুমানিক ইকুইভ্যালেন্ট সার্কিট, ওয়াইন্ডিং রোধ, লিকেজ রিঅ্যাকট্যান্স, কোর-লস রোধ Rc, ম্যাগনেটাইজিং রিঅ্যাকট্যান্স Xm, প্রাইমারি বা সেকেন্ডারিতে রেফার্ড প্যারামিটার (K² স্কেলিং) ও ফেজর চিত্র।'
+            }
+          },
+          {
+            id: 'ch6-transformer-losses-efficiency',
+            chapterId: 'ch-electrical-machines',
+            order: 16,
+            level: 'Engineering',
+            title: {
+              en: 'Transformer Losses, Efficiency & Voltage Regulation',
+              hi: 'ट्रांसफॉर्मर की हानियाँ, दक्षता एवं वोल्टेज रेगुलेशन',
+              bn: 'ট্রান্সফর্মারের ক্ষতি, दक्षता ও ভোল্টেজ রেগুলেশন'
+            },
+            description: {
+              en: 'Constant core losses (hysteresis and eddy current), variable copper losses (I²R), efficiency calculation, condition for maximum efficiency (Copper Loss = Iron Loss), voltage regulation formula and power factor dependence, all-day energy efficiency.',
+              hi: 'स्थिर कोर हानियाँ (हिस्टैरिसीस एवं भंवर धारा), परिवर्तनीय कॉपर हानियाँ (I²R), दक्षता गणना, अधिकतम दक्षता की शर्त (कॉपर हानि = लौह हानि), वोल्टेज रेगुलेशन सूत्र एवं ऑल-डे दक्षता।',
+              bn: 'স্থির কোর লস (হিস্টেরেসিস ও এডি কারেন্ট), পরিবর্তনশীল কপার লস (I²R), কর্মদক্ষতা নির্ণয়, সর্বোচ্চ দক্ষতার শর্ত (কপার লস = আয়রন লস), ভোল্টেজ রেগুলেশন ও অল-ডে এনার্জি দক্ষতা।'
+            }
+          },
+          {
+            id: 'ch6-transformer-tests',
+            chapterId: 'ch-electrical-machines',
+            order: 17,
+            level: 'Engineering',
+            title: {
+              en: 'Transformer Testing: OC, SC & Sumpner\'s Tests',
+              hi: 'ट्रांसफॉर्मर परीक्षण: OC, SC एवं Sumpner परीक्षण',
+              bn: 'ট্রান্সফর্মার টেস্টিং: OC, SC ও Sumpner Test'
+            },
+            description: {
+              en: 'Open Circuit (OC) test for core loss and magnetizing branch parameters (Rc, Xm), Short Circuit (SC) test for full-load copper loss and equivalent impedance (Req, Xeq), predetermination of efficiency and regulation, Sumpner’s back-to-back heat run test, and test safety precautions.',
+              hi: 'ओपन सर्किट (OC) टेस्ट द्वारा लौह हानि व मैग्नेटाइजिंग शाखा (Rc, Xm) का निर्धारण, शॉर्ट सर्किट (SC) टेस्ट द्वारा कॉपर हानि व समतुल्य प्रतिबाधा (Req, Xeq) की गणना, संपटनर (Sumpner\'s) बैक-टू-बैक टेस्ट एवं सुरक्षा नियम।',
+              bn: 'ওপেন সার্কিট (OC) টেস্টের মাধ্যমে কোর লস ও ম্যাগনেটাইজিং শাখা (Rc, Xm) নির্ণয়, শর্ট সার্কিট (SC) টেস্টের মাধ্যমে কপার লস ও তুল্য ইম্পিড্যান্স (Req, Xeq) নির্ণয়, স্যাম্পনার টেস্ট ও সুরক্ষা সতর্কতা।'
+            }
+          },
+          {
+            id: 'ch6-three-phase-transformer',
+            chapterId: 'ch-electrical-machines',
+            order: 18,
+            level: 'Engineering',
+            title: {
+              en: 'Three-Phase Transformers & Connections',
+              hi: 'थ्री-फेज ट्रांसफॉर्मर एवं कनेक्शन',
+              bn: 'থ্রি-ফেজ ট্রান্সফর্মার ও কানেকশন'
+            },
+            description: {
+              en: 'Three-phase bank vs single three-phase core unit, connection configurations: Star-Star (Y-Y), Delta-Delta (Δ-Δ), Star-Delta (Y-Δ), Delta-Star (Δ-Y), Scott connection for 3-phase to 2-phase conversion, phase displacement, and vector groups (Dyn11, Ynd1).',
+              hi: 'थ्री-फेज ट्रांसफॉर्मर संरचना, कनेक्शन प्रकार: स्टार-स्टार (Y-Y), डेल्टा-डेल्टा (Δ-Δ), स्टार-डेल्टा (Y-Δ), डेल्टा-स्टार (Δ-Y), स्कॉट (Scott) T-T कनेक्शन, फेज विस्थापन एवं वेक्टर ग्रुप (Dyn11, Ynd1)।',
+              bn: 'থ্রি-ফেজ ট্রান্সফরমার কাঠামো, প্রধান সংযোগ পদ্ধতি: স্টার-স্টার (Y-Y), ডেল্টা-ডেল্টা (Δ-Δ), স্টার-ডেল্টা (Y-Δ), ডেল্টা-স্টার (Δ-Y), স্কট কানেকশন (৩-ফেজ থেকে ২-ফেজ রূপান্তর), ফেজ পার্থক্য ও ভেক্টর গ্রুপ।'
+            }
+          },
+          {
+            id: 'ch6-transformer-parallel-operation',
+            chapterId: 'ch-electrical-machines',
+            order: 19,
+            level: 'Practical',
+            title: {
+              en: 'Parallel Operation of Transformers & Load Sharing',
+              hi: 'ट्रांसफॉर्मरों का समानांतर संचालन एवं लोड शेयरिंग',
+              bn: 'ট্রান্সফর্মারের parallel operation ও load sharing'
+            },
+            description: {
+              en: 'Necessity of parallel operation for reliability and expansion, mandatory conditions: identical polarity, equal voltage ratio, equal per-unit impedance and X/R ratio, same phase sequence and vector group, circulating currents, and load sharing equations.',
+              hi: 'समानांतर संचालन की आवश्यकता एवं लाभ, अनिवार्य शर्तें: समान ध्रुवीयता (Polarity), समान वोल्टेज अनुपात, समान प्रति-इकाई प्रतिबाधा (p.u. Impedance) एवं X/R अनुपात, समान फेज अनुक्रम, परिसंचारी धाराएँ (Circulating Currents) एवं लोड शेयरिंग।',
+              bn: 'সমান্তরাল সংযোগের প্রয়োজনীয়তা ও সুবিধা, অপরিহার্য শর্তাবলী: অভিন্ন পোলারিটি, সমান ভোল্টেজ অনুপাত, সমান পার-ইউনিট ইম্পিড্যান্স ও X/R অনুপাত, একই ফেজ সিকোয়েন্স, সার্কুলেটিং কারেন্ট প্রতিরোধ ও লোড শেয়ারিং সমীকরণ।'
+            }
+          },
+          {
+            id: 'ch6-machines-practical-applications',
+            chapterId: 'ch-electrical-machines',
+            order: 20,
+            level: 'Practical',
+            title: {
+              en: 'DC Machines & Transformers — Practical Industrial Applications',
+              hi: 'डीसी मशीन एवं ट्रांसफॉर्मर — व्यावहारिक औद्योगिक अनुप्रयोग',
+              bn: 'ডিসি মেশিন ও ট্রান্সফর্মার — ব্যবহারিক শিল্প প্রয়োগ'
+            },
+            description: {
+              en: 'Heavy industrial drives (cranes, electric traction, hoists, steel rolling mills, battery charging), distribution and power transformer substations, oil testing (dielectric breakdown voltage), winding temperature monitoring, Buchholz relay, insulation resistance (Megger test), preventive maintenance, and electrical safety standards.',
+              hi: 'भारी औद्योगिक ड्राइव (क्रेन, इलेक्ट्रिक ट्रैक्शन, रोलिंग मिल, बैटरी चार्जिंग), वितरण एवं पावर ट्रांसफॉर्मर सबस्टेशन, ट्रांसफॉर्मर तेल परीक्षण (BDV टेस्ट), बुखोल्ज़ रिले, इंसुलेशन प्रतिरोध (मेगर टेस्ट), निवारक रखरखाव एवं सुरक्षा मानक।',
+              bn: 'ভারী শিল্প ড্রাইভ (ক্রেন, ইলেকট্রিক ট্র্যাকশন, রোলিং মিল, ব্যাটারি চার্জিং), ডিস্ট্রিবিউশন ও পাওয়ার সাবস্টেশন, ট্রান্সফরমার তেল পরীক্ষা (BDV টেস্ট), বুকহলজ রিলে, ইনসুলেশন রেজিস্ট্যান্স (মেগার টেস্ট), প্রিভেন্টিভ রক্ষণাবেক্ষণ ও সুরক্ষা বিধি।'
             }
           }
         ]
@@ -2289,6 +2530,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_5_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-electrical-machines') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_6_LESSONS[topic.id] || topic.lesson
           }))
         };
       }
