@@ -2872,6 +2872,402 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'dc-generator-losses':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 230" className="w-full max-w-xl h-52" aria-label="DC Generator Power Flow & Loss Classification">
+            {/* Stage 1: Mechanical Shaft Input */}
+            <g transform="translate(15, 25)">
+              <rect x="0" y="0" width="130" height="65" rx="8" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="65" y="24" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Shaft Mech Input</text>
+              <text x="65" y="44" textAnchor="middle" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="monospace">Pin (BHP)</text>
+              <text x="65" y="58" textAnchor="middle" fill="#94a3b8" fontSize="8">Pin = T · ω</text>
+            </g>
+
+            {/* Transition 1 */}
+            <line x1="145" y1="57" x2="195" y2="57" stroke="#38bdf8" strokeWidth="3" strokeDasharray="4,2" />
+            <polygon points="195,52 205,57 195,62" fill="#38bdf8" />
+
+            {/* Rotational Losses Dropdown */}
+            <path d="M 170 57 L 170 145" stroke="#f43f5e" strokeWidth="2.5" />
+            <polygon points="166,145 170,155 174,145" fill="#f43f5e" />
+            <rect x="105" y="155" width="130" height="55" rx="6" fill="#450a0a" stroke="#f43f5e" strokeWidth="1.5" />
+            <text x="170" y="172" textAnchor="middle" fill="#fca5a5" fontSize="9.5" fontWeight="bold">Iron &amp; Mech Losses</text>
+            <text x="170" y="188" textAnchor="middle" fill="#ffffff" fontSize="9" fontFamily="monospace">P_rot = P_core + P_mech</text>
+            <text x="170" y="202" textAnchor="middle" fill="#fca5a5" fontSize="7.5">Hysteresis + Eddy + Friction</text>
+
+            {/* Stage 2: Electromagnetic Converted Power */}
+            <g transform="translate(205, 25)">
+              <rect x="0" y="0" width="130" height="65" rx="8" fill="#1e293b" stroke="#fbbf24" strokeWidth="2" />
+              <text x="65" y="24" textAnchor="middle" fill="#fbbf24" fontSize="11" fontWeight="bold">Gross Converted</text>
+              <text x="65" y="44" textAnchor="middle" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="monospace">Pdev = Eg · Ia</text>
+              <text x="65" y="58" textAnchor="middle" fill="#94a3b8" fontSize="8">Electromagnetic Power</text>
+            </g>
+
+            {/* Transition 2 */}
+            <line x1="335" y1="57" x2="385" y2="57" stroke="#fbbf24" strokeWidth="3" strokeDasharray="4,2" />
+            <polygon points="385,52 395,57 385,62" fill="#fbbf24" />
+
+            {/* Copper Losses Dropdown */}
+            <path d="M 360 57 L 360 145" stroke="#fb923c" strokeWidth="2.5" />
+            <polygon points="356,145 360,155 364,145" fill="#fb923c" />
+            <rect x="290" y="155" width="140" height="55" rx="6" fill="#431407" stroke="#fb923c" strokeWidth="1.5" />
+            <text x="360" y="172" textAnchor="middle" fill="#fed7aa" fontSize="9.5" fontWeight="bold">Copper &amp; Brush Losses</text>
+            <text x="360" y="188" textAnchor="middle" fill="#ffffff" fontSize="9" fontFamily="monospace">Ia²Ra + Ish²Rsh + V_b·Ia</text>
+            <text x="360" y="202" textAnchor="middle" fill="#fed7aa" fontSize="7.5">Variable + Field I²R</text>
+
+            {/* Stage 3: Terminal Electrical Output */}
+            <g transform="translate(395, 25)">
+              <rect x="0" y="0" width="130" height="65" rx="8" fill="#064e3b" stroke="#10b981" strokeWidth="2.5" />
+              <text x="65" y="24" textAnchor="middle" fill="#6ee7b7" fontSize="11" fontWeight="bold">Terminal Output</text>
+              <text x="65" y="44" textAnchor="middle" fill="#ffffff" fontSize="13" fontWeight="bold" fontFamily="monospace">Pout = V · IL</text>
+              <text x="65" y="58" textAnchor="middle" fill="#a7f3d0" fontSize="8">Useful Electrical Power</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Generator Power Flow Diagram: Pin → (Rotational Losses) → Pdev → (Copper Losses) → Pout"}
+          </p>
+        </div>
+      );
+
+    case 'dc-motor-principle':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 230" className="w-full max-w-xl h-52" aria-label="DC Motor Working Principle & Back EMF">
+            {/* Left Diagram: Lorentz Force & Fleming's Left Hand Rule */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="240" height="190" rx="8" fill="#0f172a" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="120" y="22" textAnchor="middle" fill="#f87171" fontSize="11" fontWeight="bold">Lorentz Force &amp; Rotation</text>
+              
+              {/* Field Poles */}
+              <rect x="15" y="45" width="30" height="110" rx="4" fill="#dc2626" />
+              <text x="30" y="105" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="bold">N</text>
+              
+              <rect x="195" y="45" width="30" height="110" rx="4" fill="#2563eb" />
+              <text x="210" y="105" textAnchor="middle" fill="#ffffff" fontSize="16" fontWeight="bold">S</text>
+
+              {/* Flux lines */}
+              <g stroke="#38bdf8" strokeWidth="1" strokeDasharray="3,3" opacity="0.6">
+                <line x1="45" y1="70" x2="195" y2="70" />
+                <line x1="45" y1="100" x2="195" y2="100" />
+                <line x1="45" y1="130" x2="195" y2="130" />
+              </g>
+
+              {/* Armature Rotor */}
+              <circle cx="120" cy="100" r="45" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
+              
+              {/* Conductors */}
+              {/* Top Conductor (Out of page •) */}
+              <circle cx="120" cy="70" r="8" fill="#f59e0b" stroke="#d97706" />
+              <circle cx="120" cy="70" r="2.5" fill="#0f172a" />
+              {/* Force vector Left */}
+              <line x1="120" y1="70" x2="85" y2="70" stroke="#10b981" strokeWidth="2.5" />
+              <polygon points="85,67 76,70 85,73" fill="#10b981" />
+              <text x="70" y="66" fill="#34d399" fontSize="8" fontWeight="bold">F</text>
+
+              {/* Bottom Conductor (Into page ⊗) */}
+              <circle cx="120" cy="130" r="8" fill="#f59e0b" stroke="#d97706" />
+              <line x1="116" y1="126" x2="124" y2="134" stroke="#0f172a" strokeWidth="1.5" />
+              <line x1="124" y1="126" x2="116" y2="134" stroke="#0f172a" strokeWidth="1.5" />
+              {/* Force vector Right */}
+              <line x1="120" y1="130" x2="155" y2="130" stroke="#10b981" strokeWidth="2.5" />
+              <polygon points="155,127 164,130 155,133" fill="#10b981" />
+              <text x="170" y="134" fill="#34d399" fontSize="8" fontWeight="bold">F</text>
+
+              <text x="120" y="174" textAnchor="middle" fill="#94a3b8" fontSize="8.5" fontFamily="monospace">Torque Ta = kt · Φ · Ia</text>
+            </g>
+
+            {/* Right Diagram: Back EMF Equivalent Circuit */}
+            <g transform="translate(280, 20)">
+              <rect x="0" y="0" width="240" height="190" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="120" y="22" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Armature Back EMF Circuit</text>
+
+              {/* Loop circuit */}
+              <line x1="30" y1="55" x2="210" y2="55" stroke="#475569" strokeWidth="2" />
+              <line x1="30" y1="145" x2="210" y2="145" stroke="#475569" strokeWidth="2" />
+              
+              {/* Terminal Supply V */}
+              <g transform="translate(30, 100)">
+                <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+                <text x="0" y="-3" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">+</text>
+                <text x="0" y="9" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">-</text>
+                <text x="-22" y="4" textAnchor="end" fill="#38bdf8" fontSize="10" fontWeight="bold">V</text>
+              </g>
+
+              {/* Current Arrow */}
+              <line x1="60" y1="55" x2="85" y2="55" stroke="#f59e0b" strokeWidth="2.5" />
+              <polygon points="85,52 92,55 85,58" fill="#f59e0b" />
+              <text x="75" y="46" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="bold">Ia →</text>
+
+              {/* Resistor Ra */}
+              <rect x="110" y="47" width="30" height="16" fill="#1e293b" stroke="#10b981" strokeWidth="1.5" rx="2" />
+              <text x="125" y="59" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">Ra</text>
+
+              {/* Back EMF Generator Eb (Opposing V) */}
+              <g transform="translate(180, 100)">
+                <circle cx="0" cy="0" r="18" fill="#1e293b" stroke="#fbbf24" strokeWidth="2" />
+                <text x="0" y="-3" textAnchor="middle" fill="#fbbf24" fontSize="9" fontWeight="bold">+</text>
+                <text x="0" y="9" textAnchor="middle" fill="#fbbf24" fontSize="9" fontWeight="bold">-</text>
+                <text x="25" y="4" textAnchor="start" fill="#fbbf24" fontSize="10" fontWeight="bold">Eb</text>
+              </g>
+              <line x1="180" y1="55" x2="180" y2="82" stroke="#475569" strokeWidth="2" />
+              <line x1="180" y1="118" x2="180" y2="145" stroke="#475569" strokeWidth="2" />
+
+              {/* Equations at bottom */}
+              <text x="120" y="165" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold" fontFamily="monospace">
+                Eb = V - Ia · Ra
+              </text>
+              <text x="120" y="180" textAnchor="middle" fill="#94a3b8" fontSize="8.5" fontFamily="monospace">
+                Ia = (V - Eb) / Ra
+              </text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Motor Operation: Lorentz Force Generation & Back EMF Governing Circuit"}
+          </p>
+        </div>
+      );
+
+    case 'dc-motor-types':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 230" className="w-full max-w-xl h-52" aria-label="DC Motor Types & Speed-Torque Characteristics">
+            {/* Topologies Block Left */}
+            <g transform="translate(15, 20)">
+              <rect x="0" y="0" width="250" height="190" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="125" y="20" textAnchor="middle" fill="#10b981" fontSize="11" fontWeight="bold">DC Motor Topologies</text>
+
+              {/* Shunt mini schematic */}
+              <g transform="translate(15, 35)">
+                <rect x="0" y="0" width="105" height="65" rx="4" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+                <text x="52" y="14" textAnchor="middle" fill="#38bdf8" fontSize="8.5" fontWeight="bold">Shunt Motor</text>
+                <circle cx="75" cy="40" r="12" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+                <text x="75" y="44" textAnchor="middle" fill="#fff" fontSize="8">A</text>
+                {/* Field parallel */}
+                <path d="M 25 25 Q 35 30 25 35 Q 35 40 25 45 Q 35 50 25 55" fill="none" stroke="#34d399" strokeWidth="1.5" />
+                <text x="25" y="62" textAnchor="middle" fill="#34d399" fontSize="6.5">Rsh</text>
+              </g>
+
+              {/* Series mini schematic */}
+              <g transform="translate(130, 35)">
+                <rect x="0" y="0" width="105" height="65" rx="4" fill="#1e293b" stroke="#fbbf24" strokeWidth="1" />
+                <text x="52" y="14" textAnchor="middle" fill="#fbbf24" fontSize="8.5" fontWeight="bold">Series Motor</text>
+                <circle cx="75" cy="40" r="12" fill="#0f172a" stroke="#fbbf24" strokeWidth="1.5" />
+                <text x="75" y="44" textAnchor="middle" fill="#fff" fontSize="8">A</text>
+                {/* Field in series */}
+                <path d="M 25 40 Q 30 30 35 40 Q 40 30 45 40 Q 50 30 55 40" fill="none" stroke="#fbbf24" strokeWidth="1.5" />
+                <text x="40" y="55" textAnchor="middle" fill="#fbbf24" fontSize="6.5">Rse</text>
+              </g>
+
+              {/* Compound schematic */}
+              <g transform="translate(15, 110)">
+                <rect x="0" y="0" width="220" height="65" rx="4" fill="#1e293b" stroke="#34d399" strokeWidth="1" />
+                <text x="110" y="15" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">Cumulative / Differential Compound</text>
+                {/* Shunt field */}
+                <path d="M 30 25 Q 38 32 30 40 Q 38 48 30 55" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+                <text x="30" y="62" textAnchor="middle" fill="#38bdf8" fontSize="6.5">Fld(Sh)</text>
+                {/* Series field + Armature */}
+                <path d="M 90 40 Q 98 32 106 40 Q 114 32 122 40" fill="none" stroke="#fbbf24" strokeWidth="1.5" />
+                <text x="106" y="55" textAnchor="middle" fill="#fbbf24" fontSize="6.5">Fld(Se)</text>
+                <circle cx="165" cy="40" r="12" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+                <text x="165" y="44" textAnchor="middle" fill="#fff" fontSize="8">A</text>
+              </g>
+            </g>
+
+            {/* Speed vs Torque Comparative Curves Right */}
+            <g transform="translate(280, 20)">
+              <rect x="0" y="0" width="245" height="190" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="122" y="20" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Speed vs Torque (N - T)</text>
+
+              {/* Axes */}
+              <line x1="35" y1="160" x2="225" y2="160" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="35" y1="160" x2="35" y2="35" stroke="#64748b" strokeWidth="1.5" />
+
+              {/* Shunt Curve */}
+              <path d="M 35 60 L 210 80" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="215" y="82" fill="#38bdf8" fontSize="7.5" fontWeight="bold">Shunt</text>
+
+              {/* Series Curve */}
+              <path d="M 45 40 Q 75 125 210 145" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
+              <text x="215" y="147" fill="#fbbf24" fontSize="7.5" fontWeight="bold">Series</text>
+
+              {/* Cumulative Curve */}
+              <path d="M 35 60 Q 120 90 210 110" fill="none" stroke="#34d399" strokeWidth="2" />
+              <text x="215" y="112" fill="#34d399" fontSize="7.5" fontWeight="bold">Cum. Comp</text>
+
+              {/* Differential Curve */}
+              <path d="M 35 60 L 210 50" fill="none" stroke="#fb7185" strokeWidth="1.5" strokeDasharray="3,2" />
+              <text x="215" y="52" fill="#fb7185" fontSize="7.5" fontWeight="bold">Diff. Comp</text>
+
+              {/* Axis labels */}
+              <text x="15" y="45" fill="#94a3b8" fontSize="8" fontWeight="bold">N ↑</text>
+              <text x="122" y="178" textAnchor="middle" fill="#94a3b8" fontSize="8.5" fontFamily="monospace">Torque Ta (N·m) →</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Motor Topologies & Comparative Speed-Torque Characteristic Curves"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-dc-motor-starter-3point':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-2xl h-52">
+            {/* Starter Box */}
+            <rect x="20" y="20" width="240" height="180" rx="8" fill="#090d16" stroke="#38bdf8" strokeWidth="2" />
+            <text x="140" y="42" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">3-POINT STARTER</text>
+
+            {/* Brass Arc & Studs */}
+            <path d="M 60 140 A 70 70 0 0 1 180 80" fill="none" stroke="#d97706" strokeWidth="4" />
+            <circle cx="65" cy="85" r="5" fill="#38bdf8" />
+            <circle cx="95" cy="65" r="5" fill="#38bdf8" />
+            <circle cx="130" cy="55" r="5" fill="#38bdf8" />
+            <circle cx="165" cy="65" r="5" fill="#38bdf8" />
+            <circle cx="195" cy="85" r="6" fill="#10b981" />
+            <text x="210" y="88" fill="#10b981" fontSize="8" fontWeight="bold">RUN</text>
+
+            {/* Handle */}
+            <line x1="120" y1="160" x2="195" y2="85" stroke="#94a3b8" strokeWidth="5" strokeLinecap="round" />
+            <circle cx="120" cy="160" r="8" fill="#e2e8f0" />
+            <text x="120" y="185" textAnchor="middle" fill="#64748b" fontSize="8">Spiral Spring Pivot</text>
+
+            {/* Electromagnets NVC and OLR */}
+            <g transform="translate(190, 100)">
+              <rect x="0" y="0" width="26" height="30" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="13" y="18" textAnchor="middle" fill="#38bdf8" fontSize="7" fontWeight="bold">NVC</text>
+            </g>
+            <g transform="translate(45, 140)">
+              <rect x="0" y="0" width="30" height="24" rx="3" fill="#1e293b" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="15" y="15" textAnchor="middle" fill="#ef4444" fontSize="7" fontWeight="bold">OLR</text>
+            </g>
+
+            {/* Terminals L, A, F */}
+            <text x="10" y="155" fill="#38bdf8" fontSize="10" fontWeight="bold">L</text>
+            <text x="268" y="90" fill="#38bdf8" fontSize="10" fontWeight="bold">A</text>
+            <text x="268" y="120" fill="#10b981" fontSize="10" fontWeight="bold">F</text>
+
+            {/* DC Motor on Right */}
+            <g transform="translate(320, 20)">
+              <rect x="0" y="0" width="200" height="180" rx="8" fill="#090d16" stroke="#475569" strokeWidth="2" />
+              <text x="100" y="30" textAnchor="middle" fill="#f59e0b" fontSize="11" fontWeight="bold">DC SHUNT MOTOR</text>
+              
+              {/* Armature */}
+              <circle cx="100" cy="80" r="28" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="100" y="85" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="bold">A</text>
+              <text x="100" y="120" textAnchor="middle" fill="#94a3b8" fontSize="8.5">Armature (Ra)</text>
+
+              {/* Shunt Field */}
+              <g transform="translate(30, 135)">
+                <path d="M 20 15 Q 35 5 50 15 Q 65 25 80 15 Q 95 5 110 15 Q 125 25 140 15" fill="none" stroke="#10b981" strokeWidth="2" />
+                <text x="80" y="32" textAnchor="middle" fill="#10b981" fontSize="8">Shunt Field (Rsh)</text>
+              </g>
+            </g>
+
+            {/* Connections */}
+            <path d="M 260 85 L 320 80" stroke="#38bdf8" strokeWidth="2" fill="none" />
+            <path d="M 260 115 L 290 115 L 290 150 L 320 150" stroke="#10b981" strokeWidth="2" fill="none" />
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "3-Point Starter Schematic for DC Shunt Motor with NVR and OLR Protection"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-dc-motor-speed-control':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-2xl h-52">
+            {/* Field Control (Left) */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="240" height="180" rx="8" fill="#090d16" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="120" y="24" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">1. Field Control (Flux Weakening)</text>
+              <text x="120" y="40" textAnchor="middle" fill="#94a3b8" fontSize="8.5">Speeds ABOVE Base (Constant Power)</text>
+
+              {/* Shunt Field in series with Rheostat */}
+              <g transform="translate(30, 60)">
+                <path d="M 10 30 Q 20 15 30 30 Q 40 45 50 30 Q 60 15 70 30" fill="none" stroke="#10b981" strokeWidth="2" />
+                <text x="40" y="50" textAnchor="middle" fill="#10b981" fontSize="7.5">Field Winding</text>
+                
+                {/* Field Rheostat */}
+                <rect x="100" y="20" width="45" height="20" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" rx="3" />
+                <path d="M 90 40 L 155 10" stroke="#f59e0b" strokeWidth="1.5" markerEnd="url(#arrow)" />
+                <text x="122" y="55" textAnchor="middle" fill="#f59e0b" fontSize="7.5">Field Rheostat (Rf)</text>
+              </g>
+
+              <circle cx="190" cy="90" r="22" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="190" y="94" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">A</text>
+              <text x="120" y="165" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">↑ Rf → ↓ If → ↓ Φ → ↑ Speed N</text>
+            </g>
+
+            {/* Armature Control (Right) */}
+            <g transform="translate(280, 20)">
+              <rect x="0" y="0" width="240" height="180" rx="8" fill="#090d16" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="120" y="24" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">2. Armature Resistance Control</text>
+              <text x="120" y="40" textAnchor="middle" fill="#94a3b8" fontSize="8.5">Speeds BELOW Base (Constant Torque)</text>
+
+              {/* Armature in series with variable Rheostat */}
+              <g transform="translate(30, 70)">
+                <rect x="10" y="10" width="55" height="20" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" rx="3" />
+                <path d="M 5 35 L 75 5" stroke="#f59e0b" strokeWidth="1.5" />
+                <text x="37" y="45" textAnchor="middle" fill="#f59e0b" fontSize="7.5">Series Rheostat (R_ext)</text>
+                
+                <circle cx="130" cy="20" r="22" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+                <text x="130" y="24" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">A</text>
+              </g>
+
+              <text x="120" y="165" textAnchor="middle" fill="#f59e0b" fontSize="9" fontWeight="bold">↑ R_ext → ↓ V_armature → ↓ Speed N</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "DC Motor Speed Control Methods: Field Flux Weakening vs Armature Rheostatic Control"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-dc-motor-braking-methods':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 200" className="w-full max-w-2xl h-48">
+            {/* 1. Regenerative */}
+            <g transform="translate(15, 20)">
+              <rect x="0" y="0" width="155" height="160" rx="6" fill="#090d16" stroke="#10b981" strokeWidth="1.5" />
+              <text x="77" y="22" textAnchor="middle" fill="#10b981" fontSize="9.5" fontWeight="bold">1. Regenerative</text>
+              <circle cx="77" cy="70" r="22" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+              <text x="77" y="74" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">G</text>
+              <text x="77" y="105" textAnchor="middle" fill="#34d399" fontSize="8">Eb &gt; V (Overhauling)</text>
+              <text x="77" y="125" textAnchor="middle" fill="#94a3b8" fontSize="7.5">Energy fed back to Grid</text>
+              <text x="77" y="145" textAnchor="middle" fill="#10b981" fontSize="8" fontWeight="bold">Highest Efficiency</text>
+            </g>
+
+            {/* 2. Dynamic */}
+            <g transform="translate(190, 20)">
+              <rect x="0" y="0" width="155" height="160" rx="6" fill="#090d16" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="77" y="22" textAnchor="middle" fill="#f59e0b" fontSize="9.5" fontWeight="bold">2. Dynamic / Rheostatic</text>
+              <circle cx="77" cy="70" r="22" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="77" y="74" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">M</text>
+              <text x="77" y="105" textAnchor="middle" fill="#f59e0b" fontSize="8">Connected across RB</text>
+              <text x="77" y="125" textAnchor="middle" fill="#94a3b8" fontSize="7.5">Dissipated as I²R Heat</text>
+              <text x="77" y="145" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold">Smooth Deceleration</text>
+            </g>
+
+            {/* 3. Plugging */}
+            <g transform="translate(365, 20)">
+              <rect x="0" y="0" width="160" height="160" rx="6" fill="#090d16" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="80" y="22" textAnchor="middle" fill="#ef4444" fontSize="9.5" fontWeight="bold">3. Plugging (Reverse V)</text>
+              <circle cx="80" cy="70" r="22" fill="#0f172a" stroke="#ef4444" strokeWidth="2" />
+              <text x="80" y="74" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">M</text>
+              <text x="80" y="105" textAnchor="middle" fill="#ef4444" fontSize="8">V + Eb Additive Voltage</text>
+              <text x="80" y="125" textAnchor="middle" fill="#94a3b8" fontSize="7.5">Maximum Braking Torque</text>
+              <text x="80" y="145" textAnchor="middle" fill="#ef4444" fontSize="8" fontWeight="bold">Requires Anti-Plug Relay</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Industrial DC Motor Braking Classifications: Regenerative, Dynamic, and Plugging"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

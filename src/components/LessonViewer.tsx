@@ -72,6 +72,12 @@ import { DCMachineConstructionAnimation } from './interactive/DCMachineConstruct
 import { DCGeneratorEMFAnimation } from './interactive/DCGeneratorEMFAnimation';
 import { DCGeneratorTypesAnimation } from './interactive/DCGeneratorTypesAnimation';
 import { DCGeneratorCharacteristicsAnimation } from './interactive/DCGeneratorCharacteristicsAnimation';
+import { DCGeneratorEfficiencyAnimation } from './interactive/DCGeneratorEfficiencyAnimation';
+import { DCMotorTorqueAnimation } from './interactive/DCMotorTorqueAnimation';
+import { DCMotorTypesAnimation } from './interactive/DCMotorTypesAnimation';
+import { DCMotorStarterAnimation } from './interactive/DCMotorStarterAnimation';
+import { DCMotorSpeedControlAnimation } from './interactive/DCMotorSpeedControlAnimation';
+import { DCMotorBrakingAnimation } from './interactive/DCMotorBrakingAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -244,6 +250,24 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch6-dc-generator-characteristics' || lessonId === 'lsn-ch6-dc-generator-characteristics') {
     return <DCGeneratorCharacteristicsAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-generator-losses-efficiency' || lessonId === 'lsn-ch6-dc-generator-losses-efficiency') {
+    return <DCGeneratorEfficiencyAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-motor-principle' || lessonId === 'lsn-ch6-dc-motor-principle') {
+    return <DCMotorTorqueAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-motor-types' || lessonId === 'lsn-ch6-dc-motor-types') {
+    return <DCMotorTypesAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-motor-starting' || lessonId === 'lsn-ch6-dc-motor-starting') {
+    return <DCMotorStarterAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-motor-speed-control' || lessonId === 'lsn-ch6-dc-motor-speed-control') {
+    return <DCMotorSpeedControlAnimation language={currentLanguage} />;
+  }
+  if (topicId === 'ch6-dc-motor-braking' || lessonId === 'lsn-ch6-dc-motor-braking') {
+    return <DCMotorBrakingAnimation language={currentLanguage} />;
   }
   return null;
 };

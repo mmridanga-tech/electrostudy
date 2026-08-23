@@ -5,6 +5,12 @@ import { LESSON_DC_MACHINE_CONSTRUCTION } from './chapter6Lesson3';
 import { LESSON_DC_GENERATOR_EMF } from './chapter6Lesson4';
 import { LESSON_DC_GENERATOR_TYPES } from './chapter6Lesson5';
 import { LESSON_DC_GENERATOR_CHARACTERISTICS } from './chapter6Lesson6';
+import { LESSON_DC_GENERATOR_LOSSES_EFFICIENCY } from './chapter6Lesson7';
+import { LESSON_DC_MOTOR_PRINCIPLE } from './chapter6Lesson8';
+import { LESSON_DC_MOTOR_TYPES } from './chapter6Lesson9';
+import { LESSON_DC_MOTOR_STARTING } from './chapter6Lesson10';
+import { LESSON_DC_MOTOR_SPEED_CONTROL } from './chapter6Lesson11';
+import { LESSON_DC_MOTOR_BRAKING } from './chapter6Lesson12';
 
 export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-electrical-machines-fundamentals': LESSON_ELECTRICAL_MACHINES_FUNDAMENTALS,
@@ -13,6 +19,12 @@ export const CHAPTER_6_LESSONS: Record<string, Lesson> = {
   'ch6-dc-generator-emf': LESSON_DC_GENERATOR_EMF,
   'ch6-dc-generator-types': LESSON_DC_GENERATOR_TYPES,
   'ch6-dc-generator-characteristics': LESSON_DC_GENERATOR_CHARACTERISTICS,
+  'ch6-dc-generator-losses-efficiency': LESSON_DC_GENERATOR_LOSSES_EFFICIENCY,
+  'ch6-dc-motor-principle': LESSON_DC_MOTOR_PRINCIPLE,
+  'ch6-dc-motor-types': LESSON_DC_MOTOR_TYPES,
+  'ch6-dc-motor-starting': LESSON_DC_MOTOR_STARTING,
+  'ch6-dc-motor-speed-control': LESSON_DC_MOTOR_SPEED_CONTROL,
+  'ch6-dc-motor-braking': LESSON_DC_MOTOR_BRAKING,
 };
 
 export {
@@ -22,4 +34,11 @@ export {
   LESSON_DC_GENERATOR_EMF,
   LESSON_DC_GENERATOR_TYPES,
   LESSON_DC_GENERATOR_CHARACTERISTICS,
+  LESSON_DC_GENERATOR_LOSSES_EFFICIENCY,
+  LESSON_DC_MOTOR_PRINCIPLE,
+  LESSON_DC_MOTOR_TYPES,
+  LESSON_DC_MOTOR_STARTING,
+  LESSON_DC_MOTOR_SPEED_CONTROL,
+  LESSON_DC_MOTOR_BRAKING,
 };
+
