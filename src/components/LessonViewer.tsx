@@ -49,6 +49,9 @@ import { DCPracticalCaseStudyAnimation } from './interactive/DCPracticalCaseStud
 import { ACWaveformAnimation } from './interactive/ACWaveformAnimation';
 import { SinusoidalWaveformAnimation } from './interactive/SinusoidalWaveformAnimation';
 import { RMSAverageAnimation } from './interactive/RMSAverageAnimation';
+import { PhasorPhaseAnimation } from './interactive/PhasorPhaseAnimation';
+import { ComplexNumberAnimation } from './interactive/ComplexNumberAnimation';
+import { PureResistiveACAnimation } from './interactive/PureResistiveACAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -152,6 +155,15 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
   if (topicId === 'ch5-rms-average-values' || lessonId === 'lsn-ch5-rms-average-values') {
     return <RMSAverageAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-phase-phase-difference' || lessonId === 'lsn-ch5-phase-phase-difference') {
+    return <PhasorPhaseAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-complex-numbers' || lessonId === 'lsn-ch5-complex-numbers') {
+    return <ComplexNumberAnimation currentLanguage={currentLanguage} />;
+  }
+  if (topicId === 'ch5-ac-resistance' || lessonId === 'lsn-ch5-ac-resistance') {
+    return <PureResistiveACAnimation currentLanguage={currentLanguage} />;
   }
   return null;
 };

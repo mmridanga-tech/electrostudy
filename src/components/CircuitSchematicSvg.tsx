@@ -1769,6 +1769,142 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-phase-difference':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Phasor Diagram */}
+            <g transform="translate(110, 85)">
+              <circle cx="0" cy="0" r="60" fill="none" stroke="#1e293b" strokeWidth="1.5" strokeDasharray="3 3" />
+              <line x1="-75" y1="0" x2="75" y2="0" stroke="#334155" strokeWidth="1.5" />
+              <line x1="0" y1="75" x2="0" y2="-75" stroke="#334155" strokeWidth="1.5" />
+              
+              {/* Reference Vector VB at 0 deg */}
+              <line x1="0" y1="0" x2="55" y2="0" stroke="#fbbf24" strokeWidth="3" markerEnd="url(#arrow)" />
+              <text x="60" y="4" fill="#fbbf24" fontSize="10" fontWeight="bold" fontFamily="monospace">VB (Ref)</text>
+
+              {/* Leading Vector VA at +45 deg */}
+              <line x1="0" y1="0" x2="42" y2="-42" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#arrow)" />
+              <text x="45" y="-46" fill="#38bdf8" fontSize="10" fontWeight="bold" fontFamily="monospace">VA (Leads by φ)</text>
+
+              {/* Arc for phase angle */}
+              <path d="M 25 0 A 25 25 0 0 0 17.6 -17.6" fill="none" stroke="#c084fc" strokeWidth="2" />
+              <text x="26" y="-12" fill="#c084fc" fontSize="9" fontWeight="bold" fontFamily="monospace">φ</text>
+            </g>
+
+            {/* Waveform Relationship */}
+            <g transform="translate(240, 20)">
+              <rect x="0" y="0" width="200" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="100" y="22" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Phase & Time Shifts</text>
+              <line x1="15" y1="30" x2="185" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">VA(t) = VmA · sin(ωt + φ)</text>
+              <text x="15" y="68" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">VB(t) = VmB · sin(ωt)</text>
+              
+              <line x1="15" y1="80" x2="185" y2="80" stroke="#334155" strokeWidth="1" />
+              <text x="15" y="98" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Δt = (φ / 360°) × T</text>
+              <text x="15" y="116" fill="#c084fc" fontSize="9.5" fontWeight="bold" fontFamily="monospace">φ = ω · Δt = 2πf · Δt</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Phasor Rotation & Phase Difference Relationship: VA leads VB by phase angle φ (time advance Δt)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-complex-plane':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Argand Diagram */}
+            <g transform="translate(110, 85)">
+              <line x1="-80" y1="0" x2="80" y2="0" stroke="#475569" strokeWidth="2" />
+              <line x1="0" y1="75" x2="0" y2="-75" stroke="#475569" strokeWidth="2" />
+              <text x="82" y="4" fill="#94a3b8" fontSize="9" fontFamily="monospace" fontWeight="bold">+Real (R)</text>
+              <text x="0" y="-78" textAnchor="middle" fill="#94a3b8" fontSize="9" fontFamily="monospace" fontWeight="bold">+j (Reactance)</text>
+
+              {/* Vector Z = a + jb */}
+              <line x1="0" y1="0" x2="50" y2="0" stroke="#fbbf24" strokeWidth="2" strokeDasharray="2 2" />
+              <line x1="50" y1="0" x2="50" y2="-45" stroke="#38bdf8" strokeWidth="2" strokeDasharray="2 2" />
+              <line x1="0" y1="0" x2="50" y2="-45" stroke="#34d399" strokeWidth="3" markerEnd="url(#arrow)" />
+              <circle cx="50" cy="-45" r="4" fill="#34d399" />
+
+              <text x="25" y="14" fill="#fbbf24" fontSize="9" fontWeight="bold" fontFamily="monospace">a = |Z|cosθ</text>
+              <text x="56" y="-22" fill="#38bdf8" fontSize="9" fontWeight="bold" fontFamily="monospace">b = |Z|sinθ</text>
+              <text x="48" y="-52" fill="#34d399" fontSize="10" fontWeight="bold" fontFamily="monospace">Z = |Z| ∠ θ</text>
+            </g>
+
+            {/* Mathematical Transformations Box */}
+            <g transform="translate(240, 20)">
+              <rect x="0" y="0" width="200" height="130" rx="6" fill="#0f172a" stroke="#34d399" strokeWidth="1.5" />
+              <text x="100" y="22" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">Impedance Algebra</text>
+              <line x1="15" y1="30" x2="185" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Rect: Z = R + jX</text>
+              <text x="15" y="68" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Polar: |Z| = √(R² + X²)</text>
+              <text x="15" y="88" fill="#c084fc" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Angle: θ = tan⁻¹(X / R)</text>
+              
+              <line x1="15" y1="98" x2="185" y2="98" stroke="#334155" strokeWidth="1" />
+              <text x="15" y="116" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">Conjugate: Z* = R - jX</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-bold">
+            {caption || "Complex Number Representation: Rectangular (R + jX) and Polar (|Z| ∠ θ) in AC Engineering"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-pure-resistance':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 460 170" className="w-full max-w-lg h-auto">
+            {/* Circuit Schematic */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="180" height="130" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="90" y="20" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">Pure Resistive AC Circuit</text>
+
+              {/* AC Source */}
+              <circle cx="35" cy="75" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 27 75 Q 31 68 35 75 Q 39 82 43 75" fill="none" stroke="#38bdf8" strokeWidth="1.8" />
+              <text x="35" y="105" textAnchor="middle" fill="#38bdf8" fontSize="8" fontWeight="bold" fontFamily="monospace">v(t)=Vm sin ωt</text>
+
+              {/* Resistor */}
+              <rect x="130" y="50" width="18" height="50" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="2" />
+              <text x="139" y="112" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="bold" fontFamily="monospace">R (Pure)</text>
+
+              {/* Wiring */}
+              <line x1="35" y1="59" x2="35" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="40" x2="139" y2="40" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="40" x2="139" y2="50" stroke="#475569" strokeWidth="2" />
+
+              <line x1="35" y1="91" x2="35" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="35" y1="120" x2="139" y2="120" stroke="#475569" strokeWidth="2" />
+              <line x1="139" y1="120" x2="139" y2="100" stroke="#475569" strokeWidth="2" />
+
+              {/* Current Arrow */}
+              <line x1="75" y1="40" x2="95" y2="40" stroke="#fbbf24" strokeWidth="2" markerEnd="url(#arrow)" />
+              <text x="85" y="34" textAnchor="middle" fill="#fbbf24" fontSize="8" fontWeight="bold" fontFamily="monospace">i(t)</text>
+            </g>
+
+            {/* Waveform and Phase Characteristics */}
+            <g transform="translate(230, 20)">
+              <rect x="0" y="0" width="210" height="130" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="105" y="22" textAnchor="middle" fill="#f59e0b" fontSize="10" fontWeight="bold">Key Characteristics</text>
+              <line x1="15" y1="30" x2="195" y2="30" stroke="#334155" strokeWidth="1" />
+              
+              <text x="15" y="48" fill="#38bdf8" fontSize="9.5" fontWeight="bold" fontFamily="monospace">1. Phase Angle: φ = 0°</text>
+              <text x="15" y="68" fill="#34d399" fontSize="9.5" fontWeight="bold" fontFamily="monospace">2. Power Factor: cos(0°) = 1.0</text>
+              <text x="15" y="88" fill="#fbbf24" fontSize="9.5" fontWeight="bold" fontFamily="monospace">3. Current: i(t) = (Vm/R)·sin(ωt)</text>
+              <text x="15" y="108" fill="#ec4899" fontSize="9.5" fontWeight="bold" fontFamily="monospace">4. Avg Power: P = Vrms · Irms</text>
+              <text x="15" y="124" fill="#c084fc" fontSize="8.5" fontWeight="bold" fontFamily="monospace">5. Instantaneous Power p(t) ≥ 0</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-bold">
+            {caption || "Pure Resistive AC Circuit: Current is strictly in-phase with applied voltage (φ = 0°, Unity Power Factor)"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
