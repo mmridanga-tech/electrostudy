@@ -36,7 +36,7 @@ export interface LessonDiagram {
 }
 
 export interface SolvedExample {
-  id: string;
+  id?: string;
   problem: MultilingualText;
   solution: MultilingualText;
   givenValues?: Record<string, string>;
@@ -57,10 +57,26 @@ export interface MCQQuestion {
 }
 
 export interface PracticeQuestion {
-  id: string;
+  id?: string;
   question: MultilingualText;
   hint?: MultilingualText;
-  answerKey: MultilingualText;
+  answerKey?: MultilingualText;
+}
+
+export interface QuizQuestion {
+  question: MultilingualText;
+  options: {
+    en: string[];
+    hi: string[];
+    bn: string[];
+  };
+  correctAnswer: number;
+  explanation: MultilingualText;
+}
+
+export interface Flashcard {
+  term: MultilingualText;
+  definition: MultilingualText;
 }
 
 export interface Lesson {
@@ -77,11 +93,14 @@ export interface Lesson {
   sections?: LessonSection[];
   diagrams?: LessonDiagram[];
   solvedExamples?: SolvedExample[];
-  practicalApplications: MultilingualList;
-  importantPoints: MultilingualList;
-  commonMistakes: MultilingualList;
-  mcqs: MCQQuestion[];
-  practiceQuestions: PracticeQuestion[];
+  workedExamples?: SolvedExample[];
+  practicalApplications?: MultilingualList | MultilingualText[] | Record<string, string[]>;
+  importantPoints?: MultilingualList | MultilingualText[] | Record<string, string[]>;
+  commonMistakes?: MultilingualList | MultilingualText[] | Record<string, string[]>;
+  mcqs?: MCQQuestion[];
+  practiceQuestions?: PracticeQuestion[];
+  quiz?: QuizQuestion[];
+  flashcards?: Flashcard[];
 }
 
 export interface Topic {

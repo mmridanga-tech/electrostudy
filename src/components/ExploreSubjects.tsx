@@ -8,7 +8,8 @@ import {
   Radio, 
   ArrowRight, 
   BookOpen, 
-  Sparkles 
+  Sparkles,
+  Maximize2
 } from 'lucide-react';
 import { Language, SubjectItem } from '../types';
 import { UI_TRANSLATIONS, SUBJECTS_DATA } from '../data/content';
@@ -16,11 +17,13 @@ import { UI_TRANSLATIONS, SUBJECTS_DATA } from '../data/content';
 interface ExploreSubjectsProps {
   currentLanguage: Language;
   onSelectSubject: (subjectId: string) => void;
+  onOpenStudyTopic?: (topicId: string) => void;
 }
 
 export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
   currentLanguage,
-  onSelectSubject
+  onSelectSubject,
+  onOpenStudyTopic
 }) => {
   const t = UI_TRANSLATIONS[currentLanguage];
 
@@ -34,6 +37,16 @@ export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
       case 'Radio': return Radio;
       default: return BookOpen;
     }
+  };
+
+  const handleStartCourse = (subjectId: string) => {
+    if (onOpenStudyTopic) {
+      if (subjectId === 'basic-electrical') {
+        onOpenStudyTopic('ch1-charge-current-voltage');
+        return;
+      }
+    }
+    onSelectSubject(subjectId);
   };
 
   return (
@@ -58,6 +71,8 @@ export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {SUBJECTS_DATA.map((subject: SubjectItem) => {
             const Icon = getSubjectIcon(subject.icon);
+            const isDetailedAvailable = subject.id === 'basic-electrical';
+
             return (
               <div
                 key={subject.id}
@@ -88,20 +103,40 @@ export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
                   </p>
                 </div>
 
-                {/* Footer with topic count & arrow */}
-                <div className="pt-4 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between mt-auto">
-                  <span className="text-xs font-mono font-medium text-slate-600 dark:text-slate-400">
-                    {subject.topicsCount} {t.keyTopics || 'Key Topics'}
-                  </span>
-                  
-                  <button
-                    id={`btn-explore-subject-${subject.id}`}
-                    onClick={() => onSelectSubject(subject.id)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-700 dark:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors"
-                  >
-                    <span>{t.exploreCardBtn}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                {/* Card Action Buttons */}
+                <div className="pt-4 border-t border-slate-200/60 dark:border-slate-800/60 space-y-3 mt-auto">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-medium text-slate-600 dark:text-slate-400">
+                      {subject.topicsCount} {t.keyTopics || 'Key Topics'}
+                    </span>
+                    <button
+                      onClick={() => onSelectSubject(subject.id)}
+                      className="text-xs font-semibold text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+                    >
+                      {currentLanguage === 'bn' ? 'সিলেবাস দেখুন' : currentLanguage === 'hi' ? 'पाठ्यक्रम विवरण' : 'Syllabus Breakdown'}
+                    </button>
+                  </div>
+
+                  {isDetailedAvailable ? (
+                    <button
+                      id={`btn-open-course-${subject.id}`}
+                      onClick={() => handleStartCourse(subject.id)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group/btn cursor-pointer"
+                    >
+                      <BookOpen className="w-4 h-4 text-cyan-200" />
+                      <span>{currentLanguage === 'bn' ? 'বড় স্ক্রিনে কোর্স শুরু করুন' : currentLanguage === 'hi' ? 'फुलस्क्रीन कोर्स पोर्टल खोलें' : 'Open Full-Screen Course Portal'}</span>
+                      <Maximize2 className="w-3.5 h-3.5 opacity-80 group-hover/btn:scale-110 transition-transform" />
+                    </button>
+                  ) : (
+                    <button
+                      id={`btn-explore-subject-${subject.id}`}
+                      onClick={() => onSelectSubject(subject.id)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-white dark:bg-slate-800 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-2 group/btn cursor-pointer"
+                    >
+                      <span>{t.exploreCardBtn}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  )}
                 </div>
 
               </div>

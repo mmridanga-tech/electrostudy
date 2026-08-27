@@ -5,6 +5,8 @@ import { CHAPTER_3_LESSONS } from './chapter3Lessons';
 import { CHAPTER_4_LESSONS } from './chapter4Lessons';
 import { CHAPTER_5_LESSONS } from './chapter5Lessons';
 import { CHAPTER_6_LESSONS } from './chapter6Lessons';
+import { CHAPTER_7_LESSONS } from './chapter7Lessons';
+import { CHAPTER_8_LESSONS } from './chapter8Lessons';
 
 const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
   {
@@ -149,348 +151,111 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 2,
         title: {
-          en: 'Chapter 2: Ohm\'s Law & Basic Circuits',
+          en: "Chapter 2: Ohm's Law & Basic Circuits",
           hi: 'अध्याय 2: ओम का नियम एवं बुनियादी परिपथ',
           bn: 'অধ্যায় ২: ওহমের সূত্র ও মৌলিক সার্কিট'
         },
         topics: [
-          {
-            id: 'tp-ohms-law',
-            chapterId: 'ch-ohms-circuits',
-            order: 1,
-            title: {
-              en: 'Ohm\'s Law',
-              hi: 'ओम का नियम',
-              bn: 'ওহমের সূত্র'
-            },
-            lesson: {
-              id: 'lsn-ohms-law',
-              topicId: 'tp-ohms-law',
-              order: 1,
-              title: {
-                en: 'Ohm\'s Law & Fundamental Circuit Relationships',
-                hi: 'ओम का नियम एवं बुनियादी परिपथ संबंध',
-                bn: 'ওহমের सूत्र ও মৌলিক সার্কিট সম্পর্ক'
-              },
-              easyExplanation: {
-                en: 'Ohm\'s Law is the most fundamental rule in electrical engineering. It states that the electric current flowing through a conductor is directly proportional to the voltage applied across it and inversely proportional to its electrical resistance, provided the temperature remains constant.',
-                hi: 'ओम का नियम इलेक्ट्रिकल इंजीनियरिंग का सबसे बुनियादी नियम है। इसके अनुसार, किसी चालक में बहने वाली विद्युत धारा (Current) उस पर लगाए गए विभवांतर (Voltage) के समानुपाती और उसके प्रतिरोध (Resistance) के व्युत्क्रमानुपाती होती है, यदि तापमान स्थिर रहे।',
-                bn: 'ওহমের সূত্র ইলেকট্রিক্যাল ইঞ্জিনিয়ারিংয়ের সবচেয়ে মৌলিক নিয়ম। এই সূত্রানুসারে, কোনো পরিবাহীর মধ্য দিয়ে প্রবাহিত তড়িৎ প্রবাহ (Current) তার দুই প্রান্তের বিভব পার্থক্যের (Voltage) সমানুপাতিক এবং পরিবাহীর রোধের (Resistance) ব্যস্তানুপাতিক, যদি তাপমাত্রা অপরিবর্তিত থাকে।'
-              },
-              detailedExplanation: {
-                en: 'Formulated by Georg Simon Ohm in 1827, Ohm\'s Law connects the three core electrical quantities: Potential Difference (V in Volts), Current (I in Amperes), and Resistance (R in Ohms). Mathematically expressed as V = I × R, it forms the mathematical foundation for analyzing DC circuits, calculating power dissipation, and sizing electrical conductors and circuit components.',
-                hi: '1827 में जॉर्ज साइमन ओम द्वारा प्रतिपादित, ओम का नियम तीन प्रमुख विद्युत राशियों को जोड़ता है: विभवांतर (V - वोल्ट), विद्युत धारा (I - एम्पीयर), और प्रतिरोध (R - ओम)। गणितीय रूप से V = I × R द्वारा व्यक्त किया गया यह नियम डीसी सर्किट के विश्लेषण, बिजली की खपत की गणना और केबल का आकार तय करने का आधार है।',
-                bn: '১৮২৭ সালে গেয়র্গ সিমন ওহম কর্তৃক আবিষ্কৃত এই সূত্রটি তিনটি প্রধান বৈদ্যুतिक রাশিকে সংযুক্ত করে: বিভব পার্থক্য (V - ভোল্ট), তড়িৎ প্রবাহ (I - অ্যাম্পিয়ার) এবং রোধ (R - ওহম)। গাণিতিক রূপ V = I × R। এটি ডিসি সার্কিট বিশ্লেষণ, পাওয়ার লস গণনা এবং ক্যাবলের আকার নির্ধারণের গাণিতিক ভিত্তি।'
-              },
-              formulas: [
-                {
-                  symbol: 'V',
-                  expression: 'V = I × R',
-                  description: {
-                    en: 'Voltage (Volts) = Current (Amperes) × Resistance (Ohms)',
-                    hi: 'वोल्टेज (वोल्ट) = धारा (एम्पीयर) × प्रतिरोध (ओम)',
-                    bn: 'ভোল্টেজ (ভোল্ট) = কারেন্ট (অ্যাম্পিয়ার) × রেজিস্ট্যান্স (ওহম)'
+                  {
+                            "id": "tp-ohms-law",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 1,
+                            "title": {
+                                      "en": "Ohm's Law",
+                                      "hi": "ओम का नियम",
+                                      "bn": "ওহমের সূত্র"
+                            }
+                  },
+                  {
+                            "id": "tp-v-i-r-rel",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 2,
+                            "title": {
+                                      "en": "Voltage–Current–Resistance Relationship",
+                                      "hi": "वोल्टेज-करंट-प्रतिरोध संबंध",
+                                      "bn": "ভোল্টেজ-কারেন্ট-রেজিস্ট্যান্স সম্পর্ক"
+                            }
+                  },
+                  {
+                            "id": "tp-series-circuit",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 3,
+                            "title": {
+                                      "en": "Series Circuit",
+                                      "hi": "श्रेणी परिपथ (सीरीज सर्किट)",
+                                      "bn": "সিরিজ সার্কিট"
+                            }
+                  },
+                  {
+                            "id": "tp-parallel-circuit",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 4,
+                            "title": {
+                                      "en": "Parallel Circuit",
+                                      "hi": "समानांतर परिपथ (पैरेलल सर्किट)",
+                                      "bn": "প্যারালাল সার্কিট"
+                            }
+                  },
+                  {
+                            "id": "tp-series-parallel-circuit",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 5,
+                            "title": {
+                                      "en": "Series-Parallel Circuit",
+                                      "hi": "श्रेणी-समानांतर परिपथ",
+                                      "bn": "সিরিজ-প্যারালাল সার্কিট"
+                            }
+                  },
+                  {
+                            "id": "tp-voltage-division",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 6,
+                            "title": {
+                                      "en": "Voltage Division",
+                                      "hi": "वोल्टेज विभाजन नियम",
+                                      "bn": "ভোল্টেজ ডিভাইডার রুল"
+                            }
+                  },
+                  {
+                            "id": "tp-current-division",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 7,
+                            "title": {
+                                      "en": "Current Division",
+                                      "hi": "धारा विभाजन नियम",
+                                      "bn": "কারেন্ট ডিভাইডার রুল"
+                            }
+                  },
+                  {
+                            "id": "tp-open-circuit",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 8,
+                            "title": {
+                                      "en": "Open Circuit",
+                                      "hi": "खुला परिपथ (ओपन सर्किट)",
+                                      "bn": "ওপেন সার্কিট"
+                            }
+                  },
+                  {
+                            "id": "tp-short-circuit",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 9,
+                            "title": {
+                                      "en": "Short Circuit",
+                                      "hi": "लघु परिपथ (शॉर्ट सर्किट)",
+                                      "bn": "শর্ট সার্কিট"
+                            }
+                  },
+                  {
+                            "id": "tp-practical-apps",
+                            "chapterId": "ch-ohms-circuits",
+                            "order": 10,
+                            "title": {
+                                      "en": "Practical Applications",
+                                      "hi": "व्यावहारिक अनुप्रयोग",
+                                      "bn": "ব্যবহারিক প্রয়োগসমূহ"
+                            }
                   }
-                },
-                {
-                  symbol: 'I',
-                  expression: 'I = V / R',
-                  description: {
-                    en: 'Current (Amperes) = Voltage (Volts) / Resistance (Ohms)',
-                    hi: 'धारा (एम्पीयर) = वोल्टेज (वोल्ट) / प्रतिरोध (ओम)',
-                    bn: 'কারেন্ট (অ্যাম্পিয়ার) = ভোল্টেজ (ভোল্ট) / রেজিস্ট্যান্স (ওহম)'
-                  }
-                },
-                {
-                  symbol: 'R',
-                  expression: 'R = V / I',
-                  description: {
-                    en: 'Resistance (Ohms) = Voltage (Volts) / Current (Amperes)',
-                    hi: 'प्रतिरोध (ओम) = वोल्टेज (वोल्ट) / धारा (एम्पीयर)',
-                    bn: 'রেজিস্ট্যান্স (ওহম) = ভোল্টেজ (ভোল্ট) / কারেন্ট (অ্যাম্পিয়ার)'
-                  }
-                }
-              ],
-              diagrams: [
-                {
-                  id: 'diag-ohms-triangle',
-                  title: {
-                    en: 'Ohm\'s Law Triangle & Basic Circuit Schema',
-                    hi: 'ओम का नियम त्रिभुज एवं परिपथ आरेख',
-                    bn: 'ওহমের সূত্রের ত্রিভুজ ও সার্কিট ডায়াগ্রাম'
-                  },
-                  caption: {
-                    en: 'Visual memory tool for calculating V, I, and R in linear DC networks.',
-                    hi: 'रेखीय डीसी नेटवर्क में V, I, और R की गणना के लिए दृश्य आरेख।',
-                    bn: 'লিনিয়ার ডিসি সার্কিটে V, I এবং R গণনার সহজ চিত্র।'
-                  },
-                  svgType: 'circuit-ohm'
-                }
-              ],
-              solvedExamples: [
-                {
-                  id: 'ex-1',
-                  problem: {
-                    en: 'An electric heater operating at a 230 V DC supply has a heating element resistance of 46 Ω. Calculate the electric current drawn by the heater.',
-                    hi: '230 V डीसी आपूर्ति पर चलने वाले एक इलेक्ट्रिक हीटर के हीटिंग एलिमेंट का प्रतिरोध 46 Ω है। हीटर द्वारा ली जाने वाली विद्युत धारा की गणना करें।',
-                    bn: 'একটি ইলেকট্রিক হিটার ২৩০ V ডিসি সরবরাহে চলে এবং এর হিটিং এলিমেন্টের রোধ ৪৬ Ω। হিটারটি কত কারেন্ট গ্রহণ করবে তা নির্ণয় করো।'
-                  },
-                  givenValues: {
-                    'Voltage (V)': '230 V',
-                    'Resistance (R)': '46 Ω'
-                  },
-                  solution: {
-                    en: 'Using Ohm\'s Law formula for current: I = V / R\nI = 230 V / 46 Ω = 5 Amperes.',
-                    hi: 'धारा के लिए ओम के नियम का प्रयोग करें: I = V / R\nI = 230 V / 46 Ω = 5 एम्पीयर।',
-                    bn: 'কারেন্ট নির্ণয়ে ওহমের সূত্র ব্যবহার করে: I = V / R\nI = ২৩০ V / ৪৬ Ω = ৫ অ্যাম্পিয়ার।'
-                  },
-                  finalAnswer: {
-                    en: 'Current drawn (I) = 5 A',
-                    hi: 'ली गई धारा (I) = 5 A',
-                    bn: 'গৃহীত কারেন্ট (I) = ৫ A'
-                  }
-                }
-              ],
-              practicalApplications: {
-                en: [
-                  'Sizing fuses and miniature circuit breakers (MCBs) for house wiring.',
-                  'Calculating current-limiting resistor values for LED indicators.',
-                  'Estimating voltage drops across transmission lines and motor power cables.'
-                ],
-                hi: [
-                  'घर की वायरिंग के लिए फ्यूज तथा एमसीबी का सही रेटिंग चुनना।',
-                  'एलईडी सूचक परिपथों के लिए धारा सीमित करने वाले प्रतिरोधक का मान ज्ञात करना।',
-                  'ट्रांसमिशन लाइनों तथा मोटर पावर केबलों में वोल्टेज ड्रॉप का अनुमान लगाना।'
-                ],
-                bn: [
-                  'বাসাবাড়ির ওয়্যারিংয়ে ফিউজ ও সার্কিট ব্রেকারের মান সঠিক রূপায়ণে।',
-                  'এলইডি ইন্ডিকেটর সার্কিটের কারেন্ট রেজিস্টর নির্বাচন করতে।',
-                  'পাওয়ার ট্রান্সমিশন লাইন ও মোটরের ক্যাবলে ভোল্টেজ ড্রপ নির্ধারণে।'
-                ]
-              },
-              importantPoints: {
-                en: [
-                  'Ohm\'s Law applies strictly to ohmic (linear) conductors like metals at constant temperature.',
-                  'Non-ohmic devices like semiconductor diodes, transistors, thermistors, and discharge lamps do not follow Ohm\'s Law.',
-                  'Power expression derived with Ohm\'s Law: P = V × I = I²R = V² / R.'
-                ],
-                hi: [
-                  'ओम का नियम केवल ओमिया (रेखीय) चालकों जैसे धातुओं पर स्थिर तापमान पर लागू होता है।',
-                  'नॉन-ओमिया उपकरण जैसे सेमीकंडक्टर डायोड, ट्रांजिस्टर और डिस्चार्ज लैंप इसका पालन नहीं करते।',
-                  'ओम के नियम से शक्ति का व्यंजक: P = V × I = I²R = V² / R।'
-                ],
-                bn: [
-                  'ওহমের সূত্র কেবলমাত্র স্থির তাপমাত্রায় ধাতু জাতীয় রৈখিক পরিবাহীতে প্রযোজ্য।',
-                  'সেমিকন্ডাক্টর ডায়োড, ট্রানজিস্টর ও ডিসচার্জ ল্যাম্পের মতো অ-রৈখিক ডিভাইসে এটি প্রযোজ্য নয়।',
-                  'ওহমের সূত্র থেকে পাওয়ারের রাশিমালা: P = V × I = I²R = V² / R।'
-                ]
-              },
-              commonMistakes: {
-                en: [
-                  'Applying DC Ohm\'s Law directly to AC circuits without substituting Impedance (Z) for Resistance (R).',
-                  'Neglecting the effect of temperature rise which increases conductor resistance during heavy load operations.'
-                ],
-                hi: [
-                  'प्रतिबाधा (Z) के स्थान पर सीधे केवल प्रतिरोध (R) का उपयोग करके एसी परिपथ में ओम का नियम लागू करना।',
-                  'अधिक लोड पर चलने के दौरान तापमान वृद्धि के कारण चालक प्रतिरोध में होने वाली वृद्धि की उपेक्षा करना।'
-                ],
-                bn: [
-                  'এসি সার্কিটে ইম্পিডেন্স (Z) বিবেচনা না করে কেবল রেজিস্ট্যান্স (R) দিয়ে সরাসরি হিসাব করা।',
-                  'উচ্চ লোডে তাপমাত্রা বৃদ্ধির সাথে ক্যাবলের রেজিস্ট্যান্স বৃদ্ধি পাওয়ার সত্যতা ভুলে যাওয়া।'
-                ]
-              },
-              mcqs: [
-                {
-                  id: 'mcq-1',
-                  question: {
-                    en: 'According to Ohm\'s Law, if the voltage across a resistor is doubled while resistance remains constant, the current will:',
-                    hi: 'ओम के नियम के अनुसार, यदि प्रतिरोध स्थिर रखते हुए वोल्टेज को दोगुना कर दिया जाए, तो धारा:',
-                    bn: 'ওহমের সূত্রানুসারে, রেজিস্ট্যান্স স্থির রেখে ভোল্টেজ দ্বিগুণ করলে কারেন্ট:'
-                  },
-                  options: [
-                    { id: 'a', text: { en: 'Remain unchanged', hi: 'अपरिवर्तित रहेगी', bn: 'একই থাকবে' } },
-                    { id: 'b', text: { en: 'Be halved', hi: 'आधी हो जाएगी', bn: 'অর্ধেক হয়ে যাবে' } },
-                    { id: 'c', text: { en: 'Be doubled', hi: 'दोगुनी हो जाएगी', bn: 'দ্বিগুণ होकर रहेगी' } },
-                    { id: 'd', text: { en: 'Become four times', hi: 'चौगुनी हो जाएगी', bn: 'চার গুণ হয়ে যাবে' } }
-                  ],
-                  correctOptionId: 'c',
-                  explanation: {
-                    en: 'Since I = V / R, electric current is directly proportional to applied voltage. Doubling V doubles I.',
-                    hi: 'चूंकि I = V / R, विद्युत धारा लगाए गए वोल्टेज के समानुपाती होती है। V को दोगुना करने पर I भी दोगुना हो जाएगा।',
-                    bn: 'যেহেতু I = V / R, তড়িৎ প্রবাহ ভোল্টেজের সমানুপাতিক। V দ্বিগুণ করলে I-ও দ্বিগুণ হবে।'
-                  }
-                },
-                {
-                  id: 'mcq-2',
-                  question: {
-                    en: 'Which of the following electrical components does NOT follow Ohm\'s Law?',
-                    hi: 'निम्नलिखित में से कौन सा विद्युत घटक ओम के नियम का पालन नहीं करता है?',
-                    bn: 'নিচের কোন বৈদ্যুতিক উপাদানটি ওহমের সূত্র মেনে চলে না?'
-                  },
-                  options: [
-                    { id: 'a', text: { en: 'Copper Cable', hi: 'तांबे का केबल', bn: 'তামার ক্যাবল' } },
-                    { id: 'b', text: { en: 'Semiconductor Diode', hi: 'सेमीकंडक्टर डायोड', bn: 'সেমিকন্ডাক্টর ডায়োড' } },
-                    { id: 'c', text: { en: 'Nichrome Resistance Wire', hi: 'नाइक्रोम प्रतिरोधक तार', bn: 'নাইক্রোম রেজিস্ট্যান্স তার' } },
-                    { id: 'd', text: { en: 'Carbon Film Resistor', hi: 'कार्बन फिल्म प्रतिरोधक', bn: 'কার্বন ফিল্ম রেজিস্টর' } }
-                  ],
-                  correctOptionId: 'b',
-                  explanation: {
-                    en: 'Diodes are non-linear semiconductor devices whose resistance changes with applied voltage direction and magnitude.',
-                    hi: 'डायोड नॉन-लीनियर सेमीकंडक्टर उपकरण हैं जिनका प्रतिरोध लागू वोल्टेज की दिशा और मान के साथ बदलता है।',
-                    bn: 'ডায়োড একটি অ-রৈখিক উপাদান যার রেজিস্ট্যান্স প্রয়োগকৃত ভোল্টেজের অভিমুখ ও মানের সাথে পরিবর্তিত হয়।'
-                  }
-                },
-                {
-                  id: 'mcq-3',
-                  question: {
-                    en: 'What is the electrical power dissipated in a 10 Ω resistor carrying a current of 2 A?',
-                    hi: '2 A की धारा ले जाने वाले 10 Ω के प्रतिरोधक में कितनी विद्युत शक्ति नष्ट होगी?',
-                    bn: '১০ Ω রেজিস্টরের মধ্য দিয়ে ২ A কারেন্ট প্রবাহিত হলে কী পরিমাণ পাওয়ার ব্যয় হবে?'
-                  },
-                  options: [
-                    { id: 'a', text: { en: '20 Watts', hi: '20 वाट', bn: '২০ ওয়াট' } },
-                    { id: 'b', text: { en: '40 Watts', hi: '40 वाट', bn: '৪০ ওয়াট' } },
-                    { id: 'c', text: { en: '100 Watts', hi: '100 वाट', bn: '১০০ ওয়াট' } },
-                    { id: 'd', text: { en: '5 Watts', hi: '5 वाट', bn: '৫ वाट' } }
-                  ],
-                  correctOptionId: 'b',
-                  explanation: {
-                    en: 'Power P = I² × R = (2 A)² × 10 Ω = 4 × 10 = 40 Watts.',
-                    hi: 'शक्ति P = I² × R = (2 A)² × 10 Ω = 4 × 10 = 40 वाट।',
-                    bn: 'পাওয়ার P = I² × R = (২ A)² × ১০ Ω = ৪ × ১০ = ৪০ ওয়াট।'
-                  }
-                }
-              ],
-              practiceQuestions: [
-                {
-                  id: 'pq-1',
-                  question: {
-                    en: 'A 12 V automotive battery is connected to a DC lamp with a resistance of 4 Ω. Calculate the current in the circuit and the power consumed by the lamp.',
-                    hi: '12 V की ऑटोमोटिव बैटरी 4 Ω प्रतिरोध वाले लैंप से जुड़ी है। परिपथ में धारा और लैंप द्वारा खपत की गई विद्युत शक्ति की गणना करें।',
-                    bn: 'একটি ১২ V গাড়ির ব্যাটারি ৪ Ω রেজিস্ট্যান্সের ল্যাম্পের সাথে যুক্ত। সার্কিটের কারেন্ট এবং ল্যাম্প কর্তৃক ব্যবহৃত শক্তি বের করো।'
-                  },
-                  hint: {
-                    en: 'Calculate current using I = V / R, then find power using P = V × I.',
-                    hi: 'I = V / R से धारा ज्ञात करें, फिर P = V × I से शक्ति ज्ञात करें।',
-                    bn: 'আই = V / R দিয়ে কারেন্ট বের করো, তারপর P = V × I দিয়ে পাওয়ার বের করো।'
-                  },
-                  answerKey: {
-                    en: 'Current I = 12 / 4 = 3 A. Power P = 12 V × 3 A = 36 W.',
-                    hi: 'धारा I = 12 / 4 = 3 A। शक्ति P = 12 V × 3 A = 36 W।',
-                    bn: 'কারেন্ট I = ১২ / ৪ = ৩ A। পাওয়ার P = ১২ V × ৩ A = ৩৬ W।'
-                  }
-                },
-                {
-                  id: 'pq-2',
-                  question: {
-                    en: 'Explain why a thin conductor wire has higher resistance compared to a thick wire of the same length and material.',
-                    hi: 'समझाइए कि समान लंबाई और पदार्थ के मोटे तार की तुलना में पतले तार का प्रतिरोध अधिक क्यों होता है।',
-                    bn: 'একই উপাদান ও দৈর্ঘ্যের মোটা তারের চেয়ে সরু তারের বৈদ্যুतिक রোধ বেশি হয় কেন তা ব্যাখ্যা করো।'
-                  },
-                  hint: {
-                    en: 'Recall the formula R = ρ × (L / A) where A represents cross-sectional area.',
-                    hi: 'सूत्र R = ρ × (L / A) को याद करें जहां A अनुप्रस्थ काट का क्षेत्रफल है।',
-                    bn: 'R = ρ × (L / A) সূত্রটি মনে করো যেখানে A হলো প্রস্থচ্ছেদের ক্ষেত্রফল।'
-                  },
-                  answerKey: {
-                    en: 'Resistance is inversely proportional to cross-sectional area (A). A thin wire has a smaller area, offering greater opposition to electron movement.',
-                    hi: 'प्रतिरोध अनुप्रस्थ काट के क्षेत्रफल (A) के व्युत्क्रमानुपाती होता है। पतले तार का क्षेत्रफल कम होता है, जिससे इलेक्ट्रॉनों के प्रवाह में अधिक बाधा आती है।',
-                    bn: ' রোধ পরিবাহীর প্রস্থচ্ছেদের ক্ষেত্রফলের (A) ব্যস্তানুপাতিক। সরু তারের ক্ষেত্রফল কম হওয়ায় তা ইলেকট্রন প্রবাহে বেশি বাধা দেয়।'
-                  }
-                }
-              ]
-            }
-          },
-          {
-            id: 'tp-v-i-r-rel',
-            chapterId: 'ch-ohms-circuits',
-            order: 2,
-            title: {
-              en: 'Voltage–Current–Resistance Relationship',
-              hi: 'वोल्टेज-धारा-प्रतिरोध संबंध',
-              bn: 'ভোল্টেজ-কারেন্ট-রেজিস্ট্যান্স সম্পর্ক'
-            }
-          },
-          {
-            id: 'tp-series-circuit',
-            chapterId: 'ch-ohms-circuits',
-            order: 3,
-            title: {
-              en: 'Series Circuit',
-              hi: 'श्रेणी परिपथ (सीरीज सर्किट)',
-              bn: 'সিরিজ সার্কিট'
-            }
-          },
-          {
-            id: 'tp-parallel-circuit',
-            chapterId: 'ch-ohms-circuits',
-            order: 4,
-            title: {
-              en: 'Parallel Circuit',
-              hi: 'समानांतर परिपथ (पैरेलल सर्किट)',
-              bn: 'প্যারালাল সার্কিট'
-            }
-          },
-          {
-            id: 'tp-series-parallel-circuit',
-            chapterId: 'ch-ohms-circuits',
-            order: 5,
-            title: {
-              en: 'Series-Parallel Circuit',
-              hi: 'श्रेणी-समानांतर परिपथ',
-              bn: 'সিরিজ-প্যারালাল সার্কিট'
-            }
-          },
-          {
-            id: 'tp-voltage-division',
-            chapterId: 'ch-ohms-circuits',
-            order: 6,
-            title: {
-              en: 'Voltage Division',
-              hi: 'वोल्टेज विभाजन नियम',
-              bn: 'ভোল্টেজ ডিভাইডার রুল'
-            }
-          },
-          {
-            id: 'tp-current-division',
-            chapterId: 'ch-ohms-circuits',
-            order: 7,
-            title: {
-              en: 'Current Division',
-              hi: 'धारा विभाजन नियम',
-              bn: 'কারেন্ট ডিভাইডার রুল'
-            }
-          },
-          {
-            id: 'tp-open-circuit',
-            chapterId: 'ch-ohms-circuits',
-            order: 8,
-            title: {
-              en: 'Open Circuit',
-              hi: 'खुला परिपथ (ओपन सर्किट)',
-              bn: 'ওপেন সার্কিট'
-            }
-          },
-          {
-            id: 'tp-short-circuit',
-            chapterId: 'ch-ohms-circuits',
-            order: 9,
-            title: {
-              en: 'Short Circuit',
-              hi: 'लघु परिपथ (शॉर्ट सर्किट)',
-              bn: 'শর্ট সার্কিট'
-            }
-          },
-          {
-            id: 'tp-practical-apps',
-            chapterId: 'ch-ohms-circuits',
-            order: 10,
-            title: {
-              en: 'Practical Applications',
-              hi: 'व्यावहारिक अनुप्रयोग',
-              bn: 'ব্যবহারিক প্রয়োগসমূহ'
-            }
-          }
         ]
       },
       {
@@ -503,206 +268,206 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
           bn: 'অধ্যায় ৩: বৈদ্যুতিক পরিমাপ ও ইনস্ট্রুমেন্টেশন'
         },
         topics: [
-          {
-            id: 'ch3-fundamentals-measurement',
-            chapterId: 'ch-measurements',
-            order: 1,
-            title: {
-              en: 'Fundamentals of Measurement',
-              hi: 'मापन के मूल सिद्धांत (Fundamentals of Measurement)',
-              bn: 'পরিমাপের মৌলিক ভিত্তি (Fundamentals of Measurement)'
-            }
-          },
-          {
-            id: 'ch3-measurement-errors',
-            chapterId: 'ch-measurements',
-            order: 2,
-            title: {
-              en: 'Measurement Errors',
-              hi: 'मापन त्रुटियाँ (Measurement Errors)',
-              bn: 'পরিমাপের ত্রুটিসমূহ (Measurement Errors)'
-            }
-          },
-          {
-            id: 'ch3-electrical-instruments',
-            chapterId: 'ch-measurements',
-            order: 3,
-            title: {
-              en: 'Electrical Measuring Instruments',
-              hi: 'विद्युत मापन यंत्र (Electrical Measuring Instruments)',
-              bn: 'বৈদ্যুতিক পরিমাপক যন্ত্র (Electrical Measuring Instruments)'
-            }
-          },
-          {
-            id: 'ch3-pmmc-instruments',
-            chapterId: 'ch-measurements',
-            order: 4,
-            title: {
-              en: 'PMMC Instruments',
-              hi: 'पीएमएमसी उपकरण (PMMC Instruments)',
-              bn: 'পিএমএমসি যন্ত্র (PMMC Instruments)'
-            }
-          },
-          {
-            id: 'ch3-moving-iron',
-            chapterId: 'ch-measurements',
-            order: 5,
-            title: {
-              en: 'Moving Iron Instruments',
-              hi: 'मूविंग आयरन उपकरण (Moving Iron Instruments)',
-              bn: 'মুভিং আয়রন যন্ত্র (Moving Iron Instruments)'
-            }
-          },
-          {
-            id: 'ch3-electrodynamometer',
-            chapterId: 'ch-measurements',
-            order: 6,
-            title: {
-              en: 'Electrodynamometer Instruments',
-              hi: 'इलेक्ट्रोडायनेमोमीटर उपकरण (Electrodynamometer Instruments)',
-              bn: 'ইলেক্ট্রোডায়নামোমিটার যন্ত্র (Electrodynamometer Instruments)'
-            }
-          },
-          {
-            id: 'ch3-thermal-instruments',
-            chapterId: 'ch-measurements',
-            order: 7,
-            title: {
-              en: 'Thermal Instruments',
-              hi: 'तापीय उपकरण (Thermal Instruments)',
-              bn: 'থার্মাল বা তাপীয় যন্ত্র (Thermal Instruments)'
-            }
-          },
-          {
-            id: 'ch3-ammeter-voltmeter',
-            chapterId: 'ch-measurements',
-            order: 8,
-            title: {
-              en: 'Ammeter & Voltmeter',
-              hi: 'अमीटर एवं वोल्टमीटर (Ammeter & Voltmeter)',
-              bn: 'অ্যামিটার ও ভোল্টমিটার (Ammeter & Voltmeter)'
-            }
-          },
-          {
-            id: 'ch3-wattmeter-power',
-            chapterId: 'ch-measurements',
-            order: 9,
-            title: {
-              en: 'Wattmeter & Power Measurement',
-              hi: 'वाटमीटर एवं शक्ति मापन (Wattmeter & Power Measurement)',
-              bn: 'ওয়াটमीटर ও পাওয়ার পরিমাপ (Wattmeter & Power Measurement)'
-            }
-          },
-          {
-            id: 'ch3-energy-measurement',
-            chapterId: 'ch-measurements',
-            order: 10,
-            title: {
-              en: 'Energy Measurement',
-              hi: 'ऊर्जा मापन (Energy Measurement)',
-              bn: 'এনার্জি বা শক্তি পরিমাপ (Energy Measurement)'
-            }
-          },
-          {
-            id: 'ch3-digital-instruments',
-            chapterId: 'ch-measurements',
-            order: 11,
-            title: {
-              en: 'Digital Measuring Instruments',
-              hi: 'डिजिटल मापन यंत्र (Digital Measuring Instruments)',
-              bn: 'ডিজিটাল পরিমাপক যন্ত্র (Digital Measuring Instruments)'
-            }
-          },
-          {
-            id: 'ch3-cro-oscilloscope',
-            chapterId: 'ch-measurements',
-            order: 12,
-            title: {
-              en: 'CRO & Oscilloscope',
-              hi: 'सीआरओ एवं ऑसिलोस्कोप (CRO & Oscilloscope)',
-              bn: 'সিআরও ও অসিলোস্কোপ (CRO & Oscilloscope)'
-            }
-          },
-          {
-            id: 'ch3-transducers',
-            chapterId: 'ch-measurements',
-            order: 13,
-            title: {
-              en: 'Transducers',
-              hi: 'ट्रांसड्यूसर (Transducers)',
-              bn: 'ট্রান্সডিউসার (Transducers)'
-            }
-          },
-          {
-            id: 'ch3-bridges-resistance',
-            chapterId: 'ch-measurements',
-            order: 14,
-            title: {
-              en: 'Bridges & Resistance Measurement',
-              hi: 'ब्रिज एवं प्रतिरोध मापन (Bridges & Resistance Measurement)',
-              bn: 'ব্রিজ ও রেজিস্ট্যান্স পরিমাপ (Bridges & Resistance Measurement)'
-            }
-          },
-          {
-            id: 'ch3-inductance-capacitance',
-            chapterId: 'ch-measurements',
-            order: 15,
-            title: {
-              en: 'Inductance & Capacitance Measurement',
-              hi: 'प्रेरकत्व एवं धारिता मापन (Inductance & Capacitance Measurement)',
-              bn: 'ইন্ডাকট্যান্স ও ক্যাপাসিট্যান্স পরিমাপ (Inductance & Capacitance Measurement)'
-            }
-          },
-          {
-            id: 'ch3-instrument-transformers',
-            chapterId: 'ch-measurements',
-            order: 16,
-            title: {
-              en: 'Instrument Transformers',
-              hi: 'इंस्ट्रूमेंट ट्रांसफॉर्मर (Instrument Transformers)',
-              bn: 'ইনস্ট্রুমেন্ট ট্রান্সফরমার (Instrument Transformers)'
-            }
-          },
-          {
-            id: 'ch3-frequency-phase',
-            chapterId: 'ch-measurements',
-            order: 17,
-            title: {
-              en: 'Measurement of Frequency & Phase',
-              hi: 'आवृत्ति एवं कला मापन (Measurement of Frequency & Phase)',
-              bn: 'ফ্রিকোয়েন্সি ও ফেজ পরিমাপ (Measurement of Frequency & Phase)'
-            }
-          },
-          {
-            id: 'ch3-calibration-testing',
-            chapterId: 'ch-measurements',
-            order: 18,
-            title: {
-              en: 'Calibration & Testing',
-              hi: 'कैलिब्रेशन एवं परीक्षण (Calibration & Testing)',
-              bn: 'ক্যালিব্রেশন ও টেস্টিং (Calibration & Testing)'
-            }
-          },
-          {
-            id: 'ch3-practical-safety',
-            chapterId: 'ch-measurements',
-            order: 19,
-            title: {
-              en: 'Practical Measurement & Safety',
-              hi: 'व्यावहारिक मापन एवं सुरक्षा (Practical Measurement & Safety)',
-              bn: 'ব্যবহারিক পরিমাপ ও নিরাপত্তা (Practical Measurement & Safety)'
-            }
-          },
-          {
-            id: 'ch3-troubleshooting',
-            chapterId: 'ch-measurements',
-            order: 20,
-            title: {
-              en: 'Measurement Applications & Troubleshooting',
-              hi: 'मापन अनुप्रयोग एवं ट्रबलशूटिंग (Measurement Applications & Troubleshooting)',
-              bn: 'পরিমাপের প্রয়োগ ও ট্রাবলশুটিং (Measurement Applications & Troubleshooting)'
-            }
-          }
+                  {
+                            "id": "ch3-fundamentals-measurement",
+                            "chapterId": "ch-measurements",
+                            "order": 1,
+                            "title": {
+                                      "en": "Fundamentals of Measurement & Units",
+                                      "hi": "मापन के मूल सिद्धांत एवं इकाइयाँ",
+                                      "bn": "পরিমাপের মূল নীতি ও এককসমূহ"
+                            }
+                  },
+                  {
+                            "id": "ch3-measurement-errors",
+                            "chapterId": "ch-measurements",
+                            "order": 2,
+                            "title": {
+                                      "en": "Measurement Errors",
+                                      "hi": "मापन त्रुटियाँ (Measurement Errors)",
+                                      "bn": "পরিমাপের ত্রুটিসমূহ (Measurement Errors)"
+                            }
+                  },
+                  {
+                            "id": "ch3-electrical-instruments",
+                            "chapterId": "ch-measurements",
+                            "order": 3,
+                            "title": {
+                                      "en": "Electrical Measuring Instruments & Operating Principles",
+                                      "hi": "विद्युत मापन उपकरण एवं कार्य सिद्धांत",
+                                      "bn": "বৈদ্যুতিক পরিমাপক যন্ত্র ও কার্যনীতি"
+                            }
+                  },
+                  {
+                            "id": "ch3-pmmc-instruments",
+                            "chapterId": "ch-measurements",
+                            "order": 4,
+                            "title": {
+                                      "en": "Permanent Magnet Moving Coil (PMMC) Instruments",
+                                      "hi": "स्थायी चुंबक मूविंग कॉइल (PMMC) उपकरण",
+                                      "bn": "স্থায়ী চুম্বক মুভিং কয়েল (PMMC) ইনস্ট্রুমেন্ট"
+                            }
+                  },
+                  {
+                            "id": "ch3-moving-iron",
+                            "chapterId": "ch-measurements",
+                            "order": 5,
+                            "title": {
+                                      "en": "Moving Iron (MI) Instruments",
+                                      "hi": "मूविंग आयरन (MI) उपकरण",
+                                      "bn": "মুভিং আয়রন (MI) ইনস্ট্রুমেন্ট"
+                            }
+                  },
+                  {
+                            "id": "ch3-electrodynamometer",
+                            "chapterId": "ch-measurements",
+                            "order": 6,
+                            "title": {
+                                      "en": "Electrodynamometer Instruments",
+                                      "hi": "इलेक्ट्रोडायनेमोमीटर उपकरण (Electrodynamometer Instruments)",
+                                      "bn": "ইলেক্ট্রোডায়নামোমিটার যন্ত্র (Electrodynamometer Instruments)"
+                            }
+                  },
+                  {
+                            "id": "ch3-thermal-instruments",
+                            "chapterId": "ch-measurements",
+                            "order": 7,
+                            "title": {
+                                      "en": "Thermal Instruments",
+                                      "hi": "तापीय उपकरण (Thermal Instruments)",
+                                      "bn": "থার্মাল বা তাপীয় যন্ত্র (Thermal Instruments)"
+                            }
+                  },
+                  {
+                            "id": "ch3-ammeter-voltmeter",
+                            "chapterId": "ch-measurements",
+                            "order": 8,
+                            "title": {
+                                      "en": "Ammeter & Voltmeter",
+                                      "hi": "अमीटर एवं वोल्टमीटर (Ammeter & Voltmeter)",
+                                      "bn": "অ্যামিটার ও ভোল্টমিটার (Ammeter & Voltmeter)"
+                            }
+                  },
+                  {
+                            "id": "ch3-wattmeter-power",
+                            "chapterId": "ch-measurements",
+                            "order": 9,
+                            "title": {
+                                      "en": "Wattmeter & Power Measurement",
+                                      "hi": "वाटमीटर एवं शक्ति मापन (Wattmeter & Power Measurement)",
+                                      "bn": "ওয়াটমিটার ও পাওয়ার পরিমাপ (Wattmeter & Power Measurement)"
+                            }
+                  },
+                  {
+                            "id": "ch3-energy-measurement",
+                            "chapterId": "ch-measurements",
+                            "order": 10,
+                            "title": {
+                                      "en": "Energy Measurement",
+                                      "hi": "ऊर्जा मापन (Energy Measurement)",
+                                      "bn": "এনার্জি বা শক্তি পরিমাপ (Energy Measurement)"
+                            }
+                  },
+                  {
+                            "id": "ch3-digital-instruments",
+                            "chapterId": "ch-measurements",
+                            "order": 11,
+                            "title": {
+                                      "en": "Digital Measuring Instruments",
+                                      "hi": "डिजिटल मापन यंत्र (Digital Measuring Instruments)",
+                                      "bn": "ডিজিটাল পরিমাপক যন্ত্র (Digital Measuring Instruments)"
+                            }
+                  },
+                  {
+                            "id": "ch3-cro-oscilloscope",
+                            "chapterId": "ch-measurements",
+                            "order": 12,
+                            "title": {
+                                      "en": "CRO & Oscilloscope",
+                                      "hi": "सीआरओ एवं ऑसिलोस्कोप (CRO & Oscilloscope)",
+                                      "bn": "সিআরও ও অসিলোস্কোপ (CRO & Oscilloscope)"
+                            }
+                  },
+                  {
+                            "id": "ch3-transducers",
+                            "chapterId": "ch-measurements",
+                            "order": 13,
+                            "title": {
+                                      "en": "Transducers",
+                                      "hi": "ट्रांसड्यूसर (Transducers)",
+                                      "bn": "ট্রান্সডিউসার (Transducers)"
+                            }
+                  },
+                  {
+                            "id": "ch3-bridges-resistance",
+                            "chapterId": "ch-measurements",
+                            "order": 14,
+                            "title": {
+                                      "en": "Bridges & Resistance Measurement",
+                                      "hi": "ब्रिज एवं प्रतिरोध मापन (Bridges & Resistance Measurement)",
+                                      "bn": "ব্রিজ ও রেজিস্ট্যান্স পরিমাপ (Bridges & Resistance Measurement)"
+                            }
+                  },
+                  {
+                            "id": "ch3-inductance-capacitance",
+                            "chapterId": "ch-measurements",
+                            "order": 15,
+                            "title": {
+                                      "en": "Inductance & Capacitance Measurement",
+                                      "hi": "प्रेरकत्व एवं धारिता मापन (Inductance & Capacitance Measurement)",
+                                      "bn": "ইনডাক্ট্যান্স ও ক্যাপাসিট্যান্স পরিমাপ (Inductance & Capacitance Measurement)"
+                            }
+                  },
+                  {
+                            "id": "ch3-instrument-transformers",
+                            "chapterId": "ch-measurements",
+                            "order": 16,
+                            "title": {
+                                      "en": "Instrument Transformers",
+                                      "hi": "इन्स्ट्रूमेंट ट्रांसफॉर्मर (Instrument Transformers)",
+                                      "bn": "ইন্সট্রুমেন্ট ট্রান্সফরমার (Instrument Transformers)"
+                            }
+                  },
+                  {
+                            "id": "ch3-frequency-phase",
+                            "chapterId": "ch-measurements",
+                            "order": 17,
+                            "title": {
+                                      "en": "Measurement of Frequency & Phase",
+                                      "hi": "आवृत्ति एवं फेज़ मापन (Measurement of Frequency & Phase)",
+                                      "bn": "ফ্রিকোয়েন্সি ও ফেজ পরিমাপ (Measurement of Frequency & Phase)"
+                            }
+                  },
+                  {
+                            "id": "ch3-calibration-testing",
+                            "chapterId": "ch-measurements",
+                            "order": 18,
+                            "title": {
+                                      "en": "Calibration & Testing",
+                                      "hi": "कैलिब्रेशन एवं परीक्षण (Calibration & Testing)",
+                                      "bn": "ক্যালিব্রেশন ও টেস্টিং (Calibration & Testing)"
+                            }
+                  },
+                  {
+                            "id": "ch3-practical-safety",
+                            "chapterId": "ch-measurements",
+                            "order": 19,
+                            "title": {
+                                      "en": "Practical Measurement & Safety",
+                                      "hi": "व्यवहारिक मापन एवं सुरक्षा (Practical Measurement & Safety)",
+                                      "bn": "ব্যবহারিক পরিমাপ ও নিরাপত্তা (Practical Measurement & Safety)"
+                            }
+                  },
+                  {
+                            "id": "ch3-troubleshooting",
+                            "chapterId": "ch-measurements",
+                            "order": 20,
+                            "title": {
+                                      "en": "Measurement Applications & Troubleshooting",
+                                      "hi": "मापन अनुप्रयोग एवं ट्रबलशूटिंग (Measurement Applications & Troubleshooting)",
+                                      "bn": "পরিমাপ প্রয়োগ ও ট্রাবলশুটিং (Measurement Applications & Troubleshooting)"
+                            }
+                  }
         ]
       },
       {
@@ -715,186 +480,186 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
           bn: 'অধ্যায় ৪: ডিসি সার্কিট ও নেটওয়ার্ক অ্যানালিসিস'
         },
         topics: [
-          {
-            id: 'ch4-dc-network-fundamentals',
-            chapterId: 'ch-dc-network-analysis',
-            order: 1,
-            title: {
-              en: 'DC Network Fundamentals & Circuit Terminology',
-              hi: 'डीसी नेटवर्क के मूल सिद्धांत एवं शब्दावली',
-              bn: 'ডিসি নেটওয়ার্কের মৌলিক ভিত্তি ও সার্কিট পরিভাষা'
-            }
-          },
-          {
-            id: 'ch4-kcl',
-            chapterId: 'ch-dc-network-analysis',
-            order: 2,
-            title: {
-              en: "Kirchhoff's Current Law (KCL)",
-              hi: 'किरचॉफ का धारा नियम (KCL)',
-              bn: 'কার্শফের কারেন্ট सूत्र (KCL)'
-            }
-          },
-          {
-            id: 'ch4-kvl',
-            chapterId: 'ch-dc-network-analysis',
-            order: 3,
-            title: {
-              en: "Kirchhoff's Voltage Law (KVL)",
-              hi: 'किरचॉफ का वोल्टेज नियम (KVL)',
-              bn: 'কার্शফের ভোল্টেজ সূত্র (KVL)'
-            }
-          },
-          {
-            id: 'ch4-node-branch',
-            chapterId: 'ch-dc-network-analysis',
-            order: 4,
-            title: {
-              en: 'Node, Branch, and Loop Concepts',
-              hi: 'नोड, शाखा (ब्रांच) एवं लूप की अवधारणाएँ',
-              bn: 'নোড, ব্রাঞ্চ এবং লুপের ধারণা'
-            }
-          },
-          {
-            id: 'ch4-nodal-analysis',
-            chapterId: 'ch-dc-network-analysis',
-            order: 5,
-            title: {
-              en: 'Nodal Analysis Method',
-              hi: 'नोडल विश्लेषण विधि (Nodal Analysis)',
-              bn: 'নোডাল অ্যানালিসিস পদ্ধতি'
-            }
-          },
-          {
-            id: 'ch4-mesh-analysis',
-            chapterId: 'ch-dc-network-analysis',
-            order: 6,
-            title: {
-              en: 'Mesh and Loop Analysis Method',
-              hi: 'मेष एवं लूप विश्लेषण विधि (Mesh Analysis)',
-              bn: 'মেশ ও লুপ অ্যানালিসিস পদ্ধতি'
-            }
-          },
-          {
-            id: 'ch4-network-reduction',
-            chapterId: 'ch-dc-network-analysis',
-            order: 7,
-            title: {
-              en: 'Series and Parallel Network Reduction',
-              hi: 'श्रेणी एवं समानांतर नेटवर्क रिडक्शन',
-              bn: 'সিরিজ ও প্যারালাল নেটওয়ার্ক রিডাকশন'
-            }
-          },
-          {
-            id: 'ch4-divider-networks',
-            chapterId: 'ch-dc-network-analysis',
-            order: 8,
-            title: {
-              en: 'Voltage and Current Division in Complex Networks',
-              hi: 'जटिल नेटवर्कों में वोल्टेज एवं धारा विभाजन',
-              bn: 'জটিল নেটওয়ার্কে ভোল্টেজ ও কারেন্ট ডিভিশন'
-            }
-          },
-          {
-            id: 'ch4-star-delta',
-            chapterId: 'ch-dc-network-analysis',
-            order: 9,
-            title: {
-              en: 'Star-Delta (Delta-Wye) Transformation',
-              hi: 'स्टार-डेल्टा (स्टार-डेल्टा) रूपांतरण',
-              bn: 'স্টার-ডেল্টা (স্টার-ডেল্টা) রূপান্তর'
-            }
-          },
-          {
-            id: 'ch4-network-theorems-intro',
-            chapterId: 'ch-dc-network-analysis',
-            order: 10,
-            title: {
-              en: 'Introduction to Network Theorems',
-              hi: 'नेटवर्क प्रमेयों का परिचय',
-              bn: 'নেটওয়ার্ক উপপাদ্যের পরিচিতি'
-            }
-          },
-          {
-            id: 'ch4-thevenins-theorem',
-            chapterId: 'ch-dc-network-analysis',
-            order: 11,
-            title: {
-              en: "Thevenin's Theorem",
-              hi: "थेवेनिन का प्रमेय (Thevenin's Theorem)",
-              bn: "থেভেনিনের উপপাদ্য (Thevenin's Theorem)"
-            }
-          },
-          {
-            id: 'ch4-nortons-theorem',
-            chapterId: 'ch-dc-network-analysis',
-            order: 12,
-            title: {
-              en: "Norton's Theorem",
-              hi: "नॉर्टन का प्रमेय (Norton's Theorem)",
-              bn: "নর্টনের উপপাদ্য (Norton's Theorem)"
-            }
-          },
-          {
-            id: 'ch4-superposition-theorem',
-            chapterId: 'ch-dc-network-analysis',
-            order: 13,
-            title: {
-              en: 'Superposition Theorem',
-              hi: 'सुपरपोजिशन प्रमेय (Superposition Theorem)',
-              bn: 'সুপারপজিশন উপপাদ্য (Superposition Theorem)'
-            }
-          },
-          {
-            id: 'ch4-max-power-transfer',
-            chapterId: 'ch-dc-network-analysis',
-            order: 14,
-            title: {
-              en: 'Maximum Power Transfer Theorem',
-              hi: 'अधिकतम शक्ति हस्तांतरण प्रमेय',
-              bn: 'সর্বোচ্চ পাওয়ার ট্রান্সফার উপপাদ্য'
-            }
-          },
-          {
-            id: 'ch4-reciprocity-theorem',
-            chapterId: 'ch-dc-network-analysis',
-            order: 15,
-            title: {
-              en: 'Reciprocity Theorem',
-              hi: 'रेसीप्रोसिटी (पारस्परिकता) प्रमेय',
-              bn: 'রেসিপ্রোসিটি উপপাদ্য'
-            }
-          },
-          {
-            id: 'ch4-source-transformation',
-            chapterId: 'ch-dc-network-analysis',
-            order: 16,
-            title: {
-              en: 'Source Transformation Techniques',
-              hi: 'स्रोत रूपांतरण तकनीक (Source Transformation)',
-              bn: 'সোর্স ট্রান্সফরমেশন পদ্ধতি'
-            }
-          },
-          {
-            id: 'ch4-dc-fault-analysis',
-            chapterId: 'ch-dc-network-analysis',
-            order: 17,
-            title: {
-              en: 'DC Network Fault Analysis & Bridge Networks',
-              hi: 'डीसी नेटवर्क फॉल्ट विश्लेषण एवं ब्रिज नेटवर्क',
-              bn: 'ডিসি নেটওয়ার্ক ফল্ট অ্যানালিসিস ও ব্রিজ নেটওয়ার্ক'
-            }
-          },
-          {
-            id: 'ch4-practical-dc-applications',
-            chapterId: 'ch-dc-network-analysis',
-            order: 18,
-            title: {
-              en: 'Practical DC Circuit & Industrial Applications',
-              hi: 'व्यावहारिक डीसी सर्किट एवं औद्योगिक अनुप्रयोग',
-              bn: 'ব্যবহারিক ডিসি সার্কিট ও শিল্প প্রয়োগ'
-            }
-          }
+                  {
+                            "id": "ch4-dc-network-fundamentals",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 1,
+                            "title": {
+                                      "en": "DC Network Fundamentals & Circuit Terminology",
+                                      "hi": "डीसी नेटवर्क के मूल सिद्धांत एवं शब्दावली",
+                                      "bn": "ডিসি নেটওয়ার্কের মৌলিক ভিত্তি ও সার্কিট পরিভাষা"
+                            }
+                  },
+                  {
+                            "id": "ch4-kcl",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 2,
+                            "title": {
+                                      "en": "Kirchhoff's Current Law (KCL)",
+                                      "hi": "किरचॉफ का धारा नियम (KCL)",
+                                      "bn": "কার্শফের কারেন্ট সূত্র (KCL)"
+                            }
+                  },
+                  {
+                            "id": "ch4-kvl",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 3,
+                            "title": {
+                                      "en": "Kirchhoff's Voltage Law (KVL)",
+                                      "hi": "किरचॉफ का वोल्टेज नियम (KVL)",
+                                      "bn": "কার্শফের ভোল্টেজ সূত্র (KVL)"
+                            }
+                  },
+                  {
+                            "id": "ch4-node-branch",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 4,
+                            "title": {
+                                      "en": "Node, Branch, and Loop Concepts",
+                                      "hi": "नोड, शाखा (ब्रांच) एवं लूप की अवधारणाएँ",
+                                      "bn": "নোড, ব্রাঞ্চ এবং লুপের ধারণা"
+                            }
+                  },
+                  {
+                            "id": "ch4-nodal-analysis",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 5,
+                            "title": {
+                                      "en": "Nodal Analysis Method",
+                                      "hi": "नोडल विश्लेषण विधि (Nodal Analysis)",
+                                      "bn": "নোডাল অ্যানালিসিস পদ্ধতি"
+                            }
+                  },
+                  {
+                            "id": "ch4-mesh-analysis",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 6,
+                            "title": {
+                                      "en": "Mesh and Loop Analysis Method",
+                                      "hi": "मेष एवं लूप विश्लेषण विधि (Mesh Analysis)",
+                                      "bn": "মেশ ও লুপ অ্যানালিসিস পদ্ধতি"
+                            }
+                  },
+                  {
+                            "id": "ch4-network-reduction",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 7,
+                            "title": {
+                                      "en": "Series and Parallel Network Reduction",
+                                      "hi": "श्रेणी एवं समानांतर नेटवर्क रिडक्शन",
+                                      "bn": "সিরিজ ও প্যারালাল নেটওয়ার্ক রিডাকশন"
+                            }
+                  },
+                  {
+                            "id": "ch4-divider-networks",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 8,
+                            "title": {
+                                      "en": "Voltage and Current Division in Complex Networks",
+                                      "hi": "जटिल नेटवर्कों में वोल्टेज एवं धारा विभाजन",
+                                      "bn": "জটিল নেটওয়ার্কে ভোল্টেজ ও কারেন্ট ডিভিশন"
+                            }
+                  },
+                  {
+                            "id": "ch4-star-delta",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 9,
+                            "title": {
+                                      "en": "Star-Delta (Delta-Wye) Transformation",
+                                      "hi": "स्टार-डेल्टा (स्टार-डेल्टा) रूपांतरण",
+                                      "bn": "স্টার-ডেল্টা (স্টার-ডেল্টা) রূপান্তর"
+                            }
+                  },
+                  {
+                            "id": "ch4-network-theorems-intro",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 10,
+                            "title": {
+                                      "en": "Introduction to Network Theorems",
+                                      "hi": "नेटवर्क प्रमेयों का परिचय",
+                                      "bn": "নেটওয়ার্ক উপপাদ্যের পরিচিতি"
+                            }
+                  },
+                  {
+                            "id": "ch4-thevenins-theorem",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 11,
+                            "title": {
+                                      "en": "Thevenin's Theorem",
+                                      "hi": "थेवेनिन का प्रमेय (Thevenin's Theorem)",
+                                      "bn": "থেভেনিনের উপপাদ্য (Thevenin's Theorem)"
+                            }
+                  },
+                  {
+                            "id": "ch4-nortons-theorem",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 12,
+                            "title": {
+                                      "en": "Norton's Theorem",
+                                      "hi": "नॉर्टन का प्रमेय (Norton's Theorem)",
+                                      "bn": "নর্টনের উপপাদ্য (Norton's Theorem)"
+                            }
+                  },
+                  {
+                            "id": "ch4-superposition-theorem",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 13,
+                            "title": {
+                                      "en": "Superposition Theorem",
+                                      "hi": "सुपरपोजिशन प्रमेय (Superposition Theorem)",
+                                      "bn": "সুপারপজিশন উপপাদ্য (Superposition Theorem)"
+                            }
+                  },
+                  {
+                            "id": "ch4-max-power-transfer",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 14,
+                            "title": {
+                                      "en": "Maximum Power Transfer Theorem",
+                                      "hi": "अधिकतम शक्ति हस्तांतरण प्रमेय",
+                                      "bn": "সর্বোচ্চ পাওয়ার ট্রান্সফার উপপাদ্য"
+                            }
+                  },
+                  {
+                            "id": "ch4-reciprocity-theorem",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 15,
+                            "title": {
+                                      "en": "Reciprocity Theorem",
+                                      "hi": "रेसीप्रोसिटी (पारस्परिकता) प्रमेय",
+                                      "bn": "রেসিপ্রোসিটি উপপাদ্য"
+                            }
+                  },
+                  {
+                            "id": "ch4-source-transformation",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 16,
+                            "title": {
+                                      "en": "Source Transformation Techniques",
+                                      "hi": "स्रोत रूपांतरण तकनीक (Source Transformation)",
+                                      "bn": "সোর্স ট্রান্সফরমেশন পদ্ধতি"
+                            }
+                  },
+                  {
+                            "id": "ch4-dc-fault-analysis",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 17,
+                            "title": {
+                                      "en": "DC Network Fault Analysis & Bridge Networks",
+                                      "hi": "डीसी नेटवर्क फॉल्ट विश्लेषण एवं ब्रिज नेटवर्क",
+                                      "bn": "ডিসি নেটওয়ার্ক ফল্ট অ্যানালিসিস ও ब्रिज নেটওয়ার্ক"
+                            }
+                  },
+                  {
+                            "id": "ch4-practical-dc-applications",
+                            "chapterId": "ch-dc-network-analysis",
+                            "order": 18,
+                            "title": {
+                                      "en": "Practical DC Circuit & Industrial Applications",
+                                      "hi": "व्यावहारिक डीसी सर्किट एवं औद्योगिक अनुप्रयोग",
+                                      "bn": "ব্যবহারিক ডিসি সার্কিট ও শিল্প প্রয়োগ"
+                            }
+                  }
         ]
       },
       {
@@ -1446,109 +1211,229 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 7,
         title: {
-          en: 'Chapter 7: Capacitors',
-          hi: 'अध्याय 7: संधारित्र (कैपेसिटर)',
-          bn: 'অধ্যায় ৭: ক্যাপাসিটর'
+          en: 'Chapter 7: Capacitors & Electrostatics',
+          hi: 'अध्याय 7: संधारित्र (कैपेसिटर) एवं स्थिरवैद्युतिकी',
+          bn: 'অধ্যায় ৭: ক্যাপাসিটর ও স্থিরতড়িৎ'
         },
         topics: [
           {
-            id: 'tp-electric-field',
+            id: 'ch7-electric-field-potential',
             chapterId: 'ch-capacitors',
             order: 1,
+            level: 'Foundation',
             title: {
-              en: 'Electric Field',
-              hi: 'विद्युत क्षेत्र',
-              bn: 'তড়িৎ ক্ষেত্র'
+              en: 'Electric Field, Potential & Gauss\'s Law',
+              hi: 'विद्युत क्षेत्र, विभव एवं गाउस का नियम',
+              bn: 'তড়িৎ ক্ষেত্র, বিভব ও গাউসের সূত্র'
             }
           },
           {
-            id: 'tp-capacitance',
+            id: 'ch7-capacitance-fundamentals',
             chapterId: 'ch-capacitors',
             order: 2,
+            level: 'Foundation',
             title: {
-              en: 'Capacitance',
-              hi: 'धारिता (कैपेसिटेंस)',
-              bn: 'ধারকত্ব (ক্যাপাসিট্যান্স)'
+              en: 'Capacitance Concept, Definition & Working Principle',
+              hi: 'धारिता (कैपेसिटेंस) की संकल्पना एवं कार्य सिद्धांत',
+              bn: 'ধারকত্বের ধারণা, সংজ্ঞা ও কার্যপ্রণালী'
             }
           },
           {
-            id: 'tp-capacitor-construction',
+            id: 'ch7-dielectrics-permittivity',
             chapterId: 'ch-capacitors',
             order: 3,
+            level: 'Foundation',
             title: {
-              en: 'Capacitor Construction',
-              hi: 'संधारित्र की बनावट',
-              bn: 'ক্যাপাসিটরের গঠন'
+              en: 'Dielectric Materials, Relative Permittivity & Polarization',
+              hi: 'परावैद्युत पदार्थ, सापेक्ष पारगम्यता एवं ध्रुवण',
+              bn: 'ডাই-ইলেকট্রিক উপাদান, আপেক্ষিক প্রবেশ্যতা ও পোলারাইজেশন'
             }
           },
           {
-            id: 'tp-types-capacitors',
+            id: 'ch7-parallel-plate-capacitor',
             chapterId: 'ch-capacitors',
             order: 4,
+            level: 'Diploma',
             title: {
-              en: 'Types of Capacitors',
-              hi: 'कैपेसिटर के प्रकार',
-              bn: 'ক্যাপাসিটরের প্রকারভেদ'
+              en: 'Parallel Plate & Multi-Plate Capacitors',
+              hi: 'समानांतर प्लेट एवं बहु-प्लेट संधारित्र',
+              bn: 'সমান্তরাল পাত ও বহু-পাত ধারক'
             }
           },
           {
-            id: 'tp-capacitor-units',
+            id: 'ch7-cylindrical-spherical-capacitors',
             chapterId: 'ch-capacitors',
             order: 5,
+            level: 'Engineering',
             title: {
-              en: 'Capacitor Units',
-              hi: 'कैपेसिटर की इकाइयाँ',
-              bn: 'ক্যাপাসিটরের একক'
+              en: 'Cylindrical & Spherical Capacitors & Cable Capacitance',
+              hi: 'बेलनाकार एवं गोलाकार संधारित्र तथा केबल धारिता',
+              bn: 'সিলিন্ড্রিক্যাল ও স্ফেরিক্যাল ক্যাপাসিটর এবং কেবল ক্যাপাসিট্যান্স'
             }
           },
           {
-            id: 'tp-capacitors-series',
+            id: 'ch7-capacitors-in-series',
             chapterId: 'ch-capacitors',
             order: 6,
+            level: 'Diploma',
             title: {
-              en: 'Capacitors in Series',
-              hi: 'श्रेणी क्रम में कैपेसिटर',
-              bn: 'সিরিজে ক্যাপাসিটর'
+              en: 'Capacitors in Series Connection & Voltage Division',
+              hi: 'श्रेणी क्रम में संधारित्र एवं वोल्टेज विभाजन',
+              bn: 'সিরিজ সংযোগে ক্যাপাসিটর ও ভোল্টেজ বিভাজন'
             }
           },
           {
-            id: 'tp-capacitors-parallel',
+            id: 'ch7-capacitors-in-parallel',
             chapterId: 'ch-capacitors',
             order: 7,
+            level: 'Diploma',
             title: {
-              en: 'Capacitors in Parallel',
-              hi: 'समानांतर क्रम में कैपेसिटर',
-              bn: 'প্যারালালে ক্যাপাসিটর'
+              en: 'Capacitors in Parallel Connection & Charge Distribution',
+              hi: 'समानांतर क्रम में संधारित्र एवं आवेश वितरण',
+              bn: 'প্যারালাল সংযোগে ক্যাপাসিটর ও চার্জ বণ্টন'
             }
           },
           {
-            id: 'tp-energy-stored-capacitor',
+            id: 'ch7-energy-stored-capacitor',
             chapterId: 'ch-capacitors',
             order: 8,
+            level: 'Diploma',
             title: {
-              en: 'Energy Stored in Capacitor',
-              hi: 'कैपेसिटर में संचित ऊर्जा',
-              bn: 'ক্যাপাসিটরে সঞ্চিত শক্তি'
+              en: 'Energy Stored in a Capacitor & Electrostatic Energy Density',
+              hi: 'संधारित्र में संचित ऊर्जा एवं स्थिरवैद्युत ऊर्जा घनत्व',
+              bn: 'ক্যাপাসিটরে সঞ্চিত শক্তি ও তড়িৎ শক্তি ঘনত্ব'
             }
           },
           {
-            id: 'tp-charging-discharging',
+            id: 'ch7-rc-charging-transient',
             chapterId: 'ch-capacitors',
             order: 9,
+            level: 'Engineering',
             title: {
-              en: 'Charging & Discharging',
-              hi: 'चार्जिंग एवं डिस्चार्जिंग',
-              bn: 'চার্জিং ও ডিসচার্জিং'
+              en: 'RC Circuit Charging Transient & Time Constant (τ = R·C)',
+              hi: 'RC परिपथ चार्जिंग क्षणिक एवं समय स्थिरांक (τ = R·C)',
+              bn: 'RC সার্কিট চার্জিং ট্রানজিয়েন্ট ও টাইম কনস্ট্যান্ট'
             }
           },
           {
-            id: 'tp-capacitor-apps',
+            id: 'ch7-rc-discharging-transient',
             chapterId: 'ch-capacitors',
             order: 10,
+            level: 'Engineering',
             title: {
-              en: 'Capacitor Applications',
-              hi: 'कैपेसिटर के अनुप्रयोग',
-              bn: 'ক্যাপাসিটরের প্রয়োগ'
+              en: 'RC Circuit Discharging Transient & Energy Dissipation',
+              hi: 'RC परिपथ डिस्चार्जिंग क्षणिक एवं ऊर्जा क्षय',
+              bn: 'RC সার্কিট ডিসচার্জিং ট্রানজিয়েন্ট ও শক্তি ক্ষয়'
+            }
+          },
+          {
+            id: 'ch7-types-of-capacitors',
+            chapterId: 'ch-capacitors',
+            order: 11,
+            level: 'Practical',
+            title: {
+              en: 'Types of Capacitors (Electrolytic, Ceramic, Mica, Film, Supercaps)',
+              hi: 'कैपेसिटर के प्रकार (इलेक्ट्रोलाइटिक, सेरामिक, माइका, फिल्म, सुपरकैप्स)',
+              bn: 'ক্যাপাসিটরের প্রকারভেদ (ইলেক্ট্রোলাইটিক, সিরামিক, মাইকা, ফিল্ম, সুপারক্যাপ)'
+            }
+          },
+          {
+            id: 'ch7-capacitor-ratings-codes',
+            chapterId: 'ch-capacitors',
+            order: 12,
+            level: 'Practical',
+            title: {
+              en: 'Capacitor Ratings, Voltage Limits & EIA Color/Numerical Codes',
+              hi: 'कैपेसिटर रेटिंग, वोल्टेज सीमाएं एवं EIA 3-अंकीय कोड प्रणाली',
+              bn: 'ক্যাপাসিটরের রেটিং, ভোল্টেজ সীমা ও কালার/নিউমেরিক্যাল কোড'
+            }
+          },
+          {
+            id: 'ch7-capacitor-losses-dielectric-breakdown',
+            chapterId: 'ch-capacitors',
+            order: 13,
+            level: 'Engineering',
+            title: {
+              en: 'Dielectric Breakdown, Losses, ESR & Tan Delta (tan δ)',
+              hi: 'परावैद्युत ब्रेकडाउन, हानियां, ESR एवं टैन डेल्टा (tan δ)',
+              bn: 'ডাই-ইলেকট্রিক ব্রেকডাউন, অপচয়, ESR ও ট্যান ডেল্টা (tan δ)'
+            }
+          },
+          {
+            id: 'ch7-capacitors-in-ac-circuits',
+            chapterId: 'ch-capacitors',
+            order: 14,
+            level: 'Diploma',
+            title: {
+              en: 'Capacitors in AC Circuits, Phase Relationship & Capacitive Reactance',
+              hi: 'एसी परिपथ में संधारित्र, फेज़ संबंध एवं धारितीय प्रतिघात (Xc)',
+              bn: 'এসি সার্কিটে ক্যাপাসিটর, ফেজ সম্পর্ক ও ক্যাপাসিটিভ রিঅ্যাকট্যান্স (Xc)'
+            }
+          },
+          {
+            id: 'ch7-rc-filters',
+            chapterId: 'ch-capacitors',
+            order: 15,
+            level: 'Diploma',
+            title: {
+              en: 'RC Filters: Low-Pass and High-Pass Passive Filters',
+              hi: 'RC फिल्टर: लो-पास एवं हाई-पास पैसिव फिल्टर',
+              bn: 'RC ফিল্টার: লো-পাস ও হাই-পাস প্যাসিভ ফিল্টার'
+            }
+          },
+          {
+            id: 'ch7-power-factor-improvement',
+            chapterId: 'ch-capacitors',
+            order: 16,
+            level: 'Practical',
+            title: {
+              en: 'Power Factor Improvement & Capacitor Bank kVAR Calculations',
+              hi: 'पावर फैक्टर सुधार एवं कैपेसिटर बैंक kVAR गणना',
+              bn: 'পাওয়ার ফ্যাক্টর বৃদ্ধি ও ক্যাপাসিটর ব্যাংক kVAR হিসাব'
+            }
+          },
+          {
+            id: 'ch7-snubber-smoothing-decoupling',
+            chapterId: 'ch-capacitors',
+            order: 17,
+            level: 'Practical',
+            title: {
+              en: 'Capacitor Applications: Snubber Circuits, DC Smoothing & Decoupling',
+              hi: 'कैपेसिटर अनुप्रयोग: स्नबर परिपथ, डीसी स्मूथिंग एवं डीकपलिंग',
+              bn: 'ক্যাপাসিটরের প্রয়োগ: স্নাবার সার্কিট, ডিসি স্মুথিং ও ডিকাপলিং'
+            }
+          },
+          {
+            id: 'ch7-motor-capacitors-voltage-multipliers',
+            chapterId: 'ch-capacitors',
+            order: 18,
+            level: 'Practical',
+            title: {
+              en: 'Motor Start/Run Capacitors & Voltage Multipliers',
+              hi: 'मोटर स्टार्ट/रन कैपेसिटर एवं वोल्टेज मल्टीप्लायर',
+              bn: 'মোটর স্টার্ট/রান ক্যাপাসিটর ও ভোল্টেজ মাল্টিপ্লায়ার'
+            }
+          },
+          {
+            id: 'ch7-supercapacitors-energy-storage',
+            chapterId: 'ch-capacitors',
+            order: 19,
+            level: 'Engineering',
+            title: {
+              en: 'Supercapacitors, Ultracapacitors & Advanced Energy Storage',
+              hi: 'सुपरकैपेसिटर, अल्ट्राकैपेसिटर एवं आधुनिक ऊर्जा भंडारण',
+              bn: 'সুপারক্যাপাসিটর, আল্ট্রাক্যাপাসিটর ও আধুনিক শক্তি সংরক্ষণ'
+            }
+          },
+          {
+            id: 'ch7-capacitor-testing-safety-capstone',
+            chapterId: 'ch-capacitors',
+            order: 20,
+            level: 'Practical',
+            title: {
+              en: 'Capacitor Testing, Fault Diagnostics, Safety & Chapter 7 Capstone',
+              hi: 'कैपेसिटर परीक्षण, फॉल्ट निदान, सुरक्षा एवं अध्याय 7 समापन',
+              bn: 'ক্যাপাসিটর টেস্টিং, ত্রুটি নির্ণয়, নিরাপত্তা ও অধ্যায় ৭ সমাপনী'
             }
           }
         ]
@@ -1558,109 +1443,229 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 8,
         title: {
-          en: 'Chapter 8: Inductors',
-          hi: 'अध्याय 8: प्रेरक (इंडक्टर)',
-          bn: 'অধ্যায় ৮: ইন্ডাক্টর'
+          en: 'Chapter 8: Inductors & Electromagnetism',
+          hi: 'अध्याय 8: प्रेरक (इंडक्टर) एवं विद्युतचुंबकत्व',
+          bn: 'অধ্যায় ৮: ইন্ডাক্টর ও তড়িচ্চুম্বকত্ব'
         },
         topics: [
           {
-            id: 'tp-magnetic-field',
+            id: 'ch8-magnetic-fields-lorentz-force',
             chapterId: 'ch-inductors',
             order: 1,
+            level: 'Diploma',
             title: {
-              en: 'Magnetic Field',
-              hi: 'चुंबकीय क्षेत्र',
-              bn: 'চৌম্বক ক্ষেত্র'
+              en: 'Magnetic Fields, Flux Density & Lorentz Force',
+              hi: 'चुंबकीय क्षेत्र, फ्लक्स घनत्व एवं लॉरेंट्ज़ बल',
+              bn: 'চৌম্বক ক্ষেত্র, ফ্লাক্স ঘনত্ব ও লরেঞ্জ বল'
             }
           },
           {
-            id: 'tp-inductance',
+            id: 'ch8-biot-savart-ampere-law',
             chapterId: 'ch-inductors',
             order: 2,
+            level: 'Engineering',
             title: {
-              en: 'Inductance',
-              hi: 'प्रेरकत्व (इंडक्टेंस)',
-              bn: 'আবেশকত্ব (ইন্ডাক্ট্যান্স)'
+              en: 'Biot-Savart Law & Ampere’s Circuital Law',
+              hi: 'बायो-सावर्ट का नियम एवं एम्पीयर का परिपथीय नियम',
+              bn: 'বায়ো-সাভার্ট সূত্র ও অ্যাম্পিয়ারের সার্কিটাল সূত্র'
             }
           },
           {
-            id: 'tp-self-inductance',
+            id: 'ch8-faradays-lenzs-law',
             chapterId: 'ch-inductors',
             order: 3,
+            level: 'Diploma',
             title: {
-              en: 'Self Inductance',
-              hi: 'स्व-प्रेरकत्व (सेल-इंडक्टेंस)',
-              bn: 'স্ব-আবেশ (সেলফ ইন্ডাক্ট্যান্স)'
+              en: 'Faraday’s Law of Induction & Lenz’s Law',
+              hi: 'फैराडे का विद्युतचुंबकीय प्रेरण नियम एवं लेन्ज़ का नियम',
+              bn: 'ফ্যারাডের তড়িচ্চুম্বকীয় আবেশ সূত্র ও লেঞ্জের সূত্র'
             }
           },
           {
-            id: 'tp-mutual-inductance',
+            id: 'ch8-self-inductance-solenoid-toroid',
             chapterId: 'ch-inductors',
             order: 4,
+            level: 'Diploma',
             title: {
-              en: 'Mutual Inductance',
-              hi: 'पारस्परिक प्रेरकत्व (म्यूचुअल इंडक्टेंस)',
-              bn: 'পারস্পরিক আবেশ (মিউচুয়াল ইন্ডাক্ট্যান্স)'
+              en: 'Self-Inductance, Solenoid & Toroid Inductance',
+              hi: 'स्व-प्रेरकत्व (Self-Inductance), परिनालिका एवं टॉरॉइड',
+              bn: 'স্ব-আবেশ (সেলফ-ইন্ডাক্ট্যান্স), সলিনয়েড ও টরয়েড'
             }
           },
           {
-            id: 'tp-inductance-unit',
+            id: 'ch8-mutual-inductance-dot-convention',
             chapterId: 'ch-inductors',
             order: 5,
+            level: 'Engineering',
             title: {
-              en: 'Unit of Inductance',
-              hi: 'इंडक्टेंस की इकाई',
-              bn: 'ইন্ডাক্ট্যান্সের একক'
+              en: 'Mutual Inductance, Dot Convention & Coupling (k)',
+              hi: 'पारस्परिक प्रेरकत्व, डॉट परिपाटी एवं युग्मन गुणांक (k)',
+              bn: 'মিউচুয়াল ইন্ডাক্ট্যান্স, ডট কনভেনশন ও কাপলিং সহগ (k)'
             }
           },
           {
-            id: 'tp-inductor-construction',
+            id: 'ch8-magnetic-materials-permeability',
             chapterId: 'ch-inductors',
             order: 6,
+            level: 'Diploma',
             title: {
-              en: 'Inductor Construction',
-              hi: 'इंडक्टर की संरचना',
-              bn: 'ইন্ডাক্টরের গঠন'
+              en: 'Magnetic Materials, Permeability & Reluctance',
+              hi: 'चुंबकीय पदार्थ, पारगम्यता एवं रिलक्टेंस',
+              bn: 'চৌম্বক উপাদান, প্রবেশ্যতা ও রিলাক্ট্যান্স'
             }
           },
           {
-            id: 'tp-inductors-series',
+            id: 'ch8-hysteresis-b-h-curve',
             chapterId: 'ch-inductors',
             order: 7,
+            level: 'Engineering',
             title: {
-              en: 'Inductors in Series',
-              hi: 'श्रेणी क्रम में इंडक्टर',
-              bn: 'সিরিজে ইন্ডাক্টর'
+              en: 'Magnetic Hysteresis, B-H Curve & Core Losses',
+              hi: 'चुंबकीय हिस्टैरिसीस, B-H वक्र एवं कोर हानियाँ',
+              bn: 'চৌম্বক হিস্টেরেসিস, B-H কার্ভ ও কোর লস'
             }
           },
           {
-            id: 'tp-energy-stored-inductor',
+            id: 'ch8-eddy-currents-skin-effect',
             chapterId: 'ch-inductors',
             order: 8,
+            level: 'Engineering',
             title: {
-              en: 'Energy Stored in Inductor',
-              hi: 'इंडक्टर में संचित ऊर्जा',
-              bn: 'ইন্ডাক্টরে সঞ্চিত শক্তি'
+              en: 'Eddy Currents, Laminated Cores & Skin Effect',
+              hi: 'भंवर धाराएं (Eddy Currents), लेमिनेटेड कोर एवं त्वचा प्रभाव',
+              bn: 'এডি কারেন্ট, লেমিনেটেড কোর ও স্কিন ইফেক্ট'
             }
           },
           {
-            id: 'tp-current-rise-decay',
+            id: 'ch8-inductors-in-series-parallel',
             chapterId: 'ch-inductors',
             order: 9,
+            level: 'Diploma',
             title: {
-              en: 'Rise & Decay of Current',
-              hi: 'धारा का बढ़ना एवं घटना',
-              bn: 'কারেন্টের বৃদ্ধি ও হ্রাস'
+              en: 'Inductors in Series & Parallel (With & Without Coupling)',
+              hi: 'श्रेणी एवं समानांतर क्रम में इंडक्टर (युग्मन सहित व रहित)',
+              bn: 'সিরিজ ও প্যারালালে ইন্ডাক্টর (কাপলিং সহ ও ব্যতীত)'
             }
           },
           {
-            id: 'tp-inductor-apps',
+            id: 'ch8-energy-stored-magnetic-field',
             chapterId: 'ch-inductors',
             order: 10,
+            level: 'Diploma',
             title: {
-              en: 'Inductor Applications',
-              hi: 'इंडक्टर के अनुप्रयोग',
-              bn: 'ইন্ডাক্টরের প্রয়োগ'
+              en: 'Energy Stored in an Inductor & Magnetic Energy Density',
+              hi: 'इंडक्टर में संचित ऊर्जा एवं चुंबकीय ऊर्जा घनत्व',
+              bn: 'ইন্ডাক্টরে সঞ্চিত শক্তি ও চৌম্বক শক্তি ঘনত্ব'
+            }
+          },
+          {
+            id: 'ch8-rl-transient-growth-decay',
+            chapterId: 'ch-inductors',
+            order: 11,
+            level: 'Engineering',
+            title: {
+              en: 'RL Circuit Transients, Current Growth & Decay (τ = L/R)',
+              hi: 'RL परिपथ क्षणिक अवस्था, धारा वृद्धि एवं ह्रास (τ = L/R)',
+              bn: 'RL সার্কিট ট্রানজিয়েন্ট, কারেন্ট বৃদ্ধি ও হ্রাস (τ = L/R)'
+            }
+          },
+          {
+            id: 'ch8-inductive-kick-flyback',
+            chapterId: 'ch-inductors',
+            order: 12,
+            level: 'Practical',
+            title: {
+              en: 'Inductive Kick, Flyback Spikes & Freewheeling Diodes',
+              hi: 'इंडक्टिव किक, फ्लाईबैक वोल्टेज स्पाइक एवं फ्रीव्हीलिंग डायोड',
+              bn: 'ইন্ডাক্টিভ কিক, ফ্লাইব্যাক ভোল্টেজ স্পাইক ও ফ্রিহুইলিং ডায়োড'
+            }
+          },
+          {
+            id: 'ch8-inductors-in-ac-circuits',
+            chapterId: 'ch-inductors',
+            order: 13,
+            level: 'Diploma',
+            title: {
+              en: 'Inductors in AC Circuits: Reactance (X_L) & Phasors',
+              hi: 'प्रत्यावर्ती परिपथ में इंडक्टर: प्रतिघात (X_L) एवं फेज़र',
+              bn: 'এসি সার্কিটে ইন্ডাক্টর: রিঅ্যাকট্যান্স (X_L) ও ফেজর'
+            }
+          },
+          {
+            id: 'ch8-quality-factor-chokes',
+            chapterId: 'ch-inductors',
+            order: 14,
+            level: 'Engineering',
+            title: {
+              en: 'Quality Factor (Q), Self-Resonant Frequency & Chokes',
+              hi: 'क्वालिटी फैक्टर (Q), स्व-अनुनाद आवृत्ति (SRF) एवं चोक',
+              bn: 'কোয়ালিটি ফ্যাক্টর (Q), সেলফ-রেজোন্যান্ট ফ্রিকোয়েন্সি ও চোক'
+            }
+          },
+          {
+            id: 'ch8-types-of-inductors',
+            chapterId: 'ch-inductors',
+            order: 15,
+            level: 'Practical',
+            title: {
+              en: 'Types of Inductors: Construction, Cores & Selection Guide',
+              hi: 'इंडक्टर के प्रकार: संरचना, कोर एवं चयन गाइड',
+              bn: 'ইন্ডাক্টরের প্রকারভেদ: গঠন, কোর ও নির্বাচন গাইড'
+            }
+          },
+          {
+            id: 'ch8-inductor-color-numerical-codes',
+            chapterId: 'ch-inductors',
+            order: 16,
+            level: 'Practical',
+            title: {
+              en: 'Inductor EIA Color Codes, SMD Codes & Ratings (I_sat)',
+              hi: 'इंडक्टर कलर कोड, SMD मार्किंग कोड एवं रेटिंग (I_sat)',
+              bn: 'ইন্ডাক্টর কালার কোড, SMD মার্কিং কোড ও রেটিং (I_sat)'
+            }
+          },
+          {
+            id: 'ch8-switched-mode-power-inductors',
+            chapterId: 'ch-inductors',
+            order: 17,
+            level: 'Practical',
+            title: {
+              en: 'Power Inductors in SMPS: Buck, Boost & Energy Transfer',
+              hi: 'SMPS में पावर इंडक्टर: बक, बूस्ट एवं ऊर्जा स्थानांतरण चक्र',
+              bn: 'SMPS এ পাওয়ার ইন্ডাক্টর: বাক, বুস্ট ও শক্তি রূপান্তর চক্র'
+            }
+          },
+          {
+            id: 'ch8-solenoids-relays-electromagnets',
+            chapterId: 'ch-inductors',
+            order: 18,
+            level: 'Practical',
+            title: {
+              en: 'Industrial Actuators: Electromagnets, Solenoids & Relays',
+              hi: 'औद्योगिक एक्चुएटर: विद्युत चुंबक, सोलेनोइड एवं रिले',
+              bn: 'ইন্ডাস্ট্রিয়াল অ্যাকচুয়েটর: ইলেক্ট্রোম্যাগনেট, সলিনয়েড ও রিলে'
+            }
+          },
+          {
+            id: 'ch8-wireless-power-induction-heating',
+            chapterId: 'ch-inductors',
+            order: 19,
+            level: 'Practical',
+            title: {
+              en: 'Wireless Power Transfer (WPT) & Induction Heating',
+              hi: 'वायरलेस पावर ट्रांसफर (WPT) एवं प्रेरण तापन (Induction Heating)',
+              bn: 'ওয়্যারলেস পাওয়ার ট্রান্সফার (WPT) ও ইনডাকশন হিটিং'
+            }
+          },
+          {
+            id: 'ch8-inductor-testing-diagnostics',
+            chapterId: 'ch-inductors',
+            order: 20,
+            level: 'Practical',
+            title: {
+              en: 'Inductor Testing, Fault Diagnostics & Chapter 8 Capstone',
+              hi: 'इंडक्टर परीक्षण, दोष निदान एवं अध्याय 8 समापन',
+              bn: 'ইন্ডাক্টর টেস্টিং, ত্রুটি নির্ণয় ও অধ্যায় ৮ সমাপনী'
             }
           }
         ]
@@ -2542,6 +2547,24 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           }))
         };
       }
+      if (chapter.id === 'ch-capacitors') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_7_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-inductors') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_8_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
       return chapter;
     })
   };
@@ -2558,21 +2581,46 @@ export interface TopicContext {
   lesson?: Lesson;
   topicIndex: number;
   totalTopics: number;
+  chapterIndex: number;
+  totalChapters: number;
+  allChapters: Chapter[];
   prevTopic?: Topic;
   nextTopic?: Topic;
 }
 
 export function getTopicContext(topicId: string): TopicContext | undefined {
   for (const subject of DETAILED_SUBJECTS) {
-    for (const chapter of subject.chapters) {
+    for (let chIdx = 0; chIdx < subject.chapters.length; chIdx++) {
+      const chapter = subject.chapters[chIdx];
       const topicIdx = chapter.topics.findIndex(t => 
         t.id === topicId || 
         (t.lesson && (t.lesson.id === topicId || t.lesson.topicId === topicId))
       );
       if (topicIdx !== -1) {
         const topic = chapter.topics[topicIdx];
-        const prevTopic = topicIdx > 0 ? chapter.topics[topicIdx - 1] : undefined;
-        const nextTopic = topicIdx < chapter.topics.length - 1 ? chapter.topics[topicIdx + 1] : undefined;
+        
+        // Calculate previous topic (within chapter or from previous chapter's last topic)
+        let prevTopic: Topic | undefined;
+        if (topicIdx > 0) {
+          prevTopic = chapter.topics[topicIdx - 1];
+        } else if (chIdx > 0) {
+          const prevChapter = subject.chapters[chIdx - 1];
+          if (prevChapter.topics.length > 0) {
+            prevTopic = prevChapter.topics[prevChapter.topics.length - 1];
+          }
+        }
+
+        // Calculate next topic (within chapter or from next chapter's first topic)
+        let nextTopic: Topic | undefined;
+        if (topicIdx < chapter.topics.length - 1) {
+          nextTopic = chapter.topics[topicIdx + 1];
+        } else if (chIdx < subject.chapters.length - 1) {
+          const nextChapter = subject.chapters[chIdx + 1];
+          if (nextChapter.topics.length > 0) {
+            nextTopic = nextChapter.topics[0];
+          }
+        }
+
         return {
           subject,
           chapter,
@@ -2580,6 +2628,9 @@ export function getTopicContext(topicId: string): TopicContext | undefined {
           lesson: topic.lesson,
           topicIndex: topicIdx + 1,
           totalTopics: chapter.topics.length,
+          chapterIndex: chIdx + 1,
+          totalChapters: subject.chapters.length,
+          allChapters: subject.chapters,
           prevTopic,
           nextTopic
         };

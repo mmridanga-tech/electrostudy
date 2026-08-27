@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   Zap, 
   ArrowLeft, 
@@ -15,7 +15,12 @@ import {
   CheckCircle2, 
   List, 
   Sparkles,
-  FileText
+  FileText,
+  Search,
+  Sidebar,
+  Type,
+  Maximize,
+  Minimize
 } from 'lucide-react';
 import { Language, Theme } from '../types';
 import { getTopicContext } from '../data/learningData';
@@ -44,6 +49,9 @@ export const StudyPage: React.FC<StudyPageProps> = ({
   const context = getTopicContext(topicId);
   const [isMobileContentsOpen, setIsMobileContentsOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [fontSize, setFontSize] = useState<'normal' | 'large' | 'xl'>('normal');
 
   // Close mobile contents drawer on escape key
   useEffect(() => {
@@ -77,11 +85,23 @@ export const StudyPage: React.FC<StudyPageProps> = ({
     );
   }
 
-  const { subject, chapter, topic, lesson, topicIndex, totalTopics, prevTopic, nextTopic } = context;
+  const { subject, chapter, topic, lesson, topicIndex, totalTopics, chapterIndex, totalChapters, allChapters, prevTopic, nextTopic } = context;
 
   const subjectTitle = subject.title[currentLanguage] || subject.title.en;
   const chapterTitle = chapter.title[currentLanguage] || chapter.title.en;
   const topicTitle = topic.title[currentLanguage] || topic.title.en;
+
+  // Filter topics based on search query
+  const filteredTopics = useMemo(() => {
+    if (!searchQuery.trim()) return chapter.topics;
+    const q = searchQuery.toLowerCase();
+    return chapter.topics.filter(t => {
+      const en = (t.title.en || '').toLowerCase();
+      const hi = (t.title.hi || '').toLowerCase();
+      const bn = (t.title.bn || '').toLowerCase();
+      return en.includes(q) || hi.includes(q) || bn.includes(q);
+    });
+  }, [chapter.topics, searchQuery]);
 
   const handleShare = async () => {
     const shareUrl = window.location.href;
@@ -117,8 +137,16 @@ export const StudyPage: React.FC<StudyPageProps> = ({
     window.print();
   };
 
+  const toggleFontSize = () => {
+    if (fontSize === 'normal') setFontSize('large');
+    else if (fontSize === 'large') setFontSize('xl');
+    else setFontSize('normal');
+  };
+
+  const fontSizeClass = fontSize === 'xl' ? 'text-lg leading-relaxed' : fontSize === 'large' ? 'text-base leading-relaxed' : 'text-sm';
+
   return (
-    <div className="study-page-root fixed inset-0 z-50 bg-[#faf8f5] text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden">
+    <div className={`study-page-root fixed inset-0 z-50 bg-[#faf8f5] text-slate-900 dark:bg-[#0b0f19] dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 overflow-hidden ${fontSizeClass}`}>
       
       {/* PRINT STYLES inject */}
       <style>{`
@@ -196,33 +224,43 @@ export const StudyPage: React.FC<StudyPageProps> = ({
       `}</style>
 
       {/* TOP STUDY HEADER */}
-      <header className="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 px-4 py-3 flex items-center justify-between shrink-0 shadow-2xs print-hidden">
+      <header className="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between shrink-0 shadow-2xs print-hidden">
         
         {/* Left: Brand & Exit */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={onClose}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all"
-            aria-label="Back to Subject"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all"
+            aria-label="Back to Home"
           >
             <ArrowLeft className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
-            <span className="hidden sm:inline">Back</span>
+            <span className="hidden sm:inline">{currentLanguage === 'bn' ? 'হোমে ফিরুন' : currentLanguage === 'hi' ? 'मुख्य पृष्ठ' : 'Back'}</span>
+          </button>
+
+          {/* Desktop Sidebar Toggle / Focus Mode */}
+          <button
+            onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+            className="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-medium border border-slate-200 dark:border-slate-700"
+            title={isSidebarCollapsed ? "Show Table of Contents" : "Focus Mode (Hide Sidebar)"}
+          >
+            <Sidebar className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+            <span className="text-[11px] font-semibold">{isSidebarCollapsed ? (currentLanguage === 'bn' ? 'সূচিপত্র' : 'Show Menu') : (currentLanguage === 'bn' ? 'ফোকাস মোড' : 'Focus Mode')}</span>
           </button>
 
           <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block" />
 
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold shadow-xs">
+            <div className="w-7 h-7 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold shadow-xs shrink-0">
               <Zap className="w-4 h-4" />
             </div>
-            <span className="font-extrabold font-display text-sm tracking-tight text-slate-900 dark:text-white hidden sm:inline">
+            <span className="font-extrabold font-display text-sm tracking-tight text-slate-900 dark:text-white hidden md:inline">
               ElectroStudy
             </span>
           </div>
         </div>
 
         {/* Center: Breadcrumb (Desktop) */}
-        <div className="hidden md:flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 max-w-xl truncate px-2">
+        <div className="hidden md:flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400 max-w-md lg:max-w-lg truncate px-2">
           <span className="truncate">{subjectTitle}</span>
           <ChevronRight className="w-3.5 h-3.5 shrink-0 text-slate-400" />
           <span className="truncate">{chapterTitle}</span>
@@ -231,7 +269,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
         </div>
 
         {/* Right: Study Toolbar */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           
           {/* Language Selector */}
           <div className="relative flex items-center bg-slate-100 dark:bg-slate-800/90 rounded-lg p-0.5 border border-slate-200 dark:border-slate-700">
@@ -250,10 +288,20 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             ))}
           </div>
 
+          {/* Font Size Toggle */}
+          <button
+            onClick={toggleFontSize}
+            className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors flex items-center gap-1"
+            title={`Font Size: ${fontSize.toUpperCase()} (Click to change)`}
+          >
+            <Type className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+            <span className="text-[10px] font-mono font-bold hidden sm:inline">{fontSize === 'xl' ? 'XL' : fontSize === 'large' ? 'L' : 'M'}</span>
+          </button>
+
           {/* Theme Toggle */}
           <button
             onClick={onToggleTheme}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
             title={theme === 'dark' ? 'Switch to Light Study Mode' : 'Switch to Dark Study Mode'}
             aria-label="Toggle Theme"
           >
@@ -263,7 +311,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
           {/* Copy Link */}
           <button
             onClick={handleCopyLink}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors hidden sm:inline-flex"
             title="Copy Lesson Link"
             aria-label="Copy Lesson Link"
           >
@@ -273,7 +321,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
           {/* Share */}
           <button
             onClick={handleShare}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
             title="Share Lesson"
             aria-label="Share Lesson"
           >
@@ -283,7 +331,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
           {/* Print */}
           <button
             onClick={handlePrint}
-            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors hidden sm:inline-flex"
             title="Print Lesson Notes"
             aria-label="Print Lesson Notes"
           >
@@ -293,7 +341,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
           {/* Close Fullscreen Study */}
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors ml-1"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors ml-1"
             title="Close Study Mode"
             aria-label="Close Study Mode"
           >
@@ -303,17 +351,17 @@ export const StudyPage: React.FC<StudyPageProps> = ({
       </header>
 
       {/* MOBILE CONTENTS BAR (Small screens only) */}
-      <div className="lg:hidden bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 px-4 py-2 flex items-center justify-between shrink-0 print-hidden">
+      <div className="lg:hidden bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 px-3 sm:px-4 py-2 flex items-center justify-between shrink-0 print-hidden">
         <button
           onClick={() => setIsMobileContentsOpen(true)}
           className="inline-flex items-center gap-2 text-xs font-bold text-cyan-700 dark:text-cyan-300 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 shadow-2xs"
         >
           <List className="w-4 h-4 text-cyan-500" />
-          <span>Chapter Contents ({topicIndex} of {totalTopics})</span>
+          <span>{currentLanguage === 'bn' ? `অধ্যায় ও বিষয় (${topicIndex}/${totalTopics})` : `Contents (${topicIndex}/${totalTopics})`}</span>
         </button>
 
         <span className="text-[11px] font-mono font-semibold text-slate-500 dark:text-slate-400">
-          {Math.round((topicIndex / totalTopics) * 100)}% Position
+          Ch {chapterIndex}/{totalChapters} • {Math.round((topicIndex / totalTopics) * 100)}%
         </span>
       </div>
 
@@ -321,93 +369,141 @@ export const StudyPage: React.FC<StudyPageProps> = ({
       <div className="study-body-wrapper flex-1 flex overflow-hidden relative">
 
         {/* DESKTOP SIDEBAR */}
-        <aside className="study-sidebar hidden lg:flex flex-col w-72 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xs p-4 overflow-y-auto print-hidden">
-          
-          {/* Chapter Title Header */}
-          <div className="pb-4 border-b border-slate-200 dark:border-slate-800 mb-4 space-y-2">
-            <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Chapter Navigation</span>
-            </span>
-            <h3 className="font-bold font-display text-sm text-slate-900 dark:text-white leading-snug">
-              {chapterTitle}
-            </h3>
+        {!isSidebarCollapsed && (
+          <aside className="study-sidebar hidden lg:flex flex-col w-80 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xs p-4 overflow-y-auto print-hidden">
             
-            {/* Progress indicator */}
-            <div className="pt-2 space-y-1">
-              <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                <span>Topic Position</span>
-                <span className="font-bold text-cyan-600 dark:text-cyan-400">{topicIndex} of {totalTopics}</span>
+            {/* Chapter Switcher Dropdown */}
+            <div className="pb-3 border-b border-slate-200 dark:border-slate-800 mb-3 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5" />
+                  <span>{currentLanguage === 'bn' ? 'অধ্যায় নির্বাচন' : 'Chapters (8 Modules)'}</span>
+                </span>
+                <span className="text-[10px] font-mono text-slate-400 font-bold">
+                  {chapterIndex} of {totalChapters}
+                </span>
               </div>
-              <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                <div 
-                  className="bg-cyan-500 h-full transition-all duration-300"
-                  style={{ width: `${(topicIndex / totalTopics) * 100}%` }}
+
+              {/* Multi-Chapter Selector */}
+              <select
+                value={chapter.id}
+                onChange={(e) => {
+                  const targetChapter = allChapters?.find(c => c.id === e.target.value);
+                  if (targetChapter && targetChapter.topics.length > 0) {
+                    onSelectTopic(targetChapter.topics[0].id);
+                  }
+                }}
+                className="w-full text-xs font-bold p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 outline-hidden focus:ring-2 focus:ring-cyan-500 cursor-pointer"
+              >
+                {allChapters?.map((ch, idx) => (
+                  <option key={ch.id} value={ch.id}>
+                    Ch {idx + 1}: {ch.title[currentLanguage] || ch.title.en}
+                  </option>
+                ))}
+              </select>
+
+              {/* Topic Search Box */}
+              <div className="relative pt-1">
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-3.5" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={currentLanguage === 'bn' ? 'বিষয় খুঁজুন...' : 'Filter topics...'}
+                  className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-hidden focus:border-cyan-500"
                 />
+                {searchQuery && (
+                  <button 
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-2.5 top-3 text-slate-400 hover:text-slate-600"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
+              
+              {/* Progress indicator */}
+              <div className="pt-2 space-y-1">
+                <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                  <span>Chapter Progress</span>
+                  <span className="font-bold text-cyan-600 dark:text-cyan-400">{topicIndex} of {totalTopics}</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                  <div 
+                    className="bg-cyan-500 h-full transition-all duration-300"
+                    style={{ width: `${(topicIndex / totalTopics) * 100}%` }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Topics List */}
-          <div className="space-y-1.5 flex-1">
-            {chapter.topics.map((tp) => {
-              const tpTitle = tp.title[currentLanguage] || tp.title.en;
-              const isCurrent = tp.id === topic.id;
-              const hasLesson = !!tp.lesson;
+            {/* Topics List */}
+            <div className="space-y-1.5 flex-1 overflow-y-auto pr-1">
+              {filteredTopics.map((tp) => {
+                const tpTitle = tp.title[currentLanguage] || tp.title.en;
+                const isCurrent = tp.id === topic.id;
+                const hasLesson = !!tp.lesson;
 
-              return (
-                <button
-                  key={tp.id}
-                  onClick={() => onSelectTopic(tp.id)}
-                  className={`w-full p-2.5 rounded-xl text-left transition-all flex items-start gap-2.5 group ${
-                    isCurrent
-                      ? 'bg-cyan-600 text-white shadow-md font-bold ring-2 ring-cyan-400/50'
-                      : hasLesson
-                      ? 'bg-slate-100/70 dark:bg-slate-800/60 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-slate-800'
-                      : 'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800/40 text-slate-500 dark:text-slate-400'
-                  }`}
-                >
-                  <span className={`w-5 h-5 rounded-md font-mono text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5 ${
-                    isCurrent
-                      ? 'bg-white/20 text-white'
-                      : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
-                  }`}>
-                    {tp.order}
-                  </span>
+                return (
+                  <button
+                    key={tp.id}
+                    onClick={() => onSelectTopic(tp.id)}
+                    className={`w-full p-2.5 rounded-xl text-left transition-all flex items-start gap-2.5 group cursor-pointer ${
+                      isCurrent
+                        ? 'bg-cyan-600 text-white shadow-md font-bold ring-2 ring-cyan-400/50'
+                        : hasLesson
+                        ? 'bg-slate-100/70 dark:bg-slate-800/60 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 text-slate-800 dark:text-slate-200 border border-slate-200/80 dark:border-slate-800'
+                        : 'bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800/40 text-slate-500 dark:text-slate-400'
+                    }`}
+                  >
+                    <span className={`w-5 h-5 rounded-md font-mono text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5 ${
+                      isCurrent
+                        ? 'bg-white/20 text-white'
+                        : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                    }`}>
+                      {tp.order}
+                    </span>
 
-                  <div className="flex-1 min-w-0">
-                    <div className="text-xs font-semibold leading-snug truncate">
-                      {tpTitle}
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-semibold leading-snug truncate">
+                        {tpTitle}
+                      </div>
+
+                      <div className="mt-0.5 flex items-center gap-1">
+                        {hasLesson ? (
+                          <span className={`text-[9px] font-bold font-mono uppercase px-1.5 py-0.2 rounded ${
+                            isCurrent ? 'bg-white/20 text-cyan-100' : 'bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300'
+                          }`}>
+                            Interactive Lesson
+                          </span>
+                        ) : (
+                          <span className="text-[9px] font-mono text-slate-400 dark:text-slate-500">
+                            Syllabus Topic
+                          </span>
+                        )}
+                      </div>
                     </div>
+                  </button>
+                );
+              })}
 
-                    <div className="mt-0.5 flex items-center gap-1">
-                      {hasLesson ? (
-                        <span className={`text-[9px] font-bold font-mono uppercase px-1.5 py-0.2 rounded ${
-                          isCurrent ? 'bg-white/20 text-cyan-100' : 'bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300'
-                        }`}>
-                          Interactive Lesson
-                        </span>
-                      ) : (
-                        <span className="text-[9px] font-mono text-slate-400 dark:text-slate-500">
-                          Syllabus Topic
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+              {filteredTopics.length === 0 && (
+                <div className="p-4 text-center text-xs text-slate-400">
+                  No matching topics found in this chapter.
+                </div>
+              )}
+            </div>
 
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-[10px] text-slate-400 dark:text-slate-500 text-center font-mono">
-            AICTE & State Diploma Syllabus Aligned
-          </div>
-        </aside>
+            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-[10px] text-slate-400 dark:text-slate-500 text-center font-mono">
+              AICTE & State Diploma Syllabus Aligned
+            </div>
+          </aside>
+        )}
 
         {/* MAIN SCROLLABLE CONTENT CANVAS */}
-        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-8 print-container">
+        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-10 py-6 sm:py-8 print-container">
           
-          <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-8">
+          <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-6 sm:space-y-8">
             
             {/* PRINT HEADER ONLY (hidden on screen) */}
             <div className="hidden print-show mb-6 pb-4 border-b-2 border-black">
@@ -417,11 +513,11 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             </div>
 
             {/* SCREEN TOPIC CARD HEADER */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 print-hidden">
+            <div className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 print-hidden">
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                   <BookOpen className="w-4 h-4 text-cyan-500" />
-                  <span>{subjectTitle} • {chapterTitle}</span>
+                  <span>{subjectTitle} • Ch {chapterIndex}: {chapterTitle}</span>
                 </span>
 
                 <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
@@ -434,7 +530,9 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                Comprehensive engineering notes, formulas, step-by-step solved numericals, and exam practice questions formatted for maximum clarity.
+                {currentLanguage === 'bn' 
+                  ? 'থিওরি নোটস, সার্কিট ডায়াগ্রাম, সমাধানকৃত গাণিতিক উদাহরণ এবং প্রশ্নাবলী নিয়ে সাজানো সম্পূর্ণ লেসন।' 
+                  : 'Comprehensive engineering notes, formulas, step-by-step solved numericals, and exam practice questions formatted for maximum clarity.'}
               </p>
             </div>
 
@@ -466,16 +564,16 @@ export const StudyPage: React.FC<StudyPageProps> = ({
                 <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
                   <button
                     onClick={() => onSelectTopic('tp-ohms-law')}
-                    className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2"
+                    className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2 cursor-pointer"
                   >
                     <Zap className="w-4 h-4 text-cyan-200" />
-                    <span>Study Ohm's Law (Lesson 1)</span>
+                    <span>Study Ohm's Law (Interactive Lesson)</span>
                   </button>
 
                   {prevTopic && (
                     <button
                       onClick={() => onSelectTopic(prevTopic.id)}
-                      className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center gap-2"
+                      className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <ChevronLeft className="w-4 h-4" />
                       <span>Previous Topic</span>
@@ -485,36 +583,36 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               </div>
             )}
 
-            {/* BOTTOM CHAPTER NAVIGATION */}
+            {/* BOTTOM CHAPTER NAVIGATION (Crosses Chapters) */}
             <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 print-hidden study-bottom-nav">
               {prevTopic ? (
                 <button
                   onClick={() => onSelectTopic(prevTopic.id)}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white dark:bg-slate-900 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold transition-all shadow-2xs group max-w-[48%]"
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white dark:bg-slate-900 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-xs font-bold transition-all shadow-2xs group max-w-[48%] cursor-pointer"
                 >
                   <ChevronLeft className="w-4 h-4 text-cyan-500 shrink-0 group-hover:-translate-x-0.5 transition-transform" />
                   <div className="text-left truncate">
-                    <div className="text-[10px] font-mono text-slate-400 uppercase">Previous Topic</div>
+                    <div className="text-[10px] font-mono text-slate-400 uppercase">{currentLanguage === 'bn' ? 'পূর্ববর্তী বিষয়' : 'Previous Topic'}</div>
                     <div className="truncate font-bold">{prevTopic.title[currentLanguage] || prevTopic.title.en}</div>
                   </div>
                 </button>
               ) : (
-                <div className="text-xs font-mono text-slate-400 italic">Start of Chapter</div>
+                <div className="text-xs font-mono text-slate-400 italic">Start of Course</div>
               )}
 
               {nextTopic ? (
                 <button
                   onClick={() => onSelectTopic(nextTopic.id)}
-                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold transition-all shadow-md group max-w-[48%] ml-auto"
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold transition-all shadow-md group max-w-[48%] ml-auto cursor-pointer"
                 >
                   <div className="text-right truncate">
-                    <div className="text-[10px] font-mono text-cyan-200 uppercase">Next Topic</div>
+                    <div className="text-[10px] font-mono text-cyan-200 uppercase">{currentLanguage === 'bn' ? 'পরবর্তী বিষয়' : 'Next Topic'}</div>
                     <div className="truncate font-bold">{nextTopic.title[currentLanguage] || nextTopic.title.en}</div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-white shrink-0 group-hover:translate-x-0.5 transition-transform" />
                 </button>
               ) : (
-                <div className="text-xs font-mono text-slate-400 italic">End of Chapter</div>
+                <div className="text-xs font-mono text-slate-400 italic">End of Course</div>
               )}
             </div>
 
@@ -535,7 +633,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
                 <BookOpen className="w-4 h-4 text-cyan-500" />
-                <span>Chapter Contents</span>
+                <span>{currentLanguage === 'bn' ? 'অধ্যায় সূচিপত্র' : 'Chapter Contents'}</span>
               </div>
               <button
                 onClick={() => setIsMobileContentsOpen(false)}
@@ -545,8 +643,25 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               </button>
             </div>
 
-            <div className="py-3 border-b border-slate-200 dark:border-slate-800 space-y-1">
-              <h4 className="font-bold text-xs text-slate-900 dark:text-white">{chapterTitle}</h4>
+            {/* Mobile Chapter Selector */}
+            <div className="py-3 border-b border-slate-200 dark:border-slate-800 space-y-2">
+              <select
+                value={chapter.id}
+                onChange={(e) => {
+                  const targetChapter = allChapters?.find(c => c.id === e.target.value);
+                  if (targetChapter && targetChapter.topics.length > 0) {
+                    onSelectTopic(targetChapter.topics[0].id);
+                  }
+                }}
+                className="w-full text-xs font-bold p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 outline-hidden"
+              >
+                {allChapters?.map((ch, idx) => (
+                  <option key={ch.id} value={ch.id}>
+                    Ch {idx + 1}: {ch.title[currentLanguage] || ch.title.en}
+                  </option>
+                ))}
+              </select>
+
               <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400">
                 <span>Progress: Topic {topicIndex} of {totalTopics}</span>
                 <span>{Math.round((topicIndex / totalTopics) * 100)}%</span>

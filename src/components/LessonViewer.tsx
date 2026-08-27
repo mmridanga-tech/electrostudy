@@ -86,6 +86,19 @@ import { TransformerTestsAnimation } from './interactive/TransformerTestsAnimati
 import { TransformerParallelOperationAnimation } from './interactive/TransformerParallelOperationAnimation';
 import { TransformerProtectionAnimation } from './interactive/TransformerProtectionAnimation';
 import { TransformerIndustrialApplicationAnimation } from './interactive/TransformerIndustrialApplicationAnimation';
+import { ParallelPlateCapacitorAnimation } from './interactive/ParallelPlateCapacitorAnimation';
+import { CapacitorsSeriesParallelAnimation } from './interactive/CapacitorsSeriesParallelAnimation';
+import { RCChargingDischargingAnimation } from './interactive/RCChargingDischargingAnimation';
+import { RCFilterFrequencyResponseAnimation } from './interactive/RCFilterFrequencyResponseAnimation';
+import { CapacitorCodeDecoderAnimation } from './interactive/CapacitorCodeDecoderAnimation';
+import { SupercapacitorEnergyStorageAnimation } from './interactive/SupercapacitorEnergyStorageAnimation';
+import { RectifierSmoothingSnubberAnimation } from './interactive/RectifierSmoothingSnubberAnimation';
+import { ElectromagneticInductionAnimation } from './interactive/ElectromagneticInductionAnimation';
+import { RLTransientCircuitAnimation } from './interactive/RLTransientCircuitAnimation';
+import { InductorCouplingAnimation } from './interactive/InductorCouplingAnimation';
+import { HysteresisBHCurveAnimation } from './interactive/HysteresisBHCurveAnimation';
+import { InductorColorSMDDecoderAnimation } from './interactive/InductorColorSMDDecoderAnimation';
+import { SolenoidRelayFlybackAnimation } from './interactive/SolenoidRelayFlybackAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -306,6 +319,169 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   ) {
     return <TransformerIndustrialApplicationAnimation language={currentLanguage} />;
   }
+
+  // Chapter 7: Capacitors & Electrostatics Simulators
+  if (
+    topicId === 'ch7-electric-field-potential' || 
+    lessonId === 'lsn-ch7-electric-field-potential' ||
+    topicId === 'ch7-capacitance-fundamentals' ||
+    lessonId === 'lsn-ch7-capacitance-fundamentals' ||
+    topicId === 'ch7-dielectrics-permittivity' ||
+    lessonId === 'lsn-ch7-dielectrics-permittivity' ||
+    topicId === 'ch7-parallel-plate-capacitor' ||
+    lessonId === 'lsn-ch7-parallel-plate-capacitor' ||
+    topicId === 'ch7-cylindrical-spherical-capacitors' ||
+    lessonId === 'lsn-ch7-cylindrical-spherical-capacitors' ||
+    topicId === 'ch7-energy-stored-capacitor' ||
+    lessonId === 'lsn-ch7-energy-stored-capacitor' ||
+    topicId === 'ch7-capacitor-losses-dielectric-breakdown' ||
+    lessonId === 'lsn-ch7-capacitor-losses-dielectric-breakdown'
+  ) {
+    return <ParallelPlateCapacitorAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-capacitors-in-series' ||
+    lessonId === 'lsn-ch7-capacitors-in-series' ||
+    topicId === 'ch7-capacitors-in-parallel' ||
+    lessonId === 'lsn-ch7-capacitors-in-parallel'
+  ) {
+    return <CapacitorsSeriesParallelAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-rc-charging-transient' ||
+    lessonId === 'lsn-ch7-rc-charging-transient' ||
+    topicId === 'ch7-rc-discharging-transient' ||
+    lessonId === 'lsn-ch7-rc-discharging-transient'
+  ) {
+    return <RCChargingDischargingAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-types-of-capacitors' ||
+    lessonId === 'lsn-ch7-types-of-capacitors' ||
+    topicId === 'ch7-capacitor-ratings-codes' ||
+    lessonId === 'lsn-ch7-capacitor-ratings-codes' ||
+    topicId === 'ch7-capacitor-testing-safety-capstone' ||
+    lessonId === 'lsn-ch7-capacitor-testing-safety-capstone'
+  ) {
+    return <CapacitorCodeDecoderAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-capacitors-in-ac-circuits' ||
+    lessonId === 'lsn-ch7-capacitors-in-ac-circuits'
+  ) {
+    return <PureCapacitiveACAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-rc-filters' ||
+    lessonId === 'lsn-ch7-rc-filters'
+  ) {
+    return <RCFilterFrequencyResponseAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-power-factor-improvement' ||
+    lessonId === 'lsn-ch7-power-factor-improvement'
+  ) {
+    return <PowerFactorCorrectionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-snubber-smoothing-decoupling' ||
+    lessonId === 'lsn-ch7-snubber-smoothing-decoupling' ||
+    topicId === 'ch7-motor-capacitors-voltage-multipliers' ||
+    lessonId === 'lsn-ch7-motor-capacitors-voltage-multipliers'
+  ) {
+    return <RectifierSmoothingSnubberAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch7-supercapacitors-energy-storage' ||
+    lessonId === 'lsn-ch7-supercapacitors-energy-storage'
+  ) {
+    return <SupercapacitorEnergyStorageAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Chapter 8: Inductors & Electromagnetism Simulators
+  if (
+    topicId === 'ch8-magnetic-fields-lorentz-force' ||
+    lessonId === 'lsn-ch8-magnetic-fields-lorentz-force' ||
+    topicId === 'ch8-biot-savart-ampere-law' ||
+    lessonId === 'lsn-ch8-biot-savart-ampere-law' ||
+    topicId === 'ch8-faradays-lenzs-law' ||
+    lessonId === 'lsn-ch8-faradays-lenzs-law' ||
+    topicId === 'ch8-self-inductance-solenoid-toroid' ||
+    lessonId === 'lsn-ch8-self-inductance-solenoid-toroid' ||
+    topicId === 'ch8-magnetic-materials-permeability' ||
+    lessonId === 'lsn-ch8-magnetic-materials-permeability' ||
+    topicId === 'ch8-energy-stored-magnetic-field' ||
+    lessonId === 'lsn-ch8-energy-stored-magnetic-field'
+  ) {
+    return <ElectromagneticInductionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-rl-transient-growth-decay' ||
+    lessonId === 'lsn-ch8-rl-transient-growth-decay' ||
+    topicId === 'ch8-quality-factor-chokes' ||
+    lessonId === 'lsn-ch8-quality-factor-chokes'
+  ) {
+    return <RLTransientCircuitAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-mutual-inductance-dot-convention' ||
+    lessonId === 'lsn-ch8-mutual-inductance-dot-convention' ||
+    topicId === 'ch8-inductors-in-series-parallel' ||
+    lessonId === 'lsn-ch8-inductors-in-series-parallel' ||
+    topicId === 'ch8-wireless-power-induction-heating' ||
+    lessonId === 'lsn-ch8-wireless-power-induction-heating'
+  ) {
+    return <InductorCouplingAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-hysteresis-b-h-curve' ||
+    lessonId === 'lsn-ch8-hysteresis-b-h-curve' ||
+    topicId === 'ch8-eddy-currents-skin-effect' ||
+    lessonId === 'lsn-ch8-eddy-currents-skin-effect'
+  ) {
+    return <HysteresisBHCurveAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-inductors-in-ac-circuits' ||
+    lessonId === 'lsn-ch8-inductors-in-ac-circuits'
+  ) {
+    return <PureInductiveACAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-types-of-inductors' ||
+    lessonId === 'lsn-ch8-types-of-inductors' ||
+    topicId === 'ch8-inductor-color-numerical-codes' ||
+    lessonId === 'lsn-ch8-inductor-color-numerical-codes' ||
+    topicId === 'ch8-inductor-testing-diagnostics' ||
+    lessonId === 'lsn-ch8-inductor-testing-diagnostics'
+  ) {
+    return <InductorColorSMDDecoderAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch8-inductive-kick-flyback' ||
+    lessonId === 'lsn-ch8-inductive-kick-flyback' ||
+    topicId === 'ch8-switched-mode-power-inductors' ||
+    lessonId === 'lsn-ch8-switched-mode-power-inductors' ||
+    topicId === 'ch8-solenoids-relays-electromagnets' ||
+    lessonId === 'lsn-ch8-solenoids-relays-electromagnets'
+  ) {
+    return <SolenoidRelayFlybackAnimation currentLanguage={currentLanguage} />;
+  }
+
   return null;
 };
 
@@ -345,9 +521,17 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
   const title = lesson.title?.[currentLanguage] || lesson.title?.en || '';
   const easyExp = lesson.easyExplanation?.[currentLanguage] || lesson.easyExplanation?.en || lesson.description?.[currentLanguage] || lesson.description?.en || '';
   const detailedExp = lesson.detailedExplanation?.[currentLanguage] || lesson.detailedExplanation?.en || (lesson.sections ? lesson.sections.map(s => `${s.title?.[currentLanguage] || s.title?.en || ''}\n\n${s.content?.[currentLanguage] || s.content?.en || ''}`).join('\n\n') : '');
-  const applications = lesson.practicalApplications?.[currentLanguage] || lesson.practicalApplications?.en || [];
-  const importantPoints = lesson.importantPoints?.[currentLanguage] || lesson.importantPoints?.en || [];
-  const commonMistakes = lesson.commonMistakes?.[currentLanguage] || lesson.commonMistakes?.en || [];
+  const extractList = (list: any): string[] => {
+    if (!list) return [];
+    if (Array.isArray(list)) {
+      return list.map((item: any) => (typeof item === 'string' ? item : item[currentLanguage] || item.en || ''));
+    }
+    return list[currentLanguage] || list.en || [];
+  };
+
+  const applications = extractList(lesson.practicalApplications);
+  const importantPoints = extractList(lesson.importantPoints);
+  const commonMistakes = extractList(lesson.commonMistakes);
 
   return (
     <div className="space-y-6 animate-in fade-in duration-200">
@@ -424,7 +608,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
           }`}
         >
           <Award className="w-3.5 h-3.5" />
-          <span>MCQs & Practice ({lesson.mcqs.length + lesson.practiceQuestions.length})</span>
+          <span>MCQs & Practice ({(lesson.mcqs?.length || 0) + (lesson.practiceQuestions?.length || 0) + (lesson.quiz?.length || 0)})</span>
         </button>
       </div>
 
@@ -498,8 +682,8 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
             <CheckCircle2 className="w-4 h-4 text-emerald-500" />
             <span>Step-by-Step Solved Example</span>
           </h4>
-          {(lesson.solvedExamples || []).map((ex) => (
-            <div key={ex.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+          {(lesson.solvedExamples || lesson.workedExamples || []).map((ex, idx) => (
+            <div key={ex.id || idx} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
               <div className="font-semibold text-sm text-slate-900 dark:text-white">
                 <span className="text-cyan-600 dark:text-cyan-400 font-bold mr-2">Problem:</span>
                 {ex.problem[currentLanguage] || ex.problem.en}
@@ -586,122 +770,209 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
       {/* TAB 4: MCQs & PRACTICE QUESTIONS */}
       <div className={activeTab === 'practice' ? 'space-y-6' : 'hidden print:block print:space-y-6'}>
         {/* MCQs Section */}
-        <div className="space-y-4">
-          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-            <HelpCircle className="w-4 h-4 text-cyan-500" />
-            <span>Multiple Choice Practice Questions</span>
-          </h4>
+        {((lesson.mcqs && lesson.mcqs.length > 0) || (lesson.quiz && lesson.quiz.length > 0)) && (
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <HelpCircle className="w-4 h-4 text-cyan-500" />
+              <span>Multiple Choice Practice Questions</span>
+            </h4>
 
-          {lesson.mcqs.map((mcq, qIdx) => {
-            const qText = mcq.question[currentLanguage] || mcq.question.en;
-            const expText = mcq.explanation[currentLanguage] || mcq.explanation.en;
-            const userSelected = selectedAnswers[mcq.id];
+            {/* Render standard MCQs */}
+            {(lesson.mcqs || []).map((mcq, qIdx) => {
+              const qText = mcq.question[currentLanguage] || mcq.question.en;
+              const expText = mcq.explanation[currentLanguage] || mcq.explanation.en;
+              const userSelected = selectedAnswers[mcq.id];
 
-            return (
-              <div key={mcq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
-                <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
-                  <span className="text-cyan-600 dark:text-cyan-400 font-mono">Q{qIdx + 1}.</span>
-                  <span>{qText}</span>
-                </div>
+              return (
+                <div key={mcq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+                  <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-mono">Q{qIdx + 1}.</span>
+                    <span>{qText}</span>
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                  {mcq.options.map((opt) => {
-                    const optText = opt.text[currentLanguage] || opt.text.en;
-                    const isSelected = userSelected === opt.id;
-                    const isCorrect = mcq.correctOptionId === opt.id;
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                    {mcq.options.map((opt) => {
+                      const optText = opt.text[currentLanguage] || opt.text.en;
+                      const isSelected = userSelected === opt.id;
+                      const isCorrect = mcq.correctOptionId === opt.id;
 
-                    let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
-                    
-                    if (userSelected) {
-                      if (isCorrect) {
-                        btnStyle = "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold";
-                      } else if (isSelected) {
-                        btnStyle = "bg-rose-50 dark:bg-rose-950/80 border-rose-500 text-rose-800 dark:text-rose-200 font-bold";
+                      let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
+                      
+                      if (userSelected) {
+                        if (isCorrect) {
+                          btnStyle = "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold";
+                        } else if (isSelected) {
+                          btnStyle = "bg-rose-50 dark:bg-rose-950/80 border-rose-500 text-rose-800 dark:text-rose-200 font-bold";
+                        }
                       }
-                    }
 
-                    return (
-                      <button
-                        key={opt.id}
-                        onClick={() => handleSelectOption(mcq.id, opt.id)}
-                        className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle} ${isCorrect ? 'print:border-emerald-600 print:bg-emerald-50 print:font-bold' : 'print:border-slate-300'}`}
-                      >
-                        <span>
-                          <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({opt.id})</strong>
-                          {optText}
-                        </span>
-                        {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}
-                        {userSelected && isSelected && !isCorrect && <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 ml-2" />}
-                      </button>
-                    );
-                  })}
-                </div>
+                      return (
+                        <button
+                          key={opt.id}
+                          onClick={() => handleSelectOption(mcq.id, opt.id)}
+                          className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle} ${isCorrect ? 'print:border-emerald-600 print:bg-emerald-50 print:font-bold' : 'print:border-slate-300'}`}
+                        >
+                          <span>
+                            <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({opt.id})</strong>
+                            {optText}
+                          </span>
+                          {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}
+                          {userSelected && isSelected && !isCorrect && <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 ml-2" />}
+                        </button>
+                      );
+                    })}
+                  </div>
 
-                <div className={`p-3 rounded-lg bg-cyan-50/80 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed font-mono ${userSelected ? 'block' : 'hidden print:block'}`}>
-                  <strong className="block font-sans font-bold text-cyan-700 dark:text-cyan-300 mb-0.5">Explanation:</strong>
-                  {expText}
+                  <div className={`p-3 rounded-lg bg-cyan-50/80 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed font-mono ${userSelected ? 'block' : 'hidden print:block'}`}>
+                    <strong className="block font-sans font-bold text-cyan-700 dark:text-cyan-300 mb-0.5">Explanation:</strong>
+                    {expText}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+
+            {/* Render Quiz questions if present */}
+            {(lesson.quiz || []).map((qz, qzIdx) => {
+              const qText = qz.question[currentLanguage] || qz.question.en;
+              const expText = qz.explanation[currentLanguage] || qz.explanation.en;
+              const opts = qz.options[currentLanguage] || qz.options.en || [];
+              const qzId = `quiz-${qzIdx}`;
+              const userSelected = selectedAnswers[qzId];
+
+              return (
+                <div key={qzId} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+                  <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-mono">Q{(lesson.mcqs?.length || 0) + qzIdx + 1}.</span>
+                    <span>{qText}</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                    {opts.map((optStr, oIdx) => {
+                      const isSelected = userSelected === `opt-${oIdx}`;
+                      const isCorrect = qz.correctAnswer === oIdx;
+
+                      let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
+                      
+                      if (userSelected) {
+                        if (isCorrect) {
+                          btnStyle = "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-500 text-emerald-800 dark:text-emerald-200 font-bold";
+                        } else if (isSelected) {
+                          btnStyle = "bg-rose-50 dark:bg-rose-950/80 border-rose-500 text-rose-800 dark:text-rose-200 font-bold";
+                        }
+                      }
+
+                      return (
+                        <button
+                          key={oIdx}
+                          onClick={() => handleSelectOption(qzId, `opt-${oIdx}`)}
+                          className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle} ${isCorrect ? 'print:border-emerald-600 print:bg-emerald-50 print:font-bold' : 'print:border-slate-300'}`}
+                        >
+                          <span>
+                            <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({String.fromCharCode(65 + oIdx)})</strong>
+                            {optStr}
+                          </span>
+                          {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}
+                          {userSelected && isSelected && !isCorrect && <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 ml-2" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className={`p-3 rounded-lg bg-cyan-50/80 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800 text-xs text-cyan-900 dark:text-cyan-200 leading-relaxed font-mono ${userSelected ? 'block' : 'hidden print:block'}`}>
+                    <strong className="block font-sans font-bold text-cyan-700 dark:text-cyan-300 mb-0.5">Explanation:</strong>
+                    {expText}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Flashcards Section if present */}
+        {lesson.flashcards && lesson.flashcards.length > 0 && (
+          <div className="space-y-3 pt-2 border-t border-slate-200 dark:border-slate-800">
+            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <Zap className="w-4 h-4 text-amber-500" />
+              <span>Key Concept Flashcards</span>
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {lesson.flashcards.map((fc, fcIdx) => (
+                <div key={fcIdx} className="p-3.5 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/80 dark:border-amber-800/50 space-y-1.5">
+                  <span className="font-bold text-xs text-amber-800 dark:text-amber-300 block">
+                    {fc.term[currentLanguage] || fc.term.en}
+                  </span>
+                  <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                    {fc.definition[currentLanguage] || fc.definition.en}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Descriptive Practice Questions */}
-        <div className="space-y-4 pt-2 border-t border-slate-200 dark:border-slate-800">
-          <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-            <Award className="w-4 h-4 text-emerald-500" />
-            <span>Descriptive Examination Questions</span>
-          </h4>
+        {lesson.practiceQuestions && lesson.practiceQuestions.length > 0 && (
+          <div className="space-y-4 pt-2 border-t border-slate-200 dark:border-slate-800">
+            <h4 className="text-xs font-bold font-display uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+              <Award className="w-4 h-4 text-emerald-500" />
+              <span>Descriptive Examination Questions</span>
+            </h4>
 
-          {lesson.practiceQuestions.map((pq, pIdx) => {
-            const pqText = pq.question[currentLanguage] || pq.question.en;
-            const hintText = pq.hint ? (pq.hint[currentLanguage] || pq.hint.en) : null;
-            const ansText = pq.answerKey[currentLanguage] || pq.answerKey.en;
-            const showHint = revealedHints[pq.id];
-            const showAns = revealedAnswers[pq.id];
+            {lesson.practiceQuestions.map((pq, pIdx) => {
+              const pqText = pq.question[currentLanguage] || pq.question.en;
+              const hintText = pq.hint ? (pq.hint[currentLanguage] || pq.hint.en) : null;
+              const ansText = pq.answerKey ? (pq.answerKey[currentLanguage] || pq.answerKey.en) : '';
+              const pqId = pq.id || `pq-${pIdx}`;
+              const showHint = revealedHints[pqId];
+              const showAns = revealedAnswers[pqId];
 
-            return (
-              <div key={pq.id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
-                <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
-                  <span className="text-emerald-600 dark:text-emerald-400 font-mono">P{pIdx + 1}.</span>
-                  <span>{pqText}</span>
-                </div>
+              return (
+                <div key={pqId} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
+                  <div className="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-start gap-2">
+                    <span className="text-emerald-600 dark:text-emerald-400 font-mono">P{pIdx + 1}.</span>
+                    <span>{pqText}</span>
+                  </div>
 
-                <div className="flex flex-wrap gap-2 pt-1 print-hidden">
+                  <div className="flex flex-wrap gap-2 pt-1 print-hidden">
+                    {hintText && (
+                      <button
+                        onClick={() => toggleHint(pqId)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-3 py-1.5 rounded-lg border border-amber-200 dark:border-amber-800 transition-colors"
+                      >
+                        <Lightbulb className="w-3.5 h-3.5" />
+                        <span>{showHint ? 'Hide Hint' : 'View Hint'}</span>
+                        {showHint ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      </button>
+                    )}
+
+                    {ansText && (
+                      <button
+                        onClick={() => toggleAnswer(pqId)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800 transition-colors"
+                      >
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        <span>{showAns ? 'Hide Answer Key' : 'Reveal Answer Key'}</span>
+                        {showAns ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      </button>
+                    )}
+                  </div>
+
                   {hintText && (
-                    <button
-                      onClick={() => toggleHint(pq.id)}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/60 px-3 py-1.5 rounded-lg border border-amber-200 dark:border-amber-800 transition-colors"
-                    >
-                      <Lightbulb className="w-3.5 h-3.5" />
-                      <span>{showHint ? 'Hide Hint' : 'View Hint'}</span>
-                      {showHint ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                    </button>
+                    <div className={`p-3 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-800 dark:text-amber-300 ${showHint ? 'block' : 'hidden print:block'}`}>
+                      <strong>Hint:</strong> {hintText}
+                    </div>
                   )}
 
-                  <button
-                    onClick={() => toggleAnswer(pq.id)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800 transition-colors"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>{showAns ? 'Hide Answer Key' : 'Reveal Answer Key'}</span>
-                    {showAns ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                  </button>
+                  {ansText && (
+                    <div className={`p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-xs text-emerald-800 dark:text-emerald-300 font-mono ${showAns ? 'block' : 'hidden print:block'}`}>
+                      <strong>Answer Key:</strong> {ansText}
+                    </div>
+                  )}
                 </div>
-
-                {hintText && (
-                  <div className={`p-3 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-800 dark:text-amber-300 ${showHint ? 'block' : 'hidden print:block'}`}>
-                    <strong>Hint:</strong> {hintText}
-                  </div>
-                )}
-
-                <div className={`p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-xs text-emerald-800 dark:text-emerald-300 font-mono ${showAns ? 'block' : 'hidden print:block'}`}>
-                  <strong>Answer Key:</strong> {ansText}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
     </div>

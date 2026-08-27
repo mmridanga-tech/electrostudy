@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { Stats } from './components/Stats';
 import { ExploreSubjects } from './components/ExploreSubjects';
 import { ToolsSection } from './components/ToolsSection';
 import { PracticeSection } from './components/PracticeSection';
-import { LanguageSection } from './components/LanguageSection';
-import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
 import { QuickToolModal } from './components/QuickToolModal';
@@ -119,6 +116,12 @@ export default function App() {
   };
 
   const scrollToSection = (sectionId: string) => {
+    if (activeStudyTopicId) {
+      setActiveStudyTopicId(null);
+      if (window.location.hash.startsWith('#study')) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
     setActiveNav(sectionId);
     let elId = '';
     switch (sectionId) {
@@ -126,32 +129,54 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       case 'subjects':
-        elId = 'subjects-section';
-        break;
       case 'notes':
         elId = 'subjects-section';
-        break;
-      case 'mcq':
-        elId = 'practice-section';
         break;
       case 'tools':
         elId = 'tools-section';
         break;
+      case 'mcq':
       case 'exams':
+      case 'practice':
         elId = 'practice-section';
-        break;
-      case 'about':
-        elId = 'language-section';
         break;
       default:
         elId = 'hero-section';
     }
 
-    const element = document.getElementById(elId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const element = document.getElementById(elId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
   };
+
+  // Scrollspy: update activeNav as user scrolls through sections
+  useEffect(() => {
+    if (activeStudyTopicId) return;
+
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 200;
+      const sections = [
+        { id: 'home', el: document.getElementById('hero-section') },
+        { id: 'subjects', el: document.getElementById('subjects-section') },
+        { id: 'tools', el: document.getElementById('tools-section') },
+        { id: 'mcq', el: document.getElementById('practice-section') }
+      ];
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sec = sections[i];
+        if (sec.el && sec.el.offsetTop <= scrollPos) {
+          setActiveNav(sec.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeStudyTopicId]);
 
   const handleSelectSubject = (subjectId: string) => {
     const subject = SUBJECTS_DATA.find(s => s.id === subjectId) || SUBJECTS_DATA[0];
@@ -164,15 +189,24 @@ export default function App() {
   };
 
   const handleSelectPractice = (practiceId: string) => {
-    const practiceSection = document.getElementById('practice-section');
-    if (practiceSection) {
-      practiceSection.scrollIntoView({ behavior: 'smooth' });
+    if (practiceId === 'practice-basic-concepts') {
+      handleOpenStudyTopic('ch1-charge-current-voltage');
+    } else if (practiceId === 'practice-circuits') {
+      handleOpenStudyTopic('ch2-ohms-law-resistance');
+    } else if (practiceId === 'practice-safety') {
+      const subject = SUBJECTS_DATA.find(s => s.id === 'basic-electrical') || SUBJECTS_DATA[0];
+      setActiveSubjectModal(subject);
+    } else {
+      const practiceSection = document.getElementById('practice-section');
+      if (practiceSection) {
+        practiceSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   const handleOpenStudyTopic = (topicId: string) => {
     const ctx = getTopicContext(topicId);
-    if (ctx && ctx.lesson) {
+    if (ctx) {
       setActiveSubjectModal(null);
       setActiveStudyTopicId(topicId);
       window.location.hash = `#study/${topicId}`;
@@ -226,13 +260,11 @@ export default function App() {
             onExploreTools={() => scrollToSection('tools')}
           />
 
-          {/* Quick Stats Section */}
-          <Stats currentLanguage={currentLanguage} />
-
           {/* Explore Electrical Engineering Section */}
           <ExploreSubjects
             currentLanguage={currentLanguage}
             onSelectSubject={handleSelectSubject}
+            onOpenStudyTopic={handleOpenStudyTopic}
           />
 
           {/* Electrical Tools Section */}
@@ -246,18 +278,6 @@ export default function App() {
           <PracticeSection
             currentLanguage={currentLanguage}
             onStartPractice={(practiceId) => handleSelectPractice(practiceId)}
-          />
-
-          {/* Language Learning Section */}
-          <LanguageSection
-            currentLanguage={currentLanguage}
-            onLanguageChange={handleLanguageChange}
-          />
-
-          {/* Final CTA Section */}
-          <CTA
-            currentLanguage={currentLanguage}
-            onStartLearning={() => scrollToSection('subjects')}
           />
 
         </main>

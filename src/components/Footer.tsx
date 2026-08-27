@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, BookOpen, FileText, CheckSquare, Wrench, GraduationCap, Info, Heart, Shield, Globe } from 'lucide-react';
+import { Zap, BookOpen, FileText, CheckSquare, Wrench, GraduationCap, Info, Heart, Shield, Globe, ArrowUp } from 'lucide-react';
 import { Language } from '../types';
 import { LANGUAGES, UI_TRANSLATIONS } from '../data/content';
 
@@ -19,11 +19,8 @@ export const Footer: React.FC<FooterProps> = ({
   const quickLinks = [
     { id: 'home', label: t.navHome, icon: Zap },
     { id: 'subjects', label: t.navSubjects, icon: BookOpen },
-    { id: 'notes', label: t.navNotes, icon: FileText },
-    { id: 'mcq', label: t.navMCQ, icon: CheckSquare },
     { id: 'tools', label: t.navTools, icon: Wrench },
-    { id: 'exams', label: t.navExams, icon: GraduationCap },
-    { id: 'about', label: t.navAbout, icon: Info }
+    { id: 'mcq', label: t.navMCQ, icon: CheckSquare }
   ];
 
   return (
@@ -134,10 +131,20 @@ export const Footer: React.FC<FooterProps> = ({
             <span>{t.footerCopyright}</span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <span className="px-2.5 py-1 rounded-md bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 font-semibold text-[11px]">
               {t.footerBadge}
             </span>
+
+            <button
+              id="footer-back-to-top-btn"
+              onClick={() => onNavClick('home')}
+              className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 hover:border-cyan-700 transition-all text-[11px] font-medium"
+              aria-label="Back to Top"
+            >
+              <ArrowUp className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Back to Top</span>
+            </button>
           </div>
         </div>
 

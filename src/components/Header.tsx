@@ -54,10 +54,8 @@ export const Header: React.FC<HeaderProps> = ({
   const navItems = [
     { id: 'home', label: t.navHome, icon: Zap },
     { id: 'subjects', label: t.navSubjects, icon: BookOpen },
-    { id: 'notes', label: t.navNotes, icon: FileText },
-    { id: 'mcq', label: t.navMCQ, icon: CheckSquare },
     { id: 'tools', label: t.navTools, icon: Wrench },
-    { id: 'exams', label: t.navExams, icon: GraduationCap }
+    { id: 'mcq', label: t.navMCQ, icon: CheckSquare }
   ];
 
   const currentLangObj = LANGUAGES.find(l => l.code === currentLanguage) || LANGUAGES[0];

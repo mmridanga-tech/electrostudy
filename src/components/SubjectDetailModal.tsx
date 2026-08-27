@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, BookOpen, CheckCircle2, FileText, ChevronDown, ChevronRight, Zap, Play } from 'lucide-react';
+import { X, BookOpen, CheckCircle2, FileText, ChevronDown, ChevronRight, Zap, Play, Maximize2, ExternalLink } from 'lucide-react';
 import { SubjectItem, Language, Lesson } from '../types';
 import { UI_TRANSLATIONS } from '../data/content';
 import { DETAILED_SUBJECTS } from '../data/learningData';
@@ -31,6 +31,14 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
     setExpandedChapters(prev => ({ ...prev, [chId]: !prev[chId] }));
   };
 
+  const handleOpenFullscreenSubject = (topicId?: string) => {
+    if (onOpenStudyTopic) {
+      const targetTopic = topicId || 'ch1-charge-current-voltage';
+      onOpenStudyTopic(targetTopic);
+      onClose();
+    }
+  };
+
   const mockSyllabus = [
     { unit: 'Unit 1', title: 'Circuit Fundamentals & DC Networks', topics: 'Ohm\'s Law, Kirchhoff\'s Laws, Mesh & Nodal Analysis, Superposition Theorem' },
     { unit: 'Unit 2', title: 'Single Phase & Three Phase AC Circuits', topics: 'RMS & Average values, Phasors, Resonance, Power Factor Correction' },
@@ -39,19 +47,19 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm animate-in fade-in duration-200">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className={`relative w-full ${activeLesson ? 'max-w-4xl' : 'max-w-2xl'} bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden z-10 animate-in zoom-in-95 duration-200 transition-all`}>
+      <div className={`relative w-full ${activeLesson ? 'max-w-4xl' : 'max-w-3xl'} bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden z-10 animate-in zoom-in-95 duration-200 transition-all flex flex-col max-h-[90vh]`}>
         
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90">
+        <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center shadow-md shrink-0">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold font-display text-lg text-slate-900 dark:text-white">
+              <h3 className="font-bold font-display text-base sm:text-lg text-slate-900 dark:text-white leading-snug">
                 {subject.name[currentLanguage] || subject.name.en}
               </h3>
               <span className="text-xs text-cyan-600 dark:text-cyan-400 font-semibold">
@@ -60,25 +68,76 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
             </div>
           </div>
 
-          <button
-            onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-            aria-label="Close"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-1 sm:gap-2">
+            {detailedSubject && onOpenStudyTopic && (
+              <button
+                onClick={() => handleOpenFullscreenSubject(activeLesson ? activeLesson.topicId : undefined)}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-200 dark:hover:bg-cyan-900 text-xs font-bold transition-all border border-cyan-300 dark:border-cyan-800"
+                title="Open Fullscreen Course Portal"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>{currentLanguage === 'bn' ? 'ফুলস্ক্রিন ভিউ' : currentLanguage === 'hi' ? 'फुलस्क्रीन व्यू' : 'Fullscreen Portal'}</span>
+              </button>
+            )}
+
+            <button
+              onClick={onClose}
+              className="p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
+        <div className="p-5 sm:p-6 space-y-6 overflow-y-auto flex-1">
           {activeLesson ? (
-            <LessonViewer
-              lesson={activeLesson}
-              currentLanguage={currentLanguage}
-              onBack={() => setActiveLesson(null)}
-            />
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-3 rounded-xl bg-cyan-50 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800">
+                <span className="text-xs font-semibold text-cyan-900 dark:text-cyan-200">
+                  {currentLanguage === 'bn' ? 'ছোট উইন্ডোতে পড়তে অসুবিধা হলে পুরো স্ক্রিনে খুলুন:' : currentLanguage === 'hi' ? 'छोटे विंडो के बजाय पूरे स्क्रीन पर पढ़ें:' : 'For the best reading experience, open in fullscreen mode:'}
+                </span>
+                <button
+                  onClick={() => handleOpenFullscreenSubject(activeLesson.topicId)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold shadow-xs transition-all shrink-0"
+                >
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span>{currentLanguage === 'bn' ? 'বড় স্ক্রিনে খুলুন' : currentLanguage === 'hi' ? 'फुलस्क्रीन में पढ़ें' : 'Open Fullscreen'}</span>
+                </button>
+              </div>
+
+              <LessonViewer
+                lesson={activeLesson}
+                currentLanguage={currentLanguage}
+                onBack={() => setActiveLesson(null)}
+              />
+            </div>
           ) : (
             <>
+              {/* Fullscreen Portal Promo Banner */}
+              {detailedSubject && onOpenStudyTopic && (
+                <div className="p-4 rounded-xl bg-gradient-to-r from-cyan-600/10 via-blue-600/10 to-indigo-600/10 dark:from-cyan-950/40 dark:via-blue-950/40 dark:to-indigo-950/40 border border-cyan-200 dark:border-cyan-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="space-y-1">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-800 dark:text-cyan-300">
+                      <Zap className="w-3.5 h-3.5 text-cyan-500" />
+                      <span>{currentLanguage === 'bn' ? 'বইয়ের মতো ফুলস্ক্রিন রিডার মোড' : currentLanguage === 'hi' ? 'फुलस्क्रीन बुक रीडर मोड' : 'Dedicated Fullscreen Book Reader'}</span>
+                    </span>
+                    <p className="text-xs text-slate-600 dark:text-slate-400">
+                      {currentLanguage === 'bn' ? 'বামপাশে চ্যাপ্টার সূচিপত্র ও ডানপাশে আরামদায়ক বড় স্ক্রিনে পড়ার সুবিধা।' : currentLanguage === 'hi' ? 'साइडबार इंडेक्स और बड़े स्क्रीन पर आसान अध्ययन अनुभव।' : 'Browse all 8 chapters & 160 topics comfortably with sidebar table of contents.'}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleOpenFullscreenSubject()}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-md transition-all shrink-0 cursor-pointer"
+                  >
+                    <BookOpen className="w-4 h-4" />
+                    <span>{currentLanguage === 'bn' ? 'কোর্স পোর্টালে পড়ুন' : currentLanguage === 'hi' ? 'कोर्स पोर्टल में पढ़ें' : 'Open Full Course Hub'}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              )}
+
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                 {subject.description[currentLanguage] || subject.description.en}
               </p>
@@ -100,24 +159,38 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                     {detailedSubject.chapters.map((ch) => {
                       const chTitle = ch.title[currentLanguage] || ch.title.en;
                       const isExpanded = expandedChapters[ch.id] !== false;
+                      const firstTopicWithLesson = ch.topics.find(t => !!t.lesson) || ch.topics[0];
 
                       return (
                         <div key={ch.id} className="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50/50 dark:bg-slate-900/50">
-                          <button
-                            onClick={() => toggleChapter(ch.id)}
-                            className="w-full px-4 py-3 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-800 flex items-center justify-between text-left transition-colors"
-                          >
-                            <span className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                              <BookOpen className="w-4 h-4 text-cyan-500" />
-                              {chTitle}
-                            </span>
+                          <div className="w-full px-4 py-3 bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/80 dark:hover:bg-slate-800 flex items-center justify-between text-left transition-colors">
+                            <button
+                              onClick={() => toggleChapter(ch.id)}
+                              className="flex-1 font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2 text-left"
+                            >
+                              <BookOpen className="w-4 h-4 text-cyan-500 shrink-0" />
+                              <span className="truncate">{chTitle}</span>
+                            </button>
+                            
                             <div className="flex items-center gap-2">
-                              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                              {firstTopicWithLesson && onOpenStudyTopic && (
+                                <button
+                                  onClick={() => handleOpenFullscreenSubject(firstTopicWithLesson.id)}
+                                  className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded bg-cyan-600/10 hover:bg-cyan-600 text-cyan-700 dark:text-cyan-300 hover:text-white text-[11px] font-bold transition-colors"
+                                  title="Study this chapter in fullscreen portal"
+                                >
+                                  <Play className="w-2.5 h-2.5 fill-current" />
+                                  <span>{currentLanguage === 'bn' ? 'ফুলস্ক্রিন' : 'Read'}</span>
+                                </button>
+                              )}
+                              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 shrink-0">
                                 {ch.topics.length} Topics
                               </span>
-                              {isExpanded ? <ChevronDown className="w-4 h-4 text-slate-400" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
+                              <button onClick={() => toggleChapter(ch.id)} className="p-1">
+                                {isExpanded ? <ChevronDown className="w-4 h-4 text-slate-400" /> : <ChevronRight className="w-4 h-4 text-slate-400" />}
+                              </button>
                             </div>
-                          </button>
+                          </div>
 
                           {isExpanded && (
                             <div className="p-3 space-y-2 bg-white dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
@@ -131,7 +204,7 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                                     onClick={() => {
                                       if (hasLesson) {
                                         if (onOpenStudyTopic) {
-                                          onOpenStudyTopic(tp.id);
+                                          handleOpenFullscreenSubject(tp.id);
                                         } else {
                                           setActiveLesson(tp.lesson!);
                                         }
@@ -155,12 +228,12 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                                     {hasLesson ? (
                                       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan-600 text-white font-bold text-[11px] shadow-2xs group shrink-0">
                                         <Zap className="w-3 h-3 text-cyan-200" />
-                                        <span>Start Lesson</span>
+                                        <span>{currentLanguage === 'bn' ? 'লেসন পড়ুন' : currentLanguage === 'hi' ? 'पाठ पढ़ें' : 'Read Lesson'}</span>
                                         <Play className="w-2.5 h-2.5 fill-white" />
                                       </span>
                                     ) : (
                                       <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/60 shrink-0">
-                                        Syllabus Topic • Coming Soon
+                                        Syllabus Topic
                                       </span>
                                     )}
                                   </div>
@@ -208,18 +281,29 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between">
+        <div className="px-5 sm:px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between shrink-0">
           <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5 font-medium">
             <CheckCircle2 className="w-4 h-4 text-emerald-500" />
             <span>AICTE & State Board Aligned • {t.phase1Notice || 'Phase 1 Educational Foundation'}</span>
           </span>
 
-          <button
-            onClick={onClose}
-            className="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-md transition-all"
-          >
-            {t.close}
-          </button>
+          <div className="flex items-center gap-2">
+            {detailedSubject && onOpenStudyTopic && !activeLesson && (
+              <button
+                onClick={() => handleOpenFullscreenSubject()}
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>{currentLanguage === 'bn' ? 'ফুলস্ক্রিন পোর্টাল' : currentLanguage === 'hi' ? 'फुलस्क्रीन पोर्टल' : 'Open Fullscreen Portal'}</span>
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs transition-all"
+            >
+              {t.close}
+            </button>
+          </div>
         </div>
 
       </div>
