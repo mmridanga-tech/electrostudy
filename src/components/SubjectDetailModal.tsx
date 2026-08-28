@@ -20,7 +20,20 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
 }) => {
   const t = UI_TRANSLATIONS[currentLanguage];
   const [activeLesson, setActiveLesson] = useState<Lesson | null>(null);
-  const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({ 'ch-elec-fund': true, 'ch-ohms-circuits': true });
+  const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({ 
+    'ch-elec-fund': true, 
+    'ch-ohms-circuits': true,
+    'em-ch1-transformers': true,
+    'em-ch2-dc-generators': true,
+    'em-ch3-dc-motors': true,
+    'em-ch4-induction-motors': true,
+    'em-ch5-synchronous-special': true,
+    'ps-ch1-generation': true,
+    'ps-ch2-transmission': true,
+    'ps-ch3-distribution': true,
+    'ps-ch4-faults': true,
+    'ps-ch5-protection': true
+  });
 
   if (!subject) return null;
 
@@ -33,7 +46,8 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
 
   const handleOpenFullscreenSubject = (topicId?: string) => {
     if (onOpenStudyTopic) {
-      const targetTopic = topicId || 'ch1-charge-current-voltage';
+      const defaultTopic = detailedSubject?.chapters[0]?.topics[0]?.id || (subject.id === 'electrical-machines' ? 'ch6-transformer-fundamentals' : 'tp-charge');
+      const targetTopic = topicId || defaultTopic;
       onOpenStudyTopic(targetTopic);
       onClose();
     }
@@ -124,7 +138,15 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
                       <span>{currentLanguage === 'bn' ? 'বইয়ের মতো ফুলস্ক্রিন রিডার মোড' : currentLanguage === 'hi' ? 'फुलस्क्रीन बुक रीडर मोड' : 'Dedicated Fullscreen Book Reader'}</span>
                     </span>
                     <p className="text-xs text-slate-600 dark:text-slate-400">
-                      {currentLanguage === 'bn' ? 'বামপাশে চ্যাপ্টার সূচিপত্র ও ডানপাশে আরামদায়ক বড় স্ক্রিনে পড়ার সুবিধা।' : currentLanguage === 'hi' ? 'साइडबार इंडेक्स और बड़े स्क्रीन पर आसान अध्ययन अनुभव।' : 'Browse all 8 chapters & 160 topics comfortably with sidebar table of contents.'}
+                      {currentLanguage === 'bn' 
+                        ? (detailedSubject.id === 'electrical-machines' 
+                            ? 'বামপাশে ৫টি মডিউল সূচিপত্র ও ডানপাশে ২৪টি সম্পূর্ণ লেসন পড়ার সুবিধা।'
+                            : 'বামপাশে চ্যাপ্টার সূচিপত্র ও ডানপাশে আরামদায়ক বড় স্ক্রিনে পড়ার সুবিধা।')
+                        : currentLanguage === 'hi' 
+                        ? (detailedSubject.id === 'electrical-machines'
+                            ? 'साइडबार इंडेक्स और 24 संपूर्ण इलेक्ट्रिकल मशीन पाठों का अध्ययन करें।'
+                            : 'साइडबार इंडेक्स और बड़े स्क्रीन पर आसान अध्ययन अनुभव।')
+                        : `Browse all ${detailedSubject.chapters.length} learning modules & structured lessons comfortably.`}
                     </p>
                   </div>
                   <button

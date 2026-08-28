@@ -41,10 +41,29 @@ export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
 
   const handleStartCourse = (subjectId: string) => {
     if (onOpenStudyTopic) {
-      if (subjectId === 'basic-electrical') {
-        onOpenStudyTopic('ch1-charge-current-voltage');
+      if (subjectId === 'basic-electrical' || subjectId === 'be-01') {
+        onOpenStudyTopic('tp-charge');
         return;
       }
+      if (subjectId === 'electrical-machines') {
+        onOpenStudyTopic('ch6-transformer-fundamentals');
+        return;
+      }
+      if (subjectId === 'power-systems') {
+        onOpenStudyTopic('ps-tp1-generation-methods');
+        return;
+      }
+      if (subjectId === 'electrical-measurements') {
+        onOpenStudyTopic('ch3-fundamentals-measurement');
+        return;
+      }
+      if (subjectId === 'network-theory' || subjectId === 'circuit-theory') {
+        onOpenStudyTopic('ch4-ohms-law-applications');
+        return;
+      }
+      // Fallback: open default course topic
+      onOpenStudyTopic('tp-charge');
+      return;
     }
     onSelectSubject(subjectId);
   };
@@ -71,7 +90,7 @@ export const ExploreSubjects: React.FC<ExploreSubjectsProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {SUBJECTS_DATA.map((subject: SubjectItem) => {
             const Icon = getSubjectIcon(subject.icon);
-            const isDetailedAvailable = subject.id === 'basic-electrical';
+            const isDetailedAvailable = subject.id === 'basic-electrical' || subject.id === 'electrical-machines';
 
             return (
               <div

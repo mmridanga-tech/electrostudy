@@ -2,15 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { RotateCcw, Info, Zap } from 'lucide-react';
 import { Language } from '../../types';
 
+export interface MultilingualString {
+  en: string;
+  hi?: string;
+  bn?: string;
+  [key: string]: string | undefined;
+}
+
 interface InteractiveSimulationCardProps {
   currentLanguage: Language;
-  title: string;
-  subtitle: string;
-  onReset: () => void;
+  title: string | MultilingualString;
+  subtitle?: string | MultilingualString;
+  description?: string | MultilingualString;
+  badge?: string;
+  onReset?: () => void;
   resetLabel?: string;
   children: React.ReactNode;
-  calloutTitle?: string;
-  calloutText?: string;
+  calloutTitle?: string | MultilingualString;
+  calloutText?: string | MultilingualString;
   formulaText?: string;
   extraHeaderActions?: React.ReactNode;
 }
@@ -53,6 +62,8 @@ export const InteractiveSimulationCard: React.FC<InteractiveSimulationCardProps>
   currentLanguage,
   title,
   subtitle,
+  description,
+  badge,
   onReset,
   resetLabel,
   children,
@@ -63,6 +74,17 @@ export const InteractiveSimulationCard: React.FC<InteractiveSimulationCardProps>
 }) => {
   const t = COMMON_STRINGS[currentLanguage] || COMMON_STRINGS.en;
   const [prefersReducedMotion, setPrefersReducedMotion] = useState<boolean>(false);
+
+  const resolveText = (val: string | MultilingualString | undefined): string => {
+    if (!val) return '';
+    if (typeof val === 'string') return val;
+    return val[currentLanguage] || val.en || Object.values(val)[0] || '';
+  };
+
+  const displayTitle = resolveText(title);
+  const displaySubtitle = resolveText(subtitle || description);
+  const displayCalloutTitle = resolveText(calloutTitle);
+  const displayCalloutText = resolveText(calloutText);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -78,28 +100,37 @@ export const InteractiveSimulationCard: React.FC<InteractiveSimulationCardProps>
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
         <div className="space-y-1">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <Zap className="w-5 h-5 text-cyan-400 shrink-0" />
             <h3 className="text-base sm:text-lg font-extrabold font-display tracking-tight text-white">
-              {title}
+              {displayTitle}
             </h3>
+            {badge && (
+              <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                {badge}
+              </span>
+            )}
           </div>
-          <p className="text-xs text-slate-400">
-            {subtitle}
-          </p>
+          {displaySubtitle && (
+            <p className="text-xs text-slate-400">
+              {displaySubtitle}
+            </p>
+          )}
         </div>
 
         {/* Controls / Header Actions */}
         <div className="flex items-center gap-2 flex-wrap print-hidden">
           {extraHeaderActions}
-          <button
-            onClick={onReset}
-            className="px-2.5 py-1.5 rounded-lg bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-800 text-xs font-bold text-cyan-300 transition-colors flex items-center gap-1.5"
-            aria-label={resetLabel || t.reset}
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>{resetLabel || t.reset}</span>
-          </button>
+          {onReset && (
+            <button
+              onClick={onReset}
+              className="px-2.5 py-1.5 rounded-lg bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-800 text-xs font-bold text-cyan-300 transition-colors flex items-center gap-1.5 cursor-pointer"
+              aria-label={resetLabel || t.reset}
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>{resetLabel || t.reset}</span>
+            </button>
+          )}
         </div>
       </div>
 
@@ -117,17 +148,17 @@ export const InteractiveSimulationCard: React.FC<InteractiveSimulationCardProps>
       </div>
 
       {/* Educational Callout Footer */}
-      {(calloutText || formulaText) && (
+      {(displayCalloutText || formulaText) && (
         <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
           {formulaText && (
             <div className="font-mono text-xs sm:text-sm text-cyan-300 font-bold bg-cyan-950/50 p-2.5 rounded-lg border border-cyan-800/60">
               {formulaText}
             </div>
           )}
-          {calloutText && (
+          {displayCalloutText && (
             <div className="text-xs text-slate-300 leading-relaxed font-sans">
-              {calloutTitle && <strong className="text-amber-400 mr-1.5">{calloutTitle}:</strong>}
-              <span>{calloutText}</span>
+              {displayCalloutTitle && <strong className="text-amber-400 mr-1.5">{displayCalloutTitle}:</strong>}
+              <span>{displayCalloutText}</span>
             </div>
           )}
         </div>

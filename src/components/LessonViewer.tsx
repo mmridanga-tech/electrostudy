@@ -99,6 +99,10 @@ import { InductorCouplingAnimation } from './interactive/InductorCouplingAnimati
 import { HysteresisBHCurveAnimation } from './interactive/HysteresisBHCurveAnimation';
 import { InductorColorSMDDecoderAnimation } from './interactive/InductorColorSMDDecoderAnimation';
 import { SolenoidRelayFlybackAnimation } from './interactive/SolenoidRelayFlybackAnimation';
+import { InductionMotorAnimation } from './interactive/InductionMotorAnimation';
+import { SynchronousMachineAnimation } from './interactive/SynchronousMachineAnimation';
+import { PowerGridTransmissionAnimation } from './interactive/PowerGridTransmissionAnimation';
+import { MeasurementLabSimulator } from './interactive/MeasurementLabSimulator';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -319,6 +323,24 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   ) {
     return <TransformerIndustrialApplicationAnimation language={currentLanguage} />;
   }
+  if (
+    topicId === 'ch6-induction-motor-principle' || 
+    lessonId === 'lsn-ch6-induction-motor-principle' ||
+    topicId === 'ch6-induction-motor-torque-slip' || 
+    lessonId === 'lsn-ch6-induction-motor-torque-slip' ||
+    topicId === 'ch6-induction-motor-starters-speed' || 
+    lessonId === 'lsn-ch6-induction-motor-starters-speed'
+  ) {
+    return <InductionMotorAnimation currentLanguage={currentLanguage} />;
+  }
+  if (
+    topicId === 'ch6-synchronous-generator-motor' || 
+    lessonId === 'lsn-ch6-synchronous-generator-motor' ||
+    topicId === 'ch6-single-phase-special-motors' || 
+    lessonId === 'lsn-ch6-single-phase-special-motors'
+  ) {
+    return <SynchronousMachineAnimation currentLanguage={currentLanguage} />;
+  }
 
   // Chapter 7: Capacitors & Electrostatics Simulators
   if (
@@ -482,6 +504,59 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     return <SolenoidRelayFlybackAnimation currentLanguage={currentLanguage} />;
   }
 
+  // Chapter 9: Magnetic Circuits & Materials Simulators
+  if (
+    topicId === 'tp-magnetic-materials' ||
+    lessonId === 'lsn-ch9-magnetic-materials'
+  ) {
+    return <HysteresisBHCurveAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-magnetic-flux' ||
+    topicId === 'tp-flux-density' ||
+    topicId === 'tp-mmf' ||
+    topicId === 'tp-reluctance' ||
+    topicId === 'tp-permeability' ||
+    topicId === 'tp-magnetic-field-strength' ||
+    topicId === 'tp-amperes-law' ||
+    topicId === 'tp-mag-vs-elec-circuit' ||
+    topicId === 'tp-series-magnetic-circuit' ||
+    lessonId === 'lsn-ch9-magnetic-flux-density' ||
+    lessonId === 'lsn-ch9-mmf-reluctance-permeability' ||
+    lessonId === 'lsn-ch9-reluctance-permeance' ||
+    lessonId === 'lsn-ch9-permeability' ||
+    lessonId === 'lsn-ch9-magnetic-field-strength' ||
+    lessonId === 'lsn-ch9-amperes-law' ||
+    lessonId === 'lsn-ch9-mag-vs-elec-circuit' ||
+    lessonId === 'lsn-ch9-series-magnetic-circuit'
+  ) {
+    return <MagneticCircuitAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId.startsWith('ps-') ||
+    lessonId.startsWith('lesson-ps-') ||
+    topicId.includes('transmission') ||
+    topicId.includes('fault') ||
+    topicId.includes('generation') ||
+    topicId.includes('grid')
+  ) {
+    return <PowerGridTransmissionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId.startsWith('meas-') ||
+    lessonId.startsWith('lesson-meas-') ||
+    topicId.includes('measurement') ||
+    topicId.includes('instrument') ||
+    topicId.includes('pmmc') ||
+    topicId.includes('wattmeter') ||
+    topicId.includes('bridge')
+  ) {
+    return <MeasurementLabSimulator currentLanguage={currentLanguage} />;
+  }
+
   return null;
 };
 
@@ -524,13 +599,32 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
   const extractList = (list: any): string[] => {
     if (!list) return [];
     if (Array.isArray(list)) {
-      return list.map((item: any) => (typeof item === 'string' ? item : item[currentLanguage] || item.en || ''));
+      return list.map((item: any) => {
+        if (typeof item === 'string') return item;
+        if (typeof item === 'object' && item !== null) {
+          return item[currentLanguage] || item.en || item.bn || item.hi || Object.values(item)[0] || '';
+        }
+        return String(item);
+      });
     }
-    return list[currentLanguage] || list.en || [];
+    if (typeof list === 'object' && list !== null) {
+      const val = list[currentLanguage] || list.en || list.bn || list.hi || Object.values(list)[0];
+      if (Array.isArray(val)) {
+        return val.map((item: any) => {
+          if (typeof item === 'string') return item;
+          if (typeof item === 'object' && item !== null) {
+            return item[currentLanguage] || item.en || item.bn || item.hi || Object.values(item)[0] || '';
+          }
+          return String(item);
+        });
+      }
+      if (typeof val === 'string') return [val];
+    }
+    return [];
   };
 
   const applications = extractList(lesson.practicalApplications);
-  const importantPoints = extractList(lesson.importantPoints);
+  const importantPoints = extractList(lesson.importantPoints || lesson.keyTakeaways);
   const commonMistakes = extractList(lesson.commonMistakes);
 
   return (
@@ -691,11 +785,17 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
 
               {ex.givenValues && (
                 <div className="flex flex-wrap gap-2 text-xs font-mono">
-                  {Object.entries(ex.givenValues).map(([k, v]) => (
-                    <span key={k} className="px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
-                      {k}: <strong className="text-cyan-600 dark:text-cyan-300">{v}</strong>
-                    </span>
-                  ))}
+                  {Object.entries(ex.givenValues).map(([k, v]) => {
+                    const rawVal = v as any;
+                    const valText = typeof rawVal === 'object' && rawVal !== null 
+                      ? (rawVal[currentLanguage] || rawVal.en || Object.values(rawVal)[0] || '') 
+                      : String(v);
+                    return (
+                      <span key={k} className="px-2.5 py-1 rounded bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200">
+                        {k}: <strong className="text-cyan-600 dark:text-cyan-300">{valText}</strong>
+                      </span>
+                    );
+                  })}
                 </div>
               )}
 

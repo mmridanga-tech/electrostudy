@@ -12,6 +12,7 @@ export interface FormulaVariable {
 
 export interface FormulaItem {
   id?: string;
+  name?: MultilingualText;
   symbol?: string;
   expression?: string;
   formula?: string;
@@ -96,6 +97,7 @@ export interface Lesson {
   workedExamples?: SolvedExample[];
   practicalApplications?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   importantPoints?: MultilingualList | MultilingualText[] | Record<string, string[]>;
+  keyTakeaways?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   commonMistakes?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   mcqs?: MCQQuestion[];
   practiceQuestions?: PracticeQuestion[];

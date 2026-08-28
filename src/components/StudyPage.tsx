@@ -377,7 +377,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1">
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>{currentLanguage === 'bn' ? 'অধ্যায় নির্বাচন' : 'Chapters (8 Modules)'}</span>
+                  <span>{currentLanguage === 'bn' ? `অধ্যায় নির্বাচন (${totalChapters}টি মডিউল)` : `Chapters (${totalChapters} Modules)`}</span>
                 </span>
                 <span className="text-[10px] font-mono text-slate-400 font-bold">
                   {chapterIndex} of {totalChapters}

@@ -39,7 +39,7 @@ export default function App() {
         const rawTopicId = parts[parts.length - 1].replace('?topic=', '');
         if (rawTopicId) {
           const ctx = getTopicContext(rawTopicId);
-          if (ctx && ctx.lesson) {
+          if (ctx) {
             setActiveSubjectModal(null);
             setActiveStudyTopicId(ctx.topic.id);
           }
@@ -52,21 +52,25 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // Initialize theme from preference or default to light mode
+  // Initialize theme from preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('electrostudy_theme') as Theme;
-    if (savedTheme) {
+    if (savedTheme === 'dark' || savedTheme === 'light') {
       setTheme(savedTheme);
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    } else {
-      // Default light mode as specified in guidelines
-      document.documentElement.classList.remove('dark');
     }
   }, []);
+
+  // Synchronize document dark mode class and color-scheme
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.documentElement.style.colorScheme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.style.colorScheme = 'light';
+    }
+    localStorage.setItem('electrostudy_theme', theme);
+  }, [theme]);
 
   // Synchronize document language and typography attributes
   useEffect(() => {
@@ -101,14 +105,7 @@ export default function App() {
   }, []);
 
   const handleToggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    localStorage.setItem('electrostudy_theme', nextTheme);
-    if (nextTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   const handleLanguageChange = (lang: Language) => {
@@ -190,9 +187,9 @@ export default function App() {
 
   const handleSelectPractice = (practiceId: string) => {
     if (practiceId === 'practice-basic-concepts') {
-      handleOpenStudyTopic('ch1-charge-current-voltage');
+      handleOpenStudyTopic('tp-charge');
     } else if (practiceId === 'practice-circuits') {
-      handleOpenStudyTopic('ch2-ohms-law-resistance');
+      handleOpenStudyTopic('tp-ohms-law');
     } else if (practiceId === 'practice-safety') {
       const subject = SUBJECTS_DATA.find(s => s.id === 'basic-electrical') || SUBJECTS_DATA[0];
       setActiveSubjectModal(subject);
@@ -208,8 +205,8 @@ export default function App() {
     const ctx = getTopicContext(topicId);
     if (ctx) {
       setActiveSubjectModal(null);
-      setActiveStudyTopicId(topicId);
-      window.location.hash = `#study/${topicId}`;
+      setActiveStudyTopicId(ctx.topic.id);
+      window.location.hash = `#study/${ctx.topic.id}`;
     }
   };
 
