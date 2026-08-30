@@ -103,6 +103,12 @@ export const StudyPage: React.FC<StudyPageProps> = ({
     });
   }, [chapter.topics, searchQuery]);
 
+  // Sort chapters by canonical chapter.order
+  const sortedChapters = useMemo(() => {
+    if (!allChapters) return [];
+    return [...allChapters].sort((a, b) => a.order - b.order);
+  }, [allChapters]);
+
   const handleShare = async () => {
     const shareUrl = window.location.href;
     const shareTitle = `${topicTitle} - ElectroStudy`;
@@ -361,7 +367,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
         </button>
 
         <span className="text-[11px] font-mono font-semibold text-slate-500 dark:text-slate-400">
-          Ch {chapterIndex}/{totalChapters} • {Math.round((topicIndex / totalTopics) * 100)}%
+          Ch {chapter.order}/{totalChapters} • {Math.round((topicIndex / totalTopics) * 100)}%
         </span>
       </div>
 
@@ -380,7 +386,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
                   <span>{currentLanguage === 'bn' ? `অধ্যায় নির্বাচন (${totalChapters}টি মডিউল)` : `Chapters (${totalChapters} Modules)`}</span>
                 </span>
                 <span className="text-[10px] font-mono text-slate-400 font-bold">
-                  {chapterIndex} of {totalChapters}
+                  {chapter.order} of {totalChapters}
                 </span>
               </div>
 
@@ -388,16 +394,16 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               <select
                 value={chapter.id}
                 onChange={(e) => {
-                  const targetChapter = allChapters?.find(c => c.id === e.target.value);
+                  const targetChapter = sortedChapters.find(c => c.id === e.target.value);
                   if (targetChapter && targetChapter.topics.length > 0) {
                     onSelectTopic(targetChapter.topics[0].id);
                   }
                 }}
                 className="w-full text-xs font-bold p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 outline-hidden focus:ring-2 focus:ring-cyan-500 cursor-pointer"
               >
-                {allChapters?.map((ch, idx) => (
+                {sortedChapters.map((ch) => (
                   <option key={ch.id} value={ch.id}>
-                    Ch {idx + 1}: {ch.title[currentLanguage] || ch.title.en}
+                    Ch {ch.order}: {ch.title[currentLanguage] || ch.title.en}
                   </option>
                 ))}
               </select>
@@ -517,7 +523,7 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               <div className="flex items-center justify-between gap-2 flex-wrap">
                 <span className="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                   <BookOpen className="w-4 h-4 text-cyan-500" />
-                  <span>{subjectTitle} • Ch {chapterIndex}: {chapterTitle}</span>
+                  <span>{subjectTitle} • Ch {chapter.order}: {chapterTitle}</span>
                 </span>
 
                 <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
@@ -648,16 +654,16 @@ export const StudyPage: React.FC<StudyPageProps> = ({
               <select
                 value={chapter.id}
                 onChange={(e) => {
-                  const targetChapter = allChapters?.find(c => c.id === e.target.value);
+                  const targetChapter = sortedChapters.find(c => c.id === e.target.value);
                   if (targetChapter && targetChapter.topics.length > 0) {
                     onSelectTopic(targetChapter.topics[0].id);
                   }
                 }}
                 className="w-full text-xs font-bold p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 outline-hidden"
               >
-                {allChapters?.map((ch, idx) => (
+                {sortedChapters.map((ch) => (
                   <option key={ch.id} value={ch.id}>
-                    Ch {idx + 1}: {ch.title[currentLanguage] || ch.title.en}
+                    Ch {ch.order}: {ch.title[currentLanguage] || ch.title.en}
                   </option>
                 ))}
               </select>

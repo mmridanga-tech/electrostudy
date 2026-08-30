@@ -4,7 +4,7 @@ export const LESSON_DC_MOTOR_STARTING: Lesson = {
   id: 'lsn-ch6-dc-motor-starting',
   topicId: 'ch6-dc-motor-starting',
   chapterId: 'ch-electrical-machines',
-  order: 10,
+  order: 18,
   title: {
     en: 'DC Motor Starting Methods & Starters',
     hi: 'डीसी मोटर स्टार्टिंग विधियाँ एवं स्टार्टर',

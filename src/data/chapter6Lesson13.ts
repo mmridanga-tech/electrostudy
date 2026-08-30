@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch6-transformer-fundamentals',
   topicId: 'ch6-transformer-fundamentals',
   chapterId: 'ch-electrical-machines',
-  order: 13,
+  order: 1,
   title: {
     en: 'Transformer Fundamentals, Construction & EMF Equation',
     hi: 'ट्रांसफॉर्मर के मूल सिद्धांत, संरचना एवं EMF समीकरण',

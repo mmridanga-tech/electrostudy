@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_PROTECTION_MAINTENANCE: Lesson = {
   id: 'lsn-ch6-transformer-protection-maintenance',
   topicId: 'ch6-transformer-protection-maintenance',
   chapterId: 'ch-electrical-machines',
-  order: 19,
+  order: 7,
   title: {
     en: 'Transformer Protection, Faults & Maintenance',
     hi: 'ट्रांसफॉर्मर सुरक्षा, फॉल्ट विश्लेषण एवं रखरखाव',

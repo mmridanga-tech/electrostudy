@@ -4,7 +4,7 @@ export const LESSON_MAGNETIC_CIRCUITS: Lesson = {
   id: 'lsn-ch6-magnetic-circuits',
   topicId: 'ch6-magnetic-circuits',
   chapterId: 'ch-electrical-machines',
-  order: 2,
+  order: 10,
   title: {
     en: 'Magnetic Circuits & Electromagnetic Principles',
     hi: 'चुंबकीय परिपथ एवं विद्युतचुंबकीय सिद्धांत',

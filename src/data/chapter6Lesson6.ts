@@ -4,7 +4,7 @@ export const LESSON_DC_GENERATOR_CHARACTERISTICS: Lesson = {
   id: 'lsn-ch6-dc-generator-characteristics',
   topicId: 'ch6-dc-generator-characteristics',
   chapterId: 'ch-electrical-machines',
-  order: 6,
+  order: 14,
   title: {
     en: 'DC Generator Characteristics & Voltage Build-Up',
     hi: 'डीसी जनरेटर की विशेषताएँ एवं वोल्टेज बिल्ड-अप',

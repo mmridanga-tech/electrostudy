@@ -8,6 +8,7 @@ import { CHAPTER_6_LESSONS } from './chapter6Lessons';
 import { CHAPTER_7_LESSONS } from './chapter7Lessons';
 import { CHAPTER_8_LESSONS } from './chapter8Lessons';
 import { CHAPTER_9_LESSONS } from './chapter9Lessons';
+import { CHAPTER_10_LESSONS } from './chapter10Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
 import { MEASUREMENTS_SUBJECT } from './measurementsData';
@@ -879,13 +880,425 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-capacitors',
+        id: 'ch-electrical-machines',
         subjectId: 'basic-electrical',
         order: 6,
         title: {
-          en: 'Chapter 6: Capacitors & Electrostatics',
-          hi: 'अध्याय 6: संधारित्र (कैपेसिटर) एवं स्थिरवैद्युतिकी',
-          bn: 'অধ্যায় ৬: ক্যাপাসিটর ও স্থিরতড়িৎ'
+          en: 'Chapter 6: DC Machines & Transformers',
+          hi: 'अध्याय 6: डीसी मशीनें एवं ट्रांसफॉर्मर',
+          bn: 'অধ্যায় ৬: ডিসি মেশিন ও ট্রান্সফরমার'
+        },
+        topics: [
+          {
+            id: 'ch6-electrical-machines-fundamentals',
+            chapterId: 'ch-electrical-machines',
+            order: 1,
+            level: 'Foundation',
+            title: {
+              en: 'Electromechanical Energy Conversion Fundamentals',
+              hi: 'विद्युत-यांत्रिक ऊर्जा रूपांतरण के मूल सिद्धांत',
+              bn: 'ইলেক্ট্রোমেকানিক্যাল শক্তি রূপান্তরের মূল ভিত্তি'
+            },
+            description: {
+              en: 'Energy flow in magnetic coupling medium, generator and motor actions, Faraday induction, and Lorentz force law F = B·I·L.',
+              hi: 'चुंबकीय माध्यम में ऊर्जा प्रवाह, जनरेटर व मोटर क्रिया, फैराडे प्रेरण एवं लोरेंट्ज़ बल नियम F = B·I·L।',
+              bn: 'চৌম্বক মাধ্যমে শক্তি প্রবাহ, জেনারেটর ও মোটর ক্রিয়া, ফ্যারাডের আবেশ এবং লরেন্টজ বল সূত্র F = B·I·L।'
+            }
+          },
+          {
+            id: 'ch6-magnetic-circuits',
+            chapterId: 'ch-electrical-machines',
+            order: 2,
+            level: 'Diploma',
+            title: {
+              en: 'Magnetic Circuits & Electromagnetic Principles in Machines',
+              hi: 'चुंबकीय परिपथ एवं विद्युतचुंबकीय सिद्धांत',
+              bn: 'ম্যাগনেটিক সার্কিট ও ইলেক্ট্রোম্যাগনেটিক নীতি'
+            },
+            description: {
+              en: 'MMF, reluctance, magnetic flux paths, permeability, Lenz’s law, and Fleming’s right-hand rule for generator induced EMF.',
+              hi: 'MMF, रिलक्टेंस, चुंबकीय फ्लक्स पथ, लेन्ज का नियम एवं जनरेटर प्रेरित EMF हेतु फ्लेमिंग का दायाँ हाथ नियम।',
+              bn: 'MMF, রিলাক্ট্যান্স, চৌম্বক ফ্লাক্স পথ, লেঞ্জের সূত্র এবং জেনারেটরে আবিষ্ট EMF নির্ণয়ে ফ্লেমিংয়ের ডান হাত নিয়ম।'
+            }
+          },
+          {
+            id: 'ch6-dc-machine-construction',
+            chapterId: 'ch-electrical-machines',
+            order: 3,
+            level: 'Diploma',
+            title: {
+              en: 'DC Machine Construction & Armature Windings',
+              hi: 'डीसी मशीन की संरचना एवं आर्मेचर वाइंडिंग (Lap & Wave)',
+              bn: 'ডিসি মেশিনের গঠন ও আর্মেচার ওয়াইন্ডিং (ল্যাপ ও ওয়েভ)'
+            },
+            description: {
+              en: 'Stator yoke, field poles, armature core laminations, commutator segments, carbon brushes, and Lap (A=P) vs Wave (A=2) windings.',
+              hi: 'योक, फील्ड पोल, आर्मेचर कोर, कम्यूटेटर, कार्बन ब्रश तथा लैप (A=P) एवं वेव वाइंडिंग (A=2) की तुलना।',
+              bn: 'ইয়োক, ফিল্ড পোল, আর্মেচার কোর, কমিউটেটর, কার্বন ব্রাশ এবং ল্যাপ (A=P) বনাম ওয়েভ (A=2) ওয়াইন্ডিং।'
+            }
+          },
+          {
+            id: 'ch6-dc-generator-emf',
+            chapterId: 'ch-electrical-machines',
+            order: 4,
+            level: 'Engineering',
+            title: {
+              en: 'DC Generator EMF Equation & Voltage Generation',
+              hi: 'डीसी जनरेटर EMF समीकरण एवं वोल्टेज निर्माण',
+              bn: 'ডিসি জেনারেটরের EMF সমীকরণ ও ভোল্টেজ উৎপাদন'
+            },
+            description: {
+              en: 'Derivation of generated EMF Eg = (P·Φ·Z·N)/(60·A), role of speed N and flux per pole Φ in voltage generation.',
+              hi: 'उत्पन्न EMF समीकरण Eg = (P·Φ·Z·N)/(60·A) का निगमन तथा घूर्णन गति N और फ्लक्स Φ का प्रभाव।',
+              bn: 'উৎপন্ন EMF সমীকরণ Eg = (P·Φ·Z·N)/(60·A) প্রতিপাদন এবং ঘূর্ণন গতি ও ফ্লাক্সের প্রভাব।'
+            }
+          },
+          {
+            id: 'ch6-dc-generator-types',
+            chapterId: 'ch-electrical-machines',
+            order: 5,
+            level: 'Diploma',
+            title: {
+              en: 'Types of DC Generators & Field Excitation Methods',
+              hi: 'डीसी जनरेटर के प्रकार एवं फील्ड उत्तेजन विधियाँ',
+              bn: 'ডিসি জেনারেটরের প্রকারভেদ ও ফিল্ড এক্সাইটেশন'
+            },
+            description: {
+              en: 'Separately excited, shunt, series, cumulative compound, and differential compound DC generators with circuit topologies.',
+              hi: 'प्रथक उत्तेजित, शंट, सीरीज, संचयी यौगिक (Cumulative) एवं विभेदी यौगिक (Differential) डीसी जनरेटर।',
+              bn: 'পৃথক উত্তেজিত, সান্ট, সিরিজ, কিউমুলেটিভ ও ডিফারেনশিয়াল কম্পাউন্ড ডিসি জেনারেটর।'
+            }
+          },
+          {
+            id: 'ch6-dc-generator-characteristics',
+            chapterId: 'ch-electrical-machines',
+            order: 6,
+            level: 'Engineering',
+            title: {
+              en: 'DC Generator Characteristics & Voltage Build-Up',
+              hi: 'डीसी जनरेटर विशेषताएँ एवं वोल्टेज बिल्ड-अप',
+              bn: 'ডিসি জেনারেটরের বৈশিষ্ট্য ও ভোল্টেজ বিল্ড-আপ'
+            },
+            description: {
+              en: 'Open circuit characteristic (OCC), internal and external load curves, critical resistance Rc, critical speed Nc, and residual magnetism.',
+              hi: 'ओपन सर्किट विशेषता (OCC), आंतरिक एवं बाह्य लोड वक्र, क्रांतिक प्रतिरोध Rc, क्रांतिक गति Nc एवं अवशिष्ट चुंबकत्व।',
+              bn: 'ওপেন সার্কিট ক্যারেক্টারিস্টিক (OCC), লোড বৈশিষ্ট্য রেখা, ক্রিটিক্যাল রেজিস্ট্যান্স Rc, ক্রিটিক্যাল স্পিড Nc এবং অবশিষ্ট চুম্বকত্ব।'
+            }
+          },
+          {
+            id: 'ch6-dc-generator-losses-efficiency',
+            chapterId: 'ch-electrical-machines',
+            order: 7,
+            level: 'Engineering',
+            title: {
+              en: 'DC Machine Losses, Efficiency & Power Flow',
+              hi: 'डीसी मशीन हानियाँ, दक्षता एवं शक्ति प्रवाह',
+              bn: 'ডিসি মেশিনের অপচয়, কর্মদক্ষতা ও পাওয়ার ফ্লো'
+            },
+            description: {
+              en: 'Copper losses (I²R), iron losses (hysteresis and eddy current), mechanical losses, maximum efficiency condition, and power stage flow diagram.',
+              hi: 'कॉपर हानियाँ, लौह हानियाँ, यांत्रिक हानियाँ, अधिकतम दक्षता की शर्त एवं पावर फ्लो डायग्राम।',
+              bn: 'কপার লস, আয়রন লস, মেকানিক্যাল লস, সর্বোচ্চ দক্ষতার শর্ত এবং পাওয়ার ফ্লো ডায়াগ্রাম।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-principle',
+            chapterId: 'ch-electrical-machines',
+            order: 8,
+            level: 'Engineering',
+            title: {
+              en: 'DC Motor Principle, Back EMF & Torque Equation',
+              hi: 'डीसी मोटर सिद्धांत, बैक EMF एवं टॉर्क समीकरण',
+              bn: 'ডিসি মোটরের নীতি, ব্যাক EMF ও টর্ক সমীকরণ'
+            },
+            description: {
+              en: 'Lorentz force action, back EMF Eb = V - Ia·Ra as an automatic speed regulator, electromagnetic torque equation Ta = (1/2π)·(P·Φ·Z·Ia)/A.',
+              hi: 'लोरेंट्ज़ बल, बैक EMF Eb = V - Ia·Ra का स्व-नियमन सिद्धांत एवं विद्युतचुंबकीय टॉर्क Ta ∝ Φ·Ia।',
+              bn: 'লরেন্টজ বল, ব্যাক EMF Eb = V - Ia·Ra ও এর অটো-স্পিড রেগুলেশন এবং ইলেক্ট্রোম্যাগনেটিক টর্ক সমীকরণ Ta ∝ Φ·Ia।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-types',
+            chapterId: 'ch-electrical-machines',
+            order: 9,
+            level: 'Diploma',
+            title: {
+              en: 'Types of DC Motors & Speed-Torque Characteristics',
+              hi: 'डीसी मोटरों के प्रकार एवं गति-टॉर्क विशेषताएँ',
+              bn: 'ডিসি মোটরের প্রকারভেদ ও স্পিড-টর্ক বৈশিষ্ট্য'
+            },
+            description: {
+              en: 'DC shunt motor (constant speed), DC series motor (high starting torque, dangerous at no-load), compound motors, and torque-speed curves.',
+              hi: 'डीसी शंट मोटर (स्थिर गति), सीरीज मोटर (उच्च स्टार्टिंग टॉर्क), कंपाउंड मोटर एवं टॉर्क-गति वक्र।',
+              bn: 'ডিসি সান্ট মোটর (স্থির গতি), সিরিজ মোটর (উচ্চ স্টার্টিং টর্ক, নো-লোডে বিপজ্জনক), কম্পাউন্ড মোটর এবং টর্ক-স্পিড কার্ভ।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-starting',
+            chapterId: 'ch-electrical-machines',
+            order: 10,
+            level: 'Practical',
+            title: {
+              en: 'DC Motor Starting Methods & Starters (2-Pt, 3-Pt, 4-Pt)',
+              hi: 'डीसी मोटर स्टार्टिंग विधियाँ एवं स्टार्टर (2-Point, 3-Point, 4-Point)',
+              bn: 'ডিসি মোটর স্টার্টিং পদ্ধতি ও স্টার্টার (২-পয়েন্ট, ৩-পয়েন্ট, ৪-পয়েন্ট)'
+            },
+            description: {
+              en: 'Why starters are required at zero back EMF, 2-point starter for series motors, 3-point and 4-point starters with No-Volt Release and Overload Release coils.',
+              hi: 'शून्य बैक EMF पर स्टार्टर की आवश्यकता, 2-पॉइंट, 3-पॉइंट व 4-पॉइंट स्टार्टर तथा NVR और OLR सुरक्षा।',
+              bn: 'শূন্য ব্যাক EMF অবস্থায় স্টার্টারের প্রয়োজন, ২-পয়েন্ট, ৩-পয়েন্ট ও ৪-পয়েন্ট স্টার্টার এবং NVR ও OLR প্রটেকশন।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-speed-control',
+            chapterId: 'ch-electrical-machines',
+            order: 11,
+            level: 'Engineering',
+            title: {
+              en: 'Speed Control (Flux, Armature, Ward-Leonard) & Electric Braking',
+              hi: 'गति नियंत्रण (फ्लक्स, आर्मेचर, वार्ड-लियोनार्ड) एवं इलेक्ट्रिक ब्रेकिंग',
+              bn: 'গতি নিয়ন্ত্রণ (ফ্লাক্স, আর্মেচার, ওয়ার্ড-লিওনার্ড) ও ইলেকট্রিক ব্রেকিং'
+            },
+            description: {
+              en: 'Field flux control (above base speed), armature resistance control (below base speed), Ward-Leonard system (smooth 4-quadrant control), and dynamic/regenerative/plugging braking.',
+              hi: 'फील्ड फ्लक्स नियंत्रण (बेस स्पीड से ऊपर), आर्मेचर नियंत्रण (बेस स्पीड से नीचे), वार्ड-लियोनार्ड सिस्टम एवं इलेक्ट्रिक ब्रेकिंग विधियाँ।',
+              bn: 'ফিল্ড ফ্লাক্স কন্ট্রোল (বেস গতির উপরে), আর্মেচার কন্ট্রোল (বেস গতির নিচে), ওয়ার্ড-লিওনার্ড পদ্ধতি এবং ডায়নামিক, রিজেনারেটিভ ও প্লাগিং ব্রেকিং।'
+            }
+          },
+          {
+            id: 'ch6-dc-motor-braking',
+            chapterId: 'ch-electrical-machines',
+            order: 12,
+            level: 'Engineering',
+            title: {
+              en: 'DC Motor Braking Methods (Plugging, Rheostatic & Regenerative)',
+              hi: 'डीसी मोटर ब्रेकिंग विधियाँ (प्लगिंग, रियोस्टैटिक एवं रीजेनरेटिव)',
+              bn: 'ডিসি মোটর ব্রেকিং পদ্ধতি (প্লাগিং, রিহোস্ট্যাটিক ও রিজেনারেটিভ)'
+            },
+            description: {
+              en: 'Regenerative braking with power return, Rheostatic/Dynamic braking with energy dissipation, and Plugging reverse current braking with safety interlocking.',
+              hi: 'रीजेनरेटिव ब्रेकिंग, रियोस्टैटिक/डायनामिक ब्रेकिंग एवं प्लगिंग (विपरीत धारा) ब्रेकिंग का विश्लेषण।',
+              bn: 'রিজেনারেটিভ ব্রেকিং, রিহোস্ট্যাটিক/ডায়নামিক ব্রেকিং এবং প্লাগিং রিভার্স কারেন্ট ব্রেকিং বিশ্লেষণ।'
+            }
+          },
+          {
+            id: 'ch6-transformer-fundamentals',
+            chapterId: 'ch-electrical-machines',
+            order: 13,
+            level: 'Foundation',
+            title: {
+              en: 'Transformer Fundamentals & EMF Equation',
+              hi: 'ट्रांसफॉर्मर के मूल सिद्धांत एवं EMF समीकरण',
+              bn: 'ট্রান্সফরমারের মূলনীতি ও EMF সমীকরণ'
+            },
+            description: {
+              en: 'Mutual induction, ideal vs practical transformers, transformation ratio K = V2/V1 = N2/N1 = I1/I2, EMF equation E = 4.44·f·N·Φm, and core flux density.',
+              hi: 'पारस्परिक प्रेरण, आदर्श व वास्तविक ट्रांसफॉर्मर, रूपांतरण अनुपात K, EMF समीकरण E = 4.44·f·N·Φm तथा कोर फ्लक्स घनत्व।',
+              bn: 'মিউচুয়াল ইনডাকশন, আদর্শ ও বাস্তব ট্রান্সফরমার, রূপান্তর অনুপাত K, EMF সমীকরণ E = ৪.৪৪·f·N·Φm এবং কোর ফ্লাক্স ঘনত্ব।'
+            }
+          },
+          {
+            id: 'ch6-transformer-types-construction',
+            chapterId: 'ch-electrical-machines',
+            order: 14,
+            level: 'Diploma',
+            title: {
+              en: 'Transformer Types, Construction & Cooling Methods',
+              hi: 'ट्रांसफॉर्मर प्रकार, संरचना एवं शीतलन विधियाँ',
+              bn: 'ট্রান্সফরমারের প্রকারভেদ, গঠন ও কুলিং পদ্ধতি'
+            },
+            description: {
+              en: 'Core-type vs Shell-type vs Berry-type transformers, CRGO silicon steel laminations, windings, and cooling methods (ONAN, ONAF, OFAF, OFWF).',
+              hi: 'कोर-टाइप, शेल-टाइप एवं बेरी-टाइप ट्रांसफॉर्मर, CRGO सिलिकॉन स्टील लेमिनेशन, वाइंडिंग एवं शीतलन विधियाँ (ONAN, ONAF, OFAF, OFWF)।',
+              bn: 'কোর-টাইপ, শেল-টাইপ ও বেরি-টাইপ ট্রান্সফরমার, CRGO সিলিকন স্টিল লেমিনেশন, ওয়াইন্ডিং এবং কুলিং পদ্ধতি (ONAN, ONAF, OFAF, OFWF)।'
+            }
+          },
+          {
+            id: 'ch6-transformer-equivalent-circuit',
+            chapterId: 'ch-electrical-machines',
+            order: 15,
+            level: 'Engineering',
+            title: {
+              en: 'Equivalent Circuit & Phasor Analysis',
+              hi: 'तुल्य परिपथ एवं फेज़र विश्लेषण',
+              bn: 'সমতুল্য সার্কিট ও ফেজর ডায়াগ্রাম'
+            },
+            description: {
+              en: 'Exact and approximate equivalent circuits referred to primary/secondary, magnetizing reactance Xm, core-loss resistance Rc, and phasor diagrams.',
+              hi: 'प्राथमिक/द्वितीयक के संदर्भ में सटीक एवं अनुमानित तुल्य परिपथ, कोर-हानि प्रतिरोध Rc, मैग्नेटाइजिंग रिएक्टेंस Xm एवं फेज़र आरेख।',
+              bn: 'প্রাইমারি ও সেকেন্ডারির সাপেক্ষে তুল্য সার্কিট, কোর-লস রেজিস্ট্যান্স Rc, ম্যাগনেটাইজিং রিঅ্যাকট্যান্স Xm এবং ফেজর ডায়াগ্রাম।'
+            }
+          },
+          {
+            id: 'ch6-transformer-losses-efficiency',
+            chapterId: 'ch-electrical-machines',
+            order: 16,
+            level: 'Engineering',
+            title: {
+              en: 'Transformer Losses, Efficiency & Voltage Regulation',
+              hi: 'हानियाँ, दक्षता एवं वोल्टेज रेगुलेशन',
+              bn: 'ট্রান্সফরমারের লস, কর্মদক্ষতা ও ভোল্টেজ রেগুলেশন'
+            },
+            description: {
+              en: 'Iron losses (Hysteresis & Eddy current), copper losses (I²R), maximum efficiency condition (Pi = Pcu), all-day efficiency, and voltage regulation formula.',
+              hi: 'लौह हानियाँ (हिस्टैरिसीस व भंवर धारा), कॉपर हानियाँ, अधिकतम दक्षता की शर्त (Pi = Pcu), ऑल-डे दक्षता एवं वोल्टेज नियमन।',
+              bn: 'আয়রন লস (হিস্টেরেসিস ও এডি কারেন্ট), কপার লস (I²R), সর্বোচ্চ দক্ষতার শর্ত (Pi = Pcu), অল-ডে দক্ষতা এবং ভোল্টেজ রেগুলেশন।'
+            }
+          },
+          {
+            id: 'ch6-transformer-tests',
+            chapterId: 'ch-electrical-machines',
+            order: 17,
+            level: 'Engineering',
+            title: {
+              en: 'Transformer Testing: OC, SC & Sumpner’s Back-to-Back Tests',
+              hi: 'ट्रांसफॉर्मर परीक्षण: OC, SC एवं संपटनर परीक्षण',
+              bn: 'ট্রান্সফরমার টেস্টিং: OC, SC ও সাম্পনার টেস্ট'
+            },
+            description: {
+              en: 'Open Circuit (OC) test for core parameters, Short Circuit (SC) test for winding impedance, and Sumpner’s test for full-load temperature rise.',
+              hi: 'कोर पैरामीटर हेतु ओपन सर्किट (OC) टेस्ट, वाइंडिंग प्रतिबाधा हेतु शॉर्ट सर्किट (SC) टेस्ट एवं तापमान वृद्धि हेतु संपटनर टेस्ट।',
+              bn: 'কোর প্যারামিটারের জন্য ওপেন সার্কিট (OC) টেস্ট, ওয়াইন্ডিং ইম্পিডেন্সের জন্য শর্ট সার্কিট (SC) টেস্ট এবং তাপমাত্রা বৃদ্ধির জন্য সাম্পনার টেস্ট।'
+            }
+          },
+          {
+            id: 'ch6-transformer-parallel-operation',
+            chapterId: 'ch-electrical-machines',
+            order: 18,
+            level: 'Engineering',
+            title: {
+              en: 'Parallel Operation & Load Sharing',
+              hi: 'समानांतर प्रचालन एवं भार विभाजन',
+              bn: 'প্যারালাল অপারেশন ও লোড শেয়ারিং'
+            },
+            description: {
+              en: 'Essential conditions for parallel operation: equal voltage ratio, same polarity, identical phase sequence/displacement, proportional per-unit impedance.',
+              hi: 'समानांतर प्रचालन की आवश्यक शर्तें: समान वोल्टेज अनुपात, समान ध्रुवता, समान फेज़ अनुक्रम एवं आनुपातिक प्रतिबाधा।',
+              bn: 'প্যারালাল অপারেশনের অপরিহার্য শর্তাবলী: অভিন্ন ভোল্টেজ অনুপাত, একই পোলারিটি, ফেজ সিকোয়েন্স ও আনুপাতিক পার-ইউনিট ইম্পিডেন্স।'
+            }
+          },
+          {
+            id: 'ch6-transformer-protection-maintenance',
+            chapterId: 'ch-electrical-machines',
+            order: 19,
+            level: 'Practical',
+            title: {
+              en: 'Transformer Protection (Buchholz Relay, 87T) & Maintenance',
+              hi: 'ट्रांसफॉर्मर सुरक्षा (बुखोल्ज़ रिले, 87T) एवं अनुरक्षण',
+              bn: 'ট্রান্সফরমার সুরক্ষা (বুখহোলজ রিলে, 87T) ও রক্ষণাবেক্ষণ'
+            },
+            description: {
+              en: 'Buchholz gas-actuated relay, conservator tank, silica gel breather, differential protection (87T), oil dielectric BDV testing, and DGA diagnostics.',
+              hi: 'बुखोल्ज़ गैस-चालित रिले, कंज़र्वेटर टैंक, सिलिका जेल ब्रीदर, डिफरेंशियल प्रोटेक्शन (87T), तेल ब्रेकडाउन (BDV) एवं DGA डायग्नोस्टिक्स।',
+              bn: 'বুখহোলজ গ্যাস চালিত রিলে, কনজারভেটর ট্যাংক, সিলিকা জেল ব্রিদার, ডিফারেনশিয়াল সুরক্ষা (87T), তেলের ডাই-ইলেকট্রিক BDV টেস্ট ও DGA বিশ্লেষণ।'
+            }
+          },
+          {
+            id: 'ch6-transformer-applications',
+            chapterId: 'ch-electrical-machines',
+            order: 20,
+            level: 'Practical',
+            title: {
+              en: 'Auto-transformers, Instrument Transformers & Industrial Duty',
+              hi: 'ऑटो-ट्रांसफॉर्मर, इंस्ट्रूमेंट ट्रांसफॉर्मर (CT/PT) एवं औद्योगिक उपयोग',
+              bn: 'অটো-ট্রান্সফরমার, ইনস্ট্রুমেন্ট ট্রান্সফরমার ও শিল্প প্রয়োগ'
+            },
+            description: {
+              en: 'Single-winding auto-transformers (copper saving factor 1 - 1/K), Current (CT) and Potential Transformers (PT), and specialized furnace and inverter-duty units.',
+              hi: 'ऑटो-ट्रांसफॉर्मर (कॉपर बचत 1 - 1/K), करंट (CT) व पोटेंशियल ट्रांसफॉर्मर (PT), फर्नेस एवं सोलर इनवर्टर-ड्यूटी ट्रांसफॉर्मर।',
+              bn: 'অটো-ট্রান্সফরমার (কপার সাশ্রয় ১ - ১/K), কারেন্ট ও পটেনশিয়াল ট্রান্সফরমার (CT/PT), ফার্নেস এবং সোলার ইনভার্টার ট্রান্সফরমার।'
+            }
+          },
+          {
+            id: 'ch6-induction-motor-principle',
+            chapterId: 'ch-electrical-machines',
+            order: 21,
+            level: 'Foundation',
+            title: {
+              en: '3-Phase Induction Motor: Operating Principle, RMF & Slip',
+              hi: '3-फेज इंडक्शन मोटर: कार्य सिद्धांत, RMF एवं स्लिप (s)',
+              bn: '৩-ফেজ ইন্ডাকশন মোটরের মূলনীতি, RMF ও স্লিপ (s)'
+            },
+            description: {
+              en: 'Generation of constant 1.5 Φm Rotating Magnetic Field (RMF), synchronous speed Ns = 120f/P, rotor induced currents, slip definition s = (Ns - Nr)/Ns, and rotor frequency fr = s·f.',
+              hi: '1.5 Φm मान के घूर्णी चुंबकीय क्षेत्र (RMF) का निर्माण, तुल्यकालिक गति Ns = 120f/P, स्लिप s = (Ns - Nr)/Ns एवं रोटर आवृत्ति fr = s·f।',
+              bn: '১.৫ Φm মানের ঘূর্ণমান চৌম্বক ক্ষেত্র (RMF) সৃষ্টি, সিনক্রোনাস স্পিড Ns = ১২০f/P, স্লিপ সমীকরণ s = (Ns - Nr)/Ns এবং রোটর ফ্রিকোয়েন্সি fr = s·f।'
+            }
+          },
+          {
+            id: 'ch6-induction-motor-torque-slip',
+            chapterId: 'ch-electrical-machines',
+            order: 22,
+            level: 'Engineering',
+            title: {
+              en: 'Torque-Slip Characteristics & Maximum Breakdown Torque',
+              hi: 'टॉर्क-स्लिप विशेषताएँ एवं अधिकतम टॉर्क (Pull-Out Torque)',
+              bn: 'টর্ক-স্লিপ বৈশিষ্ট্য ও সর্বোচ্চ ব্রেকডাউন টর্ক'
+            },
+            description: {
+              en: 'Electromagnetic torque equation T ∝ s·E2²·R2 / (R2² + (s·X2)²), condition for maximum breakdown torque (R2 = s_max·X2), and starting torque optimization.',
+              hi: 'टॉर्क समीकरण T ∝ s·E2²·R2 / (R2² + (s·X2)²), अधिकतम टॉर्क की शर्त (R2 = s_max·X2) एवं स्टार्टिंग टॉर्क सुधार।',
+              bn: 'টর্ক উৎপাদন সমীকরণ T ∝ s·E2²·R2 / (R2² + (s·X2)²), সর্বোচ্চ টর্কের শর্ত (R2 = s_max·X2) এবং স্টার্টিং টর্ক অপ্টিমাইজেশন।'
+            }
+          },
+          {
+            id: 'ch6-induction-motor-starters-speed',
+            chapterId: 'ch-electrical-machines',
+            order: 23,
+            level: 'Practical',
+            title: {
+              en: 'Induction Motor Starters (DOL, Star-Delta, Auto-Xfmr) & V/f Speed Control',
+              hi: 'इंडक्शन मोटर स्टार्टर (DOL, स्टार-डेल्टा, ऑटो-ट्रांसफॉर्मर) एवं V/f गति नियंत्रण',
+              bn: 'ইন্ডাকশন মোটর স্টার্টার (DOL, স্টার-ডেল্টা, অটো-ট্রান্সফরমার) ও V/f গতি নিয়ন্ত্রণ'
+            },
+            description: {
+              en: 'Methods to limit high starting current surges: Direct-On-Line (DOL), Star-Delta (reduces current & torque by 1/3), Auto-transformer starter, and modern VFD (V/f speed control).',
+              hi: 'स्टार्टिंग धारा सीमित करने की विधियाँ: DOL, स्टार-डेल्टा (धारा व टॉर्क 1/3), ऑटो-ट्रांसफॉर्मर स्टार्टर एवं आधुनिक VFD (V/f गति नियंत्रण)।',
+              bn: 'উচ্চ স্টার্টিং কারেন্ট নিয়ন্ত্রণে DOL, স্টার-ডেল্টা (কারেন্ট ও টর্ক ১/৩ ভাগে নামে), অটো-ট্রান্সফরমার স্টার্টার এবং আধুনিক ভিএফডি (V/f গতি নিয়ন্ত্রণ)।'
+            }
+          },
+          {
+            id: 'ch6-synchronous-generator-motor',
+            chapterId: 'ch-electrical-machines',
+            order: 24,
+            level: 'Engineering',
+            title: {
+              en: 'Synchronous Machines: Alternator EMF, Voltage Regulation & V-Curves',
+              hi: 'सिंक्रोनस मशीनें: अल्टरनेटर EMF, वोल्टेज रेगुलेशन एवं V-वक्र',
+              bn: 'সিনক্রোনাস মেশিন: অল্টারনেটর EMF, ভোল্টেজ রেগুলেশন ও V-কার্ভ'
+            },
+            description: {
+              en: 'Alternator EMF equation Eph = 4.44·Kc·Kd·f·T·Φ, voltage regulation methods, synchronous motor constant speed, V-curves and inverted V-curves, and synchronous condensers.',
+              hi: 'अल्टरनेटर EMF समीकरण Eph = 4.44·Kc·Kd·f·T·Φ, वोल्टेज रेगुलेशन विधियाँ, सिंक्रोनस मोटर V-वक्र एवं सिंक्रोनस कंडेनसर।',
+              bn: 'অল্টারনেটর EMF সমীকরণ Eph = ৪.৪৪·Kc·Kd·f·T·Φ, ভোল্টেজ রেগুলেশন, সিনক্রোনাস মোটরের V-কার্ভ এবং পাওয়ার গ্রিডে সিনক্রোনাস কনডেনসার।'
+            }
+          },
+          {
+            id: 'ch6-single-phase-special-motors',
+            chapterId: 'ch-electrical-machines',
+            order: 25,
+            level: 'Engineering',
+            title: {
+              en: 'Single-Phase Motors & Special Machines (Stepper, BLDC, Universal)',
+              hi: 'सिंगल-फेज मोटरें एवं विशेष मशीनें (स्टेपर, BLDC, यूनिवर्सल मोटर)',
+              bn: 'সিঙ্গেল-ফেজ মোটর ও বিশেষ বৈদ্যুতিক মেশিন (স্টেপার, BLDC, ইউনিভার্সাল মোটর)'
+            },
+            description: {
+              en: 'Double revolving field theory, capacitor-start/run motors, Universal AC/DC series motor, Stepper motors for precision motion, and Brushless DC (BLDC) motors in EVs and robotics.',
+              hi: 'डबल रिवॉल्विंग फील्ड थ्योरी, कैपेसिटर स्टार्ट/रन मोटर, यूनिवर्सल एसी/डीसी मोटर, स्टेपर मोटर एवं इलेक्ट्रिक वाहनों में BLDC मोटर।',
+              bn: 'ডাবল রিভলভিং ফিল্ড তত্ত্ব, ক্যাপাসিটর স্টার্ট ও রান মোটর, ইউনিভার্সাল এসি/ডিসি মোটর, স্টেপার মোটর এবং আধুনিক ইভি ও রোবোটিক্সে BLDC মোটর।'
+            }
+          }
+        ]
+      },
+      {
+        id: 'ch-capacitors',
+        subjectId: 'basic-electrical',
+        order: 7,
+        title: {
+          en: 'Chapter 7: Capacitors & Electrostatics',
+          hi: 'अध्याय 7: संधारित्र (कैपेसिटर) एवं स्थिरवैद्युतिकी',
+          bn: 'অধ্যায় ৭: ক্যাপাসিটর ও স্থিরতড়িৎ'
         },
         topics: [
           {
@@ -1465,83 +1878,203 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         },
         topics: [
           {
-            id: 'tp-faradays-law',
+            id: 'ch10-faradays-laws-discovery',
             chapterId: 'ch-em-induction',
             order: 1,
             title: {
-              en: 'Faraday\'s Law',
-              hi: 'फैराडे का नियम',
-              bn: 'ফ্যারাডের সূত্র'
+              en: 'Faraday’s Experiments & Laws of Electromagnetic Induction',
+              hi: 'फैराडे के प्रयोग एवं विद्युत चुंबकीय प्रेरण के नियम',
+              bn: 'ফ্যারাডের পরীক্ষা ও তড়িৎচুম্বকীয় আবেশের সূত্রসমূহ'
             }
           },
           {
-            id: 'tp-lenzs-law',
+            id: 'ch10-lenzs-law-conservation-energy',
             chapterId: 'ch-em-induction',
             order: 2,
             title: {
-              en: 'Lenz\'s Law',
-              hi: 'लेंज का नियम',
-              bn: 'লেনজের সূত্র'
+              en: 'Lenz’s Law & Conservation of Energy Principle',
+              hi: 'लेंज का नियम एवं ऊर्जा संरक्षण का सिद्धांत',
+              bn: 'লেনজের সূত্র ও শক্তি সংরক্ষণ নীতি'
             }
           },
           {
-            id: 'tp-flemings-right-hand-rule',
+            id: 'ch10-flemings-right-hand-rule',
             chapterId: 'ch-em-induction',
             order: 3,
             title: {
-              en: 'Fleming\'s Right-Hand Rule',
-              hi: 'फ्लेमिंग का दायां हाथ का नियम',
-              bn: 'ফ্লেমিংয়ের ডানহস্ত নিয়ম'
+              en: 'Fleming’s Right-Hand Rule & Vector Cross Product (v × B)',
+              hi: 'फ्लेमिंग का दायां हाथ नियम एवं सदिश गुणन (v × B)',
+              bn: 'ফ্লেমিংয়ের ডানহস্ত নিয়ম ও ভেক্টর গুণন (v × B)'
             }
           },
           {
-            id: 'tp-dynamically-induced-emf',
+            id: 'ch10-dynamically-induced-emf',
             chapterId: 'ch-em-induction',
             order: 4,
             title: {
-              en: 'Dynamically Induced EMF',
-              hi: 'गतिक रूप से प्रेरित EMF',
-              bn: 'ডায়নামিকালি আবিষ্ট ইএমএফ'
+              en: 'Dynamically (Motional) Induced EMF in Conductors',
+              hi: 'चालकों में गतिक रूप से प्रेरित ईएमएफ (EMF)',
+              bn: 'পরিবাহীতে গতিশীলভাবে আবিষ্ট ইএমএফ (EMF)'
             }
           },
           {
-            id: 'tp-statically-induced-emf',
+            id: 'ch10-statically-induced-emf',
             chapterId: 'ch-em-induction',
             order: 5,
             title: {
-              en: 'Statically Induced EMF',
-              hi: 'स्थैतिक रूप से प्रेरित EMF',
-              bn: 'স্ট্যাটিকালি আবিষ্ট ইএমএফ'
+              en: 'Statically Induced EMF: Concept & Working Principles',
+              hi: 'स्थैतिक रूप से प्रेरित ईएमएफ: अवधारणा एवं कार्य सिद्धांत',
+              bn: 'স্থিতিশীলভাবে আবিষ্ট ইএমএফ: ধারণা ও কার্যনীতি'
             }
           },
           {
-            id: 'tp-self-induced-emf',
+            id: 'ch10-self-induction-inductance',
             chapterId: 'ch-em-induction',
             order: 6,
             title: {
-              en: 'Self-Induced EMF',
-              hi: 'स्व-प्रेरित EMF',
-              bn: 'স্ব-আবিষ্ট ইএমএফ'
+              en: 'Self-Induction, Self-Induced EMF & Coefficient of Self-Inductance (L)',
+              hi: 'स्व-प्रेरण, स्व-प्रेरित ईएमएफ एवं स्व-प्रेरकत्व गुणांक (L)',
+              bn: 'স্ব-আবেশ, স্ব-আবিষ্ট ইএমএফ এবং স্ব-আবেশ গুণাঙ্ক (L)'
             }
           },
           {
-            id: 'tp-mutually-induced-emf',
+            id: 'ch10-mutual-induction-coupling',
             chapterId: 'ch-em-induction',
             order: 7,
             title: {
-              en: 'Mutually Induced EMF',
-              hi: 'पारस्परिक प्रेरित EMF',
-              bn: 'পারস্পরিক আবিষ্ট ইএমএফ'
+              en: 'Mutual Induction, Mutually Induced EMF & Mutual Inductance (M)',
+              hi: 'पारस्परिक प्रेरण, पारस्परिक प्रेरित ईएमएफ एवं अन्योन्य प्रेरकत्व (M)',
+              bn: 'পারস্পরিক আবেশ, পারস্পরিক আবিষ্ট ইএমএফ এবং পারস্পরিক আবেশাঙ্ক (M)'
             }
           },
           {
-            id: 'tp-em-induction-apps',
+            id: 'ch10-dot-convention-coupled-circuits',
             chapterId: 'ch-em-induction',
             order: 8,
             title: {
-              en: 'Applications of Electromagnetic Induction',
-              hi: 'विद्युत चुंबकीय प्रेरण के अनुप्रयोग',
-              bn: 'তড়িৎচুম্বকীয় আবেশের প্রয়োগ'
+              en: 'Dot Convention, Magnetic Polarity & Coupled Coil Configurations',
+              hi: 'डॉट परिपाटी, चुंबकीय ध्रुवता एवं युग्मित कुंडलियां',
+              bn: 'ডট কনভেনশন, চৌম্বক পোলারিটি ও যুগল কয়েল বিন্যাস'
+            }
+          },
+          {
+            id: 'ch10-energy-stored-magnetic-field',
+            chapterId: 'ch-em-induction',
+            order: 9,
+            title: {
+              en: 'Energy Stored in Inductive Magnetic Fields & Energy Density (w)',
+              hi: 'प्रेरक चुंबकीय क्षेत्र में संचित ऊर्जा एवं ऊर्जा घनत्व (w)',
+              bn: 'আবেশীয় চৌম্বক ক্ষেত্রে সঞ্চিত শক্তি ও শক্তি ঘনত্ব (w)'
+            }
+          },
+          {
+            id: 'ch10-eddy-currents-loss-mechanisms',
+            chapterId: 'ch-em-induction',
+            order: 10,
+            title: {
+              en: 'Eddy Currents: Formation, Core Heating & Lamination Design',
+              hi: 'भंवर धाराएं: उत्पत्ति, कोर तापन एवं लैमिनेशन डिजाइन',
+              bn: 'ঘূর্ণি বা এডি কারেন্ট: উৎপত্তি, কোর উত্তাপন ও ল্যামিনেশন নকশা'
+            }
+          },
+          {
+            id: 'ch10-elementary-ac-generator',
+            chapterId: 'ch-em-induction',
+            order: 11,
+            title: {
+              en: 'Elementary Single-Loop AC Generator: Slip Rings & Sine Wave Generation',
+              hi: 'प्राथमिक सिंगल-लूप एसी जनरेटर: स्लिप रिंग्स एवं ज्या-तरंग उत्पत्ति',
+              bn: 'মৌলিক সিঙ্গেল-লুপ এসি জেনারেটর: স্লিপ রিংস ও সাইন ওয়েভ উৎপত্তি'
+            }
+          },
+          {
+            id: 'ch10-elementary-dc-generator',
+            chapterId: 'ch-em-induction',
+            order: 12,
+            title: {
+              en: 'Elementary DC Generator: Split-Ring Commutator & Pulsating DC',
+              hi: 'प्राथमिक डीसी जनरेटर: स्प्लिट-रिंग कम्यूटेटर एवं स्पंदित डीसी',
+              bn: 'মৌলিক ডিসি জেনারেটর: স্প্লিট-রিং কমিউটেটর ও স্পন্দিত ডিসি'
+            }
+          },
+          {
+            id: 'ch10-skin-effect-proximity-effect',
+            chapterId: 'ch-em-induction',
+            order: 13,
+            title: {
+              en: 'High-Frequency Induction: Skin Effect, Skin Depth (δ) & Proximity Effect',
+              hi: 'उच्च-आवृत्ति प्रेरण: स्किन प्रभाव, स्किन डेप्थ (δ) एवं प्रॉक्सिमिटी प्रभाव',
+              bn: 'উচ্চ-কম্পাঙ্কের আবেশ: স্কিন ইফেক্ট, স্কিন ডেপথ (δ) ও প্রক্সিমিটি ইফেক্ট'
+            }
+          },
+          {
+            id: 'ch10-homopolar-generators-discs',
+            chapterId: 'ch-em-induction',
+            order: 14,
+            title: {
+              en: 'Faraday’s Disc & Homopolar Generators (Pure DC Induction)',
+              hi: 'फैराडे डिस्क एवं होमोपोलर जनरेटर (शुद्ध डीसी प्रेरण)',
+              bn: 'ফ্যারাডে ডিস্ক ও হোমোপোলার জেনারেটর (বিশুদ্ধ ডিসি আবেশ)'
+            }
+          },
+          {
+            id: 'ch10-induction-coils-transformers',
+            chapterId: 'ch-em-induction',
+            order: 15,
+            title: {
+              en: 'Induction Coils, Ruhmkorff Spark Coils & Transformer Action Principles',
+              hi: 'प्रेरण कुंडलियां, रूह्मकॉर्फ स्पार्क कॉइल एवं ट्रांसफार्मर क्रिया सिद्धांत',
+              bn: 'আবেশ কয়েল, রুমকর্ফ স্পার্ক কয়েল ও ট্রান্সফরমারের কার্যনীতি'
+            }
+          },
+          {
+            id: 'ch10-electromagnetic-braking-damping',
+            chapterId: 'ch-em-induction',
+            order: 16,
+            title: {
+              en: 'Electromagnetic Braking, Eddy Current Damping & Train Retarders',
+              hi: 'विद्युत चुंबकीय ब्रेकिंग, भंवर धारा डैम्पिंग एवं ट्रेन मंदक',
+              bn: 'তড়িৎচৌম্বকীয় ব্রেকিং, এডি কারেন্ট ড্যাম্পিং ও ট্রেন রিটার্ডার'
+            }
+          },
+          {
+            id: 'ch10-induction-heating-melting',
+            chapterId: 'ch-em-induction',
+            order: 17,
+            title: {
+              en: 'Industrial Induction Heating, Surface Hardening & Induction Furnaces',
+              hi: 'औद्योगिक प्रेरण तापन, सतह कठोरीकरण एवं प्रेरण भट्टियां',
+              bn: 'শিল্প আবেশ উত্তাপন, পৃষ্ঠ দৃঢ়ীকরণ ও ইন্ডাকশন ফার্নেস'
+            }
+          },
+          {
+            id: 'ch10-wireless-power-rfid-inductive',
+            chapterId: 'ch-em-induction',
+            order: 18,
+            title: {
+              en: 'Wireless Power Transfer (WPT), Qi Inductive Charging & RFID Induction',
+              hi: 'वायरलेस पावर ट्रांसफर (WPT), क्यूई इंडक्टिव चार्जिंग एवं आरएफआईडी प्रेरण',
+              bn: 'ওয়্যারলেস পাওয়ার ট্রান্সফার (WPT), কিউআই চার্জিং ও আরএফআইডি আবেশ'
+            }
+          },
+          {
+            id: 'ch10-linear-induction-magnetic-levitation',
+            chapterId: 'ch-em-induction',
+            order: 19,
+            title: {
+              en: 'Linear Induction Motors (LIM), Magnetic Levitation (Maglev) & Railguns',
+              hi: 'रैखिक प्रेरण मोटर (LIM), चुंबकीय उत्तोलन (मैगलेव) एवं रेलगन',
+              bn: 'লিনিয়ার ইন্ডাকশন মোটর (LIM), ম্যাগনেটিক লেভিটেশন (ম্যাগলেভ) ও রেলগান'
+            }
+          },
+          {
+            id: 'ch10-em-induction-testing-safety-capstone',
+            chapterId: 'ch-em-induction',
+            order: 20,
+            title: {
+              en: 'Electromagnetic Induction Testing, Shielding, EMI/EMC & Chapter 10 Capstone',
+              hi: 'विद्युत चुंबकीय प्रेरण परीक्षण, शील्डिंग, ईएमआई/ईएमसी एवं कैपस्टोन',
+              bn: 'তড়িৎচুম্বকীয় আবেশ পরীক্ষা, শিল্ডিং, ইএমআই/ইএমসি ও অধ্যায় ১০ ক্যাপস্টোন'
             }
           }
         ]
@@ -2228,6 +2761,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           }))
         };
       }
+      if (chapter.id === 'ch-electrical-machines' || chapter.id === 'ch-dc-machines-transformers' || chapter.id === 'ch-dc-machines') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_6_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
       if (chapter.id === 'ch-capacitors') {
         return {
           ...chapter,
@@ -2252,6 +2794,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_9_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-em-induction') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_10_LESSONS[topic.id] || topic.lesson
           }))
         };
       }
@@ -2390,7 +2941,13 @@ export function getTopicContext(topicId: string): TopicContext | undefined {
       (topicId.includes('ch6') && c.order === 6) ||
       (topicId.includes('ch7') && c.order === 7) ||
       (topicId.includes('ch8') && c.order === 8) ||
-      (topicId.includes('ch9') && c.order === 9)
+      (topicId.includes('ch9') && c.order === 9) ||
+      (topicId.includes('ch10') && c.order === 10) ||
+      (topicId.includes('ch11') && c.order === 11) ||
+      (topicId.includes('ch12') && c.order === 12) ||
+      (topicId.includes('ch13') && c.order === 13) ||
+      (topicId.includes('ch14') && c.order === 14) ||
+      (topicId.includes('ch15') && c.order === 15)
     );
 
     const chIdx = matchingChapterIdx !== -1 ? matchingChapterIdx : 0;

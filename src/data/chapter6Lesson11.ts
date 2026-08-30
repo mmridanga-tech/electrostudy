@@ -4,7 +4,7 @@ export const LESSON_DC_MOTOR_SPEED_CONTROL: Lesson = {
   id: 'lsn-ch6-dc-motor-speed-control',
   topicId: 'ch6-dc-motor-speed-control',
   chapterId: 'ch-electrical-machines',
-  order: 11,
+  order: 19,
   title: {
     en: 'DC Motor Speed Control Methods',
     hi: 'डीसी मोटर गति नियंत्रण विधियाँ',

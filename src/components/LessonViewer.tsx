@@ -103,6 +103,11 @@ import { InductionMotorAnimation } from './interactive/InductionMotorAnimation';
 import { SynchronousMachineAnimation } from './interactive/SynchronousMachineAnimation';
 import { PowerGridTransmissionAnimation } from './interactive/PowerGridTransmissionAnimation';
 import { MeasurementLabSimulator } from './interactive/MeasurementLabSimulator';
+import { FaradaysLenzsRuleSimulator } from './interactive/FaradaysLenzsRuleSimulator';
+import { FlemingsRightHandRuleAnimation } from './interactive/FlemingsRightHandRuleAnimation';
+import { DynamicallyInducedEMFAnimation } from './interactive/DynamicallyInducedEMFAnimation';
+import { StaticallyInducedEMFAnimation } from './interactive/StaticallyInducedEMFAnimation';
+import { SelfInductionAnimation } from './interactive/SelfInductionAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -522,6 +527,8 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'tp-amperes-law' ||
     topicId === 'tp-mag-vs-elec-circuit' ||
     topicId === 'tp-series-magnetic-circuit' ||
+    lessonId === 'lsn-ch9-magnetic-flux' ||
+    lessonId === 'lsn-ch9-flux-density' ||
     lessonId === 'lsn-ch9-magnetic-flux-density' ||
     lessonId === 'lsn-ch9-mmf-reluctance-permeability' ||
     lessonId === 'lsn-ch9-reluctance-permeance' ||
@@ -532,6 +539,55 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     lessonId === 'lsn-ch9-series-magnetic-circuit'
   ) {
     return <MagneticCircuitAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Chapter 10: Electromagnetic Induction Simulators
+  if (
+    topicId === 'ch10-faradays-laws-discovery' ||
+    lessonId === 'lsn-ch10-faradays-laws-discovery' ||
+    topicId === 'tp-faradays-laws-discovery'
+  ) {
+    return <FaradaysLenzsRuleSimulator currentLanguage={currentLanguage} focusMode="faraday" />;
+  }
+
+  if (
+    topicId === 'ch10-lenzs-law-conservation-energy' ||
+    lessonId === 'lsn-ch10-lenzs-law-conservation-energy' ||
+    topicId === 'tp-lenzs-law-conservation-energy'
+  ) {
+    return <FaradaysLenzsRuleSimulator currentLanguage={currentLanguage} focusMode="lenz" />;
+  }
+
+  if (
+    topicId === 'ch10-flemings-right-hand-rule' ||
+    lessonId === 'lsn-ch10-flemings-right-hand-rule' ||
+    topicId === 'tp-flemings-right-hand-rule'
+  ) {
+    return <FlemingsRightHandRuleAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-dynamically-induced-emf' ||
+    lessonId === 'lsn-ch10-dynamically-induced-emf' ||
+    topicId === 'tp-dynamically-induced-emf'
+  ) {
+    return <DynamicallyInducedEMFAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-statically-induced-emf' ||
+    lessonId === 'lsn-ch10-statically-induced-emf' ||
+    topicId === 'tp-statically-induced-emf'
+  ) {
+    return <StaticallyInducedEMFAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-self-induction-inductance' ||
+    lessonId === 'lsn-ch10-self-induction-inductance' ||
+    topicId === 'tp-self-induction-inductance'
+  ) {
+    return <SelfInductionAnimation currentLanguage={currentLanguage} />;
   }
 
   if (

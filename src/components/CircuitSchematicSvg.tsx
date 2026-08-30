@@ -3766,6 +3766,571 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch10-faraday-induction-apparatus':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-xl h-60">
+            <defs>
+              <linearGradient id="ch10MagNGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ef4444" />
+                <stop offset="100%" stopColor="#b91c1c" />
+              </linearGradient>
+              <linearGradient id="ch10MagSGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1d4ed8" />
+              </linearGradient>
+              <marker id="ch10ArrowGlow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch10VelocityArrow" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#f59e0b" />
+              </marker>
+            </defs>
+
+            {/* Title / Schematic Header */}
+            <text x="270" y="24" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Faraday's Electromagnetic Induction Discovery Apparatus
+            </text>
+
+            {/* Moving Bar Magnet */}
+            <g transform="translate(60, 65)">
+              {/* South Pole */}
+              <rect x="0" y="0" width="50" height="34" rx="3" fill="url(#ch10MagSGrad)" stroke="#1e3a8a" strokeWidth="1.5" />
+              <text x="25" y="22" fill="#ffffff" fontWeight="bold" fontSize="16" textAnchor="middle">S</text>
+              {/* North Pole */}
+              <rect x="50" y="0" width="50" height="34" rx="3" fill="url(#ch10MagNGrad)" stroke="#7f1d1d" strokeWidth="1.5" />
+              <text x="75" y="22" fill="#ffffff" fontWeight="bold" fontSize="16" textAnchor="middle">N</text>
+              {/* Velocity vector */}
+              <line x1="110" y1="17" x2="150" y2="17" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#ch10VelocityArrow)" />
+              <text x="130" y="8" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">Motion (v)</text>
+            </g>
+
+            {/* Magnetic Flux Lines Linkage */}
+            <g opacity="0.8">
+              {[-20, 0, 20].map((yOffset, i) => (
+                <path
+                  key={i}
+                  d={`M 160 ${82 + yOffset * 0.4} C 210 ${82 + yOffset * 1.5}, 240 ${82 + yOffset * 1.2}, 290 ${82 + yOffset * 0.8}`}
+                  fill="none"
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 3"
+                  markerEnd="url(#ch10ArrowGlow)"
+                />
+              ))}
+            </g>
+
+            {/* Solenoid Coil Form & Windings */}
+            <g transform="translate(260, 50)">
+              {/* Core Cylinder */}
+              <rect x="0" y="10" width="140" height="44" rx="5" fill="#1e293b" stroke="#475569" strokeWidth="1.5" />
+              <text x="70" y="36" fill="#64748b" fontSize="11" fontWeight="bold" textAnchor="middle">Iron Core (N turns)</text>
+
+              {/* Helical Coil Turns */}
+              {Array.from({ length: 8 }).map((_, i) => (
+                <g key={i}>
+                  <path
+                    d={`M ${10 + i * 16} 8 C ${18 + i * 16} -6, ${22 + i * 16} 70, ${26 + i * 16} 56`}
+                    fill="none"
+                    stroke="#f59e0b"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                  />
+                  {/* Current flow arrows on coil */}
+                  <polygon points={`${20 + i * 16},26 ${24 + i * 16},22 ${24 + i * 16},30`} fill="#34d399" />
+                </g>
+              ))}
+            </g>
+
+            {/* Circuit Leads connecting to Galvanometer */}
+            <path d="M 270 106 L 270 180 L 320 180" fill="none" stroke="#64748b" strokeWidth="2.5" />
+            <path d="M 386 106 L 386 195 L 340 195 L 340 180" fill="none" stroke="#64748b" strokeWidth="2.5" />
+
+            {/* Center-Zero Galvanometer */}
+            <g transform="translate(330, 180)">
+              <circle cx="0" cy="0" r="30" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+              {/* Scale Arc */}
+              <path d="M -18 -8 A 20 20 0 0 1 18 -8" fill="none" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="0" y1="-22" x2="0" y2="-17" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="-8" fill="#38bdf8" fontSize="8" fontWeight="bold" textAnchor="middle">0</text>
+              <text x="-16" y="-6" fill="#f87171" fontSize="7" textAnchor="middle">-</text>
+              <text x="16" y="-6" fill="#34d399" fontSize="7" textAnchor="middle">+</text>
+              {/* Needle Deflected */}
+              <line x1="0" y1="4" x2="14" y2="-18" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="0" cy="0" r="3" fill="#ffffff" />
+              <text x="0" y="16" fill="#e2e8f0" fontSize="9" fontWeight="bold" textAnchor="middle">Galvanometer (G)</text>
+            </g>
+
+            {/* Governing Mathematical Law Annotation */}
+            <rect x="50" y="185" width="200" height="42" rx="6" fill="#090d16" stroke="#0284c7" strokeWidth="1.5" />
+            <text x="150" y="202" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Faraday's Law of Induction</text>
+            <text x="150" y="218" fill="#34d399" fontSize="12" fontWeight="bold" fontFamily="monospace" textAnchor="middle">e = - N · (dΦ / dt)</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Relative motion between magnetic field lines and coil induces proportional electromotive force (e = -N dΦ/dt)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-lenz-law-flux-opposition':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-xl h-60">
+            <defs>
+              <marker id="ch10LenzArrowL" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#ef4444" />
+              </marker>
+              <marker id="ch10LenzArrowR" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="24" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Lenz's Law: Dynamic Opposition to Magnetic Flux Change & Energy Conservation
+            </text>
+
+            {/* Case A: North Pole Approaching Coil (Left Panel) */}
+            <g transform="translate(30, 45)">
+              <rect x="0" y="0" width="225" height="155" rx="8" fill="#090d16" stroke="#334155" strokeWidth="1.5" />
+              <text x="112" y="20" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">
+                CASE 1: North Pole Entering (ΔΦ &gt; 0)
+              </text>
+
+              {/* Magnet N approaching */}
+              <rect x="15" y="45" width="35" height="25" rx="2" fill="#ef4444" />
+              <text x="32" y="62" fill="#ffffff" fontWeight="bold" fontSize="12" textAnchor="middle">N</text>
+              {/* Velocity arrow */}
+              <line x1="55" y1="57" x2="80" y2="57" stroke="#fbbf24" strokeWidth="2.5" markerEnd="url(#ch10VelocityArrow)" />
+              <text x="67" y="48" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">v →</text>
+
+              {/* Coil Face */}
+              <ellipse cx="140" cy="57" rx="14" ry="32" fill="none" stroke="#d97706" strokeWidth="3" />
+              {/* Induced North Pole */}
+              <circle cx="140" cy="57" r="12" fill="#ef4444" opacity="0.9" />
+              <text x="140" y="61" fill="#ffffff" fontWeight="bold" fontSize="11" textAnchor="middle">N</text>
+
+              {/* Opposing Repulsion Vectors */}
+              <line x1="95" y1="57" x2="120" y2="57" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="112" y="78" fill="#ef4444" fontSize="9" fontWeight="bold" textAnchor="middle">
+                REPULSION (F_lenz ←)
+              </text>
+
+              {/* Bottom Outcome Tag */}
+              <rect x="10" y="108" width="205" height="36" rx="4" fill="#1e293b" />
+              <text x="112" y="122" fill="#38bdf8" fontSize="9" textAnchor="middle">
+                Induced current creates N-pole to oppose entry
+              </text>
+              <text x="112" y="136" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Work done against repulsion = Electrical energy
+              </text>
+            </g>
+
+            {/* Case B: North Pole Receding / Leaving (Right Panel) */}
+            <g transform="translate(285, 45)">
+              <rect x="0" y="0" width="225" height="155" rx="8" fill="#090d16" stroke="#334155" strokeWidth="1.5" />
+              <text x="112" y="20" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">
+                CASE 2: North Pole Leaving (ΔΦ &lt; 0)
+              </text>
+
+              {/* Magnet N receding */}
+              <rect x="15" y="45" width="35" height="25" rx="2" fill="#ef4444" />
+              <text x="32" y="62" fill="#ffffff" fontWeight="bold" fontSize="12" textAnchor="middle">N</text>
+              {/* Velocity arrow to left */}
+              <line x1="45" y1="57" x2="10" y2="57" stroke="#fbbf24" strokeWidth="2.5" markerEnd="url(#ch10VelocityArrow)" />
+              <text x="25" y="48" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">← v</text>
+
+              {/* Coil Face */}
+              <ellipse cx="140" cy="57" rx="14" ry="32" fill="none" stroke="#d97706" strokeWidth="3" />
+              {/* Induced South Pole */}
+              <circle cx="140" cy="57" r="12" fill="#3b82f6" opacity="0.9" />
+              <text x="140" y="61" fill="#ffffff" fontWeight="bold" fontSize="11" textAnchor="middle">S</text>
+
+              {/* Opposing Attraction Vectors */}
+              <line x1="60" y1="57" x2="115" y2="57" stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="95" y="78" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+                ATTRACTION (F_lenz →)
+              </text>
+
+              {/* Bottom Outcome Tag */}
+              <rect x="10" y="108" width="205" height="36" rx="4" fill="#1e293b" />
+              <text x="112" y="122" fill="#38bdf8" fontSize="9" textAnchor="middle">
+                Induced current creates S-pole to pull magnet back
+              </text>
+              <text x="112" y="136" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Work done against attraction = Electrical energy
+              </text>
+            </g>
+
+            {/* Bottom Energy Conservation Law Banner */}
+            <rect x="30" y="212" width="480" height="26" rx="4" fill="#0369a1" opacity="0.2" stroke="#0284c7" />
+            <text x="270" y="229" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Energy Conservation: Mechanical Work Input ≡ Induced Electrical Energy + Joule Losses (I²Rt)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Lenz's Law mandates that induced current polarity always mechanically resists the change in magnetic flux"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-fleming-right-hand-rule':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-xl h-60">
+            <defs>
+              <marker id="ch10VecB" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch10VecV" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#fbbf24" />
+              </marker>
+              <marker id="ch10VecI" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M 0 0 L 6 3 L 0 6 z" fill="#34d399" />
+              </marker>
+            </defs>
+
+            {/* Header */}
+            <text x="270" y="24" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+              Fleming's Right-Hand Rule (Generator Action) & Motional EMF (e = B · l · v · sin θ)
+            </text>
+
+            {/* Left Box: 3D Orthogonal Vector Triad */}
+            <g transform="translate(40, 48)">
+              <rect x="0" y="0" width="220" height="150" rx="8" fill="#090d16" stroke="#334155" strokeWidth="1.5" />
+              <text x="110" y="20" fill="#f59e0b" fontSize="11" fontWeight="bold" textAnchor="middle">
+                Right-Hand Orthogonal Triad
+              </text>
+
+              {/* Origin at (90, 95) */}
+              <g transform="translate(90, 95)">
+                {/* Thumb Vector (Motion v) - Upward */}
+                <line x1="0" y1="0" x2="0" y2="-55" stroke="#fbbf24" strokeWidth="4" markerEnd="url(#ch10VecV)" />
+                <text x="12" y="-45" fill="#fbbf24" fontSize="11" fontWeight="bold">Thumb: Motion (v)</text>
+
+                {/* Forefinger Vector (Field B) - Rightward */}
+                <line x1="0" y1="0" x2="70" y2="0" stroke="#38bdf8" strokeWidth="4" markerEnd="url(#ch10VecB)" />
+                <text x="75" y="14" fill="#38bdf8" fontSize="11" fontWeight="bold">Index: Field (B)</text>
+
+                {/* Middle Finger Vector (Current I) - Down-Left perspective */}
+                <line x1="0" y1="0" x2="-45" y2="35" stroke="#34d399" strokeWidth="4" markerEnd="url(#ch10VecI)" />
+                <text x="-75" y="48" fill="#34d399" fontSize="11" fontWeight="bold">Middle: Current (I)</text>
+
+                {/* Center Node */}
+                <circle cx="0" cy="0" r="5" fill="#ffffff" />
+              </g>
+
+              <text x="110" y="140" fill="#94a3b8" fontSize="9" textAnchor="middle">
+                Mutually perpendicular at 90°
+              </text>
+            </g>
+
+            {/* Right Box: Physical Conductor Cutting Magnetic Field */}
+            <g transform="translate(280, 48)">
+              <rect x="0" y="0" width="220" height="150" rx="8" fill="#090d16" stroke="#334155" strokeWidth="1.5" />
+              <text x="110" y="20" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">
+                Physical Conductor in B-Field
+              </text>
+
+              {/* Pole N (Left) and Pole S (Right) */}
+              <rect x="15" y="40" width="22" height="60" rx="2" fill="#ef4444" />
+              <text x="26" y="74" fill="#ffffff" fontWeight="bold" fontSize="12" textAnchor="middle">N</text>
+
+              <rect x="183" y="40" width="22" height="60" rx="2" fill="#3b82f6" />
+              <text x="194" y="74" fill="#ffffff" fontWeight="bold" fontSize="12" textAnchor="middle">S</text>
+
+              {/* Field lines B */}
+              {[50, 70, 90].map((yP, i) => (
+                <line key={i} x1="42" y1={yP} x2="178" y2={yP} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 3" markerEnd="url(#ch10VecB)" />
+              ))}
+
+              {/* Conductor Rod with velocity vector upward */}
+              <circle cx="110" cy="70" r="10" fill="#475569" stroke="#f59e0b" strokeWidth="2" />
+              {/* Dot = current towards viewer */}
+              <circle cx="110" cy="70" r="3.5" fill="#34d399" />
+
+              {/* Velocity vector upward */}
+              <line x1="110" y1="60" x2="110" y2="35" stroke="#fbbf24" strokeWidth="3" markerEnd="url(#ch10VecV)" />
+              <text x="125" y="45" fill="#fbbf24" fontSize="9" fontWeight="bold">v ↑</text>
+
+              {/* Formula & Result label */}
+              <text x="110" y="122" fill="#34d399" fontSize="10" fontWeight="bold" fontFamily="monospace" textAnchor="middle">
+                e = B · l · v · sin(θ)
+              </text>
+              <text x="110" y="138" fill="#e2e8f0" fontSize="9" textAnchor="middle">
+                Peak EMF at θ = 90° (sin 90° = 1)
+              </text>
+            </g>
+
+            {/* Bottom Rule Comparison Bar */}
+            <rect x="40" y="210" width="460" height="26" rx="4" fill="#0f172a" stroke="#475569" />
+            <text x="270" y="227" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Right Hand: Generator (Motion + Field → Induced EMF) | Left Hand: Motor (Current + Field → Force)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Fleming's Right-Hand Rule determines the direction of dynamically induced motional EMF in generators"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-dynamically-induced-emf':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-auto">
+            <defs>
+              <marker id="dynVecV" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#38bdf8" />
+              </marker>
+              <marker id="dynVecF" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#ef4444" />
+              </marker>
+              <marker id="dynCurI" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#10b981" />
+              </marker>
+            </defs>
+
+            {/* Background Field Area */}
+            <rect x="130" y="30" width="370" height="170" rx="6" fill="#0f172a" stroke="#334155" strokeWidth="1.5" />
+            <text x="500" y="48" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="end" fontFamily="monospace">
+              Uniform Magnetic Field B ⊗ (Into Page)
+            </text>
+
+            {/* Field X Marks */}
+            {[170, 230, 290, 350, 410, 470].map((x) =>
+              [60, 95, 130, 165].map((y) => (
+                <g key={`${x}-${y}`} transform={`translate(${x}, ${y})`}>
+                  <line x1="-5" y1="-5" x2="5" y2="5" stroke="#334155" strokeWidth="1.5" />
+                  <line x1="-5" y1="5" x2="5" y2="-5" stroke="#334155" strokeWidth="1.5" />
+                </g>
+              ))
+            )}
+
+            {/* Conducting Rails */}
+            <line x1="50" y1="60" x2="480" y2="60" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
+            <line x1="50" y1="170" x2="480" y2="170" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
+
+            {/* Left End Load Resistor R */}
+            <line x1="50" y1="60" x2="50" y2="90" stroke="#94a3b8" strokeWidth="3" />
+            <rect x="36" y="90" width="28" height="50" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" />
+            <text x="50" y="119" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">R</text>
+            <line x1="50" y1="140" x2="50" y2="170" stroke="#94a3b8" strokeWidth="3" />
+            <text x="25" y="119" fill="#94a3b8" fontSize="9" textAnchor="end">Load</text>
+
+            {/* Moving Conducting Rod */}
+            <rect x="270" y="45" width="14" height="140" rx="3" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+            <text x="277" y="119" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle" transform="rotate(-90 277 119)">
+              Length l
+            </text>
+
+            {/* Positive & Negative Terminals on Moving Rod */}
+            <circle cx="277" cy="52" r="5" fill="#10b981" />
+            <text x="277" y="55" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">+</text>
+            <circle cx="277" cy="178" r="5" fill="#ef4444" />
+            <text x="277" y="181" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">-</text>
+
+            {/* Velocity Vector (Rightward) */}
+            <line x1="284" y1="115" x2="360" y2="115" stroke="#38bdf8" strokeWidth="3" markerEnd="url(#dynVecV)" />
+            <text x="320" y="105" fill="#38bdf8" fontSize="11" fontWeight="bold">Velocity v →</text>
+
+            {/* Opposing Lorentz Force Vector (Leftward) */}
+            <line x1="270" y1="135" x2="200" y2="135" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#dynVecF)" />
+            <text x="235" y="150" fill="#f87171" fontSize="9" fontWeight="bold">F_opp = B·i·l ←</text>
+
+            {/* Current Flow Indicators */}
+            <line x1="160" y1="60" x2="110" y2="60" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#dynCurI)" />
+            <text x="135" y="50" fill="#10b981" fontSize="9" fontWeight="bold">i = e / R</text>
+            <line x1="110" y1="170" x2="160" y2="170" stroke="#10b981" strokeWidth="2.5" markerEnd="url(#dynCurI)" />
+
+            {/* Bottom Formula Banner */}
+            <rect x="40" y="210" width="460" height="24" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="226" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Motional EMF: e = B · l · v · sin(θ) | Peak EMF at θ = 90° (sin 90° = 1.0)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Dynamically induced motional EMF: Physical conductor cuts magnetic flux B at velocity v"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-statically-induced-emf':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-auto">
+            <defs>
+              <marker id="fluxArr" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#a855f7" />
+              </marker>
+            </defs>
+
+            {/* Laminated Iron Core */}
+            <rect x="140" y="30" width="260" height="160" rx="8" fill="#1e293b" stroke="#64748b" strokeWidth="4" />
+            <rect x="190" y="70" width="160" height="80" rx="4" fill="#020617" stroke="#64748b" strokeWidth="2" />
+
+            {/* Magnetic Core Flux Path (Dashed with arrows) */}
+            <rect x="165" y="50" width="210" height="120" rx="6" fill="none" stroke="#c084fc" strokeWidth="2" strokeDasharray="5 3" />
+            <line x1="270" y1="50" x2="285" y2="50" stroke="#a855f7" strokeWidth="2.5" markerEnd="url(#fluxArr)" />
+            <line x1="375" y1="110" x2="375" y2="125" stroke="#a855f7" strokeWidth="2.5" markerEnd="url(#fluxArr)" />
+            <line x1="270" y1="170" x2="255" y2="170" stroke="#a855f7" strokeWidth="2.5" markerEnd="url(#fluxArr)" />
+            <line x1="165" y1="110" x2="165" y2="95" stroke="#a855f7" strokeWidth="2.5" markerEnd="url(#fluxArr)" />
+            <text x="270" y="44" fill="#c084fc" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Alternating Flux Φ(t) = Φ_m sin(ωt)
+            </text>
+
+            {/* Stationary Primary Coil (Left Limb) */}
+            <g transform="translate(140, 60)">
+              {[-5, 15, 35, 55, 75, 95].map((yP, i) => (
+                <rect key={i} x="-16" y={yP} width="16" height="12" rx="2" fill="#d97706" stroke="#fbbf24" strokeWidth="1" />
+              ))}
+              <text x="-25" y="55" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="end">
+                Primary N₁ Turns
+              </text>
+            </g>
+
+            {/* AC Supply to Primary */}
+            <g transform="translate(45, 110)">
+              <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M -8 0 Q -4 -8 0 0 T 8 0" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="28" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">V₁ (AC)</text>
+              <line x1="16" y1="-8" x2="124" y2="-8" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="16" y1="8" x2="124" y2="8" stroke="#38bdf8" strokeWidth="2" />
+            </g>
+
+            {/* Stationary Secondary Coil (Right Limb) */}
+            <g transform="translate(400, 60)">
+              {[5, 30, 55, 80].map((yP, i) => (
+                <rect key={i} x="0" y={yP} width="16" height="14" rx="2" fill="#0284c7" stroke="#38bdf8" strokeWidth="1" />
+              ))}
+              <text x="25" y="55" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="start">
+                Secondary N₂ Turns
+              </text>
+            </g>
+
+            {/* Secondary Output Load */}
+            <g transform="translate(495, 110)">
+              <rect x="-10" y="-20" width="20" height="40" rx="3" fill="#1e293b" stroke="#10b981" strokeWidth="2" />
+              <text x="0" y="4" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">Load</text>
+              <line x1="-79" y1="-15" x2="-10" y2="-15" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="-79" y1="15" x2="-10" y2="15" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="32" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">E₂ (RMS)</text>
+            </g>
+
+            {/* Zero Motion Badge */}
+            <rect x="210" y="95" width="120" height="26" rx="4" fill="#0f172a" stroke="#10b981" />
+            <text x="270" y="112" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Zero Physical Motion (v=0)
+            </text>
+
+            {/* Bottom Formula Banner */}
+            <rect x="40" y="205" width="460" height="26" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="222" fill="#c084fc" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Statically Induced EMF: e = -N (dΦ/dt) | E_rms = 4.44 · f · N · Φ_m
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Statically induced EMF: Time-varying magnetic flux dΦ/dt induces voltage in stationary windings without motion"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-self-induction-rl-transient':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-auto">
+            <defs>
+              <marker id="rlCurI" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="#10b981" />
+              </marker>
+            </defs>
+
+            {/* Left Circuit Box: Schematic */}
+            <rect x="30" y="20" width="260" height="175" rx="6" fill="#020617" stroke="#334155" strokeWidth="1.5" />
+            <text x="160" y="38" fill="#94a3b8" fontSize="10" fontWeight="bold" textAnchor="middle">
+              RL Series Circuit & Inductive Kick
+            </text>
+
+            {/* Circuit Loops */}
+            <rect x="50" y="55" width="220" height="120" rx="6" fill="none" stroke="#475569" strokeWidth="2.5" />
+
+            {/* DC Battery */}
+            <g transform="translate(50, 115)">
+              <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="-2" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">+</text>
+              <text x="0" y="9" textAnchor="middle" fill="#38bdf8" fontSize="9" fontWeight="bold">-</text>
+              <text x="-18" y="3" textAnchor="end" fill="#38bdf8" fontSize="9" fontWeight="bold">V_dc</text>
+            </g>
+
+            {/* Switch */}
+            <g transform="translate(100, 55)">
+              <circle cx="0" cy="0" r="3" fill="#94a3b8" />
+              <circle cx="25" cy="0" r="3" fill="#94a3b8" />
+              <line x1="0" y1="0" x2="25" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              <text x="12" y="-8" fill="#cbd5e1" fontSize="8" fontWeight="bold" textAnchor="middle">SW</text>
+            </g>
+
+            {/* Resistor R */}
+            <g transform="translate(190, 55)">
+              <rect x="-18" y="-8" width="36" height="16" rx="2" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="0" y="4" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">R</text>
+            </g>
+
+            {/* Inductor L with Iron Core */}
+            <g transform="translate(270, 115)">
+              <line x1="12" y1="-25" x2="12" y2="25" stroke="#64748b" strokeWidth="2" />
+              <line x1="15" y1="-25" x2="15" y2="25" stroke="#64748b" strokeWidth="2" />
+              {[-20, -7, 6, 19].map((yP, i) => (
+                <path key={i} d={`M 0 ${yP} C 12 ${yP - 6}, 12 ${yP + 6}, 0 ${yP + 6}`} fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+              ))}
+              <text x="-8" y="4" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="end">L</text>
+            </g>
+
+            {/* Current Arrow */}
+            <line x1="130" y1="175" x2="180" y2="175" stroke="#10b981" strokeWidth="2" markerEnd="url(#rlCurI)" />
+            <text x="155" y="167" fill="#10b981" fontSize="8" fontWeight="bold" textAnchor="middle">i(t)</text>
+
+            {/* Right Box: Transient Curves */}
+            <rect x="305" y="20" width="205" height="175" rx="6" fill="#020617" stroke="#334155" strokeWidth="1.5" />
+            <text x="407" y="38" fill="#94a3b8" fontSize="10" fontWeight="bold" textAnchor="middle">
+              Transient Response Curve
+            </text>
+
+            {/* Graph Axes */}
+            <line x1="330" y1="165" x2="495" y2="165" stroke="#475569" strokeWidth="1.5" />
+            <line x1="330" y1="55" x2="330" y2="165" stroke="#475569" strokeWidth="1.5" />
+            <text x="495" y="178" fill="#94a3b8" fontSize="8" textAnchor="end">Time t</text>
+            <text x="325" y="60" fill="#94a3b8" fontSize="8" textAnchor="end">i(t)</text>
+
+            {/* Steady state asymptote I₀ = V/R */}
+            <line x1="330" y1="80" x2="495" y2="80" stroke="#64748b" strokeWidth="1" strokeDasharray="2 2" />
+            <text x="495" y="76" fill="#34d399" fontSize="8" textAnchor="end">I₀ = V/R</text>
+
+            {/* Growth Curve */}
+            <path
+              d="M 330 165 Q 360 90, 490 82"
+              fill="none"
+              stroke="#10b981"
+              strokeWidth="2.5"
+            />
+
+            {/* 1 Tau Marker */}
+            <line x1="365" y1="55" x2="365" y2="165" stroke="#f59e0b" strokeWidth="1" strokeDasharray="2 2" />
+            <text x="365" y="177" fill="#fbbf24" fontSize="8" textAnchor="middle">1τ = L/R</text>
+            <circle cx="365" cy="111" r="3.5" fill="#fbbf24" />
+            <text x="375" y="114" fill="#fbbf24" fontSize="8" fontWeight="bold">63.2% I₀</text>
+
+            {/* Bottom Formula Banner */}
+            <rect x="30" y="205" width="480" height="26" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="222" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Self-Induced EMF: e = -L (di/dt) | Energy Stored: W = ½ L I² | Time Constant: τ = L/R
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Self-induction in RL circuits: Exponential current growth i(t)=I₀(1-e^(-t/τ)), 63.2% rise at 1τ, and stored energy W=½LI²"}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

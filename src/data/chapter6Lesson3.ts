@@ -4,7 +4,7 @@ export const LESSON_DC_MACHINE_CONSTRUCTION: Lesson = {
   id: 'lsn-ch6-dc-machine-construction',
   topicId: 'ch6-dc-machine-construction',
   chapterId: 'ch-electrical-machines',
-  order: 3,
+  order: 11,
   title: {
     en: 'DC Machine Construction & Working Principle',
     hi: 'डीसी मशीन संरचना एवं कार्य सिद्धांत',

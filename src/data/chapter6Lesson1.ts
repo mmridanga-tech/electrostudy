@@ -4,7 +4,7 @@ export const LESSON_ELECTRICAL_MACHINES_FUNDAMENTALS: Lesson = {
   id: 'lsn-ch6-electrical-machines-fundamentals',
   topicId: 'ch6-electrical-machines-fundamentals',
   chapterId: 'ch-electrical-machines',
-  order: 1,
+  order: 9,
   title: {
     en: 'Electrical Machines Fundamentals & Energy Conversion',
     hi: 'विद्युत मशीनों के मूल सिद्धांत एवं ऊर्जा रूपांतरण',

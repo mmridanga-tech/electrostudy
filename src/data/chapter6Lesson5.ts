@@ -4,7 +4,7 @@ export const LESSON_DC_GENERATOR_TYPES: Lesson = {
   id: 'lsn-ch6-dc-generator-types',
   topicId: 'ch6-dc-generator-types',
   chapterId: 'ch-electrical-machines',
-  order: 5,
+  order: 13,
   title: {
     en: 'Types of DC Generators & Excitation Methods',
     hi: 'डीसी जनरेटर के प्रकार एवं उत्तेजन विधियाँ',

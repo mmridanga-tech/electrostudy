@@ -23,6 +23,7 @@ export const SubjectDetailModal: React.FC<SubjectDetailModalProps> = ({
   const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({ 
     'ch-elec-fund': true, 
     'ch-ohms-circuits': true,
+    'ch-electrical-machines': true,
     'em-ch1-transformers': true,
     'em-ch2-dc-generators': true,
     'em-ch3-dc-motors': true,

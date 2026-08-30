@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_APPLICATIONS: Lesson = {
   id: 'lsn-ch6-transformer-applications',
   topicId: 'ch6-transformer-applications',
   chapterId: 'ch-electrical-machines',
-  order: 20,
+  order: 8,
   title: {
     en: 'Transformer Applications & Industrial Power Systems (Capstone)',
     hi: 'ट्रांसफॉर्मर अनुप्रयोग एवं औद्योगिक विद्युत प्रणालियाँ (अध्याय 6 समापन)',

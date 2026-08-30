@@ -4,7 +4,7 @@ export const LESSON_DC_MOTOR_PRINCIPLE: Lesson = {
   id: 'lsn-ch6-dc-motor-principle',
   topicId: 'ch6-dc-motor-principle',
   chapterId: 'ch-electrical-machines',
-  order: 8,
+  order: 16,
   title: {
     en: 'DC Motor Principle, Back EMF & Torque Equation',
     hi: 'डीसी मोटर का सिद्धांत, बैक EMF एवं टॉर्क समीकरण',

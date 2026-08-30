@@ -4,7 +4,7 @@ export const LESSON_DC_GENERATOR_LOSSES_EFFICIENCY: Lesson = {
   id: 'lsn-ch6-dc-generator-losses-efficiency',
   topicId: 'ch6-dc-generator-losses-efficiency',
   chapterId: 'ch-electrical-machines',
-  order: 7,
+  order: 15,
   title: {
     en: 'DC Generator Losses, Efficiency & Applications',
     hi: 'डीसी जनरेटर की हानियाँ, दक्षता एवं अनुप्रयोग',

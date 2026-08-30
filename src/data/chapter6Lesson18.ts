@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_PARALLEL_OPERATION: Lesson = {
   id: 'lsn-ch6-transformer-parallel-operation',
   topicId: 'ch6-transformer-parallel-operation',
   chapterId: 'ch-electrical-machines',
-  order: 18,
+  order: 6,
   title: {
     en: 'Transformer Parallel Operation & Load Sharing',
     hi: 'ट्रांसफॉर्मरों का समानांतर संचालन एवं लोड शेयरिंग',

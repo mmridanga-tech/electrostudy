@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_TESTS: Lesson = {
   id: 'lsn-ch6-transformer-tests',
   topicId: 'ch6-transformer-tests',
   chapterId: 'ch-electrical-machines',
-  order: 17,
+  order: 5,
   title: {
     en: 'Transformer Testing: OC, SC, Sumpner\'s & Polarity Tests',
     hi: 'ट्रांसफॉर्मर परीक्षण: ओपन सर्किट, शॉर्ट सर्किट, संपटनर एवं पोलैरिटी टेस्ट',

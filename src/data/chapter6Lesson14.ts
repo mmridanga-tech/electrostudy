@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_TYPES_CONSTRUCTION: Lesson = {
   id: 'lsn-ch6-transformer-types-construction',
   topicId: 'ch6-transformer-types-construction',
   chapterId: 'ch-electrical-machines',
-  order: 14,
+  order: 2,
   title: {
     en: 'Transformer Types, Construction & Cooling Methods',
     hi: 'ट्रांसफॉर्मर के प्रकार, संरचना एवं शीतलन (Cooling) विधियाँ',

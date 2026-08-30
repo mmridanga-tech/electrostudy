@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_LOSSES_EFFICIENCY: Lesson = {
   id: 'lsn-ch6-transformer-losses-efficiency',
   topicId: 'ch6-transformer-losses-efficiency',
   chapterId: 'ch-electrical-machines',
-  order: 16,
+  order: 4,
   title: {
     en: 'Transformer Losses, Efficiency & Voltage Regulation',
     hi: 'ट्रांसफॉर्मर की हानियाँ, दक्षता एवं वोल्टेज रेगुलेशन',

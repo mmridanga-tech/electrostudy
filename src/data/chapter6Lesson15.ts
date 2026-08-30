@@ -4,7 +4,7 @@ export const LESSON_TRANSFORMER_EQUIVALENT_CIRCUIT: Lesson = {
   id: 'lsn-ch6-transformer-equivalent-circuit',
   topicId: 'ch6-transformer-equivalent-circuit',
   chapterId: 'ch-electrical-machines',
-  order: 15,
+  order: 3,
   title: {
     en: 'Transformer Equivalent Circuit, Phasor Diagrams & Performance',
     hi: 'ट्रांसफॉर्मर तुल्य परिपथ, फेजर आरेख एवं प्रदर्शन (Performance)',

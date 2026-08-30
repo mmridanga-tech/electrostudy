@@ -4,7 +4,7 @@ export const LESSON_DC_MOTOR_TYPES: Lesson = {
   id: 'lsn-ch6-dc-motor-types',
   topicId: 'ch6-dc-motor-types',
   chapterId: 'ch-electrical-machines',
-  order: 9,
+  order: 17,
   title: {
     en: 'Types of DC Motors & Characteristics',
     hi: 'डीसी मोटर के प्रकार एवं उनकी विशेषताएँ',

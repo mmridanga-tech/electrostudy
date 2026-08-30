@@ -4,7 +4,7 @@ export const LESSON_DC_GENERATOR_EMF: Lesson = {
   id: 'lsn-ch6-dc-generator-emf',
   topicId: 'ch6-dc-generator-emf',
   chapterId: 'ch-electrical-machines',
-  order: 4,
+  order: 12,
   title: {
     en: 'DC Generator EMF Equation & Generation Principle',
     hi: 'डीसी जनरेटर EMF समीकरण एवं जनरेशन सिद्धांत',
