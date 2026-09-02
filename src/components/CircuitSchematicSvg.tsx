@@ -4331,6 +4331,649 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch10-mutual-induction':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-lg h-56">
+            <defs>
+              <marker id="arrow-mi" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#38bdf8" />
+              </marker>
+              <marker id="arrow-flux-mi" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24" />
+              </marker>
+            </defs>
+
+            {/* Core Background / Mutual Coupling Area */}
+            <rect x="180" y="30" width="180" height="150" rx="8" fill="#0f172a" stroke="#334155" strokeWidth="2" strokeDasharray="4 4" />
+            <text x="270" y="50" fill="#94a3b8" fontSize="10" fontWeight="bold" textAnchor="middle">Mutual Magnetic Coupling (M)</text>
+
+            {/* Primary Circuit (Left) */}
+            <g transform="translate(30, 30)">
+              {/* AC Source */}
+              <circle cx="40" cy="75" r="18" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 32 75 Q 36 68 40 75 Q 44 82 48 75" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <text x="40" y="105" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">v₁(t) = V₁ sin(ωt)</text>
+
+              {/* Connecting Wires */}
+              <line x1="40" y1="57" x2="40" y2="25" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="40" y1="25" x2="130" y2="25" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="40" y1="93" x2="40" y2="125" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="40" y1="125" x2="130" y2="125" stroke="#38bdf8" strokeWidth="2" />
+
+              {/* Current Arrow */}
+              <path d="M 70 25 L 85 25" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow-mi)" />
+              <text x="75" y="18" fill="#38bdf8" fontSize="10" fontWeight="bold">i₁(t)</text>
+
+              {/* Primary Coil (N₁ turns) */}
+              <rect x="130" y="20" width="24" height="110" rx="4" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+              <text x="142" y="78" fill="#ffffff" fontSize="10" fontWeight="bold" textAnchor="middle" transform="rotate(-90 142 78)">Coil 1 (N₁, L₁)</text>
+              
+              {/* Primary Dot Polarity */}
+              <circle cx="124" cy="28" r="4" fill="#f43f5e" />
+              <text x="114" y="32" fill="#f43f5e" fontSize="9" fontWeight="bold">●</text>
+            </g>
+
+            {/* Mutual Flux Path (Center) */}
+            <g transform="translate(180, 75)">
+              <path d="M 10 30 Q 90 0 170 30" fill="none" stroke="#fbbf24" strokeWidth="2.5" strokeDasharray="6 3" markerEnd="url(#arrow-flux-mi)" />
+              <path d="M 170 45 Q 90 75 10 45" fill="none" stroke="#fbbf24" strokeWidth="2.5" strokeDasharray="6 3" markerEnd="url(#arrow-flux-mi)" />
+              <text x="90" y="30" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">Mutual Flux Φ₂₁</text>
+              <text x="90" y="44" fill="#e2e8f0" fontSize="9" textAnchor="middle">λ₂₁ = N₂ · Φ₂₁ = M · i₁</text>
+            </g>
+
+            {/* Secondary Circuit (Right) */}
+            <g transform="translate(350, 30)">
+              {/* Secondary Coil (N₂ turns) */}
+              <rect x="30" y="20" width="24" height="110" rx="4" fill="#10b981" stroke="#34d399" strokeWidth="2" />
+              <text x="42" y="78" fill="#ffffff" fontSize="10" fontWeight="bold" textAnchor="middle" transform="rotate(90 42 78)">Coil 2 (N₂, L₂)</text>
+
+              {/* Secondary Dot Polarity */}
+              <circle cx="60" cy="28" r="4" fill="#f43f5e" />
+              <text x="68" y="32" fill="#f43f5e" fontSize="9" fontWeight="bold">●</text>
+
+              {/* Connecting Wires */}
+              <line x1="54" y1="25" x2="130" y2="25" stroke="#34d399" strokeWidth="2" />
+              <line x1="54" y1="125" x2="130" y2="125" stroke="#34d399" strokeWidth="2" />
+
+              {/* Voltmeter / Induced EMF Output */}
+              <circle cx="130" cy="75" r="18" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <text x="130" y="80" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">e₂</text>
+              <line x1="130" y1="25" x2="130" y2="57" stroke="#34d399" strokeWidth="2" />
+              <line x1="130" y1="93" x2="130" y2="125" stroke="#34d399" strokeWidth="2" />
+              <text x="130" y="105" fill="#34d399" fontSize="10" fontWeight="bold" textAnchor="middle">e₂ = -M (di₁/dt)</text>
+            </g>
+
+            {/* Bottom Equation Ribbon */}
+            <rect x="20" y="195" width="500" height="34" rx="6" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Mutual Inductance: M = (N₂ · Φ₂₁) / i₁ = μ₀ μ_r N₁ N₂ A / l | Induced EMF: e₂ = -M · (di₁/dt)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Mutual Induction: AC current in Coil 1 induces alternating flux Φ₂₁ linking Coil 2, producing mutual EMF e₂ = -M (di₁/dt)"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-coefficient-of-coupling':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-lg h-56">
+            {/* Magnetic Core Ring */}
+            <rect x="50" y="30" width="440" height="150" rx="20" fill="none" stroke="#475569" strokeWidth="18" />
+            <rect x="90" y="65" width="360" height="80" rx="10" fill="#020617" stroke="#334155" strokeWidth="2" />
+
+            {/* Mutual Magnetic Flux Path (Inside Core) */}
+            <rect x="70" y="47" width="400" height="116" rx="15" fill="none" stroke="#fbbf24" strokeWidth="3" strokeDasharray="8 4" />
+            <text x="270" y="44" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">Mutual Core Flux Φ_m (Linked)</text>
+
+            {/* Primary Winding (Left Leg) */}
+            <g transform="translate(40, 55)">
+              <rect x="0" y="0" width="38" height="100" rx="4" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+              <text x="19" y="55" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle" transform="rotate(-90 19 55)">Coil 1 (L₁)</text>
+              {/* Primary Leakage Flux Loop */}
+              <ellipse cx="-15" cy="50" rx="14" ry="38" fill="none" stroke="#f43f5e" strokeWidth="2" strokeDasharray="4 3" />
+              <text x="-20" y="53" fill="#f43f5e" fontSize="8" fontWeight="bold" textAnchor="end">Leakage Φ_l1</text>
+            </g>
+
+            {/* Secondary Winding (Right Leg) */}
+            <g transform="translate(462, 55)">
+              <rect x="0" y="0" width="38" height="100" rx="4" fill="#10b981" stroke="#34d399" strokeWidth="2" />
+              <text x="19" y="55" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle" transform="rotate(90 19 55)">Coil 2 (L₂)</text>
+              {/* Secondary Leakage Flux Loop */}
+              <ellipse cx="53" cy="50" rx="14" ry="38" fill="none" stroke="#f43f5e" strokeWidth="2" strokeDasharray="4 3" />
+              <text x="58" y="53" fill="#f43f5e" fontSize="8" fontWeight="bold" textAnchor="start">Leakage Φ_l2</text>
+            </g>
+
+            {/* Center Coupling Gauge Box */}
+            <g transform="translate(190, 80)">
+              <rect x="0" y="0" width="160" height="50" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="80" y="20" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Coupling Coefficient k</text>
+              <text x="80" y="38" fill="#34d399" fontSize="13" fontWeight="bold" textAnchor="middle" fontFamily="monospace">k = M / √(L₁ · L₂)</text>
+            </g>
+
+            {/* Bottom Formula Banner */}
+            <rect x="20" y="195" width="500" height="34" rx="6" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Total Flux: Φ₁ = Φ_m + Φ_l1 | Ideal: k = 1.0 (Zero Leakage) | Series Aiding/Opposing: L_eq = L₁ + L₂ ± 2M
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Coefficient of Coupling k: Measures fraction of total flux linking both coils (0 ≤ k ≤ 1). Iron core k ≈ 0.98, air core k < 0.3"}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch10-transformer-emf-equation':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-lg h-60">
+            <defs>
+              <marker id="arrow-flux-trans" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#fbbf24" />
+              </marker>
+            </defs>
+
+            {/* Laminated Silicon Steel Core */}
+            <rect x="110" y="25" width="320" height="160" rx="8" fill="#1e293b" stroke="#64748b" strokeWidth="3" />
+            <rect x="170" y="60" width="200" height="90" rx="4" fill="#020617" stroke="#475569" strokeWidth="2" />
+
+            {/* Alternating Core Flux Line */}
+            <rect x="140" y="42" width="260" height="126" rx="6" fill="none" stroke="#fbbf24" strokeWidth="2.5" strokeDasharray="6 4" />
+            <path d="M 270 42 L 285 42" stroke="#fbbf24" strokeWidth="3" markerEnd="url(#arrow-flux-trans)" />
+            <text x="270" y="38" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">Φ(t) = Φ_m · sin(ωt)</text>
+
+            {/* Primary Winding (Left) */}
+            <g transform="translate(60, 45)">
+              <rect x="40" y="5" width="22" height="110" rx="3" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+              <text x="51" y="62" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle" transform="rotate(-90 51 62)">Primary N₁</text>
+              
+              {/* AC Input Terminals */}
+              <line x1="0" y1="20" x2="40" y2="20" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="0" y1="100" x2="40" y2="100" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="0" cy="20" r="3" fill="#38bdf8" />
+              <circle cx="0" cy="100" r="3" fill="#38bdf8" />
+              <text x="-5" y="62" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="end">V₁ (Supply)</text>
+              <text x="20" y="14" fill="#38bdf8" fontSize="9" fontWeight="bold">I₁</text>
+              <text x="51" y="130" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">E₁ = 4.44 f N₁ Φ_m</text>
+            </g>
+
+            {/* Secondary Winding (Right) */}
+            <g transform="translate(390, 45)">
+              <rect x="28" y="5" width="22" height="110" rx="3" fill="#10b981" stroke="#34d399" strokeWidth="2" />
+              <text x="39" y="62" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle" transform="rotate(90 39 62)">Secondary N₂</text>
+              
+              {/* Load Terminals */}
+              <line x1="50" y1="20" x2="90" y2="20" stroke="#34d399" strokeWidth="2" />
+              <line x1="50" y1="100" x2="90" y2="100" stroke="#34d399" strokeWidth="2" />
+              <circle cx="90" cy="20" r="3" fill="#34d399" />
+              <circle cx="90" cy="100" r="3" fill="#34d399" />
+              <rect x="78" y="45" width="24" height="30" rx="2" fill="#0f172a" stroke="#34d399" strokeWidth="1.5" />
+              <text x="90" y="64" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">Z_L</text>
+              <text x="95" y="105" fill="#34d399" fontSize="10" fontWeight="bold">V₂ (Load)</text>
+              <text x="70" y="14" fill="#34d399" fontSize="9" fontWeight="bold">I₂</text>
+              <text x="39" y="130" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">E₂ = 4.44 f N₂ Φ_m</text>
+            </g>
+
+            {/* Center Equality Badge */}
+            <g transform="translate(200, 85)">
+              <rect x="0" y="0" width="140" height="40" rx="4" fill="#0f172a" stroke="#fbbf24" strokeWidth="1" />
+              <text x="70" y="16" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">EMF Per Turn Equality</text>
+              <text x="70" y="32" fill="#ffffff" fontSize="11" fontWeight="bold" textAnchor="middle" fontFamily="monospace">E₁/N₁ = E₂/N₂ = 4.44 f Φ_m</text>
+            </g>
+
+            {/* Bottom Formula Banner */}
+            <rect x="20" y="200" width="500" height="36" rx="6" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="217" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Universal EMF: E = 4.44 · f · N · B_m · A_i | Transformation Ratio: K = V₂/V₁ = N₂/N₁ = I₁/I₂
+            </text>
+            <text x="270" y="230" fill="#94a3b8" fontSize="9" textAnchor="middle">
+              Ideal Transformer: Zero Losses (P_in = P_out) | Reflected Load Impedance: Z_in = (N₁/N₂)² · Z_L
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Universal Transformer EMF: E = 4.44 · f · N · Φ_m, Form Factor = 1.11, E₁/N₁ = E₂/N₂ with 100% ideal power transfer"}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 10 - EDDY CURRENTS & LOSS MECHANISMS
+    // ==========================================
+    case 'circuit-ch10-eddy-current-solid-vs-laminated':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Background Header Banner */}
+            <rect x="15" y="10" width="510" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              COMPARISON: SOLID UNLAMINATED CORE vs LAMINATED ELECTRICAL STEEL SHEET CORE
+            </text>
+
+            {/* Left: Solid Core with Giant Eddy Currents */}
+            <g transform="translate(30, 45)">
+              <rect x="0" y="0" width="220" height="145" rx="6" fill="#1e293b" stroke="#ef4444" strokeWidth="2" />
+              <text x="110" y="20" fill="#f87171" fontSize="11" fontWeight="bold" textAnchor="middle">SOLID IRON CORE</text>
+              
+              {/* Giant eddy current loops */}
+              <ellipse cx="110" cy="78" rx="80" ry="42" fill="none" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="6 4" />
+              <ellipse cx="110" cy="78" rx="50" ry="26" fill="none" stroke="#f97316" strokeWidth="2" />
+              <ellipse cx="110" cy="78" rx="20" ry="10" fill="#dc2626" opacity="0.6" />
+
+              {/* Flux cross symbols */}
+              {[45, 110, 175].map((x) =>
+                [50, 105].map((y) => (
+                  <g key={`sflux-${x}-${y}`} opacity="0.4">
+                    <circle cx={x} cy={y} r="5" fill="none" stroke="#38bdf8" />
+                    <line x1={x-3} y1={y-3} x2={x+3} y2={y+3} stroke="#38bdf8" />
+                    <line x1={x-3} y1={y+3} x2={x+3} y2={y-3} stroke="#38bdf8" />
+                  </g>
+                ))
+              )}
+
+              <rect x="15" y="118" width="190" height="20" rx="3" fill="#7f1d1d" />
+              <text x="110" y="132" fill="#fecaca" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Massive I²R Heat: P_e ∝ t² (t = Full Block Width)
+              </text>
+            </g>
+
+            {/* Right: Laminated Core with Micro Eddy Loops */}
+            <g transform="translate(290, 45)">
+              <rect x="0" y="0" width="220" height="145" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="2" />
+              <text x="110" y="20" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">LAMINATED STEEL CORE</text>
+
+              {/* 7 Thin laminations with varnish lines */}
+              {[15, 45, 75, 105, 135, 165, 195].map((lx, idx) => (
+                <g key={`lamin-${idx}`}>
+                  <rect x={lx} y="30" width="24" height="82" rx="2" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+                  {/* Micro eddy loop inside each strip */}
+                  <ellipse cx={lx + 12} cy="71" rx="8" ry="24" fill="none" stroke="#34d399" strokeWidth="1.2" strokeDasharray="3 2" />
+                </g>
+              ))}
+
+              <rect x="15" y="118" width="190" height="20" rx="3" fill="#064e3b" />
+              <text x="110" y="132" fill="#a7f3d0" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Varnish Insulates Sheets: Loss reduced by &gt;99%
+              </text>
+            </g>
+
+            {/* Bottom Formula Banner */}
+            <rect x="15" y="200" width="510" height="32" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="220" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Eddy Current Loss: P_e = K_e · f² · B_m² · t² · V (Watts) | K_e = π² / (6·ρ)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Eddy Current Loss Mechanism: Circulating I²R losses scale quadratically with lamination thickness (t²). Thin insulated laminations suppress circulating currents."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 11 - ELEMENTARY AC GENERATOR
+    // ==========================================
+    case 'circuit-ch10-ac-generator-slip-rings':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Magnetic Poles */}
+            <rect x="25" y="30" width="70" height="150" rx="6" fill="#b91c1c" stroke="#f87171" strokeWidth="2" />
+            <text x="60" y="115" fill="#ffffff" fontSize="24" fontWeight="bold" textAnchor="middle">N</text>
+
+            <rect x="445" y="30" width="70" height="150" rx="6" fill="#1d4ed8" stroke="#60a5fa" strokeWidth="2" />
+            <text x="480" y="115" fill="#ffffff" fontSize="24" fontWeight="bold" textAnchor="middle">S</text>
+
+            {/* B-field arrows */}
+            {[55, 90, 125, 155].map((y) => (
+              <g key={`bac-${y}`}>
+                <line x1="95" y1={y} x2="445" y2={y} stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="5 3" opacity="0.4" />
+                <path d={`M 260 ${y} L 275 ${y}`} stroke="#38bdf8" strokeWidth="2" />
+              </g>
+            ))}
+            <text x="270" y="45" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Uniform Magnetic Field B →</text>
+
+            {/* Rotating Armature Loop */}
+            <line x1="210" y1="65" x2="330" y2="65" stroke="#fbbf24" strokeWidth="3.5" />
+            <line x1="210" y1="65" x2="210" y2="155" stroke="#f87171" strokeWidth="4" />
+            <text x="195" y="115" fill="#f87171" fontSize="10" fontWeight="bold">Side A</text>
+            <line x1="330" y1="65" x2="330" y2="155" stroke="#38bdf8" strokeWidth="4" />
+            <text x="345" y="115" fill="#38bdf8" fontSize="10" fontWeight="bold">Side B</text>
+
+            {/* Rotation Arrow */}
+            <path d="M 245 50 A 30 12 0 0 1 295 50" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
+            <text x="270" y="40" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">Rotation ω</text>
+
+            {/* Continuous Slip Rings */}
+            <ellipse cx="255" cy="180" rx="14" ry="5" fill="#d97706" stroke="#fbbf24" strokeWidth="2" />
+            <rect x="235" y="176" width="6" height="8" fill="#475569" stroke="#94a3b8" />
+            <ellipse cx="285" cy="192" rx="14" ry="5" fill="#d97706" stroke="#fbbf24" strokeWidth="2" />
+            <rect x="301" y="188" width="6" height="8" fill="#475569" stroke="#94a3b8" />
+
+            {/* External AC Terminals */}
+            <path d="M 235 180 L 160 180 L 160 215 L 210 215" fill="none" stroke="#f87171" strokeWidth="2" />
+            <path d="M 307 192 L 380 192 L 380 215 L 330 215" fill="none" stroke="#38bdf8" strokeWidth="2" />
+            <circle cx="210" cy="215" r="4" fill="#f87171" />
+            <circle cx="330" cy="215" r="4" fill="#38bdf8" />
+
+            {/* AC Load Badge */}
+            <rect x="235" y="204" width="70" height="22" rx="4" fill="#0f172a" stroke="#38bdf8" />
+            <text x="270" y="219" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">~ AC LOAD</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Elementary AC Generator: Rectangular coil rotating in uniform field with continuous slip rings produces pure alternating sinusoidal EMF e(t) = E_m sin(ωt)."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 12 - ELEMENTARY DC GENERATOR
+    // ==========================================
+    case 'circuit-ch10-dc-generator-split-commutator':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Magnetic Poles */}
+            <rect x="25" y="30" width="70" height="150" rx="6" fill="#b91c1c" stroke="#f87171" strokeWidth="2" />
+            <text x="60" y="115" fill="#ffffff" fontSize="24" fontWeight="bold" textAnchor="middle">N</text>
+
+            <rect x="445" y="30" width="70" height="150" rx="6" fill="#1d4ed8" stroke="#60a5fa" strokeWidth="2" />
+            <text x="480" y="115" fill="#ffffff" fontSize="24" fontWeight="bold" textAnchor="middle">S</text>
+
+            {/* Magnetic Neutral Plane (MNP) dashed vertical */}
+            <line x1="270" y1="15" x2="270" y2="225" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" />
+            <text x="270" y="25" fill="#94a3b8" fontSize="8.5" textAnchor="middle">Magnetic Neutral Plane (MNP)</text>
+
+            {/* Rotating Loop */}
+            <line x1="220" y1="65" x2="320" y2="65" stroke="#fbbf24" strokeWidth="3.5" />
+            <line x1="220" y1="65" x2="220" y2="155" stroke="#f87171" strokeWidth="4" />
+            <line x1="320" y1="65" x2="320" y2="155" stroke="#38bdf8" strokeWidth="4" />
+
+            {/* Split-Ring Commutator (Two semi-cylinders with gap) */}
+            <g transform="translate(270, 185)">
+              <path d="M -18 -8 A 20 8 0 0 1 -2 8 L -2 -8 Z" fill="#ef4444" stroke="#fbbf24" strokeWidth="1.5" />
+              <path d="M 2 -8 L 2 8 A 20 8 0 0 1 18 -8 Z" fill="#0284c7" stroke="#fbbf24" strokeWidth="1.5" />
+              <line x1="0" y1="-10" x2="0" y2="10" stroke="#ffffff" strokeWidth="2" />
+
+              {/* Fixed Stationary Brushes */}
+              <rect x="-28" y="-5" width="8" height="10" fill="#334155" stroke="#94a3b8" />
+              <text x="-34" y="3" fill="#ef4444" fontSize="10" fontWeight="bold" textAnchor="end">(+) Brush</text>
+
+              <rect x="20" y="-5" width="8" height="10" fill="#334155" stroke="#94a3b8" />
+              <text x="34" y="3" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="start">(-) Brush</text>
+
+              <line x1="-28" y1="0" x2="-60" y2="0" stroke="#ef4444" strokeWidth="2" />
+              <line x1="28" y1="0" x2="60" y2="0" stroke="#38bdf8" strokeWidth="2" />
+            </g>
+
+            {/* External DC Load */}
+            <rect x="225" y="210" width="90" height="22" rx="4" fill="#0f172a" stroke="#fbbf24" />
+            <text x="270" y="225" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">
+              ⎓ DC LOAD (|e(t)|)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Elementary DC Generator: Split-ring commutator segments switch contact with stationary brushes as coil passes MNP, providing mechanical rectification to pulsating DC."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 13 - SKIN & PROXIMITY EFFECTS
+    // ==========================================
+    case 'circuit-ch10-skin-proximity-current-profile':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">
+              CURRENT DENSITY PROFILES: DC UNIFORM vs AC SKIN EFFECT vs PROXIMITY EFFECT
+            </text>
+
+            {/* Column 1: DC Uniform Distribution */}
+            <g transform="translate(40, 50)">
+              <circle cx="60" cy="65" r="45" fill="#0369a1" stroke="#38bdf8" strokeWidth="2" />
+              <text x="60" y="62" fill="#ffffff" fontSize="10" fontWeight="bold" textAnchor="middle">DC (0 Hz)</text>
+              <text x="60" y="76" fill="#bae6fd" fontSize="8.5" textAnchor="middle">Uniform J</text>
+              <rect x="0" y="125" width="120" height="20" rx="3" fill="#020617" stroke="#1e293b" />
+              <text x="60" y="139" fill="#94a3b8" fontSize="9" textAnchor="middle">R_ac = R_dc</text>
+            </g>
+
+            {/* Column 2: AC Skin Effect */}
+            <g transform="translate(190, 50)">
+              {/* Outer shell (skin depth carrying current) */}
+              <circle cx="70" cy="65" r="45" fill="#f59e0b" stroke="#fbbf24" strokeWidth="2" />
+              {/* Inactive dead core */}
+              <circle cx="70" cy="65" r="28" fill="#020617" stroke="#334155" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="70" y="60" fill="#64748b" fontSize="8.5" textAnchor="middle">Dead Zone</text>
+              <text x="70" y="73" fill="#64748b" fontSize="7.5" textAnchor="middle">(J ≈ 0)</text>
+              <text x="70" y="26" fill="#facc15" fontSize="9" fontWeight="bold" textAnchor="middle">Skin Depth δ</text>
+              <rect x="10" y="125" width="120" height="20" rx="3" fill="#020617" stroke="#1e293b" />
+              <text x="70" y="139" fill="#fbbf24" fontSize="9" textAnchor="middle">R_ac &gt; R_dc</text>
+            </g>
+
+            {/* Column 3: Proximity Effect (Opposing Currents) */}
+            <g transform="translate(350, 50)">
+              <circle cx="35" cy="65" r="32" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <circle cx="115" cy="65" r="32" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              {/* Crowded current crescent on adjacent inside faces */}
+              <path d="M 35 33 A 32 32 0 0 1 67 65 A 32 32 0 0 1 35 97 Z" fill="#ef4444" />
+              <path d="M 115 33 A 32 32 0 0 0 83 65 A 32 32 0 0 0 115 97 Z" fill="#ef4444" />
+              <text x="75" y="68" fill="#fca5a5" fontSize="8" fontWeight="bold" textAnchor="middle">Crowded J</text>
+              <rect x="15" y="125" width="120" height="20" rx="3" fill="#020617" stroke="#1e293b" />
+              <text x="75" y="139" fill="#ef4444" fontSize="9" textAnchor="middle">Proximity Loss</text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="200" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="219" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Skin Depth: δ = √(2 / (ω·μ·σ)) = √(ρ / (π·f·μ)) | Mitigation: Litz wire, tubular conductors
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Skin & Proximity Effects: High-frequency internal flux crowds current into surface skin depth δ, increasing effective AC resistance. Proximity to adjacent conductors distorts current profiles."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 14 - FARADAY HOMOPOLAR DISC
+    // ==========================================
+    case 'circuit-ch10-faraday-homopolar-disc':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Axial B-field cross markers */}
+            <g opacity="0.35">
+              {[60, 120, 180, 240, 300, 360, 420, 480].map((x) =>
+                [35, 75, 115, 155, 195].map((y) => (
+                  <g key={`fdisc-${x}-${y}`}>
+                    <circle cx={x} cy={y} r="5" fill="none" stroke="#38bdf8" />
+                    <line x1={x-3} y1={y-3} x2={x+3} y2={y+3} stroke="#38bdf8" />
+                    <line x1={x-3} y1={y+3} x2={x+3} y2={y-3} stroke="#38bdf8" />
+                  </g>
+                ))
+              )}
+            </g>
+
+            {/* Copper Disc */}
+            <circle cx="210" cy="120" r="85" fill="#b45309" stroke="#fbbf24" strokeWidth="2.5" />
+            <circle cx="210" cy="120" r="14" fill="#0f172a" stroke="#94a3b8" strokeWidth="2" />
+            <circle cx="210" cy="120" r="5" fill="#38bdf8" />
+
+            {/* Radial Motional Vector */}
+            <line x1="210" y1="120" x2="210" y2="45" stroke="#ef4444" strokeWidth="3" />
+            <polygon points="206,45 214,45 210,38" fill="#ef4444" />
+            <text x="218" y="85" fill="#fee2e2" fontSize="9" fontWeight="bold">Radial EMF: E = v × B</text>
+
+            {/* Rim brush */}
+            <rect x="198" y="32" width="24" height="10" fill="#334155" stroke="#cbd5e1" strokeWidth="1" />
+            <text x="210" y="25" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">Rim Brush (+)</text>
+
+            {/* Center brush */}
+            <text x="180" y="142" fill="#38bdf8" fontSize="9" fontWeight="bold">Axle Brush (-)</text>
+
+            {/* Circuit wiring to Galvanometer */}
+            <path d="M 210 32 L 210 15 L 430 15 L 430 85" fill="none" stroke="#fbbf24" strokeWidth="2.5" />
+            <path d="M 210 120 L 330 120 L 330 155 L 430 155 L 430 135" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+
+            {/* DC Galvanometer meter */}
+            <g transform="translate(430, 110)">
+              <circle cx="0" cy="0" r="28" fill="#020617" stroke="#10b981" strokeWidth="2" />
+              <text x="0" y="4" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">G</text>
+              <line x1="0" y1="18" x2="10" y2="-15" stroke="#ef4444" strokeWidth="2" />
+              <text x="0" y="42" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">Steady DC Output</text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="200" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="219" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Homopolar EMF: E = ½ · B · ω · R² = B · π · R² · f | Pure Unidirectional Ripple-Free DC
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Faraday Homopolar Disc Generator: Rotation in an axial magnetic field induces radial Lorentz EMF E = ½·B·ω·R², yielding pure commutator-free DC."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 15 - INDUCTION COILS & RUHMKORFF
+    // ==========================================
+    case 'circuit-ch10-ruhkorff-induction-coil':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Laminated Soft Iron Wire Core */}
+            <rect x="90" y="90" width="260" height="24" rx="4" fill="#334155" stroke="#64748b" strokeWidth="2" />
+            <text x="220" y="106" fill="#e2e8f0" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Soft Iron Wire Core
+            </text>
+
+            {/* Primary Winding (Thick, Few Turns) */}
+            {[115, 145, 175, 205, 235, 265, 295, 325].map((x) => (
+              <rect key={`ruhk-pri-${x}`} x={x} y="82" width="12" height="40" rx="2" fill="#b45309" stroke="#fbbf24" strokeWidth="1" />
+            ))}
+            <text x="220" y="75" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">Primary (N₁ Few Turns)</text>
+
+            {/* Secondary Winding (Thousands of Turns) */}
+            <rect x="110" y="45" width="220" height="24" rx="3" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.5" strokeDasharray="3 2" />
+            <text x="220" y="61" fill="#c7d2fe" fontSize="9" fontWeight="bold" textAnchor="middle">Secondary (N₂ Many Thousand Turns)</text>
+
+            {/* Trembler Contact Breaker Hammer */}
+            <g transform="translate(50, 75)">
+              <line x1="20" y1="0" x2="20" y2="55" stroke="#94a3b8" strokeWidth="2.5" />
+              <circle cx="34" cy="27" r="7" fill="#475569" />
+              <circle cx="20" cy="27" r="3" fill="#facc15" />
+              <rect x="-8" y="24" width="24" height="6" fill="#334155" />
+              <text x="15" y="-5" fill="#cbd5e1" fontSize="8" fontWeight="bold" textAnchor="middle">Interrupter</text>
+            </g>
+
+            {/* Battery & Capacitor */}
+            <g transform="translate(70, 185)">
+              <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#fbbf24" strokeWidth="2" />
+              <text x="0" y="4" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">BAT</text>
+            </g>
+            {/* Spark-quenching capacitor */}
+            <g transform="translate(30, 135)">
+              <rect x="-14" y="0" width="28" height="18" rx="2" fill="#065f46" stroke="#34d399" strokeWidth="1" />
+              <text x="0" y="12" fill="#6ee7b7" fontSize="7.5" fontWeight="bold" textAnchor="middle">CAP</text>
+            </g>
+
+            {/* Primary Wiring */}
+            <path d="M 70 171 L 70 120 L 115 120" fill="none" stroke="#fbbf24" strokeWidth="2" />
+            <path d="M 337 120 L 360 160 L 42 160 L 42 102" fill="none" stroke="#fbbf24" strokeWidth="2" />
+
+            {/* Secondary Circuit to Spark Gap */}
+            <path d="M 120 45 L 120 25 L 430 25 L 430 75" fill="none" stroke="#a855f7" strokeWidth="2" />
+            <path d="M 320 45 L 320 38 L 400 38 L 400 125 L 430 125 L 430 95" fill="none" stroke="#a855f7" strokeWidth="2" />
+
+            {/* Spark Gap Electrodes with Arc */}
+            <g transform="translate(460, 85)">
+              <line x1="-30" y1="-10" x2="-5" y2="-10" stroke="#cbd5e1" strokeWidth="3" />
+              <line x1="-30" y1="10" x2="-5" y2="10" stroke="#cbd5e1" strokeWidth="3" />
+              <path d="M -5 -10 Q 5 0 -5 10" stroke="#67e8f9" strokeWidth="2.5" fill="none" />
+              <text x="15" y="4" fill="#a855f7" fontSize="10" fontWeight="bold">kV Spark Arc</text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="200" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="219" fill="#a855f7" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Induction Coil EMF: e₂ = -M · (di₁ / dt) | Capacitor accelerates break, delivering 20 kV+ pulses
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Ruhmkorff Induction Coil: Contact interrupter and parallel capacitor cause near-instantaneous magnetic collapse, stepping up low DC battery voltage to tens of thousands of volts."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 16 - ELECTROMAGNETIC BRAKING & DAMPING
+    // ==========================================
+    case 'circuit-ch10-eddy-current-brake-caliper':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              CONTACTLESS EDDY-CURRENT BRAKE: LENZ RETARDING FORCE F_b ∝ σ · B² · v
+            </text>
+
+            {/* Rotating Disc */}
+            <g transform="translate(190, 120)">
+              <circle cx="0" cy="0" r="75" fill="#b45309" stroke="#fbbf24" strokeWidth="2" />
+              <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#94a3b8" strokeWidth="2" />
+              <circle cx="0" cy="0" r="4" fill="#38bdf8" />
+              {/* Disc Rotation velocity arrow */}
+              <path d="M -35 -55 A 75 75 0 0 1 35 -55" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+              <text x="0" y="-62" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">Velocity v →</text>
+            </g>
+
+            {/* Electromagnet Brake Caliper */}
+            <g transform="translate(260, 120)">
+              {/* C-Core */}
+              <path d="M -10 -45 L 45 -45 L 45 45 L -10 45 L -10 25 L 20 25 L 20 -25 L -10 -25 Z" fill="#1e293b" stroke="#64748b" strokeWidth="2" />
+              {/* Poles */}
+              <rect x="-10" y="-30" width="22" height="12" fill="#b91c1c" />
+              <text x="1" y="-21" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">N</text>
+              <rect x="-10" y="18" width="22" height="12" fill="#1d4ed8" />
+              <text x="1" y="27" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">S</text>
+
+              {/* Swirling Eddy Currents under Caliper */}
+              <ellipse cx="1" cy="-2" rx="16" ry="11" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+              {/* Retarding Force Arrow Opposing Velocity */}
+              <line x1="-22" y1="-15" x2="-22" y2="25" stroke="#ef4444" strokeWidth="3" />
+              <polygon points="-26,25 -18,25 -22,32" fill="#ef4444" />
+              <text x="-26" y="5" fill="#ef4444" fontSize="8.5" fontWeight="bold" textAnchor="end">F_brake</text>
+            </g>
+
+            {/* Meter Damping Panel (Galvanometer / PMMC coil former) */}
+            <g transform="translate(395, 60)">
+              <rect x="0" y="0" width="125" height="120" rx="6" fill="#0f172a" stroke="#334155" />
+              <text x="62" y="20" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">METER DAMPING</text>
+              <text x="62" y="34" fill="#94a3b8" fontSize="7.5" textAnchor="middle">PMMC / Galvanometer</text>
+              {/* Pointer scale */}
+              <path d="M 25 75 A 50 50 0 0 1 100 75" fill="none" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="62" y1="85" x2="62" y2="52" stroke="#ef4444" strokeWidth="2" />
+              <circle cx="62" cy="85" r="4" fill="#ffffff" />
+              <text x="62" y="105" fill="#34d399" fontSize="8" fontWeight="bold" textAnchor="middle">Deadbeat Damping</text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="200" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="219" fill="#ef4444" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Braking Torque: T_b ∝ B² · ω | Kinetic Energy → Joule Heat | F → 0 as v → 0 (Zero-lock requires mechanical brake)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electromagnetic Eddy-Current Braking: Relative motion through magnetic poles creates counter-torque converting kinetic energy into heat. Braking torque vanishes at rest."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

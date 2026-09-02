@@ -108,6 +108,16 @@ import { FlemingsRightHandRuleAnimation } from './interactive/FlemingsRightHandR
 import { DynamicallyInducedEMFAnimation } from './interactive/DynamicallyInducedEMFAnimation';
 import { StaticallyInducedEMFAnimation } from './interactive/StaticallyInducedEMFAnimation';
 import { SelfInductionAnimation } from './interactive/SelfInductionAnimation';
+import { MutualInductionAnimation } from './interactive/MutualInductionAnimation';
+import { CouplingCoefficientAnimation } from './interactive/CouplingCoefficientAnimation';
+import { IdealTransformerAnimation } from './interactive/IdealTransformerAnimation';
+import { EddyCurrentAnimation } from './interactive/EddyCurrentAnimation';
+import { ElementaryACGeneratorAnimation } from './interactive/ElementaryACGeneratorAnimation';
+import { ElementaryDCGeneratorAnimation } from './interactive/ElementaryDCGeneratorAnimation';
+import { SkinProximityEffectAnimation } from './interactive/SkinProximityEffectAnimation';
+import { FaradayDiscAnimation } from './interactive/FaradayDiscAnimation';
+import { InductionCoilAnimation } from './interactive/InductionCoilAnimation';
+import { ElectromagneticBrakingAnimation } from './interactive/ElectromagneticBrakingAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -588,6 +598,93 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'tp-self-induction-inductance'
   ) {
     return <SelfInductionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-mutual-induction' ||
+    topicId === 'ch10-mutual-induction-coupling' ||
+    lessonId === 'lsn-ch10-mutual-induction' ||
+    lessonId === 'lsn-ch10-mutual-induction-coupling' ||
+    topicId === 'tp-mutual-induction'
+  ) {
+    return <MutualInductionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-coefficient-of-coupling' ||
+    topicId === 'ch10-dot-convention-coupled-circuits' ||
+    lessonId === 'lsn-ch10-coefficient-of-coupling' ||
+    lessonId === 'lsn-ch10-dot-convention-coupled-circuits' ||
+    topicId === 'tp-coefficient-of-coupling'
+  ) {
+    return <CouplingCoefficientAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-transformer-emf-equation' ||
+    topicId === 'ch10-energy-stored-magnetic-field' ||
+    lessonId === 'lsn-ch10-transformer-emf-equation' ||
+    lessonId === 'lsn-ch10-energy-stored-magnetic-field' ||
+    topicId === 'tp-transformer-emf-equation'
+  ) {
+    return <IdealTransformerAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Chapter 10: Lessons 10-16 Animations
+  if (
+    topicId === 'ch10-eddy-currents-loss-mechanisms' ||
+    lessonId === 'lsn-ch10-eddy-currents-loss-mechanisms' ||
+    topicId === 'tp-eddy-currents-loss-mechanisms'
+  ) {
+    return <EddyCurrentAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-elementary-ac-generator' ||
+    lessonId === 'lsn-ch10-elementary-ac-generator' ||
+    topicId === 'tp-elementary-ac-generator'
+  ) {
+    return <ElementaryACGeneratorAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-elementary-dc-generator' ||
+    lessonId === 'lsn-ch10-elementary-dc-generator' ||
+    topicId === 'tp-elementary-dc-generator'
+  ) {
+    return <ElementaryDCGeneratorAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-skin-effect-proximity-effect' ||
+    lessonId === 'lsn-ch10-skin-effect-proximity-effect' ||
+    topicId === 'tp-skin-effect-proximity-effect'
+  ) {
+    return <SkinProximityEffectAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-homopolar-generators-discs' ||
+    lessonId === 'lsn-ch10-homopolar-generators-discs' ||
+    topicId === 'tp-homopolar-generators-discs'
+  ) {
+    return <FaradayDiscAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-induction-coils-transformers' ||
+    lessonId === 'lsn-ch10-induction-coils-transformers' ||
+    topicId === 'tp-induction-coils-transformers'
+  ) {
+    return <InductionCoilAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-electromagnetic-braking-damping' ||
+    lessonId === 'lsn-ch10-electromagnetic-braking-damping' ||
+    topicId === 'tp-electromagnetic-braking-damping'
+  ) {
+    return <ElectromagneticBrakingAnimation currentLanguage={currentLanguage} />;
   }
 
   if (

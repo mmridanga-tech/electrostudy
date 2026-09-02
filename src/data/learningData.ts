@@ -1938,33 +1938,33 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             }
           },
           {
-            id: 'ch10-mutual-induction-coupling',
+            id: 'ch10-mutual-induction',
             chapterId: 'ch-em-induction',
             order: 7,
             title: {
-              en: 'Mutual Induction, Mutually Induced EMF & Mutual Inductance (M)',
-              hi: 'पारस्परिक प्रेरण, पारस्परिक प्रेरित ईएमएफ एवं अन्योन्य प्रेरकत्व (M)',
-              bn: 'পারস্পরিক আবেশ, পারস্পরিক আবিষ্ট ইএমএফ এবং পারস্পরিক আবেশাঙ্ক (M)'
+              en: 'Mutual Induction & Mutual Inductance',
+              hi: 'पारस्परिक प्रेरण एवं अन्योन्य प्रेरकत्व (M)',
+              bn: 'পারস্পরিক আবেশ ও পারস্পরিক আবেশাঙ্ক (M)'
             }
           },
           {
-            id: 'ch10-dot-convention-coupled-circuits',
+            id: 'ch10-coefficient-of-coupling',
             chapterId: 'ch-em-induction',
             order: 8,
             title: {
-              en: 'Dot Convention, Magnetic Polarity & Coupled Coil Configurations',
-              hi: 'डॉट परिपाटी, चुंबकीय ध्रुवता एवं युग्मित कुंडलियां',
-              bn: 'ডট কনভেনশন, চৌম্বক পোলারিটি ও যুগল কয়েল বিন্যাস'
+              en: 'Coefficient of Coupling & Leakage Flux',
+              hi: 'युग्मन गुणांक (k) एवं क्षरण फ्लक्स',
+              bn: 'কাপলিং গুণাঙ্ক (k) ও লিকেজ ফ্লাক্স'
             }
           },
           {
-            id: 'ch10-energy-stored-magnetic-field',
+            id: 'ch10-transformer-emf-equation',
             chapterId: 'ch-em-induction',
             order: 9,
             title: {
-              en: 'Energy Stored in Inductive Magnetic Fields & Energy Density (w)',
-              hi: 'प्रेरक चुंबकीय क्षेत्र में संचित ऊर्जा एवं ऊर्जा घनत्व (w)',
-              bn: 'আবেশীয় চৌম্বক ক্ষেত্রে সঞ্চিত শক্তি ও শক্তি ঘনত্ব (w)'
+              en: 'Transformer EMF Equation & Ideal Transformer',
+              hi: 'ट्रांसफॉर्मर ईएमएफ समीकरण एवं आदर्श ट्रांसफॉर्मर',
+              bn: 'ট্রান্সফরমার ইএমএফ সমীকরণ ও আদর্শ ট্রান্সফরমার'
             }
           },
           {
