@@ -4912,6 +4912,7 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
     // ==========================================
     // CHAPTER 10: LESSON 16 - ELECTROMAGNETIC BRAKING & DAMPING
     // ==========================================
+    case 'circuit-ch10-em-braking-damping-retarder':
     case 'circuit-ch10-eddy-current-brake-caliper':
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
@@ -4970,6 +4971,306 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
           </svg>
           <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
             {caption || "Electromagnetic Eddy-Current Braking: Relative motion through magnetic poles creates counter-torque converting kinetic energy into heat. Braking torque vanishes at rest."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 17 - INDUCTION HEATING & MELTING
+    // ==========================================
+    case 'circuit-ch10-induction-heating-coil-workpiece':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              INDUCTION HEATING: HIGH-FREQUENCY MAGNETIC COUPLING & SKIN DEPTH (δ = √(ρ / π·f·μ))
+            </text>
+
+            {/* Power Source & Tank Capacitor */}
+            <g transform="translate(60, 115)">
+              <rect x="-40" y="-55" width="80" height="110" rx="6" fill="#0b1329" stroke="#3b82f6" strokeWidth="1.5" />
+              <text x="0" y="-35" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">HF INVERTER</text>
+              <text x="0" y="-20" fill="#94a3b8" fontSize="8" textAnchor="middle">10 kHz - 400 kHz</text>
+              <circle cx="0" cy="5" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <path d="M -8 5 Q -4 -3, 0 5 T 8 5" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <text x="0" y="38" fill="#f59e0b" fontSize="8.5" fontWeight="bold" textAnchor="middle">Resonant Tank</text>
+            </g>
+
+            {/* Leads connecting to coil */}
+            <line x1="100" y1="90" x2="160" y2="90" stroke="#f59e0b" strokeWidth="3" />
+            <line x1="100" y1="140" x2="160" y2="140" stroke="#f59e0b" strokeWidth="3" />
+
+            {/* Helical Work Coil & Heated Billet */}
+            <g transform="translate(260, 115)">
+              {/* Hot Workpiece Billet */}
+              <rect x="-35" y="-60" width="70" height="120" rx="4" fill="#ea580c" stroke="#dc2626" strokeWidth="1.5" />
+              {/* Cold core inside */}
+              <rect x="-18" y="-60" width="36" height="120" fill="#475569" opacity="0.8" />
+              <text x="0" y="-10" fill="#fef08a" fontSize="8.5" fontWeight="bold" textAnchor="middle">SKIN LAYER</text>
+              <text x="0" y="5" fill="#ffffff" fontSize="7.5" textAnchor="middle">δ = 1.2 mm</text>
+              <text x="0" y="20" fill="#94a3b8" fontSize="7" textAnchor="middle">Cold Core</text>
+
+              {/* Copper Induction Coil Slices */}
+              {[-50, -25, 0, 25, 50].map((yOff, idx) => (
+                <g key={idx}>
+                  <circle cx="-50" cy={yOff} r="8" fill="#b45309" stroke="#fbbf24" strokeWidth="1.5" />
+                  <circle cx="-50" cy={yOff} r="4" fill="#0284c7" />
+                  <circle cx="50" cy={yOff} r="8" fill="#b45309" stroke="#fbbf24" strokeWidth="1.5" />
+                  <circle cx="50" cy={yOff} r="4" fill="#0284c7" />
+                </g>
+              ))}
+
+              {/* Water cooling notation */}
+              <text x="0" y="75" fill="#38bdf8" fontSize="8" fontWeight="bold" textAnchor="middle">
+                Water-Cooled Hollow Copper Coil
+              </text>
+            </g>
+
+            {/* Eddy Current & Flux Profile Inset */}
+            <g transform="translate(435, 115)">
+              <rect x="-65" y="-55" width="130" height="110" rx="6" fill="#0f172a" stroke="#334155" />
+              <text x="0" y="-38" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">HEAT GENERATION</text>
+              <circle cx="0" cy="5" r="28" fill="#ea580c" stroke="#ef4444" strokeWidth="1.5" />
+              <circle cx="0" cy="5" r="14" fill="#1e293b" />
+              <ellipse cx="0" cy="5" rx="20" ry="20" fill="none" stroke="#fef08a" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x="0" y="45" fill="#34d399" fontSize="8" fontWeight="bold" textAnchor="middle">
+                P = I²_eddy · R
+              </text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="198" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="217" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Skin Depth: δ = √(ρ / π·f·μ) | Thermal Dissipation: P = ∫ J²·ρ dV | Non-contact rapid heating
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Induction Heating System: Alternating coil current produces alternating magnetic flux, inducing concentrated surface eddy currents that heat the workpiece by Joule dissipation."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 18 - WIRELESS POWER TRANSFER & RFID
+    // ==========================================
+    case 'circuit-ch10-wireless-power-rfid-inductive':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">
+              RESONANT INDUCTIVE WIRELESS POWER & RFID BACKSCATTER COUPLING
+            </text>
+
+            {/* Primary Transmitter (Tx) Circuit */}
+            <g transform="translate(130, 115)">
+              <rect x="-85" y="-55" width="170" height="110" rx="6" fill="#0b1329" stroke="#0284c7" strokeWidth="1.5" />
+              <text x="0" y="-38" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+                TRANSMITTER (Tx / Reader)
+              </text>
+              <text x="0" y="-24" fill="#64748b" fontSize="8" textAnchor="middle">
+                H-Bridge Inverter & Series C1
+              </text>
+
+              {/* Planar Tx Coil cross-section */}
+              <g transform="translate(60, 5)">
+                <line x1="0" y1="-30" x2="0" y2="30" stroke="#0284c7" strokeWidth="6" strokeLinecap="round" />
+                <line x1="6" y1="-22" x2="6" y2="22" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" />
+                <line x1="12" y1="-14" x2="12" y2="14" stroke="#7dd3fc" strokeWidth="3" strokeLinecap="round" />
+              </g>
+              <text x="-25" y="15" fill="#38bdf8" fontSize="8" fontWeight="bold">L1, C1 (Resonant)</text>
+              <text x="0" y="42" fill="#94a3b8" fontSize="7.5" textAnchor="middle">
+                Qi Carrier: 110 - 205 kHz
+              </text>
+            </g>
+
+            {/* Magnetic Coupling Field Lines */}
+            <g transform="translate(270, 115)" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="4 3" fill="none" opacity="0.75">
+              <path d="M -60 -25 C -20 -40, 20 -40, 60 -25" />
+              <path d="M -60 0 C -20 0, 20 0, 60 0" stroke="#7dd3fc" strokeWidth="2.5" />
+              <path d="M -60 25 C -20 40, 20 40, 60 25" />
+              <text x="0" y="-48" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle" stroke="none">
+                k = M / √(L1·L2)
+              </text>
+            </g>
+
+            {/* Secondary Receiver (Rx) Circuit */}
+            <g transform="translate(410, 115)">
+              <rect x="-85" y="-55" width="170" height="110" rx="6" fill="#0b1329" stroke="#059669" strokeWidth="1.5" />
+              <text x="0" y="-38" fill="#34d399" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+                RECEIVER (Rx / RFID Tag)
+              </text>
+              <text x="0" y="-24" fill="#64748b" fontSize="8" textAnchor="middle">
+                Tuned C2 + Rectifier + Battery / IC
+              </text>
+
+              {/* Planar Rx Coil cross-section */}
+              <g transform="translate(-60, 5)">
+                <line x1="0" y1="-30" x2="0" y2="30" stroke="#059669" strokeWidth="6" strokeLinecap="round" />
+                <line x1="-6" y1="-22" x2="-6" y2="22" stroke="#34d399" strokeWidth="4" strokeLinecap="round" />
+                <line x1="-12" y1="-14" x2="-12" y2="14" stroke="#6ee7b7" strokeWidth="3" strokeLinecap="round" />
+              </g>
+
+              {/* Battery Charging / Tag IC */}
+              <rect x="-15" y="-5" width="55" height="24" rx="4" fill="#064e3b" stroke="#10b981" />
+              <text x="12" y="10" fill="#6ee7b7" fontSize="8" fontWeight="bold" textAnchor="middle">
+                LOAD / IC
+              </text>
+              <text x="0" y="42" fill="#34d399" fontSize="7.5" textAnchor="middle">
+                Load Modulation Backscatter
+              </text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="198" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="217" fill="#34d399" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Induced Voltage: V_rx = -jωM·I_tx | Maximum Power Efficiency at Resonant LC Tuning
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Wireless Power & RFID: Mutual inductive coupling transfers power across an air gap; passive tags communicate back by modulating load impedance to alter reflected primary current."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 19 - LINEAR INDUCTION MOTORS & MAGLEV
+    // ==========================================
+    case 'circuit-ch10-linear-induction-maglev':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">
+              LINEAR INDUCTION MOTOR (LIM) & MAGLEV: TRAVELING FIELD PROPULSION (v_s = 2·f·τ)
+            </text>
+
+            {/* Secondary Bogie Reaction Plate */}
+            <g transform="translate(270, 75)">
+              {/* Vehicle Car frame */}
+              <rect x="-180" y="-25" width="360" height="30" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="0" y="-7" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">
+                MAGLEV VEHICLE BOGIE / LINEAR ROTOR SECONDARY (Speed v →)
+              </text>
+              {/* Reaction Plate: Steel Backing + Aluminum Face */}
+              <rect x="-170" y="5" width="340" height="6" fill="#334155" />
+              <rect x="-170" y="11" width="340" height="6" fill="#60a5fa" stroke="#3b82f6" />
+              <text x="0" y="28" fill="#fbbf24" fontSize="7.5" fontWeight="bold" textAnchor="middle">
+                Reaction Plate: High Conductivity Aluminum (Induced Eddy Currents) on Steel Core
+              </text>
+            </g>
+
+            {/* Air Gap */}
+            <g transform="translate(270, 115)">
+              <text x="0" y="3" fill="#f59e0b" fontSize="8" fontWeight="bold" textAnchor="middle">
+                Air Gap g ≈ 10 - 15 mm | Slip s = (v_s - v) / v_s
+              </text>
+            </g>
+
+            {/* Linear Stator Primary Track */}
+            <g transform="translate(270, 150)">
+              {/* Iron Stator Body */}
+              <rect x="-190" y="-12" width="380" height="42" rx="4" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+              {/* Stator 3-Phase Multi-Poles */}
+              {[-150, -90, -30, 30, 90, 150].map((xP, i) => (
+                <g key={i} transform={`translate(${xP}, 0)`}>
+                  <rect x="-18" y="-12" width="36" height="25" fill={i % 2 === 0 ? '#b91c1c' : '#1d4ed8'} />
+                  <text x="0" y="6" fill="#ffffff" fontSize="9" fontWeight="bold" textAnchor="middle">
+                    {i % 2 === 0 ? 'N' : 'S'}
+                  </text>
+                </g>
+              ))}
+              <text x="0" y="24" fill="#94a3b8" fontSize="8" textAnchor="middle">
+                Stator Track 3-Phase Winding: Pole Pitch τ = 0.35 m
+              </text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="198" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="217" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Synchronous Wave Velocity: v_s = 2·f·τ | Linear Thrust: F ∝ s·B²·A / R₂ | Non-contact Traction
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Linear Induction Motors: Unrolling a rotary stator into a linear track creates a linear traveling magnetic wave that sweeps conductive reaction plates forward without mechanical adhesion."}
+          </p>
+        </div>
+      );
+
+    // ==========================================
+    // CHAPTER 10: LESSON 20 - EM INDUCTION TESTING & SAFETY CAPSTONE
+    // ==========================================
+    case 'circuit-ch10-em-induction-testing-safety-capstone':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-56">
+            {/* Header */}
+            <rect x="20" y="10" width="500" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              CHAPTER 10 CAPSTONE: COMPREHENSIVE INDUCTION TESTING & SAFE ISOLATION WORKFLOW
+            </text>
+
+            {/* Stage 1: Identification & Physical Law */}
+            <g transform="translate(80, 105)">
+              <rect x="-50" y="-45" width="100" height="90" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="0" y="-28" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">1. PHYSICS LAW</text>
+              <text x="0" y="-12" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Faraday / Lenz</text>
+              <text x="0" y="3" fill="#e2e8f0" fontSize="8" fontWeight="bold" textAnchor="middle">e = -N(dΦ/dt)</text>
+              <text x="0" y="18" fill="#e2e8f0" fontSize="8" fontWeight="bold" textAnchor="middle">e = B·l·v sinθ</text>
+              <text x="0" y="34" fill="#34d399" fontSize="7.5" textAnchor="middle">Dynamic vs Static</text>
+            </g>
+
+            {/* Flow Arrow */}
+            <path d="M 135 105 L 155 105" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#arrow)" />
+
+            {/* Stage 2: Loss & Heating Evaluation */}
+            <g transform="translate(210, 105)">
+              <rect x="-50" y="-45" width="100" height="90" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="0" y="-28" fill="#f59e0b" fontSize="8.5" fontWeight="bold" textAnchor="middle">2. LOSS & HEAT</text>
+              <text x="0" y="-12" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Eddy Currents</text>
+              <text x="0" y="3" fill="#ea580c" fontSize="8" fontWeight="bold" textAnchor="middle">P_e ∝ B²·f²·t²</text>
+              <text x="0" y="18" fill="#ea580c" fontSize="8" fontWeight="bold" textAnchor="middle">Skin Depth δ</text>
+              <text x="0" y="34" fill="#34d399" fontSize="7.5" textAnchor="middle">Lamination Check</text>
+            </g>
+
+            {/* Flow Arrow */}
+            <path d="M 265 105 L 285 105" stroke="#f59e0b" strokeWidth="2.5" />
+
+            {/* Stage 3: Measurement & Instrumentation */}
+            <g transform="translate(340, 105)">
+              <rect x="-50" y="-45" width="100" height="90" rx="6" fill="#0f172a" stroke="#a855f7" strokeWidth="1.5" />
+              <text x="0" y="-28" fill="#c084fc" fontSize="8.5" fontWeight="bold" textAnchor="middle">3. INSTRUMENT</text>
+              <text x="0" y="-12" fill="#94a3b8" fontSize="7.5" textAnchor="middle">CAT IV Test Meter</text>
+              <text x="0" y="3" fill="#e2e8f0" fontSize="8" fontWeight="bold" textAnchor="middle">Live-Dead-Live</text>
+              <text x="0" y="18" fill="#e2e8f0" fontSize="8" fontWeight="bold" textAnchor="middle">Mutual Coupling</text>
+              <text x="0" y="34" fill="#34d399" fontSize="7.5" textAnchor="middle">Ghost Voltage</text>
+            </g>
+
+            {/* Flow Arrow */}
+            <path d="M 395 105 L 415 105" stroke="#f59e0b" strokeWidth="2.5" />
+
+            {/* Stage 4: Safety & Earthing Protocols */}
+            <g transform="translate(470, 105)">
+              <rect x="-50" y="-45" width="100" height="90" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="0" y="-28" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">4. SAFETY & LOTO</text>
+              <text x="0" y="-12" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Protective Earthing</text>
+              <text x="0" y="3" fill="#facc15" fontSize="8" fontWeight="bold" textAnchor="middle">Drain Grounds</text>
+              <text x="0" y="18" fill="#facc15" fontSize="8" fontWeight="bold" textAnchor="middle">Discharge Stored ½LI²</text>
+              <text x="0" y="34" fill="#38bdf8" fontSize="7.5" textAnchor="middle">Site Clearance</text>
+            </g>
+
+            {/* Bottom Formula */}
+            <rect x="20" y="198" width="500" height="30" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="217" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Safety Mandate: Never assume a conductor is dead | Neutralize induced EMFs with portable working earths
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Capstone Workflow: Systematically applying physical laws, calculating induced losses, proving dead with rated test tools, and installing working grounds before contact."}
           </p>
         </div>
       );

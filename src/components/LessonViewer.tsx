@@ -118,6 +118,10 @@ import { SkinProximityEffectAnimation } from './interactive/SkinProximityEffectA
 import { FaradayDiscAnimation } from './interactive/FaradayDiscAnimation';
 import { InductionCoilAnimation } from './interactive/InductionCoilAnimation';
 import { ElectromagneticBrakingAnimation } from './interactive/ElectromagneticBrakingAnimation';
+import { InductionHeatingAnimation } from './interactive/InductionHeatingAnimation';
+import { WirelessPowerRFIDAnimation } from './interactive/WirelessPowerRFIDAnimation';
+import { LinearInductionMaglevAnimation } from './interactive/LinearInductionMaglevAnimation';
+import { EMInductionTestingSafetyCapstoneAnimation } from './interactive/EMInductionTestingSafetyCapstoneAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -685,6 +689,44 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'tp-electromagnetic-braking-damping'
   ) {
     return <ElectromagneticBrakingAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-induction-heating-melting' ||
+    lessonId === 'lsn-ch10-induction-heating-melting' ||
+    topicId === 'tp-induction-heating-melting'
+  ) {
+    return <InductionHeatingAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-wireless-power-rfid-inductive' ||
+    lessonId === 'lsn-ch10-wireless-power-rfid-inductive' ||
+    topicId === 'tp-wireless-power-rfid-inductive'
+  ) {
+    return <WirelessPowerRFIDAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-linear-induction-maglev' ||
+    topicId === 'ch10-linear-induction-magnetic-levitation' ||
+    lessonId === 'lsn-ch10-linear-induction-maglev' ||
+    lessonId === 'lsn-ch10-linear-induction-magnetic-levitation' ||
+    topicId === 'tp-linear-induction-maglev' ||
+    topicId === 'tp-linear-induction-magnetic-levitation'
+  ) {
+    return <LinearInductionMaglevAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch10-em-induction-testing-safety' ||
+    topicId === 'ch10-em-induction-testing-safety-capstone' ||
+    lessonId === 'lsn-ch10-em-induction-testing-safety' ||
+    lessonId === 'lsn-ch10-em-induction-testing-safety-capstone' ||
+    topicId === 'tp-em-induction-testing-safety' ||
+    topicId === 'tp-em-induction-testing-safety-capstone'
+  ) {
+    return <EMInductionTestingSafetyCapstoneAnimation currentLanguage={currentLanguage} />;
   }
 
   if (

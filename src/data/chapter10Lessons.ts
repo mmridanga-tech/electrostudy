@@ -15,6 +15,10 @@ import { LESSON_SKIN_EFFECT_PROXIMITY_EFFECT } from './chapter10Lesson13';
 import { LESSON_HOMOPOLAR_GENERATORS_DISCS } from './chapter10Lesson14';
 import { LESSON_INDUCTION_COILS_TRANSFORMERS } from './chapter10Lesson15';
 import { LESSON_ELECTROMAGNETIC_BRAKING_DAMPING } from './chapter10Lesson16';
+import { LESSON_INDUCTION_HEATING_MELTING } from './chapter10Lesson17';
+import { LESSON_WIRELESS_POWER_RFID_INDUCTIVE } from './chapter10Lesson18';
+import { LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION } from './chapter10Lesson19';
+import { LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE } from './chapter10Lesson20';
 
 export const CHAPTER_10_LESSONS: Record<string, Lesson> = {
   // Topic ID mapping
@@ -37,6 +41,12 @@ export const CHAPTER_10_LESSONS: Record<string, Lesson> = {
   'ch10-homopolar-generators-discs': LESSON_HOMOPOLAR_GENERATORS_DISCS,
   'ch10-induction-coils-transformers': LESSON_INDUCTION_COILS_TRANSFORMERS,
   'ch10-electromagnetic-braking-damping': LESSON_ELECTROMAGNETIC_BRAKING_DAMPING,
+  'ch10-induction-heating-melting': LESSON_INDUCTION_HEATING_MELTING,
+  'ch10-wireless-power-rfid-inductive': LESSON_WIRELESS_POWER_RFID_INDUCTIVE,
+  'ch10-linear-induction-maglev': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'ch10-linear-induction-magnetic-levitation': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'ch10-em-induction-testing-safety': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE,
+  'ch10-em-induction-testing-safety-capstone': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE,
 
   // Lesson ID mapping & backward compatibility aliases
   'lsn-ch10-faradays-laws-discovery': LESSON_FARADAYS_LAWS_DISCOVERY,
@@ -58,6 +68,12 @@ export const CHAPTER_10_LESSONS: Record<string, Lesson> = {
   'lsn-ch10-homopolar-generators-discs': LESSON_HOMOPOLAR_GENERATORS_DISCS,
   'lsn-ch10-induction-coils-transformers': LESSON_INDUCTION_COILS_TRANSFORMERS,
   'lsn-ch10-electromagnetic-braking-damping': LESSON_ELECTROMAGNETIC_BRAKING_DAMPING,
+  'lsn-ch10-induction-heating-melting': LESSON_INDUCTION_HEATING_MELTING,
+  'lsn-ch10-wireless-power-rfid-inductive': LESSON_WIRELESS_POWER_RFID_INDUCTIVE,
+  'lsn-ch10-linear-induction-maglev': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'lsn-ch10-linear-induction-magnetic-levitation': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'lsn-ch10-em-induction-testing-safety': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE,
+  'lsn-ch10-em-induction-testing-safety-capstone': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE,
 
   'tp-faradays-laws-discovery': LESSON_FARADAYS_LAWS_DISCOVERY,
   'tp-lenzs-law-conservation-energy': LESSON_LENZS_LAW_CONSERVATION_ENERGY,
@@ -74,7 +90,13 @@ export const CHAPTER_10_LESSONS: Record<string, Lesson> = {
   'tp-skin-effect-proximity-effect': LESSON_SKIN_EFFECT_PROXIMITY_EFFECT,
   'tp-homopolar-generators-discs': LESSON_HOMOPOLAR_GENERATORS_DISCS,
   'tp-induction-coils-transformers': LESSON_INDUCTION_COILS_TRANSFORMERS,
-  'tp-electromagnetic-braking-damping': LESSON_ELECTROMAGNETIC_BRAKING_DAMPING
+  'tp-electromagnetic-braking-damping': LESSON_ELECTROMAGNETIC_BRAKING_DAMPING,
+  'tp-induction-heating-melting': LESSON_INDUCTION_HEATING_MELTING,
+  'tp-wireless-power-rfid-inductive': LESSON_WIRELESS_POWER_RFID_INDUCTIVE,
+  'tp-linear-induction-maglev': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'tp-linear-induction-magnetic-levitation': LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  'tp-em-induction-testing-safety': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE,
+  'tp-em-induction-testing-safety-capstone': LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE
 };
 
 export {
@@ -93,6 +115,10 @@ export {
   LESSON_SKIN_EFFECT_PROXIMITY_EFFECT,
   LESSON_HOMOPOLAR_GENERATORS_DISCS,
   LESSON_INDUCTION_COILS_TRANSFORMERS,
-  LESSON_ELECTROMAGNETIC_BRAKING_DAMPING
+  LESSON_ELECTROMAGNETIC_BRAKING_DAMPING,
+  LESSON_INDUCTION_HEATING_MELTING,
+  LESSON_WIRELESS_POWER_RFID_INDUCTIVE,
+  LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION,
+  LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE
 };
 
