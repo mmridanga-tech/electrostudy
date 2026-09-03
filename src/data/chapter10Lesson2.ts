@@ -368,63 +368,325 @@ Step 3: Calculate Retarding Lorentz / Lenz Force:
   },
   mcqs: [
     {
-      id: 'mcq-ch10-l2-1',
+      id: "mcq-ch10-l2-1",
       question: {
-        en: 'When the North pole of a bar magnet is moved rapidly toward the front face of a circular coil, the induced magnetic pole at that face is:',
-        hi: 'जब एक छड़ चुंबक के उत्तरी ध्रुव को तेजी से वृत्ताकार कुंडली के सामने लाया जाता है, तो उस मुख पर कौन सा प्रेरित चुंबकीय ध्रुव बनता है?',
-        bn: 'একটি দণ্ড চুম্বকের উত্তর মেরুকে দ্রুত তারকুণ্ডলীর সামনে আনলে কয়েলের সেই তলে কোন চৌম্বক মেরু আবিষ্ট হয়?'
+        en: "When the North pole of a bar magnet is moved rapidly toward the front face of a circular coil, the induced magnetic pole at that face is:",
+        hi: "जब एक छड़ चुंबक के उत्तरी ध्रुव को तेजी से वृत्ताकार कुंडली के सामने लाया जाता है, तो उस मुख पर कौन सा प्रेरित चुंबकीय ध्रुव बनता है?",
+        bn: "একটি দণ্ড চুম্বকের উত্তর মেরুকে দ্রুত তারকুণ্ডলীর সামনে আনলে কয়েলের সেই তলে কোন চৌম্বক মেরু আবিষ্ট হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'A South pole (to attract the magnet)', hi: 'एक दक्षिणी ध्रुव (चुंबक को आकर्षित करने हेतु)', bn: 'একটি দক্ষিণ মেরু (চুম্বককে আকর্ষণ করতে)' } },
-        { id: 'opt-2', text: { en: 'A North pole (to repel and oppose the entry of the magnet)', hi: 'एक उत्तरी ध्रुव (चुंबक के प्रवेश का विरोध करने हेतु प्रतिकर्षण)', bn: 'একটি উত্তর মেরু (চুম্বকের আগমনকে বাধা দিতে বিকর্ষণ)' } },
-        { id: 'opt-3', text: { en: 'No magnetic pole is formed', hi: 'कोई चुंबकीय ध्रुव नहीं बनता', bn: 'কোনো চৌম্বক মেরু তৈরি হয় না' } },
-        { id: 'opt-4', text: { en: 'Alternating North and South at 50 Hz', hi: '50 Hz पर बारी-बारी से उत्तर और दक्षिण', bn: '৫০ হার্টজে পর্যায়ক্রমে উত্তর ও দক্ষিণ' } }
+        { id: "opt-1", text: { en: "A South pole (to attract the magnet)", hi: "एक दक्षिणी ध्रुव (चुंबक को आकर्षित करने हेतु)", bn: "একটি দক্ষিণ মেরু (চুম্বককে আকর্ষণ করতে)" } },
+        { id: "opt-2", text: { en: "A North pole (to repel and oppose the entry of the magnet)", hi: "एक उत्तरी ध्रुव (चुंबक के प्रवेश का विरोध करने हेतु प्रतिकर्षण)", bn: "একটি উত্তর মেরু (চুম্বকের আগমনকে বাধা দিতে বিকর্ষণ)" } },
+        { id: "opt-3", text: { en: "No magnetic pole is formed", hi: "कोई चुंबकीय ध्रुव नहीं बनता", bn: "কোনো চৌম্বক মেরু তৈরি হয় না" } },
+        { id: "opt-4", text: { en: "Alternating North and South at 50 Hz", hi: "50 Hz पर बारी-बारी से उत्तर और दक्षिण", bn: "৫০ হার্টজে পর্যায়ক্রমে উত্তর ও দক্ষিণ" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'According to Lenz’s Law, the induced current creates a North pole to oppose the approaching North pole via magnetic repulsion.',
-        hi: 'लेंज के नियमानुसार, प्रेरित धारा आने वाले उत्तरी ध्रुव का विरोध करने के लिए प्रतिकारक उत्तरी ध्रुव बनाती है।',
-        bn: 'লেনজের সূত্রানুযায়ী, আগমনকারী উত্তর মেরুর গতির বিরোধিতা করতে বিকর্ষক উত্তর মেরু সৃষ্টি হয়।'
+        en: "According to Lenz’s Law, the induced current creates a North pole to oppose the approaching North pole via magnetic repulsion.",
+        hi: "लेंज के नियमानुसार, प्रेरित धारा आने वाले उत्तरी ध्रुव का विरोध करने के लिए प्रतिकारक उत्तरी ध्रुव बनाती है।",
+        bn: "লেনজের সূত্রানুযায়ী, আগমনকারী উত্তর মেরুর গতির বিরোধিতা করতে বিকর্ষক উত্তর মেরু সৃষ্টি হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l2-2',
+      id: "mcq-ch10-l2-2",
       question: {
-        en: 'Lenz’s law is a direct consequence of which universal law of physics?',
-        hi: 'लेंज का नियम भौतिकी के किस सार्वभौमिक नियम का सीधा परिणाम है?',
-        bn: 'লেনজের সূত্রটি পদার্থবিজ্ঞানের কোন সার্বজনীন সূত্রের সরাসরি ফলাফল?'
+        en: "Lenz’s law is a direct consequence of which universal law of physics?",
+        hi: "लेंज का नियम भौतिकी के किस सार्वभौमिक नियम का सीधा परिणाम है?",
+        bn: "লেনজের সূত্রটি পদার্থবিজ্ঞানের কোন সার্বজনীন সূত্রের সরাসরি ফলাফল?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Law of Conservation of Linear Momentum', hi: 'रेखीय संवेग संरक्षण का नियम', bn: 'রৈখিক ভরবেগ সংরক্ষণ সূত্র' } },
-        { id: 'opt-2', text: { en: 'Law of Conservation of Energy', hi: 'ऊर्जा संरक्षण का नियम', bn: 'শক্তি সংরক্ষণ সূত্র' } },
-        { id: 'opt-3', text: { en: 'Coulomb’s Electrostatic Law', hi: 'कूलम्ब का स्थिरविद्युत नियम', bn: 'কুলম্বের স্থিরবৈদ্যুতিক সূত্র' } },
-        { id: 'opt-4', text: { en: 'Newton’s Law of Universal Gravitation', hi: 'न्यूटन का सार्वभौमिक गुरुत्वाकर्षण नियम', bn: 'নিউটনের মহাকর্ষ সূত্র' } }
+        { id: "opt-1", text: { en: "Law of Conservation of Linear Momentum", hi: "रेखीय संवेग संरक्षण का नियम", bn: "রৈখিক ভরবেগ সংরক্ষণ সূত্র" } },
+        { id: "opt-2", text: { en: "Law of Conservation of Energy", hi: "ऊर्जा संरक्षण का नियम", bn: "শক্তি সংরক্ষণ সূত্র" } },
+        { id: "opt-3", text: { en: "Coulomb’s Electrostatic Law", hi: "कूलम्ब का स्थिरविद्युत नियम", bn: "কুলম্বের স্থিরবৈদ্যুতিক সূত্র" } },
+        { id: "opt-4", text: { en: "Newton’s Law of Universal Gravitation", hi: "न्यूटन का सार्वभौमिक गुरुत्वाकर्षण नियम", bn: "নিউটনের মহাকর্ষ সূত্র" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Lenz’s law ensures that electrical energy is only generated through equivalent mechanical work, strictly upholding the Conservation of Energy.',
-        hi: 'लेंज का नियम यह सुनिश्चित करता है कि विद्युत ऊर्जा केवल समतुल्य यांत्रिक कार्य द्वारा ही उत्पन्न हो, जो ऊर्जा संरक्षण का नियम है।',
-        bn: 'লেনজের সূত্র নিশ্চিত করে যে সমপরিমাণ যান্ত্রিক কাজ ছাড়া বিদ্যুৎ উৎপন্ন হতে পারে না, যা শক্তি সংরক্ষণ নীতির মূল ভিত্তি।'
+        en: "Lenz’s law ensures that electrical energy is only generated through equivalent mechanical work, strictly upholding the Conservation of Energy.",
+        hi: "लेंज का नियम यह सुनिश्चित करता है कि विद्युत ऊर्जा केवल समतुल्य यांत्रिक कार्य द्वारा ही उत्पन्न हो, जो ऊर्जा संरक्षण का नियम है।",
+        bn: "লেনজের সূত্র নিশ্চিত করে যে সমপরিমাণ যান্ত্রিক কাজ ছাড়া বিদ্যুৎ উৎপন্ন হতে পারে না, যা শক্তি সংরক্ষণ নীতির মূল ভিত্তি।"
       }
     },
     {
-      id: 'mcq-ch10-l2-3',
+      id: "mcq-ch10-l2-3",
       question: {
-        en: 'What happens to the mechanical effort required to drive an electrical power generator when the connected consumer electrical load increases?',
-        hi: 'जब किसी विद्युत जनरेटर से जुड़े उपभोक्ता लोड की मांग बढ़ जाती है, तो जनरेटर को घुमाने के लिए आवश्यक यांत्रिक प्रयास पर क्या प्रभाव पड़ता है?',
-        bn: 'গ্রিডে বৈদ্যুতিক লোড বৃদ্ধি পেলে বিদ্যুৎ জেনারেটর ঘোরানোর জন্য প্রয়োজনীয় যান্ত্রিক শক্তির কী পরিবর্তন ঘটে?'
+        en: "What happens to the mechanical effort required to drive an electrical power generator when the connected consumer electrical load increases?",
+        hi: "जब किसी विद्युत जनरेटर से जुड़े उपभोक्ता लोड की मांग बढ़ जाती है, तो जनरेटर को घुमाने के लिए आवश्यक यांत्रिक प्रयास पर क्या प्रभाव पड़ता है?",
+        bn: "গ্রিডে বৈদ্যুতিক লোড বৃদ্ধি পেলে বিদ্যুৎ জেনারেটর ঘোরানোর জন্য প্রয়োজনীয় যান্ত্রিক শক্তির কী পরিবর্তন ঘটে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'It decreases because higher current lubricates the rotor', hi: 'यह घट जाता है क्योंकि अधिक धारा रोटर को चिकना करती है', bn: 'এটি হ্রাস পায় কারণ বেশি কারেন্ট রোটরকে মসৃণ করে' } },
-        { id: 'opt-2', text: { en: 'It remains completely unchanged', hi: 'यह पूरी तरह अपरिवर्तित रहता है', bn: 'এটি সম্পূর্ণ অপরিবর্তিত থাকে' } },
-        { id: 'opt-3', text: { en: 'It increases due to larger opposing electromagnetic back-torque', hi: 'अधिक विरोधी विद्युत चुंबकीय बैक-टॉर्क के कारण यह बढ़ जाता है', bn: 'বৃহত্তর বিপরীত তড়িৎচৌম্বকীয় ব্যাক-টর্কের কারণে এটি বৃদ্ধি পায়' } },
-        { id: 'opt-4', text: { en: 'It drops to zero instantly', hi: 'यह तुरंत शून्य हो जाता है', bn: 'এটি অবিলম্বে শূন্যে নেমে আসে' } }
+        { id: "opt-1", text: { en: "It decreases because higher current lubricates the rotor", hi: "यह घट जाता है क्योंकि अधिक धारा रोटर को चिकना करती है", bn: "এটি হ্রাস পায় কারণ বেশি কারেন্ট রোটরকে মসৃণ করে" } },
+        { id: "opt-2", text: { en: "It remains completely unchanged", hi: "यह पूरी तरह अपरिवर्तित रहता है", bn: "এটি সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-3", text: { en: "It increases due to larger opposing electromagnetic back-torque", hi: "अधिक विरोधी विद्युत चुंबकीय बैक-टॉर्क के कारण यह बढ़ जाता है", bn: "বৃহত্তর বিপরীত তড়িৎচৌম্বকীয় ব্যাক-টর্কের কারণে এটি বৃদ্ধি পায়" } },
+        { id: "opt-4", text: { en: "It drops to zero instantly", hi: "यह तुरंत शून्य हो जाता है", bn: "এটি অবিলম্বে শূন্যে নেমে আসে" } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: "opt-3",
       explanation: {
-        en: 'Larger load currents induce stronger opposing armature magnetic fields, increasing mechanical back-torque (T_back ∝ I_a). The turbine must supply more mechanical input power.',
-        hi: 'अधिक लोड धारा अधिक शक्तिशाली विरोधी बैक-टॉर्क उत्पन्न करती है, जिससे टरबाइन को अधिक यांत्रिक शक्ति देनी पड़ती है।',
-        bn: 'বেশি লোড কারেন্টের কারণে আর্মেচারে শক্তিশালী বিপরীত ব্যাক-টর্ক তৈরি হয়, ফলে টারবাইনকে বেশি যান্ত্রিক শক্তি সরবরাহ করতে হয়।'
+        en: "Larger load currents induce stronger opposing armature magnetic fields, increasing mechanical back-torque (T_back ∝ I_a). The turbine must supply more mechanical input power.",
+        hi: "अधिक लोड धारा अधिक शक्तिशाली विरोधी बैक-टॉर्क उत्पन्न करती है, जिससे टरबाइन को अधिक यांत्रिक शक्ति देनी पड़ती है।",
+        bn: "বেশি লোড কারেন্টের কারণে আর্মেচারে শক্তিশালী বিপরীত ব্যাক-টর্ক তৈরি হয়, ফলে টারবাইনকে বেশি যান্ত্রিক শক্তি সরবরাহ করতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-04",
+      question: {
+        en: "A strong neodymium magnet is dropped vertically through an open vertical copper pipe. The magnet accelerates briefly and then falls:",
+        hi: "एक शक्तिशाली नियोडिमियम चुंबक को तांबे के लंबवत खुले पाइप में गिराया जाता है। चुंबक थोड़ा त्वरित होकर फिर गिरता है:",
+        bn: "একটি শক্তিশালী নিওডিমিয়াম চুম্বককে উল্লম্ব তামার নলের মধ্য দিয়ে ফেলা হলে, চুম্বকটি সামান্য ত্বরান্বিত হওয়ার পর:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "With standard gravitational acceleration g = 9.8 m/s²", hi: "सामान्य गुरुत्वीय त्वरण g = 9.8 m/s² के साथ", bn: "স্বাভাবিক অভিকর্ষজ ত্বরণ g = ৯.৮ m/s² বেগে" } },
+        { id: "opt-2", text: { en: "At a steady terminal velocity much slower than free fall due to opposing eddy current forces", hi: "विरोधी भंवर धारा बलों के कारण मुक्त पतन से बहुत धीमी स्थिर टर्मिनल गति से", bn: "বাধা সৃষ্টিকারী এডি কারেন্টের কারণে মুক্ত পতনের চেয়ে অনেক কম স্থির প্রান্তিক বেগে" } },
+        { id: "opt-3", text: { en: "With ever-increasing acceleration exceeding 2g", hi: "2g से अधिक लगातार बढ़ते त्वरण के साथ", bn: "২g এর চেয়েও ক্রমাগত দ্রুততর ত্বরণে" } },
+        { id: "opt-4", text: { en: "It bounces backward out of the top entrance of the pipe", hi: "यह पाइप के ऊपरी सिरे से वापस उछल जाता है", bn: "এটি নলের ওপরের মুখ দিয়ে পেছনে ফিরে আসে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "As the magnet falls, changing magnetic flux induces eddy currents in the copper wall. By Lenz’s law, these currents create an upward opposing magnetic force that balances gravity, establishing a slow constant terminal velocity.",
+        hi: "चुंबक के गिरने से तांबे में भंवर धाराएं उत्पन्न होती हैं। लेंज के नियम से ये धाराएं ऊपर की ओर विरोधी चुंबकीय बल लगाती हैं, जिससे चुंबक धीमी टर्मिनल गति प्राप्त कर लेता है।",
+        bn: "চুম্বক পড়ার সময় তামার দেয়ালে এডি কারেন্ট আবিষ্ট হয়। লেনজের সূত্রানুযায়ী এই কারেন্ট ওপরের দিকে বাধাদায়ী বল প্রয়োগ করে মহাকর্ষ বলকে প্রশমিত করে এবং ধীর প্রান্তিক বেগ দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-05",
+      question: {
+        en: "If the induced EMF acted in a direction to reinforce rather than oppose the change in magnetic flux, what fundamental law of physics would be violated?",
+        hi: "यदि प्रेरित EMF चुंबकीय फ्लक्स के परिवर्तन का विरोध करने के बजाय उसे और बढ़ाने की दिशा में कार्य करता, तो भौतिकी के किस नियम का उल्लंघन होता?",
+        bn: "যদি আবিষ্ট EMF চৌম্বক ফ্লাক্স পরিবর্তনের বিরোধিতা না করে তা বৃদ্ধি করার দিকে কাজ করত, তবে পদার্থবিজ্ঞানের কোন মৌলিক সূত্র লঙ্ঘিত হতো?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The Law of Conservation of Energy", hi: "ऊर्जा संरक्षण का नियम", bn: "শক্তি সংরক্ষণ সূত্র" } },
+        { id: "opt-2", text: { en: "Newton’s First Law of Inertia", hi: "न्यूटन का जड़त्व का प्रथम नियम", bn: "নিউটনের প্রথম গতিসূত্র" } },
+        { id: "opt-3", text: { en: "Coulomb’s Law of Electrostatics", hi: "कूलॉम का स्थिरवैद्युत नियम", bn: "কুলম্বের স্থিরতাড়িতিক সূত্র" } },
+        { id: "opt-4", text: { en: "Snell’s Law of Refraction", hi: "स्नेल का अपवर्तन नियम", bn: "স্নেলের প্রতিসরণ সূত্র" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "If induced current aided flux change, current and magnetic field would grow indefinitely without external work, creating infinite energy from nothing and violating the Law of Conservation of Energy.",
+        hi: "यदि धारा फ्लक्स वृद्धि में सहायता करती, तो बिना किसी बाहरी कार्य के ऊर्जा अनंत रूप से बढ़ती जाती, जो ऊर्जा संरक्षण के नियम का सीधा उल्लंघन होता।",
+        bn: "কারেন্ট যদি ফ্লাক্স বৃদ্ধিতে সহায়তা করত, তবে কোনো বহিঃস্থ কাজ ছাড়াই শক্তি আপনা-আপনি অসীম পর্যন্ত বৃদ্ধি পেত, যা শক্তি সংরক্ষণ সূত্রের ঘোর বিরোধী।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-06",
+      question: {
+        en: "When the South pole of a bar magnet is moved rapidly away from the front face of a stationary coil, the front face of the coil develops:",
+        hi: "जब किसी छड़ चुंबक के दक्षिणी ध्रुव को स्थिर कुंडली के सामने से तेजी से दूर ले जाया जाता है, तो कुंडली के सामने का सिरा विकसित करता है:",
+        bn: "যখন কোনো দণ্ডচুম্বকের দক্ষিণ মেরুকে একটি স্থির কয়েলের সম্মুখভাগ থেকে দ্রুত দূরে সরিয়ে নেওয়া হয়, তখন কয়েলের সম্মুখভাগে উৎপন্ন হয়:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A North magnetic pole that attracts the receding South pole to oppose withdrawal", hi: "एक उत्तरी चुंबकीय ध्रुव जो दूर जाते दक्षिणी ध्रुव को आकर्षित कर दूर जाने का विरोध करता है", bn: "একটি উত্তর মেরু যা অপসৃয়মাণ দক্ষিণ মেরুকে আকর্ষণ করে দূরে সরার বিরোধিতা করে" } },
+        { id: "opt-2", text: { en: "A South magnetic pole that repels the magnet further away", hi: "एक दक्षिणी चुंबकीय ध्रुव जो चुंबक को और दूर धकेलता है", bn: "একটি দক্ষিণ মেরু যা চুম্বককে আরও দূরে ঠেলে দেয়" } },
+        { id: "opt-3", text: { en: "Zero magnetic polarity because the magnet is moving away", hi: "शून्य चुंबकीय ध्रुवता क्योंकि चुंबक दूर जा रहा है", bn: "কোনো চৌম্বক মেরু তৈরি হয় না কারণ চুম্বক দূরে যাচ্ছে" } },
+        { id: "opt-4", text: { en: "An electrostatic positive charge only", hi: "केवल स्थिरवैद्युत धनात्मक आवेश", bn: "কেবল স্থিরতাড়িতিক ধনাত্মক আধান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the induced current opposes the withdrawal of the magnet. To oppose the South pole moving away, the coil face induces a North pole to exert an attractive force.",
+        hi: "लेंज के नियम से प्रेरित धारा चुंबक के दूर जाने का विरोध करती है। अतः दक्षिणी ध्रुव को दूर जाने से रोकने के लिए कुंडली अपने सामने उत्तरी ध्रुव बनाती है ताकि उसे आकर्षित कर सके।",
+        bn: "লেনজের সূত্রানুযায়ী আবিষ্ট কারেন্ট চুম্বকের দূরে সরে যাওয়ার বিরোধিতা করে। দক্ষিণ মেরুর অপসরণ রোধ করতে কয়েলের মুখে উত্তর মেরুর সৃষ্টি হয় যাতে তা আকর্ষণ বল সৃষ্টি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-07",
+      question: {
+        en: "In Elihu Thomson’s famous jumping ring experiment, why does a light aluminum ring placed over an AC-energized iron-core solenoid shoot violently upward?",
+        hi: "एलिहू थॉमसन के प्रसिद्ध जंपिंग रिंग प्रयोग में, एसी धारा से सक्रिय लोहे के कोर वाले सोलनॉइड पर रखी एल्यूमीनियम की अंगूठी तेजी से ऊपर क्यों उछल जाती है?",
+        bn: "এলিহু থমসনের বিখ্যাত জাম্পিং রিং পরীক্ষায়, এসি বিদ্যুতে সচল লোহার কোরযুক্ত সলেনয়েডের ওপর রাখা অ্যালুমিনিয়াম রিং তীব্র বেগে ওপরে লাফিয়ে ওঠে কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Induced eddy currents in the ring produce a magnetic field that repels the primary alternating flux", hi: "अंगूठी में प्रेरित भंवर धाराएं ऐसा चुंबकीय क्षेत्र बनाती हैं जो प्राथमिक फ्लक्स का विरोध और प्रतिकर्षण करता है", bn: "রিংয়ে আবিষ্ট এডি কারেন্ট এমন একটি চৌম্বক ক্ষেত্র তৈরি করে যা প্রাথমিক পরিবর্তী ফ্লাক্সকে বিকর্ষণ করে" } },
+        { id: "opt-2", text: { en: "The aluminum ring melts instantly and evaporates", hi: "एल्यूमीनियम की अंगूठी तुरंत पिघलकर वाष्पित हो जाती है", bn: "অ্যালুমিনিয়াম রিংটি মুহূর্তে গলে বাষ্পীভূত হয়" } },
+        { id: "opt-3", text: { en: "Thermal air convection pushes the ring upward", hi: "गर्म हवा का संवहन अंगूठी को ऊपर धकेलता है", bn: "উত্তপ্ত বায়ুর পরিচলন রিংটিকে ওপরে ঠেলে দেয়" } },
+        { id: "opt-4", text: { en: "Static electricity charges the ring negatively against the ground", hi: "स्थिर बिजली अंगूठी को जमीन के सापेक्ष ऋणावेशित कर देती है", bn: "স্থির বিদ্যুৎ রিংটিকে মাটির সাপেক্ষে ঋণাত্মক আধান দেয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The rising AC flux induces large circumferential eddy currents in the ring. By Lenz’s law, the magnetic polarity of the ring opposes the solenoid field, generating a strong repulsive Lorentz force that flings the ring upward.",
+        hi: "बढ़ता हुआ एसी फ्लक्स अंगूठी में तेज भंवर धाराएं बनाता है। लेंज के नियम से अंगूठी का चुंबकीय क्षेत्र सोलनॉइड के क्षेत्र के विपरीत होता है, जिससे लगा प्रतिकर्षण बल अंगूठी को ऊपर उछाल देता है।",
+        bn: "ক্রমবর্ধমান এসি ফ্লাক্স রিংয়ে প্রবল এডি কারেন্ট আবিষ্ট করে। লেনজের সূত্রানুযায়ী রিংটির চৌম্বক দিক সলেনয়েডের বিপরীত হওয়ায় শক্তিশালী বিকর্ষণ বল রিংটিকে ওপরে ছুড়ে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-08",
+      question: {
+        en: "A conducting loop of resistance R and width l is pulled with constant velocity v out of a uniform perpendicular magnetic field B. The external mechanical power supplied equals:",
+        hi: "R प्रतिरोध और l चौड़ाई वाले एक चालक लूप को समान चुंबकीय क्षेत्र B से बाहर नियत वेग v से खींचा जाता है। प्रदान की गई बाहरी यांत्रिक शक्ति बराबर होती है:",
+        bn: "R রোধ এবং l প্রস্থের একটি পরিবাহী লুপকে সমান্তরাল সুষম চৌম্বক ক্ষেত্র B থেকে স্থির বেগ v তে বাইরে টানা হচ্ছে। প্রযুক্ত বহিঃস্থ যান্ত্রিক ক্ষমতা কার সমান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The electrical Joule heating rate I²R = (B² l² v²) / R in the loop", hi: "लूप में विद्युत जूल तापीय दर I²R = (B² l² v²) / R के", bn: "লুপের বৈদ্যুতিক জুল তাপীয় অপচয় হার I²R = (B² l² v²) / R এর সমান" } },
+        { id: "opt-2", text: { en: "Zero, because magnetic forces do no work", hi: "शून्य, क्योंकि चुंबकीय बल कोई कार्य नहीं करते", bn: "শূন্য, কারণ চৌম্বক বল কোনো কাজ করে না" } },
+        { id: "opt-3", text: { en: "Half the electrical dissipation rate", hi: "विद्युत अपव्यय दर की आधी", bn: "বৈদ্যুতিক অপচয়ের অর্ধেক" } },
+        { id: "opt-4", text: { en: "The square of the gravitational potential energy", hi: "गुरुत्वीय स्थितिज ऊर्जा के वर्ग के", bn: "অভিকর্ষজ বিভব শক্তির বর্গের সমান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Conservation of energy dictates that 100% of the mechanical work performed against the retarding Lorentz force (F_mag = B²l²v/R, P_mech = F·v = B²l²v²/R) converts directly into electrical Joule heating (I²R).",
+        hi: "ऊर्जा संरक्षण के अनुसार विरोधी लोरेंत्ज़ बल के विरुद्ध किया गया यांत्रिक कार्य (P = F·v = B²l²v²/R) सीधे लूप में विद्युत जूल ऊष्मा (I²R) में परिवर्तित होता है।",
+        bn: "শক্তি সংরক্ষণ নীতি অনুসারে বাধাদায়ী লরেন্টজ বলের বিরুদ্ধে কৃত যান্ত্রিক কাজ (P = F·v = B²l²v²/R) শতভাগ সরাসরি কয়েলের বৈদ্যুতিক জুল তাপে (I²R) রূপান্তরিত হয়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l2-1",
+      question: {
+        en: "When the North pole of a bar magnet is moved rapidly toward the front face of a circular coil, the induced magnetic pole at that face is:",
+        hi: "जब एक छड़ चुंबक के उत्तरी ध्रुव को तेजी से वृत्ताकार कुंडली के सामने लाया जाता है, तो उस मुख पर कौन सा प्रेरित चुंबकीय ध्रुव बनता है?",
+        bn: "একটি দণ্ড চুম্বকের উত্তর মেরুকে দ্রুত তারকুণ্ডলীর সামনে আনলে কয়েলের সেই তলে কোন চৌম্বক মেরু আবিষ্ট হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A South pole (to attract the magnet)", hi: "एक दक्षिणी ध्रुव (चुंबक को आकर्षित करने हेतु)", bn: "একটি দক্ষিণ মেরু (চুম্বককে আকর্ষণ করতে)" } },
+        { id: "opt-2", text: { en: "A North pole (to repel and oppose the entry of the magnet)", hi: "एक उत्तरी ध्रुव (चुंबक के प्रवेश का विरोध करने हेतु प्रतिकर्षण)", bn: "একটি উত্তর মেরু (চুম্বকের আগমনকে বাধা দিতে বিকর্ষণ)" } },
+        { id: "opt-3", text: { en: "No magnetic pole is formed", hi: "कोई चुंबकीय ध्रुव नहीं बनता", bn: "কোনো চৌম্বক মেরু তৈরি হয় না" } },
+        { id: "opt-4", text: { en: "Alternating North and South at 50 Hz", hi: "50 Hz पर बारी-बारी से उत्तर और दक्षिण", bn: "৫০ হার্টজে পর্যায়ক্রমে উত্তর ও দক্ষিণ" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "According to Lenz’s Law, the induced current creates a North pole to oppose the approaching North pole via magnetic repulsion.",
+        hi: "लेंज के नियमानुसार, प्रेरित धारा आने वाले उत्तरी ध्रुव का विरोध करने के लिए प्रतिकारक उत्तरी ध्रुव बनाती है।",
+        bn: "লেনজের সূত্রানুযায়ী, আগমনকারী উত্তর মেরুর গতির বিরোধিতা করতে বিকর্ষক উত্তর মেরু সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l2-2",
+      question: {
+        en: "Lenz’s law is a direct consequence of which universal law of physics?",
+        hi: "लेंज का नियम भौतिकी के किस सार्वभौमिक नियम का सीधा परिणाम है?",
+        bn: "লেনজের সূত্রটি পদার্থবিজ্ঞানের কোন সার্বজনীন সূত্রের সরাসরি ফলাফল?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Law of Conservation of Linear Momentum", hi: "रेखीय संवेग संरक्षण का नियम", bn: "রৈখিক ভরবেগ সংরক্ষণ সূত্র" } },
+        { id: "opt-2", text: { en: "Law of Conservation of Energy", hi: "ऊर्जा संरक्षण का नियम", bn: "শক্তি সংরক্ষণ সূত্র" } },
+        { id: "opt-3", text: { en: "Coulomb’s Electrostatic Law", hi: "कूलम्ब का स्थिरविद्युत नियम", bn: "কুলম্বের স্থিরবৈদ্যুতিক সূত্র" } },
+        { id: "opt-4", text: { en: "Newton’s Law of Universal Gravitation", hi: "न्यूटन का सार्वभौमिक गुरुत्वाकर्षण नियम", bn: "নিউটনের মহাকর্ষ সূত্র" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Lenz’s law ensures that electrical energy is only generated through equivalent mechanical work, strictly upholding the Conservation of Energy.",
+        hi: "लेंज का नियम यह सुनिश्चित करता है कि विद्युत ऊर्जा केवल समतुल्य यांत्रिक कार्य द्वारा ही उत्पन्न हो, जो ऊर्जा संरक्षण का नियम है।",
+        bn: "লেনজের সূত্র নিশ্চিত করে যে সমপরিমাণ যান্ত্রিক কাজ ছাড়া বিদ্যুৎ উৎপন্ন হতে পারে না, যা শক্তি সংরক্ষণ নীতির মূল ভিত্তি।"
+      }
+    },
+    {
+      id: "mcq-ch10-l2-3",
+      question: {
+        en: "What happens to the mechanical effort required to drive an electrical power generator when the connected consumer electrical load increases?",
+        hi: "जब किसी विद्युत जनरेटर से जुड़े उपभोक्ता लोड की मांग बढ़ जाती है, तो जनरेटर को घुमाने के लिए आवश्यक यांत्रिक प्रयास पर क्या प्रभाव पड़ता है?",
+        bn: "গ্রিডে বৈদ্যুতিক লোড বৃদ্ধি পেলে বিদ্যুৎ জেনারেটর ঘোরানোর জন্য প্রয়োজনীয় যান্ত্রিক শক্তির কী পরিবর্তন ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It decreases because higher current lubricates the rotor", hi: "यह घट जाता है क्योंकि अधिक धारा रोटर को चिकना करती है", bn: "এটি হ্রাস পায় কারণ বেশি কারেন্ট রোটরকে মসৃণ করে" } },
+        { id: "opt-2", text: { en: "It remains completely unchanged", hi: "यह पूरी तरह अपरिवर्तित रहता है", bn: "এটি সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-3", text: { en: "It increases due to larger opposing electromagnetic back-torque", hi: "अधिक विरोधी विद्युत चुंबकीय बैक-टॉर्क के कारण यह बढ़ जाता है", bn: "বৃহত্তর বিপরীত তড়িৎচৌম্বকীয় ব্যাক-টর্কের কারণে এটি বৃদ্ধি পায়" } },
+        { id: "opt-4", text: { en: "It drops to zero instantly", hi: "यह तुरंत शून्य हो जाता है", bn: "এটি অবিলম্বে শূন্যে নেমে আসে" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "Larger load currents induce stronger opposing armature magnetic fields, increasing mechanical back-torque (T_back ∝ I_a). The turbine must supply more mechanical input power.",
+        hi: "अधिक लोड धारा अधिक शक्तिशाली विरोधी बैक-टॉर्क उत्पन्न करती है, जिससे टरबाइन को अधिक यांत्रिक शक्ति देनी पड़ती है।",
+        bn: "বেশি লোড কারেন্টের কারণে আর্মেচারে শক্তিশালী বিপরীত ব্যাক-টর্ক তৈরি হয়, ফলে টারবাইনকে বেশি যান্ত্রিক শক্তি সরবরাহ করতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-04",
+      question: {
+        en: "A strong neodymium magnet is dropped vertically through an open vertical copper pipe. The magnet accelerates briefly and then falls:",
+        hi: "एक शक्तिशाली नियोडिमियम चुंबक को तांबे के लंबवत खुले पाइप में गिराया जाता है। चुंबक थोड़ा त्वरित होकर फिर गिरता है:",
+        bn: "একটি শক্তিশালী নিওডিমিয়াম চুম্বককে উল্লম্ব তামার নলের মধ্য দিয়ে ফেলা হলে, চুম্বকটি সামান্য ত্বরান্বিত হওয়ার পর:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "With standard gravitational acceleration g = 9.8 m/s²", hi: "सामान्य गुरुत्वीय त्वरण g = 9.8 m/s² के साथ", bn: "স্বাভাবিক অভিকর্ষজ ত্বরণ g = ৯.৮ m/s² বেগে" } },
+        { id: "opt-2", text: { en: "At a steady terminal velocity much slower than free fall due to opposing eddy current forces", hi: "विरोधी भंवर धारा बलों के कारण मुक्त पतन से बहुत धीमी स्थिर टर्मिनल गति से", bn: "বাধা সৃষ্টিকারী এডি কারেন্টের কারণে মুক্ত পতনের চেয়ে অনেক কম স্থির প্রান্তিক বেগে" } },
+        { id: "opt-3", text: { en: "With ever-increasing acceleration exceeding 2g", hi: "2g से अधिक लगातार बढ़ते त्वरण के साथ", bn: "২g এর চেয়েও ক্রমাগত দ্রুততর ত্বরণে" } },
+        { id: "opt-4", text: { en: "It bounces backward out of the top entrance of the pipe", hi: "यह पाइप के ऊपरी सिरे से वापस उछल जाता है", bn: "এটি নলের ওপরের মুখ দিয়ে পেছনে ফিরে আসে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "As the magnet falls, changing magnetic flux induces eddy currents in the copper wall. By Lenz’s law, these currents create an upward opposing magnetic force that balances gravity, establishing a slow constant terminal velocity.",
+        hi: "चुंबक के गिरने से तांबे में भंवर धाराएं उत्पन्न होती हैं। लेंज के नियम से ये धाराएं ऊपर की ओर विरोधी चुंबकीय बल लगाती हैं, जिससे चुंबक धीमी टर्मिनल गति प्राप्त कर लेता है।",
+        bn: "চুম্বক পড়ার সময় তামার দেয়ালে এডি কারেন্ট আবিষ্ট হয়। লেনজের সূত্রানুযায়ী এই কারেন্ট ওপরের দিকে বাধাদায়ী বল প্রয়োগ করে মহাকর্ষ বলকে প্রশমিত করে এবং ধীর প্রান্তিক বেগ দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-05",
+      question: {
+        en: "If the induced EMF acted in a direction to reinforce rather than oppose the change in magnetic flux, what fundamental law of physics would be violated?",
+        hi: "यदि प्रेरित EMF चुंबकीय फ्लक्स के परिवर्तन का विरोध करने के बजाय उसे और बढ़ाने की दिशा में कार्य करता, तो भौतिकी के किस नियम का उल्लंघन होता?",
+        bn: "যদি আবিষ্ট EMF চৌম্বক ফ্লাক্স পরিবর্তনের বিরোধিতা না করে তা বৃদ্ধি করার দিকে কাজ করত, তবে পদার্থবিজ্ঞানের কোন মৌলিক সূত্র লঙ্ঘিত হতো?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The Law of Conservation of Energy", hi: "ऊर्जा संरक्षण का नियम", bn: "শক্তি সংরক্ষণ সূত্র" } },
+        { id: "opt-2", text: { en: "Newton’s First Law of Inertia", hi: "न्यूटन का जड़त्व का प्रथम नियम", bn: "নিউটনের প্রথম গতিসূত্র" } },
+        { id: "opt-3", text: { en: "Coulomb’s Law of Electrostatics", hi: "कूलॉम का स्थिरवैद्युत नियम", bn: "কুলম্বের স্থিরতাড়িতিক সূত্র" } },
+        { id: "opt-4", text: { en: "Snell’s Law of Refraction", hi: "स्नेल का अपवर्तन नियम", bn: "স্নেলের প্রতিসরণ সূত্র" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "If induced current aided flux change, current and magnetic field would grow indefinitely without external work, creating infinite energy from nothing and violating the Law of Conservation of Energy.",
+        hi: "यदि धारा फ्लक्स वृद्धि में सहायता करती, तो बिना किसी बाहरी कार्य के ऊर्जा अनंत रूप से बढ़ती जाती, जो ऊर्जा संरक्षण के नियम का सीधा उल्लंघन होता।",
+        bn: "কারেন্ট যদি ফ্লাক্স বৃদ্ধিতে সহায়তা করত, তবে কোনো বহিঃস্থ কাজ ছাড়াই শক্তি আপনা-আপনি অসীম পর্যন্ত বৃদ্ধি পেত, যা শক্তি সংরক্ষণ সূত্রের ঘোর বিরোধী।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-06",
+      question: {
+        en: "When the South pole of a bar magnet is moved rapidly away from the front face of a stationary coil, the front face of the coil develops:",
+        hi: "जब किसी छड़ चुंबक के दक्षिणी ध्रुव को स्थिर कुंडली के सामने से तेजी से दूर ले जाया जाता है, तो कुंडली के सामने का सिरा विकसित करता है:",
+        bn: "যখন কোনো দণ্ডচুম্বকের দক্ষিণ মেরুকে একটি স্থির কয়েলের সম্মুখভাগ থেকে দ্রুত দূরে সরিয়ে নেওয়া হয়, তখন কয়েলের সম্মুখভাগে উৎপন্ন হয়:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A North magnetic pole that attracts the receding South pole to oppose withdrawal", hi: "एक उत्तरी चुंबकीय ध्रुव जो दूर जाते दक्षिणी ध्रुव को आकर्षित कर दूर जाने का विरोध करता है", bn: "একটি উত্তর মেরু যা অপসৃয়মাণ দক্ষিণ মেরুকে আকর্ষণ করে দূরে সরার বিরোধিতা করে" } },
+        { id: "opt-2", text: { en: "A South magnetic pole that repels the magnet further away", hi: "एक दक्षिणी चुंबकीय ध्रुव जो चुंबक को और दूर धकेलता है", bn: "একটি দক্ষিণ মেরু যা চুম্বককে আরও দূরে ঠেলে দেয়" } },
+        { id: "opt-3", text: { en: "Zero magnetic polarity because the magnet is moving away", hi: "शून्य चुंबकीय ध्रुवता क्योंकि चुंबक दूर जा रहा है", bn: "কোনো চৌম্বক মেরু তৈরি হয় না কারণ চুম্বক দূরে যাচ্ছে" } },
+        { id: "opt-4", text: { en: "An electrostatic positive charge only", hi: "केवल स्थिरवैद्युत धनात्मक आवेश", bn: "কেবল স্থিরতাড়িতিক ধনাত্মক আধান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the induced current opposes the withdrawal of the magnet. To oppose the South pole moving away, the coil face induces a North pole to exert an attractive force.",
+        hi: "लेंज के नियम से प्रेरित धारा चुंबक के दूर जाने का विरोध करती है। अतः दक्षिणी ध्रुव को दूर जाने से रोकने के लिए कुंडली अपने सामने उत्तरी ध्रुव बनाती है ताकि उसे आकर्षित कर सके।",
+        bn: "লেনজের সূত্রানুযায়ী আবিষ্ট কারেন্ট চুম্বকের দূরে সরে যাওয়ার বিরোধিতা করে। দক্ষিণ মেরুর অপসরণ রোধ করতে কয়েলের মুখে উত্তর মেরুর সৃষ্টি হয় যাতে তা আকর্ষণ বল সৃষ্টি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-07",
+      question: {
+        en: "In Elihu Thomson’s famous jumping ring experiment, why does a light aluminum ring placed over an AC-energized iron-core solenoid shoot violently upward?",
+        hi: "एलिहू थॉमसन के प्रसिद्ध जंपिंग रिंग प्रयोग में, एसी धारा से सक्रिय लोहे के कोर वाले सोलनॉइड पर रखी एल्यूमीनियम की अंगूठी तेजी से ऊपर क्यों उछल जाती है?",
+        bn: "এলিহু থমসনের বিখ্যাত জাম্পিং রিং পরীক্ষায়, এসি বিদ্যুতে সচল লোহার কোরযুক্ত সলেনয়েডের ওপর রাখা অ্যালুমিনিয়াম রিং তীব্র বেগে ওপরে লাফিয়ে ওঠে কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Induced eddy currents in the ring produce a magnetic field that repels the primary alternating flux", hi: "अंगूठी में प्रेरित भंवर धाराएं ऐसा चुंबकीय क्षेत्र बनाती हैं जो प्राथमिक फ्लक्स का विरोध और प्रतिकर्षण करता है", bn: "রিংয়ে আবিষ্ট এডি কারেন্ট এমন একটি চৌম্বক ক্ষেত্র তৈরি করে যা প্রাথমিক পরিবর্তী ফ্লাক্সকে বিকর্ষণ করে" } },
+        { id: "opt-2", text: { en: "The aluminum ring melts instantly and evaporates", hi: "एल्यूमीनियम की अंगूठी तुरंत पिघलकर वाष्पित हो जाती है", bn: "অ্যালুমিনিয়াম রিংটি মুহূর্তে গলে বাষ্পীভূত হয়" } },
+        { id: "opt-3", text: { en: "Thermal air convection pushes the ring upward", hi: "गर्म हवा का संवहन अंगूठी को ऊपर धकेलता है", bn: "উত্তপ্ত বায়ুর পরিচলন রিংটিকে ওপরে ঠেলে দেয়" } },
+        { id: "opt-4", text: { en: "Static electricity charges the ring negatively against the ground", hi: "स्थिर बिजली अंगूठी को जमीन के सापेक्ष ऋणावेशित कर देती है", bn: "স্থির বিদ্যুৎ রিংটিকে মাটির সাপেক্ষে ঋণাত্মক আধান দেয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The rising AC flux induces large circumferential eddy currents in the ring. By Lenz’s law, the magnetic polarity of the ring opposes the solenoid field, generating a strong repulsive Lorentz force that flings the ring upward.",
+        hi: "बढ़ता हुआ एसी फ्लक्स अंगूठी में तेज भंवर धाराएं बनाता है। लेंज के नियम से अंगूठी का चुंबकीय क्षेत्र सोलनॉइड के क्षेत्र के विपरीत होता है, जिससे लगा प्रतिकर्षण बल अंगूठी को ऊपर उछाल देता है।",
+        bn: "ক্রমবর্ধমান এসি ফ্লাক্স রিংয়ে প্রবল এডি কারেন্ট আবিষ্ট করে। লেনজের সূত্রানুযায়ী রিংটির চৌম্বক দিক সলেনয়েডের বিপরীত হওয়ায় শক্তিশালী বিকর্ষণ বল রিংটিকে ওপরে ছুড়ে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l02-08",
+      question: {
+        en: "A conducting loop of resistance R and width l is pulled with constant velocity v out of a uniform perpendicular magnetic field B. The external mechanical power supplied equals:",
+        hi: "R प्रतिरोध और l चौड़ाई वाले एक चालक लूप को समान चुंबकीय क्षेत्र B से बाहर नियत वेग v से खींचा जाता है। प्रदान की गई बाहरी यांत्रिक शक्ति बराबर होती है:",
+        bn: "R রোধ এবং l প্রস্থের একটি পরিবাহী লুপকে সমান্তরাল সুষম চৌম্বক ক্ষেত্র B থেকে স্থির বেগ v তে বাইরে টানা হচ্ছে। প্রযুক্ত বহিঃস্থ যান্ত্রিক ক্ষমতা কার সমান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The electrical Joule heating rate I²R = (B² l² v²) / R in the loop", hi: "लूप में विद्युत जूल तापीय दर I²R = (B² l² v²) / R के", bn: "লুপের বৈদ্যুতিক জুল তাপীয় অপচয় হার I²R = (B² l² v²) / R এর সমান" } },
+        { id: "opt-2", text: { en: "Zero, because magnetic forces do no work", hi: "शून्य, क्योंकि चुंबकीय बल कोई कार्य नहीं करते", bn: "শূন্য, কারণ চৌম্বক বল কোনো কাজ করে না" } },
+        { id: "opt-3", text: { en: "Half the electrical dissipation rate", hi: "विद्युत अपव्यय दर की आधी", bn: "বৈদ্যুতিক অপচয়ের অর্ধেক" } },
+        { id: "opt-4", text: { en: "The square of the gravitational potential energy", hi: "गुरुत्वीय स्थितिज ऊर्जा के वर्ग के", bn: "অভিকর্ষজ বিভব শক্তির বর্গের সমান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Conservation of energy dictates that 100% of the mechanical work performed against the retarding Lorentz force (F_mag = B²l²v/R, P_mech = F·v = B²l²v²/R) converts directly into electrical Joule heating (I²R).",
+        hi: "ऊर्जा संरक्षण के अनुसार विरोधी लोरेंत्ज़ बल के विरुद्ध किया गया यांत्रिक कार्य (P = F·v = B²l²v²/R) सीधे लूप में विद्युत जूल ऊष्मा (I²R) में परिवर्तित होता है।",
+        bn: "শক্তি সংরক্ষণ নীতি অনুসারে বাধাদায়ী লরেন্টজ বলের বিরুদ্ধে কৃত যান্ত্রিক কাজ (P = F·v = B²l²v²/R) শতভাগ সরাসরি কয়েলের বৈদ্যুতিক জুল তাপে (I²R) রূপান্তরিত হয়।"
       }
     }
   ],

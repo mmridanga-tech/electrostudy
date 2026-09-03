@@ -1,8 +1,8 @@
 import { Lesson } from '../types';
 
 export const LESSON_EM_INDUCTION_TESTING_SAFETY_CAPSTONE: Lesson = {
-  id: 'lsn-ch10-em-induction-testing-safety',
-  topicId: 'ch10-em-induction-testing-safety',
+  id: 'lsn-ch10-em-induction-testing-safety-capstone',
+  topicId: 'ch10-em-induction-testing-safety-capstone',
   chapterId: 'ch-em-induction',
   order: 20,
   title: {
@@ -284,163 +284,325 @@ Conclusion: Because PI = 2.50 (which is well above the minimum healthy benchmark
   ],
   mcqs: [
     {
-      id: 'mcq-ch10-l20-1',
+      id: "mcq-ch10-l20-1",
       question: {
-        en: 'What causes the destructive high-voltage inductive kickback spike (e = -L di/dt) when a switch controlling a relay coil or electric motor is suddenly opened?',
-        hi: 'जब किसी रिले कॉइल या मोटर के स्विच को अचानक खोला जाता है, तो विनाशकारी हाई-वोल्टेज इंडक्टिव किकबैक (e = -L di/dt) किस कारण उत्पन्न होता है?',
-        bn: 'রিলে কয়েল বা মোটরের সুইচ হঠাৎ বন্ধ করলে মারাত্মক হাই-ভোল্টেজ ইন্ডাক্টিভ কিকব্যাক (e = -L di/dt) কেন তৈরি হয়?'
+        en: "What causes the destructive high-voltage inductive kickback spike (e = -L di/dt) when a switch controlling a relay coil or electric motor is suddenly opened?",
+        hi: "जब किसी रिले कॉइल या मोटर के स्विच को अचानक खोला जाता है, तो विनाशकारी हाई-वोल्टेज इंडक्टिव किकबैक (e = -L di/dt) किस कारण उत्पन्न होता है?",
+        bn: "রিলে কয়েল বা মোটরের সুইচ হঠাৎ বন্ধ করলে মারাত্মক হাই-ভোল্টেজ ইন্ডাক্টিভ কিকব্যাক (e = -L di/dt) কেন তৈরি হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'The rapid collapse of the coil’s magnetic flux forces di/dt to massive negative values, generating high induced counter-EMF by Lenz’s law', hi: 'चुंबकीय फ्लक्स का तेजी से ढहना di/dt को अत्यधिक बढ़ा देता है, जिससे लेन्ज के नियम से भारी प्रेरित ईएमएफ बनता है', bn: 'কয়েলের চৌম্বক ফ্লাক্সের আকস্মিক বিলুপ্তি di/dt এর মান তীব্র করে তোলে, ফলে লেঞ্জের সূত্রানুযায়ী তীব্র বিপরীত ভোল্টেজ তৈরি হয়' } },
-        { id: 'opt-2', text: { en: 'Atmospheric oxygen chemically detonates inside the wire', hi: 'तार के अंदर ऑक्सीजन का रासायनिक विस्फोट', bn: 'তারের ভেতর বাতাসের রাসায়নিক বিস্ফোরণ' } },
-        { id: 'opt-3', text: { en: 'The battery multiplies its own chemical voltage by 1,000 times', hi: 'बैटरी का वोल्टेज अपने आप 1000 गुना हो जाता है', bn: 'ব্যাটারির ভোল্টেজ আপনা-আপনি ১০০০ গুণ বেড়ে যায়' } },
-        { id: 'opt-4', text: { en: 'Electrons convert directly into nuclear gamma rays', hi: 'इलेक्ट्रॉन गामा किरणों में बदल जाते हैं', bn: 'ইলেকট্রন গামা রশ্মিতে রূপান্তরিত হয়' } }
+        { id: "opt-1", text: { en: "The rapid collapse of the coil’s magnetic flux forces di/dt to massive negative values, generating high induced counter-EMF by Lenz’s law", hi: "चुंबकीय फ्लक्स का तेजी से ढहना di/dt को अत्यधिक बढ़ा देता है, जिससे लेन्ज के नियम से भारी प्रेरित ईएमएफ बनता है", bn: "কয়েলের চৌম্বক ফ্লাক্সের আকস্মিক বিলুপ্তি di/dt এর মান তীব্র করে তোলে, ফলে লেঞ্জের সূত্রানুযায়ী তীব্র বিপরীত ভোল্টেজ তৈরি হয়" } },
+        { id: "opt-2", text: { en: "Atmospheric oxygen chemically detonates inside the wire", hi: "तार के अंदर ऑक्सीजन का रासायनिक विस्फोट", bn: "তারের ভেতর বাতাসের রাসায়নিক বিস্ফোরণ" } },
+        { id: "opt-3", text: { en: "The battery multiplies its own chemical voltage by 1,000 times", hi: "बैटरी का वोल्टेज अपने आप 1000 गुना हो जाता है", bn: "ব্যাটারির ভোল্টেজ আপনা-আপনি ১০০০ গুণ বেড়ে যায়" } },
+        { id: "opt-4", text: { en: "Electrons convert directly into nuclear gamma rays", hi: "इलेक्ट्रॉन गामा किरणों में बदल जाते हैं", bn: "ইলেকট্রন গামা রশ্মিতে রূপান্তরিত হয়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'By Lenz’s law, an inductor fights any change in current. When contacts open in microseconds, the collapsing magnetic field violently generates high voltage across the gap to sustain current.',
-        hi: 'लेन्ज के नियम से प्रेरक धारा में बदलाव का विरोध करता है। जब स्विच माइक्रोसेकंड में खुलता है, तो ढहता चुंबकीय क्षेत्र भारी वोल्टेज बनाता है।',
-        bn: 'লেঞ্জের সূত্রানুযায়ী ইন্ডাক্টর কারেন্ট পরিবর্তনের বিরোধিতা করে। মাইক্রোসেকেন্ডে সুইচ খুললে ভেঙে পড়া চৌম্বক ক্ষেত্র মারাত্মক ভোল্টেজ তৈরি করে।'
+        en: "By Lenz’s law, an inductor fights any change in current. When contacts open in microseconds, the collapsing magnetic field violently generates high voltage across the gap to sustain current.",
+        hi: "लेन्ज के नियम से प्रेरक धारा में बदलाव का विरोध करता है। जब स्विच माइक्रोसेकंड में खुलता है, तो ढहता चुंबकीय क्षेत्र भारी वोल्टेज बनाता है।",
+        bn: "লেঞ্জের সূত্রানুযায়ী ইন্ডাক্টর কারেন্ট পরিবর্তনের বিরোধিতা করে। মাইক্রোসেকেন্ডে সুইচ খুললে ভেঙে পড়া চৌম্বক ক্ষেত্র মারাত্মক ভোল্টেজ তৈরি করে।"
       }
     },
     {
-      id: 'mcq-ch10-l20-2',
+      id: "mcq-ch10-l20-2",
       question: {
-        en: 'What standard electronic component is placed across a DC relay coil to safely suppress inductive kickback voltages and protect driving transistors?',
-        hi: 'डीसी रिले कॉइल पर इंडक्टिव किकबैक वोल्टेज को दबाने और ट्रांजिस्टर की सुरक्षा के लिए कौन सा घटक लगाया जाता है?',
-        bn: 'ডিসি রিলে কয়েলে ইন্ডাক্টিভ কিকব্যাক ভোল্টেজ দমন এবং ট্রানজিস্টর সুরক্ষার জন্য কোন উপাদানটি ব্যবহার করা হয়?'
+        en: "What standard electronic component is placed across a DC relay coil to safely suppress inductive kickback voltages and protect driving transistors?",
+        hi: "डीसी रिले कॉइल पर इंडक्टिव किकबैक वोल्टेज को दबाने और ट्रांजिस्टर की सुरक्षा के लिए कौन सा घटक लगाया जाता है?",
+        bn: "ডিসি রিলে কয়েলে ইন্ডাক্টিভ কিকব্যাক ভোল্টেজ দমন এবং ট্রানজিস্টর সুরক্ষার জন্য কোন উপাদানটি ব্যবহার করা হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'A Flyback (Freewheeling) Diode connected in reverse-bias during normal operation', hi: 'फ्लाईबैक (फ्रीव्हीलिंग) डायोड जो सामान्य संचालन में रिवर्स-बायस में जुड़ा होता है', bn: 'একটি ফ্লাইব্যাক (ফ্রিহুইলিং) ডায়োড যা স্বাভাবিক অবস্থায় রিভার্স-বায়াসে যুক্ত থাকে' } },
-        { id: 'opt-2', text: { en: 'A mechanical incandescent lightbulb in series', hi: 'श्रेणी में लगा एक सामान्य बल्ब', bn: 'সিরিজে লাগানো একটি ফিলামেন্ট বাল্ব' } },
-        { id: 'opt-3', text: { en: 'A direct copper wire short-circuit across the power supply', hi: 'पावर सप्लाई पर सीधा तांबे का तार जोड़ना', bn: 'পাওয়ার সাপ্লাইয়ের সরাসরি শর্ট-সার্কিট' } },
-        { id: 'opt-4', text: { en: 'A block of insulating rubber', hi: 'रबर का टुकड़ा', bn: 'একটি রবারের টুকরো' } },
+        { id: "opt-1", text: { en: "A Flyback (Freewheeling) Diode connected in reverse-bias during normal operation", hi: "फ्लाईबैक (फ्रीव्हीलिंग) डायोड जो सामान्य संचालन में रिवर्स-बायस में जुड़ा होता है", bn: "একটি ফ্লাইব্যাক (ফ্রিহুইলিং) ডায়োড যা স্বাভাবিক অবস্থায় রিভার্স-বায়াসে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "A mechanical incandescent lightbulb in series", hi: "श्रेणी में लगा एक सामान्य बल्ब", bn: "সিরিজে লাগানো একটি ফিলামেন্ট বাল্ব" } },
+        { id: "opt-3", text: { en: "A direct copper wire short-circuit across the power supply", hi: "पावर सप्लाई पर सीधा तांबे का तार जोड़ना", bn: "পাওয়ার সাপ্লাইয়ের সরাসরি শর্ট-সার্কিট" } },
+        { id: "opt-4", text: { en: "A block of insulating rubber", hi: "रबर का टुकड़ा", bn: "একটি রবারের টুকরো" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The flyback diode provides a safe closed-loop recirculation path for the collapsing inductor current, clamping the transient voltage to just one forward diode drop (~0.7 V).',
-        hi: 'फ्लाईबैक डायोड ढहती धारा को सुरक्षित लूप प्रदान करता है, जिससे वोल्टेज केवल 0.7 V पर सीमित रहता है।',
-        bn: 'ফ্লাইব্যাক ডায়োড কয়েলের ভেঙে পড়া কারেন্টকে নিরাপদে প্রবাহিত হওয়ার পথ দেয়, ফলে ভোল্টেজ মাত্র ০.৭ ভোল্টে সীমাবদ্ধ থাকে।'
+        en: "The flyback diode provides a safe closed-loop recirculation path for the collapsing inductor current, clamping the transient voltage to just one forward diode drop (~0.7 V).",
+        hi: "फ्लाईबैक डायोड ढहती धारा को सुरक्षित लूप प्रदान करता है, जिससे वोल्टेज केवल 0.7 V पर सीमित रहता है।",
+        bn: "ফ্লাইব্যাক ডায়োড কয়েলের ভেঙে পড়া কারেন্টকে নিরাপদে প্রবাহিত হওয়ার পথ দেয়, ফলে ভোল্টেজ মাত্র ০.৭ ভোল্টে সীমাবদ্ধ থাকে।"
       }
     },
     {
-      id: 'mcq-ch10-l20-3',
+      id: "mcq-ch10-l20-3",
       question: {
-        en: 'Why do technicians discover hazardous "ghost voltages" (hundreds of volts AC) on an open, de-energized transmission line that runs parallel to an active line for several kilometers?',
-        hi: 'कई किलोमीटर तक चालू लाइन के समानांतर चल रही बंद बिजली लाइन पर तकनीशियनों को खतरनाक "प्रेत वोल्टेज" (Ghost Voltage) क्यों मिलता है?',
-        bn: 'কয়েক কিলোমিটার সমান্তরালে বিস্তৃত একটি বন্ধ লাইনে প্রকৌশলীরা কেন শত শত ভোল্টের বিপজ্জনক ভৌতিক ভোল্টেজ দেখতে পান?'
+        en: "Why do technicians discover hazardous \"ghost voltages\" (hundreds of volts AC) on an open, de-energized transmission line that runs parallel to an active line for several kilometers?",
+        hi: "कई किलोमीटर तक चालू लाइन के समानांतर चल रही बंद बिजली लाइन पर तकनीशियनों को खतरनाक \"प्रेत वोल्टेज\" (Ghost Voltage) क्यों मिलता है?",
+        bn: "কয়েক কিলোমিটার সমান্তরালে বিস্তৃত একটি বন্ধ লাইনে প্রকৌশলীরা কেন শত শত ভোল্টের বিপজ্জনক ভৌতিক ভোল্টেজ দেখতে পান?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Mutual inductive coupling (M · di/dt) and capacitive coupling from the adjacent live line continuously induce voltage across the air space', hi: 'समानांतर चालू लाइन से पारस्परिक चुंबकीय प्रेरण (M·di/dt) एवं धारितीय युग्मन हवा के पार निरंतर वोल्टेज प्रेरित करते हैं', bn: 'সমান্তরাল সক্রিয় লাইন থেকে পারস্পরিক চৌম্বক আবেশ (M·di/dt) এবং ক্যাপাসিটিভ কাপলিং বাতাস ভেদ করে ভোল্টেজ আবিষ্ট করে' } },
-        { id: 'opt-2', text: { en: 'Radio waves from commercial FM broadcast towers', hi: 'रेडियो टावरों से आने वाली एफएम तरंगें', bn: 'এফএম রেডিও টাওয়ার থেকে আসা তরঙ্গ' } },
-        { id: 'opt-3', text: { en: 'The copper metal in the wire spontaneously produces its own nuclear electricity', hi: 'तांबे की धातु स्वतः परमाणु बिजली पैदा करती है', bn: 'তামার তার আপনা-আপনি পরমাণু বিদ্যুৎ তৈরি করে' } },
-        { id: 'opt-4', text: { en: 'Lightning strikes that occurred five years earlier remained frozen in the wire', hi: 'पांच साल पहले गिरी बिजली तार में जमी रह गई थी', bn: 'পাঁচ বছর আগের বজ্রপাতের বিদ্যুৎ জমে ছিল' } }
+        { id: "opt-1", text: { en: "Mutual inductive coupling (M · di/dt) and capacitive coupling from the adjacent live line continuously induce voltage across the air space", hi: "समानांतर चालू लाइन से पारस्परिक चुंबकीय प्रेरण (M·di/dt) एवं धारितीय युग्मन हवा के पार निरंतर वोल्टेज प्रेरित करते हैं", bn: "সমান্তরাল সক্রিয় লাইন থেকে পারস্পরিক চৌম্বক আবেশ (M·di/dt) এবং ক্যাপাসিটিভ কাপলিং বাতাস ভেদ করে ভোল্টেজ আবিষ্ট করে" } },
+        { id: "opt-2", text: { en: "Radio waves from commercial FM broadcast towers", hi: "रेडियो टावरों से आने वाली एफएम तरंगें", bn: "এফএম রেডিও টাওয়ার থেকে আসা তরঙ্গ" } },
+        { id: "opt-3", text: { en: "The copper metal in the wire spontaneously produces its own nuclear electricity", hi: "तांबे की धातु स्वतः परमाणु बिजली पैदा करती है", bn: "তামার তার আপনা-আপনি পরমাণু বিদ্যুৎ তৈরি করে" } },
+        { id: "opt-4", text: { en: "Lightning strikes that occurred five years earlier remained frozen in the wire", hi: "पांच साल पहले गिरी बिजली तार में जमी रह गई थी", bn: "পাঁচ বছর আগের বজ্রপাতের বিদ্যুৎ জমে ছিল" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'High AC currents in the live circuit produce alternating magnetic fields that cut the isolated conductor, while capacitance couples voltage across the air gap. Temporary working earths must be applied to drain this voltage.',
-        hi: 'चालू लाइन का बदलता चुंबकीय क्षेत्र अलग की गई लाइन में ईएमएफ प्रेरित करता है। इसे खत्म करने के लिए दोनों सिरों पर अर्थिंग लगाना अनिवार्य है।',
-        bn: 'সচল লাইনের পরিবর্তনশীল চৌম্বক ক্ষেত্র বন্ধ তারে ভোল্টেজ আবিষ্ট করে। এই বিপদ এড়াতে উভয় প্রান্তে সুরক্ষামূলক আর্থিং লাগাতে হয়।'
+        en: "High AC currents in the live circuit produce alternating magnetic fields that cut the isolated conductor, while capacitance couples voltage across the air gap. Temporary working earths must be applied to drain this voltage.",
+        hi: "चालू लाइन का बदलता चुंबकीय क्षेत्र अलग की गई लाइन में ईएमएफ प्रेरित करता है। इसे खत्म करने के लिए दोनों सिरों पर अर्थिंग लगाना अनिवार्य है।",
+        bn: "সচল লাইনের পরিবর্তনশীল চৌম্বক ক্ষেত্র বন্ধ তারে ভোল্টেজ আবিষ্ট করে। এই বিপদ এড়াতে উভয় প্রান্তে সুরক্ষামূলক আর্থিং লাগাতে হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l20-4',
+      id: "mcq-ch10-l20-4",
       question: {
-        en: 'What is the mandatory 3-step sequence of the "Live-Dead-Live" testing procedure used to prove safe electrical isolation?',
-        hi: 'सुरक्षित अलगाव साबित करने के लिए "लाइव-डेड-लाइव" परीक्षण प्रक्रिया का अनिवार्य 3-चरणीय क्रम क्या है?',
-        bn: 'নিরাপদ আইসোলেশন প্রমাণের জন্য "লাইভ-ডেড-লাইভ" পরীক্ষার বাধ্যতামূলক ৩টি ধাপের ক্রম কোনটি?'
+        en: "What is the mandatory 3-step sequence of the \"Live-Dead-Live\" testing procedure used to prove safe electrical isolation?",
+        hi: "सुरक्षित अलगाव साबित करने के लिए \"लाइव-डेड-लाइव\" परीक्षण प्रक्रिया का अनिवार्य 3-चरणीय क्रम क्या है?",
+        bn: "নিরাপদ আইসোলেশন প্রমাণের জন্য \"লাইভ-ডেড-লাইভ\" পরীক্ষার বাধ্যতামূলক ৩টি ধাপের ক্রম কোনটি?"
       },
       options: [
-        { id: 'opt-1', text: { en: '1. Test meter on known live source/proving unit; 2. Test circuit under maintenance to prove dead; 3. Re-test meter on live source to prove meter did not fail during the test', hi: '1. मीटर को ज्ञात चालू स्रोत पर जांचें; 2. जिस सर्किट पर काम करना है उसे डेड जांचें; 3. मीटर को फिर से चालू स्रोत पर जांचें कि वह खराब तो नहीं हुआ', bn: '১. পরিচিত সচল উৎসে মিটার যাচাই; ২. কাজের সার্কিটে ভোল্টেজ অনুপস্থিতি যাচাই; ৩. পুনরায় সচল উৎসে মিটার যাচাই যাতে মিটার নষ্ট না হওয়া নিশ্চিত হয়' } },
-        { id: 'opt-2', text: { en: '1. Touch the cable with bare hands; 2. Wait for a shock; 3. Call for help', hi: '1. नंगे हाथों से तार छुएं; 2. झटके का इंतजार करें; 3. मदद के लिए चिल्लाएं', bn: '১. খালি হাতে তার স্পর্শ করা; ২. শকের অপেক্ষা করা; ৩. সাহায্যের জন্য ডাকা' } },
-        { id: 'opt-3', text: { en: '1. Turn off the building lights; 2. Turn them back on; 3. Go home', hi: '1. लाइट बंद करें; 2. चालू करें; 3. घर जाएं', bn: '১. বাতি বন্ধ করা; ২. চালু করা; ৩. চলে যাওয়া' } },
-        { id: 'opt-4', text: { en: '1. Guess with your eyes; 2. Cut the cable; 3. Replace the fuse', hi: '1. आंखों से अंदाजा लगाएं; 2. तार काटें; 3. फ्यूज बदलें', bn: '১. চোখ দিয়ে আন্দাজ করা; ২. তার কেটে ফেলা; ৩. ফিউজ বদলানো' } }
+        { id: "opt-1", text: { en: "1. Test meter on known live source/proving unit; 2. Test circuit under maintenance to prove dead; 3. Re-test meter on live source to prove meter did not fail during the test", hi: "1. मीटर को ज्ञात चालू स्रोत पर जांचें; 2. जिस सर्किट पर काम करना है उसे डेड जांचें; 3. मीटर को फिर से चालू स्रोत पर जांचें कि वह खराब तो नहीं हुआ", bn: "১. পরিচিত সচল উৎসে মিটার যাচাই; ২. কাজের সার্কিটে ভোল্টেজ অনুপস্থিতি যাচাই; ৩. পুনরায় সচল উৎসে মিটার যাচাই যাতে মিটার নষ্ট না হওয়া নিশ্চিত হয়" } },
+        { id: "opt-2", text: { en: "1. Touch the cable with bare hands; 2. Wait for a shock; 3. Call for help", hi: "1. नंगे हाथों से तार छुएं; 2. झटके का इंतजार करें; 3. मदद के लिए चिल्लाएं", bn: "১. খালি হাতে তার স্পর্শ করা; ২. শকের অপেক্ষা করা; ৩. সাহায্যের জন্য ডাকা" } },
+        { id: "opt-3", text: { en: "1. Turn off the building lights; 2. Turn them back on; 3. Go home", hi: "1. लाइट बंद करें; 2. चालू करें; 3. घर जाएं", bn: "১. বাতি বন্ধ করা; ২. চালু করা; ৩. চলে যাওয়া" } },
+        { id: "opt-4", text: { en: "1. Guess with your eyes; 2. Cut the cable; 3. Replace the fuse", hi: "1. आंखों से अंदाजा लगाएं; 2. तार काटें; 3. फ्यूज बदलें", bn: "১. চোখ দিয়ে আন্দাজ করা; ২. তার কেটে ফেলা; ৩. ফিউজ বদলানো" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The Live-Dead-Live test ensures your meter was operational before the test and did not suffer an internal failure (e.g., blown fuse, dead battery, broken lead) while indicating 0 V on the circuit under test.',
-        hi: 'लाइव-डेड-लाइव परीक्षण यह सुनिश्चित करता है कि मीटर परीक्षण से पहले चालू था और शून्य वोल्टेज दिखाते समय उसकी बैटरी या फ्यूज खराब नहीं हुआ था।',
-        bn: 'লাইভ-ডেড-লাইভ টেস্ট নিশ্চিত করে যে টেস্টের সময় মিটারের ব্যাটারি বা ইন্টারনাল ফিউজ নষ্ট হয়ে শূন্য ভোল্ট দেখাচ্ছিল না।'
+        en: "The Live-Dead-Live test ensures your meter was operational before the test and did not suffer an internal failure (e.g., blown fuse, dead battery, broken lead) while indicating 0 V on the circuit under test.",
+        hi: "लाइव-डेड-लाइव परीक्षण यह सुनिश्चित करता है कि मीटर परीक्षण से पहले चालू था और शून्य वोल्टेज दिखाते समय उसकी बैटरी या फ्यूज खराब नहीं हुआ था।",
+        bn: "লাইভ-ডেড-লাইভ টেস্ট নিশ্চিত করে যে টেস্টের সময় মিটারের ব্যাটারি বা ইন্টারনাল ফিউজ নষ্ট হয়ে শূন্য ভোল্ট দেখাচ্ছিল না।"
       }
     },
     {
-      id: 'mcq-ch10-l20-5',
+      id: "mcq-ch10-l20-5",
       question: {
-        en: 'Why is it mandatory to use an electrical measurement instrument with a CAT IV rating when testing outdoor utility service entrance switchgear?',
-        hi: 'आउटडोर यूटिलिटी सर्विस स्विचगियर का परीक्षण करते समय CAT IV रेटिंग वाले मीटर का उपयोग करना अनिवार्य क्यों है?',
-        bn: 'আউটডোর সার্ভিস এন্ট্রান্স সুইচগিয়ার পরীক্ষার সময় CAT IV রেটিংযুক্ত মিটার ব্যবহার করা বাধ্যতামূলক কেন?'
+        en: "Why is it mandatory to use an electrical measurement instrument with a CAT IV rating when testing outdoor utility service entrance switchgear?",
+        hi: "आउटडोर यूटिलिटी सर्विस स्विचगियर का परीक्षण करते समय CAT IV रेटिंग वाले मीटर का उपयोग करना अनिवार्य क्यों है?",
+        bn: "আউটডোর সার্ভিস এন্ট্রান্স সুইচগিয়ার পরীক্ষার সময় CAT IV রেটিংযুক্ত মিটার ব্যবহার করা বাধ্যতামূলক কেন?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'CAT IV meters have high dielectric withstand to survive severe lightning and grid switching transient overvoltages without exploding in the technician’s hands', hi: 'CAT IV मीटर में ग्रिड पर बिजली गिरने या स्पाइक्स आने पर मीटर को ऑपरेटर के हाथ में फटने से बचाने की क्षमता होती है', bn: 'CAT IV মিটারের উচ্চ ডাই-ইলেকট্রিক ক্ষমতা থাকে যাতে গ্রিডের বজ্রপাত বা আকস্মিক স্পাইকে মিটারটি হাতে বিস্ফোরিত না হয়' } },
-        { id: 'opt-2', text: { en: 'CAT IV meters are painted with glowing neon yellow paint', hi: 'क्योंकि वे पीले रंग के होते हैं', bn: 'কারণ এগুলো হলুদ রঙের হয়' } },
-        { id: 'opt-3', text: { en: 'CAT IV meters can only measure direct current from 9 V batteries', hi: 'ये केवल 9 V बैटरी नाप सकते हैं', bn: 'এগুলো কেবল ৯ ভোল্ট ব্যাটারি মাপতে পারে' } },
-        { id: 'opt-4', text: { en: 'CAT IV meters are lighter than a feather', hi: 'क्योंकि वे बहुत हल्के होते हैं', bn: 'কারণ এগুলো পালকের মতো হালকা' } }
+        { id: "opt-1", text: { en: "CAT IV meters have high dielectric withstand to survive severe lightning and grid switching transient overvoltages without exploding in the technician’s hands", hi: "CAT IV मीटर में ग्रिड पर बिजली गिरने या स्पाइक्स आने पर मीटर को ऑपरेटर के हाथ में फटने से बचाने की क्षमता होती है", bn: "CAT IV মিটারের উচ্চ ডাই-ইলেকট্রিক ক্ষমতা থাকে যাতে গ্রিডের বজ্রপাত বা আকস্মিক স্পাইকে মিটারটি হাতে বিস্ফোরিত না হয়" } },
+        { id: "opt-2", text: { en: "CAT IV meters are painted with glowing neon yellow paint", hi: "क्योंकि वे पीले रंग के होते हैं", bn: "কারণ এগুলো হলুদ রঙের হয়" } },
+        { id: "opt-3", text: { en: "CAT IV meters can only measure direct current from 9 V batteries", hi: "ये केवल 9 V बैटरी नाप सकते हैं", bn: "এগুলো কেবল ৯ ভোল্ট ব্যাটারি মাপতে পারে" } },
+        { id: "opt-4", text: { en: "CAT IV meters are lighter than a feather", hi: "क्योंकि वे बहुत हल्के होते हैं", bn: "কারণ এগুলো পালকের মতো হালকা" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Category IV ratings indicate robust clearances, high-energy fuses, and surge withstand capacity capable of handling high-energy transient spikes on utility service lines without arc flash.',
-        hi: 'CAT IV मीटर उच्च-ऊर्जा स्पाइक्स को सहन करने के लिए बनाए जाते हैं ताकि खतरनाक आर्क फ्लैश विस्फोट न हो।',
-        bn: 'CAT IV মিটারগুলো উচ্চ-শক্তির ভোল্টেজ স্পাইক সহ্য করতে পারে, ফলে মারাত্মক আর্ক বিস্ফোরণের হাত থেকে কর্মী রক্ষা পায়।'
+        en: "Category IV ratings indicate robust clearances, high-energy fuses, and surge withstand capacity capable of handling high-energy transient spikes on utility service lines without arc flash.",
+        hi: "CAT IV मीटर उच्च-ऊर्जा स्पाइक्स को सहन करने के लिए बनाए जाते हैं ताकि खतरनाक आर्क फ्लैश विस्फोट न हो।",
+        bn: "CAT IV মিটারগুলো উচ্চ-শক্তির ভোল্টেজ স্পাইক সহ্য করতে পারে, ফলে মারাত্মক আর্ক বিস্ফোরণের হাত থেকে কর্মী রক্ষা পায়।"
       }
     },
     {
-      id: 'mcq-ch10-l20-6',
+      id: "mcq-ch10-l20-6",
       question: {
-        en: 'In an insulation resistance diagnostic test on a high-voltage power transformer, what does a Polarization Index of PI = R_10min / R_1min = 2.8 indicate?',
-        hi: 'हाई-वोल्टेज पावर ट्रांसफार्मर के मेगर परीक्षण में यदि पोलराइजेशन इंडेक्स PI = 2.8 आए, तो इसका क्या अर्थ है?',
-        bn: 'উচ্চ-ভোল্টেজ ট্রান্সফরমারের মেগার টেস্টে পোলারাইজেশন ইনডেক্স PI = ২.৮ আসলে তা কী নির্দেশ করে?'
+        en: "In an insulation resistance diagnostic test on a high-voltage power transformer, what does a Polarization Index of PI = R_10min / R_1min = 2.8 indicate?",
+        hi: "हाई-वोल्टेज पावर ट्रांसफार्मर के मेगर परीक्षण में यदि पोलराइजेशन इंडेक्स PI = 2.8 आए, तो इसका क्या अर्थ है?",
+        bn: "উচ্চ-ভোল্টেজ ট্রান্সফরমারের মেগার টেস্টে পোলারাইজেশন ইনডেক্স PI = ২.৮ আসলে তা কী নির্দেশ করে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'The dielectric insulation is in excellent, clean, and dry condition (healthy PI ≥ 2.0)', hi: 'इंसुलेशन उत्कृष्ट, साफ और सूखी स्थिति में है (स्वस्थ PI ≥ 2.0)', bn: 'ডাই-ইলেকট্রিক ইনসুলেশনটি চমৎকার, পরিষ্কার এবং সম্পূর্ণ শুষ্ক অবস্থায় রয়েছে (সুস্থ PI ≥ ২.০)' } },
-        { id: 'opt-2', text: { en: 'The transformer core is completely melted into slag', hi: 'ट्रांसफार्मर का कोर पूरी तरह पिघल चुका है', bn: 'ট্রান্সফরমার কোর পুরোপুরি গলে গেছে' } },
-        { id: 'opt-3', text: { en: 'The copper winding is completely broken and open-circuited', hi: 'तांबे की वाइंडिंग पूरी तरह टूट चुकी है', bn: 'তামার তার ছিঁড়ে গেছে' } },
-        { id: 'opt-4', text: { en: 'The oil inside has turned into pure gasoline', hi: 'अंदर का तेल पेट्रोल बन चुका है', bn: 'ভেতরের তেল পেট্রোলে পরিণত হয়েছে' } }
+        { id: "opt-1", text: { en: "The dielectric insulation is in excellent, clean, and dry condition (healthy PI ≥ 2.0)", hi: "इंसुलेशन उत्कृष्ट, साफ और सूखी स्थिति में है (स्वस्थ PI ≥ 2.0)", bn: "ডাই-ইলেকট্রিক ইনসুলেশনটি চমৎকার, পরিষ্কার এবং সম্পূর্ণ শুষ্ক অবস্থায় রয়েছে (সুস্থ PI ≥ ২.০)" } },
+        { id: "opt-2", text: { en: "The transformer core is completely melted into slag", hi: "ट्रांसफार्मर का कोर पूरी तरह पिघल चुका है", bn: "ট্রান্সফরমার কোর পুরোপুরি গলে গেছে" } },
+        { id: "opt-3", text: { en: "The copper winding is completely broken and open-circuited", hi: "तांबे की वाइंडिंग पूरी तरह टूट चुकी है", bn: "তামার তার ছিঁড়ে গেছে" } },
+        { id: "opt-4", text: { en: "The oil inside has turned into pure gasoline", hi: "अंदर का तेल पेट्रोल बन चुका है", bn: "ভেতরের তেল পেট্রোলে পরিণত হয়েছে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Healthy insulation shows decreasing capacitive and absorption charging currents over 10 minutes, causing measured resistance to climb steadily. PI ≥ 2.0 signifies dry, intact insulation.',
-        hi: 'स्वस्थ इंसुलेशन में 10 मिनट के दौरान प्रतिरोध लगातार बढ़ता है। PI ≥ 2.0 का मान सूखे और उत्तम इंसुलेशन का प्रमाण है।',
-        bn: 'সুস্থ ইনসুলেশনে সময়ের সাথে সাথে রোধ বৃদ্ধি পায়। PI ≥ ২.০ হলে বোঝা যায় ইনসুলেশনে কোনো আর্দ্রতা বা ক্ষয় নেই।'
+        en: "Healthy insulation shows decreasing capacitive and absorption charging currents over 10 minutes, causing measured resistance to climb steadily. PI ≥ 2.0 signifies dry, intact insulation.",
+        hi: "स्वस्थ इंसुलेशन में 10 मिनट के दौरान प्रतिरोध लगातार बढ़ता है। PI ≥ 2.0 का मान सूखे और उत्तम इंसुलेशन का प्रमाण है।",
+        bn: "সুস্থ ইনসুলেশনে সময়ের সাথে সাথে রোধ বৃদ্ধি পায়। PI ≥ ২.০ হলে বোঝা যায় ইনসুলেশনে কোনো আর্দ্রতা বা ক্ষয় নেই।"
       }
     },
     {
-      id: 'mcq-ch10-l20-7',
+      id: "mcq-ch10-l20-7",
       question: {
-        en: 'What critical precaution must be observed when disconnecting test leads after completing a high-current DC winding resistance test on a large 50 MVA transformer?',
-        hi: '50 MVA ट्रांसफार्मर पर डीसी वाइंडिंग प्रतिरोध परीक्षण पूरा करने के बाद टेस्ट लीड हटाने से पहले कौन सी महत्वपूर्ण सावधानी बरतनी चाहिए?',
-        bn: 'একটি ৫০ MVA ট্রান্সফরমারে ডিসি ওয়াইন্ডিং রোধ পরীক্ষা শেষ করার পর টেস্ট লিড খোলার আগে কোন গুরুত্বপূর্ণ সতর্কতা মানতে হবে?'
+        en: "What critical precaution must be observed when disconnecting test leads after completing a high-current DC winding resistance test on a large 50 MVA transformer?",
+        hi: "50 MVA ट्रांसफार्मर पर डीसी वाइंडिंग प्रतिरोध परीक्षण पूरा करने के बाद टेस्ट लीड हटाने से पहले कौन सी महत्वपूर्ण सावधानी बरतनी चाहिए?",
+        bn: "একটি ৫০ MVA ট্রান্সফরমারে ডিসি ওয়াইন্ডিং রোধ পরীক্ষা শেষ করার পর টেস্ট লিড খোলার আগে কোন গুরুত্বপূর্ণ সতর্কতা মানতে হবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Wait for the test instrument’s internal discharge circuit to completely discharge the stored magnetic energy (1/2 L·I²) to zero before disconnecting leads', hi: 'लीड हटाने से पहले टेस्ट सेट के डिस्चार्ज सर्किट द्वारा संचित चुंबकीय ऊर्जा (1/2 L·I²) को शून्य होने दें', bn: 'কয়েলে সঞ্চিত চৌম্বক শক্তি (1/2 L·I²) টেস্ট সেটের মাধ্যমে শূন্যে ডিসচার্জ না হওয়া পর্যন্ত অপেক্ষা করা' } },
-        { id: 'opt-2', text: { en: 'Yank the test leads off as fast as possible while the DC current is still flowing', hi: 'करंट बहते समय ही तारों को जितनी जल्दी हो सके झटके से खींच लें', bn: 'কারেন্ট চলা অবস্থাতেই দ্রুত হ্যাঁচকা টানে তার খুলে ফেলা' } },
-        { id: 'opt-3', text: { en: 'Pour cold tap water onto the transformer terminals', hi: 'टर्मिनलों पर ठंडा पानी डालें', bn: 'টার্মিনালে ঠান্ডা পানি ঢালা' } },
-        { id: 'opt-4', text: { en: 'Touch both bare terminals with wet hands to check if they are cold', hi: 'गीले हाथों से दोनों टर्मिनलों को छूकर देखें', bn: 'ভেজা হাতে টার্মিনাল ছুঁয়ে দেখা' } }
+        { id: "opt-1", text: { en: "Wait for the test instrument’s internal discharge circuit to completely discharge the stored magnetic energy (1/2 L·I²) to zero before disconnecting leads", hi: "लीड हटाने से पहले टेस्ट सेट के डिस्चार्ज सर्किट द्वारा संचित चुंबकीय ऊर्जा (1/2 L·I²) को शून्य होने दें", bn: "কয়েলে সঞ্চিত চৌম্বক শক্তি (1/2 L·I²) টেস্ট সেটের মাধ্যমে শূন্যে ডিসচার্জ না হওয়া পর্যন্ত অপেক্ষা করা" } },
+        { id: "opt-2", text: { en: "Yank the test leads off as fast as possible while the DC current is still flowing", hi: "करंट बहते समय ही तारों को जितनी जल्दी हो सके झटके से खींच लें", bn: "কারেন্ট চলা অবস্থাতেই দ্রুত হ্যাঁচকা টানে তার খুলে ফেলা" } },
+        { id: "opt-3", text: { en: "Pour cold tap water onto the transformer terminals", hi: "टर्मिनलों पर ठंडा पानी डालें", bn: "টার্মিনালে ঠান্ডা পানি ঢালা" } },
+        { id: "opt-4", text: { en: "Touch both bare terminals with wet hands to check if they are cold", hi: "गीले हाथों से दोनों टर्मिनलों को छूकर देखें", bn: "ভেজা হাতে টার্মিনাল ছুঁয়ে দেখা" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Large transformer coils have inductances of tens of Henries, storing thousands of Joules of energy. Pulling leads while energized generates lethal inductive kickback arcs.',
-        hi: 'बड़े ट्रांसफार्मर में भारी ऊर्जा संचित रहती है। चालू हालत में तार हटाने से जानलेवा आर्क विस्फोट हो सकता है।',
-        bn: 'বড় ট্রান্সফরমারে শত শত জুল চৌম্বক শক্তি সঞ্চিত থাকে। ডিসচার্জের আগে তার খুললে মারাত্মক আর্ক ও শক সৃষ্টি হয়।'
+        en: "Large transformer coils have inductances of tens of Henries, storing thousands of Joules of energy. Pulling leads while energized generates lethal inductive kickback arcs.",
+        hi: "बड़े ट्रांसफार्मर में भारी ऊर्जा संचित रहती है। चालू हालत में तार हटाने से जानलेवा आर्क विस्फोट हो सकता है।",
+        bn: "বড় ট্রান্সফরমারে শত শত জুল চৌম্বক শক্তি সঞ্চিত থাকে। ডিসচার্জের আগে তার খুললে মারাত্মক আর্ক ও শক সৃষ্টি হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l20-8',
+      id: "mcq-ch10-l20-8",
       question: {
-        en: 'What is the primary function of Lockout/Tagout (LOTO) protocols during electrical maintenance of electromagnetic machinery?',
-        hi: 'विद्युत-चुंबकीय मशीनों के रखरखाव के दौरान लॉकआउट/टैगआउट (LOTO) प्रोटोकॉल का प्राथमिक कार्य क्या है?',
-        bn: 'তড়িৎচৌম্বকীয় যন্ত্রপাতির রক্ষণাবেক্ষণের সময় লকআউট/ট্যাগআউট (LOTO) প্রটোকলের প্রধান কাজ কী?'
+        en: "What is the primary function of Lockout/Tagout (LOTO) protocols during electrical maintenance of electromagnetic machinery?",
+        hi: "विद्युत-चुंबकीय मशीनों के रखरखाव के दौरान लॉकआउट/टैगआउट (LOTO) प्रोटोकॉल का प्राथमिक कार्य क्या है?",
+        bn: "তড়িৎচৌম্বকীয় যন্ত্রপাতির রক্ষণাবেক্ষণের সময় লকআউট/ট্যাগআউট (LOTO) প্রটোকলের প্রধান কাজ কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'To physically lock energy isolation switches in the OFF position with a padlock, preventing accidental re-energization while personnel are working on the equipment', hi: 'ऊर्जा स्विच को पैडलॉक से बंद (OFF) स्थिति में ताला लगाकर रखना ताकि काम करते समय कोई गलती से मशीन चालू न कर दे', bn: 'প্যাডলক দিয়ে আইসোলেশন সুইচ বন্ধ (OFF) অবস্থায় তালাবদ্ধ রাখা যাতে কাজ চলাকালে কেউ ভুলবশত বিদ্যুৎ চালু করতে না পারে' } },
-        { id: 'opt-2', text: { en: 'To calculate the monthly electricity bill', hi: 'महीने के बिजली बिल की गणना करना', bn: 'বিদ্যুৎ বিল হিসাব করা' } },
-        { id: 'opt-3', text: { en: 'To change the color of the paint on the motor casing', hi: 'मोटर का रंग बदलना', bn: 'মোটরের রং পরিবর্তন করা' } },
-        { id: 'opt-4', text: { en: 'To keep track of employee lunch hours', hi: 'कर्मचारियों के भोजन के समय का रिकॉर्ड रखना', bn: 'কর্মীদের দুপুরের খাবারের সময় গণনা করা' } }
+        { id: "opt-1", text: { en: "To physically lock energy isolation switches in the OFF position with a padlock, preventing accidental re-energization while personnel are working on the equipment", hi: "ऊर्जा स्विच को पैडलॉक से बंद (OFF) स्थिति में ताला लगाकर रखना ताकि काम करते समय कोई गलती से मशीन चालू न कर दे", bn: "প্যাডলক দিয়ে আইসোলেশন সুইচ বন্ধ (OFF) অবস্থায় তালাবদ্ধ রাখা যাতে কাজ চলাকালে কেউ ভুলবশত বিদ্যুৎ চালু করতে না পারে" } },
+        { id: "opt-2", text: { en: "To calculate the monthly electricity bill", hi: "महीने के बिजली बिल की गणना करना", bn: "বিদ্যুৎ বিল হিসাব করা" } },
+        { id: "opt-3", text: { en: "To change the color of the paint on the motor casing", hi: "मोटर का रंग बदलना", bn: "মোটরের রং পরিবর্তন করা" } },
+        { id: "opt-4", text: { en: "To keep track of employee lunch hours", hi: "कर्मचारियों के भोजन के समय का रिकॉर्ड रखना", bn: "কর্মীদের দুপুরের খাবারের সময় গণনা করা" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'LOTO ensures switches cannot be closed by unauthorized personnel, protecting technicians from unexpected electrical shock and mechanical actuation.',
-        hi: 'LOTO यह सुनिश्चित करता है कि जब तक तकनीशियन काम कर रहे हैं तब तक कोई अन्य व्यक्ति मशीन में बिजली चालू न कर सके।',
-        bn: 'LOTO নিশ্চিত করে যে রক্ষণাবেক্ষণ চলাকালীন অন্য কোনো ব্যক্তি অসাবধানতাবশত লাইনে বিদ্যুৎ সরবরাহ চালু করতে পারবে না।'
+        en: "LOTO ensures switches cannot be closed by unauthorized personnel, protecting technicians from unexpected electrical shock and mechanical actuation.",
+        hi: "LOTO यह सुनिश्चित करता है कि जब तक तकनीशियन काम कर रहे हैं तब तक कोई अन्य व्यक्ति मशीन में बिजली चालू न कर सके।",
+        bn: "LOTO নিশ্চিত করে যে রক্ষণাবেক্ষণ চলাকালীন অন্য কোনো ব্যক্তি অসাবধানতাবশত লাইনে বিদ্যুৎ সরবরাহ চালু করতে পারবে না।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l20-1",
+      question: {
+        en: "What causes the destructive high-voltage inductive kickback spike (e = -L di/dt) when a switch controlling a relay coil or electric motor is suddenly opened?",
+        hi: "जब किसी रिले कॉइल या मोटर के स्विच को अचानक खोला जाता है, तो विनाशकारी हाई-वोल्टेज इंडक्टिव किकबैक (e = -L di/dt) किस कारण उत्पन्न होता है?",
+        bn: "রিলে কয়েল বা মোটরের সুইচ হঠাৎ বন্ধ করলে মারাত্মক হাই-ভোল্টেজ ইন্ডাক্টিভ কিকব্যাক (e = -L di/dt) কেন তৈরি হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The rapid collapse of the coil’s magnetic flux forces di/dt to massive negative values, generating high induced counter-EMF by Lenz’s law", hi: "चुंबकीय फ्लक्स का तेजी से ढहना di/dt को अत्यधिक बढ़ा देता है, जिससे लेन्ज के नियम से भारी प्रेरित ईएमएफ बनता है", bn: "কয়েলের চৌম্বক ফ্লাক্সের আকস্মিক বিলুপ্তি di/dt এর মান তীব্র করে তোলে, ফলে লেঞ্জের সূত্রানুযায়ী তীব্র বিপরীত ভোল্টেজ তৈরি হয়" } },
+        { id: "opt-2", text: { en: "Atmospheric oxygen chemically detonates inside the wire", hi: "तार के अंदर ऑक्सीजन का रासायनिक विस्फोट", bn: "তারের ভেতর বাতাসের রাসায়নিক বিস্ফোরণ" } },
+        { id: "opt-3", text: { en: "The battery multiplies its own chemical voltage by 1,000 times", hi: "बैटरी का वोल्टेज अपने आप 1000 गुना हो जाता है", bn: "ব্যাটারির ভোল্টেজ আপনা-আপনি ১০০০ গুণ বেড়ে যায়" } },
+        { id: "opt-4", text: { en: "Electrons convert directly into nuclear gamma rays", hi: "इलेक्ट्रॉन गामा किरणों में बदल जाते हैं", bn: "ইলেকট্রন গামা রশ্মিতে রূপান্তরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, an inductor fights any change in current. When contacts open in microseconds, the collapsing magnetic field violently generates high voltage across the gap to sustain current.",
+        hi: "लेन्ज के नियम से प्रेरक धारा में बदलाव का विरोध करता है। जब स्विच माइक्रोसेकंड में खुलता है, तो ढहता चुंबकीय क्षेत्र भारी वोल्टेज बनाता है।",
+        bn: "লেঞ্জের সূত্রানুযায়ী ইন্ডাক্টর কারেন্ট পরিবর্তনের বিরোধিতা করে। মাইক্রোসেকেন্ডে সুইচ খুললে ভেঙে পড়া চৌম্বক ক্ষেত্র মারাত্মক ভোল্টেজ তৈরি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-2",
+      question: {
+        en: "What standard electronic component is placed across a DC relay coil to safely suppress inductive kickback voltages and protect driving transistors?",
+        hi: "डीसी रिले कॉइल पर इंडक्टिव किकबैक वोल्टेज को दबाने और ट्रांजिस्टर की सुरक्षा के लिए कौन सा घटक लगाया जाता है?",
+        bn: "ডিসি রিলে কয়েলে ইন্ডাক্টিভ কিকব্যাক ভোল্টেজ দমন এবং ট্রানজিস্টর সুরক্ষার জন্য কোন উপাদানটি ব্যবহার করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A Flyback (Freewheeling) Diode connected in reverse-bias during normal operation", hi: "फ्लाईबैक (फ्रीव्हीलिंग) डायोड जो सामान्य संचालन में रिवर्स-बायस में जुड़ा होता है", bn: "একটি ফ্লাইব্যাক (ফ্রিহুইলিং) ডায়োড যা স্বাভাবিক অবস্থায় রিভার্স-বায়াসে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "A mechanical incandescent lightbulb in series", hi: "श्रेणी में लगा एक सामान्य बल्ब", bn: "সিরিজে লাগানো একটি ফিলামেন্ট বাল্ব" } },
+        { id: "opt-3", text: { en: "A direct copper wire short-circuit across the power supply", hi: "पावर सप्लाई पर सीधा तांबे का तार जोड़ना", bn: "পাওয়ার সাপ্লাইয়ের সরাসরি শর্ট-সার্কিট" } },
+        { id: "opt-4", text: { en: "A block of insulating rubber", hi: "रबर का टुकड़ा", bn: "একটি রবারের টুকরো" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The flyback diode provides a safe closed-loop recirculation path for the collapsing inductor current, clamping the transient voltage to just one forward diode drop (~0.7 V).",
+        hi: "फ्लाईबैक डायोड ढहती धारा को सुरक्षित लूप प्रदान करता है, जिससे वोल्टेज केवल 0.7 V पर सीमित रहता है।",
+        bn: "ফ্লাইব্যাক ডায়োড কয়েলের ভেঙে পড়া কারেন্টকে নিরাপদে প্রবাহিত হওয়ার পথ দেয়, ফলে ভোল্টেজ মাত্র ০.৭ ভোল্টে সীমাবদ্ধ থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-3",
+      question: {
+        en: "Why do technicians discover hazardous \"ghost voltages\" (hundreds of volts AC) on an open, de-energized transmission line that runs parallel to an active line for several kilometers?",
+        hi: "कई किलोमीटर तक चालू लाइन के समानांतर चल रही बंद बिजली लाइन पर तकनीशियनों को खतरनाक \"प्रेत वोल्टेज\" (Ghost Voltage) क्यों मिलता है?",
+        bn: "কয়েক কিলোমিটার সমান্তরালে বিস্তৃত একটি বন্ধ লাইনে প্রকৌশলীরা কেন শত শত ভোল্টের বিপজ্জনক ভৌতিক ভোল্টেজ দেখতে পান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Mutual inductive coupling (M · di/dt) and capacitive coupling from the adjacent live line continuously induce voltage across the air space", hi: "समानांतर चालू लाइन से पारस्परिक चुंबकीय प्रेरण (M·di/dt) एवं धारितीय युग्मन हवा के पार निरंतर वोल्टेज प्रेरित करते हैं", bn: "সমান্তরাল সক্রিয় লাইন থেকে পারস্পরিক চৌম্বক আবেশ (M·di/dt) এবং ক্যাপাসিটিভ কাপলিং বাতাস ভেদ করে ভোল্টেজ আবিষ্ট করে" } },
+        { id: "opt-2", text: { en: "Radio waves from commercial FM broadcast towers", hi: "रेडियो टावरों से आने वाली एफएम तरंगें", bn: "এফএম রেডিও টাওয়ার থেকে আসা তরঙ্গ" } },
+        { id: "opt-3", text: { en: "The copper metal in the wire spontaneously produces its own nuclear electricity", hi: "तांबे की धातु स्वतः परमाणु बिजली पैदा करती है", bn: "তামার তার আপনা-আপনি পরমাণু বিদ্যুৎ তৈরি করে" } },
+        { id: "opt-4", text: { en: "Lightning strikes that occurred five years earlier remained frozen in the wire", hi: "पांच साल पहले गिरी बिजली तार में जमी रह गई थी", bn: "পাঁচ বছর আগের বজ্রপাতের বিদ্যুৎ জমে ছিল" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "High AC currents in the live circuit produce alternating magnetic fields that cut the isolated conductor, while capacitance couples voltage across the air gap. Temporary working earths must be applied to drain this voltage.",
+        hi: "चालू लाइन का बदलता चुंबकीय क्षेत्र अलग की गई लाइन में ईएमएफ प्रेरित करता है। इसे खत्म करने के लिए दोनों सिरों पर अर्थिंग लगाना अनिवार्य है।",
+        bn: "সচল লাইনের পরিবর্তনশীল চৌম্বক ক্ষেত্র বন্ধ তারে ভোল্টেজ আবিষ্ট করে। এই বিপদ এড়াতে উভয় প্রান্তে সুরক্ষামূলক আর্থিং লাগাতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-4",
+      question: {
+        en: "What is the mandatory 3-step sequence of the \"Live-Dead-Live\" testing procedure used to prove safe electrical isolation?",
+        hi: "सुरक्षित अलगाव साबित करने के लिए \"लाइव-डेड-लाइव\" परीक्षण प्रक्रिया का अनिवार्य 3-चरणीय क्रम क्या है?",
+        bn: "নিরাপদ আইসোলেশন প্রমাণের জন্য \"লাইভ-ডেড-লাইভ\" পরীক্ষার বাধ্যতামূলক ৩টি ধাপের ক্রম কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1. Test meter on known live source/proving unit; 2. Test circuit under maintenance to prove dead; 3. Re-test meter on live source to prove meter did not fail during the test", hi: "1. मीटर को ज्ञात चालू स्रोत पर जांचें; 2. जिस सर्किट पर काम करना है उसे डेड जांचें; 3. मीटर को फिर से चालू स्रोत पर जांचें कि वह खराब तो नहीं हुआ", bn: "১. পরিচিত সচল উৎসে মিটার যাচাই; ২. কাজের সার্কিটে ভোল্টেজ অনুপস্থিতি যাচাই; ৩. পুনরায় সচল উৎসে মিটার যাচাই যাতে মিটার নষ্ট না হওয়া নিশ্চিত হয়" } },
+        { id: "opt-2", text: { en: "1. Touch the cable with bare hands; 2. Wait for a shock; 3. Call for help", hi: "1. नंगे हाथों से तार छुएं; 2. झटके का इंतजार करें; 3. मदद के लिए चिल्लाएं", bn: "১. খালি হাতে তার স্পর্শ করা; ২. শকের অপেক্ষা করা; ৩. সাহায্যের জন্য ডাকা" } },
+        { id: "opt-3", text: { en: "1. Turn off the building lights; 2. Turn them back on; 3. Go home", hi: "1. लाइट बंद करें; 2. चालू करें; 3. घर जाएं", bn: "১. বাতি বন্ধ করা; ২. চালু করা; ৩. চলে যাওয়া" } },
+        { id: "opt-4", text: { en: "1. Guess with your eyes; 2. Cut the cable; 3. Replace the fuse", hi: "1. आंखों से अंदाजा लगाएं; 2. तार काटें; 3. फ्यूज बदलें", bn: "১. চোখ দিয়ে আন্দাজ করা; ২. তার কেটে ফেলা; ৩. ফিউজ বদলানো" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The Live-Dead-Live test ensures your meter was operational before the test and did not suffer an internal failure (e.g., blown fuse, dead battery, broken lead) while indicating 0 V on the circuit under test.",
+        hi: "लाइव-डेड-लाइव परीक्षण यह सुनिश्चित करता है कि मीटर परीक्षण से पहले चालू था और शून्य वोल्टेज दिखाते समय उसकी बैटरी या फ्यूज खराब नहीं हुआ था।",
+        bn: "লাইভ-ডেড-লাইভ টেস্ট নিশ্চিত করে যে টেস্টের সময় মিটারের ব্যাটারি বা ইন্টারনাল ফিউজ নষ্ট হয়ে শূন্য ভোল্ট দেখাচ্ছিল না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-5",
+      question: {
+        en: "Why is it mandatory to use an electrical measurement instrument with a CAT IV rating when testing outdoor utility service entrance switchgear?",
+        hi: "आउटडोर यूटिलिटी सर्विस स्विचगियर का परीक्षण करते समय CAT IV रेटिंग वाले मीटर का उपयोग करना अनिवार्य क्यों है?",
+        bn: "আউটডোর সার্ভিস এন্ট্রান্স সুইচগিয়ার পরীক্ষার সময় CAT IV রেটিংযুক্ত মিটার ব্যবহার করা বাধ্যতামূলক কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "CAT IV meters have high dielectric withstand to survive severe lightning and grid switching transient overvoltages without exploding in the technician’s hands", hi: "CAT IV मीटर में ग्रिड पर बिजली गिरने या स्पाइक्स आने पर मीटर को ऑपरेटर के हाथ में फटने से बचाने की क्षमता होती है", bn: "CAT IV মিটারের উচ্চ ডাই-ইলেকট্রিক ক্ষমতা থাকে যাতে গ্রিডের বজ্রপাত বা আকস্মিক স্পাইকে মিটারটি হাতে বিস্ফোরিত না হয়" } },
+        { id: "opt-2", text: { en: "CAT IV meters are painted with glowing neon yellow paint", hi: "क्योंकि वे पीले रंग के होते हैं", bn: "কারণ এগুলো হলুদ রঙের হয়" } },
+        { id: "opt-3", text: { en: "CAT IV meters can only measure direct current from 9 V batteries", hi: "ये केवल 9 V बैटरी नाप सकते हैं", bn: "এগুলো কেবল ৯ ভোল্ট ব্যাটারি মাপতে পারে" } },
+        { id: "opt-4", text: { en: "CAT IV meters are lighter than a feather", hi: "क्योंकि वे बहुत हल्के होते हैं", bn: "কারণ এগুলো পালকের মতো হালকা" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Category IV ratings indicate robust clearances, high-energy fuses, and surge withstand capacity capable of handling high-energy transient spikes on utility service lines without arc flash.",
+        hi: "CAT IV मीटर उच्च-ऊर्जा स्पाइक्स को सहन करने के लिए बनाए जाते हैं ताकि खतरनाक आर्क फ्लैश विस्फोट न हो।",
+        bn: "CAT IV মিটারগুলো উচ্চ-শক্তির ভোল্টেজ স্পাইক সহ্য করতে পারে, ফলে মারাত্মক আর্ক বিস্ফোরণের হাত থেকে কর্মী রক্ষা পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-6",
+      question: {
+        en: "In an insulation resistance diagnostic test on a high-voltage power transformer, what does a Polarization Index of PI = R_10min / R_1min = 2.8 indicate?",
+        hi: "हाई-वोल्टेज पावर ट्रांसफार्मर के मेगर परीक्षण में यदि पोलराइजेशन इंडेक्स PI = 2.8 आए, तो इसका क्या अर्थ है?",
+        bn: "উচ্চ-ভোল্টেজ ট্রান্সফরমারের মেগার টেস্টে পোলারাইজেশন ইনডেক্স PI = ২.৮ আসলে তা কী নির্দেশ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The dielectric insulation is in excellent, clean, and dry condition (healthy PI ≥ 2.0)", hi: "इंसुलेशन उत्कृष्ट, साफ और सूखी स्थिति में है (स्वस्थ PI ≥ 2.0)", bn: "ডাই-ইলেকট্রিক ইনসুলেশনটি চমৎকার, পরিষ্কার এবং সম্পূর্ণ শুষ্ক অবস্থায় রয়েছে (সুস্থ PI ≥ ২.০)" } },
+        { id: "opt-2", text: { en: "The transformer core is completely melted into slag", hi: "ट्रांसफार्मर का कोर पूरी तरह पिघल चुका है", bn: "ট্রান্সফরমার কোর পুরোপুরি গলে গেছে" } },
+        { id: "opt-3", text: { en: "The copper winding is completely broken and open-circuited", hi: "तांबे की वाइंडिंग पूरी तरह टूट चुकी है", bn: "তামার তার ছিঁড়ে গেছে" } },
+        { id: "opt-4", text: { en: "The oil inside has turned into pure gasoline", hi: "अंदर का तेल पेट्रोल बन चुका है", bn: "ভেতরের তেল পেট্রোলে পরিণত হয়েছে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Healthy insulation shows decreasing capacitive and absorption charging currents over 10 minutes, causing measured resistance to climb steadily. PI ≥ 2.0 signifies dry, intact insulation.",
+        hi: "स्वस्थ इंसुलेशन में 10 मिनट के दौरान प्रतिरोध लगातार बढ़ता है। PI ≥ 2.0 का मान सूखे और उत्तम इंसुलेशन का प्रमाण है।",
+        bn: "সুস্থ ইনসুলেশনে সময়ের সাথে সাথে রোধ বৃদ্ধি পায়। PI ≥ ২.০ হলে বোঝা যায় ইনসুলেশনে কোনো আর্দ্রতা বা ক্ষয় নেই।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-7",
+      question: {
+        en: "What critical precaution must be observed when disconnecting test leads after completing a high-current DC winding resistance test on a large 50 MVA transformer?",
+        hi: "50 MVA ट्रांसफार्मर पर डीसी वाइंडिंग प्रतिरोध परीक्षण पूरा करने के बाद टेस्ट लीड हटाने से पहले कौन सी महत्वपूर्ण सावधानी बरतनी चाहिए?",
+        bn: "একটি ৫০ MVA ট্রান্সফরমারে ডিসি ওয়াইন্ডিং রোধ পরীক্ষা শেষ করার পর টেস্ট লিড খোলার আগে কোন গুরুত্বপূর্ণ সতর্কতা মানতে হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Wait for the test instrument’s internal discharge circuit to completely discharge the stored magnetic energy (1/2 L·I²) to zero before disconnecting leads", hi: "लीड हटाने से पहले टेस्ट सेट के डिस्चार्ज सर्किट द्वारा संचित चुंबकीय ऊर्जा (1/2 L·I²) को शून्य होने दें", bn: "কয়েলে সঞ্চিত চৌম্বক শক্তি (1/2 L·I²) টেস্ট সেটের মাধ্যমে শূন্যে ডিসচার্জ না হওয়া পর্যন্ত অপেক্ষা করা" } },
+        { id: "opt-2", text: { en: "Yank the test leads off as fast as possible while the DC current is still flowing", hi: "करंट बहते समय ही तारों को जितनी जल्दी हो सके झटके से खींच लें", bn: "কারেন্ট চলা অবস্থাতেই দ্রুত হ্যাঁচকা টানে তার খুলে ফেলা" } },
+        { id: "opt-3", text: { en: "Pour cold tap water onto the transformer terminals", hi: "टर्मिनलों पर ठंडा पानी डालें", bn: "টার্মিনালে ঠান্ডা পানি ঢালা" } },
+        { id: "opt-4", text: { en: "Touch both bare terminals with wet hands to check if they are cold", hi: "गीले हाथों से दोनों टर्मिनलों को छूकर देखें", bn: "ভেজা হাতে টার্মিনাল ছুঁয়ে দেখা" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Large transformer coils have inductances of tens of Henries, storing thousands of Joules of energy. Pulling leads while energized generates lethal inductive kickback arcs.",
+        hi: "बड़े ट्रांसफार्मर में भारी ऊर्जा संचित रहती है। चालू हालत में तार हटाने से जानलेवा आर्क विस्फोट हो सकता है।",
+        bn: "বড় ট্রান্সফরমারে শত শত জুল চৌম্বক শক্তি সঞ্চিত থাকে। ডিসচার্জের আগে তার খুললে মারাত্মক আর্ক ও শক সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l20-8",
+      question: {
+        en: "What is the primary function of Lockout/Tagout (LOTO) protocols during electrical maintenance of electromagnetic machinery?",
+        hi: "विद्युत-चुंबकीय मशीनों के रखरखाव के दौरान लॉकआउट/टैगआउट (LOTO) प्रोटोकॉल का प्राथमिक कार्य क्या है?",
+        bn: "তড়িৎচৌম্বকীয় যন্ত্রপাতির রক্ষণাবেক্ষণের সময় লকআউট/ট্যাগআউট (LOTO) প্রটোকলের প্রধান কাজ কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To physically lock energy isolation switches in the OFF position with a padlock, preventing accidental re-energization while personnel are working on the equipment", hi: "ऊर्जा स्विच को पैडलॉक से बंद (OFF) स्थिति में ताला लगाकर रखना ताकि काम करते समय कोई गलती से मशीन चालू न कर दे", bn: "প্যাডলক দিয়ে আইসোলেশন সুইচ বন্ধ (OFF) অবস্থায় তালাবদ্ধ রাখা যাতে কাজ চলাকালে কেউ ভুলবশত বিদ্যুৎ চালু করতে না পারে" } },
+        { id: "opt-2", text: { en: "To calculate the monthly electricity bill", hi: "महीने के बिजली बिल की गणना करना", bn: "বিদ্যুৎ বিল হিসাব করা" } },
+        { id: "opt-3", text: { en: "To change the color of the paint on the motor casing", hi: "मोटर का रंग बदलना", bn: "মোটরের রং পরিবর্তন করা" } },
+        { id: "opt-4", text: { en: "To keep track of employee lunch hours", hi: "कर्मचारियों के भोजन के समय का रिकॉर्ड रखना", bn: "কর্মীদের দুপুরের খাবারের সময় গণনা করা" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "LOTO ensures switches cannot be closed by unauthorized personnel, protecting technicians from unexpected electrical shock and mechanical actuation.",
+        hi: "LOTO यह सुनिश्चित करता है कि जब तक तकनीशियन काम कर रहे हैं तब तक कोई अन्य व्यक्ति मशीन में बिजली चालू न कर सके।",
+        bn: "LOTO নিশ্চিত করে যে রক্ষণাবেক্ষণ চলাকালীন অন্য কোনো ব্যক্তি অসাবধানতাবশত লাইনে বিদ্যুৎ সরবরাহ চালু করতে পারবে না।"
       }
     }
   ],

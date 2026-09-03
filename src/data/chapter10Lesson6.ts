@@ -432,43 +432,325 @@ i(t) = I₀ · (১ - e⁻¹) = ২.০ × ০.৬৩২১২ = ১.২৬৪ �
   },
   mcqs: [
     {
-      id: 'mcq-self-1',
+      id: "mcq-self-1",
       question: {
-        en: 'If the number of turns in an iron-cored solenoid is doubled while keeping length and area constant, its self-inductance becomes:',
-        hi: 'यदि लंबाई और क्षेत्रफल स्थिर रखते हुए किसी परिनालिका के फेरों की संख्या दोगुनी कर दी जाए, तो उसका स्व-प्रेरकत्व हो जाएगा:',
-        bn: 'দৈর্ঘ্য ও ক্ষেত্রফল অপরিবর্তিত রেখে একটি সোলেনয়েডের প্যাঁচ সংখ্যা দ্বিগুণ করা হলে তার স্ব-আবেশাঙ্ক হবে:'
+        en: "If the number of turns in an iron-cored solenoid is doubled while keeping length and area constant, its self-inductance becomes:",
+        hi: "यदि लंबाई और क्षेत्रफल स्थिर रखते हुए किसी परिनालिका के फेरों की संख्या दोगुनी कर दी जाए, तो उसका स्व-प्रेरकत्व हो जाएगा:",
+        bn: "দৈর্ঘ্য ও ক্ষেত্রফল অপরিবর্তিত রেখে একটি সোলেনয়েডের প্যাঁচ সংখ্যা দ্বিগুণ করা হলে তার স্ব-আবেশাঙ্ক হবে:"
       },
       options: [
-        { id: 'opt-a', text: { en: 'Doubled (2×)', hi: 'दोगुना (2×)', bn: 'দ্বিগুণ (২×)' } },
-        { id: 'opt-b', text: { en: 'Quadrupled (4×)', hi: 'चार गुना (4×)', bn: 'চারগুণ (৪×)' } },
-        { id: 'opt-c', text: { en: 'Halved (½×)', hi: 'आधा (½×)', bn: 'অর্ধেক (½×)' } },
-        { id: 'opt-d', text: { en: 'Unchanged (1×)', hi: 'अपरिवर्तित (1×)', bn: 'অপরিবর্তিত (১×)' } }
+        { id: "opt-a", text: { en: "Doubled (2×)", hi: "दोगुना (2×)", bn: "দ্বিগুণ (২×)" } },
+        { id: "opt-b", text: { en: "Quadrupled (4×)", hi: "चार गुना (4×)", bn: "চারগুণ (৪×)" } },
+        { id: "opt-c", text: { en: "Halved (½×)", hi: "आधा (½×)", bn: "অর্ধেক (½×)" } },
+        { id: "opt-d", text: { en: "Unchanged (1×)", hi: "अपरिवर्तित (1×)", bn: "অপরিবর্তিত (১×)" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
-        en: 'Self-inductance of a solenoid is proportional to the square of the number of turns (L ∝ N²). Therefore, doubling N makes L = (2N)² = 4N² (4 times original value).',
-        hi: 'स्व-प्रेरकत्व फेरों की संख्या के वर्ग के आनुपातिक होता है (L ∝ N²)। अतः N को दोगुना करने पर L = (2N)² = 4 गुना हो जाता है।',
-        bn: 'সোলেনয়েডের আবেশাঙ্ক প্যাঁচ সংখ্যার বর্গের সমানুপাতিক (L ∝ N²)। সুতরাং N দ্বিগুণ করলে L = (২N)² = ৪ গুণ হবে।'
+        en: "Self-inductance of a solenoid is proportional to the square of the number of turns (L ∝ N²). Therefore, doubling N makes L = (2N)² = 4N² (4 times original value).",
+        hi: "स्व-प्रेरकत्व फेरों की संख्या के वर्ग के आनुपातिक होता है (L ∝ N²)। अतः N को दोगुना करने पर L = (2N)² = 4 गुना हो जाता है।",
+        bn: "সোলেনয়েডের আবেশাঙ্ক প্যাঁচ সংখ্যার বর্গের সমানুপাতিক (L ∝ N²)। সুতরাং N দ্বিগুণ করলে L = (২N)² = ৪ গুণ হবে।"
       }
     },
     {
-      id: 'mcq-self-2',
+      id: "mcq-self-2",
       question: {
-        en: 'In a series RL circuit connected to a DC supply, what percentage of the maximum steady-state current is reached after one time constant (t = τ)?',
-        hi: 'डीसी आपूर्ति से जुड़े श्रेणी RL परिपथ में एक समय स्थिरांक (t = τ) के बाद अधिकतम स्थिर धारा का कितना प्रतिशत प्राप्त होता है?',
-        bn: 'ডিসি সাপ্লাইয়ে যুক্ত একটি সিরিজ RL সার্কিটে এক সময় ধ্রুবক (t = τ) পর সর্বোচ্চ স্থির কারেন্টের কত শতাংশ পৌঁছায়?'
+        en: "In a series RL circuit connected to a DC supply, what percentage of the maximum steady-state current is reached after one time constant (t = τ)?",
+        hi: "डीसी आपूर्ति से जुड़े श्रेणी RL परिपथ में एक समय स्थिरांक (t = τ) के बाद अधिकतम स्थिर धारा का कितना प्रतिशत प्राप्त होता है?",
+        bn: "ডিসি সাপ্লাইয়ে যুক্ত একটি সিরিজ RL সার্কিটে এক সময় ধ্রুবক (t = τ) পর সর্বোচ্চ স্থির কারেন্টের কত শতাংশ পৌঁছায়?"
       },
       options: [
-        { id: 'opt-a', text: { en: '50.0%', hi: '50.0%', bn: '৫০.০%' } },
-        { id: 'opt-b', text: { en: '63.2%', hi: '63.2%', bn: '৬৩.২%' } },
-        { id: 'opt-c', text: { en: '86.5%', hi: '86.5%', bn: '৮৬.৫%' } },
-        { id: 'opt-d', text: { en: '99.3%', hi: '99.3%', bn: '৯৯.৩%' } }
+        { id: "opt-a", text: { en: "50.0%", hi: "50.0%", bn: "৫০.০%" } },
+        { id: "opt-b", text: { en: "63.2%", hi: "63.2%", bn: "৬৩.২%" } },
+        { id: "opt-c", text: { en: "86.5%", hi: "86.5%", bn: "৮৬.৫%" } },
+        { id: "opt-d", text: { en: "99.3%", hi: "99.3%", bn: "৯৯.৩%" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
-        en: 'At t = τ, i(τ) = I₀(1 - e⁻¹) = I₀(1 - 0.3679) = 0.6321 · I₀, which equals exactly 63.2% of the maximum steady-state current.',
-        hi: 't = τ पर, i(τ) = I₀(1 - e⁻¹) = 0.6321 · I₀, जो कि अधिकतम स्थिर धारा का ठीक 63.2% होता है।',
-        bn: 't = τ তে, i(τ) = I₀(১ - e⁻¹) = ০.৬৩২১ · I₀, যা সর্বোচ্চ স্থির কারেন্টের ঠিক ৬৩.২%।'
+        en: "At t = τ, i(τ) = I₀(1 - e⁻¹) = I₀(1 - 0.3679) = 0.6321 · I₀, which equals exactly 63.2% of the maximum steady-state current.",
+        hi: "t = τ पर, i(τ) = I₀(1 - e⁻¹) = 0.6321 · I₀, जो कि अधिकतम स्थिर धारा का ठीक 63.2% होता है।",
+        bn: "t = τ তে, i(τ) = I₀(১ - e⁻¹) = ০.৬৩২১ · I₀, যা সর্বোচ্চ স্থির কারেন্টের ঠিক ৬৩.২%।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-03",
+      question: {
+        en: "The potential magnetic energy W stored in an inductor of inductance L carrying steady current I is given by:",
+        hi: "स्थिर धारा I ले जा रहे प्रेरकत्व L के एक प्रेरक में संचित स्थितिज चुंबकीय ऊर्जा W का सूत्र है:",
+        bn: "স্থির কারেন্ট I বহনকারী L আবেশাঙ্কের একটি ইন্ডাক্টরে সঞ্চিত চৌম্বক বিভব শক্তি W এর সূত্র কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "W = ½ · L · I²", hi: "W = ½ · L · I²", bn: "W = ½ · L · I²" } },
+        { id: "opt-2", text: { en: "W = L · I", hi: "W = L · I", bn: "W = L · I" } },
+        { id: "opt-3", text: { en: "W = ½ · L² · I", hi: "W = ½ · L² · I", bn: "W = ½ · L² · I" } },
+        { id: "opt-4", text: { en: "W = (L · I) / 2", hi: "W = (L · I) / 2", bn: "W = (L · I) / ২" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating the instantaneous power supplied against back-EMF W = ∫ e · i dt = ∫ (L di/dt) i dt = L ∫ i di yields W = ½ L I² Joules.",
+        hi: "बैक-EMF के विरुद्ध किए गए कार्य का समाकलन W = ∫ L i di = ½ L I² जूल होता है।",
+        bn: "বিপরীত EMF এর বিরুদ্ধে সরবরাহকৃত শক্তির সমাকলন W = ∫ L i di = ½ L I² জুল।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-04",
+      question: {
+        en: "The time constant τ of a series RL circuit connected across a DC voltage source is given by:",
+        hi: "डीसी वोल्टेज स्रोत से जुड़े एक श्रेणी RL परिपथ का समय स्थिरांक (टाइम कांस्टेंट) τ क्या होता है?",
+        bn: "একটি ডিসি ভোল্টেজ উৎসের সাথে যুক্ত শ্রেণী RL বর্তনীর টাইম কনস্ট্যান্ট τ কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "τ = L / R (seconds)", hi: "τ = L / R (सेकंड)", bn: "τ = L / R (সেকেন্ড)" } },
+        { id: "opt-2", text: { en: "τ = R / L (seconds)", hi: "τ = R / L (सेकंड)", bn: "τ = R / L (সেকেন্ড)" } },
+        { id: "opt-3", text: { en: "τ = R · L (seconds)", hi: "τ = R · L (सेकंड)", bn: "τ = R · L (সেকেন্ড)" } },
+        { id: "opt-4", text: { en: "τ = √(L · R)", hi: "τ = √(L · R)", bn: "τ = √(L · R)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "From the differential equation L (di/dt) + R i = V, the transient solution contains the exponential term e^(-t/τ), where τ = L/R seconds.",
+        hi: "अवकल समीकरण L (di/dt) + Ri = V से, घातांकीय पद e^(-t/τ) प्राप्त होता है जहाँ τ = L/R सेकंड होता है।",
+        bn: "অন্তরক সমীকরণ L (di/dt) + Ri = V থেকে ক্ষণস্থায়ী কারেন্টের সূচকীয় পদ e^(-t/τ) পাওয়া যায়, যেখানে τ = L/R সেকেন্ড।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-05",
+      question: {
+        en: "An inductor of self-inductance L = 4.0 H carries a current that decreases uniformly from 10 A to 2.0 A in 0.05 seconds. What back-EMF is induced in the coil?",
+        hi: "4.0 H स्व-प्रेरकत्व वाले एक प्रेरक में धारा 0.05 सेकंड में एकसमान रूप से 10 A से घटकर 2.0 A हो जाती है। कुंडली में प्रेरित बैक-EMF क्या है?",
+        bn: "৪.০ হেনরি স্বকীয় আবেশাঙ্কের একটি ইন্ডাক্টরে ০.০৫ সেকেন্ডে কারেন্ট সুষমভাবে ১০ অ্যাম্পিয়ার থেকে কমে ২.০ অ্যাম্পিয়ার হয়। কয়েলে আবিষ্ট বিপরীত EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "+640 V", hi: "+640 V", bn: "+৬৪০ V" } },
+        { id: "opt-2", text: { en: "-640 V", hi: "-640 V", bn: "-৬৪০ V" } },
+        { id: "opt-3", text: { en: "+160 V", hi: "+160 V", bn: "+১৬০ V" } },
+        { id: "opt-4", text: { en: "+32 V", hi: "+32 V", bn: "+৩২ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e = -L (di/dt) = -4.0 × [(2.0 - 10.0) / 0.05] = -4.0 × (-160) = +640 V. The positive sign indicates that the EMF acts in the direction of the initial current to oppose its collapse.",
+        hi: "e = -L (di/dt) = -4.0 × (-8.0 / 0.05) = +640 V। धनात्मक मान दर्शाता है कि EMF धारा को बनाए रखने की दिशा में कार्य करता है।",
+        bn: "e = -L (di/dt) = -৪.০ × (-৮.০ / ০.০৫) = +৬৪০ V। ধনাত্মক মান নির্দেশ করে যে EMF প্রাথমিক কারেন্টের পতনকে বাধা দেওয়ার দিকে কাজ করছে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-06",
+      question: {
+        en: "When a soft iron core of relative permeability μ_r = 1,500 is inserted inside an air-core solenoid, its self-inductance L becomes:",
+        hi: "जब सापेक्ष पारगम्यता μ_r = 1,500 वाला एक नर्म लोहे का कोर वायु-कोर सोलनॉइड में डाला जाता है, तो इसका स्व-प्रेरकत्व L हो जाता है:",
+        bn: "যখন μ_r = ১,৫০০ আপেক্ষিক প্রবেশ্যতার একটি কাঁচা লোহার কোর বায়ু-কোর সলেনয়েডে প্রবেশ করানো হয়, তখন এর স্বকীয় আবেশাঙ্ক L হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Multiplied by 1,500", hi: "1,500 गुना बढ़ जाता है", bn: "১,৫০০ গুণ বৃদ্ধি পাবে" } },
+        { id: "opt-2", text: { en: "Divided by 1,500", hi: "1,500 से विभाजित हो जाता है", bn: "১,৫০০ ভাগ কমে যাবে" } },
+        { id: "opt-3", text: { en: "Unchanged because turns remain constant", hi: "अपरिवर्तित क्योंकि फेरे समान हैं", bn: "অপরিবর্তিত থাকবে কারণ পাকসংখ্যা একই" } },
+        { id: "opt-4", text: { en: "Reduced to zero", hi: "शून्य हो जाता है", bn: "শূন্য হয়ে যাবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Inductance is given by L = (μ_0 · μ_r · N² · A) / l. Since L is directly proportional to permeability, inserting a core with μ_r = 1500 increases inductance by exactly 1,500 times.",
+        hi: "L = (μ_0 · μ_r · N² · A) / l के अनुसार, L सापेक्ष पारगम्यता μ_r के समानुपाती होता है। अतः प्रेरकत्व ठीक 1500 गुना बढ़ जाएगा।",
+        bn: "L = (μ_0 · μ_r · N² · A) / l সূত্রানুযায়ী, আবেশাঙ্ক আপেক্ষিক প্রবেশ্যতা μ_r এর সরাসরি সমানুপাতিক। তাই আবেশাঙ্ক ঠিক ১,৫০০ গুণ বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-07",
+      question: {
+        en: "What is the precise physical definition of one Henry (1 H) of self-inductance in the International System of Units (SI)?",
+        hi: "अंतर्राष्ट्रीय मात्रक प्रणाली (SI) में स्व-प्रेरकत्व के एक हेनरी (1 H) की सटीक भौतिक परिभाषा क्या है?",
+        bn: "আন্তর্জাতিক একক পদ্ধতিতে (SI) স্বকীয় আবেশাঙ্কের এক হেনরির (1 H) সুনির্দিষ্ট ভৌত সংজ্ঞা কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The inductance of an electric circuit in which an electromotive force of one volt is produced when the electric current changes at the rate of one ampere per second", hi: "उस परिपथ का प्रेरकत्व जिसमें धारा के एक एम्पियर प्रति सेकंड की दर से बदलने पर एक वोल्ट का विद्युत वाहक बल उत्पन्न होता है", bn: "যে বর্তনীতে কারেন্ট প্রতি সেকেন্ডে এক অ্যাম্পিয়ার হারে পরিবর্তিত হলে এক ভোল্ট তড়িচ্চালক বল আবিষ্ট হয় তার আবেশাঙ্ক" } },
+        { id: "opt-2", text: { en: "The resistance that produces one Joule of heat per Coulomb", hi: "वह प्रतिरोध जो प्रति कूलम्ब एक जूल ऊष्मा उत्पन्न करता है", bn: "যে রোধ প্রতি কুলম্বে এক জুল তাপ তৈরি করে" } },
+        { id: "opt-3", text: { en: "The capacitance that stores one Weber of magnetic charge", hi: "वह धारिता जो एक वेबर चुंबकीय आवेश संचित करती है", bn: "যে ধারক এক ওয়েবার চৌম্বক আধান সঞ্চয় করে" } },
+        { id: "opt-4", text: { en: "The magnetic flux density produced by a current of one Ampere", hi: "एक एम्पियर धारा द्वारा उत्पन्न चुंबकीय फ्लक्स घनत्व", bn: "এক অ্যাম্পিয়ার কারেন্ট দ্বারা উৎপন্ন চৌম্বক ফ্লাক্স ঘনত্ব" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "From e = L (di/dt), when e = 1 V and di/dt = 1 A/s, L = 1 Henry = 1 V·s/A.",
+        hi: "सूत्र e = L (di/dt) से: यदि e = 1 V और di/dt = 1 A/s हो, तो L = 1 हेनरी (1 V·s/A) होता है।",
+        bn: "e = L (di/dt) সূত্র হতে: e = ১ V এবং di/dt = ১ A/s হলে L = ১ হেনরি (১ V·s/A)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-08",
+      question: {
+        en: "When an electrical switch controlling a large inductive motor winding is abruptly opened, a bright electrical arc jumps across the contacts because:",
+        hi: "जब एक बड़ी प्रेरण मोटर वाइंडिंग को नियंत्रित करने वाले स्विच को अचानक खोला जाता है, तो संपर्कों के बीच एक चमकीला स्पार्क कूदता है क्योंकि:",
+        bn: "একটি বড় ইন্ডাকশন মোটরের ওয়াইন্ডিং পরিচালনাকারী সুইচ হঠাৎ বন্ধ করলে কন্টাক্টের মাঝে উজ্জ্বল বৈদ্যুতিক স্পার্ক দেখা যায় কারণ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The rapid current collapse (di/dt → -∞) induces a massive kickback voltage e = -L(di/dt) that ionizes the air gap", hi: "धारा का तेजी से गिरना (di/dt) एक विशाल किकबैक वोल्टेज e = -L(di/dt) बनाता है जो वायु को आयनित कर देता है", bn: "কারেন্টের আকস্মিক পতন (di/dt) তীব্র বিপরীত ভোল্টেজ e = -L(di/dt) সৃষ্টি করে যা বাতাসকে আয়নিত করে ফেলে" } },
+        { id: "opt-2", text: { en: "Atmospheric nitrogen undergoes nuclear fusion", hi: "वायुमंडलीय नाइट्रोजन परमाणु संलयन करती है", bn: "বায়ুর নাইট্রোজেনের পারমাণবিক ফিউশন ঘটে" } },
+        { id: "opt-3", text: { en: "The switch metal spontaneously turns into plasma due to cold temperature", hi: "ठंडे तापमान के कारण धातु अचानक प्लाज्मा बन जाती है", bn: "শীতল তাপমাত্রায় ধাতু আপনা-আপনি প্লাজমা হয়" } },
+        { id: "opt-4", text: { en: "Magnetic poles inside the wire escape into the room", hi: "तार के चुंबकीय ध्रुव कमरे में बिखर जाते हैं", bn: "তারের চৌম্বক মেরু ঘরের মধ্যে ছড়িয়ে পড়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the inductor opposes current interruption. When the switch opens in microseconds, the collapsing magnetic field creates a huge inductive kickback EMF (thousands of volts) across the contacts, breaking down the dielectric air gap into an arc.",
+        hi: "प्रेरक धारा के रुकने का विरोध करता है। स्विच के अचानक खुलने पर di/dt बहुत तीव्र होने से हजारों वोल्ट का किकबैक बनता है जो हवा को तोड़कर स्पार्क पैदा करता है।",
+        bn: "ইন্ডাক্টর কারেন্ট বন্ধের বিরোধিতা করে। মাইক্রোসেকেন্ডে সুইচ খুললে তীব্র di/dt এর কারণে হাজার হাজার ভোল্টের কিকব্যাক তৈরি হয় যা বাতাস ভেদ করে স্পার্ক ঘটায়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-self-1",
+      question: {
+        en: "If the number of turns in an iron-cored solenoid is doubled while keeping length and area constant, its self-inductance becomes:",
+        hi: "यदि लंबाई और क्षेत्रफल स्थिर रखते हुए किसी परिनालिका के फेरों की संख्या दोगुनी कर दी जाए, तो उसका स्व-प्रेरकत्व हो जाएगा:",
+        bn: "দৈর্ঘ্য ও ক্ষেত্রফল অপরিবর্তিত রেখে একটি সোলেনয়েডের প্যাঁচ সংখ্যা দ্বিগুণ করা হলে তার স্ব-আবেশাঙ্ক হবে:"
+      },
+      options: [
+        { id: "opt-a", text: { en: "Doubled (2×)", hi: "दोगुना (2×)", bn: "দ্বিগুণ (২×)" } },
+        { id: "opt-b", text: { en: "Quadrupled (4×)", hi: "चार गुना (4×)", bn: "চারগুণ (৪×)" } },
+        { id: "opt-c", text: { en: "Halved (½×)", hi: "आधा (½×)", bn: "অর্ধেক (½×)" } },
+        { id: "opt-d", text: { en: "Unchanged (1×)", hi: "अपरिवर्तित (1×)", bn: "অপরিবর্তিত (১×)" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "Self-inductance of a solenoid is proportional to the square of the number of turns (L ∝ N²). Therefore, doubling N makes L = (2N)² = 4N² (4 times original value).",
+        hi: "स्व-प्रेरकत्व फेरों की संख्या के वर्ग के आनुपातिक होता है (L ∝ N²)। अतः N को दोगुना करने पर L = (2N)² = 4 गुना हो जाता है।",
+        bn: "সোলেনয়েডের আবেশাঙ্ক প্যাঁচ সংখ্যার বর্গের সমানুপাতিক (L ∝ N²)। সুতরাং N দ্বিগুণ করলে L = (২N)² = ৪ গুণ হবে।"
+      }
+    },
+    {
+      id: "mcq-self-2",
+      question: {
+        en: "In a series RL circuit connected to a DC supply, what percentage of the maximum steady-state current is reached after one time constant (t = τ)?",
+        hi: "डीसी आपूर्ति से जुड़े श्रेणी RL परिपथ में एक समय स्थिरांक (t = τ) के बाद अधिकतम स्थिर धारा का कितना प्रतिशत प्राप्त होता है?",
+        bn: "ডিসি সাপ্লাইয়ে যুক্ত একটি সিরিজ RL সার্কিটে এক সময় ধ্রুবক (t = τ) পর সর্বোচ্চ স্থির কারেন্টের কত শতাংশ পৌঁছায়?"
+      },
+      options: [
+        { id: "opt-a", text: { en: "50.0%", hi: "50.0%", bn: "৫০.০%" } },
+        { id: "opt-b", text: { en: "63.2%", hi: "63.2%", bn: "৬৩.২%" } },
+        { id: "opt-c", text: { en: "86.5%", hi: "86.5%", bn: "৮৬.৫%" } },
+        { id: "opt-d", text: { en: "99.3%", hi: "99.3%", bn: "৯৯.৩%" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "At t = τ, i(τ) = I₀(1 - e⁻¹) = I₀(1 - 0.3679) = 0.6321 · I₀, which equals exactly 63.2% of the maximum steady-state current.",
+        hi: "t = τ पर, i(τ) = I₀(1 - e⁻¹) = 0.6321 · I₀, जो कि अधिकतम स्थिर धारा का ठीक 63.2% होता है।",
+        bn: "t = τ তে, i(τ) = I₀(১ - e⁻¹) = ০.৬৩২১ · I₀, যা সর্বোচ্চ স্থির কারেন্টের ঠিক ৬৩.২%।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-03",
+      question: {
+        en: "The potential magnetic energy W stored in an inductor of inductance L carrying steady current I is given by:",
+        hi: "स्थिर धारा I ले जा रहे प्रेरकत्व L के एक प्रेरक में संचित स्थितिज चुंबकीय ऊर्जा W का सूत्र है:",
+        bn: "স্থির কারেন্ট I বহনকারী L আবেশাঙ্কের একটি ইন্ডাক্টরে সঞ্চিত চৌম্বক বিভব শক্তি W এর সূত্র কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "W = ½ · L · I²", hi: "W = ½ · L · I²", bn: "W = ½ · L · I²" } },
+        { id: "opt-2", text: { en: "W = L · I", hi: "W = L · I", bn: "W = L · I" } },
+        { id: "opt-3", text: { en: "W = ½ · L² · I", hi: "W = ½ · L² · I", bn: "W = ½ · L² · I" } },
+        { id: "opt-4", text: { en: "W = (L · I) / 2", hi: "W = (L · I) / 2", bn: "W = (L · I) / ২" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating the instantaneous power supplied against back-EMF W = ∫ e · i dt = ∫ (L di/dt) i dt = L ∫ i di yields W = ½ L I² Joules.",
+        hi: "बैक-EMF के विरुद्ध किए गए कार्य का समाकलन W = ∫ L i di = ½ L I² जूल होता है।",
+        bn: "বিপরীত EMF এর বিরুদ্ধে সরবরাহকৃত শক্তির সমাকলন W = ∫ L i di = ½ L I² জুল।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-04",
+      question: {
+        en: "The time constant τ of a series RL circuit connected across a DC voltage source is given by:",
+        hi: "डीसी वोल्टेज स्रोत से जुड़े एक श्रेणी RL परिपथ का समय स्थिरांक (टाइम कांस्टेंट) τ क्या होता है?",
+        bn: "একটি ডিসি ভোল্টেজ উৎসের সাথে যুক্ত শ্রেণী RL বর্তনীর টাইম কনস্ট্যান্ট τ কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "τ = L / R (seconds)", hi: "τ = L / R (सेकंड)", bn: "τ = L / R (সেকেন্ড)" } },
+        { id: "opt-2", text: { en: "τ = R / L (seconds)", hi: "τ = R / L (सेकंड)", bn: "τ = R / L (সেকেন্ড)" } },
+        { id: "opt-3", text: { en: "τ = R · L (seconds)", hi: "τ = R · L (सेकंड)", bn: "τ = R · L (সেকেন্ড)" } },
+        { id: "opt-4", text: { en: "τ = √(L · R)", hi: "τ = √(L · R)", bn: "τ = √(L · R)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "From the differential equation L (di/dt) + R i = V, the transient solution contains the exponential term e^(-t/τ), where τ = L/R seconds.",
+        hi: "अवकल समीकरण L (di/dt) + Ri = V से, घातांकीय पद e^(-t/τ) प्राप्त होता है जहाँ τ = L/R सेकंड होता है।",
+        bn: "অন্তরক সমীকরণ L (di/dt) + Ri = V থেকে ক্ষণস্থায়ী কারেন্টের সূচকীয় পদ e^(-t/τ) পাওয়া যায়, যেখানে τ = L/R সেকেন্ড।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-05",
+      question: {
+        en: "An inductor of self-inductance L = 4.0 H carries a current that decreases uniformly from 10 A to 2.0 A in 0.05 seconds. What back-EMF is induced in the coil?",
+        hi: "4.0 H स्व-प्रेरकत्व वाले एक प्रेरक में धारा 0.05 सेकंड में एकसमान रूप से 10 A से घटकर 2.0 A हो जाती है। कुंडली में प्रेरित बैक-EMF क्या है?",
+        bn: "৪.০ হেনরি স্বকীয় আবেশাঙ্কের একটি ইন্ডাক্টরে ০.০৫ সেকেন্ডে কারেন্ট সুষমভাবে ১০ অ্যাম্পিয়ার থেকে কমে ২.০ অ্যাম্পিয়ার হয়। কয়েলে আবিষ্ট বিপরীত EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "+640 V", hi: "+640 V", bn: "+৬৪০ V" } },
+        { id: "opt-2", text: { en: "-640 V", hi: "-640 V", bn: "-৬৪০ V" } },
+        { id: "opt-3", text: { en: "+160 V", hi: "+160 V", bn: "+১৬০ V" } },
+        { id: "opt-4", text: { en: "+32 V", hi: "+32 V", bn: "+৩২ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e = -L (di/dt) = -4.0 × [(2.0 - 10.0) / 0.05] = -4.0 × (-160) = +640 V. The positive sign indicates that the EMF acts in the direction of the initial current to oppose its collapse.",
+        hi: "e = -L (di/dt) = -4.0 × (-8.0 / 0.05) = +640 V। धनात्मक मान दर्शाता है कि EMF धारा को बनाए रखने की दिशा में कार्य करता है।",
+        bn: "e = -L (di/dt) = -৪.০ × (-৮.০ / ০.০৫) = +৬৪০ V। ধনাত্মক মান নির্দেশ করে যে EMF প্রাথমিক কারেন্টের পতনকে বাধা দেওয়ার দিকে কাজ করছে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-06",
+      question: {
+        en: "When a soft iron core of relative permeability μ_r = 1,500 is inserted inside an air-core solenoid, its self-inductance L becomes:",
+        hi: "जब सापेक्ष पारगम्यता μ_r = 1,500 वाला एक नर्म लोहे का कोर वायु-कोर सोलनॉइड में डाला जाता है, तो इसका स्व-प्रेरकत्व L हो जाता है:",
+        bn: "যখন μ_r = ১,৫০০ আপেক্ষিক প্রবেশ্যতার একটি কাঁচা লোহার কোর বায়ু-কোর সলেনয়েডে প্রবেশ করানো হয়, তখন এর স্বকীয় আবেশাঙ্ক L হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Multiplied by 1,500", hi: "1,500 गुना बढ़ जाता है", bn: "১,৫০০ গুণ বৃদ্ধি পাবে" } },
+        { id: "opt-2", text: { en: "Divided by 1,500", hi: "1,500 से विभाजित हो जाता है", bn: "১,৫০০ ভাগ কমে যাবে" } },
+        { id: "opt-3", text: { en: "Unchanged because turns remain constant", hi: "अपरिवर्तित क्योंकि फेरे समान हैं", bn: "অপরিবর্তিত থাকবে কারণ পাকসংখ্যা একই" } },
+        { id: "opt-4", text: { en: "Reduced to zero", hi: "शून्य हो जाता है", bn: "শূন্য হয়ে যাবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Inductance is given by L = (μ_0 · μ_r · N² · A) / l. Since L is directly proportional to permeability, inserting a core with μ_r = 1500 increases inductance by exactly 1,500 times.",
+        hi: "L = (μ_0 · μ_r · N² · A) / l के अनुसार, L सापेक्ष पारगम्यता μ_r के समानुपाती होता है। अतः प्रेरकत्व ठीक 1500 गुना बढ़ जाएगा।",
+        bn: "L = (μ_0 · μ_r · N² · A) / l সূত্রানুযায়ী, আবেশাঙ্ক আপেক্ষিক প্রবেশ্যতা μ_r এর সরাসরি সমানুপাতিক। তাই আবেশাঙ্ক ঠিক ১,৫০০ গুণ বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-07",
+      question: {
+        en: "What is the precise physical definition of one Henry (1 H) of self-inductance in the International System of Units (SI)?",
+        hi: "अंतर्राष्ट्रीय मात्रक प्रणाली (SI) में स्व-प्रेरकत्व के एक हेनरी (1 H) की सटीक भौतिक परिभाषा क्या है?",
+        bn: "আন্তর্জাতিক একক পদ্ধতিতে (SI) স্বকীয় আবেশাঙ্কের এক হেনরির (1 H) সুনির্দিষ্ট ভৌত সংজ্ঞা কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The inductance of an electric circuit in which an electromotive force of one volt is produced when the electric current changes at the rate of one ampere per second", hi: "उस परिपथ का प्रेरकत्व जिसमें धारा के एक एम्पियर प्रति सेकंड की दर से बदलने पर एक वोल्ट का विद्युत वाहक बल उत्पन्न होता है", bn: "যে বর্তনীতে কারেন্ট প্রতি সেকেন্ডে এক অ্যাম্পিয়ার হারে পরিবর্তিত হলে এক ভোল্ট তড়িচ্চালক বল আবিষ্ট হয় তার আবেশাঙ্ক" } },
+        { id: "opt-2", text: { en: "The resistance that produces one Joule of heat per Coulomb", hi: "वह प्रतिरोध जो प्रति कूलम्ब एक जूल ऊष्मा उत्पन्न करता है", bn: "যে রোধ প্রতি কুলম্বে এক জুল তাপ তৈরি করে" } },
+        { id: "opt-3", text: { en: "The capacitance that stores one Weber of magnetic charge", hi: "वह धारिता जो एक वेबर चुंबकीय आवेश संचित करती है", bn: "যে ধারক এক ওয়েবার চৌম্বক আধান সঞ্চয় করে" } },
+        { id: "opt-4", text: { en: "The magnetic flux density produced by a current of one Ampere", hi: "एक एम्पियर धारा द्वारा उत्पन्न चुंबकीय फ्लक्स घनत्व", bn: "এক অ্যাম্পিয়ার কারেন্ট দ্বারা উৎপন্ন চৌম্বক ফ্লাক্স ঘনত্ব" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "From e = L (di/dt), when e = 1 V and di/dt = 1 A/s, L = 1 Henry = 1 V·s/A.",
+        hi: "सूत्र e = L (di/dt) से: यदि e = 1 V और di/dt = 1 A/s हो, तो L = 1 हेनरी (1 V·s/A) होता है।",
+        bn: "e = L (di/dt) সূত্র হতে: e = ১ V এবং di/dt = ১ A/s হলে L = ১ হেনরি (১ V·s/A)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l06-08",
+      question: {
+        en: "When an electrical switch controlling a large inductive motor winding is abruptly opened, a bright electrical arc jumps across the contacts because:",
+        hi: "जब एक बड़ी प्रेरण मोटर वाइंडिंग को नियंत्रित करने वाले स्विच को अचानक खोला जाता है, तो संपर्कों के बीच एक चमकीला स्पार्क कूदता है क्योंकि:",
+        bn: "একটি বড় ইন্ডাকশন মোটরের ওয়াইন্ডিং পরিচালনাকারী সুইচ হঠাৎ বন্ধ করলে কন্টাক্টের মাঝে উজ্জ্বল বৈদ্যুতিক স্পার্ক দেখা যায় কারণ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The rapid current collapse (di/dt → -∞) induces a massive kickback voltage e = -L(di/dt) that ionizes the air gap", hi: "धारा का तेजी से गिरना (di/dt) एक विशाल किकबैक वोल्टेज e = -L(di/dt) बनाता है जो वायु को आयनित कर देता है", bn: "কারেন্টের আকস্মিক পতন (di/dt) তীব্র বিপরীত ভোল্টেজ e = -L(di/dt) সৃষ্টি করে যা বাতাসকে আয়নিত করে ফেলে" } },
+        { id: "opt-2", text: { en: "Atmospheric nitrogen undergoes nuclear fusion", hi: "वायुमंडलीय नाइट्रोजन परमाणु संलयन करती है", bn: "বায়ুর নাইট্রোজেনের পারমাণবিক ফিউশন ঘটে" } },
+        { id: "opt-3", text: { en: "The switch metal spontaneously turns into plasma due to cold temperature", hi: "ठंडे तापमान के कारण धातु अचानक प्लाज्मा बन जाती है", bn: "শীতল তাপমাত্রায় ধাতু আপনা-আপনি প্লাজমা হয়" } },
+        { id: "opt-4", text: { en: "Magnetic poles inside the wire escape into the room", hi: "तार के चुंबकीय ध्रुव कमरे में बिखर जाते हैं", bn: "তারের চৌম্বক মেরু ঘরের মধ্যে ছড়িয়ে পড়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the inductor opposes current interruption. When the switch opens in microseconds, the collapsing magnetic field creates a huge inductive kickback EMF (thousands of volts) across the contacts, breaking down the dielectric air gap into an arc.",
+        hi: "प्रेरक धारा के रुकने का विरोध करता है। स्विच के अचानक खुलने पर di/dt बहुत तीव्र होने से हजारों वोल्ट का किकबैक बनता है जो हवा को तोड़कर स्पार्क पैदा करता है।",
+        bn: "ইন্ডাক্টর কারেন্ট বন্ধের বিরোধিতা করে। মাইক্রোসেকেন্ডে সুইচ খুললে তীব্র di/dt এর কারণে হাজার হাজার ভোল্টের কিকব্যাক তৈরি হয় যা বাতাস ভেদ করে স্পার্ক ঘটায়।"
       }
     }
   ],

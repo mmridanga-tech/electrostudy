@@ -292,163 +292,325 @@ Part (b): Calculate resonant tuning capacitance C_tag:
   ],
   mcqs: [
     {
-      id: 'mcq-ch10-l18-1',
+      id: "mcq-ch10-l18-1",
       question: {
-        en: 'What fundamental electromagnetic quantity measures the magnetic flux linkage between two loosely coupled wireless charging coils per unit primary current?',
-        hi: 'दो ढीली-युग्मित वायरलेस चार्जिंग कुंडलियों के बीच प्राथमिक धारा के प्रति इकाई चुंबकीय फ्लक्स लिंकेज को क्या कहते हैं?',
-        bn: 'দুটি লুজলি কাপলড ওয়্যারলেস চার্জিং কয়েলের মধ্যে প্রাথমিক কারেন্টের প্রতি একক ফ্লাক্স সংযোগকে কী বলা হয়?'
+        en: "What fundamental electromagnetic quantity measures the magnetic flux linkage between two loosely coupled wireless charging coils per unit primary current?",
+        hi: "दो ढीली-युग्मित वायरलेस चार्जिंग कुंडलियों के बीच प्राथमिक धारा के प्रति इकाई चुंबकीय फ्लक्स लिंकेज को क्या कहते हैं?",
+        bn: "দুটি লুজলি কাপলড ওয়্যারলেস চার্জিং কয়েলের মধ্যে প্রাথমিক কারেন্টের প্রতি একক ফ্লাক্স সংযোগকে কী বলা হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Mutual inductance M = k · √(L_1 · L_2)', hi: 'पारस्परिक प्रेरकत्व M = k · √(L_1 · L_2)', bn: 'পারস্পরিক আবেশাঙ্ক M = k · √(L_1 · L_2)' } },
-        { id: 'opt-2', text: { en: 'Electrostatic dielectric breakdown voltage', hi: 'डाइइलेक्ट्रिक ब्रेकडाउन वोल्टेज', bn: 'ডাই-ইলেকট্রিক ব্রেকডাউন ভোল্টেজ' } },
-        { id: 'opt-3', text: { en: 'Thermal contact resistance', hi: 'तापीय संपर्क प्रतिरोध', bn: 'থার্মাল কন্টাক্ট রেজিস্ট্যান্স' } },
-        { id: 'opt-4', text: { en: 'Acoustic wave impedance', hi: 'ध्वनिक तरंग प्रतिबाधा', bn: 'শব্দ তরঙ্গ প্রতিবন্ধকতা' } }
+        { id: "opt-1", text: { en: "Mutual inductance M = k · √(L_1 · L_2)", hi: "पारस्परिक प्रेरकत्व M = k · √(L_1 · L_2)", bn: "পারস্পরিক আবেশাঙ্ক M = k · √(L_1 · L_2)" } },
+        { id: "opt-2", text: { en: "Electrostatic dielectric breakdown voltage", hi: "डाइइलेक्ट्रिक ब्रेकडाउन वोल्टेज", bn: "ডাই-ইলেকট্রিক ব্রেকডাউন ভোল্টেজ" } },
+        { id: "opt-3", text: { en: "Thermal contact resistance", hi: "तापीय संपर्क प्रतिरोध", bn: "থার্মাল কন্টাক্ট রেজিস্ট্যান্স" } },
+        { id: "opt-4", text: { en: "Acoustic wave impedance", hi: "ध्वनिक तरंग प्रतिबाधा", bn: "শব্দ তরঙ্গ প্রতিবন্ধকতা" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Mutual inductance M quantifies the magnetic coupling between primary and secondary coils across the air gap: M = k√(L1·L2).',
-        hi: 'पारस्परिक प्रेरकत्व M हवा के अंतराल के पार दोनों कुंडलियों के चुंबकीय जुड़ाव को मापता है: M = k√(L1·L2)।',
-        bn: 'পারস্পরিক আবেশাঙ্ক M হলো বাতাস ভেদ করে দুটি কয়েলের মধ্যে চৌম্বক সংযোগের পরিমাপ: M = k√(L1·L2)।'
+        en: "Mutual inductance M quantifies the magnetic coupling between primary and secondary coils across the air gap: M = k√(L1·L2).",
+        hi: "पारस्परिक प्रेरकत्व M हवा के अंतराल के पार दोनों कुंडलियों के चुंबकीय जुड़ाव को मापता है: M = k√(L1·L2)।",
+        bn: "পারস্পরিক আবেশাঙ্ক M হলো বাতাস ভেদ করে দুটি কয়েলের মধ্যে চৌম্বক সংযোগের পরিমাপ: M = k√(L1·L2)।"
       }
     },
     {
-      id: 'mcq-ch10-l18-2',
+      id: "mcq-ch10-l18-2",
       question: {
-        en: 'Why must both the transmitter and receiver circuits in a resonant wireless power system be tuned to the exact same resonant frequency (ω_0 = 1/√(LC))?',
-        hi: 'अनुनादी वायरलेस पावर प्रणाली में ट्रांसमीटर और रिसीवर दोनों को एक ही आवृत्ति पर ट्यून करना क्यों आवश्यक है?',
-        bn: 'রেজোন্যান্ট ওয়্যারলেস পাওয়ার সিস্টেমে ট্রান্সমিটার ও রিসিভার উভয়কে একই কম্পাঙ্কে টিউন করা আবশ্যক কেন?'
+        en: "Why must both the transmitter and receiver circuits in a resonant wireless power system be tuned to the exact same resonant frequency (ω_0 = 1/√(LC))?",
+        hi: "अनुनादी वायरलेस पावर प्रणाली में ट्रांसमीटर और रिसीवर दोनों को एक ही आवृत्ति पर ट्यून करना क्यों आवश्यक है?",
+        bn: "রেজোন্যান্ট ওয়্যারলেস পাওয়ার সিস্টেমে ট্রান্সমিটার ও রিসিভার উভয়কে একই কম্পাঙ্কে টিউন করা আবশ্যক কেন?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'To cancel inductive leakage reactances (ωL = 1/ωC), collapsing impedance to pure resistance and maximizing power transfer across the air gap', hi: 'लीकेज प्रतिघात को समाप्त करके प्रतिबाधा को न्यूनतम करना ताकि हवा के पार अधिकतम शक्ति स्थानांतरित हो सके', bn: 'লিকেজ রিঅ্যাকট্যান্স বাতিল করে সার্কিট রোধ ন্যূনতম করা যাতে বাতাস ভেদ করে সর্বোচ্চ বিদ্যুৎ প্রবাহিত হয়' } },
-        { id: 'opt-2', text: { en: 'To transform direct current into laser beams', hi: 'डीसी करंट को लेजर बीम में बदलने के लिए', bn: 'ডিসি কারেন্টকে লেজার রশ্মিতে রূপান্তর করতে' } },
-        { id: 'opt-3', text: { en: 'To prevent any current from flowing in the primary coil', hi: 'प्राथमिक कुण्डली में धारा को शून्य करने के लिए', bn: 'প্রাইমারি কয়েলে কারেন্ট শূন্য করতে' } },
-        { id: 'opt-4', text: { en: 'To physically pull the phone down with gravitational force', hi: 'फोन को गुरुत्वाकर्षण से नीचे खींचने के लिए', bn: 'ফোনকে অভিকর্ষ বলে নিচের দিকে টানতে' } }
+        { id: "opt-1", text: { en: "To cancel inductive leakage reactances (ωL = 1/ωC), collapsing impedance to pure resistance and maximizing power transfer across the air gap", hi: "लीकेज प्रतिघात को समाप्त करके प्रतिबाधा को न्यूनतम करना ताकि हवा के पार अधिकतम शक्ति स्थानांतरित हो सके", bn: "লিকেজ রিঅ্যাকট্যান্স বাতিল করে সার্কিট রোধ ন্যূনতম করা যাতে বাতাস ভেদ করে সর্বোচ্চ বিদ্যুৎ প্রবাহিত হয়" } },
+        { id: "opt-2", text: { en: "To transform direct current into laser beams", hi: "डीसी करंट को लेजर बीम में बदलने के लिए", bn: "ডিসি কারেন্টকে লেজার রশ্মিতে রূপান্তর করতে" } },
+        { id: "opt-3", text: { en: "To prevent any current from flowing in the primary coil", hi: "प्राथमिक कुण्डली में धारा को शून्य करने के लिए", bn: "প্রাইমারি কয়েলে কারেন্ট শূন্য করতে" } },
+        { id: "opt-4", text: { en: "To physically pull the phone down with gravitational force", hi: "फोन को गुरुत्वाकर्षण से नीचे खींचने के लिए", bn: "ফোনকে অভিকর্ষ বলে নিচের দিকে টানতে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'At resonance, inductive reactance cancels capacitive reactance. Impedance collapses to pure resistance, allowing high circulating currents and efficient power transfer despite low magnetic coupling k.',
-        hi: 'अनुनाद पर प्रतिघात शून्य हो जाता है, जिससे केवल शुद्ध प्रतिरोध बचता है और कमजोर युग्मन k के बावजूद भारी शक्ति स्थानांतरित होती है।',
-        bn: 'রেজোন্যান্সে রিঅ্যাকট্যান্স শূন্য হয়ে যায়, ফলে দুর্বল কাপলিং থাকা সত্ত্বেও উচ্চ ক্ষমতায় বিদ্যুৎ স্থানান্তরিত হয়।'
+        en: "At resonance, inductive reactance cancels capacitive reactance. Impedance collapses to pure resistance, allowing high circulating currents and efficient power transfer despite low magnetic coupling k.",
+        hi: "अनुनाद पर प्रतिघात शून्य हो जाता है, जिससे केवल शुद्ध प्रतिरोध बचता है और कमजोर युग्मन k के बावजूद भारी शक्ति स्थानांतरित होती है।",
+        bn: "রেজোন্যান্সে রিঅ্যাকট্যান্স শূন্য হয়ে যায়, ফলে দুর্বল কাপলিং থাকা সত্ত্বেও উচ্চ ক্ষমতায় বিদ্যুৎ স্থানান্তরিত হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l18-3',
+      id: "mcq-ch10-l18-3",
       question: {
-        en: 'What typical frequency range is designated worldwide by the Wireless Power Consortium (WPC) for Qi smartphone wireless charging?',
-        hi: 'Qi स्मार्टफोन वायरलेस चार्जिंग के लिए WPC द्वारा कौन सा आवृत्ति बैंड निर्धारित किया गया है?',
-        bn: 'Qi স্মার্টফোন ওয়্যারলেস চার্জিংয়ের জন্য বিশ্বব্যাপী কোন কম্পাঙ্ক ব্যান্ডটি নির্ধারিত?'
+        en: "What typical frequency range is designated worldwide by the Wireless Power Consortium (WPC) for Qi smartphone wireless charging?",
+        hi: "Qi स्मार्टफोन वायरलेस चार्जिंग के लिए WPC द्वारा कौन सा आवृत्ति बैंड निर्धारित किया गया है?",
+        bn: "Qi স্মার্টফোন ওয়্যারলেস চার্জিংয়ের জন্য বিশ্বব্যাপী কোন কম্পাঙ্ক ব্যান্ডটি নির্ধারিত?"
       },
       options: [
-        { id: 'opt-1', text: { en: '110 kHz to 205 kHz', hi: '110 kHz से 205 kHz', bn: '১১০ kHz থেকে ২০৫ kHz' } },
-        { id: 'opt-2', text: { en: '2.4 GHz to 5 GHz (Wi-Fi band)', hi: '2.4 GHz से 5 GHz (वाई-फाई)', bn: '২.৪ GHz থেকে ৫ GHz' } },
-        { id: 'opt-3', text: { en: '50 Hz to 60 Hz (Mains grid frequency)', hi: '50 Hz से 60 Hz (पावर ग्रिड)', bn: '৫০ Hz থেকে ৬০ Hz' } },
-        { id: 'opt-4', text: { en: '100 MHz to 108 MHz (FM Radio)', hi: '100 MHz से 108 MHz (एफएम रेडियो)', bn: '১০০ MHz থেকে ১০৮ MHz' } }
+        { id: "opt-1", text: { en: "110 kHz to 205 kHz", hi: "110 kHz से 205 kHz", bn: "১১০ kHz থেকে ২০৫ kHz" } },
+        { id: "opt-2", text: { en: "2.4 GHz to 5 GHz (Wi-Fi band)", hi: "2.4 GHz से 5 GHz (वाई-फाई)", bn: "২.৪ GHz থেকে ৫ GHz" } },
+        { id: "opt-3", text: { en: "50 Hz to 60 Hz (Mains grid frequency)", hi: "50 Hz से 60 Hz (पावर ग्रिड)", bn: "৫০ Hz থেকে ৬০ Hz" } },
+        { id: "opt-4", text: { en: "100 MHz to 108 MHz (FM Radio)", hi: "100 MHz से 108 MHz (एफएम रेडियो)", bn: "১০০ MHz থেকে ১০৮ MHz" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Qi standard inductively coupled power chargers operate in the 110 kHz to 205 kHz low-frequency ISM band.',
-        hi: 'Qi वायरलेस चार्जर 110 kHz से 205 kHz के निम्न-आवृत्ति बैंड में कार्य करते हैं।',
-        bn: 'Qi ওয়্যারলেস চার্জার ১১০ kHz থেকে ২০৫ kHz কম্পাঙ্ক ব্যান্ডে পরিচালিত হয়।'
+        en: "Qi standard inductively coupled power chargers operate in the 110 kHz to 205 kHz low-frequency ISM band.",
+        hi: "Qi वायरलेस चार्जर 110 kHz से 205 kHz के निम्न-आवृत्ति बैंड में कार्य करते हैं।",
+        bn: "Qi ওয়্যারলেস চার্জার ১১০ kHz থেকে ২০৫ kHz কম্পাঙ্ক ব্যান্ডে পরিচালিত হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l18-4',
+      id: "mcq-ch10-l18-4",
       question: {
-        en: 'What safety hazard occurs if a metal coin or aluminum chewing-gum wrapper is placed on an active wireless charging pad that lacks Foreign Object Detection (FOD)?',
-        hi: 'यदि फॉरेन ऑब्जेक्ट डिटेक्शन (FOD) के बिना चल रहे चार्जर पर सिक्का या एल्युमीनियम की पन्नी रख दी जाए तो क्या खतरा होगा?',
-        bn: 'ফরেন অবজেক্ট ডিটেকশন (FOD) বিহীন সক্রিয় চার্জিং প্যাডে একটি ধাতব কয়েন বা ফয়েল পেপার রাখলে কী বিপদ ঘটবে?'
+        en: "What safety hazard occurs if a metal coin or aluminum chewing-gum wrapper is placed on an active wireless charging pad that lacks Foreign Object Detection (FOD)?",
+        hi: "यदि फॉरेन ऑब्जेक्ट डिटेक्शन (FOD) के बिना चल रहे चार्जर पर सिक्का या एल्युमीनियम की पन्नी रख दी जाए तो क्या खतरा होगा?",
+        bn: "ফরেন অবজেক্ট ডিটেকশন (FOD) বিহীন সক্রিয় চার্জিং প্যাডে একটি ধাতব কয়েন বা ফয়েল পেপার রাখলে কী বিপদ ঘটবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Intense eddy currents are induced inside the coin, heating it to over 100°C within seconds and posing severe fire and burn hazards', hi: 'सिक्के में तीव्र भंवर धाराएं प्रेरित होंगी, जिससे वह सेकंडों में 100°C से अधिक गर्म होकर आग या जलन का खतरा पैदा करेगा', bn: 'কয়েনে তীব্র এডি কারেন্ট উৎপন্ন হবে, ফলে এটি কয়েক সেকেন্ডে ১০০°C এর বেশি উত্তপ্ত হয়ে আগুন লাগাতে পারে' } },
-        { id: 'opt-2', text: { en: 'The coin is electrostatically transmuted into gold', hi: 'सिक्का सोने में बदल जाएगा', bn: 'কয়েনটি সোনায় রূপান্তরিত হবে' } },
-        { id: 'opt-3', text: { en: 'The charger instantly emits blue visible laser light', hi: 'चार्जर से नीली लेजर रोशनी निकलने लगेगी', bn: 'চার্জার থেকে নীল লেজার আলো বের হবে' } },
-        { id: 'opt-4', text: { en: 'The coin will start orbiting the pad like a satellite', hi: 'सिक्का चार्जर के चारों ओर उपग्रह की तरह घूमने लगेगा', bn: 'কয়েনটি চার্জারের চারপাশে ঘুরতে থাকবে' } }
+        { id: "opt-1", text: { en: "Intense eddy currents are induced inside the coin, heating it to over 100°C within seconds and posing severe fire and burn hazards", hi: "सिक्के में तीव्र भंवर धाराएं प्रेरित होंगी, जिससे वह सेकंडों में 100°C से अधिक गर्म होकर आग या जलन का खतरा पैदा करेगा", bn: "কয়েনে তীব্র এডি কারেন্ট উৎপন্ন হবে, ফলে এটি কয়েক সেকেন্ডে ১০০°C এর বেশি উত্তপ্ত হয়ে আগুন লাগাতে পারে" } },
+        { id: "opt-2", text: { en: "The coin is electrostatically transmuted into gold", hi: "सिक्का सोने में बदल जाएगा", bn: "কয়েনটি সোনায় রূপান্তরিত হবে" } },
+        { id: "opt-3", text: { en: "The charger instantly emits blue visible laser light", hi: "चार्जर से नीली लेजर रोशनी निकलने लगेगी", bn: "চার্জার থেকে নীল লেজার আলো বের হবে" } },
+        { id: "opt-4", text: { en: "The coin will start orbiting the pad like a satellite", hi: "सिक्का चार्जर के चारों ओर उपग्रह की तरह घूमने लगेगा", bn: "কয়েনটি চার্জারের চারপাশে ঘুরতে থাকবে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The alternating magnetic field induces eddy currents in any conductive metal, causing rapid Joule heating. FOD halts power delivery if abnormal parasitic loss is detected.',
-        hi: 'बदलता चुंबकीय क्षेत्र धातु में भंवर धाराएं बनाकर उसे अत्यधिक गर्म कर देता है। FOD सुरक्षा असामान्य ऊर्जा हानि मिलते ही बिजली बंद कर देती है।',
-        bn: 'পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট তৈরি করে দ্রুত উত্তপ্ত করে। FOD সার্কিট এই ঝুঁকি এড়াতে স্বয়ংক্রিয়ভাবে পাওয়ার বন্ধ করে দেয়।'
+        en: "The alternating magnetic field induces eddy currents in any conductive metal, causing rapid Joule heating. FOD halts power delivery if abnormal parasitic loss is detected.",
+        hi: "बदलता चुंबकीय क्षेत्र धातु में भंवर धाराएं बनाकर उसे अत्यधिक गर्म कर देता है। FOD सुरक्षा असामान्य ऊर्जा हानि मिलते ही बिजली बंद कर देती है।",
+        bn: "পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট তৈরি করে দ্রুত উত্তপ্ত করে। FOD সার্কিট এই ঝুঁকি এড়াতে স্বয়ংক্রিয়ভাবে পাওয়ার বন্ধ করে দেয়।"
       }
     },
     {
-      id: 'mcq-ch10-l18-5',
+      id: "mcq-ch10-l18-5",
       question: {
-        en: 'How does a passive 13.56 MHz RFID / NFC smartcard harvest electrical power to operate its internal microcontroller without any battery?',
-        hi: 'एक निष्क्रिय 13.56 MHz RFID / NFC स्मार्टकार्ड बिना किसी बैटरी के अपने माइक्रोचिप को चलाने के लिए बिजली कैसे प्राप्त करता है?',
-        bn: 'একটি প্যাসিভ ১৩.৫৬ MHz RFID / NFC স্মার্টকার্ড কোনো ব্যাটারি ছাড়াই কীভাবে মাইক্রোকন্ট্রোলার চালানোর জন্য বিদ্যুৎ সংগ্রহ করে?'
+        en: "How does a passive 13.56 MHz RFID / NFC smartcard harvest electrical power to operate its internal microcontroller without any battery?",
+        hi: "एक निष्क्रिय 13.56 MHz RFID / NFC स्मार्टकार्ड बिना किसी बैटरी के अपने माइक्रोचिप को चलाने के लिए बिजली कैसे प्राप्त करता है?",
+        bn: "একটি প্যাসিভ ১৩.৫৬ MHz RFID / NFC স্মার্টকার্ড কোনো ব্যাটারি ছাড়াই কীভাবে মাইক্রোকন্ট্রোলার চালানোর জন্য বিদ্যুৎ সংগ্রহ করে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Its planar loop antenna intercepts the reader’s 13.56 MHz magnetic field, inducing an AC voltage that is rectified on-chip into DC operating voltage', hi: 'इसका लूप एंटीना रीडर के चुंबकीय क्षेत्र से एसी वोल्टेज प्रेरित करता है, जिसे चिप पर डीसी में रेक्टिफाई कर लिया जाता है', bn: 'এর অ্যান্টেনা কয়েল রিডারের চৌম্বক ক্ষেত্র থেকে এসি ভোল্টেজ আবিষ্ট করে, যা চিপের ভেতর ডিসি ভোল্টেজে রূপান্তরিত হয়' } },
-        { id: 'opt-2', text: { en: 'It absorbs ambient sunlight through translucent plastic', hi: 'यह धूप से सौर ऊर्जा प्राप्त करता है', bn: 'এটি সূর্যের আলো থেকে সৌরশক্তি সংগ্রহ করে' } },
-        { id: 'opt-3', text: { en: 'It harnesses kinetic motion from the user walking', hi: 'यह व्यक्ति के चलने की गतिज ऊर्जा से चार्ज होता है', bn: 'ব্যবহারকারীর হাঁটার গতিশক্তি থেকে বিদ্যুৎ পায়' } },
-        { id: 'opt-4', text: { en: 'It draws power from human skin moisture galvanic action', hi: 'यह पसीने की रासायनिक क्रिया से चलता है', bn: 'ঘামের রাসায়নিক বিক্রিয়া থেকে শক্তি সংগ্রহ করে' } }
+        { id: "opt-1", text: { en: "Its planar loop antenna intercepts the reader’s 13.56 MHz magnetic field, inducing an AC voltage that is rectified on-chip into DC operating voltage", hi: "इसका लूप एंटीना रीडर के चुंबकीय क्षेत्र से एसी वोल्टेज प्रेरित करता है, जिसे चिप पर डीसी में रेक्टिफाई कर लिया जाता है", bn: "এর অ্যান্টেনা কয়েল রিডারের চৌম্বক ক্ষেত্র থেকে এসি ভোল্টেজ আবিষ্ট করে, যা চিপের ভেতর ডিসি ভোল্টেজে রূপান্তরিত হয়" } },
+        { id: "opt-2", text: { en: "It absorbs ambient sunlight through translucent plastic", hi: "यह धूप से सौर ऊर्जा प्राप्त करता है", bn: "এটি সূর্যের আলো থেকে সৌরশক্তি সংগ্রহ করে" } },
+        { id: "opt-3", text: { en: "It harnesses kinetic motion from the user walking", hi: "यह व्यक्ति के चलने की गतिज ऊर्जा से चार्ज होता है", bn: "ব্যবহারকারীর হাঁটার গতিশক্তি থেকে বিদ্যুৎ পায়" } },
+        { id: "opt-4", text: { en: "It draws power from human skin moisture galvanic action", hi: "यह पसीने की रासायनिक क्रिया से चलता है", bn: "ঘামের রাসায়নিক বিক্রিয়া থেকে শক্তি সংগ্রহ করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'By Faraday’s law of induction, the reader’s alternating magnetic field induces an AC voltage across the card coil. An on-chip Schottky charge pump rectifies this into 1.8V–3.3V DC.',
-        hi: 'फैराडे के नियम से रीडर का चुंबकीय क्षेत्र कार्ड की कुण्डली में वोल्टेज बनाता है, जिसे आंतरिक डायोड डीसी में बदलकर चिप को चालू करते हैं।',
-        bn: 'ফ্যারাডের সূত্রানুযায়ী রিডারের চৌম্বক ক্ষেত্র কার্ডের কয়েলে ভোল্টেজ আবিষ্ট করে, যা অন-চিপ রেকটিফায়ার দিয়ে ১.৮-৩.৩ V ডিসিতে রূপান্তরিত হয়।'
+        en: "By Faraday’s law of induction, the reader’s alternating magnetic field induces an AC voltage across the card coil. An on-chip Schottky charge pump rectifies this into 1.8V–3.3V DC.",
+        hi: "फैराडे के नियम से रीडर का चुंबकीय क्षेत्र कार्ड की कुण्डली में वोल्टेज बनाता है, जिसे आंतरिक डायोड डीसी में बदलकर चिप को चालू करते हैं।",
+        bn: "ফ্যারাডের সূত্রানুযায়ী রিডারের চৌম্বক ক্ষেত্র কার্ডের কয়েলে ভোল্টেজ আবিষ্ট করে, যা অন-চিপ রেকটিফায়ার দিয়ে ১.৮-৩.৩ V ডিসিতে রূপান্তরিত হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l18-6',
+      id: "mcq-ch10-l18-6",
       question: {
-        en: 'How does a battery-free passive RFID tag transmit its serial identification data back to the interrogator reader?',
-        hi: 'बिना बैटरी वाला निष्क्रिय RFID टैग अपना डेटा रीडर मशीन को वापस कैसे भेजता है?',
-        bn: 'একটি ব্যাটারিহীন প্যাসিভ RFID ট্যাগ কীভাবে রিডার মেশিনে নিজের ডেটা ফেরত পাঠায়?'
+        en: "How does a battery-free passive RFID tag transmit its serial identification data back to the interrogator reader?",
+        hi: "बिना बैटरी वाला निष्क्रिय RFID टैग अपना डेटा रीडर मशीन को वापस कैसे भेजता है?",
+        bn: "একটি ব্যাটারিহীন প্যাসিভ RFID ট্যাগ কীভাবে রিডার মেশিনে নিজের ডেটা ফেরত পাঠায়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Load Modulation: By switching an internal transistor to alter its coil load impedance, modulating the reflected impedance seen by the reader coil', hi: 'लोड मॉड्यूलेशन: आंतरिक ट्रांजिस्टर से अपने लोड को बदलकर, जिससे रीडर की कुण्डली में धारा का स्तर बदल जाता है', bn: 'লোড মড্যুলেশন: অভ্যন্তরীণ ট্রানজিস্টর দিয়ে নিজের রোধ পরিবর্তন করে, যা রিডারের কয়েলে প্রতিফলিত কারেন্ট পরিবর্তন করে' } },
-        { id: 'opt-2', text: { en: 'By firing powerful microwave pulses from an onboard klystron tube', hi: 'शक्तिशाली माइक्रोवेव तरंगें छोड़कर', bn: 'শক্তিশালী মাইক্রোওয়েভ পালস পাঠিয়ে' } },
-        { id: 'opt-3', text: { en: 'By blinking an invisible ultraviolet laser into the reader camera', hi: 'अदृश्य पराबैंगनी लेजर चमकाकर', bn: 'লেজার আলো জ্বালিয়ে' } },
-        { id: 'opt-4', text: { en: 'By vibrating ultrasound waves through the surrounding air', hi: 'अल्ट्रासाउंड ध्वनि तरंगें भेजकर', bn: 'আল্ট্রাসাউন্ড শব্দ তরঙ্গ পাঠিয়ে' } }
+        { id: "opt-1", text: { en: "Load Modulation: By switching an internal transistor to alter its coil load impedance, modulating the reflected impedance seen by the reader coil", hi: "लोड मॉड्यूलेशन: आंतरिक ट्रांजिस्टर से अपने लोड को बदलकर, जिससे रीडर की कुण्डली में धारा का स्तर बदल जाता है", bn: "লোড মড্যুলেশন: অভ্যন্তরীণ ট্রানজিস্টর দিয়ে নিজের রোধ পরিবর্তন করে, যা রিডারের কয়েলে প্রতিফলিত কারেন্ট পরিবর্তন করে" } },
+        { id: "opt-2", text: { en: "By firing powerful microwave pulses from an onboard klystron tube", hi: "शक्तिशाली माइक्रोवेव तरंगें छोड़कर", bn: "শক্তিশালী মাইক্রোওয়েভ পালস পাঠিয়ে" } },
+        { id: "opt-3", text: { en: "By blinking an invisible ultraviolet laser into the reader camera", hi: "अदृश्य पराबैंगनी लेजर चमकाकर", bn: "লেজার আলো জ্বালিয়ে" } },
+        { id: "opt-4", text: { en: "By vibrating ultrasound waves through the surrounding air", hi: "अल्ट्रासाउंड ध्वनि तरंगें भेजकर", bn: "আল্ট্রাসাউন্ড শব্দ তরঙ্গ পাঠিয়ে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The tag microchip switches a load resistor/capacitor on and off. Due to mutual coupling, this alters the reflected impedance (Z_ref = ω²M²/Z_2) in the reader, causing detectable amplitude changes.',
-        hi: 'टैग अपने लोड को चालू/बंद करता है, जिससे पारस्परिक प्रेरण के कारण रीडर की धारा में सूक्ष्म उतार-चढ़ाव आते हैं जिन्हें रीडर बाइनरी डेटा के रूप में पढ़ लेता है।',
-        bn: 'ট্যাগ তার নিজস্ব লোড পরিবর্তন করে, ফলে রিডারের প্রাইমারি কয়েলে কারেন্টের পরিবর্তন ঘটে যা রিডার বাইনারি ডেটা হিসেবে গ্রহণ করে।'
+        en: "The tag microchip switches a load resistor/capacitor on and off. Due to mutual coupling, this alters the reflected impedance (Z_ref = ω²M²/Z_2) in the reader, causing detectable amplitude changes.",
+        hi: "टैग अपने लोड को चालू/बंद करता है, जिससे पारस्परिक प्रेरण के कारण रीडर की धारा में सूक्ष्म उतार-चढ़ाव आते हैं जिन्हें रीडर बाइनरी डेटा के रूप में पढ़ लेता है।",
+        bn: "ট্যাগ তার নিজস্ব লোড পরিবর্তন করে, ফলে রিডারের প্রাইমারি কয়েলে কারেন্টের পরিবর্তন ঘটে যা রিডার বাইনারি ডেটা হিসেবে গ্রহণ করে।"
       }
     },
     {
-      id: 'mcq-ch10-l18-7',
+      id: "mcq-ch10-l18-7",
       question: {
-        en: 'What is the relationship between the air-gap separation distance (d) between two planar coils and their magnetic coupling coefficient (k)?',
-        hi: 'दो समतल कुंडलियों के बीच की दूरी (d) और उनके युग्मन गुणांक (k) के बीच क्या संबंध होता है?',
-        bn: 'দুটি প্ল্যানার কয়েলের মধ্যবর্তী দূরত্ব (d) এবং তাদের কাপলিং কোএফিসিয়েন্ট (k)-এর মধ্যে সম্পর্ক কী?'
+        en: "What is the relationship between the air-gap separation distance (d) between two planar coils and their magnetic coupling coefficient (k)?",
+        hi: "दो समतल कुंडलियों के बीच की दूरी (d) और उनके युग्मन गुणांक (k) के बीच क्या संबंध होता है?",
+        bn: "দুটি প্ল্যানার কয়েলের মধ্যবর্তী দূরত্ব (d) এবং তাদের কাপলিং কোএফিসিয়েন্ট (k)-এর মধ্যে সম্পর্ক কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Coupling coefficient k drops precipitously as distance increases (approximately k ∝ 1/d³)', hi: 'दूरी बढ़ने पर k बहुत तेजी से घटता है (लगभग k ∝ 1/d³)', bn: 'দূরত্ব বৃদ্ধির সাথে k অত্যন্ত দ্রুত হ্রাস পায় (k ∝ ১/d³)' } },
-        { id: 'opt-2', text: { en: 'k increases exponentially with distance', hi: 'दूरी बढ़ने पर k तेजी से बढ़ता है', bn: 'দূরত্ব বাড়লে k বৃদ্ধি পায়' } },
-        { id: 'opt-3', text: { en: 'k is completely constant regardless of distance', hi: 'दूरी से k पर कोई प्रभाव नहीं पड़ता', bn: 'দূরত্ব নির্বিশেষে k ধ্রুবক থাকে' } },
-        { id: 'opt-4', text: { en: 'k is zero at zero distance and maximum at 100 meters', hi: 'शून्य दूरी पर k शून्य और 100 मीटर पर अधिकतम होता है', bn: 'শূন্য দূরত্বে k শূন্য থাকে' } }
+        { id: "opt-1", text: { en: "Coupling coefficient k drops precipitously as distance increases (approximately k ∝ 1/d³)", hi: "दूरी बढ़ने पर k बहुत तेजी से घटता है (लगभग k ∝ 1/d³)", bn: "দূরত্ব বৃদ্ধির সাথে k অত্যন্ত দ্রুত হ্রাস পায় (k ∝ ১/d³)" } },
+        { id: "opt-2", text: { en: "k increases exponentially with distance", hi: "दूरी बढ़ने पर k तेजी से बढ़ता है", bn: "দূরত্ব বাড়লে k বৃদ্ধি পায়" } },
+        { id: "opt-3", text: { en: "k is completely constant regardless of distance", hi: "दूरी से k पर कोई प्रभाव नहीं पड़ता", bn: "দূরত্ব নির্বিশেষে k ধ্রুবক থাকে" } },
+        { id: "opt-4", text: { en: "k is zero at zero distance and maximum at 100 meters", hi: "शून्य दूरी पर k शून्य और 100 मीटर पर अधिकतम होता है", bn: "শূন্য দূরত্বে k শূন্য থাকে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The magnetic dipole field falls off with the cube of distance (B ∝ 1/r³). Consequently, the coupling coefficient k collapses sharply beyond small air gaps.',
-        hi: 'चुंबकीय द्विध्रुव क्षेत्र दूरी के घन के व्युत्क्रमानुपाती होता है (1/r³)। अतः दूरी बढ़ने पर युग्मन गुणांक k बहुत तेजी से गिरता है।',
-        bn: 'চৌম্বক ডাইপোল ক্ষেত্র দূরত্বের ঘনের ব্যস্তানুপাতিক (১/r³)। ফলে দূরত্ব সামান্য বাড়লেই কাপলিং ফ্যাক্টর k দ্রুত কমে যায়।'
+        en: "The magnetic dipole field falls off with the cube of distance (B ∝ 1/r³). Consequently, the coupling coefficient k collapses sharply beyond small air gaps.",
+        hi: "चुंबकीय द्विध्रुव क्षेत्र दूरी के घन के व्युत्क्रमानुपाती होता है (1/r³)। अतः दूरी बढ़ने पर युग्मन गुणांक k बहुत तेजी से गिरता है।",
+        bn: "চৌম্বক ডাইপোল ক্ষেত্র দূরত্বের ঘনের ব্যস্তানুপাতিক (১/r³)। ফলে দূরত্ব সামান্য বাড়লেই কাপলিং ফ্যাক্টর k দ্রুত কমে যায়।"
       }
     },
     {
-      id: 'mcq-ch10-l18-8',
+      id: "mcq-ch10-l18-8",
       question: {
-        en: 'In medical implants (e.g., rechargeable cardiac pacemakers or neurostimulators), why is transcutaneous inductive power transfer vastly safer than wires exiting through the skin?',
-        hi: 'चिकित्सा प्रत्यारोपणों में त्वचा के आर-पार तार निकालने की तुलना में प्रेरण द्वारा चार्जिंग अधिक सुरक्षित क्यों है?',
-        bn: 'চিকিৎসা ইমপ্লান্টে (যেমন পেসমেকার) ত্বকের ভেতর দিয়ে তার বের করার চেয়ে আবেশ চার্জিং অনেক বেশি নিরাপদ কেন?'
+        en: "In medical implants (e.g., rechargeable cardiac pacemakers or neurostimulators), why is transcutaneous inductive power transfer vastly safer than wires exiting through the skin?",
+        hi: "चिकित्सा प्रत्यारोपणों में त्वचा के आर-पार तार निकालने की तुलना में प्रेरण द्वारा चार्जिंग अधिक सुरक्षित क्यों है?",
+        bn: "চিকিৎসা ইমপ্লান্টে (যেমন পেসমেকার) ত্বকের ভেতর দিয়ে তার বের করার চেয়ে আবেশ চার্জিং অনেক বেশি নিরাপদ কেন?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'It keeps the skin completely closed and intact, permanently eliminating fatal bacterial infection pathways', hi: 'यह त्वचा को पूरी तरह बंद और सुरक्षित रखता है, जिससे जानलेवा जीवाणु संक्रमण का खतरा समाप्त हो जाता है', bn: 'ত্বক সম্পূর্ণ অক্ষত থাকে, ফলে মারাত্মক ব্যাকটেরিয়াল ইনফেকশনের ঝুঁকি চিরতরে দূর হয়' } },
-        { id: 'opt-2', text: { en: 'It makes the patient immune to all biological viruses', hi: 'यह मरीज को सभी वायरस से सुरक्षित कर देता है', bn: 'এটি রোগীকে সব ভাইরাস থেকে মুক্ত করে' } },
-        { id: 'opt-3', text: { en: 'It cools the heart down to absolute zero', hi: 'यह दिल को ठंडा कर देता है', bn: 'এটি হৃৎপিণ্ডকে শীতল করে' } },
-        { id: 'opt-4', text: { en: 'It replaces blood circulation with electric current', hi: 'यह रक्त संचार को बिजली से बदल देता है', bn: 'রক্ত সঞ্চালন দূর করে' } }
+        { id: "opt-1", text: { en: "It keeps the skin completely closed and intact, permanently eliminating fatal bacterial infection pathways", hi: "यह त्वचा को पूरी तरह बंद और सुरक्षित रखता है, जिससे जानलेवा जीवाणु संक्रमण का खतरा समाप्त हो जाता है", bn: "ত্বক সম্পূর্ণ অক্ষত থাকে, ফলে মারাত্মক ব্যাকটেরিয়াল ইনফেকশনের ঝুঁকি চিরতরে দূর হয়" } },
+        { id: "opt-2", text: { en: "It makes the patient immune to all biological viruses", hi: "यह मरीज को सभी वायरस से सुरक्षित कर देता है", bn: "এটি রোগীকে সব ভাইরাস থেকে মুক্ত করে" } },
+        { id: "opt-3", text: { en: "It cools the heart down to absolute zero", hi: "यह दिल को ठंडा कर देता है", bn: "এটি হৃৎপিণ্ডকে শীতল করে" } },
+        { id: "opt-4", text: { en: "It replaces blood circulation with electric current", hi: "यह रक्त संचार को बिजली से बदल देता है", bn: "রক্ত সঞ্চালন দূর করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Percutaneous wires breaching the skin create a continuous conduit for life-threatening bacterial infections. Wireless inductive charging operates safely through intact skin.',
-        hi: 'त्वचा के बाहर निकले तार गंभीर बैक्टीरियल संक्रमण फैला सकते हैं। वायरलेस चार्जिंग बिना त्वचा काटे अंदर की बैटरी को सुरक्षित चार्ज करती है।',
-        bn: 'ত্বক ভেদ করে তার বের করা থাকলে ইনফেকশনের ঝুঁকি থাকে। আবেশ চার্জিংয়ের ফলে ত্বক অক্ষত রেখে ভেতর নিরাপদে চার্জ করা যায়।'
+        en: "Percutaneous wires breaching the skin create a continuous conduit for life-threatening bacterial infections. Wireless inductive charging operates safely through intact skin.",
+        hi: "त्वचा के बाहर निकले तार गंभीर बैक्टीरियल संक्रमण फैला सकते हैं। वायरलेस चार्जिंग बिना त्वचा काटे अंदर की बैटरी को सुरक्षित चार्ज करती है।",
+        bn: "ত্বক ভেদ করে তার বের করা থাকলে ইনফেকশনের ঝুঁকি থাকে। আবেশ চার্জিংয়ের ফলে ত্বক অক্ষত রেখে ভেতর নিরাপদে চার্জ করা যায়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l18-1",
+      question: {
+        en: "What fundamental electromagnetic quantity measures the magnetic flux linkage between two loosely coupled wireless charging coils per unit primary current?",
+        hi: "दो ढीली-युग्मित वायरलेस चार्जिंग कुंडलियों के बीच प्राथमिक धारा के प्रति इकाई चुंबकीय फ्लक्स लिंकेज को क्या कहते हैं?",
+        bn: "দুটি লুজলি কাপলড ওয়্যারলেস চার্জিং কয়েলের মধ্যে প্রাথমিক কারেন্টের প্রতি একক ফ্লাক্স সংযোগকে কী বলা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Mutual inductance M = k · √(L_1 · L_2)", hi: "पारस्परिक प्रेरकत्व M = k · √(L_1 · L_2)", bn: "পারস্পরিক আবেশাঙ্ক M = k · √(L_1 · L_2)" } },
+        { id: "opt-2", text: { en: "Electrostatic dielectric breakdown voltage", hi: "डाइइलेक्ट्रिक ब्रेकडाउन वोल्टेज", bn: "ডাই-ইলেকট্রিক ব্রেকডাউন ভোল্টেজ" } },
+        { id: "opt-3", text: { en: "Thermal contact resistance", hi: "तापीय संपर्क प्रतिरोध", bn: "থার্মাল কন্টাক্ট রেজিস্ট্যান্স" } },
+        { id: "opt-4", text: { en: "Acoustic wave impedance", hi: "ध्वनिक तरंग प्रतिबाधा", bn: "শব্দ তরঙ্গ প্রতিবন্ধকতা" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Mutual inductance M quantifies the magnetic coupling between primary and secondary coils across the air gap: M = k√(L1·L2).",
+        hi: "पारस्परिक प्रेरकत्व M हवा के अंतराल के पार दोनों कुंडलियों के चुंबकीय जुड़ाव को मापता है: M = k√(L1·L2)।",
+        bn: "পারস্পরিক আবেশাঙ্ক M হলো বাতাস ভেদ করে দুটি কয়েলের মধ্যে চৌম্বক সংযোগের পরিমাপ: M = k√(L1·L2)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-2",
+      question: {
+        en: "Why must both the transmitter and receiver circuits in a resonant wireless power system be tuned to the exact same resonant frequency (ω_0 = 1/√(LC))?",
+        hi: "अनुनादी वायरलेस पावर प्रणाली में ट्रांसमीटर और रिसीवर दोनों को एक ही आवृत्ति पर ट्यून करना क्यों आवश्यक है?",
+        bn: "রেজোন্যান্ট ওয়্যারলেস পাওয়ার সিস্টেমে ট্রান্সমিটার ও রিসিভার উভয়কে একই কম্পাঙ্কে টিউন করা আবশ্যক কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To cancel inductive leakage reactances (ωL = 1/ωC), collapsing impedance to pure resistance and maximizing power transfer across the air gap", hi: "लीकेज प्रतिघात को समाप्त करके प्रतिबाधा को न्यूनतम करना ताकि हवा के पार अधिकतम शक्ति स्थानांतरित हो सके", bn: "লিকেজ রিঅ্যাকট্যান্স বাতিল করে সার্কিট রোধ ন্যূনতম করা যাতে বাতাস ভেদ করে সর্বোচ্চ বিদ্যুৎ প্রবাহিত হয়" } },
+        { id: "opt-2", text: { en: "To transform direct current into laser beams", hi: "डीसी करंट को लेजर बीम में बदलने के लिए", bn: "ডিসি কারেন্টকে লেজার রশ্মিতে রূপান্তর করতে" } },
+        { id: "opt-3", text: { en: "To prevent any current from flowing in the primary coil", hi: "प्राथमिक कुण्डली में धारा को शून्य करने के लिए", bn: "প্রাইমারি কয়েলে কারেন্ট শূন্য করতে" } },
+        { id: "opt-4", text: { en: "To physically pull the phone down with gravitational force", hi: "फोन को गुरुत्वाकर्षण से नीचे खींचने के लिए", bn: "ফোনকে অভিকর্ষ বলে নিচের দিকে টানতে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At resonance, inductive reactance cancels capacitive reactance. Impedance collapses to pure resistance, allowing high circulating currents and efficient power transfer despite low magnetic coupling k.",
+        hi: "अनुनाद पर प्रतिघात शून्य हो जाता है, जिससे केवल शुद्ध प्रतिरोध बचता है और कमजोर युग्मन k के बावजूद भारी शक्ति स्थानांतरित होती है।",
+        bn: "রেজোন্যান্সে রিঅ্যাকট্যান্স শূন্য হয়ে যায়, ফলে দুর্বল কাপলিং থাকা সত্ত্বেও উচ্চ ক্ষমতায় বিদ্যুৎ স্থানান্তরিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-3",
+      question: {
+        en: "What typical frequency range is designated worldwide by the Wireless Power Consortium (WPC) for Qi smartphone wireless charging?",
+        hi: "Qi स्मार्टफोन वायरलेस चार्जिंग के लिए WPC द्वारा कौन सा आवृत्ति बैंड निर्धारित किया गया है?",
+        bn: "Qi স্মার্টফোন ওয়্যারলেস চার্জিংয়ের জন্য বিশ্বব্যাপী কোন কম্পাঙ্ক ব্যান্ডটি নির্ধারিত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "110 kHz to 205 kHz", hi: "110 kHz से 205 kHz", bn: "১১০ kHz থেকে ২০৫ kHz" } },
+        { id: "opt-2", text: { en: "2.4 GHz to 5 GHz (Wi-Fi band)", hi: "2.4 GHz से 5 GHz (वाई-फाई)", bn: "২.৪ GHz থেকে ৫ GHz" } },
+        { id: "opt-3", text: { en: "50 Hz to 60 Hz (Mains grid frequency)", hi: "50 Hz से 60 Hz (पावर ग्रिड)", bn: "৫০ Hz থেকে ৬০ Hz" } },
+        { id: "opt-4", text: { en: "100 MHz to 108 MHz (FM Radio)", hi: "100 MHz से 108 MHz (एफएम रेडियो)", bn: "১০০ MHz থেকে ১০৮ MHz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Qi standard inductively coupled power chargers operate in the 110 kHz to 205 kHz low-frequency ISM band.",
+        hi: "Qi वायरलेस चार्जर 110 kHz से 205 kHz के निम्न-आवृत्ति बैंड में कार्य करते हैं।",
+        bn: "Qi ওয়্যারলেস চার্জার ১১০ kHz থেকে ২০৫ kHz কম্পাঙ্ক ব্যান্ডে পরিচালিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-4",
+      question: {
+        en: "What safety hazard occurs if a metal coin or aluminum chewing-gum wrapper is placed on an active wireless charging pad that lacks Foreign Object Detection (FOD)?",
+        hi: "यदि फॉरेन ऑब्जेक्ट डिटेक्शन (FOD) के बिना चल रहे चार्जर पर सिक्का या एल्युमीनियम की पन्नी रख दी जाए तो क्या खतरा होगा?",
+        bn: "ফরেন অবজেক্ট ডিটেকশন (FOD) বিহীন সক্রিয় চার্জিং প্যাডে একটি ধাতব কয়েন বা ফয়েল পেপার রাখলে কী বিপদ ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Intense eddy currents are induced inside the coin, heating it to over 100°C within seconds and posing severe fire and burn hazards", hi: "सिक्के में तीव्र भंवर धाराएं प्रेरित होंगी, जिससे वह सेकंडों में 100°C से अधिक गर्म होकर आग या जलन का खतरा पैदा करेगा", bn: "কয়েনে তীব্র এডি কারেন্ট উৎপন্ন হবে, ফলে এটি কয়েক সেকেন্ডে ১০০°C এর বেশি উত্তপ্ত হয়ে আগুন লাগাতে পারে" } },
+        { id: "opt-2", text: { en: "The coin is electrostatically transmuted into gold", hi: "सिक्का सोने में बदल जाएगा", bn: "কয়েনটি সোনায় রূপান্তরিত হবে" } },
+        { id: "opt-3", text: { en: "The charger instantly emits blue visible laser light", hi: "चार्जर से नीली लेजर रोशनी निकलने लगेगी", bn: "চার্জার থেকে নীল লেজার আলো বের হবে" } },
+        { id: "opt-4", text: { en: "The coin will start orbiting the pad like a satellite", hi: "सिक्का चार्जर के चारों ओर उपग्रह की तरह घूमने लगेगा", bn: "কয়েনটি চার্জারের চারপাশে ঘুরতে থাকবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The alternating magnetic field induces eddy currents in any conductive metal, causing rapid Joule heating. FOD halts power delivery if abnormal parasitic loss is detected.",
+        hi: "बदलता चुंबकीय क्षेत्र धातु में भंवर धाराएं बनाकर उसे अत्यधिक गर्म कर देता है। FOD सुरक्षा असामान्य ऊर्जा हानि मिलते ही बिजली बंद कर देती है।",
+        bn: "পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট তৈরি করে দ্রুত উত্তপ্ত করে। FOD সার্কিট এই ঝুঁকি এড়াতে স্বয়ংক্রিয়ভাবে পাওয়ার বন্ধ করে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-5",
+      question: {
+        en: "How does a passive 13.56 MHz RFID / NFC smartcard harvest electrical power to operate its internal microcontroller without any battery?",
+        hi: "एक निष्क्रिय 13.56 MHz RFID / NFC स्मार्टकार्ड बिना किसी बैटरी के अपने माइक्रोचिप को चलाने के लिए बिजली कैसे प्राप्त करता है?",
+        bn: "একটি প্যাসিভ ১৩.৫৬ MHz RFID / NFC স্মার্টকার্ড কোনো ব্যাটারি ছাড়াই কীভাবে মাইক্রোকন্ট্রোলার চালানোর জন্য বিদ্যুৎ সংগ্রহ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Its planar loop antenna intercepts the reader’s 13.56 MHz magnetic field, inducing an AC voltage that is rectified on-chip into DC operating voltage", hi: "इसका लूप एंटीना रीडर के चुंबकीय क्षेत्र से एसी वोल्टेज प्रेरित करता है, जिसे चिप पर डीसी में रेक्टिफाई कर लिया जाता है", bn: "এর অ্যান্টেনা কয়েল রিডারের চৌম্বক ক্ষেত্র থেকে এসি ভোল্টেজ আবিষ্ট করে, যা চিপের ভেতর ডিসি ভোল্টেজে রূপান্তরিত হয়" } },
+        { id: "opt-2", text: { en: "It absorbs ambient sunlight through translucent plastic", hi: "यह धूप से सौर ऊर्जा प्राप्त करता है", bn: "এটি সূর্যের আলো থেকে সৌরশক্তি সংগ্রহ করে" } },
+        { id: "opt-3", text: { en: "It harnesses kinetic motion from the user walking", hi: "यह व्यक्ति के चलने की गतिज ऊर्जा से चार्ज होता है", bn: "ব্যবহারকারীর হাঁটার গতিশক্তি থেকে বিদ্যুৎ পায়" } },
+        { id: "opt-4", text: { en: "It draws power from human skin moisture galvanic action", hi: "यह पसीने की रासायनिक क्रिया से चलता है", bn: "ঘামের রাসায়নিক বিক্রিয়া থেকে শক্তি সংগ্রহ করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Faraday’s law of induction, the reader’s alternating magnetic field induces an AC voltage across the card coil. An on-chip Schottky charge pump rectifies this into 1.8V–3.3V DC.",
+        hi: "फैराडे के नियम से रीडर का चुंबकीय क्षेत्र कार्ड की कुण्डली में वोल्टेज बनाता है, जिसे आंतरिक डायोड डीसी में बदलकर चिप को चालू करते हैं।",
+        bn: "ফ্যারাডের সূত্রানুযায়ী রিডারের চৌম্বক ক্ষেত্র কার্ডের কয়েলে ভোল্টেজ আবিষ্ট করে, যা অন-চিপ রেকটিফায়ার দিয়ে ১.৮-৩.৩ V ডিসিতে রূপান্তরিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-6",
+      question: {
+        en: "How does a battery-free passive RFID tag transmit its serial identification data back to the interrogator reader?",
+        hi: "बिना बैटरी वाला निष्क्रिय RFID टैग अपना डेटा रीडर मशीन को वापस कैसे भेजता है?",
+        bn: "একটি ব্যাটারিহীন প্যাসিভ RFID ট্যাগ কীভাবে রিডার মেশিনে নিজের ডেটা ফেরত পাঠায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Load Modulation: By switching an internal transistor to alter its coil load impedance, modulating the reflected impedance seen by the reader coil", hi: "लोड मॉड्यूलेशन: आंतरिक ट्रांजिस्टर से अपने लोड को बदलकर, जिससे रीडर की कुण्डली में धारा का स्तर बदल जाता है", bn: "লোড মড্যুলেশন: অভ্যন্তরীণ ট্রানজিস্টর দিয়ে নিজের রোধ পরিবর্তন করে, যা রিডারের কয়েলে প্রতিফলিত কারেন্ট পরিবর্তন করে" } },
+        { id: "opt-2", text: { en: "By firing powerful microwave pulses from an onboard klystron tube", hi: "शक्तिशाली माइक्रोवेव तरंगें छोड़कर", bn: "শক্তিশালী মাইক্রোওয়েভ পালস পাঠিয়ে" } },
+        { id: "opt-3", text: { en: "By blinking an invisible ultraviolet laser into the reader camera", hi: "अदृश्य पराबैंगनी लेजर चमकाकर", bn: "লেজার আলো জ্বালিয়ে" } },
+        { id: "opt-4", text: { en: "By vibrating ultrasound waves through the surrounding air", hi: "अल्ट्रासाउंड ध्वनि तरंगें भेजकर", bn: "আল্ট্রাসাউন্ড শব্দ তরঙ্গ পাঠিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The tag microchip switches a load resistor/capacitor on and off. Due to mutual coupling, this alters the reflected impedance (Z_ref = ω²M²/Z_2) in the reader, causing detectable amplitude changes.",
+        hi: "टैग अपने लोड को चालू/बंद करता है, जिससे पारस्परिक प्रेरण के कारण रीडर की धारा में सूक्ष्म उतार-चढ़ाव आते हैं जिन्हें रीडर बाइनरी डेटा के रूप में पढ़ लेता है।",
+        bn: "ট্যাগ তার নিজস্ব লোড পরিবর্তন করে, ফলে রিডারের প্রাইমারি কয়েলে কারেন্টের পরিবর্তন ঘটে যা রিডার বাইনারি ডেটা হিসেবে গ্রহণ করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-7",
+      question: {
+        en: "What is the relationship between the air-gap separation distance (d) between two planar coils and their magnetic coupling coefficient (k)?",
+        hi: "दो समतल कुंडलियों के बीच की दूरी (d) और उनके युग्मन गुणांक (k) के बीच क्या संबंध होता है?",
+        bn: "দুটি প্ল্যানার কয়েলের মধ্যবর্তী দূরত্ব (d) এবং তাদের কাপলিং কোএফিসিয়েন্ট (k)-এর মধ্যে সম্পর্ক কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Coupling coefficient k drops precipitously as distance increases (approximately k ∝ 1/d³)", hi: "दूरी बढ़ने पर k बहुत तेजी से घटता है (लगभग k ∝ 1/d³)", bn: "দূরত্ব বৃদ্ধির সাথে k অত্যন্ত দ্রুত হ্রাস পায় (k ∝ ১/d³)" } },
+        { id: "opt-2", text: { en: "k increases exponentially with distance", hi: "दूरी बढ़ने पर k तेजी से बढ़ता है", bn: "দূরত্ব বাড়লে k বৃদ্ধি পায়" } },
+        { id: "opt-3", text: { en: "k is completely constant regardless of distance", hi: "दूरी से k पर कोई प्रभाव नहीं पड़ता", bn: "দূরত্ব নির্বিশেষে k ধ্রুবক থাকে" } },
+        { id: "opt-4", text: { en: "k is zero at zero distance and maximum at 100 meters", hi: "शून्य दूरी पर k शून्य और 100 मीटर पर अधिकतम होता है", bn: "শূন্য দূরত্বে k শূন্য থাকে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The magnetic dipole field falls off with the cube of distance (B ∝ 1/r³). Consequently, the coupling coefficient k collapses sharply beyond small air gaps.",
+        hi: "चुंबकीय द्विध्रुव क्षेत्र दूरी के घन के व्युत्क्रमानुपाती होता है (1/r³)। अतः दूरी बढ़ने पर युग्मन गुणांक k बहुत तेजी से गिरता है।",
+        bn: "চৌম্বক ডাইপোল ক্ষেত্র দূরত্বের ঘনের ব্যস্তানুপাতিক (১/r³)। ফলে দূরত্ব সামান্য বাড়লেই কাপলিং ফ্যাক্টর k দ্রুত কমে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l18-8",
+      question: {
+        en: "In medical implants (e.g., rechargeable cardiac pacemakers or neurostimulators), why is transcutaneous inductive power transfer vastly safer than wires exiting through the skin?",
+        hi: "चिकित्सा प्रत्यारोपणों में त्वचा के आर-पार तार निकालने की तुलना में प्रेरण द्वारा चार्जिंग अधिक सुरक्षित क्यों है?",
+        bn: "চিকিৎসা ইমপ্লান্টে (যেমন পেসমেকার) ত্বকের ভেতর দিয়ে তার বের করার চেয়ে আবেশ চার্জিং অনেক বেশি নিরাপদ কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It keeps the skin completely closed and intact, permanently eliminating fatal bacterial infection pathways", hi: "यह त्वचा को पूरी तरह बंद और सुरक्षित रखता है, जिससे जानलेवा जीवाणु संक्रमण का खतरा समाप्त हो जाता है", bn: "ত্বক সম্পূর্ণ অক্ষত থাকে, ফলে মারাত্মক ব্যাকটেরিয়াল ইনফেকশনের ঝুঁকি চিরতরে দূর হয়" } },
+        { id: "opt-2", text: { en: "It makes the patient immune to all biological viruses", hi: "यह मरीज को सभी वायरस से सुरक्षित कर देता है", bn: "এটি রোগীকে সব ভাইরাস থেকে মুক্ত করে" } },
+        { id: "opt-3", text: { en: "It cools the heart down to absolute zero", hi: "यह दिल को ठंडा कर देता है", bn: "এটি হৃৎপিণ্ডকে শীতল করে" } },
+        { id: "opt-4", text: { en: "It replaces blood circulation with electric current", hi: "यह रक्त संचार को बिजली से बदल देता है", bn: "রক্ত সঞ্চালন দূর করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Percutaneous wires breaching the skin create a continuous conduit for life-threatening bacterial infections. Wireless inductive charging operates safely through intact skin.",
+        hi: "त्वचा के बाहर निकले तार गंभीर बैक्टीरियल संक्रमण फैला सकते हैं। वायरलेस चार्जिंग बिना त्वचा काटे अंदर की बैटरी को सुरक्षित चार्ज करती है।",
+        bn: "ত্বক ভেদ করে তার বের করা থাকলে ইনফেকশনের ঝুঁকি থাকে। আবেশ চার্জিংয়ের ফলে ত্বক অক্ষত রেখে ভেতর নিরাপদে চার্জ করা যায়।"
       }
     }
   ],

@@ -374,43 +374,325 @@ In both cases, current distribution is severely distorted, further escalating th
   },
   mcqs: [
     {
-      id: 'q-skin-1',
+      id: "q-skin-1",
       question: {
-        en: 'As the frequency of an AC current increases by a factor of 100, the skin depth δ in a copper conductor becomes:',
-        hi: 'यदि एसी धारा की आवृत्ति 100 गुना बढ़ जाए, तो तांबे के चालक में स्किन डेप्थ δ हो जाएगी:',
-        bn: 'এসি কারেন্টের কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে তামার পরিবাহীতে স্কিন ডেপথ δ হবে:'
+        en: "As the frequency of an AC current increases by a factor of 100, the skin depth δ in a copper conductor becomes:",
+        hi: "यदि एसी धारा की आवृत्ति 100 गुना बढ़ जाए, तो तांबे के चालक में स्किन डेप्थ δ हो जाएगी:",
+        bn: "এসি কারেন্টের কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে তামার পরিবাহীতে স্কিন ডেপথ δ হবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: '100 times larger', hi: '100 गुना बड़ी', bn: '১০০ গুণ বড়' } },
-        { id: 'opt-2', text: { en: '10 times smaller (0.1x)', hi: '10 गुना छोटी (0.1x)', bn: '১০ গুণ ছোট (০.১x)' } },
-        { id: 'opt-3', text: { en: '100 times smaller (0.01x)', hi: '100 गुना छोटी (0.01x)', bn: '১০০ গুণ ছোট (০.০১x)' } },
-        { id: 'opt-4', text: { en: 'Unchanged', hi: 'अपरिवर्तित', bn: 'অপরিবর্তিত' } }
+        { id: "opt-1", text: { en: "100 times larger", hi: "100 गुना बड़ी", bn: "১০০ গুণ বড়" } },
+        { id: "opt-2", text: { en: "10 times smaller (0.1x)", hi: "10 गुना छोटी (0.1x)", bn: "১০ গুণ ছোট (০.১x)" } },
+        { id: "opt-3", text: { en: "100 times smaller (0.01x)", hi: "100 गुना छोटी (0.01x)", bn: "১০০ গুণ ছোট (০.০১x)" } },
+        { id: "opt-4", text: { en: "Unchanged", hi: "अपरिवर्तित", bn: "অপরিবর্তিত" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. If frequency increases 100x, δ shrinks by 1/√100 = 1/10 (0.1x).',
-        hi: 'स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 100 गुना होने पर δ घटकर 1/√100 = 1/10 (10 गुना छोटी) रह जाती है।',
-        bn: 'স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক: δ ∝ ১/√f। কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে δ হ্রাস পেয়ে ১/√১০০ = ১/১০ (১০ গুণ ছোট) হয়ে যায়।'
+        en: "Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. If frequency increases 100x, δ shrinks by 1/√100 = 1/10 (0.1x).",
+        hi: "स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 100 गुना होने पर δ घटकर 1/√100 = 1/10 (10 गुना छोटी) रह जाती है।",
+        bn: "স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক: δ ∝ ১/√f। কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে δ হ্রাস পেয়ে ১/√১০০ = ১/১০ (১০ গুণ ছোট) হয়ে যায়।"
       }
     },
     {
-      id: 'q-skin-2',
+      id: "q-skin-2",
       question: {
-        en: 'Why do overhead high-voltage AC transmission lines utilize ACSR conductors with a central steel core?',
-        hi: 'ओवरहेड हाई-वोल्टेज एसी ट्रांसमिशन लाइनों में केंद्रीय स्टील कोर वाले ACSR चालकों का उपयोग क्यों किया जाता है?',
-        bn: 'ওভারহেড হাই-ভোল্টেজ এসি সঞ্চালন লাইনে কেন্দ্রে স্টিল কোরযুক্ত ACSR পরিবাহী ব্যবহারের কারণ কী?'
+        en: "Why do overhead high-voltage AC transmission lines utilize ACSR conductors with a central steel core?",
+        hi: "ओवरहेड हाई-वोल्टेज एसी ट्रांसमिशन लाइनों में केंद्रीय स्टील कोर वाले ACSR चालकों का उपयोग क्यों किया जाता है?",
+        bn: "ওভারহেড হাই-ভোল্টেজ এসি সঞ্চালন লাইনে কেন্দ্রে স্টিল কোরযুক্ত ACSR পরিবাহী ব্যবহারের কারণ কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'The skin effect pushes current to the outer aluminum, allowing cheap high-strength steel to provide mechanical tension without high loss', hi: 'स्किन प्रभाव धारा को बाहरी एल्यूमीनियम में धकेल देता है, जिससे सस्ता मजबूत स्टील बिना हानि के यांत्रिक शक्ति देता है', bn: 'স্কিন ইফেক্ট কারেন্টকে বাইরের অ্যালুমিনিয়ামে ঠেলে দেয়, ফলে ভেতরের সাশ্রয়ী স্টিল ক্ষতি ছাড়াই যান্ত্রিক শক্তি জোগায়' } },
-        { id: 'opt-2', text: { en: 'Steel is a better electrical conductor than copper at 50 Hz', hi: 'स्टील 50 Hz पर तांबे से बेहतर विद्युत चालक है', bn: '৫০ হার্টজে স্টিল তামার চেয়ে ভালো পরিবাহী' } },
-        { id: 'opt-3', text: { en: 'The steel completely eliminates dielectric corona discharge', hi: 'स्टील कोरोना डिस्चार्ज को पूरी तरह समाप्त कर देता है', bn: 'স্টিল করোনা ডিসচার্জ সম্পূর্ণ দূর করে' } },
-        { id: 'opt-4', text: { en: 'Steel prevents inductive lightning strikes', hi: 'स्टील आकाशीय बिजली को रोकता है', bn: 'স্টিল বজ্রপাত প্রতিরোধ করে' } }
+        { id: "opt-1", text: { en: "The skin effect pushes current to the outer aluminum, allowing cheap high-strength steel to provide mechanical tension without high loss", hi: "स्किन प्रभाव धारा को बाहरी एल्यूमीनियम में धकेल देता है, जिससे सस्ता मजबूत स्टील बिना हानि के यांत्रिक शक्ति देता है", bn: "স্কিন ইফেক্ট কারেন্টকে বাইরের অ্যালুমিনিয়ামে ঠেলে দেয়, ফলে ভেতরের সাশ্রয়ী স্টিল ক্ষতি ছাড়াই যান্ত্রিক শক্তি জোগায়" } },
+        { id: "opt-2", text: { en: "Steel is a better electrical conductor than copper at 50 Hz", hi: "स्टील 50 Hz पर तांबे से बेहतर विद्युत चालक है", bn: "৫০ হার্টজে স্টিল তামার চেয়ে ভালো পরিবাহী" } },
+        { id: "opt-3", text: { en: "The steel completely eliminates dielectric corona discharge", hi: "स्टील कोरोना डिस्चार्ज को पूरी तरह समाप्त कर देता है", bn: "স্টিল করোনা ডিসচার্জ সম্পূর্ণ দূর করে" } },
+        { id: "opt-4", text: { en: "Steel prevents inductive lightning strikes", hi: "स्टील आकाशीय बिजली को रोकता है", bn: "স্টিল বজ্রপাত প্রতিরোধ করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Because skin effect pushes current away from the center toward the outer aluminum strands, the inner steel core carries minimal current. This allows heavy-duty steel to provide tensile strength across long tower spans while aluminum handles current efficiently.',
-        hi: 'स्किन प्रभाव के कारण करंट केंद्र से हटकर बाहर एल्यूमीनियम में बहता है, इसलिए आंतरिक स्टील बिना बिजली हानि के टावरों के बीच तार को मजबूत यांत्रिक तनाव प्रदान करता है।',
-        bn: 'স্কিন ইফেক্টের কারণে কেন্দ্রে বিদ্যুৎপ্রবাহ প্রায় শূন্য থাকায় ভেতরের স্টিল কোর কেবল যান্ত্রিক শক্তি জোগায় এবং বাইরের অ্যালুমিনিয়াম পরিবাহী দক্ষতার সাথে বিদ্যুৎ বহন করে।'
+        en: "Because skin effect pushes current away from the center toward the outer aluminum strands, the inner steel core carries minimal current. This allows heavy-duty steel to provide tensile strength across long tower spans while aluminum handles current efficiently.",
+        hi: "स्किन प्रभाव के कारण करंट केंद्र से हटकर बाहर एल्यूमीनियम में बहता है, इसलिए आंतरिक स्टील बिना बिजली हानि के टावरों के बीच तार को मजबूत यांत्रिक तनाव प्रदान करता है।",
+        bn: "স্কিন ইফেক্টের কারণে কেন্দ্রে বিদ্যুৎপ্রবাহ প্রায় শূন্য থাকায় ভেতরের স্টিল কোর কেবল যান্ত্রিক শক্তি জোগায় এবং বাইরের অ্যালুমিনিয়াম পরিবাহী দক্ষতার সাথে বিদ্যুৎ বহন করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-03",
+      question: {
+        en: "What specialized multi-strand conductor wire is engineered specifically to combat both skin effect and proximity effect in high-frequency inductors and transformers?",
+        hi: "उच्च-आवृत्ति प्रेरकों और ट्रांसफॉर्मरों में स्किन प्रभाव और निकटता प्रभाव दोनों को कम करने के लिए कौन सा विशेष तार बनाया गया है?",
+        bn: "উচ্চ কম্পাঙ্কের ইন্ডাক্টর ও ট্রান্সফরমারে স্কিন ইফেক্ট এবং প্রক্সিমিটি ইফেক্ট উভয় দূর করতে কোন বিশেষ বহুগাছি তার তৈরি করা হয়েছে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Litz wire (individually insulated strands braided or woven in a twisted geometric pattern)", hi: "लिट्ज़ वायर (बारीक इंसुलेटेड तारों को विशेष ज्यामिति में गूंथकर बनाया गया तार)", bn: "লিটজ ওয়্যার (আলাদাভাবে অন্তরিত বহুগাছি তারের বিশেষ বিন্যাসে বোনা তার)" } },
+        { id: "opt-2", text: { en: "Solid heavy gauge aluminum bar", hi: "ठोस भारी एल्यूमीनियम पट्टी", bn: "নিরেট ভারী অ্যালুমিনিয়াম বার" } },
+        { id: "opt-3", text: { en: "Bare uninsulated copper rod", hi: "बिना इंसुलेशन की तांबे की छड़", bn: "অন্তরকহীন খোলা তামার রড" } },
+        { id: "opt-4", text: { en: "Steel wire rope cable", hi: "स्टील के तार की रस्सी", bn: "ইস্পাতের তারের দড়ি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Litz wire uses many fine, individually enameled copper strands woven so that each strand occupies all radial positions equally over its length, equalizing impedance and eliminating skin/proximity resistance increases.",
+        hi: "लिट्ज़ वायर में कई पतले इंसुलेटेड तारों को इस प्रकार गूंथा जाता है कि प्रत्येक तार अंदर और बाहर सभी स्थितियों में समान रहे, जिससे एसी प्रतिरोध न्यूनतम रहता है।",
+        bn: "লিটজ তারে বহুসংখ্যক পাতলা এনামেলযুক্ত তার এমনভাবে বোনা থাকে যাতে প্রতিটি তার কেন্দ্রে ও পৃষ্ঠে সমান অবস্থানে থাকে, ফলে এসি রোধ বাড়ে না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-04",
+      question: {
+        en: "For standard copper at room temperature (ρ = 1.72 × 10⁻⁸ Ω·m, μ_r = 1), what is the skin depth δ at 50 Hz power grid frequency?",
+        hi: "कमरे के तापमान पर तांबे के लिए 50 Hz पावर ग्रिड आवृत्ति पर स्किन डेप्थ δ लगभग कितनी होती है?",
+        bn: "স্বাভাবিক তাপমাত্রায় তামার জন্য ৫০ Hz গ্রিড কম্পাঙ্কে স্কিন ডেপথ δ এর মান প্রায় কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Approximately 9.3 mm (66 mm² solid conductors start seeing skin effect)", hi: "लगभग 9.3 mm (इसके ऊपर ठोस तार में प्रभाव दिखने लगता है)", bn: "প্রায় ৯.৩ মিমি (এর চেয়ে মোটা নিরেট তারে স্কিন ইফেক্ট স্পষ্ট হয়)" } },
+        { id: "opt-2", text: { en: "0.005 mm", hi: "0.005 mm", bn: "০.০০৫ মিমি" } },
+        { id: "opt-3", text: { en: "150 mm", hi: "150 mm", bn: "১৫০ মিমি" } },
+        { id: "opt-4", text: { en: "1.2 meters", hi: "1.2 मीटर", bn: "১.২ মিটার" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "δ = √(ρ / (π · f · μ)) = √(1.72 × 10⁻⁸ / (π × 50 × 4π × 10⁻⁷)) ≈ √(1.72 × 10⁻⁸ / 1.974 × 10⁻⁴) ≈ 9.34 × 10⁻³ m = 9.3 mm.",
+        hi: "δ = √(ρ / (π · f · μ)) सूत्र से 50 Hz पर तांबे में स्किन डेप्थ लगभग 9.3 mm होती है।",
+        bn: "δ = √(ρ / (π · f · μ)) সূত্র হতে ৫০ Hz এ তামার স্কিন ডেপথ প্রায় ৯.৩ মিমি।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-05",
+      question: {
+        en: "What is the \"proximity effect\" in multi-conductor electrical cables and closely wound transformer coils?",
+        hi: "मल्टी-कंडक्टर केबलों और ट्रांसफॉर्मर कॉइल्स में \"निकटता प्रभाव\" (Proximity Effect) क्या है?",
+        bn: "মাল্টি-কন্ডাক্টর ক্যাবল এবং ট্রান্সফরমার কয়েলে \"প্রক্সিমিটি ইফেক্ট\" বলতে কী বোঝায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Magnetic fields produced by neighboring conductors distort current distribution, crowding current into restricted areas of the wire", hi: "पास के तारों के चुंबकीय क्षेत्र धारा वितरण को विकृत कर देते हैं, जिससे धारा तार के एक सीमित हिस्से में सिमट जाती है", bn: "নিকটবর্তী তারের চৌম্বক ক্ষেত্র কারেন্ট বন্টনকে বিকৃত করে দেয়, ফলে কারেন্ট তারের নির্দিষ্ট অংশে পুঞ্জীভূত হয়" } },
+        { id: "opt-2", text: { en: "Adjacent wires stick together due to electrostatic glue", hi: "तार स्थिर बिजली से आपस में चिपक जाते हैं", bn: "তারগুলো স্থির বিদ্যুতের আঠায় একসাথে লেগে যায়" } },
+        { id: "opt-3", text: { en: "Insulation melts because conductors are placed in the same room", hi: "एक ही कमरे में रखे होने से इंसुलेशन पिघल जाता है", bn: "একই ঘরে রাখার কারণে ইনসুলেশন গলে যায়" } },
+        { id: "opt-4", text: { en: "Conductors change chemical composition into silver", hi: "तार रासायनिक रूप से चांदी बन जाते हैं", bn: "তারগুলো রাসায়নিক বিক্রিয়ায় রুপায় রূপান্তরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The alternating magnetic field of adjacent carrying conductors induces localized eddy currents in neighboring wires, crowding current to the sides facing each other (or away from each other) and compounding AC resistance.",
+        hi: "पास वाले तार का चुंबकीय क्षेत्र दूसरे तार में भंवर धाराएं बनाकर धारा घनत्व को एक तरफ धकेल देता है, जिससे प्रभावी प्रतिरोध और बढ़ जाता है।",
+        bn: "পাশাপাশি তারের পরিবর্তী চৌম্বক ক্ষেত্র অন্য তারে এডি কারেন্ট সৃষ্টি করে কারেন্টকে একপাশে ঠেলে দেয়, ফলে এসি রোধ আরও বেড়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-06",
+      question: {
+        en: "At what frequency does the skin depth in copper drop to approximately 66 micrometers (0.066 mm)?",
+        hi: "किस आवृत्ति पर तांबे में स्किन डेप्थ घटकर लगभग 66 माइक्रोमीटर (0.066 mm) रह जाती है?",
+        bn: "কোন কম্পাঙ্কে তামার স্কিন ডেপথ হ্রাস পেয়ে প্রায় ৬৬ মাইক্রোমিটার (০.০৬৬ মিমি) হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.0 MHz", hi: "1.0 MHz", bn: "১.০ MHz" } },
+        { id: "opt-2", text: { en: "100 Hz", hi: "100 Hz", bn: "১০০ Hz" } },
+        { id: "opt-3", text: { en: "1.0 kHz", hi: "1.0 kHz", bn: "১.০ kHz" } },
+        { id: "opt-4", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since δ = 66.1 / √f (in mm for copper with f in Hz): at f = 10⁶ Hz, δ = 66.1 / √(10⁶) = 66.1 / 1000 = 0.066 mm = 66 µm.",
+        hi: "तांबे के लिए δ = 66.1 / √f mm होता है। 1 MHz पर यह 66 / 1000 = 0.066 mm हो जाती है।",
+        bn: "তামার ক্ষেত্রে δ = ৬৬.১ / √f মিমি। ১ MHz কম্পাঙ্কে এটি ৬৬ / ১০০০ = ০.০৬৬ মিমি হয়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-07",
+      question: {
+        en: "Why are RF induction heating work coils and high-power radio transmitter antenna tuners often constructed using hollow copper tubing instead of solid wire?",
+        hi: "आरएफ प्रेरण तापन कॉइल और हाई-पावर रेडियो ट्रांसमीटर में ठोस तार के बजाय खोखली तांबे की ट्यूब का उपयोग क्यों किया जाता है?",
+        bn: "আরএফ ইন্ডাকশন হিটিং কয়েল ও হাই-পাওয়ার রেডিও ট্রান্সমিটারে নিরেট তারের পরিবর্তে ফাঁপা তামার টিউব ব্যবহার করা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "At RF, current flows only on the thin outer skin; the hollow interior is redundant for conduction and allows circulating cooling water", hi: "आरएफ पर धारा केवल बाहरी पतली त्वचा पर बहती है; खोखला केंद्र निरर्थक होता है और इसमें से ठंडा पानी बहाया जा सकता है", bn: "উচ্চ কম্পাঙ্কে কারেন্ট শুধু বাইরের পাতলা ত্বকে চলে; ভেতরের অংশ বিদ্যুৎ পরিবহনে অপ্রয়োজনীয় এবং এর মধ্য দিয়ে শীতল পানি চালানো যায়" } },
+        { id: "opt-2", text: { en: "Hollow tubing traps air bubbles that convert radio waves to light", hi: "खोखली ट्यूब हवा फंसाकर तरंगों को रोशनी बनाती है", bn: "ফাঁপা নল বাতাস আটকে রেখে আলোকে বেতারে রূপান্তর করে" } },
+        { id: "opt-3", text: { en: "Solid copper becomes magnetic and repels radio signals", hi: "ठोस तांबा चुंबकीय होकर सिग्नल को दूर धकेलता है", bn: "নিরেট তামা চৌম্বকীয় হয়ে রেডিও সিগন্যাল বিকর্ষণ করে" } },
+        { id: "opt-4", text: { en: "Solid copper melts at a lower temperature than hollow copper", hi: "ठोस तांबा खोखले तांबे से पहले पिघल जाता है", bn: "নিরেট তামা ফাঁপা তামার চেয়ে কম তাপে গলে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Due to severe skin effect at radio frequencies, the center of a thick conductor carries virtually zero current. Hollow tubing saves copper weight and permits pumping deionized water through the bore to remove heat.",
+        hi: "स्किन इफेक्ट के कारण केंद्र में कोई धारा नहीं बहती। अतः खोखली ट्यूब लगाने से तांबा बचता है और उसमें से ठंडा पानी बहाया जा सकता है।",
+        bn: "স্কিন ইফেক্টের কারণে তারের কেন্দ্রে কোনো কারেন্ট থাকে না। ফাঁপা নল তামার অপচয় কমায় এবং ভেতর দিয়ে শীতল জল সংবহন সম্ভব করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-08",
+      question: {
+        en: "How does the effective AC resistance (R_ac) of a thick solid copper busbar compare to its DC resistance (R_dc) at a high frequency of 50 kHz?",
+        hi: "50 kHz की उच्च आवृत्ति पर एक मोटी तांबे की बसबार का प्रभावी एसी प्रतिरोध (R_ac) उसके डीसी प्रतिरोध (R_dc) की तुलना में कैसा होगा?",
+        bn: "৫০ kHz উচ্চ কম্পাঙ্কে একটি মোটা তামার বাসবারের কার্যকর এসি রোধ (R_ac) তার ডিসি রোধের (R_dc) তুলনায় কেমন হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "R_ac is much greater than R_dc (R_ac >> R_dc) due to constriction of current to the thin skin depth", hi: "धारा के केवल बाहरी पतली परत में सिमटने के कारण R_ac, R_dc से बहुत अधिक (R_ac >> R_dc) होता है", bn: "কারেন্ট কেবল বাইরের পাতলা ত্বকে সীমাবদ্ধ থাকার কারণে R_ac এর মান R_dc এর চেয়ে বহুগুণ বেশি (R_ac >> R_dc) হয়" } },
+        { id: "opt-2", text: { en: "R_ac is exactly equal to R_dc", hi: "R_ac और R_dc बिल्कुल बराबर होते हैं", bn: "R_ac এবং R_dc ঠিক সমান হয়" } },
+        { id: "opt-3", text: { en: "R_ac drops to zero (the busbar becomes superconducting)", hi: "R_ac शून्य हो जाता है (बसबार अतिचालक बन जाती है)", bn: "R_ac শূন্যে নেমে আসে (বাসবার সুপারকন্ডাক্টর হয়)" } },
+        { id: "opt-4", text: { en: "R_ac is half of R_dc", hi: "R_ac, R_dc का आधा होता है", bn: "R_ac এর মান R_dc এর অর্ধেক হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At 50 kHz, skin depth is only ~0.3 mm. If a busbar is 10 mm thick, only a tiny fraction of its cross-sectional area conducts current, dramatically increasing effective AC resistance.",
+        hi: "50 kHz पर धारा केवल 0.3 mm की बाहरी परत में बहती है, जिससे प्रभावी क्षेत्रफल घटने से एसी प्रतिरोध बहुत बढ़ जाता है।",
+        bn: "৫০ kHz এ স্কিন ডেপথ মাত্র ০.৩ মিমি হওয়ায় কার্যকরী ক্ষেত্রফল কমে গিয়ে কার্যকর এসি রোধ বহুগুণ বৃদ্ধি পায়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-skin-1",
+      question: {
+        en: "As the frequency of an AC current increases by a factor of 100, the skin depth δ in a copper conductor becomes:",
+        hi: "यदि एसी धारा की आवृत्ति 100 गुना बढ़ जाए, तो तांबे के चालक में स्किन डेप्थ δ हो जाएगी:",
+        bn: "এসি কারেন্টের কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে তামার পরিবাহীতে স্কিন ডেপথ δ হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "100 times larger", hi: "100 गुना बड़ी", bn: "১০০ গুণ বড়" } },
+        { id: "opt-2", text: { en: "10 times smaller (0.1x)", hi: "10 गुना छोटी (0.1x)", bn: "১০ গুণ ছোট (০.১x)" } },
+        { id: "opt-3", text: { en: "100 times smaller (0.01x)", hi: "100 गुना छोटी (0.01x)", bn: "১০০ গুণ ছোট (০.০১x)" } },
+        { id: "opt-4", text: { en: "Unchanged", hi: "अपरिवर्तित", bn: "অপরিবর্তিত" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. If frequency increases 100x, δ shrinks by 1/√100 = 1/10 (0.1x).",
+        hi: "स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 100 गुना होने पर δ घटकर 1/√100 = 1/10 (10 गुना छोटी) रह जाती है।",
+        bn: "স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক: δ ∝ ১/√f। কম্পাঙ্ক ১০০ গুণ বৃদ্ধি পেলে δ হ্রাস পেয়ে ১/√১০০ = ১/১০ (১০ গুণ ছোট) হয়ে যায়।"
+      }
+    },
+    {
+      id: "q-skin-2",
+      question: {
+        en: "Why do overhead high-voltage AC transmission lines utilize ACSR conductors with a central steel core?",
+        hi: "ओवरहेड हाई-वोल्टेज एसी ट्रांसमिशन लाइनों में केंद्रीय स्टील कोर वाले ACSR चालकों का उपयोग क्यों किया जाता है?",
+        bn: "ওভারহেড হাই-ভোল্টেজ এসি সঞ্চালন লাইনে কেন্দ্রে স্টিল কোরযুক্ত ACSR পরিবাহী ব্যবহারের কারণ কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The skin effect pushes current to the outer aluminum, allowing cheap high-strength steel to provide mechanical tension without high loss", hi: "स्किन प्रभाव धारा को बाहरी एल्यूमीनियम में धकेल देता है, जिससे सस्ता मजबूत स्टील बिना हानि के यांत्रिक शक्ति देता है", bn: "স্কিন ইফেক্ট কারেন্টকে বাইরের অ্যালুমিনিয়ামে ঠেলে দেয়, ফলে ভেতরের সাশ্রয়ী স্টিল ক্ষতি ছাড়াই যান্ত্রিক শক্তি জোগায়" } },
+        { id: "opt-2", text: { en: "Steel is a better electrical conductor than copper at 50 Hz", hi: "स्टील 50 Hz पर तांबे से बेहतर विद्युत चालक है", bn: "৫০ হার্টজে স্টিল তামার চেয়ে ভালো পরিবাহী" } },
+        { id: "opt-3", text: { en: "The steel completely eliminates dielectric corona discharge", hi: "स्टील कोरोना डिस्चार्ज को पूरी तरह समाप्त कर देता है", bn: "স্টিল করোনা ডিসচার্জ সম্পূর্ণ দূর করে" } },
+        { id: "opt-4", text: { en: "Steel prevents inductive lightning strikes", hi: "स्टील आकाशीय बिजली को रोकता है", bn: "স্টিল বজ্রপাত প্রতিরোধ করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Because skin effect pushes current away from the center toward the outer aluminum strands, the inner steel core carries minimal current. This allows heavy-duty steel to provide tensile strength across long tower spans while aluminum handles current efficiently.",
+        hi: "स्किन प्रभाव के कारण करंट केंद्र से हटकर बाहर एल्यूमीनियम में बहता है, इसलिए आंतरिक स्टील बिना बिजली हानि के टावरों के बीच तार को मजबूत यांत्रिक तनाव प्रदान करता है।",
+        bn: "স্কিন ইফেক্টের কারণে কেন্দ্রে বিদ্যুৎপ্রবাহ প্রায় শূন্য থাকায় ভেতরের স্টিল কোর কেবল যান্ত্রিক শক্তি জোগায় এবং বাইরের অ্যালুমিনিয়াম পরিবাহী দক্ষতার সাথে বিদ্যুৎ বহন করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-03",
+      question: {
+        en: "What specialized multi-strand conductor wire is engineered specifically to combat both skin effect and proximity effect in high-frequency inductors and transformers?",
+        hi: "उच्च-आवृत्ति प्रेरकों और ट्रांसफॉर्मरों में स्किन प्रभाव और निकटता प्रभाव दोनों को कम करने के लिए कौन सा विशेष तार बनाया गया है?",
+        bn: "উচ্চ কম্পাঙ্কের ইন্ডাক্টর ও ট্রান্সফরমারে স্কিন ইফেক্ট এবং প্রক্সিমিটি ইফেক্ট উভয় দূর করতে কোন বিশেষ বহুগাছি তার তৈরি করা হয়েছে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Litz wire (individually insulated strands braided or woven in a twisted geometric pattern)", hi: "लिट्ज़ वायर (बारीक इंसुलेटेड तारों को विशेष ज्यामिति में गूंथकर बनाया गया तार)", bn: "লিটজ ওয়্যার (আলাদাভাবে অন্তরিত বহুগাছি তারের বিশেষ বিন্যাসে বোনা তার)" } },
+        { id: "opt-2", text: { en: "Solid heavy gauge aluminum bar", hi: "ठोस भारी एल्यूमीनियम पट्टी", bn: "নিরেট ভারী অ্যালুমিনিয়াম বার" } },
+        { id: "opt-3", text: { en: "Bare uninsulated copper rod", hi: "बिना इंसुलेशन की तांबे की छड़", bn: "অন্তরকহীন খোলা তামার রড" } },
+        { id: "opt-4", text: { en: "Steel wire rope cable", hi: "स्टील के तार की रस्सी", bn: "ইস্পাতের তারের দড়ি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Litz wire uses many fine, individually enameled copper strands woven so that each strand occupies all radial positions equally over its length, equalizing impedance and eliminating skin/proximity resistance increases.",
+        hi: "लिट्ज़ वायर में कई पतले इंसुलेटेड तारों को इस प्रकार गूंथा जाता है कि प्रत्येक तार अंदर और बाहर सभी स्थितियों में समान रहे, जिससे एसी प्रतिरोध न्यूनतम रहता है।",
+        bn: "লিটজ তারে বহুসংখ্যক পাতলা এনামেলযুক্ত তার এমনভাবে বোনা থাকে যাতে প্রতিটি তার কেন্দ্রে ও পৃষ্ঠে সমান অবস্থানে থাকে, ফলে এসি রোধ বাড়ে না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-04",
+      question: {
+        en: "For standard copper at room temperature (ρ = 1.72 × 10⁻⁸ Ω·m, μ_r = 1), what is the skin depth δ at 50 Hz power grid frequency?",
+        hi: "कमरे के तापमान पर तांबे के लिए 50 Hz पावर ग्रिड आवृत्ति पर स्किन डेप्थ δ लगभग कितनी होती है?",
+        bn: "স্বাভাবিক তাপমাত্রায় তামার জন্য ৫০ Hz গ্রিড কম্পাঙ্কে স্কিন ডেপথ δ এর মান প্রায় কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Approximately 9.3 mm (66 mm² solid conductors start seeing skin effect)", hi: "लगभग 9.3 mm (इसके ऊपर ठोस तार में प्रभाव दिखने लगता है)", bn: "প্রায় ৯.৩ মিমি (এর চেয়ে মোটা নিরেট তারে স্কিন ইফেক্ট স্পষ্ট হয়)" } },
+        { id: "opt-2", text: { en: "0.005 mm", hi: "0.005 mm", bn: "০.০০৫ মিমি" } },
+        { id: "opt-3", text: { en: "150 mm", hi: "150 mm", bn: "১৫০ মিমি" } },
+        { id: "opt-4", text: { en: "1.2 meters", hi: "1.2 मीटर", bn: "১.২ মিটার" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "δ = √(ρ / (π · f · μ)) = √(1.72 × 10⁻⁸ / (π × 50 × 4π × 10⁻⁷)) ≈ √(1.72 × 10⁻⁸ / 1.974 × 10⁻⁴) ≈ 9.34 × 10⁻³ m = 9.3 mm.",
+        hi: "δ = √(ρ / (π · f · μ)) सूत्र से 50 Hz पर तांबे में स्किन डेप्थ लगभग 9.3 mm होती है।",
+        bn: "δ = √(ρ / (π · f · μ)) সূত্র হতে ৫০ Hz এ তামার স্কিন ডেপথ প্রায় ৯.৩ মিমি।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-05",
+      question: {
+        en: "What is the \"proximity effect\" in multi-conductor electrical cables and closely wound transformer coils?",
+        hi: "मल्टी-कंडक्टर केबलों और ट्रांसफॉर्मर कॉइल्स में \"निकटता प्रभाव\" (Proximity Effect) क्या है?",
+        bn: "মাল্টি-কন্ডাক্টর ক্যাবল এবং ট্রান্সফরমার কয়েলে \"প্রক্সিমিটি ইফেক্ট\" বলতে কী বোঝায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Magnetic fields produced by neighboring conductors distort current distribution, crowding current into restricted areas of the wire", hi: "पास के तारों के चुंबकीय क्षेत्र धारा वितरण को विकृत कर देते हैं, जिससे धारा तार के एक सीमित हिस्से में सिमट जाती है", bn: "নিকটবর্তী তারের চৌম্বক ক্ষেত্র কারেন্ট বন্টনকে বিকৃত করে দেয়, ফলে কারেন্ট তারের নির্দিষ্ট অংশে পুঞ্জীভূত হয়" } },
+        { id: "opt-2", text: { en: "Adjacent wires stick together due to electrostatic glue", hi: "तार स्थिर बिजली से आपस में चिपक जाते हैं", bn: "তারগুলো স্থির বিদ্যুতের আঠায় একসাথে লেগে যায়" } },
+        { id: "opt-3", text: { en: "Insulation melts because conductors are placed in the same room", hi: "एक ही कमरे में रखे होने से इंसुलेशन पिघल जाता है", bn: "একই ঘরে রাখার কারণে ইনসুলেশন গলে যায়" } },
+        { id: "opt-4", text: { en: "Conductors change chemical composition into silver", hi: "तार रासायनिक रूप से चांदी बन जाते हैं", bn: "তারগুলো রাসায়নিক বিক্রিয়ায় রুপায় রূপান্তরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The alternating magnetic field of adjacent carrying conductors induces localized eddy currents in neighboring wires, crowding current to the sides facing each other (or away from each other) and compounding AC resistance.",
+        hi: "पास वाले तार का चुंबकीय क्षेत्र दूसरे तार में भंवर धाराएं बनाकर धारा घनत्व को एक तरफ धकेल देता है, जिससे प्रभावी प्रतिरोध और बढ़ जाता है।",
+        bn: "পাশাপাশি তারের পরিবর্তী চৌম্বক ক্ষেত্র অন্য তারে এডি কারেন্ট সৃষ্টি করে কারেন্টকে একপাশে ঠেলে দেয়, ফলে এসি রোধ আরও বেড়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-06",
+      question: {
+        en: "At what frequency does the skin depth in copper drop to approximately 66 micrometers (0.066 mm)?",
+        hi: "किस आवृत्ति पर तांबे में स्किन डेप्थ घटकर लगभग 66 माइक्रोमीटर (0.066 mm) रह जाती है?",
+        bn: "কোন কম্পাঙ্কে তামার স্কিন ডেপথ হ্রাস পেয়ে প্রায় ৬৬ মাইক্রোমিটার (০.০৬৬ মিমি) হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.0 MHz", hi: "1.0 MHz", bn: "১.০ MHz" } },
+        { id: "opt-2", text: { en: "100 Hz", hi: "100 Hz", bn: "১০০ Hz" } },
+        { id: "opt-3", text: { en: "1.0 kHz", hi: "1.0 kHz", bn: "১.০ kHz" } },
+        { id: "opt-4", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since δ = 66.1 / √f (in mm for copper with f in Hz): at f = 10⁶ Hz, δ = 66.1 / √(10⁶) = 66.1 / 1000 = 0.066 mm = 66 µm.",
+        hi: "तांबे के लिए δ = 66.1 / √f mm होता है। 1 MHz पर यह 66 / 1000 = 0.066 mm हो जाती है।",
+        bn: "তামার ক্ষেত্রে δ = ৬৬.১ / √f মিমি। ১ MHz কম্পাঙ্কে এটি ৬৬ / ১০০০ = ০.০৬৬ মিমি হয়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-07",
+      question: {
+        en: "Why are RF induction heating work coils and high-power radio transmitter antenna tuners often constructed using hollow copper tubing instead of solid wire?",
+        hi: "आरएफ प्रेरण तापन कॉइल और हाई-पावर रेडियो ट्रांसमीटर में ठोस तार के बजाय खोखली तांबे की ट्यूब का उपयोग क्यों किया जाता है?",
+        bn: "আরএফ ইন্ডাকশন হিটিং কয়েল ও হাই-পাওয়ার রেডিও ট্রান্সমিটারে নিরেট তারের পরিবর্তে ফাঁপা তামার টিউব ব্যবহার করা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "At RF, current flows only on the thin outer skin; the hollow interior is redundant for conduction and allows circulating cooling water", hi: "आरएफ पर धारा केवल बाहरी पतली त्वचा पर बहती है; खोखला केंद्र निरर्थक होता है और इसमें से ठंडा पानी बहाया जा सकता है", bn: "উচ্চ কম্পাঙ্কে কারেন্ট শুধু বাইরের পাতলা ত্বকে চলে; ভেতরের অংশ বিদ্যুৎ পরিবহনে অপ্রয়োজনীয় এবং এর মধ্য দিয়ে শীতল পানি চালানো যায়" } },
+        { id: "opt-2", text: { en: "Hollow tubing traps air bubbles that convert radio waves to light", hi: "खोखली ट्यूब हवा फंसाकर तरंगों को रोशनी बनाती है", bn: "ফাঁপা নল বাতাস আটকে রেখে আলোকে বেতারে রূপান্তর করে" } },
+        { id: "opt-3", text: { en: "Solid copper becomes magnetic and repels radio signals", hi: "ठोस तांबा चुंबकीय होकर सिग्नल को दूर धकेलता है", bn: "নিরেট তামা চৌম্বকীয় হয়ে রেডিও সিগন্যাল বিকর্ষণ করে" } },
+        { id: "opt-4", text: { en: "Solid copper melts at a lower temperature than hollow copper", hi: "ठोस तांबा खोखले तांबे से पहले पिघल जाता है", bn: "নিরেট তামা ফাঁপা তামার চেয়ে কম তাপে গলে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Due to severe skin effect at radio frequencies, the center of a thick conductor carries virtually zero current. Hollow tubing saves copper weight and permits pumping deionized water through the bore to remove heat.",
+        hi: "स्किन इफेक्ट के कारण केंद्र में कोई धारा नहीं बहती। अतः खोखली ट्यूब लगाने से तांबा बचता है और उसमें से ठंडा पानी बहाया जा सकता है।",
+        bn: "স্কিন ইফেক্টের কারণে তারের কেন্দ্রে কোনো কারেন্ট থাকে না। ফাঁপা নল তামার অপচয় কমায় এবং ভেতর দিয়ে শীতল জল সংবহন সম্ভব করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l13-08",
+      question: {
+        en: "How does the effective AC resistance (R_ac) of a thick solid copper busbar compare to its DC resistance (R_dc) at a high frequency of 50 kHz?",
+        hi: "50 kHz की उच्च आवृत्ति पर एक मोटी तांबे की बसबार का प्रभावी एसी प्रतिरोध (R_ac) उसके डीसी प्रतिरोध (R_dc) की तुलना में कैसा होगा?",
+        bn: "৫০ kHz উচ্চ কম্পাঙ্কে একটি মোটা তামার বাসবারের কার্যকর এসি রোধ (R_ac) তার ডিসি রোধের (R_dc) তুলনায় কেমন হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "R_ac is much greater than R_dc (R_ac >> R_dc) due to constriction of current to the thin skin depth", hi: "धारा के केवल बाहरी पतली परत में सिमटने के कारण R_ac, R_dc से बहुत अधिक (R_ac >> R_dc) होता है", bn: "কারেন্ট কেবল বাইরের পাতলা ত্বকে সীমাবদ্ধ থাকার কারণে R_ac এর মান R_dc এর চেয়ে বহুগুণ বেশি (R_ac >> R_dc) হয়" } },
+        { id: "opt-2", text: { en: "R_ac is exactly equal to R_dc", hi: "R_ac और R_dc बिल्कुल बराबर होते हैं", bn: "R_ac এবং R_dc ঠিক সমান হয়" } },
+        { id: "opt-3", text: { en: "R_ac drops to zero (the busbar becomes superconducting)", hi: "R_ac शून्य हो जाता है (बसबार अतिचालक बन जाती है)", bn: "R_ac শূন্যে নেমে আসে (বাসবার সুপারকন্ডাক্টর হয়)" } },
+        { id: "opt-4", text: { en: "R_ac is half of R_dc", hi: "R_ac, R_dc का आधा होता है", bn: "R_ac এর মান R_dc এর অর্ধেক হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At 50 kHz, skin depth is only ~0.3 mm. If a busbar is 10 mm thick, only a tiny fraction of its cross-sectional area conducts current, dramatically increasing effective AC resistance.",
+        hi: "50 kHz पर धारा केवल 0.3 mm की बाहरी परत में बहती है, जिससे प्रभावी क्षेत्रफल घटने से एसी प्रतिरोध बहुत बढ़ जाता है।",
+        bn: "৫০ kHz এ স্কিন ডেপথ মাত্র ০.৩ মিমি হওয়ায় কার্যকরী ক্ষেত্রফল কমে গিয়ে কার্যকর এসি রোধ বহুগুণ বৃদ্ধি পায়।"
       }
     }
   ],

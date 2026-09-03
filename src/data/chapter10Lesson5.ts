@@ -338,43 +338,325 @@ Volts/Turn = ৩৯৯৬ / ৪০০ = ৯.৯৯ ভোল্ট/প্যা�
   },
   mcqs: [
     {
-      id: 'mcq-stat-1',
+      id: "mcq-stat-1",
       question: {
-        en: 'Why is statically induced EMF generated in a transformer without any physical motion?',
-        hi: 'ट्रांसफॉर्मर में बिना किसी भौतिक गति के स्थैतिक प्रेरित ईएमएफ क्यों उत्पन्न होता है?',
-        bn: 'কোনো শারীরিক গতি ছাড়াই ট্রান্সফরমারে স্থিতিশীল আবিষ্ট ইএমএফ কেন সৃষ্টি হয়?'
+        en: "Why is statically induced EMF generated in a transformer without any physical motion?",
+        hi: "ट्रांसफॉर्मर में बिना किसी भौतिक गति के स्थैतिक प्रेरित ईएमएफ क्यों उत्पन्न होता है?",
+        bn: "কোনো শারীরিক গতি ছাড়াই ট্রান্সফরমারে স্থিতিশীল আবিষ্ট ইএমএফ কেন সৃষ্টি হয়?"
       },
       options: [
-        { id: 'opt-a', text: { en: 'Due to electrostatic friction between winding wires', hi: 'वाइंडिंग तारों के बीच स्थिरवैद्युत घर्षण के कारण', bn: 'ওয়াইন্ডিং তারের মাঝে ঘর্ষণের কারণে' } },
-        { id: 'opt-b', text: { en: 'Due to time-varying alternating magnetic flux in the core (dΦ/dt ≠ 0)', hi: 'क्रोड में समय-परिवर्तनशील प्रत्यावर्ती चुंबकीय फ्लक्स (dΦ/dt ≠ 0) के कारण', bn: 'কোরে সময়-পরিবর্তনশীল এসি চৌম্বক ফ্লাক্সের (dΦ/dt ≠ ০) কারণে' } },
-        { id: 'opt-c', text: { en: 'Due to chemical reactions inside insulating oil', hi: 'इंसुलेटिंग तेल में रासायनिक अभिक्रियाओं के कारण', bn: 'তেলের রাসায়নিক বিক্রিয়ার কারণে' } },
-        { id: 'opt-d', text: { en: 'Due to permanent magnetic charge accumulation', hi: 'स्थायी चुंबकीय आवेश संचयन के कारण', bn: 'স্থায়ী চৌম্বক চার্জ জমার কারণে' } }
+        { id: "opt-a", text: { en: "Due to electrostatic friction between winding wires", hi: "वाइंडिंग तारों के बीच स्थिरवैद्युत घर्षण के कारण", bn: "ওয়াইন্ডিং তারের মাঝে ঘর্ষণের কারণে" } },
+        { id: "opt-b", text: { en: "Due to time-varying alternating magnetic flux in the core (dΦ/dt ≠ 0)", hi: "क्रोड में समय-परिवर्तनशील प्रत्यावर्ती चुंबकीय फ्लक्स (dΦ/dt ≠ 0) के कारण", bn: "কোরে সময়-পরিবর্তনশীল এসি চৌম্বক ফ্লাক্সের (dΦ/dt ≠ ০) কারণে" } },
+        { id: "opt-c", text: { en: "Due to chemical reactions inside insulating oil", hi: "इंसुलेटिंग तेल में रासायनिक अभिक्रियाओं के कारण", bn: "তেলের রাসায়নিক বিক্রিয়ার কারণে" } },
+        { id: "opt-d", text: { en: "Due to permanent magnetic charge accumulation", hi: "स्थायी चुंबकीय आवेश संचयन के कारण", bn: "স্থায়ী চৌম্বক চার্জ জমার কারণে" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
-        en: 'Statically induced EMF is governed by Faraday’s law e = -N (dΦ/dt). Because the AC supply continuously modulates the magnetic flux amplitude with time, flux linkage changes without requiring mechanical motion.',
-        hi: 'स्थैतिक ईएमएफ फैराडे के नियम e = -N (dΦ/dt) पर आधारित है। एसी धारा के कारण फ्लक्स लगातार समय के साथ बदलता रहता है।',
-        bn: 'স্থিতিশীল ইএমএফ ফ্যারাডের সূত্র e = -N (dΦ/dt) দ্বারা নিয়ন্ত্রিত। এসি কারেন্ট কোরের ফ্লাক্সের মান প্রতিনিয়ত পরিবর্তন করায় কোনো গতির প্রয়োজন হয় না।'
+        en: "Statically induced EMF is governed by Faraday’s law e = -N (dΦ/dt). Because the AC supply continuously modulates the magnetic flux amplitude with time, flux linkage changes without requiring mechanical motion.",
+        hi: "स्थैतिक ईएमएफ फैराडे के नियम e = -N (dΦ/dt) पर आधारित है। एसी धारा के कारण फ्लक्स लगातार समय के साथ बदलता रहता है।",
+        bn: "স্থিতিশীল ইএমএফ ফ্যারাডের সূত্র e = -N (dΦ/dt) দ্বারা নিয়ন্ত্রিত। এসি কারেন্ট কোরের ফ্লাক্সের মান প্রতিনিয়ত পরিবর্তন করায় কোনো গতির প্রয়োজন হয় না।"
       }
     },
     {
-      id: 'mcq-stat-2',
+      id: "mcq-stat-2",
       question: {
-        en: 'For a sinusoidal magnetic flux Φ(t) = Φ_m sin(ωt), the phase relationship of the induced EMF e(t) is:',
-        hi: 'ज्यावक्रीय चुंबकीय फ्लक्स Φ(t) = Φ_m sin(ωt) के लिए प्रेरित ईएमएफ e(t) का कला संबंध क्या है?',
-        bn: 'সাইনোসয়ডাল ফ্লাক্স Φ(t) = Φ_m sin(ωt) এর ক্ষেত্রে আবিষ্ট ইএমএফ e(t) এর ফেজ সম্পর্ক কী?'
+        en: "For a sinusoidal magnetic flux Φ(t) = Φ_m sin(ωt), the phase relationship of the induced EMF e(t) is:",
+        hi: "ज्यावक्रीय चुंबकीय फ्लक्स Φ(t) = Φ_m sin(ωt) के लिए प्रेरित ईएमएफ e(t) का कला संबंध क्या है?",
+        bn: "সাইনোসয়ডাল ফ্লাক্স Φ(t) = Φ_m sin(ωt) এর ক্ষেত্রে আবিষ্ট ইএমএফ e(t) এর ফেজ সম্পর্ক কী?"
       },
       options: [
-        { id: 'opt-a', text: { en: 'In phase with flux (0° shift)', hi: 'फ्लक्स के समान कला में (0°)', bn: 'ফ্লাক্সের সাথে একই ফেজে (০°)' } },
-        { id: 'opt-b', text: { en: 'Lags the magnetic flux by 90°', hi: 'फ्लक्स से 90° पश्चगामी (lagging)', bn: 'ফ্লাক্সের চেয়ে ৯০° পিছিয়ে থাকে (ল্যাগিং)' } },
-        { id: 'opt-c', text: { en: 'Leads the magnetic flux by 90°', hi: 'फ्लक्स से 90° अग्रगामी (leading)', bn: 'ফ্লাক্সের চেয়ে ৯০° এগিয়ে থাকে (লিডিং)' } },
-        { id: 'opt-d', text: { en: '180° out of phase at all times', hi: 'सदैव 180° विपरीत कला में', bn: 'সর্বদা ১৮০° বিপরীত ফেজে' } }
+        { id: "opt-a", text: { en: "In phase with flux (0° shift)", hi: "फ्लक्स के समान कला में (0°)", bn: "ফ্লাক্সের সাথে একই ফেজে (০°)" } },
+        { id: "opt-b", text: { en: "Lags the magnetic flux by 90°", hi: "फ्लक्स से 90° पश्चगामी (lagging)", bn: "ফ্লাক্সের চেয়ে ৯০° পিছিয়ে থাকে (ল্যাগিং)" } },
+        { id: "opt-c", text: { en: "Leads the magnetic flux by 90°", hi: "फ्लक्स से 90° अग्रगामी (leading)", bn: "ফ্লাক্সের চেয়ে ৯০° এগিয়ে থাকে (লিডিং)" } },
+        { id: "opt-d", text: { en: "180° out of phase at all times", hi: "सदैव 180° विपरीत कला में", bn: "সর্বদা ১৮০° বিপরীত ফেজে" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
-        en: 'Since e(t) = -N (dΦ/dt) = -N ω Φ_m cos(ωt) = E_m sin(ωt - 90°), the induced EMF lags the magnetic flux by 90° in phase.',
-        hi: 'e(t) = -N dΦ/dt = E_m sin(ωt - 90°) होने के कारण प्रेरित EMF फ्लक्स से 90° पश्चगामी (lagging) होता है।',
-        bn: 'e(t) = -N dΦ/dt = E_m sin(ωt - ৯০°) সমীকরণ অনুযায়ী আবিষ্ট ইএমএফ ফ্লাক্সের তুলনায় ৯০° ল্যাগিং অবস্থায় থাকে।'
+        en: "Since e(t) = -N (dΦ/dt) = -N ω Φ_m cos(ωt) = E_m sin(ωt - 90°), the induced EMF lags the magnetic flux by 90° in phase.",
+        hi: "e(t) = -N dΦ/dt = E_m sin(ωt - 90°) होने के कारण प्रेरित EMF फ्लक्स से 90° पश्चगामी (lagging) होता है।",
+        bn: "e(t) = -N dΦ/dt = E_m sin(ωt - ৯০°) সমীকরণ অনুযায়ী আবিষ্ট ইএমএফ ফ্লাক্সের তুলনায় ৯০° ল্যাগিং অবস্থায় থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-03",
+      question: {
+        en: "What occurs if the primary winding of a standard 50 Hz AC power transformer is accidentally connected to a DC source of equal nominal voltage?",
+        hi: "यदि किसी मानक 50 Hz एसी पावर ट्रांसफॉर्मर की प्राथमिक वाइंडिंग को समान रेटेड वोल्टेज के डीसी स्रोत से जोड़ दिया जाए तो क्या होगा?",
+        bn: "যদি একটি স্ট্যান্ডার্ড ৫০ হার্টজ এসি পাওয়ার ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংকে একই মানের ডিসি উৎসের সাথে যুক্ত করা হয় তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because dΦ/dt = 0, no counter-EMF is induced; enormous current burns the winding rapidly", hi: "चूंकि dΦ/dt = 0, कोई विरोधी EMF नहीं बनता; अत्यधिक धारा वाइंडिंग को तुरंत जला देगी", bn: "যেহেতু dΦ/dt = ০, কোনো বিপরীত EMF তৈরি হয় না; তীব্র অতিরিক্ত কারেন্টে ওয়াইন্ডিং পুড়ে যাবে" } },
+        { id: "opt-2", text: { en: "The transformer steps up the DC voltage to infinite levels safely", hi: "ट्रांसफॉर्मर डीसी वोल्टेज को सुरक्षित रूप से अनंत तक बढ़ा देगा", bn: "ট্রান্সফরমারটি ডিসি ভোল্টেজকে নিরাপদে বহুগুণ বৃদ্ধি করবে" } },
+        { id: "opt-3", text: { en: "The core operates cooler than on AC because frequency is zero", hi: "कोर एसी की तुलना में ठंडा रहेगा क्योंकि आवृत्ति शून्य है", bn: "কম্পাঙ্ক শূন্য হওয়ায় কোরটি এসির চেয়ে বেশি ঠান্ডা থাকবে" } },
+        { id: "opt-4", text: { en: "The transformer functions with exactly 100% efficiency", hi: "ट्रांसफॉर्मर ठीक 100% दक्षता पर काम करेगा", bn: "ট্রান্সফরমারটি ঠিক ১০০% কর্মদক্ষতায় চলবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Transformers require time-varying flux to produce back-EMF that balances applied voltage. On DC, steady flux gives zero induced back-EMF; current is limited solely by tiny winding resistance (I = V/R), causing catastrophic thermal burnout.",
+        hi: "ट्रांसफॉर्मर को बैक-EMF बनाने के लिए बदलते फ्लक्स की जरूरत होती है। डीसी में dΦ/dt = 0 होने से कोई बैक-EMF नहीं बनता और भारी धारा वाइंडिंग को जला देती है।",
+        bn: "ট্রান্সফরমারে বিপরীত EMF সৃষ্টির জন্য সময়ের সাথে পরিবর্তনশীল ফ্লাক্স আবশ্যক। ডিসিতে dΦ/dt = ০ হওয়ায় কোনো বিপরীত EMF থাকে না, কেবল স্বল্প তারের রোধের কারণে অতিউচ্চ কারেন্টে কয়েল পুড়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-04",
+      question: {
+        en: "What is the fundamental operational difference between statically induced EMF and dynamically induced EMF?",
+        hi: "स्थैतिक प्रेरित EMF और गतिक प्रेरित EMF के बीच मौलिक कार्यात्मक अंतर क्या है?",
+        bn: "স্থিতীয় আবিষ্ট EMF এবং গতিজ আবিষ্ট EMF এর মধ্যকার মৌলিক কার্যকরী পার্থক্য কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Statically induced EMF has stationary conductors in time-varying flux; dynamically induced EMF has moving conductors in stationary flux", hi: "स्थैतिक EMF में चालक स्थिर और फ्लक्स परिवर्तनशील होता है; गतिक EMF में चालक गतिमान और फ्लक्स स्थिर होता है", bn: "স্থিতীয় EMF-এ পরিবাহী স্থির ও ফ্লাক্স পরিবর্তনশীল; গতিজ EMF-এ পরিবাহী গতিশীল ও ফ্লাক্স স্থির" } },
+        { id: "opt-2", text: { en: "Statically induced EMF violates conservation of energy", hi: "स्थैतिक EMF ऊर्जा संरक्षण का उल्लंघन करता है", bn: "স্থিতীয় EMF शक्ति সংরক্ষণ নীতি ভঙ্গ করে" } },
+        { id: "opt-3", text: { en: "Dynamically induced EMF exists only in vacuum tubes", hi: "गतिक EMF केवल वैक्यूम ट्यूब में होता है", bn: "গতিজ EMF কেবল ভ্যাকুয়াম টিউবে থাকে" } },
+        { id: "opt-4", text: { en: "Statically induced EMF produces only direct current (DC)", hi: "स्थैतिक EMF केवल दिष्ट धारा (DC) बनाता है", bn: "স্থিতীয় EMF কেবল ডিসি তৈরি করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In static induction (transformers), conductors are stationary while magnetic flux varies in time. In dynamic induction (generators), conductors physically move across stationary spatial magnetic flux lines.",
+        hi: "स्थैतिक प्रेरण में चालक स्थिर रहता है और चुंबकीय फ्लक्स समय के साथ बदलता है। गतिक प्रेरण में चालक भौतिक रूप से चुंबकीय क्षेत्र में गति करता है।",
+        bn: "স্থিতীয় আবেশে পরিবাহী স্থির থাকে কিন্তু সময়ের সাথে চৌম্বক ফ্লাক্স পরিবর্তিত হয়। গতিজ আবেশে স্থির চৌম্বক ক্ষেত্রের মধ্য দিয়ে পরিবাহী গতিশীল থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-05",
+      question: {
+        en: "In a transformer under no-load conditions, the self-induced EMF in the primary winding serves which critical role?",
+        hi: "बिना लोड की स्थिति में ट्रांसफॉर्मर की प्राथमिक वाइंडिंग में स्व-प्रेरित EMF कौन सी महत्वपूर्ण भूमिका निभाता है?",
+        bn: "নো-লোড অবস্থায় ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংয়ে স্বকীয় আবিষ্ট EMF কোন গুরুত্বপূর্ণ ভূমিকা পালন করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It opposes the applied terminal voltage almost completely, restricting no-load current to a tiny magnetizing value", hi: "यह प्रयुक्त टर्मिनल वोल्टेज का लगभग पूर्ण विरोध करता है, जिससे नो-लोड धारा बहुत कम रहती है", bn: "এটি প্রযুক্ত টার্মিনাল ভোল্টেজকে প্রায় সম্পূর্ণরূপে বাধা দেয়, ফলে নো-লোড কারেন্ট অতি সামান্য থাকে" } },
+        { id: "opt-2", text: { en: "It doubles the secondary voltage output", hi: "यह द्वितीयक वोल्टेज को दोगुना कर देता है", bn: "এটি সেকেন্ডারি ভোল্টেজ দ্বিগুণ করে" } },
+        { id: "opt-3", text: { en: "It converts core iron into copper", hi: "यह कोर के लोहे को तांबे में बदल देता है", bn: "এটি লোহার কোরকে তামায় রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It forces the power factor to zero lead", hi: "यह पावर फैक्टर को शून्य लीड कर देता है", bn: "এটি পাওয়ার ফ্যাক্টরকে শূন্য লিডিং করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, primary self-induced EMF E1 opposes applied voltage V1 almost exactly (E1 ≈ -V1), so only a small no-load magnetizing current flows through the primary.",
+        hi: "लेंज के नियम से प्राथमिक में प्रेरित बैक-EMF प्रयुक्त वोल्टेज का विरोध करता है (E1 ≈ V1), जिससे नो-लोड धारा केवल कोर को चुंबकित करने लायक अल्प मान तक सीमित रहती है।",
+        bn: "লেনজের সূত্রানুযায়ী প্রাইমারির স্বকীয় বিপরীত EMF প্রযুক্ত ভোল্টেজকে প্রায় হুবহু প্রতিরোধ করে (E1 ≈ V1), ফলে কেবল সামান্য ম্যাগনেটাইজিং কারেন্ট প্রবাহিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-06",
+      question: {
+        en: "If the excitation frequency of a transformer is raised from 50 Hz to 60 Hz while keeping peak core flux Φ_m unchanged, the induced RMS voltage:",
+        hi: "यदि ट्रांसफॉर्मर के अधिकतम कोर फ्लक्स Φ_m को स्थिर रखते हुए आवृत्ति 50 Hz से बढ़ाकर 60 Hz कर दी जाए, तो प्रेरित RMS वोल्टेज:",
+        bn: "যদি ট্রান্সফরমারের সর্বোচ্চ কোর ফ্লাক্স Φ_m অপরিবর্তিত রেখে কম্পাঙ্ক ৫০ হার্টজ থেকে বাড়িয়ে ৬০ হার্টজ করা হয়, তবে আবিষ্ট RMS ভোল্টেজ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Increases by 20% (multiplied by 1.2)", hi: "20% बढ़ जाता है (1.2 से गुणा)", bn: "২০% বৃদ্ধি পায় (১.২ গুণ হয়)" } },
+        { id: "opt-2", text: { en: "Decreases by 20%", hi: "20% घट जाता है", bn: "২০% হ্রাস পায়" } },
+        { id: "opt-3", text: { en: "Remains strictly unchanged", hi: "पूरी तरह अपरिवर्तित रहता है", bn: "সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "Increases by 44%", hi: "44% बढ़ जाता है", bn: "৪৪% বৃদ্ধি পায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since E = 4.44 · f · N · Φ_m, induced EMF is directly proportional to frequency f. Increasing f from 50 to 60 Hz yields 60/50 = 1.2, a 20% increase.",
+        hi: "E = 4.44 · f · N · Φ_m के अनुसार, EMF आवृत्ति के समानुपाती होता है। 60/50 = 1.2 (20% की वृद्धि)।",
+        bn: "E = ৪.৪৪ · f · N · Φ_m সূত্র অনুযায়ী, EMF কম্পাঙ্কের সমানুপাতিক। ৬০/৫০ = ১.২ (অর্থাৎ ২০% বৃদ্ধি পায়)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-07",
+      question: {
+        en: "Which of the following electrical machines operates exclusively on the principle of statically induced EMF?",
+        hi: "निम्नलिखित में से कौन सी विद्युत मशीन विशेष रूप से स्थैतिक प्रेरित EMF के सिद्धांत पर कार्य करती है?",
+        bn: "নিচের কোন বৈদ্যুতিক যন্ত্রটি সম্পূর্ণরূপে স্থিতীয় আবিষ্ট EMF নীতির ওপর ভিত্তি করে কাজ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "AC Power Transformer", hi: "एसी पावर ट्रांसफॉर्मर", bn: "এসি পাওয়ার ট্রান্সফরমার" } },
+        { id: "opt-2", text: { en: "DC Shunt Motor", hi: "डीसी शंट मोटर", bn: "ডিসি শান্ট মোটর" } },
+        { id: "opt-3", text: { en: "Synchronous Alternator", hi: "तुल्यकालिक अल्टरनेटर", bn: "সিনক্রোনাস অল্টারনেটর" } },
+        { id: "opt-4", text: { en: "Faraday Homopolar Disc", hi: "फैराडे होमोपोलर डिस्क", bn: "ফ্যারাডে হোমোপোলার ডিস্ক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "A transformer has no rotating or moving mechanical parts; energy is transferred between stationary windings purely via statically induced EMF produced by alternating core flux.",
+        hi: "ट्रांसफॉर्मर में कोई घूमने वाला भाग नहीं होता; यह स्थिर कुंडलियों में बदलते चुंबकीय फ्लक्स द्वारा केवल स्थैतिक EMF से कार्य करता है।",
+        bn: "ট্রান্সফরমারে কোনো ঘূর্ণনশীল যন্ত্রাংশ থাকে না; স্থির ওয়াইন্ডিংয়ে পরিবর্তী ফ্লাক্সের সাহায্যে কেবল স্থিতীয় আবেশের মাধ্যমে শক্তি সঞ্চালিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-08",
+      question: {
+        en: "A 200-turn coil links sinusoidal magnetic flux Φ(t) = 0.01 · sin(314 t) Wb. What is the peak (maximum) induced EMF in the coil?",
+        hi: "200 फेरों वाली कुंडली से ज्यावक्रीय फ्लक्स Φ(t) = 0.01 · sin(314 t) Wb जुड़ा है। कुंडली में अधिकतम प्रेरित EMF क्या है?",
+        bn: "২০০ পাকের একটি কয়েলের সাথে সাইনোসয়ডাল ফ্লাক্স Φ(t) = ০.০১ · sin(৩১৪ t) Wb যুক্ত আছে। কয়েলে আবিষ্ট সর্বোচ্চ (পিক) EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "628 V", hi: "628 V", bn: "৬২৮ V" } },
+        { id: "opt-2", text: { en: "314 V", hi: "314 V", bn: "৩১৪ V" } },
+        { id: "opt-3", text: { en: "444 V", hi: "444 V", bn: "৪৪৪ V" } },
+        { id: "opt-4", text: { en: "62.8 V", hi: "62.8 V", bn: "৬২.৮ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e(t) = -N dΦ/dt = -200 × [0.01 × 314 × cos(314t)] = -628 cos(314t). The maximum peak value is E_max = 628 V.",
+        hi: "E_max = N · ω · Φ_m = 200 × 314 × 0.01 = 628 V।",
+        bn: "E_max = N · ω · Φ_m = ২০০ × ৩১৪ × ০.০১ = ৬২৮ V।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-stat-1",
+      question: {
+        en: "Why is statically induced EMF generated in a transformer without any physical motion?",
+        hi: "ट्रांसफॉर्मर में बिना किसी भौतिक गति के स्थैतिक प्रेरित ईएमएफ क्यों उत्पन्न होता है?",
+        bn: "কোনো শারীরিক গতি ছাড়াই ট্রান্সফরমারে স্থিতিশীল আবিষ্ট ইএমএফ কেন সৃষ্টি হয়?"
+      },
+      options: [
+        { id: "opt-a", text: { en: "Due to electrostatic friction between winding wires", hi: "वाइंडिंग तारों के बीच स्थिरवैद्युत घर्षण के कारण", bn: "ওয়াইন্ডিং তারের মাঝে ঘর্ষণের কারণে" } },
+        { id: "opt-b", text: { en: "Due to time-varying alternating magnetic flux in the core (dΦ/dt ≠ 0)", hi: "क्रोड में समय-परिवर्तनशील प्रत्यावर्ती चुंबकीय फ्लक्स (dΦ/dt ≠ 0) के कारण", bn: "কোরে সময়-পরিবর্তনশীল এসি চৌম্বক ফ্লাক্সের (dΦ/dt ≠ ০) কারণে" } },
+        { id: "opt-c", text: { en: "Due to chemical reactions inside insulating oil", hi: "इंसुलेटिंग तेल में रासायनिक अभिक्रियाओं के कारण", bn: "তেলের রাসায়নিক বিক্রিয়ার কারণে" } },
+        { id: "opt-d", text: { en: "Due to permanent magnetic charge accumulation", hi: "स्थायी चुंबकीय आवेश संचयन के कारण", bn: "স্থায়ী চৌম্বক চার্জ জমার কারণে" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "Statically induced EMF is governed by Faraday’s law e = -N (dΦ/dt). Because the AC supply continuously modulates the magnetic flux amplitude with time, flux linkage changes without requiring mechanical motion.",
+        hi: "स्थैतिक ईएमएफ फैराडे के नियम e = -N (dΦ/dt) पर आधारित है। एसी धारा के कारण फ्लक्स लगातार समय के साथ बदलता रहता है।",
+        bn: "স্থিতিশীল ইএমএফ ফ্যারাডের সূত্র e = -N (dΦ/dt) দ্বারা নিয়ন্ত্রিত। এসি কারেন্ট কোরের ফ্লাক্সের মান প্রতিনিয়ত পরিবর্তন করায় কোনো গতির প্রয়োজন হয় না।"
+      }
+    },
+    {
+      id: "mcq-stat-2",
+      question: {
+        en: "For a sinusoidal magnetic flux Φ(t) = Φ_m sin(ωt), the phase relationship of the induced EMF e(t) is:",
+        hi: "ज्यावक्रीय चुंबकीय फ्लक्स Φ(t) = Φ_m sin(ωt) के लिए प्रेरित ईएमएफ e(t) का कला संबंध क्या है?",
+        bn: "সাইনোসয়ডাল ফ্লাক্স Φ(t) = Φ_m sin(ωt) এর ক্ষেত্রে আবিষ্ট ইএমএফ e(t) এর ফেজ সম্পর্ক কী?"
+      },
+      options: [
+        { id: "opt-a", text: { en: "In phase with flux (0° shift)", hi: "फ्लक्स के समान कला में (0°)", bn: "ফ্লাক্সের সাথে একই ফেজে (০°)" } },
+        { id: "opt-b", text: { en: "Lags the magnetic flux by 90°", hi: "फ्लक्स से 90° पश्चगामी (lagging)", bn: "ফ্লাক্সের চেয়ে ৯০° পিছিয়ে থাকে (ল্যাগিং)" } },
+        { id: "opt-c", text: { en: "Leads the magnetic flux by 90°", hi: "फ्लक्स से 90° अग्रगामी (leading)", bn: "ফ্লাক্সের চেয়ে ৯০° এগিয়ে থাকে (লিডিং)" } },
+        { id: "opt-d", text: { en: "180° out of phase at all times", hi: "सदैव 180° विपरीत कला में", bn: "সর্বদা ১৮০° বিপরীত ফেজে" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "Since e(t) = -N (dΦ/dt) = -N ω Φ_m cos(ωt) = E_m sin(ωt - 90°), the induced EMF lags the magnetic flux by 90° in phase.",
+        hi: "e(t) = -N dΦ/dt = E_m sin(ωt - 90°) होने के कारण प्रेरित EMF फ्लक्स से 90° पश्चगामी (lagging) होता है।",
+        bn: "e(t) = -N dΦ/dt = E_m sin(ωt - ৯০°) সমীকরণ অনুযায়ী আবিষ্ট ইএমএফ ফ্লাক্সের তুলনায় ৯০° ল্যাগিং অবস্থায় থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-03",
+      question: {
+        en: "What occurs if the primary winding of a standard 50 Hz AC power transformer is accidentally connected to a DC source of equal nominal voltage?",
+        hi: "यदि किसी मानक 50 Hz एसी पावर ट्रांसफॉर्मर की प्राथमिक वाइंडिंग को समान रेटेड वोल्टेज के डीसी स्रोत से जोड़ दिया जाए तो क्या होगा?",
+        bn: "যদি একটি স্ট্যান্ডার্ড ৫০ হার্টজ এসি পাওয়ার ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংকে একই মানের ডিসি উৎসের সাথে যুক্ত করা হয় তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because dΦ/dt = 0, no counter-EMF is induced; enormous current burns the winding rapidly", hi: "चूंकि dΦ/dt = 0, कोई विरोधी EMF नहीं बनता; अत्यधिक धारा वाइंडिंग को तुरंत जला देगी", bn: "যেহেতু dΦ/dt = ০, কোনো বিপরীত EMF তৈরি হয় না; তীব্র অতিরিক্ত কারেন্টে ওয়াইন্ডিং পুড়ে যাবে" } },
+        { id: "opt-2", text: { en: "The transformer steps up the DC voltage to infinite levels safely", hi: "ट्रांसफॉर्मर डीसी वोल्टेज को सुरक्षित रूप से अनंत तक बढ़ा देगा", bn: "ট্রান্সফরমারটি ডিসি ভোল্টেজকে নিরাপদে বহুগুণ বৃদ্ধি করবে" } },
+        { id: "opt-3", text: { en: "The core operates cooler than on AC because frequency is zero", hi: "कोर एसी की तुलना में ठंडा रहेगा क्योंकि आवृत्ति शून्य है", bn: "কম্পাঙ্ক শূন্য হওয়ায় কোরটি এসির চেয়ে বেশি ঠান্ডা থাকবে" } },
+        { id: "opt-4", text: { en: "The transformer functions with exactly 100% efficiency", hi: "ट्रांसफॉर्मर ठीक 100% दक्षता पर काम करेगा", bn: "ট্রান্সফরমারটি ঠিক ১০০% কর্মদক্ষতায় চলবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Transformers require time-varying flux to produce back-EMF that balances applied voltage. On DC, steady flux gives zero induced back-EMF; current is limited solely by tiny winding resistance (I = V/R), causing catastrophic thermal burnout.",
+        hi: "ट्रांसफॉर्मर को बैक-EMF बनाने के लिए बदलते फ्लक्स की जरूरत होती है। डीसी में dΦ/dt = 0 होने से कोई बैक-EMF नहीं बनता और भारी धारा वाइंडिंग को जला देती है।",
+        bn: "ট্রান্সফরমারে বিপরীত EMF সৃষ্টির জন্য সময়ের সাথে পরিবর্তনশীল ফ্লাক্স আবশ্যক। ডিসিতে dΦ/dt = ০ হওয়ায় কোনো বিপরীত EMF থাকে না, কেবল স্বল্প তারের রোধের কারণে অতিউচ্চ কারেন্টে কয়েল পুড়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-04",
+      question: {
+        en: "What is the fundamental operational difference between statically induced EMF and dynamically induced EMF?",
+        hi: "स्थैतिक प्रेरित EMF और गतिक प्रेरित EMF के बीच मौलिक कार्यात्मक अंतर क्या है?",
+        bn: "স্থিতীয় আবিষ্ট EMF এবং গতিজ আবিষ্ট EMF এর মধ্যকার মৌলিক কার্যকরী পার্থক্য কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Statically induced EMF has stationary conductors in time-varying flux; dynamically induced EMF has moving conductors in stationary flux", hi: "स्थैतिक EMF में चालक स्थिर और फ्लक्स परिवर्तनशील होता है; गतिक EMF में चालक गतिमान और फ्लक्स स्थिर होता है", bn: "স্থিতীয় EMF-এ পরিবাহী স্থির ও ফ্লাক্স পরিবর্তনশীল; গতিজ EMF-এ পরিবাহী গতিশীল ও ফ্লাক্স স্থির" } },
+        { id: "opt-2", text: { en: "Statically induced EMF violates conservation of energy", hi: "स्थैतिक EMF ऊर्जा संरक्षण का उल्लंघन करता है", bn: "স্থিতীয় EMF शक्ति সংরক্ষণ নীতি ভঙ্গ করে" } },
+        { id: "opt-3", text: { en: "Dynamically induced EMF exists only in vacuum tubes", hi: "गतिक EMF केवल वैक्यूम ट्यूब में होता है", bn: "গতিজ EMF কেবল ভ্যাকুয়াম টিউবে থাকে" } },
+        { id: "opt-4", text: { en: "Statically induced EMF produces only direct current (DC)", hi: "स्थैतिक EMF केवल दिष्ट धारा (DC) बनाता है", bn: "স্থিতীয় EMF কেবল ডিসি তৈরি করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In static induction (transformers), conductors are stationary while magnetic flux varies in time. In dynamic induction (generators), conductors physically move across stationary spatial magnetic flux lines.",
+        hi: "स्थैतिक प्रेरण में चालक स्थिर रहता है और चुंबकीय फ्लक्स समय के साथ बदलता है। गतिक प्रेरण में चालक भौतिक रूप से चुंबकीय क्षेत्र में गति करता है।",
+        bn: "স্থিতীয় আবেশে পরিবাহী স্থির থাকে কিন্তু সময়ের সাথে চৌম্বক ফ্লাক্স পরিবর্তিত হয়। গতিজ আবেশে স্থির চৌম্বক ক্ষেত্রের মধ্য দিয়ে পরিবাহী গতিশীল থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-05",
+      question: {
+        en: "In a transformer under no-load conditions, the self-induced EMF in the primary winding serves which critical role?",
+        hi: "बिना लोड की स्थिति में ट्रांसफॉर्मर की प्राथमिक वाइंडिंग में स्व-प्रेरित EMF कौन सी महत्वपूर्ण भूमिका निभाता है?",
+        bn: "নো-লোড অবস্থায় ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংয়ে স্বকীয় আবিষ্ট EMF কোন গুরুত্বপূর্ণ ভূমিকা পালন করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It opposes the applied terminal voltage almost completely, restricting no-load current to a tiny magnetizing value", hi: "यह प्रयुक्त टर्मिनल वोल्टेज का लगभग पूर्ण विरोध करता है, जिससे नो-लोड धारा बहुत कम रहती है", bn: "এটি প্রযুক্ত টার্মিনাল ভোল্টেজকে প্রায় সম্পূর্ণরূপে বাধা দেয়, ফলে নো-লোড কারেন্ট অতি সামান্য থাকে" } },
+        { id: "opt-2", text: { en: "It doubles the secondary voltage output", hi: "यह द्वितीयक वोल्टेज को दोगुना कर देता है", bn: "এটি সেকেন্ডারি ভোল্টেজ দ্বিগুণ করে" } },
+        { id: "opt-3", text: { en: "It converts core iron into copper", hi: "यह कोर के लोहे को तांबे में बदल देता है", bn: "এটি লোহার কোরকে তামায় রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It forces the power factor to zero lead", hi: "यह पावर फैक्टर को शून्य लीड कर देता है", bn: "এটি পাওয়ার ফ্যাক্টরকে শূন্য লিডিং করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, primary self-induced EMF E1 opposes applied voltage V1 almost exactly (E1 ≈ -V1), so only a small no-load magnetizing current flows through the primary.",
+        hi: "लेंज के नियम से प्राथमिक में प्रेरित बैक-EMF प्रयुक्त वोल्टेज का विरोध करता है (E1 ≈ V1), जिससे नो-लोड धारा केवल कोर को चुंबकित करने लायक अल्प मान तक सीमित रहती है।",
+        bn: "লেনজের সূত্রানুযায়ী প্রাইমারির স্বকীয় বিপরীত EMF প্রযুক্ত ভোল্টেজকে প্রায় হুবহু প্রতিরোধ করে (E1 ≈ V1), ফলে কেবল সামান্য ম্যাগনেটাইজিং কারেন্ট প্রবাহিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-06",
+      question: {
+        en: "If the excitation frequency of a transformer is raised from 50 Hz to 60 Hz while keeping peak core flux Φ_m unchanged, the induced RMS voltage:",
+        hi: "यदि ट्रांसफॉर्मर के अधिकतम कोर फ्लक्स Φ_m को स्थिर रखते हुए आवृत्ति 50 Hz से बढ़ाकर 60 Hz कर दी जाए, तो प्रेरित RMS वोल्टेज:",
+        bn: "যদি ট্রান্সফরমারের সর্বোচ্চ কোর ফ্লাক্স Φ_m অপরিবর্তিত রেখে কম্পাঙ্ক ৫০ হার্টজ থেকে বাড়িয়ে ৬০ হার্টজ করা হয়, তবে আবিষ্ট RMS ভোল্টেজ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Increases by 20% (multiplied by 1.2)", hi: "20% बढ़ जाता है (1.2 से गुणा)", bn: "২০% বৃদ্ধি পায় (১.২ গুণ হয়)" } },
+        { id: "opt-2", text: { en: "Decreases by 20%", hi: "20% घट जाता है", bn: "২০% হ্রাস পায়" } },
+        { id: "opt-3", text: { en: "Remains strictly unchanged", hi: "पूरी तरह अपरिवर्तित रहता है", bn: "সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "Increases by 44%", hi: "44% बढ़ जाता है", bn: "৪৪% বৃদ্ধি পায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since E = 4.44 · f · N · Φ_m, induced EMF is directly proportional to frequency f. Increasing f from 50 to 60 Hz yields 60/50 = 1.2, a 20% increase.",
+        hi: "E = 4.44 · f · N · Φ_m के अनुसार, EMF आवृत्ति के समानुपाती होता है। 60/50 = 1.2 (20% की वृद्धि)।",
+        bn: "E = ৪.৪৪ · f · N · Φ_m সূত্র অনুযায়ী, EMF কম্পাঙ্কের সমানুপাতিক। ৬০/৫০ = ১.২ (অর্থাৎ ২০% বৃদ্ধি পায়)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-07",
+      question: {
+        en: "Which of the following electrical machines operates exclusively on the principle of statically induced EMF?",
+        hi: "निम्नलिखित में से कौन सी विद्युत मशीन विशेष रूप से स्थैतिक प्रेरित EMF के सिद्धांत पर कार्य करती है?",
+        bn: "নিচের কোন বৈদ্যুতিক যন্ত্রটি সম্পূর্ণরূপে স্থিতীয় আবিষ্ট EMF নীতির ওপর ভিত্তি করে কাজ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "AC Power Transformer", hi: "एसी पावर ट्रांसफॉर्मर", bn: "এসি পাওয়ার ট্রান্সফরমার" } },
+        { id: "opt-2", text: { en: "DC Shunt Motor", hi: "डीसी शंट मोटर", bn: "ডিসি শান্ট মোটর" } },
+        { id: "opt-3", text: { en: "Synchronous Alternator", hi: "तुल्यकालिक अल्टरनेटर", bn: "সিনক্রোনাস অল্টারনেটর" } },
+        { id: "opt-4", text: { en: "Faraday Homopolar Disc", hi: "फैराडे होमोपोलर डिस्क", bn: "ফ্যারাডে হোমোপোলার ডিস্ক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "A transformer has no rotating or moving mechanical parts; energy is transferred between stationary windings purely via statically induced EMF produced by alternating core flux.",
+        hi: "ट्रांसफॉर्मर में कोई घूमने वाला भाग नहीं होता; यह स्थिर कुंडलियों में बदलते चुंबकीय फ्लक्स द्वारा केवल स्थैतिक EMF से कार्य करता है।",
+        bn: "ট্রান্সফরমারে কোনো ঘূর্ণনশীল যন্ত্রাংশ থাকে না; স্থির ওয়াইন্ডিংয়ে পরিবর্তী ফ্লাক্সের সাহায্যে কেবল স্থিতীয় আবেশের মাধ্যমে শক্তি সঞ্চালিত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l05-08",
+      question: {
+        en: "A 200-turn coil links sinusoidal magnetic flux Φ(t) = 0.01 · sin(314 t) Wb. What is the peak (maximum) induced EMF in the coil?",
+        hi: "200 फेरों वाली कुंडली से ज्यावक्रीय फ्लक्स Φ(t) = 0.01 · sin(314 t) Wb जुड़ा है। कुंडली में अधिकतम प्रेरित EMF क्या है?",
+        bn: "২০০ পাকের একটি কয়েলের সাথে সাইনোসয়ডাল ফ্লাক্স Φ(t) = ০.০১ · sin(৩১৪ t) Wb যুক্ত আছে। কয়েলে আবিষ্ট সর্বোচ্চ (পিক) EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "628 V", hi: "628 V", bn: "৬২৮ V" } },
+        { id: "opt-2", text: { en: "314 V", hi: "314 V", bn: "৩১৪ V" } },
+        { id: "opt-3", text: { en: "444 V", hi: "444 V", bn: "৪৪৪ V" } },
+        { id: "opt-4", text: { en: "62.8 V", hi: "62.8 V", bn: "৬২.৮ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e(t) = -N dΦ/dt = -200 × [0.01 × 314 × cos(314t)] = -628 cos(314t). The maximum peak value is E_max = 628 V.",
+        hi: "E_max = N · ω · Φ_m = 200 × 314 × 0.01 = 628 V।",
+        bn: "E_max = N · ω · Φ_m = ২০০ × ৩১৪ × ০.০১ = ৬২৮ V।"
       }
     }
   ],

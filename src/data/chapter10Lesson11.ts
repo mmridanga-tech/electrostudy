@@ -366,43 +366,325 @@ Continuous slip rings maintain constant metallic contact with their designated c
   },
   mcqs: [
     {
-      id: 'q-acgen-1',
+      id: "q-acgen-1",
       question: {
-        en: 'At what angular position of the rotating loop is the instantaneous induced EMF at its maximum peak value?',
-        hi: 'घूर्णन लूप की किस कोणीय स्थिति पर तात्कालिक प्रेरित ईएमएफ अपने अधिकतम शिखर मान पर होता है?',
-        bn: 'ঘূর্ণনশীল লুপের কোন কৌণিক অবস্থানে তাৎক্ষণিক আবিষ্ট ইএমএফ এর মান সর্বোচ্চ শিখরে পৌঁছায়?'
+        en: "At what angular position of the rotating loop is the instantaneous induced EMF at its maximum peak value?",
+        hi: "घूर्णन लूप की किस कोणीय स्थिति पर तात्कालिक प्रेरित ईएमएफ अपने अधिकतम शिखर मान पर होता है?",
+        bn: "ঘূর্ণনশীল লুপের কোন কৌণিক অবস্থানে তাৎক্ষণিক আবিষ্ট ইএমএফ এর মান সর্বোচ্চ শিখরে পৌঁছায়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'When the coil plane is perpendicular to magnetic field lines (θ = 0°)', hi: 'जब कॉइल का तल चुंबकीय बल रेखाओं के लंबवत हो (θ = 0°)', bn: 'যখন কয়েলের তল চৌম্বক বলরেখার সাথে লম্বভাবে থাকে (θ = ০°)' } },
-        { id: 'opt-2', text: { en: 'When the coil plane is parallel to magnetic field lines (θ = 90°)', hi: 'जब कॉइल का तल चुंबकीय बल रेखाओं के समानांतर हो (θ = 90°)', bn: 'যখন কয়েলের তল চৌম্বক বলরেখার সমান্তরাল থাকে (θ = ৯০°)' } },
-        { id: 'opt-3', text: { en: 'When flux linkage through the coil is at its maximum', hi: 'जब कॉइल से संबद्ध कुल फ्लक्स अधिकतम हो', bn: 'যখন কয়েলের মধ্য দিয়ে অতিক্রান্ত ফ্লাক্স সর্বোচ্চ হয়' } },
-        { id: 'opt-4', text: { en: 'At θ = 45° only', hi: 'केवल θ = 45° पर', bn: 'শুধুমাত্র θ = ৪৫° অবস্থানে' } }
+        { id: "opt-1", text: { en: "When the coil plane is perpendicular to magnetic field lines (θ = 0°)", hi: "जब कॉइल का तल चुंबकीय बल रेखाओं के लंबवत हो (θ = 0°)", bn: "যখন কয়েলের তল চৌম্বক বলরেখার সাথে লম্বভাবে থাকে (θ = ০°)" } },
+        { id: "opt-2", text: { en: "When the coil plane is parallel to magnetic field lines (θ = 90°)", hi: "जब कॉइल का तल चुंबकीय बल रेखाओं के समानांतर हो (θ = 90°)", bn: "যখন কয়েলের তল চৌম্বক বলরেখার সমান্তরাল থাকে (θ = ৯০°)" } },
+        { id: "opt-3", text: { en: "When flux linkage through the coil is at its maximum", hi: "जब कॉइल से संबद्ध कुल फ्लक्स अधिकतम हो", bn: "যখন কয়েলের মধ্য দিয়ে অতিক্রান্ত ফ্লাক্স সর্বোচ্চ হয়" } },
+        { id: "opt-4", text: { en: "At θ = 45° only", hi: "केवल θ = 45° पर", bn: "শুধুমাত্র θ = ৪৫° অবস্থানে" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'When the coil plane is parallel to the magnetic field (θ = 90°), the conductors move perpendicular to lines of force at maximum velocity, cutting flux at the maximum rate (dΦ/dt is maximum), giving e = E_m.',
-        hi: 'जब कॉइल चुंबकीय क्षेत्र के समानांतर होती है (θ = 90°), तो चालक बल रेखाओं को लंबवत रूप से अधिकतम वेग से काटते हैं, जिससे dΦ/dt अधिकतम होता है और e = E_m प्राप्त होता है।',
-        bn: 'কয়েলের তল যখন চৌম্বক ক্ষেত্রের সমান্তরাল থাকে (θ = ৯০°), তখন পরিবাহী তারগুলো সর্বোচ্চ গতিতে বলরেখা ছেদ করে (dΦ/dt সর্বোচ্চ), ফলে e = E_m হয়।'
+        en: "When the coil plane is parallel to the magnetic field (θ = 90°), the conductors move perpendicular to lines of force at maximum velocity, cutting flux at the maximum rate (dΦ/dt is maximum), giving e = E_m.",
+        hi: "जब कॉइल चुंबकीय क्षेत्र के समानांतर होती है (θ = 90°), तो चालक बल रेखाओं को लंबवत रूप से अधिकतम वेग से काटते हैं, जिससे dΦ/dt अधिकतम होता है और e = E_m प्राप्त होता है।",
+        bn: "কয়েলের তল যখন চৌম্বক ক্ষেত্রের সমান্তরাল থাকে (θ = ৯০°), তখন পরিবাহী তারগুলো সর্বোচ্চ গতিতে বলরেখা ছেদ করে (dΦ/dt সর্বোচ্চ), ফলে e = E_m হয়।"
       }
     },
     {
-      id: 'q-acgen-2',
+      id: "q-acgen-2",
       question: {
-        en: 'A 4-pole AC synchronous generator rotates at 1,500 RPM. What is the frequency of the generated AC voltage?',
-        hi: 'एक 4-ध्रुवीय एसी जनरेटर 1,500 RPM पर घूमता है। उत्पन्न एसी वोल्टेज की आवृत्ति क्या होगी?',
-        bn: 'একটি ৪-মেরু বিশিষ্ট এসি জেনারেটর ১,৫০০ RPM গতিতে ঘুরছে। উৎপন্ন এসি ভোল্টেজের কম্পাঙ্ক কত?'
+        en: "A 4-pole AC synchronous generator rotates at 1,500 RPM. What is the frequency of the generated AC voltage?",
+        hi: "एक 4-ध्रुवीय एसी जनरेटर 1,500 RPM पर घूमता है। उत्पन्न एसी वोल्टेज की आवृत्ति क्या होगी?",
+        bn: "একটি ৪-মেরু বিশিষ্ট এসি জেনারেটর ১,৫০০ RPM গতিতে ঘুরছে। উৎপন্ন এসি ভোল্টেজের কম্পাঙ্ক কত?"
       },
       options: [
-        { id: 'opt-1', text: { en: '25 Hz', hi: '25 Hz', bn: '২৫ Hz' } },
-        { id: 'opt-2', text: { en: '50 Hz', hi: '50 Hz', bn: '৫০ Hz' } },
-        { id: 'opt-3', text: { en: '60 Hz', hi: '60 Hz', bn: '৬০ Hz' } },
-        { id: 'opt-4', text: { en: '100 Hz', hi: '100 Hz', bn: '১০০ Hz' } }
+        { id: "opt-1", text: { en: "25 Hz", hi: "25 Hz", bn: "২৫ Hz" } },
+        { id: "opt-2", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } },
+        { id: "opt-3", text: { en: "60 Hz", hi: "60 Hz", bn: "৬০ Hz" } },
+        { id: "opt-4", text: { en: "100 Hz", hi: "100 Hz", bn: "১০০ Hz" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Using f = (P · N_s) / 120: f = (4 × 1500) / 120 = 6000 / 120 = 50 Hz.',
-        hi: 'सूत्र f = (P · N_s) / 120 के अनुसार: f = (4 × 1500) / 120 = 50 Hz।',
-        bn: 'f = (P · N_s) / ১২০ সূত্রানুসারে: f = (৪ × ১৫০০) / ১২০ = ৫০ Hz।'
+        en: "Using f = (P · N_s) / 120: f = (4 × 1500) / 120 = 6000 / 120 = 50 Hz.",
+        hi: "सूत्र f = (P · N_s) / 120 के अनुसार: f = (4 × 1500) / 120 = 50 Hz।",
+        bn: "f = (P · N_s) / ১২০ সূত্রানুসারে: f = (৪ × ১৫০০) / ১২০ = ৫০ Hz।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-03",
+      question: {
+        en: "In an elementary single-loop AC generator, what mechanical components maintain continuous electrical connection with the rotating loop while delivering AC to an external circuit?",
+        hi: "एक बुनियादी सिंगल-लूप एसी जनरेटर में, कौन से यांत्रिक घटक घूमते लूप के साथ निरंतर संपर्क बनाए रखते हुए बाहरी परिपथ को एसी प्रदान करते हैं?",
+        bn: "একটি প্রাথমিক সিঙ্গেল-লুপ এসি জেনারেটরে কোন যান্ত্রিক উপাদানগুলো ঘূর্ণায়মান লুপের সাথে অবিচ্ছিন্ন যোগাযোগ রেখে বহিঃস্থ বর্তনীতে এসি বিদ্যুৎ সরবরাহ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Two solid circular slip rings with carbon contact brushes", hi: "कार्बन ब्रश के साथ दो ठोस वृत्ताकार स्लिप रिंग", bn: "কার্বন ব্রাশের সাথে দুটি নিরেট বৃত্তাকার স্লিপ রিং" } },
+        { id: "opt-2", text: { en: "A split-ring commutator segmented into two halves", hi: "दो हिस्सों में बंटा एक स्प्लिट-रिंग कम्यूटेटर", bn: "দুটি অংশে বিভক্ত একটি স্প্লিট-রিং কমিউটেটর" } },
+        { id: "opt-3", text: { en: "A diode bridge rectifier unit", hi: "डायोड ब्रिज रेक्टिफायर इकाई", bn: "একটি ডায়োড ব্রিজ রেকটিফায়ার" } },
+        { id: "opt-4", text: { en: "Directly soldered permanent copper wires", hi: "सीधे सोल्डर किए गए स्थायी तांबे के तार", bn: "সরাসরি সোল্ডার করা স্থায়ী তামার তার" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Continuous unbroken slip rings maintain direct fixed electrical contact with each loop terminal as it rotates, preserving the natural alternating sinusoidal polarity without rectification.",
+        hi: "स्लिप रिंग घूमते लूप के प्रत्येक सिरे से निरंतर संपर्क बनाए रखती हैं, जिससे प्राकृतिक प्रत्यावर्ती धारा बिना किसी बदलाव के बाहर मिलती है।",
+        bn: "স্লিপ রিংগুলো ঘূর্ণায়মান লুপের প্রতিটি প্রান্তের সাথে অবিচ্ছিন্ন সংযোগ রক্ষা করে, ফলে স্বাভাবিক পরিবর্তী এসি ভোল্টেজ সরাসরি বাইরে পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-04",
+      question: {
+        en: "A 2-pole AC alternator rotates at 3,600 RPM. What is the frequency of the generated alternating voltage?",
+        hi: "एक 2-ध्रुवीय एसी अल्टरनेटर 3,600 RPM पर घूमता है। उत्पन्न वोल्टेज की आवृत्ति क्या होगी?",
+        bn: "একটি ২-মেরুর এসি অল্টারনেটর ৩,৬০০ RPM গতিতে ঘুরছে। উৎপন্ন ভোল্টেজের কম্পাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "60 Hz", hi: "60 Hz", bn: "৬০ Hz" } },
+        { id: "opt-2", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } },
+        { id: "opt-3", text: { en: "120 Hz", hi: "120 Hz", bn: "১২০ Hz" } },
+        { id: "opt-4", text: { en: "30 Hz", hi: "30 Hz", bn: "৩০ Hz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "f = (P · N_s) / 120 = (2 × 3600) / 120 = 7200 / 120 = 60 Hz.",
+        hi: "सूत्र f = (P · N_s) / 120 = (2 × 3600) / 120 = 60 Hz।",
+        bn: "f = (P · N_s) / ১২০ = (২ × ৩৬০০) / ১২০ = ৬০ Hz।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-05",
+      question: {
+        en: "Why do modern utility power plant alternators utilize a rotating magnetic field and a stationary armature (stator), rather than a rotating armature?",
+        hi: "आधुनिक विद्युत संयंत्र अल्टरनेटर में घूमते आर्मेचर के बजाय घूमते चुंबकीय क्षेत्र और स्थिर आर्मेचर (स्टेटर) का उपयोग क्यों किया जाता है?",
+        bn: "আধুনিক বিদ্যুৎ কেন্দ্রের অল্টারনেটরগুলোতে ঘূর্ণনশীল আর্মেচারের পরিবর্তে ঘূর্ণনশীল চৌম্বক ক্ষেত্র ও স্থির আর্মেচার (স্টেটর) ব্যবহার করা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Generating high voltages (11–33 kV) and high currents on stationary stator coils eliminates high-voltage arcing on slip rings", hi: "स्थिर स्टेटर कॉइल पर उच्च वोल्टेज (11-33 kV) उत्पन्न करने से स्लिप रिंग पर स्पार्किंग और इंसुलेशन की समस्या समाप्त हो जाती है", bn: "স্থির স্টেটরে উচ্চ ভোল্টেজ (১১-৩৩ kV) তৈরি করলে স্লিপ রিংয়ে বিপজ্জনক স্পার্কিং ও ইনসুলেশন সমস্যা থাকে না" } },
+        { id: "opt-2", text: { en: "Rotating armatures produce only direct current", hi: "घूमता आर्मेचर केवल डीसी बनाता है", bn: "ঘূর্ণনশীল আর্মেচার কেবল ডিসি তৈরি করে" } },
+        { id: "opt-3", text: { en: "It eliminates the need for prime movers", hi: "यह टरबाइन की आवश्यकता समाप्त करता है", bn: "এটি টারবাইনের প্রয়োজনীয়তা দূর করে" } },
+        { id: "opt-4", text: { en: "Stationary windings have zero weight", hi: "स्थिर वाइंडिंग का वजन शून्य होता है", bn: "স্থির ওয়াইন্ডিংয়ের ওজন শূন্য হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extracting heavy megawatts at tens of thousands of volts through sliding brush-slipring contacts is impossible. Rotating the low-voltage DC field and tapping massive AC directly from fixed stator terminals is far safer and more robust.",
+        hi: "हजारों वोल्ट और विशाल धारा को घूमती रिंग से निकालना खतरनाक होता है; स्थिर स्टेटर से सीधे भारी शक्ति लेना सुरक्षित और सरल है।",
+        bn: "হাজার হাজার ভোল্ট ও বিপুল কারেন্ট স্লিপ রিং দিয়ে সংগ্রহ করা অসম্ভব; তাই স্থির স্টেটরে হাই-ভোল্টেজ ওয়াইন্ডিং রাখা হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-06",
+      question: {
+        en: "In an AC generator, when the rotating loop passes through the plane perpendicular to magnetic field lines (θ = 0°), the induced EMF is:",
+        hi: "एसी जनरेटर में जब घूमता लूप चुंबकीय बल रेखाओं के लंबवत तल (θ = 0°) से गुजरता है, तो प्रेरित EMF होता है:",
+        bn: "একটি এসি জেনারেটরে ঘূর্ণায়মান লুপটি যখন চৌম্বক বলরেখার সাথে লম্ব তলের মধ্য দিয়ে যায় (θ = ০°), তখন আবিষ্ট EMF কত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Zero (instantaneous e = 0 V)", hi: "शून्य (तात्कालिक e = 0 V)", bn: "শূন্য (তাৎক্ষণিক e = ০ V)" } },
+        { id: "opt-2", text: { en: "At its maximum peak value (E_m)", hi: "अपने अधिकतम शिखर मान (E_m) पर", bn: "সর্বোচ্চ শীর্ষ মানে (E_m)" } },
+        { id: "opt-3", text: { en: "Negative infinite", hi: "ऋणात्मक अनंत", bn: "ঋণাত্মক অসীম" } },
+        { id: "opt-4", text: { en: "Equal to RMS voltage", hi: "आरएमएस वोल्टेज के बराबर", bn: "RMS ভোল্টেজের সমান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At θ = 0°, the conductors are moving parallel to the magnetic lines of force; rate of flux cutting is zero (v × B = 0), so induced EMF is instantaneous zero.",
+        hi: "θ = 0° पर चालक चुंबकीय रेखाओं के समानांतर गति करते हैं, अतः बल रेखाएं कटती नहीं हैं और ईएमएफ शून्य होता है।",
+        bn: "θ = ০° অবস্থানে পরিবাহীগুলো বলরেখার সমান্তরালে চলে, ফলে বলরেখা ছেদের হার শূন্য হওয়ায় তাৎক্ষণিক EMF শূন্য হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-07",
+      question: {
+        en: "The relationship between electrical angle θ_e and mechanical angle θ_m in a multipolar AC alternator having P poles is given by:",
+        hi: "P ध्रुवों वाले अल्टरनेटर में विद्युत कोण θ_e और यांत्रिक कोण θ_m के बीच संबंध क्या है?",
+        bn: "P সংখ্যক মেরু বিশিষ্ট একটি অল্টারনেটরে বৈদ্যুতিক কোণ θ_e এবং যান্ত্রিক কোণ θ_m এর সম্পর্ক কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "θ_e = (P / 2) · θ_m", hi: "θ_e = (P / 2) · θ_m", bn: "θ_e = (P / ২) · θ_m" } },
+        { id: "opt-2", text: { en: "θ_e = (2 / P) · θ_m", hi: "θ_e = (2 / P) · θ_m", bn: "θ_e = (২ / P) · θ_m" } },
+        { id: "opt-3", text: { en: "θ_e = P · θ_m", hi: "θ_e = P · θ_m", bn: "θ_e = P · θ_m" } },
+        { id: "opt-4", text: { en: "θ_e = θ_m / P", hi: "θ_e = θ_m / P", bn: "θ_e = θ_m / P" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "One pair of poles (2 poles) completes 360° electrical (one full cycle). Therefore, electrical angle is θ_e = (P / 2) · θ_m.",
+        hi: "एक जोड़ी ध्रुव (2 ध्रुव) एक पूर्ण 360° विद्युत चक्र बनाते हैं, अतः θ_e = (P / 2) · θ_m।",
+        bn: "প্রতি জোড়া মেরু (২টি মেরু) একটি পূর্ণ ৩৬০° বৈদ্যুতিক চক্র তৈরি করে, সুতরাং θ_e = (P / ২) · θ_m।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-08",
+      question: {
+        en: "A hydro-generator rotates at a low speed of 120 RPM. How many field poles must it have to generate electric power at standard 50 Hz?",
+        hi: "एक हाइड्रो-जनरेटर 120 RPM की धीमी गति से घूमता है। मानक 50 Hz पर बिजली बनाने के लिए इसमें कितने पोल होने चाहिए?",
+        bn: "একটি জলবিদ্যুৎ জেনারেটর ১২০ RPM ধীর গতিতে ঘুরছে। স্ট্যান্ডার্ড ৫০ Hz বিদ্যুৎ উৎপাদনের জন্য এতে কতটি ফিল্ড পোল থাকতে হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "50 poles", hi: "50 ध्रुव", bn: "৫০টি মেরু" } },
+        { id: "opt-2", text: { en: "24 poles", hi: "24 ध्रुव", bn: "২৪টি মেরু" } },
+        { id: "opt-3", text: { en: "12 poles", hi: "12 ध्रुव", bn: "১২টি মেরু" } },
+        { id: "opt-4", text: { en: "100 poles", hi: "100 ध्रुव", bn: "১০০টি মেরু" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "P = (120 · f) / N_s = (120 × 50) / 120 = 50 poles.",
+        hi: "सूत्र P = (120 · f) / N_s = (120 × 50) / 120 = 50 पोल।",
+        bn: "P = (১২০ · f) / N_s = (১২০ × ৫০) / ১২০ = ৫০টি মেরু।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-acgen-1",
+      question: {
+        en: "At what angular position of the rotating loop is the instantaneous induced EMF at its maximum peak value?",
+        hi: "घूर्णन लूप की किस कोणीय स्थिति पर तात्कालिक प्रेरित ईएमएफ अपने अधिकतम शिखर मान पर होता है?",
+        bn: "ঘূর্ণনশীল লুপের কোন কৌণিক অবস্থানে তাৎক্ষণিক আবিষ্ট ইএমএফ এর মান সর্বোচ্চ শিখরে পৌঁছায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "When the coil plane is perpendicular to magnetic field lines (θ = 0°)", hi: "जब कॉइल का तल चुंबकीय बल रेखाओं के लंबवत हो (θ = 0°)", bn: "যখন কয়েলের তল চৌম্বক বলরেখার সাথে লম্বভাবে থাকে (θ = ০°)" } },
+        { id: "opt-2", text: { en: "When the coil plane is parallel to magnetic field lines (θ = 90°)", hi: "जब कॉइल का तल चुंबकीय बल रेखाओं के समानांतर हो (θ = 90°)", bn: "যখন কয়েলের তল চৌম্বক বলরেখার সমান্তরাল থাকে (θ = ৯০°)" } },
+        { id: "opt-3", text: { en: "When flux linkage through the coil is at its maximum", hi: "जब कॉइल से संबद्ध कुल फ्लक्स अधिकतम हो", bn: "যখন কয়েলের মধ্য দিয়ে অতিক্রান্ত ফ্লাক্স সর্বোচ্চ হয়" } },
+        { id: "opt-4", text: { en: "At θ = 45° only", hi: "केवल θ = 45° पर", bn: "শুধুমাত্র θ = ৪৫° অবস্থানে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "When the coil plane is parallel to the magnetic field (θ = 90°), the conductors move perpendicular to lines of force at maximum velocity, cutting flux at the maximum rate (dΦ/dt is maximum), giving e = E_m.",
+        hi: "जब कॉइल चुंबकीय क्षेत्र के समानांतर होती है (θ = 90°), तो चालक बल रेखाओं को लंबवत रूप से अधिकतम वेग से काटते हैं, जिससे dΦ/dt अधिकतम होता है और e = E_m प्राप्त होता है।",
+        bn: "কয়েলের তল যখন চৌম্বক ক্ষেত্রের সমান্তরাল থাকে (θ = ৯০°), তখন পরিবাহী তারগুলো সর্বোচ্চ গতিতে বলরেখা ছেদ করে (dΦ/dt সর্বোচ্চ), ফলে e = E_m হয়।"
+      }
+    },
+    {
+      id: "q-acgen-2",
+      question: {
+        en: "A 4-pole AC synchronous generator rotates at 1,500 RPM. What is the frequency of the generated AC voltage?",
+        hi: "एक 4-ध्रुवीय एसी जनरेटर 1,500 RPM पर घूमता है। उत्पन्न एसी वोल्टेज की आवृत्ति क्या होगी?",
+        bn: "একটি ৪-মেরু বিশিষ্ট এসি জেনারেটর ১,৫০০ RPM গতিতে ঘুরছে। উৎপন্ন এসি ভোল্টেজের কম্পাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "25 Hz", hi: "25 Hz", bn: "২৫ Hz" } },
+        { id: "opt-2", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } },
+        { id: "opt-3", text: { en: "60 Hz", hi: "60 Hz", bn: "৬০ Hz" } },
+        { id: "opt-4", text: { en: "100 Hz", hi: "100 Hz", bn: "১০০ Hz" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Using f = (P · N_s) / 120: f = (4 × 1500) / 120 = 6000 / 120 = 50 Hz.",
+        hi: "सूत्र f = (P · N_s) / 120 के अनुसार: f = (4 × 1500) / 120 = 50 Hz।",
+        bn: "f = (P · N_s) / ১২০ সূত্রানুসারে: f = (৪ × ১৫০০) / ১২০ = ৫০ Hz।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-03",
+      question: {
+        en: "In an elementary single-loop AC generator, what mechanical components maintain continuous electrical connection with the rotating loop while delivering AC to an external circuit?",
+        hi: "एक बुनियादी सिंगल-लूप एसी जनरेटर में, कौन से यांत्रिक घटक घूमते लूप के साथ निरंतर संपर्क बनाए रखते हुए बाहरी परिपथ को एसी प्रदान करते हैं?",
+        bn: "একটি প্রাথমিক সিঙ্গেল-লুপ এসি জেনারেটরে কোন যান্ত্রিক উপাদানগুলো ঘূর্ণায়মান লুপের সাথে অবিচ্ছিন্ন যোগাযোগ রেখে বহিঃস্থ বর্তনীতে এসি বিদ্যুৎ সরবরাহ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Two solid circular slip rings with carbon contact brushes", hi: "कार्बन ब्रश के साथ दो ठोस वृत्ताकार स्लिप रिंग", bn: "কার্বন ব্রাশের সাথে দুটি নিরেট বৃত্তাকার স্লিপ রিং" } },
+        { id: "opt-2", text: { en: "A split-ring commutator segmented into two halves", hi: "दो हिस्सों में बंटा एक स्प्लिट-रिंग कम्यूटेटर", bn: "দুটি অংশে বিভক্ত একটি স্প্লিট-রিং কমিউটেটর" } },
+        { id: "opt-3", text: { en: "A diode bridge rectifier unit", hi: "डायोड ब्रिज रेक्टिफायर इकाई", bn: "একটি ডায়োড ব্রিজ রেকটিফায়ার" } },
+        { id: "opt-4", text: { en: "Directly soldered permanent copper wires", hi: "सीधे सोल्डर किए गए स्थायी तांबे के तार", bn: "সরাসরি সোল্ডার করা স্থায়ী তামার তার" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Continuous unbroken slip rings maintain direct fixed electrical contact with each loop terminal as it rotates, preserving the natural alternating sinusoidal polarity without rectification.",
+        hi: "स्लिप रिंग घूमते लूप के प्रत्येक सिरे से निरंतर संपर्क बनाए रखती हैं, जिससे प्राकृतिक प्रत्यावर्ती धारा बिना किसी बदलाव के बाहर मिलती है।",
+        bn: "স্লিপ রিংগুলো ঘূর্ণায়মান লুপের প্রতিটি প্রান্তের সাথে অবিচ্ছিন্ন সংযোগ রক্ষা করে, ফলে স্বাভাবিক পরিবর্তী এসি ভোল্টেজ সরাসরি বাইরে পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-04",
+      question: {
+        en: "A 2-pole AC alternator rotates at 3,600 RPM. What is the frequency of the generated alternating voltage?",
+        hi: "एक 2-ध्रुवीय एसी अल्टरनेटर 3,600 RPM पर घूमता है। उत्पन्न वोल्टेज की आवृत्ति क्या होगी?",
+        bn: "একটি ২-মেরুর এসি অল্টারনেটর ৩,৬০০ RPM গতিতে ঘুরছে। উৎপন্ন ভোল্টেজের কম্পাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "60 Hz", hi: "60 Hz", bn: "৬০ Hz" } },
+        { id: "opt-2", text: { en: "50 Hz", hi: "50 Hz", bn: "৫০ Hz" } },
+        { id: "opt-3", text: { en: "120 Hz", hi: "120 Hz", bn: "১২০ Hz" } },
+        { id: "opt-4", text: { en: "30 Hz", hi: "30 Hz", bn: "৩০ Hz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "f = (P · N_s) / 120 = (2 × 3600) / 120 = 7200 / 120 = 60 Hz.",
+        hi: "सूत्र f = (P · N_s) / 120 = (2 × 3600) / 120 = 60 Hz।",
+        bn: "f = (P · N_s) / ১২০ = (২ × ৩৬০০) / ১২০ = ৬০ Hz।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-05",
+      question: {
+        en: "Why do modern utility power plant alternators utilize a rotating magnetic field and a stationary armature (stator), rather than a rotating armature?",
+        hi: "आधुनिक विद्युत संयंत्र अल्टरनेटर में घूमते आर्मेचर के बजाय घूमते चुंबकीय क्षेत्र और स्थिर आर्मेचर (स्टेटर) का उपयोग क्यों किया जाता है?",
+        bn: "আধুনিক বিদ্যুৎ কেন্দ্রের অল্টারনেটরগুলোতে ঘূর্ণনশীল আর্মেচারের পরিবর্তে ঘূর্ণনশীল চৌম্বক ক্ষেত্র ও স্থির আর্মেচার (স্টেটর) ব্যবহার করা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Generating high voltages (11–33 kV) and high currents on stationary stator coils eliminates high-voltage arcing on slip rings", hi: "स्थिर स्टेटर कॉइल पर उच्च वोल्टेज (11-33 kV) उत्पन्न करने से स्लिप रिंग पर स्पार्किंग और इंसुलेशन की समस्या समाप्त हो जाती है", bn: "স্থির স্টেটরে উচ্চ ভোল্টেজ (১১-৩৩ kV) তৈরি করলে স্লিপ রিংয়ে বিপজ্জনক স্পার্কিং ও ইনসুলেশন সমস্যা থাকে না" } },
+        { id: "opt-2", text: { en: "Rotating armatures produce only direct current", hi: "घूमता आर्मेचर केवल डीसी बनाता है", bn: "ঘূর্ণনশীল আর্মেচার কেবল ডিসি তৈরি করে" } },
+        { id: "opt-3", text: { en: "It eliminates the need for prime movers", hi: "यह टरबाइन की आवश्यकता समाप्त करता है", bn: "এটি টারবাইনের প্রয়োজনীয়তা দূর করে" } },
+        { id: "opt-4", text: { en: "Stationary windings have zero weight", hi: "स्थिर वाइंडिंग का वजन शून्य होता है", bn: "স্থির ওয়াইন্ডিংয়ের ওজন শূন্য হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extracting heavy megawatts at tens of thousands of volts through sliding brush-slipring contacts is impossible. Rotating the low-voltage DC field and tapping massive AC directly from fixed stator terminals is far safer and more robust.",
+        hi: "हजारों वोल्ट और विशाल धारा को घूमती रिंग से निकालना खतरनाक होता है; स्थिर स्टेटर से सीधे भारी शक्ति लेना सुरक्षित और सरल है।",
+        bn: "হাজার হাজার ভোল্ট ও বিপুল কারেন্ট স্লিপ রিং দিয়ে সংগ্রহ করা অসম্ভব; তাই স্থির স্টেটরে হাই-ভোল্টেজ ওয়াইন্ডিং রাখা হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-06",
+      question: {
+        en: "In an AC generator, when the rotating loop passes through the plane perpendicular to magnetic field lines (θ = 0°), the induced EMF is:",
+        hi: "एसी जनरेटर में जब घूमता लूप चुंबकीय बल रेखाओं के लंबवत तल (θ = 0°) से गुजरता है, तो प्रेरित EMF होता है:",
+        bn: "একটি এসি জেনারেটরে ঘূর্ণায়মান লুপটি যখন চৌম্বক বলরেখার সাথে লম্ব তলের মধ্য দিয়ে যায় (θ = ০°), তখন আবিষ্ট EMF কত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Zero (instantaneous e = 0 V)", hi: "शून्य (तात्कालिक e = 0 V)", bn: "শূন্য (তাৎক্ষণিক e = ০ V)" } },
+        { id: "opt-2", text: { en: "At its maximum peak value (E_m)", hi: "अपने अधिकतम शिखर मान (E_m) पर", bn: "সর্বোচ্চ শীর্ষ মানে (E_m)" } },
+        { id: "opt-3", text: { en: "Negative infinite", hi: "ऋणात्मक अनंत", bn: "ঋণাত্মক অসীম" } },
+        { id: "opt-4", text: { en: "Equal to RMS voltage", hi: "आरएमएस वोल्टेज के बराबर", bn: "RMS ভোল্টেজের সমান" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At θ = 0°, the conductors are moving parallel to the magnetic lines of force; rate of flux cutting is zero (v × B = 0), so induced EMF is instantaneous zero.",
+        hi: "θ = 0° पर चालक चुंबकीय रेखाओं के समानांतर गति करते हैं, अतः बल रेखाएं कटती नहीं हैं और ईएमएफ शून्य होता है।",
+        bn: "θ = ০° অবস্থানে পরিবাহীগুলো বলরেখার সমান্তরালে চলে, ফলে বলরেখা ছেদের হার শূন্য হওয়ায় তাৎক্ষণিক EMF শূন্য হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-07",
+      question: {
+        en: "The relationship between electrical angle θ_e and mechanical angle θ_m in a multipolar AC alternator having P poles is given by:",
+        hi: "P ध्रुवों वाले अल्टरनेटर में विद्युत कोण θ_e और यांत्रिक कोण θ_m के बीच संबंध क्या है?",
+        bn: "P সংখ্যক মেরু বিশিষ্ট একটি অল্টারনেটরে বৈদ্যুতিক কোণ θ_e এবং যান্ত্রিক কোণ θ_m এর সম্পর্ক কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "θ_e = (P / 2) · θ_m", hi: "θ_e = (P / 2) · θ_m", bn: "θ_e = (P / ২) · θ_m" } },
+        { id: "opt-2", text: { en: "θ_e = (2 / P) · θ_m", hi: "θ_e = (2 / P) · θ_m", bn: "θ_e = (২ / P) · θ_m" } },
+        { id: "opt-3", text: { en: "θ_e = P · θ_m", hi: "θ_e = P · θ_m", bn: "θ_e = P · θ_m" } },
+        { id: "opt-4", text: { en: "θ_e = θ_m / P", hi: "θ_e = θ_m / P", bn: "θ_e = θ_m / P" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "One pair of poles (2 poles) completes 360° electrical (one full cycle). Therefore, electrical angle is θ_e = (P / 2) · θ_m.",
+        hi: "एक जोड़ी ध्रुव (2 ध्रुव) एक पूर्ण 360° विद्युत चक्र बनाते हैं, अतः θ_e = (P / 2) · θ_m।",
+        bn: "প্রতি জোড়া মেরু (২টি মেরু) একটি পূর্ণ ৩৬০° বৈদ্যুতিক চক্র তৈরি করে, সুতরাং θ_e = (P / ২) · θ_m।"
+      }
+    },
+    {
+      id: "mcq-ch10-l11-08",
+      question: {
+        en: "A hydro-generator rotates at a low speed of 120 RPM. How many field poles must it have to generate electric power at standard 50 Hz?",
+        hi: "एक हाइड्रो-जनरेटर 120 RPM की धीमी गति से घूमता है। मानक 50 Hz पर बिजली बनाने के लिए इसमें कितने पोल होने चाहिए?",
+        bn: "একটি জলবিদ্যুৎ জেনারেটর ১২০ RPM ধীর গতিতে ঘুরছে। স্ট্যান্ডার্ড ৫০ Hz বিদ্যুৎ উৎপাদনের জন্য এতে কতটি ফিল্ড পোল থাকতে হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "50 poles", hi: "50 ध्रुव", bn: "৫০টি মেরু" } },
+        { id: "opt-2", text: { en: "24 poles", hi: "24 ध्रुव", bn: "২৪টি মেরু" } },
+        { id: "opt-3", text: { en: "12 poles", hi: "12 ध्रुव", bn: "১২টি মেরু" } },
+        { id: "opt-4", text: { en: "100 poles", hi: "100 ध्रुव", bn: "১০০টি মেরু" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "P = (120 · f) / N_s = (120 × 50) / 120 = 50 poles.",
+        hi: "सूत्र P = (120 · f) / N_s = (120 × 50) / 120 = 50 पोल।",
+        bn: "P = (১২০ · f) / N_s = (১২০ × ৫০) / ১২০ = ৫০টি মেরু।"
       }
     }
   ],

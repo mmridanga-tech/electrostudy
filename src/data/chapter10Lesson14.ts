@@ -359,43 +359,325 @@ R ব্যাসার্ধের চাকতি ω কৌণিক বেগ
   },
   mcqs: [
     {
-      id: 'q-homopolar-1',
+      id: "q-homopolar-1",
       question: {
-        en: 'A copper disc of radius 0.4 m rotates at 1,800 RPM in a uniform perpendicular magnetic field of 1.5 T. What is the induced radial EMF?',
-        hi: '0.4 m त्रिज्या की तांबे की डिस्क 1.5 T के समान चुंबकीय क्षेत्र में 1,800 RPM पर घूमती है। प्रेरित त्रिज्यीय ईएमएफ क्या होगा?',
-        bn: '০.৪ মিটার ব্যাসার্ধের একটি তামার চাকতি ১.৫ টেসলা সুষম চৌম্বক ক্ষেত্রে ১,৮০০ RPM গতিতে ঘুরলে আবিষ্ট রেডিয়াল ইएमএফ কত হবে?'
+        en: "A copper disc of radius 0.4 m rotates at 1,800 RPM in a uniform perpendicular magnetic field of 1.5 T. What is the induced radial EMF?",
+        hi: "0.4 m त्रिज्या की तांबे की डिस्क 1.5 T के समान चुंबकीय क्षेत्र में 1,800 RPM पर घूमती है। प्रेरित त्रिज्यीय ईएमएफ क्या होगा?",
+        bn: "০.৪ মিটার ব্যাসার্ধের একটি তামার চাকতি ১.৫ টেসলা সুষম চৌম্বক ক্ষেত্রে ১,৮০০ RPM গতিতে ঘুরলে আবিষ্ট রেডিয়াল ইएमএফ কত হবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: '11.3 V', hi: '11.3 V', bn: '১১.৩ V' } },
-        { id: 'opt-2', text: { en: '22.6 V', hi: '22.6 V', bn: '২২.৬ V' } },
-        { id: 'opt-3', text: { en: '45.2 V', hi: '45.2 V', bn: '৪৫.২ V' } },
-        { id: 'opt-4', text: { en: '113.1 V', hi: '113.1 V', bn: '১১৩.১ V' } }
+        { id: "opt-1", text: { en: "11.3 V", hi: "11.3 V", bn: "১১.৩ V" } },
+        { id: "opt-2", text: { en: "22.6 V", hi: "22.6 V", bn: "২২.৬ V" } },
+        { id: "opt-3", text: { en: "45.2 V", hi: "45.2 V", bn: "৪৫.২ V" } },
+        { id: "opt-4", text: { en: "113.1 V", hi: "113.1 V", bn: "১১৩.১ V" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'ω = 2π × (1800 / 60) = 60π ≈ 188.5 rad/s. E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × (0.4)² = 0.75 × 188.5 × 0.16 = 22.62 V.',
-        hi: 'ω = 60π ≈ 188.5 rad/s। E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × 0.16 ≈ 22.6 V।',
-        bn: 'ω = ১৮৮.৫ rad/s। E = ½ · B · ω · R² = ০.৫ × ১.৫ × ১৮৮.৫ × ০.১৬ ≈ ২২.৬ ভোল্ট।'
+        en: "ω = 2π × (1800 / 60) = 60π ≈ 188.5 rad/s. E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × (0.4)² = 0.75 × 188.5 × 0.16 = 22.62 V.",
+        hi: "ω = 60π ≈ 188.5 rad/s। E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × 0.16 ≈ 22.6 V।",
+        bn: "ω = ১৮৮.৫ rad/s। E = ½ · B · ω · R² = ০.৫ × ১.৫ × ১৮৮.৫ × ০.১৬ ≈ ২২.৬ ভোল্ট।"
       }
     },
     {
-      id: 'q-homopolar-2',
+      id: "q-homopolar-2",
       question: {
-        en: 'Which unique feature distinguishes a homopolar generator from conventional DC generators?',
-        hi: 'कौन सी अनूठी विशेषता होमोपोलर जनरेटर को पारंपरिक डीसी जनरेटर से अलग करती है?',
-        bn: 'কোন বিশেষ বৈশিষ্ট্যটি হোমোপোলার জেনারেটরকে প্রচলিত ডিসি জেনারেটর থেকে সম্পূর্ণ পৃথক করে?'
+        en: "Which unique feature distinguishes a homopolar generator from conventional DC generators?",
+        hi: "कौन सी अनूठी विशेषता होमोपोलर जनरेटर को पारंपरिक डीसी जनरेटर से अलग करती है?",
+        bn: "কোন বিশেষ বৈশিষ্ট্যটি হোমোপোলার জেনারেটরকে প্রচলিত ডিসি জেনারেটর থেকে সম্পূর্ণ পৃথক করে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'It produces natural, ripple-free DC without any commutator or semiconductor diodes', hi: 'यह बिना किसी कम्यूटेटर या डायोड के स्वाभाविक रिपल-रहित डीसी बनाता है', bn: 'এটি কোনো প্রকার কমিউটেটর বা ডায়োড ছাড়াই প্রাকৃতিকভাবে রিপলহীন ডিসি তৈরি করে' } },
-        { id: 'opt-2', text: { en: 'It generates thousands of volts from a single turn', hi: 'यह एक ही फेरे से हजारों वोल्ट पैदा करता है', bn: 'এটি একক পাকে হাজার হাজার ভোল্ট তৈরি করে' } },
-        { id: 'opt-3', text: { en: 'It requires zero mechanical input torque', hi: 'इसे शून्य यांत्रिक टॉर्क की आवश्यकता होती है', bn: 'এতে কোনো যান্ত্রিক ইনপুট টর্কের প্রয়োজন হয় না' } },
-        { id: 'opt-4', text: { en: 'It operates only in cryogenic liquid helium', hi: 'यह केवल क्रायोजेनिक तरल हीलियम में कार्य करता है', bn: 'এটি কেবল তরল হিলিয়ামে কাজ করে' } }
+        { id: "opt-1", text: { en: "It produces natural, ripple-free DC without any commutator or semiconductor diodes", hi: "यह बिना किसी कम्यूटेटर या डायोड के स्वाभाविक रिपल-रहित डीसी बनाता है", bn: "এটি কোনো প্রকার কমিউটেটর বা ডায়োড ছাড়াই প্রাকৃতিকভাবে রিপলহীন ডিসি তৈরি করে" } },
+        { id: "opt-2", text: { en: "It generates thousands of volts from a single turn", hi: "यह एक ही फेरे से हजारों वोल्ट पैदा करता है", bn: "এটি একক পাকে হাজার হাজার ভোল্ট তৈরি করে" } },
+        { id: "opt-3", text: { en: "It requires zero mechanical input torque", hi: "इसे शून्य यांत्रिक टॉर्क की आवश्यकता होती है", bn: "এতে কোনো যান্ত্রিক ইনপুট টর্কের প্রয়োজন হয় না" } },
+        { id: "opt-4", text: { en: "It operates only in cryogenic liquid helium", hi: "यह केवल क्रायोजेनिक तरल हीलियम में कार्य करता है", bn: "এটি কেবল তরল হিলিয়ামে কাজ করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Because the conductors cut a unidirectional magnetic field continuously in the same orientation, it produces pure DC directly from rotation without needing commutators.',
-        hi: 'चालक लगातार एक ही दिशा में चुंबकीय क्षेत्र को काटते हैं, इसलिए यह बिना कम्यूटेटर के सीधे शुद्ध डीसी उत्पन्न करता है।',
-        bn: 'কন্ডাক্টরগুলো অবিচ্ছিন্নভাবে একই দিকবিন্যাসে চৌম্বক বলরেখা ছেদ করায় কমিউটেটর ছাড়াই সরাসরি বিশুদ্ধ ডিসি উৎপন্ন হয়।'
+        en: "Because the conductors cut a unidirectional magnetic field continuously in the same orientation, it produces pure DC directly from rotation without needing commutators.",
+        hi: "चालक लगातार एक ही दिशा में चुंबकीय क्षेत्र को काटते हैं, इसलिए यह बिना कम्यूटेटर के सीधे शुद्ध डीसी उत्पन्न करता है।",
+        bn: "কন্ডাক্টরগুলো অবিচ্ছিন্নভাবে একই দিকবিন্যাসে চৌম্বক বলরেখা ছেদ করায় কমিউটেটর ছাড়াই সরাসরি বিশুদ্ধ ডিসি উৎপন্ন হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-03",
+      question: {
+        en: "A Faraday disc generator of radius R rotates at angular velocity ω in a uniform magnetic field B parallel to its rotation axis. What is the induced radial EMF between the center axle and outer rim?",
+        hi: "घूर्णन अक्ष के समानांतर चुंबकीय क्षेत्र B में ω कोणीय वेग से घूमने वाली R त्रिज्या की फैराडे डिस्क के केंद्र और बाहरी किनारे के बीच कितना EMF प्रेरित होता है?",
+        bn: "ঘূর্ণন অক্ষের সমান্তরাল সুষম চৌম্বক ক্ষেত্র B তে ω কৌণিক বেগে ঘূর্ণায়মান R ব্যাসার্ধের ফ্যারাডে ডিস্কের কেন্দ্র ও পরিধির মধ্যে আবিষ্ট রেডিয়াল EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "E = ½ · B · ω · R²", hi: "E = ½ · B · ω · R²", bn: "E = ½ · B · ω · R²" } },
+        { id: "opt-2", text: { en: "E = B · ω · R", hi: "E = B · ω · R", bn: "E = B · ω · R" } },
+        { id: "opt-3", text: { en: "E = 2 · B · ω · R²", hi: "E = 2 · B · ω · R²", bn: "E = ২ · B · ω · R²" } },
+        { id: "opt-4", text: { en: "E = π · B · ω · R²", hi: "E = π · B · ω · R²", bn: "E = π · B · ω · R²" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating motional EMF along the radius: E = ∫₀ᴿ (v × B) dr = ∫₀ᴿ (ω r B) dr = ½ B ω R².",
+        hi: "त्रिज्या के अनुदिश समाकलन करने पर: E = ∫₀ᴿ ω r B dr = ½ B ω R²।",
+        bn: "ব্যাসার্ধ বরাবর সমাকলন করে পাওয়া যায়: E = ∫₀ᴿ ω r B dr = ½ B ω R²।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-04",
+      question: {
+        en: "Why is a homopolar generator often called an \"acyclic generator\"?",
+        hi: "होमोपोलर जनरेटर को अक्सर \"एसाइक्लिक जनरेटर\" (अचक्रीय जनरेटर) क्यों कहा जाता है?",
+        bn: "হোমোপোলার জেনারেটরকে প্রায়শই \"অ্যাসাইক্লিক জেনারেটর\" বলা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because it generates pure continuous DC directly without any cyclic AC variations or periodic wave reversals", hi: "क्योंकि यह बिना किसी चक्रीय प्रत्यावर्ती बदलाव या तरंग के सीधे शुद्ध निरंतर डीसी बनाता है", bn: "কারণ এটি কোনো পর্যায়বৃত্ত এসি তরঙ্গের পরিবর্তন বা দিকবদল ছাড়াই সরাসরি বিশুদ্ধ নিরবচ্ছিন্ন ডিসি তৈরি করে" } },
+        { id: "opt-2", text: { en: "Because it cannot be driven by bicycle pedals", hi: "क्योंकि इसे साइकिल के पैडल से नहीं चलाया जा सकता", bn: "কারণ এটি সাইকেলের প্যাডেল দিয়ে চালানো যায় না" } },
+        { id: "opt-3", text: { en: "Because it has no circular parts", hi: "क्योंकि इसमें कोई गोल भाग नहीं होता", bn: "কারণ এতে কোনো বৃত্তাকার অংশ থাকে না" } },
+        { id: "opt-4", text: { en: "Because it operates only once in a lifetime", hi: "क्योंकि यह जीवन में केवल एक बार चलता है", bn: "কারণ এটি জীবনে কেবল একবার কাজ করতে পারে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Unlike heteropolar machines that alternate between North and South poles generating cyclic AC, homopolar machines cut flux of single polarity constantly, yielding true acyclic (non-cyclic) DC.",
+        hi: "पारंपरिक मशीनों में उत्तर-दक्षिण ध्रुव बदलने से एसी बनता है, जबकि इसमें सदैव एक ही ध्रुवता का फ्लक्स कटने से बिना किसी चक्र के सीधी डीसी मिलती है।",
+        bn: "গতানুগতিক মেশিনের মতো উত্তর-দক্ষিণ মেরুর পরিবর্তন না হয়ে এতে সর্বদা একই মেরুর ফ্লাক্স কাটা পড়ে, ফলে কোনো সাইকেল ছাড়া বিশুদ্ধ ডিসি পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-05",
+      question: {
+        en: "What typical electrical characteristics define the output of industrial homopolar generators?",
+        hi: "औद्योगिक होमोपोलर जनरेटर के आउटपुट की विशिष्ट विद्युत विशेषताएं क्या हैं?",
+        bn: "শিল্পে ব্যবহৃত হোমোপোলার জেনারেটরের আউটপুটের বৈশিষ্ট্য কেমন হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Very low voltage (a few volts) combined with astronomical direct currents (tens of thousands of amperes)", hi: "बहुत कम वोल्टेज (कुछ वोल्ट) के साथ अत्यधिक विशाल धारा (हजारों एम्पियर)", bn: "খুব কম ভোল্টেজ (কয়েক ভোল্ট) কিন্তু অবিশ্বাস্য উচ্চমাত্রার ডিসি কারেন্ট (হাজার হাজার অ্যাম্পিয়ার)" } },
+        { id: "opt-2", text: { en: "Megavolt voltage with microampere currents", hi: "मेगावोल्ट वोल्टेज और माइक्रोएम्पियर धारा", bn: "মেগাভোল্ট উচ্চ ভোল্টেজ ও মাইক্রোঅ্যাম্পিয়ার স্বল্প কারেন্ট" } },
+        { id: "opt-3", text: { en: "High-frequency AC at 400 Hz", hi: "400 Hz पर उच्च-आवृत्ति एसी", bn: "৪০০ Hz কম্পাঙ্কের উচ্চমাত্রার এসি" } },
+        { id: "opt-4", text: { en: "Three-phase balanced power", hi: "तीन-फेज संतुलित बिजली", bn: "থ্রি-ফেজ ভারসাম্যপূর্ণ বিদ্যুৎ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Because a single disc acts as a single turn (low EMF, typically 1 to 50 V) with negligible internal solid copper resistance, it can deliver immense continuous currents (50,000 to 250,000 A) for electroplating and railguns.",
+        hi: "एकल डिस्क केवल एक फेरे की तरह कार्य करती है (कम वोल्टेज), परंतु इसका आंतरिक प्रतिरोध नगण्य होने से यह लाखों एम्पियर धारा दे सकती है।",
+        bn: "একটি ডিস্ক মাত্র একটি পাক হিসেবে কাজ করায় ভোল্টেজ কম থাকে, তবে অভ্যন্তরীণ রোধ নগণ্য হওয়ায় এটি ৫০,০০০ থেকে ২,৫০,০০০ অ্যাম্পিয়ার পর্যন্ত তীব্র কারেন্ট দিতে পারে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-06",
+      question: {
+        en: "What technological challenge historically limited the efficiency of high-current homopolar generators?",
+        hi: "ऐतिहासिक रूप से उच्च-धारा होमोपोलर जनरेटर की दक्षता को किस तकनीकी चुनौती ने सीमित किया?",
+        bn: "ঐতিহাসিকভাবে উচ্চ-কারেন্টের হোমোপোলার জেনারেটরের কর্মদক্ষতাকে কোন প্রযুক্তিগত বাধা সীমিত করেছিল?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "High contact resistance, friction wear, and voltage drop across sliding brushes carrying massive currents on the outer disc rim", hi: "डिस्क के बाहरी किनारे पर भारी धारा ले जाने वाले घिसने वाले ब्रशों में उच्च संपर्क प्रतिरोध और घर्षण", bn: "ডিস্কের বাইরের প্রান্তে বিপুল কারেন্ট পরিচালনাকারী স্লাইডিং ব্রাশের উচ্চ রোধ, ঘর্ষণ ক্ষয় এবং ভোল্টেজ ড্রপ" } },
+        { id: "opt-2", text: { en: "Lamination delamination inside the copper disc", hi: "तांबे की डिस्क के अंदर लैमिनेशन का उखड़ना", bn: "তামার ডিস্কের ভেতরের ল্যামিনেশন খুলে যাওয়া" } },
+        { id: "opt-3", text: { en: "Inability of permanent magnets to attract iron", hi: "स्थायी चुंबकों का लोहे को न खींच पाना", bn: "স্থায়ী চুম্বক লোহার আকর্ষণ ক্ষমতা হারানো" } },
+        { id: "opt-4", text: { en: "Dielectric breakdown of the air gap at 5 volts", hi: "5 वोल्ट पर हवा का ब्रेकडाउन होना", bn: "৫ ভোল্টেই বাতাসের ডাইইলেক্ট্রিক ব্রেকডাউন হওয়া" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extracting 100,000 A across sliding solid carbon brushes incurs enormous I²R contact losses and severe brush wear. Modern high-power units resolved this using liquid metal sliding contacts (such as liquid sodium-potassium NaK or liquid gallium).",
+        hi: "घूमते किनारे पर भारी धारा निकालने के लिए पारंपरिक ब्रश घिस जाते हैं और भारी वोल्टेज ड्रॉप होता है; आधुनिक मशीनों में इसके लिए तरल धातु संपर्क का उपयोग किया जाता है।",
+        bn: "ঘূর্ণনশীল প্রান্ত থেকে হাজার হাজার অ্যাম্পিয়ার কারেন্ট তুলতে সাধারণ ব্রাশ দ্রুত ক্ষয় হয় ও প্রচুর শক্তি অপচয় করে; আধুনিক ব্যবস্থায় তরল ধাতু কন্টাক্ট ব্যবহৃত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-07",
+      question: {
+        en: "In Faraday’s paradox, if a cylindrical permanent magnet and a coaxial conductive copper disc are mechanically locked together and rotated simultaneously about their common axis, what happens?",
+        hi: "फैराडे के विरोधाभास में, यदि एक बेलनाकार चुंबक और तांबे की डिस्क को आपस में जोड़कर एक साथ घुमाया जाए, तो क्या होता है?",
+        bn: "ফ্যারাডের প্যারাডক্সে, যদি একটি সিলিন্ড্রিক্যাল স্থায়ী চুম্বক এবং তামার ডিস্ককে একত্রে আটকে একই অক্ষের চারদিকে একসাথে ঘোরানো হয়, তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A motional EMF is still induced across the disc radii, measurable by stationary brushes connected to an external meter", hi: "डिस्क के किनारों पर अभी भी गतिज EMF प्रेरित होता है, जिसे स्थिर ब्रशों द्वारा मापा जा सकता है", bn: "ডিস্কের ব্যাসার্ধ জুড়ে এখনও গতিজ EMF আবিষ্ট হয়, যা স্থির ব্রাশের সাহায্যে বহিস্থ মিটারে মাপা যায়" } },
+        { id: "opt-2", text: { en: "Zero EMF is induced because there is no relative motion between disc and magnet", hi: "शून्य EMF प्रेरित होता है क्योंकि डिस्क और चुंबक के बीच कोई सापेक्ष गति नहीं है", bn: "কোনো EMF উৎপন্ন হয় না কারণ ডিস্ক ও চুম্বকের মধ্যে কোনো আপেক্ষিক গতি নেই" } },
+        { id: "opt-3", text: { en: "The magnet loses its magnetic field permanently", hi: "चुंबक का चुंबकत्व हमेशा के लिए समाप्त हो जाता है", bn: "চুম্বক তার চুম্বকত্ব চিরতরে হারিয়ে ফেলে" } },
+        { id: "opt-4", text: { en: "The disc explodes due to electrostatic pressure", hi: "स्थिरवैद्युत दाब से डिस्क फट जाती है", bn: "স্থিরবৈদ্যুতিক চাপে ডিস্কটি বিস্ফোরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In relativistic electrodynamics, the magnetic field lines do not rotate with the magnet. The rotating disc conductors move across the stationary spatial field, developing radial Lorentz force and EMF.",
+        hi: "सापेक्षिकता के अनुसार चुंबकीय क्षेत्र चुंबक के साथ नहीं घूमता; अतः घूमता हुआ चालक क्षेत्र को काटता है और EMF उत्पन्न होता है।",
+        bn: "তত্ত্বানুযায়ী চৌম্বক ক্ষেত্র চুম্বকের সাথে ঘোরে না; ফলে ঘূর্ণায়মান পরিবাহী স্থির ক্ষেত্রকে ছেদ করে পূর্ণ EMF তৈরি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-08",
+      question: {
+        en: "A copper disc of diameter 0.6 m spins at 3,000 RPM in a uniform axial field of 2.0 T. What is the open-circuit voltage generated between the central shaft and the edge?",
+        hi: "0.6 m व्यास की एक तांबे की डिस्क 2.0 T के अक्षीय चुंबकीय क्षेत्र में 3,000 RPM पर घूमती है। केंद्र और किनारे के बीच उत्पन्न वोल्टेज क्या है?",
+        bn: "০.৬ মিটার ব্যাসের একটি তামার ডিস্ক ২.০ টেসলা চৌম্বক ক্ষেত্রে ৩,০০০ RPM গতিতে ঘুরছে। কেন্দ্র ও পরিধির মধ্যে উৎপন্ন ভোল্টেজ কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "28.27 V", hi: "28.27 V", bn: "২৮.২৭ V" } },
+        { id: "opt-2", text: { en: "56.55 V", hi: "56.55 V", bn: "৫৬.৫৫ V" } },
+        { id: "opt-3", text: { en: "14.14 V", hi: "14.14 V", bn: "১৪.১৪ V" } },
+        { id: "opt-4", text: { en: "113.1 V", hi: "113.1 V", bn: "১১৩.১ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Radius R = 0.6 / 2 = 0.3 m. Angular speed ω = 2π × (3000 / 60) = 100π ≈ 314.16 rad/s. E = ½ · B · ω · R² = 0.5 × 2.0 × (100π) × (0.3)² = 100π × 0.09 = 9π ≈ 28.27 V.",
+        hi: "R = 0.3 m, ω = 100π rad/s। E = ½ · B · ω · R² = 0.5 × 2 × 314.16 × 0.09 = 28.27 V।",
+        bn: "R = ০.৩ মি, ω = ১০০π rad/s। E = ½ · B · ω · R² = ০.৫ × ২ × ৩১৪.১৬ × ০.০৯ = ২৮.২৭ V।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-homopolar-1",
+      question: {
+        en: "A copper disc of radius 0.4 m rotates at 1,800 RPM in a uniform perpendicular magnetic field of 1.5 T. What is the induced radial EMF?",
+        hi: "0.4 m त्रिज्या की तांबे की डिस्क 1.5 T के समान चुंबकीय क्षेत्र में 1,800 RPM पर घूमती है। प्रेरित त्रिज्यीय ईएमएफ क्या होगा?",
+        bn: "০.৪ মিটার ব্যাসার্ধের একটি তামার চাকতি ১.৫ টেসলা সুষম চৌম্বক ক্ষেত্রে ১,৮০০ RPM গতিতে ঘুরলে আবিষ্ট রেডিয়াল ইएमএফ কত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "11.3 V", hi: "11.3 V", bn: "১১.৩ V" } },
+        { id: "opt-2", text: { en: "22.6 V", hi: "22.6 V", bn: "২২.৬ V" } },
+        { id: "opt-3", text: { en: "45.2 V", hi: "45.2 V", bn: "৪৫.২ V" } },
+        { id: "opt-4", text: { en: "113.1 V", hi: "113.1 V", bn: "১১৩.১ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "ω = 2π × (1800 / 60) = 60π ≈ 188.5 rad/s. E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × (0.4)² = 0.75 × 188.5 × 0.16 = 22.62 V.",
+        hi: "ω = 60π ≈ 188.5 rad/s। E = ½ · B · ω · R² = 0.5 × 1.5 × 188.5 × 0.16 ≈ 22.6 V।",
+        bn: "ω = ১৮৮.৫ rad/s। E = ½ · B · ω · R² = ০.৫ × ১.৫ × ১৮৮.৫ × ০.১৬ ≈ ২২.৬ ভোল্ট।"
+      }
+    },
+    {
+      id: "q-homopolar-2",
+      question: {
+        en: "Which unique feature distinguishes a homopolar generator from conventional DC generators?",
+        hi: "कौन सी अनूठी विशेषता होमोपोलर जनरेटर को पारंपरिक डीसी जनरेटर से अलग करती है?",
+        bn: "কোন বিশেষ বৈশিষ্ট্যটি হোমোপোলার জেনারেটরকে প্রচলিত ডিসি জেনারেটর থেকে সম্পূর্ণ পৃথক করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It produces natural, ripple-free DC without any commutator or semiconductor diodes", hi: "यह बिना किसी कम्यूटेटर या डायोड के स्वाभाविक रिपल-रहित डीसी बनाता है", bn: "এটি কোনো প্রকার কমিউটেটর বা ডায়োড ছাড়াই প্রাকৃতিকভাবে রিপলহীন ডিসি তৈরি করে" } },
+        { id: "opt-2", text: { en: "It generates thousands of volts from a single turn", hi: "यह एक ही फेरे से हजारों वोल्ट पैदा करता है", bn: "এটি একক পাকে হাজার হাজার ভোল্ট তৈরি করে" } },
+        { id: "opt-3", text: { en: "It requires zero mechanical input torque", hi: "इसे शून्य यांत्रिक टॉर्क की आवश्यकता होती है", bn: "এতে কোনো যান্ত্রিক ইনপুট টর্কের প্রয়োজন হয় না" } },
+        { id: "opt-4", text: { en: "It operates only in cryogenic liquid helium", hi: "यह केवल क्रायोजेनिक तरल हीलियम में कार्य करता है", bn: "এটি কেবল তরল হিলিয়ামে কাজ করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Because the conductors cut a unidirectional magnetic field continuously in the same orientation, it produces pure DC directly from rotation without needing commutators.",
+        hi: "चालक लगातार एक ही दिशा में चुंबकीय क्षेत्र को काटते हैं, इसलिए यह बिना कम्यूटेटर के सीधे शुद्ध डीसी उत्पन्न करता है।",
+        bn: "কন্ডাক্টরগুলো অবিচ্ছিন্নভাবে একই দিকবিন্যাসে চৌম্বক বলরেখা ছেদ করায় কমিউটেটর ছাড়াই সরাসরি বিশুদ্ধ ডিসি উৎপন্ন হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-03",
+      question: {
+        en: "A Faraday disc generator of radius R rotates at angular velocity ω in a uniform magnetic field B parallel to its rotation axis. What is the induced radial EMF between the center axle and outer rim?",
+        hi: "घूर्णन अक्ष के समानांतर चुंबकीय क्षेत्र B में ω कोणीय वेग से घूमने वाली R त्रिज्या की फैराडे डिस्क के केंद्र और बाहरी किनारे के बीच कितना EMF प्रेरित होता है?",
+        bn: "ঘূর্ণন অক্ষের সমান্তরাল সুষম চৌম্বক ক্ষেত্র B তে ω কৌণিক বেগে ঘূর্ণায়মান R ব্যাসার্ধের ফ্যারাডে ডিস্কের কেন্দ্র ও পরিধির মধ্যে আবিষ্ট রেডিয়াল EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "E = ½ · B · ω · R²", hi: "E = ½ · B · ω · R²", bn: "E = ½ · B · ω · R²" } },
+        { id: "opt-2", text: { en: "E = B · ω · R", hi: "E = B · ω · R", bn: "E = B · ω · R" } },
+        { id: "opt-3", text: { en: "E = 2 · B · ω · R²", hi: "E = 2 · B · ω · R²", bn: "E = ২ · B · ω · R²" } },
+        { id: "opt-4", text: { en: "E = π · B · ω · R²", hi: "E = π · B · ω · R²", bn: "E = π · B · ω · R²" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating motional EMF along the radius: E = ∫₀ᴿ (v × B) dr = ∫₀ᴿ (ω r B) dr = ½ B ω R².",
+        hi: "त्रिज्या के अनुदिश समाकलन करने पर: E = ∫₀ᴿ ω r B dr = ½ B ω R²।",
+        bn: "ব্যাসার্ধ বরাবর সমাকলন করে পাওয়া যায়: E = ∫₀ᴿ ω r B dr = ½ B ω R²।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-04",
+      question: {
+        en: "Why is a homopolar generator often called an \"acyclic generator\"?",
+        hi: "होमोपोलर जनरेटर को अक्सर \"एसाइक्लिक जनरेटर\" (अचक्रीय जनरेटर) क्यों कहा जाता है?",
+        bn: "হোমোপোলার জেনারেটরকে প্রায়শই \"অ্যাসাইক্লিক জেনারেটর\" বলা হয় কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because it generates pure continuous DC directly without any cyclic AC variations or periodic wave reversals", hi: "क्योंकि यह बिना किसी चक्रीय प्रत्यावर्ती बदलाव या तरंग के सीधे शुद्ध निरंतर डीसी बनाता है", bn: "কারণ এটি কোনো পর্যায়বৃত্ত এসি তরঙ্গের পরিবর্তন বা দিকবদল ছাড়াই সরাসরি বিশুদ্ধ নিরবচ্ছিন্ন ডিসি তৈরি করে" } },
+        { id: "opt-2", text: { en: "Because it cannot be driven by bicycle pedals", hi: "क्योंकि इसे साइकिल के पैडल से नहीं चलाया जा सकता", bn: "কারণ এটি সাইকেলের প্যাডেল দিয়ে চালানো যায় না" } },
+        { id: "opt-3", text: { en: "Because it has no circular parts", hi: "क्योंकि इसमें कोई गोल भाग नहीं होता", bn: "কারণ এতে কোনো বৃত্তাকার অংশ থাকে না" } },
+        { id: "opt-4", text: { en: "Because it operates only once in a lifetime", hi: "क्योंकि यह जीवन में केवल एक बार चलता है", bn: "কারণ এটি জীবনে কেবল একবার কাজ করতে পারে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Unlike heteropolar machines that alternate between North and South poles generating cyclic AC, homopolar machines cut flux of single polarity constantly, yielding true acyclic (non-cyclic) DC.",
+        hi: "पारंपरिक मशीनों में उत्तर-दक्षिण ध्रुव बदलने से एसी बनता है, जबकि इसमें सदैव एक ही ध्रुवता का फ्लक्स कटने से बिना किसी चक्र के सीधी डीसी मिलती है।",
+        bn: "গতানুগতিক মেশিনের মতো উত্তর-দক্ষিণ মেরুর পরিবর্তন না হয়ে এতে সর্বদা একই মেরুর ফ্লাক্স কাটা পড়ে, ফলে কোনো সাইকেল ছাড়া বিশুদ্ধ ডিসি পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-05",
+      question: {
+        en: "What typical electrical characteristics define the output of industrial homopolar generators?",
+        hi: "औद्योगिक होमोपोलर जनरेटर के आउटपुट की विशिष्ट विद्युत विशेषताएं क्या हैं?",
+        bn: "শিল্পে ব্যবহৃত হোমোপোলার জেনারেটরের আউটপুটের বৈশিষ্ট্য কেমন হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Very low voltage (a few volts) combined with astronomical direct currents (tens of thousands of amperes)", hi: "बहुत कम वोल्टेज (कुछ वोल्ट) के साथ अत्यधिक विशाल धारा (हजारों एम्पियर)", bn: "খুব কম ভোল্টেজ (কয়েক ভোল্ট) কিন্তু অবিশ্বাস্য উচ্চমাত্রার ডিসি কারেন্ট (হাজার হাজার অ্যাম্পিয়ার)" } },
+        { id: "opt-2", text: { en: "Megavolt voltage with microampere currents", hi: "मेगावोल्ट वोल्टेज और माइक्रोएम्पियर धारा", bn: "মেগাভোল্ট উচ্চ ভোল্টেজ ও মাইক্রোঅ্যাম্পিয়ার স্বল্প কারেন্ট" } },
+        { id: "opt-3", text: { en: "High-frequency AC at 400 Hz", hi: "400 Hz पर उच्च-आवृत्ति एसी", bn: "৪০০ Hz কম্পাঙ্কের উচ্চমাত্রার এসি" } },
+        { id: "opt-4", text: { en: "Three-phase balanced power", hi: "तीन-फेज संतुलित बिजली", bn: "থ্রি-ফেজ ভারসাম্যপূর্ণ বিদ্যুৎ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Because a single disc acts as a single turn (low EMF, typically 1 to 50 V) with negligible internal solid copper resistance, it can deliver immense continuous currents (50,000 to 250,000 A) for electroplating and railguns.",
+        hi: "एकल डिस्क केवल एक फेरे की तरह कार्य करती है (कम वोल्टेज), परंतु इसका आंतरिक प्रतिरोध नगण्य होने से यह लाखों एम्पियर धारा दे सकती है।",
+        bn: "একটি ডিস্ক মাত্র একটি পাক হিসেবে কাজ করায় ভোল্টেজ কম থাকে, তবে অভ্যন্তরীণ রোধ নগণ্য হওয়ায় এটি ৫০,০০০ থেকে ২,৫০,০০০ অ্যাম্পিয়ার পর্যন্ত তীব্র কারেন্ট দিতে পারে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-06",
+      question: {
+        en: "What technological challenge historically limited the efficiency of high-current homopolar generators?",
+        hi: "ऐतिहासिक रूप से उच्च-धारा होमोपोलर जनरेटर की दक्षता को किस तकनीकी चुनौती ने सीमित किया?",
+        bn: "ঐতিহাসিকভাবে উচ্চ-কারেন্টের হোমোপোলার জেনারেটরের কর্মদক্ষতাকে কোন প্রযুক্তিগত বাধা সীমিত করেছিল?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "High contact resistance, friction wear, and voltage drop across sliding brushes carrying massive currents on the outer disc rim", hi: "डिस्क के बाहरी किनारे पर भारी धारा ले जाने वाले घिसने वाले ब्रशों में उच्च संपर्क प्रतिरोध और घर्षण", bn: "ডিস্কের বাইরের প্রান্তে বিপুল কারেন্ট পরিচালনাকারী স্লাইডিং ব্রাশের উচ্চ রোধ, ঘর্ষণ ক্ষয় এবং ভোল্টেজ ড্রপ" } },
+        { id: "opt-2", text: { en: "Lamination delamination inside the copper disc", hi: "तांबे की डिस्क के अंदर लैमिनेशन का उखड़ना", bn: "তামার ডিস্কের ভেতরের ল্যামিনেশন খুলে যাওয়া" } },
+        { id: "opt-3", text: { en: "Inability of permanent magnets to attract iron", hi: "स्थायी चुंबकों का लोहे को न खींच पाना", bn: "স্থায়ী চুম্বক লোহার আকর্ষণ ক্ষমতা হারানো" } },
+        { id: "opt-4", text: { en: "Dielectric breakdown of the air gap at 5 volts", hi: "5 वोल्ट पर हवा का ब्रेकडाउन होना", bn: "৫ ভোল্টেই বাতাসের ডাইইলেক্ট্রিক ব্রেকডাউন হওয়া" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extracting 100,000 A across sliding solid carbon brushes incurs enormous I²R contact losses and severe brush wear. Modern high-power units resolved this using liquid metal sliding contacts (such as liquid sodium-potassium NaK or liquid gallium).",
+        hi: "घूमते किनारे पर भारी धारा निकालने के लिए पारंपरिक ब्रश घिस जाते हैं और भारी वोल्टेज ड्रॉप होता है; आधुनिक मशीनों में इसके लिए तरल धातु संपर्क का उपयोग किया जाता है।",
+        bn: "ঘূর্ণনশীল প্রান্ত থেকে হাজার হাজার অ্যাম্পিয়ার কারেন্ট তুলতে সাধারণ ব্রাশ দ্রুত ক্ষয় হয় ও প্রচুর শক্তি অপচয় করে; আধুনিক ব্যবস্থায় তরল ধাতু কন্টাক্ট ব্যবহৃত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-07",
+      question: {
+        en: "In Faraday’s paradox, if a cylindrical permanent magnet and a coaxial conductive copper disc are mechanically locked together and rotated simultaneously about their common axis, what happens?",
+        hi: "फैराडे के विरोधाभास में, यदि एक बेलनाकार चुंबक और तांबे की डिस्क को आपस में जोड़कर एक साथ घुमाया जाए, तो क्या होता है?",
+        bn: "ফ্যারাডের প্যারাডক্সে, যদি একটি সিলিন্ড্রিক্যাল স্থায়ী চুম্বক এবং তামার ডিস্ককে একত্রে আটকে একই অক্ষের চারদিকে একসাথে ঘোরানো হয়, তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A motional EMF is still induced across the disc radii, measurable by stationary brushes connected to an external meter", hi: "डिस्क के किनारों पर अभी भी गतिज EMF प्रेरित होता है, जिसे स्थिर ब्रशों द्वारा मापा जा सकता है", bn: "ডিস্কের ব্যাসার্ধ জুড়ে এখনও গতিজ EMF আবিষ্ট হয়, যা স্থির ব্রাশের সাহায্যে বহিস্থ মিটারে মাপা যায়" } },
+        { id: "opt-2", text: { en: "Zero EMF is induced because there is no relative motion between disc and magnet", hi: "शून्य EMF प्रेरित होता है क्योंकि डिस्क और चुंबक के बीच कोई सापेक्ष गति नहीं है", bn: "কোনো EMF উৎপন্ন হয় না কারণ ডিস্ক ও চুম্বকের মধ্যে কোনো আপেক্ষিক গতি নেই" } },
+        { id: "opt-3", text: { en: "The magnet loses its magnetic field permanently", hi: "चुंबक का चुंबकत्व हमेशा के लिए समाप्त हो जाता है", bn: "চুম্বক তার চুম্বকত্ব চিরতরে হারিয়ে ফেলে" } },
+        { id: "opt-4", text: { en: "The disc explodes due to electrostatic pressure", hi: "स्थिरवैद्युत दाब से डिस्क फट जाती है", bn: "স্থিরবৈদ্যুতিক চাপে ডিস্কটি বিস্ফোরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In relativistic electrodynamics, the magnetic field lines do not rotate with the magnet. The rotating disc conductors move across the stationary spatial field, developing radial Lorentz force and EMF.",
+        hi: "सापेक्षिकता के अनुसार चुंबकीय क्षेत्र चुंबक के साथ नहीं घूमता; अतः घूमता हुआ चालक क्षेत्र को काटता है और EMF उत्पन्न होता है।",
+        bn: "তত্ত্বানুযায়ী চৌম্বক ক্ষেত্র চুম্বকের সাথে ঘোরে না; ফলে ঘূর্ণায়মান পরিবাহী স্থির ক্ষেত্রকে ছেদ করে পূর্ণ EMF তৈরি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l14-08",
+      question: {
+        en: "A copper disc of diameter 0.6 m spins at 3,000 RPM in a uniform axial field of 2.0 T. What is the open-circuit voltage generated between the central shaft and the edge?",
+        hi: "0.6 m व्यास की एक तांबे की डिस्क 2.0 T के अक्षीय चुंबकीय क्षेत्र में 3,000 RPM पर घूमती है। केंद्र और किनारे के बीच उत्पन्न वोल्टेज क्या है?",
+        bn: "০.৬ মিটার ব্যাসের একটি তামার ডিস্ক ২.০ টেসলা চৌম্বক ক্ষেত্রে ৩,০০০ RPM গতিতে ঘুরছে। কেন্দ্র ও পরিধির মধ্যে উৎপন্ন ভোল্টেজ কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "28.27 V", hi: "28.27 V", bn: "২৮.২৭ V" } },
+        { id: "opt-2", text: { en: "56.55 V", hi: "56.55 V", bn: "৫৬.৫৫ V" } },
+        { id: "opt-3", text: { en: "14.14 V", hi: "14.14 V", bn: "১৪.১৪ V" } },
+        { id: "opt-4", text: { en: "113.1 V", hi: "113.1 V", bn: "১১৩.১ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Radius R = 0.6 / 2 = 0.3 m. Angular speed ω = 2π × (3000 / 60) = 100π ≈ 314.16 rad/s. E = ½ · B · ω · R² = 0.5 × 2.0 × (100π) × (0.3)² = 100π × 0.09 = 9π ≈ 28.27 V.",
+        hi: "R = 0.3 m, ω = 100π rad/s। E = ½ · B · ω · R² = 0.5 × 2 × 314.16 × 0.09 = 28.27 V।",
+        bn: "R = ০.৩ মি, ω = ১০০π rad/s। E = ½ · B · ω · R² = ০.৫ × ২ × ৩১৪.১৬ × ০.০৯ = ২৮.২৭ V।"
       }
     }
   ],

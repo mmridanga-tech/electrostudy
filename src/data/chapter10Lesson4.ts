@@ -398,43 +398,325 @@ e = ০.৪০ ভোল্ট (৪০০ মিলিভোল্ট)।`
   },
   mcqs: [
     {
-      id: 'mcq-dyn-1',
+      id: "mcq-dyn-1",
       question: {
-        en: 'A conductor of length 1.2 m moves with velocity 15 m/s parallel to magnetic field lines of 0.8 T (θ = 0°). What is the dynamically induced EMF?',
-        hi: '1.2 मीटर लंबा चालक 0.8 टेस्ला के चुंबकीय क्षेत्र के समानांतर 15 मी/से के वेग से गति करता है (θ = 0°)। प्रेरित EMF क्या होगा?',
-        bn: '১.২ মিটার দৈর্ঘ্যের একটি পরিবাহী ০.৮ টেসলা চৌম্বক ক্ষেত্রের সমান্তরালে ১৫ মি/সে বেগে গতিশীল (θ = ০°)। আবিষ্ট ইএমএফ কত?'
+        en: "A conductor of length 1.2 m moves with velocity 15 m/s parallel to magnetic field lines of 0.8 T (θ = 0°). What is the dynamically induced EMF?",
+        hi: "1.2 मीटर लंबा चालक 0.8 टेस्ला के चुंबकीय क्षेत्र के समानांतर 15 मी/से के वेग से गति करता है (θ = 0°)। प्रेरित EMF क्या होगा?",
+        bn: "১.২ মিটার দৈর্ঘ্যের একটি পরিবাহী ০.৮ টেসলা চৌম্বক ক্ষেত্রের সমান্তরালে ১৫ মি/সে বেগে গতিশীল (θ = ০°)। আবিষ্ট ইএমএফ কত?"
       },
       options: [
-        { id: 'opt-a', text: { en: '14.4 V', hi: '14.4 V', bn: '১৪.৪ V' } },
-        { id: 'opt-b', text: { en: '0.0 V', hi: '0.0 V', bn: '০.০ V' } },
-        { id: 'opt-c', text: { en: '18.0 V', hi: '18.0 V', bn: '১৮.০ V' } },
-        { id: 'opt-d', text: { en: '7.2 V', hi: '7.2 V', bn: '৭.২ V' } }
+        { id: "opt-a", text: { en: "14.4 V", hi: "14.4 V", bn: "১৪.৪ V" } },
+        { id: "opt-b", text: { en: "0.0 V", hi: "0.0 V", bn: "০.০ V" } },
+        { id: "opt-c", text: { en: "18.0 V", hi: "18.0 V", bn: "১৮.০ V" } },
+        { id: "opt-d", text: { en: "7.2 V", hi: "7.2 V", bn: "৭.২ V" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
-        en: 'When a conductor moves parallel to magnetic field lines (θ = 0°), sin(0°) = 0. Therefore, e = B · l · v · sin(0°) = 0 V. No magnetic flux lines are cut.',
-        hi: 'जब चालक चुंबकीय क्षेत्र के समानांतर गति करता है (θ = 0°), तो sin(0°) = 0 होता है। अतः e = 0 V क्योंकि कोई फ्लक्स रेखा नहीं कटती।',
-        bn: 'যখন পরিবাহী চৌম্বক ক্ষেত্রের সমান্তরালে চলে (θ = ০°), তখন sin(০°) = ০। ফলে e = B · l · v · sin(০°) = ০ V। কোনো ফ্লাক্স কর্তন হয় না।'
+        en: "When a conductor moves parallel to magnetic field lines (θ = 0°), sin(0°) = 0. Therefore, e = B · l · v · sin(0°) = 0 V. No magnetic flux lines are cut.",
+        hi: "जब चालक चुंबकीय क्षेत्र के समानांतर गति करता है (θ = 0°), तो sin(0°) = 0 होता है। अतः e = 0 V क्योंकि कोई फ्लक्स रेखा नहीं कटती।",
+        bn: "যখন পরিবাহী চৌম্বক ক্ষেত্রের সমান্তরালে চলে (θ = ০°), তখন sin(০°) = ০। ফলে e = B · l · v · sin(০°) = ০ V। কোনো ফ্লাক্স কর্তন হয় না।"
       }
     },
     {
-      id: 'mcq-dyn-2',
+      id: "mcq-dyn-2",
       question: {
-        en: 'Which rule is universally used to find the direction of dynamically induced current in a generator armature conductor?',
-        hi: 'जनरेटर आर्मेचर चालक में प्रेरित धारा की दिशा ज्ञात करने के लिए किस नियम का उपयोग किया जाता है?',
-        bn: 'জেনারেটর আর্মেচার পরিবাহীতে আবিষ্ট কারেন্টের দিক নির্ণয়ে কোন নিয়মটি ব্যবহৃত হয়?'
+        en: "Which rule is universally used to find the direction of dynamically induced current in a generator armature conductor?",
+        hi: "जनरेटर आर्मेचर चालक में प्रेरित धारा की दिशा ज्ञात करने के लिए किस नियम का उपयोग किया जाता है?",
+        bn: "জেনারেটর আর্মেচার পরিবাহীতে আবিষ্ট কারেন্টের দিক নির্ণয়ে কোন নিয়মটি ব্যবহৃত হয়?"
       },
       options: [
-        { id: 'opt-a', text: { en: "Fleming's Left-Hand Rule", hi: 'फ्लेमिंग का बायां हाथ नियम', bn: 'ফ্লেমিংয়ের বামহস্ত নিয়ম' } },
-        { id: 'opt-b', text: { en: "Fleming's Right-Hand Rule", hi: 'फ्लेमिंग का दायां हाथ नियम', bn: 'ফ্লেমিংয়ের ডানহস্ত নিয়ম' } },
-        { id: 'opt-c', text: { en: "Ampere's Circuital Law", hi: 'एम्पीयर का परिपथीय नियम', bn: 'অ্যাম্পিয়ারের সার্কিটাল সূত্র' } },
-        { id: 'opt-d', text: { en: "Coulomb's Law", hi: 'कूलॉम का नियम', bn: 'কুলম্বের সূত্র' } }
+        { id: "opt-a", text: { en: "Fleming's Left-Hand Rule", hi: "फ्लेमिंग का बायां हाथ नियम", bn: "ফ্লেমিংয়ের বামহস্ত নিয়ম" } },
+        { id: "opt-b", text: { en: "Fleming's Right-Hand Rule", hi: "फ्लेमिंग का दायां हाथ नियम", bn: "ফ্লেমিংয়ের ডানহস্ত নিয়ম" } },
+        { id: "opt-c", text: { en: "Ampere's Circuital Law", hi: "एम्पीयर का परिपथीय नियम", bn: "অ্যাম্পিয়ারের সার্কিটাল সূত্র" } },
+        { id: "opt-d", text: { en: "Coulomb's Law", hi: "कूलॉम का नियम", bn: "কুলম্বের সূত্র" } }
       ],
-      correctOptionId: 'opt-b',
+      correctOptionId: "opt-b",
       explanation: {
         en: "Fleming's Right-Hand Rule is dedicated to generators (Motional EMF: Thumb = Motion, Index = Field B, Middle = Induced Current I). Fleming's Left-Hand Rule is for motor torque.",
-        hi: 'फ्लेमिंग का दायां हाथ नियम जनरेटरों में प्रेरित धारा एवं EMF की दिशा ज्ञात करने के लिए प्रयुक्त होता है।',
-        bn: 'ফ্লেমিংয়ের ডানহস্ত নিয়ম জেনারেটরে আবিষ্ট কারেন্টের দিক নির্ণয়ে ব্যবহৃত হয় (বৃদ্ধাঙ্গুলি = গতি, তর্জনী = ক্ষেত্র, মধ্যমা = আবিষ্ট কারেন্ট)।'
+        hi: "फ्लेमिंग का दायां हाथ नियम जनरेटरों में प्रेरित धारा एवं EMF की दिशा ज्ञात करने के लिए प्रयुक्त होता है।",
+        bn: "ফ্লেমিংয়ের ডানহস্ত নিয়ম জেনারেটরে আবিষ্ট কারেন্টের দিক নির্ণয়ে ব্যবহৃত হয় (বৃদ্ধাঙ্গুলি = গতি, তর্জনী = ক্ষেত্র, মধ্যমা = আবিষ্ট কারেন্ট)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-03",
+      question: {
+        en: "An aircraft with a wingspan of 20 m flies horizontally at 250 m/s through Earth’s vertical magnetic field component of 50 µT. What motional EMF is induced across its wingtips?",
+        hi: "20 m पंखों के फैलाव वाला एक विमान पृथ्वी के 50 µT के लंबवत चुंबकीय क्षेत्र में 250 m/s से क्षैतिज उड़ान भरता है। इसके पंखों के सिरों पर कितना गतिज EMF प्रेरित होगा?",
+        bn: "২০ মিটার উইংস্প্যানের একটি বিমান পৃথিবীর ৫০ µT উল্লম্ব চৌম্বক উপাংশের মধ্য দিয়ে ২৫০ m/s বেগে অনুভূমিকভাবে উড়ছে। এর ডানার দুই প্রান্তে আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "0.25 V (250 mV)", hi: "0.25 V (250 mV)", bn: "০.২৫ V (২৫০ mV)" } },
+        { id: "opt-2", text: { en: "2.5 V", hi: "2.5 V", bn: "২.৫ V" } },
+        { id: "opt-3", text: { en: "25 V", hi: "25 V", bn: "২৫ V" } },
+        { id: "opt-4", text: { en: "0.025 V (25 mV)", hi: "0.025 V (25 mV)", bn: "০.০২৫ V (২৫ mV)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e = B · l · v = (50 × 10⁻⁶ T) × 20 m × 250 m/s = 0.25 V (or 250 mV).",
+        hi: "e = B · l · v = (50 × 10⁻⁶) × 20 × 250 = 0.25 V (250 mV)।",
+        bn: "e = B · l · v = (৫০ × ১০⁻⁶) × ২০ × ২৫০ = ০.২৫ V (বা ২৫০ mV)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-04",
+      question: {
+        en: "In the motional EMF expression e = B · l · v · sin(θ), the angle θ is strictly defined between:",
+        hi: "गतिज ईएमएफ सूत्र e = B · l · v · sin(θ) में, कोण θ विशेष रूप से किसके बीच परिभाषित है?",
+        bn: "গতিজ ইএমএফ সূত্র e = B · l · v · sin(θ)-তে, কোণ θ বিশেষভাবে কার কার মধ্যে সংজ্ঞায়িত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The conductor velocity vector v and the magnetic field vector B", hi: "चालक के वेग सदिश v और चुंबकीय क्षेत्र सदिश B के बीच", bn: "পরিবাহীর বেগ ভেক্টর v এবং চৌম্বক ক্ষেত্র ভেক্টর B এর মধ্যে" } },
+        { id: "opt-2", text: { en: "The conductor length l and the Earth’s gravitational vector", hi: "चालक की लंबाई l और पृथ्वी के गुरुत्वीय सदिश के बीच", bn: "পরিবাহীর দৈর্ঘ্য l এবং অভিকর্ষজ ভেক্টরের মধ্যে" } },
+        { id: "opt-3", text: { en: "The electric potential gradient and atmospheric pressure", hi: "विद्युत विभव प्रवणता और वायुमंडलीय दबाव के बीच", bn: "বিভব নতিমাত্রা এবং বায়ুমণ্ডলীয় চাপের মধ্যে" } },
+        { id: "opt-4", text: { en: "The magnetic flux density and electric permittivity", hi: "चुंबकीय फ्लक्स घनत्व और विद्युतशीलता के बीच", bn: "চৌম্বক ফ্লাক্স ঘনত্ব এবং তড়িৎ প্রবেশ্যতার মধ্যে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The scalar product formulation derived from Lorentz force e = ∫ (v × B) · dl indicates that θ is the angle between velocity vector v and magnetic field vector B.",
+        hi: "लोरेन्त्ज़ बल e = ∫ (v × B) · dl के अनुसार, कोण θ वेग सदिश v और चुंबकीय क्षेत्र सदिश B के बीच का कोण होता है।",
+        bn: "লরেন্টজ বলের সূত্র e = ∫ (v × B) · dl হতে দেখা যায় যে, θ হলো বেগ ভেক্টর v এবং চৌম্বক ক্ষেত্র ভেক্টর B এর মধ্যকার কোণ।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-05",
+      question: {
+        en: "A conducting rod of length L rotates with constant angular velocity ω about one pivot end in a plane perpendicular to uniform magnetic field B. The induced EMF between its ends is:",
+        hi: "L लंबाई की एक चालक छड़ समान चुंबकीय क्षेत्र B के लंबवत तल में अपने एक सिरे के परितः नियत कोणीय वेग ω से घूमती है। इसके सिरों के बीच प्रेरित EMF है:",
+        bn: "L দৈর্ঘ্যের একটি পরিবাহী দণ্ড সুষম চৌম্বক ক্ষেত্র B এর সাথে লম্ব তলে তার এক প্রান্তকে কেন্দ্র করে স্থির কৌণিক বেগ ω তে ঘুরছে। এর দুই প্রান্তের মধ্যে আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "e = ½ · B · ω · L²", hi: "e = ½ · B · ω · L²", bn: "e = ½ · B · ω · L²" } },
+        { id: "opt-2", text: { en: "e = B · ω · L²", hi: "e = B · ω · L²", bn: "e = B · ω · L²" } },
+        { id: "opt-3", text: { en: "e = 2 · B · ω · L", hi: "e = 2 · B · ω · L", bn: "e = ২ · B · ω · L" } },
+        { id: "opt-4", text: { en: "e = ¼ · B · ω² · L", hi: "e = ¼ · B · ω² · L", bn: "e = ¼ · B · ω² · L" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating motional EMF along the rod: e = ∫₀ᴸ B(ωr) dr = Bω ∫₀ᴸ r dr = ½ B ω L².",
+        hi: "छड़ के अनुदिश समाकलन करने पर: e = ∫₀ᴸ B(ωr) dr = ½ B ω L²।",
+        bn: "দণ্ড বরাবর সমাকলন করে পাওয়া যায়: e = ∫₀ᴸ B(ωr) dr = ½ B ω L²।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-06",
+      question: {
+        en: "When a straight conductor cuts magnetic flux at an angle of 60°, what percentage of its maximum possible perpendicular EMF (at 90°) is induced?",
+        hi: "जब कोई सीधा चालक फ्लक्स रेखाओं को 60° के कोण पर काटता है, तो लंबवत (90°) की तुलना में अधिकतम संभव EMF का कितना प्रतिशत प्रेरित होता है?",
+        bn: "যখন কোনো সোজা পরিবাহী ফ্লাক্স রেখাকে ৬০° কোণে ছেদ করে, তখন লম্বভাবে (৯০°) ছেদের তুলনায় সর্বোচ্চ সম্ভাব্য EMF এর শতকরা কত ভাগ আবিষ্ট হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "86.6% (√3/2)", hi: "86.6% (√3/2)", bn: "৮৬.৬% (√৩/২)" } },
+        { id: "opt-2", text: { en: "50.0% (1/2)", hi: "50.0% (1/2)", bn: "৫০.০% (১/২)" } },
+        { id: "opt-3", text: { en: "70.7% (1/√2)", hi: "70.7% (1/√2)", bn: "৭০.৭% (১/√২)" } },
+        { id: "opt-4", text: { en: "100%", hi: "100%", bn: "১০০%" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induced EMF is proportional to sin(θ). For θ = 60°, sin(60°) = √3/2 ≈ 0.8660, or 86.6% of maximum perpendicular EMF.",
+        hi: "प्रेरित EMF sin(θ) के समानुपाती होता है। sin(60°) = √3/2 ≈ 0.866 (86.6%)।",
+        bn: "আবিষ্ট EMF sin(θ) এর সমানুপাতিক। sin(৬০°) = √৩/২ ≈ ০.৮৬৬ (বা ৮৬.৬%)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-07",
+      question: {
+        en: "A closed conducting loop of width w and total electrical resistance R enters a perpendicular field B at velocity v. What retarding magnetic force opposes its motion?",
+        hi: "w चौड़ाई और कुल प्रतिरोध R वाला एक बंद चालक लूप v वेग से लंबवत चुंबकीय क्षेत्र B में प्रवेश करता है। इसकी गति का विरोध करने वाला मंदक बल क्या है?",
+        bn: "w প্রস্থ এবং মোট রোধ R বিশিষ্ট একটি বদ্ধ পরিবাহী লুপ v বেগে লম্ব চৌম্বক ক্ষেত্র B তে প্রবেশ করছে। এর গতির বিরোধিতাকারী বাধাদায়ী বল কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "F = (B² · w² · v) / R", hi: "F = (B² · w² · v) / R", bn: "F = (B² · w² · v) / R" } },
+        { id: "opt-2", text: { en: "F = (B · w · v) / R²", hi: "F = (B · w · v) / R²", bn: "F = (B · w · v) / R²" } },
+        { id: "opt-3", text: { en: "F = (B² · w · v²) / R", hi: "F = (B² · w · v²) / R", bn: "F = (B² · w · v²) / R" } },
+        { id: "opt-4", text: { en: "F = Zero", hi: "F = शून्य", bn: "F = शून्य" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induced EMF is e = B·w·v. Current is I = e / R = B·w·v / R. Retarding Lorentz force is F = I · w · B = (B² · w² · v) / R.",
+        hi: "प्रेरित EMF e = B·w·v, धारा I = B·w·v / R, अतः विरोधी बल F = I·w·B = (B² · w² · v) / R।",
+        bn: "আবিষ্ট EMF e = B·w·v, কারেন্ট I = B·w·v / R, সুতরাং বাধাদায়ী বল F = I·w·B = (B² · w² · v) / R।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-08",
+      question: {
+        en: "If the linear velocity of a conductor moving perpendicular to a magnetic field is tripled (3×) while the magnetic flux density is halved (0.5×), the induced EMF is multiplied by:",
+        hi: "यदि चुंबकीय क्षेत्र के लंबवत गतिमान चालक के वेग को तीन गुना (3×) कर दिया जाए और चुंबकीय फ्लक्स घनत्व को आधा (0.5×) कर दिया जाए, तो प्रेरित EMF कितना गुना हो जाएगा?",
+        bn: "যদি চৌম্বক ক্ষেত্রের সাথে লম্বভাবে গতিশীল পরিবাহীর রৈখিক বেগ তিন গুণ (৩×) করা হয় এবং চৌম্বক ফ্লাক্স ঘনত্ব অর্ধেক (০.৫×) করা হয়, তবে আবিষ্ট EMF কত গুণ হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.5 times", hi: "1.5 गुना", bn: "১.৫ গুণ" } },
+        { id: "opt-2", text: { en: "6.0 times", hi: "6.0 गुना", bn: "৬.০ गुना" } },
+        { id: "opt-3", text: { en: "0.75 times", hi: "0.75 गुना", bn: "০.৭৫ গুণ" } },
+        { id: "opt-4", text: { en: "3.0 times", hi: "3.0 गुना", bn: "৩.০ গুণ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since e = B · l · v, e’ = (0.5 B) · l · (3 v) = 1.5 (B · l · v) = 1.5 e.",
+        hi: "सूत्र e = B · l · v के अनुसार, नया EMF e’ = (0.5) × (3) = 1.5 गुना हो जाएगा।",
+        bn: "e = B · l · v সূত্রানুযায়ী, নতুন EMF e’ = (০.৫) × (৩) = ১.৫ গুণ হবে।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-dyn-1",
+      question: {
+        en: "A conductor of length 1.2 m moves with velocity 15 m/s parallel to magnetic field lines of 0.8 T (θ = 0°). What is the dynamically induced EMF?",
+        hi: "1.2 मीटर लंबा चालक 0.8 टेस्ला के चुंबकीय क्षेत्र के समानांतर 15 मी/से के वेग से गति करता है (θ = 0°)। प्रेरित EMF क्या होगा?",
+        bn: "১.২ মিটার দৈর্ঘ্যের একটি পরিবাহী ০.৮ টেসলা চৌম্বক ক্ষেত্রের সমান্তরালে ১৫ মি/সে বেগে গতিশীল (θ = ০°)। আবিষ্ট ইএমএফ কত?"
+      },
+      options: [
+        { id: "opt-a", text: { en: "14.4 V", hi: "14.4 V", bn: "১৪.৪ V" } },
+        { id: "opt-b", text: { en: "0.0 V", hi: "0.0 V", bn: "০.০ V" } },
+        { id: "opt-c", text: { en: "18.0 V", hi: "18.0 V", bn: "১৮.০ V" } },
+        { id: "opt-d", text: { en: "7.2 V", hi: "7.2 V", bn: "৭.২ V" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "When a conductor moves parallel to magnetic field lines (θ = 0°), sin(0°) = 0. Therefore, e = B · l · v · sin(0°) = 0 V. No magnetic flux lines are cut.",
+        hi: "जब चालक चुंबकीय क्षेत्र के समानांतर गति करता है (θ = 0°), तो sin(0°) = 0 होता है। अतः e = 0 V क्योंकि कोई फ्लक्स रेखा नहीं कटती।",
+        bn: "যখন পরিবাহী চৌম্বক ক্ষেত্রের সমান্তরালে চলে (θ = ০°), তখন sin(০°) = ০। ফলে e = B · l · v · sin(০°) = ০ V। কোনো ফ্লাক্স কর্তন হয় না।"
+      }
+    },
+    {
+      id: "mcq-dyn-2",
+      question: {
+        en: "Which rule is universally used to find the direction of dynamically induced current in a generator armature conductor?",
+        hi: "जनरेटर आर्मेचर चालक में प्रेरित धारा की दिशा ज्ञात करने के लिए किस नियम का उपयोग किया जाता है?",
+        bn: "জেনারেটর আর্মেচার পরিবাহীতে আবিষ্ট কারেন্টের দিক নির্ণয়ে কোন নিয়মটি ব্যবহৃত হয়?"
+      },
+      options: [
+        { id: "opt-a", text: { en: "Fleming's Left-Hand Rule", hi: "फ्लेमिंग का बायां हाथ नियम", bn: "ফ্লেমিংয়ের বামহস্ত নিয়ম" } },
+        { id: "opt-b", text: { en: "Fleming's Right-Hand Rule", hi: "फ्लेमिंग का दायां हाथ नियम", bn: "ফ্লেমিংয়ের ডানহস্ত নিয়ম" } },
+        { id: "opt-c", text: { en: "Ampere's Circuital Law", hi: "एम्पीयर का परिपथीय नियम", bn: "অ্যাম্পিয়ারের সার্কিটাল সূত্র" } },
+        { id: "opt-d", text: { en: "Coulomb's Law", hi: "कूलॉम का नियम", bn: "কুলম্বের সূত্র" } }
+      ],
+      correctOptionId: "opt-b",
+      explanation: {
+        en: "Fleming's Right-Hand Rule is dedicated to generators (Motional EMF: Thumb = Motion, Index = Field B, Middle = Induced Current I). Fleming's Left-Hand Rule is for motor torque.",
+        hi: "फ्लेमिंग का दायां हाथ नियम जनरेटरों में प्रेरित धारा एवं EMF की दिशा ज्ञात करने के लिए प्रयुक्त होता है।",
+        bn: "ফ্লেমিংয়ের ডানহস্ত নিয়ম জেনারেটরে আবিষ্ট কারেন্টের দিক নির্ণয়ে ব্যবহৃত হয় (বৃদ্ধাঙ্গুলি = গতি, তর্জনী = ক্ষেত্র, মধ্যমা = আবিষ্ট কারেন্ট)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-03",
+      question: {
+        en: "An aircraft with a wingspan of 20 m flies horizontally at 250 m/s through Earth’s vertical magnetic field component of 50 µT. What motional EMF is induced across its wingtips?",
+        hi: "20 m पंखों के फैलाव वाला एक विमान पृथ्वी के 50 µT के लंबवत चुंबकीय क्षेत्र में 250 m/s से क्षैतिज उड़ान भरता है। इसके पंखों के सिरों पर कितना गतिज EMF प्रेरित होगा?",
+        bn: "২০ মিটার উইংস্প্যানের একটি বিমান পৃথিবীর ৫০ µT উল্লম্ব চৌম্বক উপাংশের মধ্য দিয়ে ২৫০ m/s বেগে অনুভূমিকভাবে উড়ছে। এর ডানার দুই প্রান্তে আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "0.25 V (250 mV)", hi: "0.25 V (250 mV)", bn: "০.২৫ V (২৫০ mV)" } },
+        { id: "opt-2", text: { en: "2.5 V", hi: "2.5 V", bn: "২.৫ V" } },
+        { id: "opt-3", text: { en: "25 V", hi: "25 V", bn: "২৫ V" } },
+        { id: "opt-4", text: { en: "0.025 V (25 mV)", hi: "0.025 V (25 mV)", bn: "০.০২৫ V (২৫ mV)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e = B · l · v = (50 × 10⁻⁶ T) × 20 m × 250 m/s = 0.25 V (or 250 mV).",
+        hi: "e = B · l · v = (50 × 10⁻⁶) × 20 × 250 = 0.25 V (250 mV)।",
+        bn: "e = B · l · v = (৫০ × ১০⁻⁶) × ২০ × ২৫০ = ০.২৫ V (বা ২৫০ mV)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-04",
+      question: {
+        en: "In the motional EMF expression e = B · l · v · sin(θ), the angle θ is strictly defined between:",
+        hi: "गतिज ईएमएफ सूत्र e = B · l · v · sin(θ) में, कोण θ विशेष रूप से किसके बीच परिभाषित है?",
+        bn: "গতিজ ইএমএফ সূত্র e = B · l · v · sin(θ)-তে, কোণ θ বিশেষভাবে কার কার মধ্যে সংজ্ঞায়িত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The conductor velocity vector v and the magnetic field vector B", hi: "चालक के वेग सदिश v और चुंबकीय क्षेत्र सदिश B के बीच", bn: "পরিবাহীর বেগ ভেক্টর v এবং চৌম্বক ক্ষেত্র ভেক্টর B এর মধ্যে" } },
+        { id: "opt-2", text: { en: "The conductor length l and the Earth’s gravitational vector", hi: "चालक की लंबाई l और पृथ्वी के गुरुत्वीय सदिश के बीच", bn: "পরিবাহীর দৈর্ঘ্য l এবং অভিকর্ষজ ভেক্টরের মধ্যে" } },
+        { id: "opt-3", text: { en: "The electric potential gradient and atmospheric pressure", hi: "विद्युत विभव प्रवणता और वायुमंडलीय दबाव के बीच", bn: "বিভব নতিমাত্রা এবং বায়ুমণ্ডলীয় চাপের মধ্যে" } },
+        { id: "opt-4", text: { en: "The magnetic flux density and electric permittivity", hi: "चुंबकीय फ्लक्स घनत्व और विद्युतशीलता के बीच", bn: "চৌম্বক ফ্লাক্স ঘনত্ব এবং তড়িৎ প্রবেশ্যতার মধ্যে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The scalar product formulation derived from Lorentz force e = ∫ (v × B) · dl indicates that θ is the angle between velocity vector v and magnetic field vector B.",
+        hi: "लोरेन्त्ज़ बल e = ∫ (v × B) · dl के अनुसार, कोण θ वेग सदिश v और चुंबकीय क्षेत्र सदिश B के बीच का कोण होता है।",
+        bn: "লরেন্টজ বলের সূত্র e = ∫ (v × B) · dl হতে দেখা যায় যে, θ হলো বেগ ভেক্টর v এবং চৌম্বক ক্ষেত্র ভেক্টর B এর মধ্যকার কোণ।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-05",
+      question: {
+        en: "A conducting rod of length L rotates with constant angular velocity ω about one pivot end in a plane perpendicular to uniform magnetic field B. The induced EMF between its ends is:",
+        hi: "L लंबाई की एक चालक छड़ समान चुंबकीय क्षेत्र B के लंबवत तल में अपने एक सिरे के परितः नियत कोणीय वेग ω से घूमती है। इसके सिरों के बीच प्रेरित EMF है:",
+        bn: "L দৈর্ঘ্যের একটি পরিবাহী দণ্ড সুষম চৌম্বক ক্ষেত্র B এর সাথে লম্ব তলে তার এক প্রান্তকে কেন্দ্র করে স্থির কৌণিক বেগ ω তে ঘুরছে। এর দুই প্রান্তের মধ্যে আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "e = ½ · B · ω · L²", hi: "e = ½ · B · ω · L²", bn: "e = ½ · B · ω · L²" } },
+        { id: "opt-2", text: { en: "e = B · ω · L²", hi: "e = B · ω · L²", bn: "e = B · ω · L²" } },
+        { id: "opt-3", text: { en: "e = 2 · B · ω · L", hi: "e = 2 · B · ω · L", bn: "e = ২ · B · ω · L" } },
+        { id: "opt-4", text: { en: "e = ¼ · B · ω² · L", hi: "e = ¼ · B · ω² · L", bn: "e = ¼ · B · ω² · L" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Integrating motional EMF along the rod: e = ∫₀ᴸ B(ωr) dr = Bω ∫₀ᴸ r dr = ½ B ω L².",
+        hi: "छड़ के अनुदिश समाकलन करने पर: e = ∫₀ᴸ B(ωr) dr = ½ B ω L²।",
+        bn: "দণ্ড বরাবর সমাকলন করে পাওয়া যায়: e = ∫₀ᴸ B(ωr) dr = ½ B ω L²।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-06",
+      question: {
+        en: "When a straight conductor cuts magnetic flux at an angle of 60°, what percentage of its maximum possible perpendicular EMF (at 90°) is induced?",
+        hi: "जब कोई सीधा चालक फ्लक्स रेखाओं को 60° के कोण पर काटता है, तो लंबवत (90°) की तुलना में अधिकतम संभव EMF का कितना प्रतिशत प्रेरित होता है?",
+        bn: "যখন কোনো সোজা পরিবাহী ফ্লাক্স রেখাকে ৬০° কোণে ছেদ করে, তখন লম্বভাবে (৯০°) ছেদের তুলনায় সর্বোচ্চ সম্ভাব্য EMF এর শতকরা কত ভাগ আবিষ্ট হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "86.6% (√3/2)", hi: "86.6% (√3/2)", bn: "৮৬.৬% (√৩/২)" } },
+        { id: "opt-2", text: { en: "50.0% (1/2)", hi: "50.0% (1/2)", bn: "৫০.০% (১/২)" } },
+        { id: "opt-3", text: { en: "70.7% (1/√2)", hi: "70.7% (1/√2)", bn: "৭০.৭% (১/√২)" } },
+        { id: "opt-4", text: { en: "100%", hi: "100%", bn: "১০০%" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induced EMF is proportional to sin(θ). For θ = 60°, sin(60°) = √3/2 ≈ 0.8660, or 86.6% of maximum perpendicular EMF.",
+        hi: "प्रेरित EMF sin(θ) के समानुपाती होता है। sin(60°) = √3/2 ≈ 0.866 (86.6%)।",
+        bn: "আবিষ্ট EMF sin(θ) এর সমানুপাতিক। sin(৬০°) = √৩/২ ≈ ০.৮৬৬ (বা ৮৬.৬%)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-07",
+      question: {
+        en: "A closed conducting loop of width w and total electrical resistance R enters a perpendicular field B at velocity v. What retarding magnetic force opposes its motion?",
+        hi: "w चौड़ाई और कुल प्रतिरोध R वाला एक बंद चालक लूप v वेग से लंबवत चुंबकीय क्षेत्र B में प्रवेश करता है। इसकी गति का विरोध करने वाला मंदक बल क्या है?",
+        bn: "w প্রস্থ এবং মোট রোধ R বিশিষ্ট একটি বদ্ধ পরিবাহী লুপ v বেগে লম্ব চৌম্বক ক্ষেত্র B তে প্রবেশ করছে। এর গতির বিরোধিতাকারী বাধাদায়ী বল কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "F = (B² · w² · v) / R", hi: "F = (B² · w² · v) / R", bn: "F = (B² · w² · v) / R" } },
+        { id: "opt-2", text: { en: "F = (B · w · v) / R²", hi: "F = (B · w · v) / R²", bn: "F = (B · w · v) / R²" } },
+        { id: "opt-3", text: { en: "F = (B² · w · v²) / R", hi: "F = (B² · w · v²) / R", bn: "F = (B² · w · v²) / R" } },
+        { id: "opt-4", text: { en: "F = Zero", hi: "F = शून्य", bn: "F = शून्य" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induced EMF is e = B·w·v. Current is I = e / R = B·w·v / R. Retarding Lorentz force is F = I · w · B = (B² · w² · v) / R.",
+        hi: "प्रेरित EMF e = B·w·v, धारा I = B·w·v / R, अतः विरोधी बल F = I·w·B = (B² · w² · v) / R।",
+        bn: "আবিষ্ট EMF e = B·w·v, কারেন্ট I = B·w·v / R, সুতরাং বাধাদায়ী বল F = I·w·B = (B² · w² · v) / R।"
+      }
+    },
+    {
+      id: "mcq-ch10-l04-08",
+      question: {
+        en: "If the linear velocity of a conductor moving perpendicular to a magnetic field is tripled (3×) while the magnetic flux density is halved (0.5×), the induced EMF is multiplied by:",
+        hi: "यदि चुंबकीय क्षेत्र के लंबवत गतिमान चालक के वेग को तीन गुना (3×) कर दिया जाए और चुंबकीय फ्लक्स घनत्व को आधा (0.5×) कर दिया जाए, तो प्रेरित EMF कितना गुना हो जाएगा?",
+        bn: "যদি চৌম্বক ক্ষেত্রের সাথে লম্বভাবে গতিশীল পরিবাহীর রৈখিক বেগ তিন গুণ (৩×) করা হয় এবং চৌম্বক ফ্লাক্স ঘনত্ব অর্ধেক (০.৫×) করা হয়, তবে আবিষ্ট EMF কত গুণ হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.5 times", hi: "1.5 गुना", bn: "১.৫ গুণ" } },
+        { id: "opt-2", text: { en: "6.0 times", hi: "6.0 गुना", bn: "৬.০ गुना" } },
+        { id: "opt-3", text: { en: "0.75 times", hi: "0.75 गुना", bn: "০.৭৫ গুণ" } },
+        { id: "opt-4", text: { en: "3.0 times", hi: "3.0 गुना", bn: "৩.০ গুণ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Since e = B · l · v, e’ = (0.5 B) · l · (3 v) = 1.5 (B · l · v) = 1.5 e.",
+        hi: "सूत्र e = B · l · v के अनुसार, नया EMF e’ = (0.5) × (3) = 1.5 गुना हो जाएगा।",
+        bn: "e = B · l · v সূত্রানুযায়ী, নতুন EMF e’ = (০.৫) × (৩) = ১.৫ গুণ হবে।"
       }
     }
   ],

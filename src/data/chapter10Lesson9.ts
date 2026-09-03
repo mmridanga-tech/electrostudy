@@ -334,43 +334,325 @@ RMS মান:
   },
   mcqs: [
     {
-      id: 'mcq-ch10-t1',
+      id: "mcq-ch10-t1",
       question: {
-        en: 'The constant 4.44 in the Transformer EMF equation E = 4.44 · f · N · Φ_m arises from:',
-        hi: 'ट्रांसफॉर्मर ईएमएफ समीकरण E = 4.44 · f · N · Φ_m में 4.44 नियतांक की उत्पत्ति होती है:',
-        bn: 'ট্রান্সফরমার ইএমএফ সমীকরণ E = ৪.৪৪ · f · N · Φ_m এ ৪.৪৪ ধ্রুবকটি আসে:'
+        en: "The constant 4.44 in the Transformer EMF equation E = 4.44 · f · N · Φ_m arises from:",
+        hi: "ट्रांसफॉर्मर ईएमएफ समीकरण E = 4.44 · f · N · Φ_m में 4.44 नियतांक की उत्पत्ति होती है:",
+        bn: "ট্রান্সফরমার ইএমএফ সমীকরণ E = ৪.৪৪ · f · N · Φ_m এ ৪.৪৪ ধ্রুবকটি আসে:"
       },
       options: [
-        { id: 'opt-1', text: { en: '4 × Form Factor (4 × 1.11)', hi: '4 × फॉर्म फैक्टर (4 × 1.11)', bn: '৪ × ফর্ম ফ্যাক্টর (৪ × ১.১১)' } },
-        { id: 'opt-2', text: { en: '2 × π', hi: '2 × π', bn: '২ × π' } },
-        { id: 'opt-3', text: { en: '√2 × 2', hi: '√2 × 2', bn: '√২ × ২' } },
-        { id: 'opt-4', text: { en: '4 × Crest Factor (4 × 1.414)', hi: '4 × क्रेस्ट फैक्टर (4 × 1.414)', bn: '৪ × ক্রেস্ট ফ্যাক্টর (৪ × ১.৪১৪)' } }
+        { id: "opt-1", text: { en: "4 × Form Factor (4 × 1.11)", hi: "4 × फॉर्म फैक्टर (4 × 1.11)", bn: "৪ × ফর্ম ফ্যাক্টর (৪ × ১.১১)" } },
+        { id: "opt-2", text: { en: "2 × π", hi: "2 × π", bn: "২ × π" } },
+        { id: "opt-3", text: { en: "√2 × 2", hi: "√2 × 2", bn: "√২ × ২" } },
+        { id: "opt-4", text: { en: "4 × Crest Factor (4 × 1.414)", hi: "4 × क्रेस्ट फैक्टर (4 × 1.414)", bn: "৪ × ক্রেস্ট ফ্যাক্টর (৪ × ১.৪১৪)" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The factor 4.44 equals 4 multiplied by the sinusoidal Form Factor (1.11), converting average EMF to RMS EMF.',
-        hi: '4.44 का मान 4 को ज्यावक्रीय फॉर्म फैक्टर (1.11) से गुणा करने पर प्राप्त होता है, जो औसत ईएमएफ को RMS में बदलता है।',
-        bn: '৪.৪৪ মূলত ৪ কে সাইন তরঙ্গের ফর্ম ফ্যাক্টর (১.১১) দিয়ে গুণ করে গড় ইএমএফকে RMS এ রূপান্তর করার ফলে আসে।'
+        en: "The factor 4.44 equals 4 multiplied by the sinusoidal Form Factor (1.11), converting average EMF to RMS EMF.",
+        hi: "4.44 का मान 4 को ज्यावक्रीय फॉर्म फैक्टर (1.11) से गुणा करने पर प्राप्त होता है, जो औसत ईएमएफ को RMS में बदलता है।",
+        bn: "৪.৪৪ মূলত ৪ কে সাইন তরঙ্গের ফর্ম ফ্যাক্টর (১.১১) দিয়ে গুণ করে গড় ইএমএফকে RMS এ রূপান্তর করার ফলে আসে।"
       }
     },
     {
-      id: 'mcq-ch10-t2',
+      id: "mcq-ch10-t2",
       question: {
-        en: 'In an ideal transformer, the ratio of primary to secondary current (I₁/I₂) is equal to:',
-        hi: 'एक आदर्श ट्रांसफॉर्मर में प्राथमिक एवं द्वितीयक धारा का अनुपात (I₁/I₂) किसके बराबर होता है?',
-        bn: 'একটি আদর্শ ট্রান্সফরমারে প্রাইমারি ও সেকেন্ডারি কারেন্টের অনুপাত (I₁/I₂) কার সমান?'
+        en: "In an ideal transformer, the ratio of primary to secondary current (I₁/I₂) is equal to:",
+        hi: "एक आदर्श ट्रांसफॉर्मर में प्राथमिक एवं द्वितीयक धारा का अनुपात (I₁/I₂) किसके बराबर होता है?",
+        bn: "একটি আদর্শ ট্রান্সফরমারে প্রাইমারি ও সেকেন্ডারি কারেন্টের অনুপাত (I₁/I₂) কার সমান?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'N₁ / N₂', hi: 'N₁ / N₂', bn: 'N₁ / N₂' } },
-        { id: 'opt-2', text: { en: 'N₂ / N₁', hi: 'N₂ / N₁', bn: 'N₂ / N₁' } },
-        { id: 'opt-3', text: { en: '(N₂ / N₁)² ', hi: '(N₂ / N₁)² ', bn: '(N₂ / N₁)² ' } },
-        { id: 'opt-4', text: { en: '√(N₁ / N₂)', hi: '√(N₁ / N₂)', bn: '√(N₁ / N₂)' } }
+        { id: "opt-1", text: { en: "N₁ / N₂", hi: "N₁ / N₂", bn: "N₁ / N₂" } },
+        { id: "opt-2", text: { en: "N₂ / N₁", hi: "N₂ / N₁", bn: "N₂ / N₁" } },
+        { id: "opt-3", text: { en: "(N₂ / N₁)² ", hi: "(N₂ / N₁)² ", bn: "(N₂ / N₁)² " } },
+        { id: "opt-4", text: { en: "√(N₁ / N₂)", hi: "√(N₁ / N₂)", bn: "√(N₁ / N₂)" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'From ampere-turn balance N₁I₁ = N₂I₂, the current ratio I₁/I₂ = N₂/N₁.',
-        hi: 'एम्पीयर-टर्न संतुलन N₁I₁ = N₂I₂ से, धारा अनुपात I₁/I₂ = N₂/N₁ होता है।',
-        bn: 'অ্যাম্পিয়ার-টার্ন সমতা N₁I₁ = N₂I₂ থেকে, কারেন্ট অনুপাত I₁/I₂ = N₂/N₁ হয়।'
+        en: "From ampere-turn balance N₁I₁ = N₂I₂, the current ratio I₁/I₂ = N₂/N₁.",
+        hi: "एम्पीयर-टर्न संतुलन N₁I₁ = N₂I₂ से, धारा अनुपात I₁/I₂ = N₂/N₁ होता है।",
+        bn: "অ্যাম্পিয়ার-টার্ন সমতা N₁I₁ = N₂I₂ থেকে, কারেন্ট অনুপাত I₁/I₂ = N₂/N₁ হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-03",
+      question: {
+        en: "A 2200 V / 220 V single-phase step-down transformer has 1000 turns on its high-voltage primary winding. How many turns are on the secondary winding?",
+        hi: "एक 2200 V / 220 V सिंगल-फेज स्टेप-डाउन ट्रांसफॉर्मर की प्राथमिक वाइंडिंग पर 1000 फेरे हैं। द्वितीयक वाइंडिंग पर कितने फेरे होंगे?",
+        bn: "একটি ২২০০ V / ২২০ V সিঙ্গেল-ফেজ স্টেপ-ডাউন ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংয়ে ১০০০ পাক রয়েছে। এর সেকেন্ডারি ওয়াইন্ডিংয়ের পাকসংখ্যা কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "100 turns", hi: "100 फेरे", bn: "১০০ পাক" } },
+        { id: "opt-2", text: { en: "10 turns", hi: "10 फेरे", bn: "১০ পাক" } },
+        { id: "opt-3", text: { en: "10,000 turns", hi: "10,000 फेरे", bn: "১০,০০০ পাক" } },
+        { id: "opt-4", text: { en: "220 turns", hi: "220 फेरे", bn: "২২০ পাক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Using the transformer turns ratio: N₂ = N₁ × (V₂ / V₁) = 1000 × (220 / 2200) = 1000 × 0.1 = 100 turns.",
+        hi: "वाइंडिंग अनुपात N₂ = N₁ × (V₂ / V₁) = 1000 × (220 / 2200) = 100 फेरे।",
+        bn: "ট্রান্সফরমারের পাক অনুপাত N₂ = N₁ × (V₂ / V₁) = ১০০০ × (২২০ / ২২০০) = ১০০ পাক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-04",
+      question: {
+        en: "What is the emf induced per turn (E/N) in a 50 Hz transformer operating with a peak core magnetic flux Φ_m = 0.04 Wb?",
+        hi: "अधिकतम चुंबकीय फ्लक्स Φ_m = 0.04 Wb वाले 50 Hz ट्रांसफॉर्मर में प्रति फेरा प्रेरित EMF (E/N) कितना है?",
+        bn: "সর্বোচ্চ চৌম্বক ফ্লাক্স Φ_m = ০.০৪ Wb বিশিষ্ট একটি ৫০ হার্টজ ট্রান্সফরমারে প্রতি পাকে আবিষ্ট EMF (E/N) কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "8.88 V/turn", hi: "8.88 V/फेरा", bn: "৮.৮৮ V/পাক" } },
+        { id: "opt-2", text: { en: "4.44 V/turn", hi: "4.44 V/फेरा", bn: "৪.৪৪ V/পাক" } },
+        { id: "opt-3", text: { en: "2.22 V/turn", hi: "2.22 V/फेरा", bn: "২.২২ V/পাক" } },
+        { id: "opt-4", text: { en: "17.76 V/turn", hi: "17.76 V/फेरा", bn: "১৭.৭৬ V/পাক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "EMF per turn is E / N = 4.44 · f · Φ_m = 4.44 × 50 × 0.04 = 222 × 0.04 = 8.88 Volts per turn.",
+        hi: "प्रति फेरा EMF = 4.44 · f · Φ_m = 4.44 × 50 × 0.04 = 8.88 वोल्ट प्रति फेरा।",
+        bn: "প্রতি পাকে EMF = ৪.৪৪ · f · Φ_m = ৪.৪৪ × ৫০ × ০.০৪ = ৮.৮৮ ভোল্ট প্রতি পাক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-05",
+      question: {
+        en: "In an ideal transformer delivering 5 kW to a resistive load at 250 V secondary voltage, what is the primary current if the primary voltage is 2500 V?",
+        hi: "एक आदर्श ट्रांसफॉर्मर में 250 V द्वितीयक वोल्टेज पर 5 kW का लोड जुड़ा है। यदि प्राथमिक वोल्टेज 2500 V हो, तो प्राथमिक धारा क्या होगी?",
+        bn: "একটি আদর্শ ট্রান্সফরমারে ২৫০ V সেকেন্ডারি ভোল্টেজে ৫ kW লোড সংযুক্ত। প্রাইমারি ভোল্টেজ ২৫০০ V হলে প্রাইমারি কারেন্ট কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "2.0 A", hi: "2.0 A", bn: "২.০ A" } },
+        { id: "opt-2", text: { en: "20.0 A", hi: "20.0 A", bn: "২০.০ A" } },
+        { id: "opt-3", text: { en: "0.2 A", hi: "0.2 A", bn: "০.২ A" } },
+        { id: "opt-4", text: { en: "5.0 A", hi: "5.0 A", bn: "৫.০ A" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In an ideal transformer, input power equals output power: V₁ · I₁ = V₂ · I₂ = 5000 W. Therefore, I₁ = 5000 / 2500 = 2.0 A.",
+        hi: "आदर्श ट्रांसफॉर्मर में इनपुट पावर = आउटपुट पावर: V₁ · I₁ = 5000 W। अतः I₁ = 5000 / 2500 = 2.0 A।",
+        bn: "আদর্শ ট্রান্সফরমারে ইনপুট ক্ষমতা = আউটপুট ক্ষমতা: V₁ · I₁ = ৫০০০ W। সুতরাং I₁ = ৫০০০ / ২৫০০ = ২.০ A।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-06",
+      question: {
+        en: "Which of the following is NOT an assumption of an ideal transformer?",
+        hi: "निम्नलिखित में से कौन सा एक आदर्श ट्रांसफॉर्मर का पूर्वमान्य गुण (assumption) नहीं है?",
+        bn: "নিচের কোনটি একটি আদর্শ ট্রান্সফরমারের বৈশিষ্ট্য বা অনুমান নয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Core iron has finite permeability requiring high magnetizing current", hi: "कोर के लोहे की सीमित पारगम्यता होती है जिसके लिए उच्च चुंबकन धारा चाहिए", bn: "কোরের লোহার সীমিত প্রবেশ্যতা থাকে যার জন্য উচ্চ ম্যাগনেটাইজিং কারেন্ট লাগে" } },
+        { id: "opt-2", text: { en: "Windings have zero electrical resistance (zero I²R copper loss)", hi: "वाइंडिंग्स का प्रतिरोध शून्य होता है (शून्य कॉपर लॉस)", bn: "ওয়াইন্ডিংয়ের বৈদ্যুতিক রোধ শূন্য (কোনো তামার অপচয় নেই)" } },
+        { id: "opt-3", text: { en: "Zero magnetic leakage flux (coupling coefficient k = 1.0)", hi: "शून्य चुंबकीय लीकेज फ्लक्स (k = 1.0)", bn: "চৌম্বকীয় লিকেজ ফ্লাক্স শূন্য (k = ১.০)" } },
+        { id: "opt-4", text: { en: "Zero core losses (no hysteresis or eddy current losses)", hi: "शून्य कोर हानि (कोई हिस्टैरिसीस या भंवर हानि नहीं)", bn: "কোর অপচয় শূন্য (হিস্টেরেসিস ও এডি কারেন্ট লস নেই)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "An ideal transformer assumes infinite core permeability (μ → ∞), meaning zero magnetizing ampere-turns and zero magnetizing current are required to establish core flux.",
+        hi: "आदर्श ट्रांसफॉर्मर में कोर की पारगम्यता अनंत (μ → ∞) मानी जाती है, ताकि फ्लक्स बनाने के लिए शून्य धारा लगे।",
+        bn: "একটি আদর্শ ট্রান্সফরমারে কোরের প্রবেশ্যতা অসীম (μ → ∞) ধরা হয়, ফলে ফ্লাক্স তৈরি করতে কোনো কারেন্ট লাগে না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-07",
+      question: {
+        en: "A load impedance Z_L connected across the secondary of an ideal transformer with turns ratio a = N₁ / N₂ is reflected into the primary circuit as:",
+        hi: "टर्न अनुपात a = N₁ / N₂ वाले आदर्श ट्रांसफॉर्मर के द्वितीयक पर जुड़ा लोड प्रतिबाधा Z_L प्राथमिक में किस रूप में परावर्तित होता है?",
+        bn: "পাক অনুপাত a = N₁ / N₂ বিশিষ্ট একটি আদর্শ ট্রান্সফরমারের সেকেন্ডারিতে যুক্ত লোড ইম্পিডেন্স Z_L প্রাইমারি সার্কিটে প্রতিফলিত হলে তার মান হয়:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L", hi: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L", bn: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L" } },
+        { id: "opt-2", text: { en: "Z_in = Z_L / a = (N₂ / N₁) · Z_L", hi: "Z_in = Z_L / a = (N₂ / N₁) · Z_L", bn: "Z_in = Z_L / a = (N₂ / N₁) · Z_L" } },
+        { id: "opt-3", text: { en: "Z_in = a · Z_L", hi: "Z_in = a · Z_L", bn: "Z_in = a · Z_L" } },
+        { id: "opt-4", text: { en: "Z_in = Z_L / a²", hi: "Z_in = Z_L / a²", bn: "Z_in = Z_L / a²" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Z_in = V₁ / I₁ = (a · V₂) / (I₂ / a) = a² · (V₂ / I₂) = a² · Z_L = (N₁ / N₂)² · Z_L.",
+        hi: "प्रतिबाधा परावर्तन सूत्र: Z_in = (N₁ / N₂)² · Z_L होता है।",
+        bn: "প্রতিফলিত ইম্পিডেন্স সূত্র: Z_in = (N₁ / N₂)² · Z_L।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-08",
+      question: {
+        en: "What is the phase angle relationship between the primary applied voltage V₁ and the primary counter-EMF E₁ in an ideal transformer at no load?",
+        hi: "नो-लोड पर आदर्श ट्रांसफॉर्मर में प्रयुक्त प्राथमिक वोल्टेज V₁ और प्राथमिक बैक-EMF E₁ के बीच कला कोण क्या होता है?",
+        bn: "নো-লোড অবস্থায় একটি আদর্শ ট্রান্সফরমারে প্রযুক্ত প্রাইমারি ভোল্টেজ V₁ এবং প্রাইমারি বিপরীত EMF E₁ এর মধ্যকার ফেজ কোণ কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Exactly 180° out of phase (in direct opposition, E₁ = -V₁)", hi: "ठीक 180° विपरीत कला में (E₁ = -V₁)", bn: "ঠিক ১৮০° বিপরীত দশায় (সরাসরি বিরোধিতা, E₁ = -V₁)" } },
+        { id: "opt-2", text: { en: "In phase (0° phase shift)", hi: "समान कला में (0°)", bn: "একই দশায় (০°)" } },
+        { id: "opt-3", text: { en: "90° phase leading", hi: "90° आगे (lead)", bn: "৯০° এগিয়ে (lead)" } },
+        { id: "opt-4", text: { en: "45° phase lagging", hi: "45° पीछे (lag)", bn: "৪৫° পিছিয়ে (lag)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the counter-EMF E₁ directly opposes applied terminal voltage V₁, establishing an exact 180° phase opposition so that V₁ + E₁ = 0 in the absence of winding drop.",
+        hi: "लेंज के नियम के अनुसार बैक-EMF E₁ प्रयुक्त वोल्टेज V₁ का सीधा विरोध करता है, अतः दोनों में 180° का कलांतर होता है (E₁ = -V₁)।",
+        bn: "লেনজের সূত্রানুসারে বিপরীত EMF E₁ প্রযুক্ত ভোল্টেজ V₁ এর সরাসরি বিরোধিতা করে, ফলে উভয়ের মধ্যে ঠিক ১৮০° ফেজ পার্থক্য থাকে (E₁ = -V₁)।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-t1",
+      question: {
+        en: "The constant 4.44 in the Transformer EMF equation E = 4.44 · f · N · Φ_m arises from:",
+        hi: "ट्रांसफॉर्मर ईएमएफ समीकरण E = 4.44 · f · N · Φ_m में 4.44 नियतांक की उत्पत्ति होती है:",
+        bn: "ট্রান্সফরমার ইএমএফ সমীকরণ E = ৪.৪৪ · f · N · Φ_m এ ৪.৪৪ ধ্রুবকটি আসে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "4 × Form Factor (4 × 1.11)", hi: "4 × फॉर्म फैक्टर (4 × 1.11)", bn: "৪ × ফর্ম ফ্যাক্টর (৪ × ১.১১)" } },
+        { id: "opt-2", text: { en: "2 × π", hi: "2 × π", bn: "২ × π" } },
+        { id: "opt-3", text: { en: "√2 × 2", hi: "√2 × 2", bn: "√২ × ২" } },
+        { id: "opt-4", text: { en: "4 × Crest Factor (4 × 1.414)", hi: "4 × क्रेस्ट फैक्टर (4 × 1.414)", bn: "৪ × ক্রেস্ট ফ্যাক্টর (৪ × ১.৪১৪)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The factor 4.44 equals 4 multiplied by the sinusoidal Form Factor (1.11), converting average EMF to RMS EMF.",
+        hi: "4.44 का मान 4 को ज्यावक्रीय फॉर्म फैक्टर (1.11) से गुणा करने पर प्राप्त होता है, जो औसत ईएमएफ को RMS में बदलता है।",
+        bn: "৪.৪৪ মূলত ৪ কে সাইন তরঙ্গের ফর্ম ফ্যাক্টর (১.১১) দিয়ে গুণ করে গড় ইএমএফকে RMS এ রূপান্তর করার ফলে আসে।"
+      }
+    },
+    {
+      id: "mcq-ch10-t2",
+      question: {
+        en: "In an ideal transformer, the ratio of primary to secondary current (I₁/I₂) is equal to:",
+        hi: "एक आदर्श ट्रांसफॉर्मर में प्राथमिक एवं द्वितीयक धारा का अनुपात (I₁/I₂) किसके बराबर होता है?",
+        bn: "একটি আদর্শ ট্রান্সফরমারে প্রাইমারি ও সেকেন্ডারি কারেন্টের অনুপাত (I₁/I₂) কার সমান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "N₁ / N₂", hi: "N₁ / N₂", bn: "N₁ / N₂" } },
+        { id: "opt-2", text: { en: "N₂ / N₁", hi: "N₂ / N₁", bn: "N₂ / N₁" } },
+        { id: "opt-3", text: { en: "(N₂ / N₁)² ", hi: "(N₂ / N₁)² ", bn: "(N₂ / N₁)² " } },
+        { id: "opt-4", text: { en: "√(N₁ / N₂)", hi: "√(N₁ / N₂)", bn: "√(N₁ / N₂)" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "From ampere-turn balance N₁I₁ = N₂I₂, the current ratio I₁/I₂ = N₂/N₁.",
+        hi: "एम्पीयर-टर्न संतुलन N₁I₁ = N₂I₂ से, धारा अनुपात I₁/I₂ = N₂/N₁ होता है।",
+        bn: "অ্যাম্পিয়ার-টার্ন সমতা N₁I₁ = N₂I₂ থেকে, কারেন্ট অনুপাত I₁/I₂ = N₂/N₁ হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-03",
+      question: {
+        en: "A 2200 V / 220 V single-phase step-down transformer has 1000 turns on its high-voltage primary winding. How many turns are on the secondary winding?",
+        hi: "एक 2200 V / 220 V सिंगल-फेज स्टेप-डाउन ट्रांसफॉर्मर की प्राथमिक वाइंडिंग पर 1000 फेरे हैं। द्वितीयक वाइंडिंग पर कितने फेरे होंगे?",
+        bn: "একটি ২২০০ V / ২২০ V সিঙ্গেল-ফেজ স্টেপ-ডাউন ট্রান্সফরমারের প্রাইমারি ওয়াইন্ডিংয়ে ১০০০ পাক রয়েছে। এর সেকেন্ডারি ওয়াইন্ডিংয়ের পাকসংখ্যা কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "100 turns", hi: "100 फेरे", bn: "১০০ পাক" } },
+        { id: "opt-2", text: { en: "10 turns", hi: "10 फेरे", bn: "১০ পাক" } },
+        { id: "opt-3", text: { en: "10,000 turns", hi: "10,000 फेरे", bn: "১০,০০০ পাক" } },
+        { id: "opt-4", text: { en: "220 turns", hi: "220 फेरे", bn: "২২০ পাক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Using the transformer turns ratio: N₂ = N₁ × (V₂ / V₁) = 1000 × (220 / 2200) = 1000 × 0.1 = 100 turns.",
+        hi: "वाइंडिंग अनुपात N₂ = N₁ × (V₂ / V₁) = 1000 × (220 / 2200) = 100 फेरे।",
+        bn: "ট্রান্সফরমারের পাক অনুপাত N₂ = N₁ × (V₂ / V₁) = ১০০০ × (২২০ / ২২০০) = ১০০ পাক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-04",
+      question: {
+        en: "What is the emf induced per turn (E/N) in a 50 Hz transformer operating with a peak core magnetic flux Φ_m = 0.04 Wb?",
+        hi: "अधिकतम चुंबकीय फ्लक्स Φ_m = 0.04 Wb वाले 50 Hz ट्रांसफॉर्मर में प्रति फेरा प्रेरित EMF (E/N) कितना है?",
+        bn: "সর্বোচ্চ চৌম্বক ফ্লাক্স Φ_m = ০.০৪ Wb বিশিষ্ট একটি ৫০ হার্টজ ট্রান্সফরমারে প্রতি পাকে আবিষ্ট EMF (E/N) কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "8.88 V/turn", hi: "8.88 V/फेरा", bn: "৮.৮৮ V/পাক" } },
+        { id: "opt-2", text: { en: "4.44 V/turn", hi: "4.44 V/फेरा", bn: "৪.৪৪ V/পাক" } },
+        { id: "opt-3", text: { en: "2.22 V/turn", hi: "2.22 V/फेरा", bn: "২.২২ V/পাক" } },
+        { id: "opt-4", text: { en: "17.76 V/turn", hi: "17.76 V/फेरा", bn: "১৭.৭৬ V/পাক" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "EMF per turn is E / N = 4.44 · f · Φ_m = 4.44 × 50 × 0.04 = 222 × 0.04 = 8.88 Volts per turn.",
+        hi: "प्रति फेरा EMF = 4.44 · f · Φ_m = 4.44 × 50 × 0.04 = 8.88 वोल्ट प्रति फेरा।",
+        bn: "প্রতি পাকে EMF = ৪.৪৪ · f · Φ_m = ৪.৪৪ × ৫০ × ০.০৪ = ৮.৮৮ ভোল্ট প্রতি পাক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-05",
+      question: {
+        en: "In an ideal transformer delivering 5 kW to a resistive load at 250 V secondary voltage, what is the primary current if the primary voltage is 2500 V?",
+        hi: "एक आदर्श ट्रांसफॉर्मर में 250 V द्वितीयक वोल्टेज पर 5 kW का लोड जुड़ा है। यदि प्राथमिक वोल्टेज 2500 V हो, तो प्राथमिक धारा क्या होगी?",
+        bn: "একটি আদর্শ ট্রান্সফরমারে ২৫০ V সেকেন্ডারি ভোল্টেজে ৫ kW লোড সংযুক্ত। প্রাইমারি ভোল্টেজ ২৫০০ V হলে প্রাইমারি কারেন্ট কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "2.0 A", hi: "2.0 A", bn: "২.০ A" } },
+        { id: "opt-2", text: { en: "20.0 A", hi: "20.0 A", bn: "২০.০ A" } },
+        { id: "opt-3", text: { en: "0.2 A", hi: "0.2 A", bn: "০.২ A" } },
+        { id: "opt-4", text: { en: "5.0 A", hi: "5.0 A", bn: "৫.০ A" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In an ideal transformer, input power equals output power: V₁ · I₁ = V₂ · I₂ = 5000 W. Therefore, I₁ = 5000 / 2500 = 2.0 A.",
+        hi: "आदर्श ट्रांसफॉर्मर में इनपुट पावर = आउटपुट पावर: V₁ · I₁ = 5000 W। अतः I₁ = 5000 / 2500 = 2.0 A।",
+        bn: "আদর্শ ট্রান্সফরমারে ইনপুট ক্ষমতা = আউটপুট ক্ষমতা: V₁ · I₁ = ৫০০০ W। সুতরাং I₁ = ৫০০০ / ২৫০০ = ২.০ A।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-06",
+      question: {
+        en: "Which of the following is NOT an assumption of an ideal transformer?",
+        hi: "निम्नलिखित में से कौन सा एक आदर्श ट्रांसफॉर्मर का पूर्वमान्य गुण (assumption) नहीं है?",
+        bn: "নিচের কোনটি একটি আদর্শ ট্রান্সফরমারের বৈশিষ্ট্য বা অনুমান নয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Core iron has finite permeability requiring high magnetizing current", hi: "कोर के लोहे की सीमित पारगम्यता होती है जिसके लिए उच्च चुंबकन धारा चाहिए", bn: "কোরের লোহার সীমিত প্রবেশ্যতা থাকে যার জন্য উচ্চ ম্যাগনেটাইজিং কারেন্ট লাগে" } },
+        { id: "opt-2", text: { en: "Windings have zero electrical resistance (zero I²R copper loss)", hi: "वाइंडिंग्स का प्रतिरोध शून्य होता है (शून्य कॉपर लॉस)", bn: "ওয়াইন্ডিংয়ের বৈদ্যুতিক রোধ শূন্য (কোনো তামার অপচয় নেই)" } },
+        { id: "opt-3", text: { en: "Zero magnetic leakage flux (coupling coefficient k = 1.0)", hi: "शून्य चुंबकीय लीकेज फ्लक्स (k = 1.0)", bn: "চৌম্বকীয় লিকেজ ফ্লাক্স শূন্য (k = ১.০)" } },
+        { id: "opt-4", text: { en: "Zero core losses (no hysteresis or eddy current losses)", hi: "शून्य कोर हानि (कोई हिस्टैरिसीस या भंवर हानि नहीं)", bn: "কোর অপচয় শূন্য (হিস্টেরেসিস ও এডি কারেন্ট লস নেই)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "An ideal transformer assumes infinite core permeability (μ → ∞), meaning zero magnetizing ampere-turns and zero magnetizing current are required to establish core flux.",
+        hi: "आदर्श ट्रांसफॉर्मर में कोर की पारगम्यता अनंत (μ → ∞) मानी जाती है, ताकि फ्लक्स बनाने के लिए शून्य धारा लगे।",
+        bn: "একটি আদর্শ ট্রান্সফরমারে কোরের প্রবেশ্যতা অসীম (μ → ∞) ধরা হয়, ফলে ফ্লাক্স তৈরি করতে কোনো কারেন্ট লাগে না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-07",
+      question: {
+        en: "A load impedance Z_L connected across the secondary of an ideal transformer with turns ratio a = N₁ / N₂ is reflected into the primary circuit as:",
+        hi: "टर्न अनुपात a = N₁ / N₂ वाले आदर्श ट्रांसफॉर्मर के द्वितीयक पर जुड़ा लोड प्रतिबाधा Z_L प्राथमिक में किस रूप में परावर्तित होता है?",
+        bn: "পাক অনুপাত a = N₁ / N₂ বিশিষ্ট একটি আদর্শ ট্রান্সফরমারের সেকেন্ডারিতে যুক্ত লোড ইম্পিডেন্স Z_L প্রাইমারি সার্কিটে প্রতিফলিত হলে তার মান হয়:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L", hi: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L", bn: "Z_in = a² · Z_L = (N₁ / N₂)² · Z_L" } },
+        { id: "opt-2", text: { en: "Z_in = Z_L / a = (N₂ / N₁) · Z_L", hi: "Z_in = Z_L / a = (N₂ / N₁) · Z_L", bn: "Z_in = Z_L / a = (N₂ / N₁) · Z_L" } },
+        { id: "opt-3", text: { en: "Z_in = a · Z_L", hi: "Z_in = a · Z_L", bn: "Z_in = a · Z_L" } },
+        { id: "opt-4", text: { en: "Z_in = Z_L / a²", hi: "Z_in = Z_L / a²", bn: "Z_in = Z_L / a²" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Z_in = V₁ / I₁ = (a · V₂) / (I₂ / a) = a² · (V₂ / I₂) = a² · Z_L = (N₁ / N₂)² · Z_L.",
+        hi: "प्रतिबाधा परावर्तन सूत्र: Z_in = (N₁ / N₂)² · Z_L होता है।",
+        bn: "প্রতিফলিত ইম্পিডেন্স সূত্র: Z_in = (N₁ / N₂)² · Z_L।"
+      }
+    },
+    {
+      id: "mcq-ch10-l09-08",
+      question: {
+        en: "What is the phase angle relationship between the primary applied voltage V₁ and the primary counter-EMF E₁ in an ideal transformer at no load?",
+        hi: "नो-लोड पर आदर्श ट्रांसफॉर्मर में प्रयुक्त प्राथमिक वोल्टेज V₁ और प्राथमिक बैक-EMF E₁ के बीच कला कोण क्या होता है?",
+        bn: "নো-লোড অবস্থায় একটি আদর্শ ট্রান্সফরমারে প্রযুক্ত প্রাইমারি ভোল্টেজ V₁ এবং প্রাইমারি বিপরীত EMF E₁ এর মধ্যকার ফেজ কোণ কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Exactly 180° out of phase (in direct opposition, E₁ = -V₁)", hi: "ठीक 180° विपरीत कला में (E₁ = -V₁)", bn: "ঠিক ১৮০° বিপরীত দশায় (সরাসরি বিরোধিতা, E₁ = -V₁)" } },
+        { id: "opt-2", text: { en: "In phase (0° phase shift)", hi: "समान कला में (0°)", bn: "একই দশায় (০°)" } },
+        { id: "opt-3", text: { en: "90° phase leading", hi: "90° आगे (lead)", bn: "৯০° এগিয়ে (lead)" } },
+        { id: "opt-4", text: { en: "45° phase lagging", hi: "45° पीछे (lag)", bn: "৪৫° পিছিয়ে (lag)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Lenz’s law, the counter-EMF E₁ directly opposes applied terminal voltage V₁, establishing an exact 180° phase opposition so that V₁ + E₁ = 0 in the absence of winding drop.",
+        hi: "लेंज के नियम के अनुसार बैक-EMF E₁ प्रयुक्त वोल्टेज V₁ का सीधा विरोध करता है, अतः दोनों में 180° का कलांतर होता है (E₁ = -V₁)।",
+        bn: "লেনজের সূত্রানুসারে বিপরীত EMF E₁ প্রযুক্ত ভোল্টেজ V₁ এর সরাসরি বিরোধিতা করে, ফলে উভয়ের মধ্যে ঠিক ১৮০° ফেজ পার্থক্য থাকে (E₁ = -V₁)।"
       }
     }
   ],

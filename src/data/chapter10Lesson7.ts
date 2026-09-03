@@ -351,63 +351,325 @@ By connecting two coupled coils in series aiding and measuring total inductance 
   },
   mcqs: [
     {
-      id: 'mcq-ch10-m1',
+      id: "mcq-ch10-m1",
       question: {
-        en: 'What is the SI unit of Mutual Inductance (M)?',
-        hi: 'अन्योन्य प्रेरकत्व (M) का SI मात्रक क्या है?',
-        bn: 'পারস্পরিক আবেশাঙ্কের (M) এসআই একক কোনটি?'
+        en: "What is the SI unit of Mutual Inductance (M)?",
+        hi: "अन्योन्य प्रेरकत्व (M) का SI मात्रक क्या है?",
+        bn: "পারস্পরিক আবেশাঙ্কের (M) এসআই একক কোনটি?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Weber (Wb)', hi: 'वेबर (Wb)', bn: 'ওয়েবার (Wb)' } },
-        { id: 'opt-2', text: { en: 'Henry (H)', hi: 'हेनरी (H)', bn: 'হেনরি (H)' } },
-        { id: 'opt-3', text: { en: 'Tesla (T)', hi: 'टेस्ला (T)', bn: 'টেসলা (T)' } },
-        { id: 'opt-4', text: { en: 'Farad (F)', hi: 'फैराड (F)', bn: 'ফ্যারাড (F)' } }
+        { id: "opt-1", text: { en: "Weber (Wb)", hi: "वेबर (Wb)", bn: "ওয়েবার (Wb)" } },
+        { id: "opt-2", text: { en: "Henry (H)", hi: "हेनरी (H)", bn: "হেনরি (H)" } },
+        { id: "opt-3", text: { en: "Tesla (T)", hi: "टेस्ला (T)", bn: "টেসলা (T)" } },
+        { id: "opt-4", text: { en: "Farad (F)", hi: "फैराड (F)", bn: "ফ্যারাড (F)" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Mutual inductance is measured in Henries (H), where 1 H = 1 Volt·second per Ampere.',
-        hi: 'अन्योन्य प्रेरकत्व को हेनरी (H) में मापा जाता है, जहां 1 H = 1 वोल्ट·सेकंड प्रति एम्पीयर।',
-        bn: 'পারস্পরিক আবেশাঙ্ক হেনরি (H) এককে মাপা হয়, যেখানে ১ H = ১ ভোল্ট·সেকেন্ড প্রতি অ্যাম্পিয়ার।'
+        en: "Mutual inductance is measured in Henries (H), where 1 H = 1 Volt·second per Ampere.",
+        hi: "अन्योन्य प्रेरकत्व को हेनरी (H) में मापा जाता है, जहां 1 H = 1 वोल्ट·सेकंड प्रति एम्पीयर।",
+        bn: "পারস্পরিক আবেশাঙ্ক হেনরি (H) এককে মাপা হয়, যেখানে ১ H = ১ ভোল্ট·সেকেন্ড প্রতি অ্যাম্পিয়ার।"
       }
     },
     {
-      id: 'mcq-ch10-m2',
+      id: "mcq-ch10-m2",
       question: {
-        en: 'For two magnetically coupled coils with self-inductances L₁ and L₂ having a coefficient of coupling k, the mutual inductance M is given by:',
-        hi: 'दो चुंबकीय रूप से युग्मित कुंडलियों (स्व-प्रेरकत्व L₁ व L₂, युग्मन गुणांक k) का अन्योन्य प्रेरकत्व M होता है:',
-        bn: 'L₁ ও L₂ স্ব-আবেশাঙ্কযুক্ত দুটি যুগল কয়েলের কাপলিং গুণাঙ্ক k হলে পারস্পরিক আবেশাঙ্ক M হবে:'
+        en: "For two magnetically coupled coils with self-inductances L₁ and L₂ having a coefficient of coupling k, the mutual inductance M is given by:",
+        hi: "दो चुंबकीय रूप से युग्मित कुंडलियों (स्व-प्रेरकत्व L₁ व L₂, युग्मन गुणांक k) का अन्योन्य प्रेरकत्व M होता है:",
+        bn: "L₁ ও L₂ স্ব-আবেশাঙ্কযুক্ত দুটি যুগল কয়েলের কাপলিং গুণাঙ্ক k হলে পারস্পরিক আবেশাঙ্ক M হবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: 'M = k · (L₁ + L₂)', hi: 'M = k · (L₁ + L₂)', bn: 'M = k · (L₁ + L₂)' } },
-        { id: 'opt-2', text: { en: 'M = k · √(L₁ · L₂)', hi: 'M = k · √(L₁ · L₂)', bn: 'M = k · √(L₁ · L₂)' } },
-        { id: 'opt-3', text: { en: 'M = (L₁ · L₂) / k', hi: 'M = (L₁ · L₂) / k', bn: 'M = (L₁ · L₂) / k' } },
-        { id: 'opt-4', text: { en: 'M = k² · √(L₁ / L₂)', hi: 'M = k² · √(L₁ / L₂)', bn: 'M = k² · √(L₁ / L₂)' } }
+        { id: "opt-1", text: { en: "M = k · (L₁ + L₂)", hi: "M = k · (L₁ + L₂)", bn: "M = k · (L₁ + L₂)" } },
+        { id: "opt-2", text: { en: "M = k · √(L₁ · L₂)", hi: "M = k · √(L₁ · L₂)", bn: "M = k · √(L₁ · L₂)" } },
+        { id: "opt-3", text: { en: "M = (L₁ · L₂) / k", hi: "M = (L₁ · L₂) / k", bn: "M = (L₁ · L₂) / k" } },
+        { id: "opt-4", text: { en: "M = k² · √(L₁ / L₂)", hi: "M = k² · √(L₁ / L₂)", bn: "M = k² · √(L₁ / L₂)" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Mutual inductance is M = k√(L₁L₂), reaching its theoretical maximum √(L₁L₂) when k = 1.',
-        hi: 'अन्योन्य प्रेरकत्व सूत्र M = k√(L₁L₂) होता है, जो k = 1 होने पर अधिकतम मान √(L₁L₂) प्राप्त करता है।',
-        bn: 'পারস্পরিক আবেশাঙ্কের সঠিক সূত্র M = k√(L₁L₂), যা k = ১ হলে সর্বোচ্চ মান √(L₁L₂) পায়।'
+        en: "Mutual inductance is M = k√(L₁L₂), reaching its theoretical maximum √(L₁L₂) when k = 1.",
+        hi: "अन्योन्य प्रेरकत्व सूत्र M = k√(L₁L₂) होता है, जो k = 1 होने पर अधिकतम मान √(L₁L₂) प्राप्त करता है।",
+        bn: "পারস্পরিক আবেশাঙ্কের সঠিক সূত্র M = k√(L₁L₂), যা k = ১ হলে সর্বোচ্চ মান √(L₁L₂) পায়।"
       }
     },
     {
-      id: 'mcq-ch10-m3',
+      id: "mcq-ch10-m3",
       question: {
-        en: 'When two coupled coils are connected in series aiding, the equivalent total inductance is:',
-        hi: 'जब दो युग्मित कुंडलियों को श्रेणी सहायक (Series Aiding) क्रम में जोड़ा जाता है, तो तुल्य प्रेरकत्व होता है:',
-        bn: 'দুটি যুগল কয়েলকে সিরিজ সহায়ক (Series Aiding) সংযোগে যুক্ত করলে তুল্য আবেশাঙ্ক হবে:'
+        en: "When two coupled coils are connected in series aiding, the equivalent total inductance is:",
+        hi: "जब दो युग्मित कुंडलियों को श्रेणी सहायक (Series Aiding) क्रम में जोड़ा जाता है, तो तुल्य प्रेरकत्व होता है:",
+        bn: "দুটি যুগল কয়েলকে সিরিজ সহায়ক (Series Aiding) সংযোগে যুক্ত করলে তুল্য আবেশাঙ্ক হবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: 'L₁ + L₂ - 2M', hi: 'L₁ + L₂ - 2M', bn: 'L₁ + L₂ - 2M' } },
-        { id: 'opt-2', text: { en: 'L₁ + L₂ + 2M', hi: 'L₁ + L₂ + 2M', bn: 'L₁ + L₂ + 2M' } },
-        { id: 'opt-3', text: { en: 'L₁ + L₂ + M', hi: 'L₁ + L₂ + M', bn: 'L₁ + L₂ + M' } },
-        { id: 'opt-4', text: { en: '√(L₁² + L₂²)', hi: '√(L₁² + L₂²)', bn: '√(L₁² + L₂²)' } }
+        { id: "opt-1", text: { en: "L₁ + L₂ - 2M", hi: "L₁ + L₂ - 2M", bn: "L₁ + L₂ - 2M" } },
+        { id: "opt-2", text: { en: "L₁ + L₂ + 2M", hi: "L₁ + L₂ + 2M", bn: "L₁ + L₂ + 2M" } },
+        { id: "opt-3", text: { en: "L₁ + L₂ + M", hi: "L₁ + L₂ + M", bn: "L₁ + L₂ + M" } },
+        { id: "opt-4", text: { en: "√(L₁² + L₂²)", hi: "√(L₁² + L₂²)", bn: "√(L₁² + L₂²)" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'In series aiding configuration, self and mutual fluxes reinforce each other, yielding L_eq = L₁ + L₂ + 2M.',
-        hi: 'श्रेणी सहायक संयोजन में स्व एवं अन्योन्य फ्लक्स एक-दूसरे को जोड़ते हैं, अतः L_eq = L₁ + L₂ + 2M।',
-        bn: 'সিরিজ সহায়ক সংযোগে স্ব ও পারস্পরিক ফ্লাক্স পরস্পরকে সাহায্য করে, ফলে L_eq = L₁ + L₂ + 2M হয়।'
+        en: "In series aiding configuration, self and mutual fluxes reinforce each other, yielding L_eq = L₁ + L₂ + 2M.",
+        hi: "श्रेणी सहायक संयोजन में स्व एवं अन्योन्य फ्लक्स एक-दूसरे को जोड़ते हैं, अतः L_eq = L₁ + L₂ + 2M।",
+        bn: "সিরিজ সহায়ক সংযোগে স্ব ও পারস্পরিক ফ্লাক্স পরস্পরকে সাহায্য করে, ফলে L_eq = L₁ + L₂ + 2M হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-04",
+      question: {
+        en: "Two magnetically coupled coils have self-inductances L_1 = 40 mH and L_2 = 90 mH, with a coupling coefficient k = 0.50. What is their mutual inductance M?",
+        hi: "दो युग्मित कुंडलियों के स्व-प्रेरकत्व L_1 = 40 mH और L_2 = 90 mH हैं, तथा युग्मन गुणांक k = 0.50 है। उनका पारस्परिक प्रेरकत्व M क्या है?",
+        bn: "দুটি যুগলবদ্ধ কয়েলের স্বকীয় আবেশাঙ্ক L_1 = ৪০ mH এবং L_2 = ৯০ mH, এবং কাপলিং গুণাঙ্ক k = ০.৫০। তাদের পারস্পরিক আবেশাঙ্ক M কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "30 mH", hi: "30 mH", bn: "৩০ mH" } },
+        { id: "opt-2", text: { en: "60 mH", hi: "60 mH", bn: "৬০ mH" } },
+        { id: "opt-3", text: { en: "15 mH", hi: "15 mH", bn: "১৫ mH" } },
+        { id: "opt-4", text: { en: "65 mH", hi: "65 mH", bn: "৬৫ mH" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "M = k · √(L₁ · L₂) = 0.50 × √(40 × 90) = 0.50 × √3600 = 0.50 × 60 mH = 30 mH.",
+        hi: "M = k · √(L₁ · L₂) = 0.50 × √(3600) = 0.50 × 60 = 30 mH।",
+        bn: "M = k · √(L₁ · L₂) = ০.৫০ × √(৩৬০০) = ০.৫০ × ৬০ = ৩০ mH।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-05",
+      question: {
+        en: "If current in the primary winding of an induction apparatus changes at a uniform rate of 500 A/s and the mutual inductance is M = 0.08 H, what voltage is induced across the open secondary terminals?",
+        hi: "यदि किसी प्राथमिक वाइंडिंग में धारा 500 A/s की एकसमान दर से बदलती है और पारस्परिक प्रेरकत्व M = 0.08 H है, तो खुले द्वितीयक सिरों पर कितना वोल्टेज प्रेरित होगा?",
+        bn: "যদি কোনো প্রাইমারি ওয়াইন্ডিংয়ে কারেন্ট ৫০০ A/s সুষম হারে পরিবর্তিত হয় এবং পারস্পরিক আবেশাঙ্ক M = ০.০৮ H হয়, তবে উন্মুক্ত সেকেন্ডারি প্রান্তে কত ভোল্টেজ আবিষ্ট হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "40 V", hi: "40 V", bn: "৪০ V" } },
+        { id: "opt-2", text: { en: "400 V", hi: "400 V", bn: "৪০০ V" } },
+        { id: "opt-3", text: { en: "6.25 V", hi: "6.25 V", bn: "৬.২৫ V" } },
+        { id: "opt-4", text: { en: "0.40 V", hi: "0.40 V", bn: "০.৪০ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e₂ = M · (di₁ / dt) = 0.08 H × 500 A/s = 40 V.",
+        hi: "e₂ = M · (di₁ / dt) = 0.08 × 500 = 40 V।",
+        bn: "e₂ = M · (di₁ / dt) = ০.০৮ × ৫০০ = ৪০ V।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-06",
+      question: {
+        en: "How does the mutual inductance between two concentric coils change if the central axis of one coil is rotated by 90° to become perpendicular to the other?",
+        hi: "यदि दो संकेंद्रीय कुंडलियों में से एक के केंद्रीय अक्ष को 90° घुमाकर दूसरे के लंबवत कर दिया जाए, तो पारस्परिक प्रेरकत्व में क्या परिवर्तन होगा?",
+        bn: "যদি দুটি সমকেন্দ্রিক কয়েলের একটির অক্ষকে ৯০° ঘুরিয়ে অন্যটির সাথে লম্ব করে দেওয়া হয়, তবে পারস্পরিক আবেশাঙ্ক কীভাবে পরিবর্তিত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It drops to zero (M = 0) because no flux lines link the perpendicular coil", hi: "यह शून्य (M = 0) हो जाता है क्योंकि कोई फ्लक्स रेखा लंबवत कुंडली से नहीं जुड़ती", bn: "এটি শূন্যে (M = ০) নেমে আসে কারণ কোনো ফ্লাক্স লম্ব কয়েলকে ছেদ করে না" } },
+        { id: "opt-2", text: { en: "It doubles due to orthogonal magnetic resonance", hi: "लंबवत अनुनाद के कारण यह दोगुना हो जाता है", bn: "লম্ব অনুরণনের কারণে এটি দ্বিগুণ হয়" } },
+        { id: "opt-3", text: { en: "It remains completely constant", hi: "यह पूरी तरह स्थिर रहता है", bn: "এটি সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "It becomes negative infinite", hi: "यह ऋणात्मक अनंत हो जाता है", bn: "এটি ঋণাত্মক অসীম হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Mutual inductance depends on the dot product of the flux vectors. At 90° perpendicularity, flux linkage is zero (cos 90° = 0), yielding k = 0 and M = 0.",
+        hi: "परस्पर लंबवत (90°) होने पर फ्लक्स लिंकेज शून्य (cos 90° = 0) हो जाता है, जिससे M = 0 हो जाता है।",
+        bn: "পরস্পর লম্ব (৯০°) অবস্থানে ফ্লাক্স লিংকেজ শূন্য (cos ৯০° = ০) হওয়ায় k = ০ এবং M = ০ হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-07",
+      question: {
+        en: "Two inductors L_1 and L_2 having mutual inductance M are connected in series-aiding configuration. The equivalent total inductance is:",
+        hi: "पारस्परिक प्रेरकत्व M वाले दो प्रेरक L_1 और L_2 श्रेणी-सहायक (series-aiding) संयोजन में जुड़े हैं। तुल्य कुल प्रेरकत्व क्या है?",
+        bn: "M পারস্পরিক আবেশাঙ্ক বিশিষ্ট দুটি ইন্ডাক্টর L_1 এবং L_2 শ্রেণী-সহায়ক (series-aiding) সংযোগে যুক্ত থাকলে তুল্য মোট আবেশাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L_eq = L_1 + L_2 + 2M", hi: "L_eq = L_1 + L_2 + 2M", bn: "L_eq = L_1 + L_2 + 2M" } },
+        { id: "opt-2", text: { en: "L_eq = L_1 + L_2 - 2M", hi: "L_eq = L_1 + L_2 - 2M", bn: "L_eq = L_1 + L_2 - 2M" } },
+        { id: "opt-3", text: { en: "L_eq = L_1 + L_2 + M", hi: "L_eq = L_1 + L_2 + M", bn: "L_eq = L_1 + L_2 + M" } },
+        { id: "opt-4", text: { en: "L_eq = √(L_1 · L_2) + M", hi: "L_eq = √(L_1 · L_2) + M", bn: "L_eq = √(L_1 · L_2) + M" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In series-aiding, each coil experiences its self-inductance plus the mutual flux from the other coil in the same direction: L_eq = (L₁ + M) + (L₂ + M) = L₁ + L₂ + 2M.",
+        hi: "श्रेणी-सहायक संयोजन में दोनों के फ्लक्स जुड़ते हैं, अतः L_eq = L₁ + L₂ + 2M।",
+        bn: "শ্রেণী-সহায়ক সংযোগে উভয় কয়েলের ফ্লাক্স পরস্পরকে সাহায্য করে, তাই L_eq = L₁ + L₂ + 2M।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-08",
+      question: {
+        en: "Two inductors L_1 and L_2 with mutual inductance M are connected in series-opposing configuration. The equivalent total inductance is:",
+        hi: "पारस्परिक प्रेरकत्व M वाले दो प्रेरक L_1 और L_2 श्रेणी-विरोधी (series-opposing) संयोजन में जुड़े हैं। तुल्य कुल प्रेरकत्व क्या है?",
+        bn: "M পারস্পরিক আবেশাঙ্ক বিশিষ্ট দুটি ইন্ডাক্টর L_1 এবং L_2 শ্রেণী-বিরোধী (series-opposing) সংযোগে যুক্ত থাকলে তুল্য মোট আবেশাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L_eq = L_1 + L_2 - 2M", hi: "L_eq = L_1 + L_2 - 2M", bn: "L_eq = L_1 + L_2 - 2M" } },
+        { id: "opt-2", text: { en: "L_eq = L_1 + L_2 + 2M", hi: "L_eq = L_1 + L_2 + 2M", bn: "L_eq = L_1 + L_2 + 2M" } },
+        { id: "opt-3", text: { en: "L_eq = L_1 - L_2 - M", hi: "L_eq = L_1 - L_2 - M", bn: "L_eq = L_1 - L_2 - M" } },
+        { id: "opt-4", text: { en: "L_eq = |L_1 - L_2|", hi: "L_eq = |L_1 - L_2|", bn: "L_eq = |L_1 - L_2|" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In series-opposing, mutual flux opposes the self-flux in each coil: L_eq = (L₁ - M) + (L₂ - M) = L₁ + L₂ - 2M.",
+        hi: "श्रेणी-विरोधी संयोजन में फ्लक्स एक-दूसरे का विरोध करते हैं, अतः L_eq = L₁ + L₂ - 2M।",
+        bn: "শ্রেণী-বিরোধী সংযোগে পরস্পরের ফ্লাক্স একে অপরকে বাধা দেয়, তাই L_eq = L₁ + L₂ - 2M।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-m1",
+      question: {
+        en: "What is the SI unit of Mutual Inductance (M)?",
+        hi: "अन्योन्य प्रेरकत्व (M) का SI मात्रक क्या है?",
+        bn: "পারস্পরিক আবেশাঙ্কের (M) এসআই একক কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Weber (Wb)", hi: "वेबर (Wb)", bn: "ওয়েবার (Wb)" } },
+        { id: "opt-2", text: { en: "Henry (H)", hi: "हेनरी (H)", bn: "হেনরি (H)" } },
+        { id: "opt-3", text: { en: "Tesla (T)", hi: "टेस्ला (T)", bn: "টেসলা (T)" } },
+        { id: "opt-4", text: { en: "Farad (F)", hi: "फैराड (F)", bn: "ফ্যারাড (F)" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Mutual inductance is measured in Henries (H), where 1 H = 1 Volt·second per Ampere.",
+        hi: "अन्योन्य प्रेरकत्व को हेनरी (H) में मापा जाता है, जहां 1 H = 1 वोल्ट·सेकंड प्रति एम्पीयर।",
+        bn: "পারস্পরিক আবেশাঙ্ক হেনরি (H) এককে মাপা হয়, যেখানে ১ H = ১ ভোল্ট·সেকেন্ড প্রতি অ্যাম্পিয়ার।"
+      }
+    },
+    {
+      id: "mcq-ch10-m2",
+      question: {
+        en: "For two magnetically coupled coils with self-inductances L₁ and L₂ having a coefficient of coupling k, the mutual inductance M is given by:",
+        hi: "दो चुंबकीय रूप से युग्मित कुंडलियों (स्व-प्रेरकत्व L₁ व L₂, युग्मन गुणांक k) का अन्योन्य प्रेरकत्व M होता है:",
+        bn: "L₁ ও L₂ স্ব-আবেশাঙ্কযুক্ত দুটি যুগল কয়েলের কাপলিং গুণাঙ্ক k হলে পারস্পরিক আবেশাঙ্ক M হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "M = k · (L₁ + L₂)", hi: "M = k · (L₁ + L₂)", bn: "M = k · (L₁ + L₂)" } },
+        { id: "opt-2", text: { en: "M = k · √(L₁ · L₂)", hi: "M = k · √(L₁ · L₂)", bn: "M = k · √(L₁ · L₂)" } },
+        { id: "opt-3", text: { en: "M = (L₁ · L₂) / k", hi: "M = (L₁ · L₂) / k", bn: "M = (L₁ · L₂) / k" } },
+        { id: "opt-4", text: { en: "M = k² · √(L₁ / L₂)", hi: "M = k² · √(L₁ / L₂)", bn: "M = k² · √(L₁ / L₂)" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Mutual inductance is M = k√(L₁L₂), reaching its theoretical maximum √(L₁L₂) when k = 1.",
+        hi: "अन्योन्य प्रेरकत्व सूत्र M = k√(L₁L₂) होता है, जो k = 1 होने पर अधिकतम मान √(L₁L₂) प्राप्त करता है।",
+        bn: "পারস্পরিক আবেশাঙ্কের সঠিক সূত্র M = k√(L₁L₂), যা k = ১ হলে সর্বোচ্চ মান √(L₁L₂) পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-m3",
+      question: {
+        en: "When two coupled coils are connected in series aiding, the equivalent total inductance is:",
+        hi: "जब दो युग्मित कुंडलियों को श्रेणी सहायक (Series Aiding) क्रम में जोड़ा जाता है, तो तुल्य प्रेरकत्व होता है:",
+        bn: "দুটি যুগল কয়েলকে সিরিজ সহায়ক (Series Aiding) সংযোগে যুক্ত করলে তুল্য আবেশাঙ্ক হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L₁ + L₂ - 2M", hi: "L₁ + L₂ - 2M", bn: "L₁ + L₂ - 2M" } },
+        { id: "opt-2", text: { en: "L₁ + L₂ + 2M", hi: "L₁ + L₂ + 2M", bn: "L₁ + L₂ + 2M" } },
+        { id: "opt-3", text: { en: "L₁ + L₂ + M", hi: "L₁ + L₂ + M", bn: "L₁ + L₂ + M" } },
+        { id: "opt-4", text: { en: "√(L₁² + L₂²)", hi: "√(L₁² + L₂²)", bn: "√(L₁² + L₂²)" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "In series aiding configuration, self and mutual fluxes reinforce each other, yielding L_eq = L₁ + L₂ + 2M.",
+        hi: "श्रेणी सहायक संयोजन में स्व एवं अन्योन्य फ्लक्स एक-दूसरे को जोड़ते हैं, अतः L_eq = L₁ + L₂ + 2M।",
+        bn: "সিরিজ সহায়ক সংযোগে স্ব ও পারস্পরিক ফ্লাক্স পরস্পরকে সাহায্য করে, ফলে L_eq = L₁ + L₂ + 2M হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-04",
+      question: {
+        en: "Two magnetically coupled coils have self-inductances L_1 = 40 mH and L_2 = 90 mH, with a coupling coefficient k = 0.50. What is their mutual inductance M?",
+        hi: "दो युग्मित कुंडलियों के स्व-प्रेरकत्व L_1 = 40 mH और L_2 = 90 mH हैं, तथा युग्मन गुणांक k = 0.50 है। उनका पारस्परिक प्रेरकत्व M क्या है?",
+        bn: "দুটি যুগলবদ্ধ কয়েলের স্বকীয় আবেশাঙ্ক L_1 = ৪০ mH এবং L_2 = ৯০ mH, এবং কাপলিং গুণাঙ্ক k = ০.৫০। তাদের পারস্পরিক আবেশাঙ্ক M কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "30 mH", hi: "30 mH", bn: "৩০ mH" } },
+        { id: "opt-2", text: { en: "60 mH", hi: "60 mH", bn: "৬০ mH" } },
+        { id: "opt-3", text: { en: "15 mH", hi: "15 mH", bn: "১৫ mH" } },
+        { id: "opt-4", text: { en: "65 mH", hi: "65 mH", bn: "৬৫ mH" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "M = k · √(L₁ · L₂) = 0.50 × √(40 × 90) = 0.50 × √3600 = 0.50 × 60 mH = 30 mH.",
+        hi: "M = k · √(L₁ · L₂) = 0.50 × √(3600) = 0.50 × 60 = 30 mH।",
+        bn: "M = k · √(L₁ · L₂) = ০.৫০ × √(৩৬০০) = ০.৫০ × ৬০ = ৩০ mH।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-05",
+      question: {
+        en: "If current in the primary winding of an induction apparatus changes at a uniform rate of 500 A/s and the mutual inductance is M = 0.08 H, what voltage is induced across the open secondary terminals?",
+        hi: "यदि किसी प्राथमिक वाइंडिंग में धारा 500 A/s की एकसमान दर से बदलती है और पारस्परिक प्रेरकत्व M = 0.08 H है, तो खुले द्वितीयक सिरों पर कितना वोल्टेज प्रेरित होगा?",
+        bn: "যদি কোনো প্রাইমারি ওয়াইন্ডিংয়ে কারেন্ট ৫০০ A/s সুষম হারে পরিবর্তিত হয় এবং পারস্পরিক আবেশাঙ্ক M = ০.০৮ H হয়, তবে উন্মুক্ত সেকেন্ডারি প্রান্তে কত ভোল্টেজ আবিষ্ট হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "40 V", hi: "40 V", bn: "৪০ V" } },
+        { id: "opt-2", text: { en: "400 V", hi: "400 V", bn: "৪০০ V" } },
+        { id: "opt-3", text: { en: "6.25 V", hi: "6.25 V", bn: "৬.২৫ V" } },
+        { id: "opt-4", text: { en: "0.40 V", hi: "0.40 V", bn: "০.৪০ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e₂ = M · (di₁ / dt) = 0.08 H × 500 A/s = 40 V.",
+        hi: "e₂ = M · (di₁ / dt) = 0.08 × 500 = 40 V।",
+        bn: "e₂ = M · (di₁ / dt) = ০.০৮ × ৫০০ = ৪০ V।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-06",
+      question: {
+        en: "How does the mutual inductance between two concentric coils change if the central axis of one coil is rotated by 90° to become perpendicular to the other?",
+        hi: "यदि दो संकेंद्रीय कुंडलियों में से एक के केंद्रीय अक्ष को 90° घुमाकर दूसरे के लंबवत कर दिया जाए, तो पारस्परिक प्रेरकत्व में क्या परिवर्तन होगा?",
+        bn: "যদি দুটি সমকেন্দ্রিক কয়েলের একটির অক্ষকে ৯০° ঘুরিয়ে অন্যটির সাথে লম্ব করে দেওয়া হয়, তবে পারস্পরিক আবেশাঙ্ক কীভাবে পরিবর্তিত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It drops to zero (M = 0) because no flux lines link the perpendicular coil", hi: "यह शून्य (M = 0) हो जाता है क्योंकि कोई फ्लक्स रेखा लंबवत कुंडली से नहीं जुड़ती", bn: "এটি শূন্যে (M = ০) নেমে আসে কারণ কোনো ফ্লাক্স লম্ব কয়েলকে ছেদ করে না" } },
+        { id: "opt-2", text: { en: "It doubles due to orthogonal magnetic resonance", hi: "लंबवत अनुनाद के कारण यह दोगुना हो जाता है", bn: "লম্ব অনুরণনের কারণে এটি দ্বিগুণ হয়" } },
+        { id: "opt-3", text: { en: "It remains completely constant", hi: "यह पूरी तरह स्थिर रहता है", bn: "এটি সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "It becomes negative infinite", hi: "यह ऋणात्मक अनंत हो जाता है", bn: "এটি ঋণাত্মক অসীম হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Mutual inductance depends on the dot product of the flux vectors. At 90° perpendicularity, flux linkage is zero (cos 90° = 0), yielding k = 0 and M = 0.",
+        hi: "परस्पर लंबवत (90°) होने पर फ्लक्स लिंकेज शून्य (cos 90° = 0) हो जाता है, जिससे M = 0 हो जाता है।",
+        bn: "পরস্পর লম্ব (৯০°) অবস্থানে ফ্লাক্স লিংকেজ শূন্য (cos ৯০° = ০) হওয়ায় k = ০ এবং M = ০ হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-07",
+      question: {
+        en: "Two inductors L_1 and L_2 having mutual inductance M are connected in series-aiding configuration. The equivalent total inductance is:",
+        hi: "पारस्परिक प्रेरकत्व M वाले दो प्रेरक L_1 और L_2 श्रेणी-सहायक (series-aiding) संयोजन में जुड़े हैं। तुल्य कुल प्रेरकत्व क्या है?",
+        bn: "M পারস্পরিক আবেশাঙ্ক বিশিষ্ট দুটি ইন্ডাক্টর L_1 এবং L_2 শ্রেণী-সহায়ক (series-aiding) সংযোগে যুক্ত থাকলে তুল্য মোট আবেশাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L_eq = L_1 + L_2 + 2M", hi: "L_eq = L_1 + L_2 + 2M", bn: "L_eq = L_1 + L_2 + 2M" } },
+        { id: "opt-2", text: { en: "L_eq = L_1 + L_2 - 2M", hi: "L_eq = L_1 + L_2 - 2M", bn: "L_eq = L_1 + L_2 - 2M" } },
+        { id: "opt-3", text: { en: "L_eq = L_1 + L_2 + M", hi: "L_eq = L_1 + L_2 + M", bn: "L_eq = L_1 + L_2 + M" } },
+        { id: "opt-4", text: { en: "L_eq = √(L_1 · L_2) + M", hi: "L_eq = √(L_1 · L_2) + M", bn: "L_eq = √(L_1 · L_2) + M" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In series-aiding, each coil experiences its self-inductance plus the mutual flux from the other coil in the same direction: L_eq = (L₁ + M) + (L₂ + M) = L₁ + L₂ + 2M.",
+        hi: "श्रेणी-सहायक संयोजन में दोनों के फ्लक्स जुड़ते हैं, अतः L_eq = L₁ + L₂ + 2M।",
+        bn: "শ্রেণী-সহায়ক সংযোগে উভয় কয়েলের ফ্লাক্স পরস্পরকে সাহায্য করে, তাই L_eq = L₁ + L₂ + 2M।"
+      }
+    },
+    {
+      id: "mcq-ch10-l07-08",
+      question: {
+        en: "Two inductors L_1 and L_2 with mutual inductance M are connected in series-opposing configuration. The equivalent total inductance is:",
+        hi: "पारस्परिक प्रेरकत्व M वाले दो प्रेरक L_1 और L_2 श्रेणी-विरोधी (series-opposing) संयोजन में जुड़े हैं। तुल्य कुल प्रेरकत्व क्या है?",
+        bn: "M পারস্পরিক আবেশাঙ্ক বিশিষ্ট দুটি ইন্ডাক্টর L_1 এবং L_2 শ্রেণী-বিরোধী (series-opposing) সংযোগে যুক্ত থাকলে তুল্য মোট আবেশাঙ্ক কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L_eq = L_1 + L_2 - 2M", hi: "L_eq = L_1 + L_2 - 2M", bn: "L_eq = L_1 + L_2 - 2M" } },
+        { id: "opt-2", text: { en: "L_eq = L_1 + L_2 + 2M", hi: "L_eq = L_1 + L_2 + 2M", bn: "L_eq = L_1 + L_2 + 2M" } },
+        { id: "opt-3", text: { en: "L_eq = L_1 - L_2 - M", hi: "L_eq = L_1 - L_2 - M", bn: "L_eq = L_1 - L_2 - M" } },
+        { id: "opt-4", text: { en: "L_eq = |L_1 - L_2|", hi: "L_eq = |L_1 - L_2|", bn: "L_eq = |L_1 - L_2|" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In series-opposing, mutual flux opposes the self-flux in each coil: L_eq = (L₁ - M) + (L₂ - M) = L₁ + L₂ - 2M.",
+        hi: "श्रेणी-विरोधी संयोजन में फ्लक्स एक-दूसरे का विरोध करते हैं, अतः L_eq = L₁ + L₂ - 2M।",
+        bn: "শ্রেণী-বিরোধী সংযোগে পরস্পরের ফ্লাক্স একে অপরকে বাধা দেয়, তাই L_eq = L₁ + L₂ - 2M।"
       }
     }
   ],

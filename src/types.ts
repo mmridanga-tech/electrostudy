@@ -100,6 +100,7 @@ export interface Lesson {
   keyTakeaways?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   commonMistakes?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   mcqs?: MCQQuestion[];
+  mcqQuestions?: MCQQuestion[];
   practiceQuestions?: PracticeQuestion[];
   quiz?: QuizQuestion[];
   flashcards?: Flashcard[];

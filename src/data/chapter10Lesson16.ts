@@ -375,43 +375,325 @@ where c_b is a geometric constant depending on pole aspect ratio and sheet bound
   },
   mcqs: [
     {
-      id: 'q-embraking-1',
+      id: "q-embraking-1",
       question: {
-        en: 'Why is an electromagnetic eddy current brake incapable of holding a stationary vehicle parked on an incline?',
-        hi: 'विद्युत चुंबकीय भंवर धारा ब्रेक किसी स्थिर वाहन को ढलान पर खड़ा (पार्क) रखने में असमर्थ क्यों होता है?',
-        bn: 'একটি ইলেক্ট্রোম্যাগনেটিক এডি কারেন্ট ব্রেক কেন কোনো স্থির গাড়িকে ঢালু রাস্তায় পার্ক করে আটকে রাখতে পারে না?'
+        en: "Why is an electromagnetic eddy current brake incapable of holding a stationary vehicle parked on an incline?",
+        hi: "विद्युत चुंबकीय भंवर धारा ब्रेक किसी स्थिर वाहन को ढलान पर खड़ा (पार्क) रखने में असमर्थ क्यों होता है?",
+        bn: "একটি ইলেক্ট্রোম্যাগনেটিক এডি কারেন্ট ব্রেক কেন কোনো স্থির গাড়িকে ঢালু রাস্তায় পার্ক করে আটকে রাখতে পারে না?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Because the braking force is proportional to velocity (F_b ∝ v); when v = 0, braking force is exactly zero', hi: 'क्योंकि ब्रेकिंग बल वेग के समानुपाती (F_b ∝ v) होता है; जब v = 0 हो, तो बल ठीक शून्य होता है', bn: 'কারণ ব্রেকিং বল বেগের সমানুপাতিক (F_b ∝ v); যখন v = ০, তখন বাধা বল সম্পূর্ণ শূন্য' } },
-        { id: 'opt-2', text: { en: 'Because magnetic fields cannot penetrate copper at zero speed', hi: 'क्योंकि शून्य गति पर चुंबकीय क्षेत्र तांबे में प्रवेश नहीं कर सकता', bn: 'কারণ শূন্য গতিতে চৌম্বক ক্ষেত্র তামার ভেতর প্রবেশ করতে পারে না' } },
-        { id: 'opt-3', text: { en: 'Because gravity cancels electromagnetic induction', hi: 'क्योंकि गुरुत्वाकर्षण प्रेरण को रद्द कर देता है', bn: 'কারণ মহাকর্ষ বল আবেশকে অকার্যকর করে' } },
-        { id: 'opt-4', text: { en: 'Because the vehicle battery explodes at zero speed', hi: 'क्योंकि शून्य गति पर बैटरी फट जाती है', bn: 'কারণ শূন্য গতিতে ব্যাটারি বিস্ফোরিত হয়' } }
+        { id: "opt-1", text: { en: "Because the braking force is proportional to velocity (F_b ∝ v); when v = 0, braking force is exactly zero", hi: "क्योंकि ब्रेकिंग बल वेग के समानुपाती (F_b ∝ v) होता है; जब v = 0 हो, तो बल ठीक शून्य होता है", bn: "কারণ ব্রেকিং বল বেগের সমানুপাতিক (F_b ∝ v); যখন v = ০, তখন বাধা বল সম্পূর্ণ শূন্য" } },
+        { id: "opt-2", text: { en: "Because magnetic fields cannot penetrate copper at zero speed", hi: "क्योंकि शून्य गति पर चुंबकीय क्षेत्र तांबे में प्रवेश नहीं कर सकता", bn: "কারণ শূন্য গতিতে চৌম্বক ক্ষেত্র তামার ভেতর প্রবেশ করতে পারে না" } },
+        { id: "opt-3", text: { en: "Because gravity cancels electromagnetic induction", hi: "क्योंकि गुरुत्वाकर्षण प्रेरण को रद्द कर देता है", bn: "কারণ মহাকর্ষ বল আবেশকে অকার্যকর করে" } },
+        { id: "opt-4", text: { en: "Because the vehicle battery explodes at zero speed", hi: "क्योंकि शून्य गति पर बैटरी फट जाती है", bn: "কারণ শূন্য গতিতে ব্যাটারি বিস্ফোরিত হয়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'By Faraday’s and Lenz’s laws, eddy currents are induced only when there is relative motion (dΦ/dt ≠ 0). At zero velocity (v = 0), no currents are induced, resulting in zero braking force. A mechanical friction brake is mandatory for parking.',
-        hi: 'भंवर धाराएं केवल सापेक्ष गति (dΦ/dt) होने पर ही उत्पन्न होती हैं। जब गति शून्य होती है, तो कोई धारा या बल उत्पन्न नहीं होता।',
-        bn: 'ফ্যারাডের সূত্র অনুযায়ী আপেক্ষিক গতি থাকলেই কেবল এডি কারেন্ট তৈরি হয়। স্থির অবস্থায় (v = ০) কোনো বাধা বল থাকে না, তাই মেকানিক্যাল পার্কিং ব্রেক প্রয়োজন।'
+        en: "By Faraday’s and Lenz’s laws, eddy currents are induced only when there is relative motion (dΦ/dt ≠ 0). At zero velocity (v = 0), no currents are induced, resulting in zero braking force. A mechanical friction brake is mandatory for parking.",
+        hi: "भंवर धाराएं केवल सापेक्ष गति (dΦ/dt) होने पर ही उत्पन्न होती हैं। जब गति शून्य होती है, तो कोई धारा या बल उत्पन्न नहीं होता।",
+        bn: "ফ্যারাডের সূত্র অনুযায়ী আপেক্ষিক গতি থাকলেই কেবল এডি কারেন্ট তৈরি হয়। স্থির অবস্থায় (v = ০) কোনো বাধা বল থাকে না, তাই মেকানিক্যাল পার্কিং ব্রেক প্রয়োজন।"
       }
     },
     {
-      id: 'q-embraking-2',
+      id: "q-embraking-2",
       question: {
-        en: 'If the excitation magnetic field B in an eddy current brake is doubled (2B) while vehicle velocity remains constant, the retarding force F_b will:',
-        hi: 'यदि वाहन का वेग स्थिर रखते हुए भंवर धारा ब्रेक के चुंबकीय क्षेत्र B को दोगुना (2B) कर दिया जाए, तो मंदक बल F_b होगा:',
-        bn: 'গাড়ির বেগ অপরিবর্তিত রেখে এডি কারেন্ট ব্রেকের চৌম্বক ক্ষেত্র B দ্বিগুণ (2B) করা হলে বাধা বল F_b কত হবে?'
+        en: "If the excitation magnetic field B in an eddy current brake is doubled (2B) while vehicle velocity remains constant, the retarding force F_b will:",
+        hi: "यदि वाहन का वेग स्थिर रखते हुए भंवर धारा ब्रेक के चुंबकीय क्षेत्र B को दोगुना (2B) कर दिया जाए, तो मंदक बल F_b होगा:",
+        bn: "গাড়ির বেগ অপরিবর্তিত রেখে এডি কারেন্ট ব্রেকের চৌম্বক ক্ষেত্র B দ্বিগুণ (2B) করা হলে বাধা বল F_b কত হবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Double (2x)', hi: 'दोगुना (2x)', bn: 'দ্বিগুণ (2x)' } },
-        { id: 'opt-2', text: { en: 'Quadruple (4x)', hi: 'चार गुना (4x)', bn: 'চার গুণ (4x)' } },
-        { id: 'opt-3', text: { en: 'Halve (0.5x)', hi: 'आधा (0.5x)', bn: 'অর্ধেক (0.5x)' } },
-        { id: 'opt-4', text: { en: 'Remain identical', hi: 'समान रहेगा', bn: 'একই থাকবে' } }
+        { id: "opt-1", text: { en: "Double (2x)", hi: "दोगुना (2x)", bn: "দ্বিগুণ (2x)" } },
+        { id: "opt-2", text: { en: "Quadruple (4x)", hi: "चार गुना (4x)", bn: "চার গুণ (4x)" } },
+        { id: "opt-3", text: { en: "Halve (0.5x)", hi: "आधा (0.5x)", bn: "অর্ধেক (0.5x)" } },
+        { id: "opt-4", text: { en: "Remain identical", hi: "समान रहेगा", bn: "একই থাকবে" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Braking force is proportional to the square of magnetic flux density: F_b ∝ B². Doubling B results in (2)² = 4 times the retarding force.',
-        hi: 'ब्रेकिंग बल चुंबकीय क्षेत्र के वर्ग (F_b ∝ B²) के समानुपाती होता है। अतः B दोगुना करने पर बल (2)² = 4 गुना हो जाता है।',
-        bn: 'ব্রেকিং বল চৌম্বক ক্ষেত্রের বর্গের সমানুপাতিক (F_b ∝ B²)। B দ্বিগুণ করলে বাধা বল (২)² = ৪ গুণ বৃদ্ধি পায়।'
+        en: "Braking force is proportional to the square of magnetic flux density: F_b ∝ B². Doubling B results in (2)² = 4 times the retarding force.",
+        hi: "ब्रेकिंग बल चुंबकीय क्षेत्र के वर्ग (F_b ∝ B²) के समानुपाती होता है। अतः B दोगुना करने पर बल (2)² = 4 गुना हो जाता है।",
+        bn: "ব্রেকিং বল চৌম্বক ক্ষেত্রের বর্গের সমানুপাতিক (F_b ∝ B²)। B দ্বিগুণ করলে বাধা বল (২)² = ৪ গুণ বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-03",
+      question: {
+        en: "In an electromagnetic linear eddy current rail brake, how is the retarding braking force applied to the speeding train?",
+        hi: "इलेक्ट्रोमैग्नेटिक लीनियर भंवर धारा रेल ब्रेक में, तेज गति वाली ट्रेन पर मंदक ब्रेकिंग बल कैसे लगाया जाता है?",
+        bn: "একটি ইলেক্ট্রোম্যাগনেটিক লিনিয়ার এডি কারেন্ট রেল ব্রেকের ক্ষেত্রে গতিশীল ট্রেনের ওপর মন্দন সৃষ্টিকারী ব্রেকিং বল কীভাবে প্রযুক্ত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Electromagnets suspended just above the steel rail induce eddy currents in the rail head as they move; interaction between rail eddy currents and the magnet poles creates a contactless drag force", hi: "पटरी के ठीक ऊपर लटके चुंबक गति करते समय पटरी में भंवर धाराएं बनाते हैं; इनकी अंतःक्रिया से बिना छुए खिंचाव बल लगता है", bn: "রেললাইনের ঠিক ওপরে ঝুলন্ত চুম্বক গতির সময় লাইনে এডি কারেন্ট সৃষ্টি করে; এদের মিথস্ক্রিয়ায় স্পর্শহীন ড্র্যাগ বল উৎপন্ন হয়" } },
+        { id: "opt-2", text: { en: "Steel brake shoes clamp down mechanically with hydraulic pistons onto the rail head", hi: "स्टील के ब्रेक पैड हाइड्रोलिक दबाव से सीधे पटरी को दबाते हैं", bn: "ইস্পাতের ব্রেক শু হাইড্রোলিক চাপে সরাসরি রেললাইনে চেপে বসে" } },
+        { id: "opt-3", text: { en: "Parachutes deploy from the rear train car", hi: "ट्रेन के पीछे से पैराशूट खुल जाते हैं", bn: "ট্রেনের পেছন থেকে প্যারাসুট খুলে দেওয়া হয়" } },
+        { id: "opt-4", text: { en: "The steel rail is melted into liquid by direct laser fire", hi: "लेजर से पटरी को पिघला दिया जाता है", bn: "লেজার দিয়ে রেললাইন গলিয়ে দেওয়া হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The electromagnetic brake sits ~7 mm above the rail. At high speed, the moving magnetic poles induce strong eddy currents in the solid rail head; by Lenz’s law, this produces a powerful horizontal retarding force without mechanical friction.",
+        hi: "पटरी से 7 mm ऊपर स्थित चुंबक पटरी में भंवर धाराएं बनाते हैं जो गति का विरोध करके ट्रेन को बिना छुए रोकती हैं।",
+        bn: "রেললাইনের ৭ মিমি ওপরে থাকা চুম্বক লাইনে এডি কারেন্ট আবিষ্ট করে লেনজের সূত্রানুযায়ী স্পর্শ ছাড়াই শক্তিশালী মন্দন বল তৈরি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-04",
+      question: {
+        en: "In a disc-type eddy current dynamometer used for engine power testing, what happens to the mechanical brake power absorbed from the engine shaft?",
+        hi: "इंजन पावर परीक्षण में प्रयुक्त डिस्क-प्रकार के भंवर धारा डायनेमोमीटर में, इंजन शाफ्ट से अवशोषित यांत्रिक शक्ति का क्या होता है?",
+        bn: "ইঞ্জিনের ক্ষমতা পরীক্ষায় ব্যবহৃত ডিস্ক-টাইপ এডি কারেন্ট ডায়নামোমিটারে ইঞ্জিনের শ্যাফ্ট থেকে শোষিত যান্ত্রিক শক্তির কী পরিণতি ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It is converted entirely into Joule heat (I²R) in the conductive metal rotor, which is continuously removed by cooling water", hi: "यह धातु के रोटर में पूरी तरह जूल ऊष्मा (I²R) में बदल जाती है, जिसे बहते पानी से ठंडा किया जाता है", bn: "এটি ধাতব রটারে সম্পূর্ণরূপে জুল তাপে (I²R) রূপান্তরিত হয়, যা সঞ্চালিত শীতল পানি দ্বারা নিরবচ্ছিন্নভাবে অপসারিত হয়" } },
+        { id: "opt-2", text: { en: "It is converted into chemical diesel fuel and stored in tanks", hi: "यह डीजल ईंधन में बदल जाती है", bn: "এটি রাসায়নিক ডিজেলে রূপান্তরিত হয়ে ট্যাংকে জমা হয়" } },
+        { id: "opt-3", text: { en: "It disappears into the fourth dimension without any temperature rise", hi: "बिना तापमान बढ़े गायब हो जाती है", bn: "কোনো তাপমাত্রা বৃদ্ধি ছাড়াই অদৃশ্য হয়ে যায়" } },
+        { id: "opt-4", text: { en: "It charges the vehicle headlights directly with static electricity", hi: "यह हेडलाइट को स्थिर बिजली से जलाती है", bn: "এটি স্থির বিদ্যুৎ দিয়ে হেডলাইট জ্বালায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "100% of the shaft mechanical power is dissipated as electrical eddy currents and Joule heating inside the spinning rotor disc, requiring cooling water jackets to prevent overheating.",
+        hi: "पूरी यांत्रिक शक्ति रोटर में भंवर धाराओं और जूल ऊष्मा में बदल जाती है, जिसे ठंडा रखने के लिए पानी की आवश्यकता होती है।",
+        bn: "সমস্ত যান্ত্রিক ক্ষমতা রটারে এডি কারেন্ট ও জুল তাপে রূপান্তরিত হয়, ফলে অতিরিক্ত উত্তাপ সরাতে শীতল জল সরবরাহ করতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-05",
+      question: {
+        en: "What mathematical characteristic describes the relationship between the retarding torque T_b and rotor speed ω in an eddy current brake at low-to-moderate speeds?",
+        hi: "निम्न से मध्यम गति पर भंवर धारा ब्रेक में मंदक टॉर्क T_b और गति ω के बीच कौन सा गणितीय संबंध होता है?",
+        bn: "স্বল্প থেকে মাঝারি গতিতে একটি এডি কারেন্ট ব্রেকে মন্দন সৃষ্টিকারী টর্ক T_b এবং রটারের গতি ω এর মধ্যকার গাণিতিক সম্পর্ক কেমন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Linear proportionality: T_b ∝ ω (smooth viscous damping behavior)", hi: "रैखिक समानुपात: T_b ∝ ω (सुचारू श्यान अवमंदन व्यवहार)", bn: "সরল সমানুপাতিক: T_b ∝ ω (মসৃণ সান্দ্র ড্যাম্পিং বৈশিষ্ট্য)" } },
+        { id: "opt-2", text: { en: "Inverse square relationship: T_b ∝ 1 / ω²", hi: "व्युत्क्रम वर्ग संबंध: T_b ∝ 1 / ω²", bn: "ব্যস্তানুপাতিক বর্গ সম্পর্ক: T_b ∝ ১ / ω²" } },
+        { id: "opt-3", text: { en: "Independent of speed (constant Coulomb friction)", hi: "गति से स्वतंत्र (स्थिर घर्षण)", bn: "গতির ওপর সম্পূর্ণ নিরপেক্ষ" } },
+        { id: "opt-4", text: { en: "Exponential growth: T_b ∝ e^(100 ω)", hi: "घातांकीय वृद्धि: T_b ∝ e^(100 ω)", bn: "সূচকীয় বৃদ্ধি: T_b ∝ e^(১০০ ω)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At speeds below peak torque, induced EMF e ∝ ω, induced eddy current I ∝ ω, and braking torque T = F·r ∝ I·B ∝ ω, providing ideal linear viscous damping.",
+        hi: "कम गति पर EMF गति के समानुपाती होता है, अतः धारा और टॉर्क भी गति के सीधे समानुपाती (T ∝ ω) होते हैं।",
+        bn: "মাঝারি গতি পর্যন্ত EMF বেগের সমানুপাতিক, তাই কারেন্ট ও ব্রেকিং টর্ক উভয়ই রটারের গতির সাথে সরল সমানুপাতিক (T ∝ ω) থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-06",
+      question: {
+        en: "Why does the braking torque of a high-speed eddy current brake eventually peak and then decrease at extreme rotational speeds?",
+        hi: "अत्यधिक उच्च घूर्णन गति पर भंवर धारा ब्रेक का ब्रेकिंग टॉर्क चरम पर पहुंचकर फिर घटने क्यों लगता है?",
+        bn: "অতিরিক্ত উচ্চ ঘূর্ণন গতিতে একটি এডি কারেন্ট ব্রেকের টর্ক সর্বোচ্চ সীমায় পৌঁছে আবার কমতে শুরু করে কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Rotor inductive reactance (ωL) begins to dominate over resistance R, causing eddy currents to lag in space and demagnetize the excitation poles", hi: "रोटर का प्रेरक प्रतिघात (ωL) प्रतिरोध पर हावी हो जाता है, जिससे भंवर धाराएं पीछे छूटकर मुख्य ध्रुवों को कमजोर कर देती हैं", bn: "রটারের ইনডাক্টিভ রিঅ্যাক্ট্যান্স (ωL) রোধের চেয়ে প্রভাবশালী হয়ে ওঠে, ফলে এডি কারেন্ট ফেজে পিছিয়ে পড়ে মূল মেরুকে ডিম্যাগনেটাইজ করে" } },
+        { id: "opt-2", text: { en: "The copper disc freezes solid from cold winds", hi: "ठंडी हवा से तांबे की डिस्क जम जाती है", bn: "ঠান্ডা বাতাসে তামার ডিস্ক বরফ হয়ে জমে যায়" } },
+        { id: "opt-3", text: { en: "The electromagnets reverse their battery connections automatically", hi: "चुंबक की ध्रुवता अपने आप बदल जाती है", bn: "চুম্বকের ব্যাটারি সংযোগ আপনা-আপনি উল্টে যায়" } },
+        { id: "opt-4", text: { en: "Gravity stops functioning at high speeds", hi: "उच्च गति पर गुरुत्वाकर्षण काम करना बंद कर देता है", bn: "উচ্চ গতিতে মহাকর্ষ কাজ করা বন্ধ করে দেয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At extreme frequencies (ω → ∞), the self-inductance L of the eddy paths causes eddy currents to lag by up to 90°, creating an armature reaction that opposes and pushes the main flux out of the rotor.",
+        hi: "अत्यधिक गति पर भंवर धाराओं का प्रेरकत्व (L) हावी हो जाता है, जिससे धाराएं कला में पिछड़कर मुख्य चुंबकीय क्षेत्र को दबा देती हैं और टॉर्क गिर जाता है।",
+        bn: "অতি উচ্চ গতিতে এডি পথের আবেশাঙ্ক (L) প্রভাবশালী হয়ে ওঠে, ফলে কারেন্ট ফেজে পিছিয়ে পড়ে মূল ফ্লাক্সকে বিকৃত ও দুর্বল করে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-07",
+      question: {
+        en: "What critical safety role do permanent magnet eddy current retarders serve on heavy mountain descent trucks and highway tour buses?",
+        hi: "पहाड़ी ढलानों पर उतरने वाले भारी ट्रकों और बसों में स्थायी चुंबक भंवर धारा मंदक कौन सी महत्वपूर्ण सुरक्षा भूमिका निभाते हैं?",
+        bn: "পাহাড়ি খাড়া ঢালে ভারী ট্রাক ও বাসের ক্ষেত্রে স্থায়ী চুম্বক এডি কারেন্ট রিটার্ডার কোন অত্যন্ত গুরুত্বপূর্ণ নিরাপত্তা নিশ্চিত করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "They provide continuous, wear-free baseline retarding on long downhill grades, preventing mechanical friction brakes from overheating and failing (brake fade)", hi: "वे लंबी ढलानों पर बिना घिसाव के निरंतर गति को नियंत्रित रखते हैं, जिससे घर्षण ब्रेक गर्म होकर फेल होने से बच जाते हैं", bn: "দীর্ঘ পাহাড়ি অবতরণে এরা ঘর্ষণহীন ব্রেকিং প্রদান করে, ফলে সাধারণ ব্রেক অতিরিক্ত উত্তপ্ত হয়ে বিকল (ব্রেক ফেড) হওয়া থেকে রক্ষা পায়" } },
+        { id: "opt-2", text: { en: "They steer the front wheels away from cliff edges automatically", hi: "वे ढलान के किनारों से पहियों को दूर मोड़ते हैं", bn: "তারা নিজে থেকেই চাকা ঘুরিয়ে খাঁদ থেকে বাঁচায়" } },
+        { id: "opt-3", text: { en: "They pump diesel fuel back into the fuel tank", hi: "वे डीजल को वापस टैंक में भरते हैं", bn: "তারা ডিজেল পুনরায় ট্যাংকে ফেরত পাঠায়" } },
+        { id: "opt-4", text: { en: "They lift the vehicle completely off the road surface into the air", hi: "वे गाड़ी को हवा में उड़ा देते हैं", bn: "তারা গাড়িকে রাস্তা থেকে বাতাসে ভাসিয়ে রাখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extended braking down steep mountain passes overheats conventional brake pads, causing complete hydraulic brake fade. An auxiliary eddy current retarder absorbs the descent energy magnetically, keeping primary friction brakes cold and ready for emergency stops.",
+        hi: "लगातार ब्रेक लगाने से पारंपरिक ब्रेक गर्म होकर काम करना बंद कर देते हैं। भंवर मंदक चुंबकीय रूप से वाहन की गति धीमी रखकर ब्रेक को सुरक्षित रखते हैं।",
+        bn: "টানা ব্রেক কষলে প্রচলিত ব্রেক প্যাড অতি-উত্তপ্ত হয়ে ব্যর্থ হয়; এডি কারেন্ট রিটার্ডার চৌম্বকীয়ভাবে গাড়ি নিয়ন্ত্রণ করে মূল ব্রেক প্যাডকে নিরাপদ রাখে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-08",
+      question: {
+        en: "In high-speed roller coasters, how do fail-safe permanent magnet eddy current brake fins stop the train safely even during a total electrical power outage?",
+        hi: "हाई-स्पीड रोलर कोस्टर में स्थायी चुंबक भंवर धारा ब्रेक फिन बिजली गुल होने पर भी ट्रेन को सुरक्षित रूप से कैसे रोकते हैं?",
+        bn: "উচ্চগতির রোলার কোস্টারে সম্পূর্ণ বিদ্যুৎ বিপর্যয়ের মধ্যেও স্থায়ী চুম্বক এডি কারেন্ট ব্রেক ফিন কীভাবে রোলার কোস্টারকে নিরাপদে থামিয়ে দেয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "They utilize rare-earth permanent magnets that require zero external electrical power, creating passive braking force purely from train motion", hi: "वे स्थायी चुंबकों का उपयोग करते हैं जिन्हें किसी बिजली की जरूरत नहीं होती; ट्रेन की गति से स्वतः ब्रेक लगता है", bn: "এতে কোনো বৈদ্যুতিক শক্তি লাগে না কারণ স্থায়ী চুম্বক কেবল ট্রেনের গতির সাহায্যেই নিষ্ক্রিয়ভাবে ব্রেকিং বল সৃষ্টি করে" } },
+        { id: "opt-2", text: { en: "Backup diesel generators take 2 minutes to start", hi: "बैकअप जनरेटर 2 मिनट में चालू होते हैं", bn: "ব্যাকআপ জেনারেটর ২ মিনিটে চালু হয়" } },
+        { id: "opt-3", text: { en: "They drop massive steel anchor hooks into concrete troughs", hi: "वे कंक्रीट में लोहे का लंगर गिराते हैं", bn: "কংক্রিটের ট্রাফে লোহার নোঙর ফেলে" } },
+        { id: "opt-4", text: { en: "They inflate large rubber balloons under the track", hi: "वे पटरी के नीचे रबर के गुब्बारे फुलाते हैं", bn: "রেললাইনের নিচে রাবারের বেলুন ফুলিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Permanent magnet eddy current brakes are 100% passive and fail-safe. Pure copper or aluminum fins passing between permanent neodymium magnet arrays automatically generate opposing Lorentz braking forces without needing sensors, computers, or external power.",
+        hi: "स्थायी चुंबक ब्रेक पूरी तरह निष्क्रिय और सुरक्षित होते हैं। ट्रेन के गुजरते ही तांबे के फिन में स्वतः भंवर धाराएं बनती हैं और ट्रेन बिना बिजली के रुक जाती है।",
+        bn: "স্থায়ী চুম্বক ব্রেক শতভাগ নিষ্ক্রিয় ও নির্ভরযোগ্য। বিদ্যুৎ সংযোগ না থাকলেও তামার ফিন চুম্বকের মধ্য দিয়ে যাওয়ামাত্রই স্বতঃস্ফূর্তভাবে মন্দন বল সৃষ্টি করে।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-embraking-1",
+      question: {
+        en: "Why is an electromagnetic eddy current brake incapable of holding a stationary vehicle parked on an incline?",
+        hi: "विद्युत चुंबकीय भंवर धारा ब्रेक किसी स्थिर वाहन को ढलान पर खड़ा (पार्क) रखने में असमर्थ क्यों होता है?",
+        bn: "একটি ইলেক্ট্রোম্যাগনেটিক এডি কারেন্ট ব্রেক কেন কোনো স্থির গাড়িকে ঢালু রাস্তায় পার্ক করে আটকে রাখতে পারে না?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because the braking force is proportional to velocity (F_b ∝ v); when v = 0, braking force is exactly zero", hi: "क्योंकि ब्रेकिंग बल वेग के समानुपाती (F_b ∝ v) होता है; जब v = 0 हो, तो बल ठीक शून्य होता है", bn: "কারণ ব্রেকিং বল বেগের সমানুপাতিক (F_b ∝ v); যখন v = ০, তখন বাধা বল সম্পূর্ণ শূন্য" } },
+        { id: "opt-2", text: { en: "Because magnetic fields cannot penetrate copper at zero speed", hi: "क्योंकि शून्य गति पर चुंबकीय क्षेत्र तांबे में प्रवेश नहीं कर सकता", bn: "কারণ শূন্য গতিতে চৌম্বক ক্ষেত্র তামার ভেতর প্রবেশ করতে পারে না" } },
+        { id: "opt-3", text: { en: "Because gravity cancels electromagnetic induction", hi: "क्योंकि गुरुत्वाकर्षण प्रेरण को रद्द कर देता है", bn: "কারণ মহাকর্ষ বল আবেশকে অকার্যকর করে" } },
+        { id: "opt-4", text: { en: "Because the vehicle battery explodes at zero speed", hi: "क्योंकि शून्य गति पर बैटरी फट जाती है", bn: "কারণ শূন্য গতিতে ব্যাটারি বিস্ফোরিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By Faraday’s and Lenz’s laws, eddy currents are induced only when there is relative motion (dΦ/dt ≠ 0). At zero velocity (v = 0), no currents are induced, resulting in zero braking force. A mechanical friction brake is mandatory for parking.",
+        hi: "भंवर धाराएं केवल सापेक्ष गति (dΦ/dt) होने पर ही उत्पन्न होती हैं। जब गति शून्य होती है, तो कोई धारा या बल उत्पन्न नहीं होता।",
+        bn: "ফ্যারাডের সূত্র অনুযায়ী আপেক্ষিক গতি থাকলেই কেবল এডি কারেন্ট তৈরি হয়। স্থির অবস্থায় (v = ০) কোনো বাধা বল থাকে না, তাই মেকানিক্যাল পার্কিং ব্রেক প্রয়োজন।"
+      }
+    },
+    {
+      id: "q-embraking-2",
+      question: {
+        en: "If the excitation magnetic field B in an eddy current brake is doubled (2B) while vehicle velocity remains constant, the retarding force F_b will:",
+        hi: "यदि वाहन का वेग स्थिर रखते हुए भंवर धारा ब्रेक के चुंबकीय क्षेत्र B को दोगुना (2B) कर दिया जाए, तो मंदक बल F_b होगा:",
+        bn: "গাড়ির বেগ অপরিবর্তিত রেখে এডি কারেন্ট ব্রেকের চৌম্বক ক্ষেত্র B দ্বিগুণ (2B) করা হলে বাধা বল F_b কত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Double (2x)", hi: "दोगुना (2x)", bn: "দ্বিগুণ (2x)" } },
+        { id: "opt-2", text: { en: "Quadruple (4x)", hi: "चार गुना (4x)", bn: "চার গুণ (4x)" } },
+        { id: "opt-3", text: { en: "Halve (0.5x)", hi: "आधा (0.5x)", bn: "অর্ধেক (0.5x)" } },
+        { id: "opt-4", text: { en: "Remain identical", hi: "समान रहेगा", bn: "একই থাকবে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Braking force is proportional to the square of magnetic flux density: F_b ∝ B². Doubling B results in (2)² = 4 times the retarding force.",
+        hi: "ब्रेकिंग बल चुंबकीय क्षेत्र के वर्ग (F_b ∝ B²) के समानुपाती होता है। अतः B दोगुना करने पर बल (2)² = 4 गुना हो जाता है।",
+        bn: "ব্রেকিং বল চৌম্বক ক্ষেত্রের বর্গের সমানুপাতিক (F_b ∝ B²)। B দ্বিগুণ করলে বাধা বল (২)² = ৪ গুণ বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-03",
+      question: {
+        en: "In an electromagnetic linear eddy current rail brake, how is the retarding braking force applied to the speeding train?",
+        hi: "इलेक्ट्रोमैग्नेटिक लीनियर भंवर धारा रेल ब्रेक में, तेज गति वाली ट्रेन पर मंदक ब्रेकिंग बल कैसे लगाया जाता है?",
+        bn: "একটি ইলেক্ট্রোম্যাগনেটিক লিনিয়ার এডি কারেন্ট রেল ব্রেকের ক্ষেত্রে গতিশীল ট্রেনের ওপর মন্দন সৃষ্টিকারী ব্রেকিং বল কীভাবে প্রযুক্ত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Electromagnets suspended just above the steel rail induce eddy currents in the rail head as they move; interaction between rail eddy currents and the magnet poles creates a contactless drag force", hi: "पटरी के ठीक ऊपर लटके चुंबक गति करते समय पटरी में भंवर धाराएं बनाते हैं; इनकी अंतःक्रिया से बिना छुए खिंचाव बल लगता है", bn: "রেললাইনের ঠিক ওপরে ঝুলন্ত চুম্বক গতির সময় লাইনে এডি কারেন্ট সৃষ্টি করে; এদের মিথস্ক্রিয়ায় স্পর্শহীন ড্র্যাগ বল উৎপন্ন হয়" } },
+        { id: "opt-2", text: { en: "Steel brake shoes clamp down mechanically with hydraulic pistons onto the rail head", hi: "स्टील के ब्रेक पैड हाइड्रोलिक दबाव से सीधे पटरी को दबाते हैं", bn: "ইস্পাতের ব্রেক শু হাইড্রোলিক চাপে সরাসরি রেললাইনে চেপে বসে" } },
+        { id: "opt-3", text: { en: "Parachutes deploy from the rear train car", hi: "ट्रेन के पीछे से पैराशूट खुल जाते हैं", bn: "ট্রেনের পেছন থেকে প্যারাসুট খুলে দেওয়া হয়" } },
+        { id: "opt-4", text: { en: "The steel rail is melted into liquid by direct laser fire", hi: "लेजर से पटरी को पिघला दिया जाता है", bn: "লেজার দিয়ে রেললাইন গলিয়ে দেওয়া হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The electromagnetic brake sits ~7 mm above the rail. At high speed, the moving magnetic poles induce strong eddy currents in the solid rail head; by Lenz’s law, this produces a powerful horizontal retarding force without mechanical friction.",
+        hi: "पटरी से 7 mm ऊपर स्थित चुंबक पटरी में भंवर धाराएं बनाते हैं जो गति का विरोध करके ट्रेन को बिना छुए रोकती हैं।",
+        bn: "রেললাইনের ৭ মিমি ওপরে থাকা চুম্বক লাইনে এডি কারেন্ট আবিষ্ট করে লেনজের সূত্রানুযায়ী স্পর্শ ছাড়াই শক্তিশালী মন্দন বল তৈরি করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-04",
+      question: {
+        en: "In a disc-type eddy current dynamometer used for engine power testing, what happens to the mechanical brake power absorbed from the engine shaft?",
+        hi: "इंजन पावर परीक्षण में प्रयुक्त डिस्क-प्रकार के भंवर धारा डायनेमोमीटर में, इंजन शाफ्ट से अवशोषित यांत्रिक शक्ति का क्या होता है?",
+        bn: "ইঞ্জিনের ক্ষমতা পরীক্ষায় ব্যবহৃত ডিস্ক-টাইপ এডি কারেন্ট ডায়নামোমিটারে ইঞ্জিনের শ্যাফ্ট থেকে শোষিত যান্ত্রিক শক্তির কী পরিণতি ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It is converted entirely into Joule heat (I²R) in the conductive metal rotor, which is continuously removed by cooling water", hi: "यह धातु के रोटर में पूरी तरह जूल ऊष्मा (I²R) में बदल जाती है, जिसे बहते पानी से ठंडा किया जाता है", bn: "এটি ধাতব রটারে সম্পূর্ণরূপে জুল তাপে (I²R) রূপান্তরিত হয়, যা সঞ্চালিত শীতল পানি দ্বারা নিরবচ্ছিন্নভাবে অপসারিত হয়" } },
+        { id: "opt-2", text: { en: "It is converted into chemical diesel fuel and stored in tanks", hi: "यह डीजल ईंधन में बदल जाती है", bn: "এটি রাসায়নিক ডিজেলে রূপান্তরিত হয়ে ট্যাংকে জমা হয়" } },
+        { id: "opt-3", text: { en: "It disappears into the fourth dimension without any temperature rise", hi: "बिना तापमान बढ़े गायब हो जाती है", bn: "কোনো তাপমাত্রা বৃদ্ধি ছাড়াই অদৃশ্য হয়ে যায়" } },
+        { id: "opt-4", text: { en: "It charges the vehicle headlights directly with static electricity", hi: "यह हेडलाइट को स्थिर बिजली से जलाती है", bn: "এটি স্থির বিদ্যুৎ দিয়ে হেডলাইট জ্বালায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "100% of the shaft mechanical power is dissipated as electrical eddy currents and Joule heating inside the spinning rotor disc, requiring cooling water jackets to prevent overheating.",
+        hi: "पूरी यांत्रिक शक्ति रोटर में भंवर धाराओं और जूल ऊष्मा में बदल जाती है, जिसे ठंडा रखने के लिए पानी की आवश्यकता होती है।",
+        bn: "সমস্ত যান্ত্রিক ক্ষমতা রটারে এডি কারেন্ট ও জুল তাপে রূপান্তরিত হয়, ফলে অতিরিক্ত উত্তাপ সরাতে শীতল জল সরবরাহ করতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-05",
+      question: {
+        en: "What mathematical characteristic describes the relationship between the retarding torque T_b and rotor speed ω in an eddy current brake at low-to-moderate speeds?",
+        hi: "निम्न से मध्यम गति पर भंवर धारा ब्रेक में मंदक टॉर्क T_b और गति ω के बीच कौन सा गणितीय संबंध होता है?",
+        bn: "স্বল্প থেকে মাঝারি গতিতে একটি এডি কারেন্ট ব্রেকে মন্দন সৃষ্টিকারী টর্ক T_b এবং রটারের গতি ω এর মধ্যকার গাণিতিক সম্পর্ক কেমন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Linear proportionality: T_b ∝ ω (smooth viscous damping behavior)", hi: "रैखिक समानुपात: T_b ∝ ω (सुचारू श्यान अवमंदन व्यवहार)", bn: "সরল সমানুপাতিক: T_b ∝ ω (মসৃণ সান্দ্র ড্যাম্পিং বৈশিষ্ট্য)" } },
+        { id: "opt-2", text: { en: "Inverse square relationship: T_b ∝ 1 / ω²", hi: "व्युत्क्रम वर्ग संबंध: T_b ∝ 1 / ω²", bn: "ব্যস্তানুপাতিক বর্গ সম্পর্ক: T_b ∝ ১ / ω²" } },
+        { id: "opt-3", text: { en: "Independent of speed (constant Coulomb friction)", hi: "गति से स्वतंत्र (स्थिर घर्षण)", bn: "গতির ওপর সম্পূর্ণ নিরপেক্ষ" } },
+        { id: "opt-4", text: { en: "Exponential growth: T_b ∝ e^(100 ω)", hi: "घातांकीय वृद्धि: T_b ∝ e^(100 ω)", bn: "সূচকীয় বৃদ্ধি: T_b ∝ e^(১০০ ω)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At speeds below peak torque, induced EMF e ∝ ω, induced eddy current I ∝ ω, and braking torque T = F·r ∝ I·B ∝ ω, providing ideal linear viscous damping.",
+        hi: "कम गति पर EMF गति के समानुपाती होता है, अतः धारा और टॉर्क भी गति के सीधे समानुपाती (T ∝ ω) होते हैं।",
+        bn: "মাঝারি গতি পর্যন্ত EMF বেগের সমানুপাতিক, তাই কারেন্ট ও ব্রেকিং টর্ক উভয়ই রটারের গতির সাথে সরল সমানুপাতিক (T ∝ ω) থাকে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-06",
+      question: {
+        en: "Why does the braking torque of a high-speed eddy current brake eventually peak and then decrease at extreme rotational speeds?",
+        hi: "अत्यधिक उच्च घूर्णन गति पर भंवर धारा ब्रेक का ब्रेकिंग टॉर्क चरम पर पहुंचकर फिर घटने क्यों लगता है?",
+        bn: "অতিরিক্ত উচ্চ ঘূর্ণন গতিতে একটি এডি কারেন্ট ব্রেকের টর্ক সর্বোচ্চ সীমায় পৌঁছে আবার কমতে শুরু করে কেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Rotor inductive reactance (ωL) begins to dominate over resistance R, causing eddy currents to lag in space and demagnetize the excitation poles", hi: "रोटर का प्रेरक प्रतिघात (ωL) प्रतिरोध पर हावी हो जाता है, जिससे भंवर धाराएं पीछे छूटकर मुख्य ध्रुवों को कमजोर कर देती हैं", bn: "রটারের ইনডাক্টিভ রিঅ্যাক্ট্যান্স (ωL) রোধের চেয়ে প্রভাবশালী হয়ে ওঠে, ফলে এডি কারেন্ট ফেজে পিছিয়ে পড়ে মূল মেরুকে ডিম্যাগনেটাইজ করে" } },
+        { id: "opt-2", text: { en: "The copper disc freezes solid from cold winds", hi: "ठंडी हवा से तांबे की डिस्क जम जाती है", bn: "ঠান্ডা বাতাসে তামার ডিস্ক বরফ হয়ে জমে যায়" } },
+        { id: "opt-3", text: { en: "The electromagnets reverse their battery connections automatically", hi: "चुंबक की ध्रुवता अपने आप बदल जाती है", bn: "চুম্বকের ব্যাটারি সংযোগ আপনা-আপনি উল্টে যায়" } },
+        { id: "opt-4", text: { en: "Gravity stops functioning at high speeds", hi: "उच्च गति पर गुरुत्वाकर्षण काम करना बंद कर देता है", bn: "উচ্চ গতিতে মহাকর্ষ কাজ করা বন্ধ করে দেয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At extreme frequencies (ω → ∞), the self-inductance L of the eddy paths causes eddy currents to lag by up to 90°, creating an armature reaction that opposes and pushes the main flux out of the rotor.",
+        hi: "अत्यधिक गति पर भंवर धाराओं का प्रेरकत्व (L) हावी हो जाता है, जिससे धाराएं कला में पिछड़कर मुख्य चुंबकीय क्षेत्र को दबा देती हैं और टॉर्क गिर जाता है।",
+        bn: "অতি উচ্চ গতিতে এডি পথের আবেশাঙ্ক (L) প্রভাবশালী হয়ে ওঠে, ফলে কারেন্ট ফেজে পিছিয়ে পড়ে মূল ফ্লাক্সকে বিকৃত ও দুর্বল করে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-07",
+      question: {
+        en: "What critical safety role do permanent magnet eddy current retarders serve on heavy mountain descent trucks and highway tour buses?",
+        hi: "पहाड़ी ढलानों पर उतरने वाले भारी ट्रकों और बसों में स्थायी चुंबक भंवर धारा मंदक कौन सी महत्वपूर्ण सुरक्षा भूमिका निभाते हैं?",
+        bn: "পাহাড়ি খাড়া ঢালে ভারী ট্রাক ও বাসের ক্ষেত্রে স্থায়ী চুম্বক এডি কারেন্ট রিটার্ডার কোন অত্যন্ত গুরুত্বপূর্ণ নিরাপত্তা নিশ্চিত করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "They provide continuous, wear-free baseline retarding on long downhill grades, preventing mechanical friction brakes from overheating and failing (brake fade)", hi: "वे लंबी ढलानों पर बिना घिसाव के निरंतर गति को नियंत्रित रखते हैं, जिससे घर्षण ब्रेक गर्म होकर फेल होने से बच जाते हैं", bn: "দীর্ঘ পাহাড়ি অবতরণে এরা ঘর্ষণহীন ব্রেকিং প্রদান করে, ফলে সাধারণ ব্রেক অতিরিক্ত উত্তপ্ত হয়ে বিকল (ব্রেক ফেড) হওয়া থেকে রক্ষা পায়" } },
+        { id: "opt-2", text: { en: "They steer the front wheels away from cliff edges automatically", hi: "वे ढलान के किनारों से पहियों को दूर मोड़ते हैं", bn: "তারা নিজে থেকেই চাকা ঘুরিয়ে খাঁদ থেকে বাঁচায়" } },
+        { id: "opt-3", text: { en: "They pump diesel fuel back into the fuel tank", hi: "वे डीजल को वापस टैंक में भरते हैं", bn: "তারা ডিজেল পুনরায় ট্যাংকে ফেরত পাঠায়" } },
+        { id: "opt-4", text: { en: "They lift the vehicle completely off the road surface into the air", hi: "वे गाड़ी को हवा में उड़ा देते हैं", bn: "তারা গাড়িকে রাস্তা থেকে বাতাসে ভাসিয়ে রাখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Extended braking down steep mountain passes overheats conventional brake pads, causing complete hydraulic brake fade. An auxiliary eddy current retarder absorbs the descent energy magnetically, keeping primary friction brakes cold and ready for emergency stops.",
+        hi: "लगातार ब्रेक लगाने से पारंपरिक ब्रेक गर्म होकर काम करना बंद कर देते हैं। भंवर मंदक चुंबकीय रूप से वाहन की गति धीमी रखकर ब्रेक को सुरक्षित रखते हैं।",
+        bn: "টানা ব্রেক কষলে প্রচলিত ব্রেক প্যাড অতি-উত্তপ্ত হয়ে ব্যর্থ হয়; এডি কারেন্ট রিটার্ডার চৌম্বকীয়ভাবে গাড়ি নিয়ন্ত্রণ করে মূল ব্রেক প্যাডকে নিরাপদ রাখে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l16-08",
+      question: {
+        en: "In high-speed roller coasters, how do fail-safe permanent magnet eddy current brake fins stop the train safely even during a total electrical power outage?",
+        hi: "हाई-स्पीड रोलर कोस्टर में स्थायी चुंबक भंवर धारा ब्रेक फिन बिजली गुल होने पर भी ट्रेन को सुरक्षित रूप से कैसे रोकते हैं?",
+        bn: "উচ্চগতির রোলার কোস্টারে সম্পূর্ণ বিদ্যুৎ বিপর্যয়ের মধ্যেও স্থায়ী চুম্বক এডি কারেন্ট ব্রেক ফিন কীভাবে রোলার কোস্টারকে নিরাপদে থামিয়ে দেয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "They utilize rare-earth permanent magnets that require zero external electrical power, creating passive braking force purely from train motion", hi: "वे स्थायी चुंबकों का उपयोग करते हैं जिन्हें किसी बिजली की जरूरत नहीं होती; ट्रेन की गति से स्वतः ब्रेक लगता है", bn: "এতে কোনো বৈদ্যুতিক শক্তি লাগে না কারণ স্থায়ী চুম্বক কেবল ট্রেনের গতির সাহায্যেই নিষ্ক্রিয়ভাবে ব্রেকিং বল সৃষ্টি করে" } },
+        { id: "opt-2", text: { en: "Backup diesel generators take 2 minutes to start", hi: "बैकअप जनरेटर 2 मिनट में चालू होते हैं", bn: "ব্যাকআপ জেনারেটর ২ মিনিটে চালু হয়" } },
+        { id: "opt-3", text: { en: "They drop massive steel anchor hooks into concrete troughs", hi: "वे कंक्रीट में लोहे का लंगर गिराते हैं", bn: "কংক্রিটের ট্রাফে লোহার নোঙর ফেলে" } },
+        { id: "opt-4", text: { en: "They inflate large rubber balloons under the track", hi: "वे पटरी के नीचे रबर के गुब्बारे फुलाते हैं", bn: "রেললাইনের নিচে রাবারের বেলুন ফুলিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Permanent magnet eddy current brakes are 100% passive and fail-safe. Pure copper or aluminum fins passing between permanent neodymium magnet arrays automatically generate opposing Lorentz braking forces without needing sensors, computers, or external power.",
+        hi: "स्थायी चुंबक ब्रेक पूरी तरह निष्क्रिय और सुरक्षित होते हैं। ट्रेन के गुजरते ही तांबे के फिन में स्वतः भंवर धाराएं बनती हैं और ट्रेन बिना बिजली के रुक जाती है।",
+        bn: "স্থায়ী চুম্বক ব্রেক শতভাগ নিষ্ক্রিয় ও নির্ভরযোগ্য। বিদ্যুৎ সংযোগ না থাকলেও তামার ফিন চুম্বকের মধ্য দিয়ে যাওয়ামাত্রই স্বতঃস্ফূর্তভাবে মন্দন বল সৃষ্টি করে।"
       }
     }
   ],

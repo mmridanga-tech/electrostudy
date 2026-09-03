@@ -415,63 +415,325 @@ This establishes the rigorous mathematical foundation for P_e ∝ t²!`,
   },
   mcqs: [
     {
-      id: 'q-eddy-1',
+      id: "q-eddy-1",
       question: {
-        en: 'If the thickness of a transformer lamination is halved (t_new = t / 2) while keeping frequency and flux density constant, the eddy current loss will:',
-        hi: 'यदि आवृत्ति और फ्लक्स घनत्व स्थिर रखते हुए ट्रांसफॉर्मर लैमिनेशन की मोटाई आधी (t/2) कर दी जाए, तो भंवर धारा हानि होगी:',
-        bn: 'কম্পাঙ্ক ও ফ্লাক্স ঘনত্ব অপরিবর্তিত রেখে ট্রান্সফরমার ল্যামিনেশনের পুরুত্ব অর্ধেক (t/2) করা হলে এডি কারেন্ট অপচয় হবে:'
+        en: "If the thickness of a transformer lamination is halved (t_new = t / 2) while keeping frequency and flux density constant, the eddy current loss will:",
+        hi: "यदि आवृत्ति और फ्लक्स घनत्व स्थिर रखते हुए ट्रांसफॉर्मर लैमिनेशन की मोटाई आधी (t/2) कर दी जाए, तो भंवर धारा हानि होगी:",
+        bn: "কম্পাঙ্ক ও ফ্লাক্স ঘনত্ব অপরিবর্তিত রেখে ট্রান্সফরমার ল্যামিনেশনের পুরুত্ব অর্ধেক (t/2) করা হলে এডি কারেন্ট অপচয় হবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Double (2x)', hi: 'दोगुनी (2x)', bn: 'দ্বিগুণ (2x)' } },
-        { id: 'opt-2', text: { en: 'Halve (0.5x)', hi: 'आधी (0.5x)', bn: 'অর্ধেক (0.5x)' } },
-        { id: 'opt-3', text: { en: 'Reduce to one-fourth (0.25x)', hi: 'एक-चौथाई (0.25x)', bn: 'এক-চতুর্থাংশ (0.25x)' } },
-        { id: 'opt-4', text: { en: 'Remain unchanged', hi: 'अपरिवर्तित रहेगी', bn: 'অপরিবর্তিত থাকবে' } }
+        { id: "opt-1", text: { en: "Double (2x)", hi: "दोगुनी (2x)", bn: "দ্বিগুণ (2x)" } },
+        { id: "opt-2", text: { en: "Halve (0.5x)", hi: "आधी (0.5x)", bn: "অর্ধেক (0.5x)" } },
+        { id: "opt-3", text: { en: "Reduce to one-fourth (0.25x)", hi: "एक-चौथाई (0.25x)", bn: "এক-চতুর্থাংশ (0.25x)" } },
+        { id: "opt-4", text: { en: "Remain unchanged", hi: "अपरिवर्तित रहेगी", bn: "অপরিবর্তিত থাকবে" } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: "opt-3",
       explanation: {
-        en: 'Because eddy current loss depends on the square of thickness (P_e ∝ t²), halving thickness results in (1/2)² = 1/4 of the original loss.',
-        hi: 'चूंकि भंवर धारा हानि मोटाई के वर्ग (P_e ∝ t²) के समानुपाती होती है, अतः मोटाई आधी करने पर हानि (1/2)² = 1/4 रह जाती है।',
-        bn: 'যেহেতু এডি কারেন্ট অপচয় বেধের বর্গের সমানুপাতিক (P_e ∝ t²), তাই বেধ অর্ধেক করলে অপচয় (১/২)² = ১/৪ ভাগে হ্রাস পায়।'
+        en: "Because eddy current loss depends on the square of thickness (P_e ∝ t²), halving thickness results in (1/2)² = 1/4 of the original loss.",
+        hi: "चूंकि भंवर धारा हानि मोटाई के वर्ग (P_e ∝ t²) के समानुपाती होती है, अतः मोटाई आधी करने पर हानि (1/2)² = 1/4 रह जाती है।",
+        bn: "যেহেতু এডি কারেন্ট অপচয় বেধের বর্গের সমানুপাতিক (P_e ∝ t²), তাই বেধ অর্ধেক করলে অপচয় (১/২)² = ১/৪ ভাগে হ্রাস পায়।"
       }
     },
     {
-      id: 'q-eddy-2',
+      id: "q-eddy-2",
       question: {
-        en: 'Why is silicon (approx. 3-4%) added to low-carbon electrical steel used in transformer cores?',
-        hi: 'ट्रांसफॉर्मर कोर में उपयोग किए जाने वाले कम कार्बन वाले स्टील में सिलिकॉन (लगभग 3-4%) क्यों मिलाया जाता है?',
-        bn: 'ট্রান্সফরমারের কোরে ব্যবহৃত স্টিলে প্রায় ৩-৪% সিলিকন মেশানোর কারণ কী?'
+        en: "Why is silicon (approx. 3-4%) added to low-carbon electrical steel used in transformer cores?",
+        hi: "ट्रांसफॉर्मर कोर में उपयोग किए जाने वाले कम कार्बन वाले स्टील में सिलिकॉन (लगभग 3-4%) क्यों मिलाया जाता है?",
+        bn: "ট্রান্সফরমারের কোরে ব্যবহৃত স্টিলে প্রায় ৩-৪% সিলিকন মেশানোর কারণ কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'To increase electrical resistivity and decrease eddy current loss', hi: 'विद्युत प्रतिरोधकता बढ़ाने और भंवर धारा हानि घटाने के लिए', bn: 'বৈদ্যুতিক রোধ বৃদ্ধি করে এডি কারেন্ট অপচয় কমানোর জন্য' } },
-        { id: 'opt-2', text: { en: 'To make the steel mechanically flexible and ductile', hi: 'स्टील को यांत्रिक रूप से लचीला बनाने के लिए', bn: 'স্টিলকে নমনীয় করার জন্য' } },
-        { id: 'opt-3', text: { en: 'To eliminate the need for surface varnish insulation', hi: 'वार्निश इंसुलेशन की आवश्यकता समाप्त करने के लिए', bn: 'বার্নিশ ইন্সুলেশনের প্রয়োজনীয়তা দূর করতে' } },
-        { id: 'opt-4', text: { en: 'To double the maximum magnetic saturation density', hi: 'अधिकतम चुंबकीय संतृप्ति घनत्व को दोगुना करने के लिए', bn: 'সর্বোচ্চ চৌম্বক সম্পৃক্তি দ্বিগুণ করতে' } }
+        { id: "opt-1", text: { en: "To increase electrical resistivity and decrease eddy current loss", hi: "विद्युत प्रतिरोधकता बढ़ाने और भंवर धारा हानि घटाने के लिए", bn: "বৈদ্যুতিক রোধ বৃদ্ধি করে এডি কারেন্ট অপচয় কমানোর জন্য" } },
+        { id: "opt-2", text: { en: "To make the steel mechanically flexible and ductile", hi: "स्टील को यांत्रिक रूप से लचीला बनाने के लिए", bn: "স্টিলকে নমনীয় করার জন্য" } },
+        { id: "opt-3", text: { en: "To eliminate the need for surface varnish insulation", hi: "वार्निश इंसुलेशन की आवश्यकता समाप्त करने के लिए", bn: "বার্নিশ ইন্সুলেশনের প্রয়োজনীয়তা দূর করতে" } },
+        { id: "opt-4", text: { en: "To double the maximum magnetic saturation density", hi: "अधिकतम चुंबकीय संतृप्ति घनत्व को दोगुना करने के लिए", bn: "সর্বোচ্চ চৌম্বক সম্পৃক্তি দ্বিগুণ করতে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Adding silicon increases electrical resistivity ρ by roughly four times, substantially choking circulating eddy currents without compromising magnetic permeability.',
-        hi: 'सिलिकॉन मिलाने से विद्युत प्रतिरोधकता ρ लगभग 4 गुना बढ़ जाती है, जिससे चुंबकीय पारगम्यता प्रभावित किए बिना भंवर धाराएं काफी कम हो जाती हैं।',
-        bn: 'সিলিকন যোগ করলে উপাদানের বৈদ্যুতিক রোধ প্রায় ৪ গুণ বৃদ্ধি পায়, যা চৌম্বক প্রবেশ্যতা নষ্ট না করেই এডি প্রবাহকে কার্যকরভাবে হ্রাস করে।'
+        en: "Adding silicon increases electrical resistivity ρ by roughly four times, substantially choking circulating eddy currents without compromising magnetic permeability.",
+        hi: "सिलिकॉन मिलाने से विद्युत प्रतिरोधकता ρ लगभग 4 गुना बढ़ जाती है, जिससे चुंबकीय पारगम्यता प्रभावित किए बिना भंवर धाराएं काफी कम हो जाती हैं।",
+        bn: "সিলিকন যোগ করলে উপাদানের বৈদ্যুতিক রোধ প্রায় ৪ গুণ বৃদ্ধি পায়, যা চৌম্বক প্রবেশ্যতা নষ্ট না করেই এডি প্রবাহকে কার্যকরভাবে হ্রাস করে।"
       }
     },
     {
-      id: 'q-eddy-3',
+      id: "q-eddy-3",
       question: {
-        en: 'If a transformer core is operated at a 20% higher frequency (1.2f) with constant maximum flux density B_m, eddy current loss increases by:',
-        hi: 'यदि अधिकतम फ्लक्स घनत्व B_m को स्थिर रखते हुए किसी ट्रांसफॉर्मर को 20% अधिक आवृत्ति (1.2f) पर चलाया जाए, तो भंवर धारा हानि कितनी बढ़ेगी?',
-        bn: 'সর্বোচ্চ ফ্লাক্স ঘনত্ব B_m স্থির রেখে ট্রান্সফরমারকে ২০% বেশি কম্পাঙ্কে (১.২f) পরিচালনা করলে এডি কারেন্ট অপচয় বৃদ্ধি পাবে:'
+        en: "If a transformer core is operated at a 20% higher frequency (1.2f) with constant maximum flux density B_m, eddy current loss increases by:",
+        hi: "यदि अधिकतम फ्लक्स घनत्व B_m को स्थिर रखते हुए किसी ट्रांसफॉर्मर को 20% अधिक आवृत्ति (1.2f) पर चलाया जाए, तो भंवर धारा हानि कितनी बढ़ेगी?",
+        bn: "সর্বোচ্চ ফ্লাক্স ঘনত্ব B_m স্থির রেখে ট্রান্সফরমারকে ২০% বেশি কম্পাঙ্কে (১.২f) পরিচালনা করলে এডি কারেন্ট অপচয় বৃদ্ধি পাবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: '20%', hi: '20%', bn: '২০%' } },
-        { id: 'opt-2', text: { en: '44%', hi: '44%', bn: '৪৪%' } },
-        { id: 'opt-3', text: { en: '144%', hi: '144%', bn: '১৪৪%' } },
-        { id: 'opt-4', text: { en: '0%', hi: '0%', bn: '০%' } }
+        { id: "opt-1", text: { en: "20%", hi: "20%", bn: "২০%" } },
+        { id: "opt-2", text: { en: "44%", hi: "44%", bn: "৪৪%" } },
+        { id: "opt-3", text: { en: "144%", hi: "144%", bn: "১৪৪%" } },
+        { id: "opt-4", text: { en: "0%", hi: "0%", bn: "০%" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Eddy current loss is proportional to f² (P_e ∝ f²). For 1.2f, (1.2)² = 1.44, representing a 44% increase in loss.',
-        hi: 'भंवर धारा हानि आवृत्ति के वर्ग (P_e ∝ f²) के समानुपाती होती है। अतः (1.2)² = 1.44, अर्थात् 44% की वृद्धि।',
-        bn: 'এডি কারেন্ট অপচয় f² এর সমানুপাতিক। (১.২)² = ১.৪৪, অর্থাৎ অপচয় ৪৪% বৃদ্ধি পায়।'
+        en: "Eddy current loss is proportional to f² (P_e ∝ f²). For 1.2f, (1.2)² = 1.44, representing a 44% increase in loss.",
+        hi: "भंवर धारा हानि आवृत्ति के वर्ग (P_e ∝ f²) के समानुपाती होती है। अतः (1.2)² = 1.44, अर्थात् 44% की वृद्धि।",
+        bn: "এডি কারেন্ট অপচয় f² এর সমানুপাতিক। (১.২)² = ১.৪৪, অর্থাৎ অপচয় ৪৪% বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-04",
+      question: {
+        en: "How does splitting a solid iron core of thickness D into N insulated laminations of thickness t = D / N affect the total eddy current loss?",
+        hi: "D मोटाई के एक ठोस लोहे के कोर को t = D / N मोटाई की N इंसुलेटेड पत्तियों में बांटने से कुल भंवर धारा हानि पर क्या प्रभाव पड़ता है?",
+        bn: "D পুরুত্বের একটি নিরেট লোহার কোরকে t = D / N পুরুত্বের N সংখ্যক অন্তরিত পাতে ভাগ করলে মোট এডি কারেন্ট অপচয়ে কী প্রভাব পড়ে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Loss is reduced by a factor of 1 / N²", hi: "हानि 1 / N² के अनुपात में घट जाती है", bn: "অপচয় ১ / N² গুণ হ্রাস পায়" } },
+        { id: "opt-2", text: { en: "Loss is reduced by a factor of 1 / N", hi: "हानि 1 / N घटती है", bn: "অপচয় ১ / N গুণ কমে" } },
+        { id: "opt-3", text: { en: "Loss remains completely unchanged", hi: "हानि अपरिवर्तित रहती है", bn: "অপচয় অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "Loss increases by N²", hi: "हानि N² गुना बढ़ जाती है", bn: "অপচয় N² গুণ বৃদ্ধি পায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The loss per lamination scales as t² = (D/N)². Across N laminations, total loss scales as N × (D/N)² = D² / N = (Solid Loss) / N².",
+        hi: "प्रत्येक पत्ती की हानि (D/N)² के अनुसार घटती है। N पत्तियों की कुल हानि 1/N² रह जाती है।",
+        bn: "প্রতিটি পাতের ক্ষতি (D/N)² হারে কমে। N সংখ্যক পাতের মোট ক্ষতি ১/N² অংশে নেমে আসে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-05",
+      question: {
+        en: "What orientation must core laminations have relative to the magnetic flux lines in a transformer or motor armature?",
+        hi: "ट्रांसफॉर्मर या मोटर में चुंबकीय फ्लक्स रेखाओं के सापेक्ष कोर लैमिनेशन किस दिशा में होनी चाहिए?",
+        bn: "ট্রান্সফরমার বা মোটরে চৌম্বক ফ্লাক্স রেখার সাপেক্ষে কোর ল্যামিনেশন কোন অভিমুখে স্থাপন করা আবশ্যক?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Parallel to the magnetic flux lines", hi: "चुंबकीय फ्लक्स रेखाओं के समानांतर", bn: "চৌম্বক ফ্লাক্স রেখার সমান্তরালে" } },
+        { id: "opt-2", text: { en: "Perpendicular to the magnetic flux lines", hi: "चुंबकीय फ्लक्स रेखाओं के लंबवत", bn: "চৌম্বক ফ্লাক্স রেখার সাথে লম্বভাবে" } },
+        { id: "opt-3", text: { en: "At a 45-degree diagonal angle", hi: "45 डिग्री के विकर्ण कोण पर", bn: "৪৫ ডিগ্রি কোণে তির্যকভাবে" } },
+        { id: "opt-4", text: { en: "Random orientation without any preferred axis", hi: "बिना किसी निश्चित अक्ष के यादृच्छिक रूप से", bn: "যেকোনো এলোমেলো অভিমুখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Laminations must lie parallel to flux so that the magnetic circuit is unhindered while the eddy currents (which circulate perpendicular to flux) encounter the insulating varnish barriers.",
+        hi: "पत्तियां फ्लक्स के समानांतर रखी जाती हैं ताकि फ्लक्स आसानी से बहे और लंबवत घूमने वाली भंवर धाराओं को इंसुलेशन रोक सके।",
+        bn: "ল্যামিনেশনগুলো অবশ্যই ফ্লাক্সের সমান্তরালে থাকতে হয় যাতে ফ্লাক্স নির্বিঘ্নে যায় কিন্তু লম্বভাবে ঘুরতে চাওয়া এডি কারেন্ট ইনসুলেশনে বাধা পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-06",
+      question: {
+        en: "What typical thickness range is standard for cold-rolled silicon steel core laminations used in 50 Hz/60 Hz power transformers?",
+        hi: "50 Hz/60 Hz पावर ट्रांसफॉर्मर में प्रयुक्त कोल्ड-रोल्ड सिलिकॉन स्टील पत्तियों की सामान्य मोटाई सीमा क्या होती है?",
+        bn: "৫০ Hz/৬০ Hz পাওয়ার ট্রান্সফরমারে ব্যবহৃত কোল্ড-রোল্ড সিলিকন স্টিল ল্যামিনেশনের স্বাভাবিক পুরুত্ব কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "0.23 mm to 0.35 mm", hi: "0.23 mm से 0.35 mm", bn: "০.২৩ মিমি থেকে ০.৩৫ মিমি" } },
+        { id: "opt-2", text: { en: "2.0 mm to 5.0 mm", hi: "2.0 mm से 5.0 mm", bn: "২.০ মিমি থেকে ৫.০ মিমি" } },
+        { id: "opt-3", text: { en: "10 mm to 25 mm", hi: "10 mm से 25 mm", bn: "১০ মিমি থেকে ২৫ মিমি" } },
+        { id: "opt-4", text: { en: "0.001 mm (1 micrometer)", hi: "0.001 mm (1 माइक्रोमीटर)", bn: "০.০০১ মিমি (১ মাইক্রোমিটার)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Commercial power transformers at 50/60 Hz standardly employ 0.23 mm to 0.35 mm (e.g., M4, 27M4 grades) CRGO sheets to balance manufacturing punching costs with minimal eddy losses.",
+        hi: "व्यावसायिक ट्रांसफॉर्मर में आम तौर पर 0.23 mm से 0.35 mm मोटाई की सिलिकॉन स्टील शीट उपयोग की जाती हैं।",
+        bn: "বাণিজ্যিক পাওয়ার ট্রান্সফরমারে সাধারণত ০.২৩ মিমি থেকে ০.৩৫ মিমি পুরুত্বের সিলিকন স্টিল শিট ব্যবহৃত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-07",
+      question: {
+        en: "Why is adding more than 4.5% silicon to electrical steel avoided in commercial transformer sheet manufacturing?",
+        hi: "इलेक्ट्रिकल स्टील में 4.5% से अधिक सिलिकॉन मिलाना व्यावसायिक निर्माण में क्यों टाला जाता है?",
+        bn: "ইলেকট্রিক্যাল স্টিলে ৪.৫% এর বেশি সিলিকন মেশানো বাণিজ্যিক উৎপাদনে কেন এড়িয়ে চলা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It makes the alloy excessively brittle and difficult to punch or shear without cracking", hi: "यह मिश्र धातु को अत्यधिक भंगुर बना देता है जिससे काटना या पंच करना कठिन हो जाता है", bn: "এটি সংকর ধাতুকে অত্যন্ত ভঙ্গুর করে তোলে ফলে কাটার সময় ফাটল ধরে" } },
+        { id: "opt-2", text: { en: "Silicon makes the steel permanently radioactive", hi: "सिलिकॉन स्टील को रेडियोधर्मी बना देता है", bn: "সিলিকন স্টিলকে তেজস্ক্রিয় বানায়" } },
+        { id: "opt-3", text: { en: "It reduces electrical resistance to zero", hi: "यह विद्युत प्रतिरोध को शून्य कर देता है", bn: "এটি বৈদ্যুতিক রোধ শূন্যে নামিয়ে দেয়" } },
+        { id: "opt-4", text: { en: "It makes the steel transparent to magnetic fields", hi: "यह स्टील को चुंबकीय क्षेत्र के लिए पारदर्शी बनाता है", bn: "এটি স্টিলকে চৌম্বক ক্ষেত্রের জন্য স্বচ্ছ করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Beyond 4.5% Si, steel becomes extremely brittle at room temperature, making standard cold rolling, shearing, and stamping operations practically impossible without blade shattering and sheet cracking.",
+        hi: "4.5% से अधिक सिलिकॉन स्टील को बहुत भंगुर बना देता है, जिससे शीट काटना और पंच करना असंभव हो जाता है।",
+        bn: "৪.৫% এর বেশি সিলিকন স্টিলকে অত্যন্ত ভঙ্গুর বানিয়ে ফেলে, ফলে ঠান্ডা অবস্থায় এটি কাটা বা ছিদ্র করা অসম্ভব হয়ে পড়ে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-08",
+      question: {
+        en: "What modern non-crystalline core material achieves up to 70% lower eddy current and core losses than conventional silicon steel?",
+        hi: "पारंपरिक सिलिकॉन स्टील की तुलना में कौन सा आधुनिक अक्रिस्टलीय पदार्थ 70% कम कोर हानि देता है?",
+        bn: "গতানুগতিক সিলিকন স্টিলের চেয়ে ৭০% পর্যন্ত কম কোর অপচয় ঘটায় কোন আধুনিক অনিয়তাকার উপাদান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Amorphous metal alloys (metallic glasses with ribbon thickness ~0.025 mm)", hi: "अक्रिस्टलीय धातु मिश्र धातु (मेटालिक ग्लास रिबन मोटाई ~0.025 mm)", bn: "অ্যামোরফাস ধাতু বা মেটালিক গ্লাস (পাতলা রিবন পুরুত্ব ~০.০২৫ মিমি)" } },
+        { id: "opt-2", text: { en: "Pure solid cast copper", hi: "शुद्ध ठोस ढलवां तांबा", bn: "বিশুদ্ধ নিরেট ঢালাই তামা" } },
+        { id: "opt-3", text: { en: "Cast iron blocks", hi: "कच्चा लोहा (कास्ट आयरन)", bn: "ঢালাই লোহার নিরেট ব্লক" } },
+        { id: "opt-4", text: { en: "Solid carbon graphite rods", hi: "ठोस कार्बन ग्रेफाइट छड़ें", bn: "নিরেট কার্বন গ্রাফাইট রড" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Amorphous metal alloys have a non-crystalline atomic structure with ultra-thin ribbon geometry (~25 µm) and high electrical resistivity, cutting core losses by up to 70-80% in distribution transformers.",
+        hi: "अक्रिस्टलीय धातु (मेटालिक ग्लास) अत्यधिक पतली (~25 µm) और उच्च प्रतिरोधकता वाली होती हैं, जो कोर हानि 70% तक घटा देती हैं।",
+        bn: "অ্যামোরফাস মেটালের অনিয়তাকার পারমাণবিক গঠন, পাতলা ফিতা (~২৫ µm) এবং উচ্চ রোধকত্ব কোর লস ৭০% পর্যন্ত কমিয়ে দেয়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-eddy-1",
+      question: {
+        en: "If the thickness of a transformer lamination is halved (t_new = t / 2) while keeping frequency and flux density constant, the eddy current loss will:",
+        hi: "यदि आवृत्ति और फ्लक्स घनत्व स्थिर रखते हुए ट्रांसफॉर्मर लैमिनेशन की मोटाई आधी (t/2) कर दी जाए, तो भंवर धारा हानि होगी:",
+        bn: "কম্পাঙ্ক ও ফ্লাক্স ঘনত্ব অপরিবর্তিত রেখে ট্রান্সফরমার ল্যামিনেশনের পুরুত্ব অর্ধেক (t/2) করা হলে এডি কারেন্ট অপচয় হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Double (2x)", hi: "दोगुनी (2x)", bn: "দ্বিগুণ (2x)" } },
+        { id: "opt-2", text: { en: "Halve (0.5x)", hi: "आधी (0.5x)", bn: "অর্ধেক (0.5x)" } },
+        { id: "opt-3", text: { en: "Reduce to one-fourth (0.25x)", hi: "एक-चौथाई (0.25x)", bn: "এক-চতুর্থাংশ (0.25x)" } },
+        { id: "opt-4", text: { en: "Remain unchanged", hi: "अपरिवर्तित रहेगी", bn: "অপরিবর্তিত থাকবে" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "Because eddy current loss depends on the square of thickness (P_e ∝ t²), halving thickness results in (1/2)² = 1/4 of the original loss.",
+        hi: "चूंकि भंवर धारा हानि मोटाई के वर्ग (P_e ∝ t²) के समानुपाती होती है, अतः मोटाई आधी करने पर हानि (1/2)² = 1/4 रह जाती है।",
+        bn: "যেহেতু এডি কারেন্ট অপচয় বেধের বর্গের সমানুপাতিক (P_e ∝ t²), তাই বেধ অর্ধেক করলে অপচয় (১/২)² = ১/৪ ভাগে হ্রাস পায়।"
+      }
+    },
+    {
+      id: "q-eddy-2",
+      question: {
+        en: "Why is silicon (approx. 3-4%) added to low-carbon electrical steel used in transformer cores?",
+        hi: "ट्रांसफॉर्मर कोर में उपयोग किए जाने वाले कम कार्बन वाले स्टील में सिलिकॉन (लगभग 3-4%) क्यों मिलाया जाता है?",
+        bn: "ট্রান্সফরমারের কোরে ব্যবহৃত স্টিলে প্রায় ৩-৪% সিলিকন মেশানোর কারণ কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To increase electrical resistivity and decrease eddy current loss", hi: "विद्युत प्रतिरोधकता बढ़ाने और भंवर धारा हानि घटाने के लिए", bn: "বৈদ্যুতিক রোধ বৃদ্ধি করে এডি কারেন্ট অপচয় কমানোর জন্য" } },
+        { id: "opt-2", text: { en: "To make the steel mechanically flexible and ductile", hi: "स्टील को यांत्रिक रूप से लचीला बनाने के लिए", bn: "স্টিলকে নমনীয় করার জন্য" } },
+        { id: "opt-3", text: { en: "To eliminate the need for surface varnish insulation", hi: "वार्निश इंसुलेशन की आवश्यकता समाप्त करने के लिए", bn: "বার্নিশ ইন্সুলেশনের প্রয়োজনীয়তা দূর করতে" } },
+        { id: "opt-4", text: { en: "To double the maximum magnetic saturation density", hi: "अधिकतम चुंबकीय संतृप्ति घनत्व को दोगुना करने के लिए", bn: "সর্বোচ্চ চৌম্বক সম্পৃক্তি দ্বিগুণ করতে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Adding silicon increases electrical resistivity ρ by roughly four times, substantially choking circulating eddy currents without compromising magnetic permeability.",
+        hi: "सिलिकॉन मिलाने से विद्युत प्रतिरोधकता ρ लगभग 4 गुना बढ़ जाती है, जिससे चुंबकीय पारगम्यता प्रभावित किए बिना भंवर धाराएं काफी कम हो जाती हैं।",
+        bn: "সিলিকন যোগ করলে উপাদানের বৈদ্যুতিক রোধ প্রায় ৪ গুণ বৃদ্ধি পায়, যা চৌম্বক প্রবেশ্যতা নষ্ট না করেই এডি প্রবাহকে কার্যকরভাবে হ্রাস করে।"
+      }
+    },
+    {
+      id: "q-eddy-3",
+      question: {
+        en: "If a transformer core is operated at a 20% higher frequency (1.2f) with constant maximum flux density B_m, eddy current loss increases by:",
+        hi: "यदि अधिकतम फ्लक्स घनत्व B_m को स्थिर रखते हुए किसी ट्रांसफॉर्मर को 20% अधिक आवृत्ति (1.2f) पर चलाया जाए, तो भंवर धारा हानि कितनी बढ़ेगी?",
+        bn: "সর্বোচ্চ ফ্লাক্স ঘনত্ব B_m স্থির রেখে ট্রান্সফরমারকে ২০% বেশি কম্পাঙ্কে (১.২f) পরিচালনা করলে এডি কারেন্ট অপচয় বৃদ্ধি পাবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "20%", hi: "20%", bn: "২০%" } },
+        { id: "opt-2", text: { en: "44%", hi: "44%", bn: "৪৪%" } },
+        { id: "opt-3", text: { en: "144%", hi: "144%", bn: "১৪৪%" } },
+        { id: "opt-4", text: { en: "0%", hi: "0%", bn: "০%" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Eddy current loss is proportional to f² (P_e ∝ f²). For 1.2f, (1.2)² = 1.44, representing a 44% increase in loss.",
+        hi: "भंवर धारा हानि आवृत्ति के वर्ग (P_e ∝ f²) के समानुपाती होती है। अतः (1.2)² = 1.44, अर्थात् 44% की वृद्धि।",
+        bn: "এডি কারেন্ট অপচয় f² এর সমানুপাতিক। (১.২)² = ১.৪৪, অর্থাৎ অপচয় ৪৪% বৃদ্ধি পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-04",
+      question: {
+        en: "How does splitting a solid iron core of thickness D into N insulated laminations of thickness t = D / N affect the total eddy current loss?",
+        hi: "D मोटाई के एक ठोस लोहे के कोर को t = D / N मोटाई की N इंसुलेटेड पत्तियों में बांटने से कुल भंवर धारा हानि पर क्या प्रभाव पड़ता है?",
+        bn: "D পুরুত্বের একটি নিরেট লোহার কোরকে t = D / N পুরুত্বের N সংখ্যক অন্তরিত পাতে ভাগ করলে মোট এডি কারেন্ট অপচয়ে কী প্রভাব পড়ে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Loss is reduced by a factor of 1 / N²", hi: "हानि 1 / N² के अनुपात में घट जाती है", bn: "অপচয় ১ / N² গুণ হ্রাস পায়" } },
+        { id: "opt-2", text: { en: "Loss is reduced by a factor of 1 / N", hi: "हानि 1 / N घटती है", bn: "অপচয় ১ / N গুণ কমে" } },
+        { id: "opt-3", text: { en: "Loss remains completely unchanged", hi: "हानि अपरिवर्तित रहती है", bn: "অপচয় অপরিবর্তিত থাকে" } },
+        { id: "opt-4", text: { en: "Loss increases by N²", hi: "हानि N² गुना बढ़ जाती है", bn: "অপচয় N² গুণ বৃদ্ধি পায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The loss per lamination scales as t² = (D/N)². Across N laminations, total loss scales as N × (D/N)² = D² / N = (Solid Loss) / N².",
+        hi: "प्रत्येक पत्ती की हानि (D/N)² के अनुसार घटती है। N पत्तियों की कुल हानि 1/N² रह जाती है।",
+        bn: "প্রতিটি পাতের ক্ষতি (D/N)² হারে কমে। N সংখ্যক পাতের মোট ক্ষতি ১/N² অংশে নেমে আসে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-05",
+      question: {
+        en: "What orientation must core laminations have relative to the magnetic flux lines in a transformer or motor armature?",
+        hi: "ट्रांसफॉर्मर या मोटर में चुंबकीय फ्लक्स रेखाओं के सापेक्ष कोर लैमिनेशन किस दिशा में होनी चाहिए?",
+        bn: "ট্রান্সফরমার বা মোটরে চৌম্বক ফ্লাক্স রেখার সাপেক্ষে কোর ল্যামিনেশন কোন অভিমুখে স্থাপন করা আবশ্যক?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Parallel to the magnetic flux lines", hi: "चुंबकीय फ्लक्स रेखाओं के समानांतर", bn: "চৌম্বক ফ্লাক্স রেখার সমান্তরালে" } },
+        { id: "opt-2", text: { en: "Perpendicular to the magnetic flux lines", hi: "चुंबकीय फ्लक्स रेखाओं के लंबवत", bn: "চৌম্বক ফ্লাক্স রেখার সাথে লম্বভাবে" } },
+        { id: "opt-3", text: { en: "At a 45-degree diagonal angle", hi: "45 डिग्री के विकर्ण कोण पर", bn: "৪৫ ডিগ্রি কোণে তির্যকভাবে" } },
+        { id: "opt-4", text: { en: "Random orientation without any preferred axis", hi: "बिना किसी निश्चित अक्ष के यादृच्छिक रूप से", bn: "যেকোনো এলোমেলো অভিমুখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Laminations must lie parallel to flux so that the magnetic circuit is unhindered while the eddy currents (which circulate perpendicular to flux) encounter the insulating varnish barriers.",
+        hi: "पत्तियां फ्लक्स के समानांतर रखी जाती हैं ताकि फ्लक्स आसानी से बहे और लंबवत घूमने वाली भंवर धाराओं को इंसुलेशन रोक सके।",
+        bn: "ল্যামিনেশনগুলো অবশ্যই ফ্লাক্সের সমান্তরালে থাকতে হয় যাতে ফ্লাক্স নির্বিঘ্নে যায় কিন্তু লম্বভাবে ঘুরতে চাওয়া এডি কারেন্ট ইনসুলেশনে বাধা পায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-06",
+      question: {
+        en: "What typical thickness range is standard for cold-rolled silicon steel core laminations used in 50 Hz/60 Hz power transformers?",
+        hi: "50 Hz/60 Hz पावर ट्रांसफॉर्मर में प्रयुक्त कोल्ड-रोल्ड सिलिकॉन स्टील पत्तियों की सामान्य मोटाई सीमा क्या होती है?",
+        bn: "৫০ Hz/৬০ Hz পাওয়ার ট্রান্সফরমারে ব্যবহৃত কোল্ড-রোল্ড সিলিকন স্টিল ল্যামিনেশনের স্বাভাবিক পুরুত্ব কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "0.23 mm to 0.35 mm", hi: "0.23 mm से 0.35 mm", bn: "০.২৩ মিমি থেকে ০.৩৫ মিমি" } },
+        { id: "opt-2", text: { en: "2.0 mm to 5.0 mm", hi: "2.0 mm से 5.0 mm", bn: "২.০ মিমি থেকে ৫.০ মিমি" } },
+        { id: "opt-3", text: { en: "10 mm to 25 mm", hi: "10 mm से 25 mm", bn: "১০ মিমি থেকে ২৫ মিমি" } },
+        { id: "opt-4", text: { en: "0.001 mm (1 micrometer)", hi: "0.001 mm (1 माइक्रोमीटर)", bn: "০.০০১ মিমি (১ মাইক্রোমিটার)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Commercial power transformers at 50/60 Hz standardly employ 0.23 mm to 0.35 mm (e.g., M4, 27M4 grades) CRGO sheets to balance manufacturing punching costs with minimal eddy losses.",
+        hi: "व्यावसायिक ट्रांसफॉर्मर में आम तौर पर 0.23 mm से 0.35 mm मोटाई की सिलिकॉन स्टील शीट उपयोग की जाती हैं।",
+        bn: "বাণিজ্যিক পাওয়ার ট্রান্সফরমারে সাধারণত ০.২৩ মিমি থেকে ০.৩৫ মিমি পুরুত্বের সিলিকন স্টিল শিট ব্যবহৃত হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-07",
+      question: {
+        en: "Why is adding more than 4.5% silicon to electrical steel avoided in commercial transformer sheet manufacturing?",
+        hi: "इलेक्ट्रिकल स्टील में 4.5% से अधिक सिलिकॉन मिलाना व्यावसायिक निर्माण में क्यों टाला जाता है?",
+        bn: "ইলেকট্রিক্যাল স্টিলে ৪.৫% এর বেশি সিলিকন মেশানো বাণিজ্যিক উৎপাদনে কেন এড়িয়ে চলা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It makes the alloy excessively brittle and difficult to punch or shear without cracking", hi: "यह मिश्र धातु को अत्यधिक भंगुर बना देता है जिससे काटना या पंच करना कठिन हो जाता है", bn: "এটি সংকর ধাতুকে অত্যন্ত ভঙ্গুর করে তোলে ফলে কাটার সময় ফাটল ধরে" } },
+        { id: "opt-2", text: { en: "Silicon makes the steel permanently radioactive", hi: "सिलिकॉन स्टील को रेडियोधर्मी बना देता है", bn: "সিলিকন স্টিলকে তেজস্ক্রিয় বানায়" } },
+        { id: "opt-3", text: { en: "It reduces electrical resistance to zero", hi: "यह विद्युत प्रतिरोध को शून्य कर देता है", bn: "এটি বৈদ্যুতিক রোধ শূন্যে নামিয়ে দেয়" } },
+        { id: "opt-4", text: { en: "It makes the steel transparent to magnetic fields", hi: "यह स्टील को चुंबकीय क्षेत्र के लिए पारदर्शी बनाता है", bn: "এটি স্টিলকে চৌম্বক ক্ষেত্রের জন্য স্বচ্ছ করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Beyond 4.5% Si, steel becomes extremely brittle at room temperature, making standard cold rolling, shearing, and stamping operations practically impossible without blade shattering and sheet cracking.",
+        hi: "4.5% से अधिक सिलिकॉन स्टील को बहुत भंगुर बना देता है, जिससे शीट काटना और पंच करना असंभव हो जाता है।",
+        bn: "৪.৫% এর বেশি সিলিকন স্টিলকে অত্যন্ত ভঙ্গুর বানিয়ে ফেলে, ফলে ঠান্ডা অবস্থায় এটি কাটা বা ছিদ্র করা অসম্ভব হয়ে পড়ে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l10-08",
+      question: {
+        en: "What modern non-crystalline core material achieves up to 70% lower eddy current and core losses than conventional silicon steel?",
+        hi: "पारंपरिक सिलिकॉन स्टील की तुलना में कौन सा आधुनिक अक्रिस्टलीय पदार्थ 70% कम कोर हानि देता है?",
+        bn: "গতানুগতিক সিলিকন স্টিলের চেয়ে ৭০% পর্যন্ত কম কোর অপচয় ঘটায় কোন আধুনিক অনিয়তাকার উপাদান?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Amorphous metal alloys (metallic glasses with ribbon thickness ~0.025 mm)", hi: "अक्रिस्टलीय धातु मिश्र धातु (मेटालिक ग्लास रिबन मोटाई ~0.025 mm)", bn: "অ্যামোরফাস ধাতু বা মেটালিক গ্লাস (পাতলা রিবন পুরুত্ব ~০.০২৫ মিমি)" } },
+        { id: "opt-2", text: { en: "Pure solid cast copper", hi: "शुद्ध ठोस ढलवां तांबा", bn: "বিশুদ্ধ নিরেট ঢালাই তামা" } },
+        { id: "opt-3", text: { en: "Cast iron blocks", hi: "कच्चा लोहा (कास्ट आयरन)", bn: "ঢালাই লোহার নিরেট ব্লক" } },
+        { id: "opt-4", text: { en: "Solid carbon graphite rods", hi: "ठोस कार्बन ग्रेफाइट छड़ें", bn: "নিরেট কার্বন গ্রাফাইট রড" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Amorphous metal alloys have a non-crystalline atomic structure with ultra-thin ribbon geometry (~25 µm) and high electrical resistivity, cutting core losses by up to 70-80% in distribution transformers.",
+        hi: "अक्रिस्टलीय धातु (मेटालिक ग्लास) अत्यधिक पतली (~25 µm) और उच्च प्रतिरोधकता वाली होती हैं, जो कोर हानि 70% तक घटा देती हैं।",
+        bn: "অ্যামোরফাস মেটালের অনিয়তাকার পারমাণবিক গঠন, পাতলা ফিতা (~২৫ µm) এবং উচ্চ রোধকত্ব কোর লস ৭০% পর্যন্ত কমিয়ে দেয়।"
       }
     }
   ],

@@ -402,63 +402,325 @@ Step 3: Apply Faraday's Law:
   },
   mcqs: [
     {
-      id: 'mcq-ch10-l1-1',
+      id: "mcq-ch10-l1-1",
       question: {
-        en: 'According to Faraday’s Second Law of Electromagnetic Induction, the magnitude of induced EMF in a coil is directly proportional to:',
-        hi: 'फैराडे के विद्युत चुंबकीय प्रेरण के द्वितीय नियम के अनुसार, कुंडली में प्रेरित ईएमएफ का परिमाण किसके सीधे समानुपाती होता है?',
-        bn: 'ফ্যারাডের দ্বিতীয় সূত্রানুসারে কয়েলে আবিষ্ট তড়িৎচালক বলের মান সরাসরি কার সমানুপাতিক?'
+        en: "According to Faraday’s Second Law of Electromagnetic Induction, the magnitude of induced EMF in a coil is directly proportional to:",
+        hi: "फैराडे के विद्युत चुंबकीय प्रेरण के द्वितीय नियम के अनुसार, कुंडली में प्रेरित ईएमएफ का परिमाण किसके सीधे समानुपाती होता है?",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুসারে কয়েলে আবিষ্ট তড়িৎচালক বলের মান সরাসরি কার সমানুপাতিক?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'The resistance of the coil', hi: 'कुंडली के प्रतिरोध के', bn: 'কয়েলের রোধের' } },
-        { id: 'opt-2', text: { en: 'The time rate of change of magnetic flux linkages', hi: 'चुंबकीय फ्लक्स लिंकेज के परिवर्तन की समय दर के', bn: 'চৌম্বক ফ্লাক্স লিংকেজের পরিবর্তনের সময় হারের' } },
-        { id: 'opt-3', text: { en: 'The static magnetic flux density', hi: 'स्थिर चुंबकीय फ्लक्स घनत्व के', bn: 'স্থির চৌম্বক ফ্লাক্স ঘনত্বের' } },
-        { id: 'opt-4', text: { en: 'The total mass of the magnet', hi: 'चुंबक के कुल द्रव्यमान के', bn: 'চুম্বকের মোট ভরের' } }
+        { id: "opt-1", text: { en: "The resistance of the coil", hi: "कुंडली के प्रतिरोध के", bn: "কয়েলের রোধের" } },
+        { id: "opt-2", text: { en: "The time rate of change of magnetic flux linkages", hi: "चुंबकीय फ्लक्स लिंकेज के परिवर्तन की समय दर के", bn: "চৌম্বক ফ্লাক্স লিংকেজের পরিবর্তনের সময় হারের" } },
+        { id: "opt-3", text: { en: "The static magnetic flux density", hi: "स्थिर चुंबकीय फ्लक्स घनत्व के", bn: "স্থির চৌম্বক ফ্লাক্স ঘনত্বের" } },
+        { id: "opt-4", text: { en: "The total mass of the magnet", hi: "चुंबक के कुल द्रव्यमान के", bn: "চুম্বকের মোট ভরের" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Faraday’s Second Law states that e = - N(dΦ/dt), meaning induced EMF is directly proportional to the time rate of change of flux linkages.',
-        hi: 'फैराडे का द्वितीय नियम कहता है कि e = - N(dΦ/dt), अर्थात प्रेरित ईएमएफ फ्लक्स लिंकेज की परिवर्तन दर के समानुपाती होता है।',
-        bn: 'ফ্যারাডের দ্বিতীয় সূত্রানুযায়ী e = - N(dΦ/dt), অর্থাৎ আবিষ্ট ইএমএফ ফ্লাক্স লিংকেজের পরিবর্তনের হারের সমানুপাতিক।'
+        en: "Faraday’s Second Law states that e = - N(dΦ/dt), meaning induced EMF is directly proportional to the time rate of change of flux linkages.",
+        hi: "फैराडे का द्वितीय नियम कहता है कि e = - N(dΦ/dt), अर्थात प्रेरित ईएमएफ फ्लक्स लिंकेज की परिवर्तन दर के समानुपाती होता है।",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুযায়ী e = - N(dΦ/dt), অর্থাৎ আবিষ্ট ইএমএফ ফ্লাক্স লিংকেজের পরিবর্তনের হারের সমানুপাতিক।"
       }
     },
     {
-      id: 'mcq-ch10-l1-2',
+      id: "mcq-ch10-l1-2",
       question: {
-        en: 'What happens when a strong bar magnet is held completely stationary inside a multi-turn solenoid?',
-        hi: 'जब एक शक्तिशाली छड़ चुंबक को बहु-फेरों वाली परिनालिका के अंदर पूरी तरह स्थिर रखा जाता है, तो क्या होता है?',
-        bn: 'একটি শক্তিশালী দণ্ড চুম্বককে তারকুণ্ডলীর ভেতর সম্পূর্ণ স্থির রাখলে কী ঘটবে?'
+        en: "What happens when a strong bar magnet is held completely stationary inside a multi-turn solenoid?",
+        hi: "जब एक शक्तिशाली छड़ चुंबक को बहु-फेरों वाली परिनालिका के अंदर पूरी तरह स्थिर रखा जाता है, तो क्या होता है?",
+        bn: "একটি শক্তিশালী দণ্ড চুম্বককে তারকুণ্ডলীর ভেতর সম্পূর্ণ স্থির রাখলে কী ঘটবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'A huge continuous DC voltage is induced', hi: 'एक विशाल निरंतर डीसी वोल्टेज प्रेरित होता है', bn: 'একটি বিশাল অবিচ্ছিন্ন ডিসি ভোল্টেজ আবিষ্ট হবে' } },
-        { id: 'opt-2', text: { en: 'An alternating AC current flows', hi: 'एक प्रत्यावर्ती एसी धारा बहती है', bn: 'একটি দিকপরিবর্তী এসি প্রবাহ চলবে' } },
-        { id: 'opt-3', text: { en: 'Zero EMF is induced (e = 0)', hi: 'शून्य ईएमएफ प्रेरित होता है (e = 0)', bn: 'কোনো ইএমএফ আবিষ্ট হয় না (e = ০)' } },
-        { id: 'opt-4', text: { en: 'The coil heats up rapidly', hi: 'कुंडली तेजी से गर्म हो जाती है', bn: 'কয়েলটি দ্রুত উত্তপ্ত হয়ে ওঠে' } }
+        { id: "opt-1", text: { en: "A huge continuous DC voltage is induced", hi: "एक विशाल निरंतर डीसी वोल्टेज प्रेरित होता है", bn: "একটি বিশাল অবিচ্ছিন্ন ডিসি ভোল্টেজ আবিষ্ট হবে" } },
+        { id: "opt-2", text: { en: "An alternating AC current flows", hi: "एक प्रत्यावर्ती एसी धारा बहती है", bn: "একটি দিকপরিবর্তী এসি প্রবাহ চলবে" } },
+        { id: "opt-3", text: { en: "Zero EMF is induced (e = 0)", hi: "शून्य ईएमएफ प्रेरित होता है (e = 0)", bn: "কোনো ইএমএফ আবিষ্ট হয় না (e = ০)" } },
+        { id: "opt-4", text: { en: "The coil heats up rapidly", hi: "कुंडली तेजी से गर्म हो जाती है", bn: "কয়েলটি দ্রুত উত্তপ্ত হয়ে ওঠে" } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: "opt-3",
       explanation: {
-        en: 'Since the magnet is stationary, dΦ/dt = 0. Therefore, induced EMF is exactly zero.',
-        hi: 'क्योंकि चुंबक स्थिर है, अतः dΦ/dt = 0 है। इसलिए प्रेरित ईएमएफ बिल्कुल शून्य होता है।',
-        bn: 'চুম্বক স্থির থাকায় ফ্লাক্সের পরিবর্তনের হার dΦ/dt = ০, তাই আবিষ্ট ইএমএফ শূন্য।'
+        en: "Since the magnet is stationary, dΦ/dt = 0. Therefore, induced EMF is exactly zero.",
+        hi: "क्योंकि चुंबक स्थिर है, अतः dΦ/dt = 0 है। इसलिए प्रेरित ईएमएफ बिल्कुल शून्य होता है।",
+        bn: "চুম্বক স্থির থাকায় ফ্লাক্সের পরিবর্তনের হার dΦ/dt = ০, তাই আবিষ্ট ইএমএফ শূন্য।"
       }
     },
     {
-      id: 'mcq-ch10-l1-3',
+      id: "mcq-ch10-l1-3",
       question: {
-        en: 'What fundamental physical principle is represented by the negative sign in Faraday’s law: e = -N dΦ/dt?',
-        hi: 'फैराडे के सूत्र e = -N dΦ/dt में ऋणात्मक चिह्न किस मूलभूत भौतिक सिद्धांत को दर्शाता है?',
-        bn: 'ফ্যারাডের সমীকরণ e = -N dΦ/dt-এ ঋণাত্মক চিহ্নটি কোন মৌলিক ভৌত নীতি নির্দেশ করে?'
+        en: "What fundamental physical principle is represented by the negative sign in Faraday’s law: e = -N dΦ/dt?",
+        hi: "फैराडे के सूत्र e = -N dΦ/dt में ऋणात्मक चिह्न किस मूलभूत भौतिक सिद्धांत को दर्शाता है?",
+        bn: "ফ্যারাডের সমীকরণ e = -N dΦ/dt-এ ঋণাত্মক চিহ্নটি কোন মৌলিক ভৌত নীতি নির্দেশ করে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Conservation of Electrical Charge', hi: 'विद्युत आवेश का संरक्षण', bn: 'বৈদ্যুতিক আধানের সংরক্ষণ' } },
-        { id: 'opt-2', text: { en: 'Conservation of Energy (Lenz’s Law)', hi: 'ऊर्जा का संरक्षण (लेंज का नियम)', bn: 'শক্তির সংরক্ষণ (লেনজের সূত্র)' } },
-        { id: 'opt-3', text: { en: 'Newton’s First Law of Motion', hi: 'न्यूटन का गति का प्रथम नियम', bn: 'নিউটনের গতির প্রথম সূত্র' } },
-        { id: 'opt-4', text: { en: 'Coulomb’s Inverse Square Law', hi: 'कूलम्ब का व्युत्क्रम वर्ग नियम', bn: 'কুলম্বের বিপরীত বর্গীয় সূত্র' } }
+        { id: "opt-1", text: { en: "Conservation of Electrical Charge", hi: "विद्युत आवेश का संरक्षण", bn: "বৈদ্যুতিক আধানের সংরক্ষণ" } },
+        { id: "opt-2", text: { en: "Conservation of Energy (Lenz’s Law)", hi: "ऊर्जा का संरक्षण (लेंज का नियम)", bn: "শক্তির সংরক্ষণ (লেনজের সূত্র)" } },
+        { id: "opt-3", text: { en: "Newton’s First Law of Motion", hi: "न्यूटन का गति का प्रथम नियम", bn: "নিউটনের গতির প্রথম সূত্র" } },
+        { id: "opt-4", text: { en: "Coulomb’s Inverse Square Law", hi: "कूलम्ब का व्युत्क्रम वर्ग नियम", bn: "কুলম্বের বিপরীত বর্গীয় সূত্র" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'The negative sign represents Lenz’s Law, which is a direct manifestation of the Principle of Conservation of Energy.',
-        hi: 'ऋणात्मक चिह्न लेंज के नियम को दर्शाता है, जो ऊर्जा संरक्षण सिद्धांत का प्रत्यक्ष प्रकटीकरण है।',
-        bn: 'ঋণাত্মক চিহ্নটি লেনজের সূত্র নির্দেশ করে, যা শক্তি সংরক্ষণ নীতির সরাসরি বহিঃপ্রকাশ।'
+        en: "The negative sign represents Lenz’s Law, which is a direct manifestation of the Principle of Conservation of Energy.",
+        hi: "ऋणात्मक चिह्न लेंज के नियम को दर्शाता है, जो ऊर्जा संरक्षण सिद्धांत का प्रत्यक्ष प्रकटीकरण है।",
+        bn: "ঋণাত্মক চিহ্নটি লেনজের সূত্র নির্দেশ করে, যা শক্তি সংরক্ষণ নীতির সরাসরি বহিঃপ্রকাশ।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-04",
+      question: {
+        en: "A 500-turn coil experiences a magnetic flux change from 0.02 Wb to 0.05 Wb in 0.1 s. What is the magnitude of the average induced EMF?",
+        hi: "500 फेरों वाली एक कुंडली में चुंबकीय फ्लक्स 0.1 सेकंड में 0.02 Wb से बदलकर 0.05 Wb हो जाता है। औसत प्रेरित ईएमएफ का परिमाण क्या है?",
+        bn: "৫০০ পাকের একটি কয়েলে ০.১ সেকেন্ডে চৌম্বক ফ্লাক্স ০.০২ Wb থেকে পরিবর্তিত হয়ে ০.০৫ Wb হয়। গড় আবিষ্ট ইএমএফ এর মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "15 V", hi: "15 V", bn: "১৫ V" } },
+        { id: "opt-2", text: { en: "150 V", hi: "150 V", bn: "১৫০ V" } },
+        { id: "opt-3", text: { en: "1500 V", hi: "1500 V", bn: "১৫০০ V" } },
+        { id: "opt-4", text: { en: "0.15 V", hi: "0.15 V", bn: "০.১৫ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "According to Faraday’s second law, e = N · (ΔΦ / Δt) = 500 × (0.05 - 0.02) / 0.1 = 500 × 0.03 / 0.1 = 150 V.",
+        hi: "फैराडे के द्वितीय नियम के अनुसार, e = N · (ΔΦ / Δt) = 500 × (0.05 - 0.02) / 0.1 = 500 × 0.3 = 150 V।",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুযায়ী, e = N · (ΔΦ / Δt) = ৫০০ × (০.০৫ - ০.০২) / ০.১ = ৫০০ × ০.৩ = ১৫০ V।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-05",
+      question: {
+        en: "What is the SI unit of magnetic flux linkage (λ = NΦ)?",
+        hi: "चुंबकीय फ्लक्स लिंकेज (λ = NΦ) का SI मात्रक क्या है?",
+        bn: "চৌম্বক ফ্লাক্স লিংকেজের (λ = NΦ) এসআই একক কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Weber-turn (Wb·t) or Volt-second (V·s)", hi: "वेबर-टर्न (Wb·t) अथवा वोल्ट-सेकंड (V·s)", bn: "ওয়েবার-টার্ন (Wb·t) বা ভোল্ট-সেকেন্ড (V·s)" } },
+        { id: "opt-2", text: { en: "Tesla per meter (T/m)", hi: "टेस्ला प्रति मीटर (T/m)", bn: "টেসলা প্রতি মিটার (T/m)" } },
+        { id: "opt-3", text: { en: "Henry per Ampere (H/A)", hi: "हेनरी प्रति एम्पियर (H/A)", bn: "হেনরি প্রতি অ্যাম্পিয়ার (H/A)" } },
+        { id: "opt-4", text: { en: "Volt per second (V/s)", hi: "वोल्ट प्रति सेकंड (V/s)", bn: "ভোল্ট প্রতি সেকেন্ড (V/s)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Magnetic flux linkage λ = NΦ is measured in Weber-turns (Wb·t) or equivalently Volt-seconds (V·s) since 1 Wb = 1 V·s.",
+        hi: "चुंबकीय फ्लक्स लिंकेज λ = NΦ का मात्रक वेबर-टर्न (Wb·t) या वोल्ट-सेकंड (V·s) होता है क्योंकि 1 Wb = 1 V·s।",
+        bn: "চৌম্বক ফ্লাক্স লিংকেজ λ = NΦ এর একক হলো ওয়েবার-টার্ন (Wb·t) বা ভোল্ট-সেকেন্ড (V·s), কারণ ১ Wb = ১ V·s।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-06",
+      question: {
+        en: "Which physical condition will NOT induce an electromotive force (EMF) in a stationary circular wire loop?",
+        hi: "स्थिर वृत्ताकार तार के लूप में कौन सी स्थिति ईएमएफ प्रेरित नहीं करेगी?",
+        bn: "একটি স্থির বৃত্তাকার তারের লুপে কোন পরিস্থিতিতে কোনো ইএমএফ আবিষ্ট হবে না?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "An external uniform magnetic field increasing at a constant rate of 2 T/s", hi: "एक बाहरी समान चुंबकीय क्षेत्र जो 2 T/s की स्थिर दर से बढ़ रहा हो", bn: "একটি বহিঃস্থ সুষম চৌম্বক ক্ষেত্র যা ২ T/s স্থির হারে বৃদ্ধি পাচ্ছে" } },
+        { id: "opt-2", text: { en: "An external uniform magnetic field remaining completely constant over time", hi: "एक बाहरी समान चुंबकीय क्षेत्र जो समय के साथ पूरी तरह स्थिर रहता हो", bn: "একটি বহিঃস্থ সুষম চৌম্বক ক্ষেত্র যা সময়ের সাথে সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-3", text: { en: "An alternating 50 Hz AC magnetic field passing through the loop", hi: "एक प्रत्यावर्ती 50 Hz एसी चुंबकीय क्षेत्र जो लूप से होकर गुजरता हो", bn: "একটি পরিবর্তী ৫০ হার্টজ এসি চৌম্বক ক্ষেত্র যা লুপের মধ্য দিয়ে যায়" } },
+        { id: "opt-4", text: { en: "A permanent bar magnet moving rapidly toward the loop center", hi: "एक स्थायी छड़ चुंबक जो लूप के केंद्र की ओर तेजी से गति कर रहा हो", bn: "একটি স্থায়ী দণ্ডচুম্বক যা লুপের কেন্দ্রের দিকে দ্রুত গতিশীল" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Faraday’s law requires a time-varying magnetic flux (dΦ/dt ≠ 0). A constant magnetic field produces dΦ/dt = 0, so no EMF is induced.",
+        hi: "फैराडे के नियम के लिए समय के साथ बदलते चुंबकीय फ्लक्स (dΦ/dt ≠ 0) की आवश्यकता होती है। स्थिर चुंबकीय क्षेत्र में dΦ/dt = 0 होता है, अतः कोई EMF नहीं बनता।",
+        bn: "ফ্যারাডের সূত্রানুযায়ী ইএমএফ সৃষ্টির জন্য সময়ের সাথে ফ্লাক্সের পরিবর্তন (dΦ/dt ≠ ০) প্রয়োজন। স্থির চৌম্বক ক্ষেত্রে dΦ/dt = ০, তাই কোনো ইএমএফ আবিষ্ট হয় না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-07",
+      question: {
+        en: "If the rate of change of magnetic flux through a closed coil is doubled while the coil circuit resistance is halved, the induced current becomes:",
+        hi: "यदि किसी बंद कुंडली में फ्लक्स परिवर्तन की दर दोगुनी कर दी जाए और कुंडली का प्रतिरोध आधा कर दिया जाए, तो प्रेरित धारा होगी:",
+        bn: "যদি কোনো বদ্ধ কয়েলে ফ্লাক্স পরিবর্তনের হার দ্বিগুণ করা হয় এবং কয়েলের রোধ অর্ধেক করা হয়, তবে আবিষ্ট কারেন্ট হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Unchanged (1×)", hi: "अपरिवर्तित (1×)", bn: "অপরিবর্তিত (১×)" } },
+        { id: "opt-2", text: { en: "Doubled (2×)", hi: "दोगुनी (2×)", bn: "দ্বিগুণ (২×)" } },
+        { id: "opt-3", text: { en: "Quadrupled (4×)", hi: "चार गुनी (4×)", bn: "चार গুণ (৪×)" } },
+        { id: "opt-4", text: { en: "Halved (0.5×)", hi: "आधी (0.5×)", bn: "অর্ধেক (০.৫×)" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "Doubling dΦ/dt doubles the induced EMF (e’ = 2e). Since induced current is I = e / R, halving R gives I’ = (2e) / (R/2) = 4(e/R) = 4I.",
+        hi: "dΦ/dt को दोगुना करने से EMF दोगुना हो जाता है (e’ = 2e)। चूंकि I = e/R, अतः R को आधा करने पर धारा I’ = 2e / (R/2) = 4I (चार गुनी) हो जाती है।",
+        bn: "dΦ/dt দ্বিগুণ হলে আবিষ্ট EMF দ্বিগুণ হয় (e’ = 2e)। কারেন্ট I = e/R হওয়ায় রোধ অর্ধেক করলে I’ = 2e / (R/2) = 4I (চার গুণ) হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-08",
+      question: {
+        en: "When alternating sinusoidal magnetic flux Φ(t) = Φ_m sin(ωt) links a coil of N turns, the induced EMF e = -N(dΦ/dt) has a phase relationship such that it:",
+        hi: "जब ज्यावक्रीय फ्लक्स Φ(t) = Φ_m sin(ωt) N फेरों वाली कुंडली से जुड़ता है, तो प्रेरित ईएमएफ e = -N(dΦ/dt) का कला संबंध होता है कि यह:",
+        bn: "যখন সাইনোসয়ডাল ফ্লাক্স Φ(t) = Φ_m sin(ωt) N পাকের কয়েলকে যুক্ত করে, তখন আবিষ্ট ইএমএফ e = -N(dΦ/dt) এর ফেজ সম্পর্ক হলো এটি:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Leads the flux by 90°", hi: "फ्लक्स से 90° आगे (lead) रहता है", bn: "ফ্লাক্স থেকে ৯০° এগিয়ে (lead) থাকে" } },
+        { id: "opt-2", text: { en: "Lags the flux by 90°", hi: "फ्लक्स से 90° पीछे (lag) रहता है", bn: "ফ্লাক্স থেকে ৯০° পিছিয়ে (lag) থাকে" } },
+        { id: "opt-3", text: { en: "Is in identical phase with the flux (0° phase shift)", hi: "फ्लक्स के साथ समान कला (0°) में रहता है", bn: "ফ্লাক্সের সাথে সমদশা (০°) থাকে" } },
+        { id: "opt-4", text: { en: "Is in exact phase opposition (180°) without any quadrature component", hi: "बिना किसी लंबवत घटक के ठीक 180° विपरीत रहता है", bn: "কোনো সমকোণী অংশ ছাড়াই সম্পূর্ণ ১৮০° বিপরীতে থাকে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "e(t) = -N d(Φ_m sin ωt)/dt = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - 90°). Therefore, the induced EMF waveform lags the magnetic flux by 90° in phase.",
+        hi: "e(t) = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - 90°)। अतः प्रेरित EMF ज्यावक्रीय फ्लक्स से कला में 90° पीछे (lag) रहता है।",
+        bn: "e(t) = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - ৯০°)। সুতরাং আবিষ্ট EMF তরঙ্গ চৌম্বক ফ্লাক্সের চেয়ে ৯০° ফেজে পিছিয়ে (lag) থাকে।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l1-1",
+      question: {
+        en: "According to Faraday’s Second Law of Electromagnetic Induction, the magnitude of induced EMF in a coil is directly proportional to:",
+        hi: "फैराडे के विद्युत चुंबकीय प्रेरण के द्वितीय नियम के अनुसार, कुंडली में प्रेरित ईएमएफ का परिमाण किसके सीधे समानुपाती होता है?",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুসারে কয়েলে আবিষ্ট তড়িৎচালক বলের মান সরাসরি কার সমানুপাতিক?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The resistance of the coil", hi: "कुंडली के प्रतिरोध के", bn: "কয়েলের রোধের" } },
+        { id: "opt-2", text: { en: "The time rate of change of magnetic flux linkages", hi: "चुंबकीय फ्लक्स लिंकेज के परिवर्तन की समय दर के", bn: "চৌম্বক ফ্লাক্স লিংকেজের পরিবর্তনের সময় হারের" } },
+        { id: "opt-3", text: { en: "The static magnetic flux density", hi: "स्थिर चुंबकीय फ्लक्स घनत्व के", bn: "স্থির চৌম্বক ফ্লাক্স ঘনত্বের" } },
+        { id: "opt-4", text: { en: "The total mass of the magnet", hi: "चुंबक के कुल द्रव्यमान के", bn: "চুম্বকের মোট ভরের" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Faraday’s Second Law states that e = - N(dΦ/dt), meaning induced EMF is directly proportional to the time rate of change of flux linkages.",
+        hi: "फैराडे का द्वितीय नियम कहता है कि e = - N(dΦ/dt), अर्थात प्रेरित ईएमएफ फ्लक्स लिंकेज की परिवर्तन दर के समानुपाती होता है।",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুযায়ী e = - N(dΦ/dt), অর্থাৎ আবিষ্ট ইএমএফ ফ্লাক্স লিংকেজের পরিবর্তনের হারের সমানুপাতিক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l1-2",
+      question: {
+        en: "What happens when a strong bar magnet is held completely stationary inside a multi-turn solenoid?",
+        hi: "जब एक शक्तिशाली छड़ चुंबक को बहु-फेरों वाली परिनालिका के अंदर पूरी तरह स्थिर रखा जाता है, तो क्या होता है?",
+        bn: "একটি শক্তিশালী দণ্ড চুম্বককে তারকুণ্ডলীর ভেতর সম্পূর্ণ স্থির রাখলে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A huge continuous DC voltage is induced", hi: "एक विशाल निरंतर डीसी वोल्टेज प्रेरित होता है", bn: "একটি বিশাল অবিচ্ছিন্ন ডিসি ভোল্টেজ আবিষ্ট হবে" } },
+        { id: "opt-2", text: { en: "An alternating AC current flows", hi: "एक प्रत्यावर्ती एसी धारा बहती है", bn: "একটি দিকপরিবর্তী এসি প্রবাহ চলবে" } },
+        { id: "opt-3", text: { en: "Zero EMF is induced (e = 0)", hi: "शून्य ईएमएफ प्रेरित होता है (e = 0)", bn: "কোনো ইএমএফ আবিষ্ট হয় না (e = ০)" } },
+        { id: "opt-4", text: { en: "The coil heats up rapidly", hi: "कुंडली तेजी से गर्म हो जाती है", bn: "কয়েলটি দ্রুত উত্তপ্ত হয়ে ওঠে" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "Since the magnet is stationary, dΦ/dt = 0. Therefore, induced EMF is exactly zero.",
+        hi: "क्योंकि चुंबक स्थिर है, अतः dΦ/dt = 0 है। इसलिए प्रेरित ईएमएफ बिल्कुल शून्य होता है।",
+        bn: "চুম্বক স্থির থাকায় ফ্লাক্সের পরিবর্তনের হার dΦ/dt = ০, তাই আবিষ্ট ইএমএফ শূন্য।"
+      }
+    },
+    {
+      id: "mcq-ch10-l1-3",
+      question: {
+        en: "What fundamental physical principle is represented by the negative sign in Faraday’s law: e = -N dΦ/dt?",
+        hi: "फैराडे के सूत्र e = -N dΦ/dt में ऋणात्मक चिह्न किस मूलभूत भौतिक सिद्धांत को दर्शाता है?",
+        bn: "ফ্যারাডের সমীকরণ e = -N dΦ/dt-এ ঋণাত্মক চিহ্নটি কোন মৌলিক ভৌত নীতি নির্দেশ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Conservation of Electrical Charge", hi: "विद्युत आवेश का संरक्षण", bn: "বৈদ্যুতিক আধানের সংরক্ষণ" } },
+        { id: "opt-2", text: { en: "Conservation of Energy (Lenz’s Law)", hi: "ऊर्जा का संरक्षण (लेंज का नियम)", bn: "শক্তির সংরক্ষণ (লেনজের সূত্র)" } },
+        { id: "opt-3", text: { en: "Newton’s First Law of Motion", hi: "न्यूटन का गति का प्रथम नियम", bn: "নিউটনের গতির প্রথম সূত্র" } },
+        { id: "opt-4", text: { en: "Coulomb’s Inverse Square Law", hi: "कूलम्ब का व्युत्क्रम वर्ग नियम", bn: "কুলম্বের বিপরীত বর্গীয় সূত্র" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "The negative sign represents Lenz’s Law, which is a direct manifestation of the Principle of Conservation of Energy.",
+        hi: "ऋणात्मक चिह्न लेंज के नियम को दर्शाता है, जो ऊर्जा संरक्षण सिद्धांत का प्रत्यक्ष प्रकटीकरण है।",
+        bn: "ঋণাত্মক চিহ্নটি লেনজের সূত্র নির্দেশ করে, যা শক্তি সংরক্ষণ নীতির সরাসরি বহিঃপ্রকাশ।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-04",
+      question: {
+        en: "A 500-turn coil experiences a magnetic flux change from 0.02 Wb to 0.05 Wb in 0.1 s. What is the magnitude of the average induced EMF?",
+        hi: "500 फेरों वाली एक कुंडली में चुंबकीय फ्लक्स 0.1 सेकंड में 0.02 Wb से बदलकर 0.05 Wb हो जाता है। औसत प्रेरित ईएमएफ का परिमाण क्या है?",
+        bn: "৫০০ পাকের একটি কয়েলে ০.১ সেকেন্ডে চৌম্বক ফ্লাক্স ০.০২ Wb থেকে পরিবর্তিত হয়ে ০.০৫ Wb হয়। গড় আবিষ্ট ইএমএফ এর মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "15 V", hi: "15 V", bn: "১৫ V" } },
+        { id: "opt-2", text: { en: "150 V", hi: "150 V", bn: "১৫০ V" } },
+        { id: "opt-3", text: { en: "1500 V", hi: "1500 V", bn: "১৫০০ V" } },
+        { id: "opt-4", text: { en: "0.15 V", hi: "0.15 V", bn: "০.১৫ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "According to Faraday’s second law, e = N · (ΔΦ / Δt) = 500 × (0.05 - 0.02) / 0.1 = 500 × 0.03 / 0.1 = 150 V.",
+        hi: "फैराडे के द्वितीय नियम के अनुसार, e = N · (ΔΦ / Δt) = 500 × (0.05 - 0.02) / 0.1 = 500 × 0.3 = 150 V।",
+        bn: "ফ্যারাডের দ্বিতীয় সূত্রানুযায়ী, e = N · (ΔΦ / Δt) = ৫০০ × (০.০৫ - ০.০২) / ০.১ = ৫০০ × ০.৩ = ১৫০ V।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-05",
+      question: {
+        en: "What is the SI unit of magnetic flux linkage (λ = NΦ)?",
+        hi: "चुंबकीय फ्लक्स लिंकेज (λ = NΦ) का SI मात्रक क्या है?",
+        bn: "চৌম্বক ফ্লাক্স লিংকেজের (λ = NΦ) এসআই একক কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Weber-turn (Wb·t) or Volt-second (V·s)", hi: "वेबर-टर्न (Wb·t) अथवा वोल्ट-सेकंड (V·s)", bn: "ওয়েবার-টার্ন (Wb·t) বা ভোল্ট-সেকেন্ড (V·s)" } },
+        { id: "opt-2", text: { en: "Tesla per meter (T/m)", hi: "टेस्ला प्रति मीटर (T/m)", bn: "টেসলা প্রতি মিটার (T/m)" } },
+        { id: "opt-3", text: { en: "Henry per Ampere (H/A)", hi: "हेनरी प्रति एम्पियर (H/A)", bn: "হেনরি প্রতি অ্যাম্পিয়ার (H/A)" } },
+        { id: "opt-4", text: { en: "Volt per second (V/s)", hi: "वोल्ट प्रति सेकंड (V/s)", bn: "ভোল্ট প্রতি সেকেন্ড (V/s)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Magnetic flux linkage λ = NΦ is measured in Weber-turns (Wb·t) or equivalently Volt-seconds (V·s) since 1 Wb = 1 V·s.",
+        hi: "चुंबकीय फ्लक्स लिंकेज λ = NΦ का मात्रक वेबर-टर्न (Wb·t) या वोल्ट-सेकंड (V·s) होता है क्योंकि 1 Wb = 1 V·s।",
+        bn: "চৌম্বক ফ্লাক্স লিংকেজ λ = NΦ এর একক হলো ওয়েবার-টার্ন (Wb·t) বা ভোল্ট-সেকেন্ড (V·s), কারণ ১ Wb = ১ V·s।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-06",
+      question: {
+        en: "Which physical condition will NOT induce an electromotive force (EMF) in a stationary circular wire loop?",
+        hi: "स्थिर वृत्ताकार तार के लूप में कौन सी स्थिति ईएमएफ प्रेरित नहीं करेगी?",
+        bn: "একটি স্থির বৃত্তাকার তারের লুপে কোন পরিস্থিতিতে কোনো ইএমএফ আবিষ্ট হবে না?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "An external uniform magnetic field increasing at a constant rate of 2 T/s", hi: "एक बाहरी समान चुंबकीय क्षेत्र जो 2 T/s की स्थिर दर से बढ़ रहा हो", bn: "একটি বহিঃস্থ সুষম চৌম্বক ক্ষেত্র যা ২ T/s স্থির হারে বৃদ্ধি পাচ্ছে" } },
+        { id: "opt-2", text: { en: "An external uniform magnetic field remaining completely constant over time", hi: "एक बाहरी समान चुंबकीय क्षेत्र जो समय के साथ पूरी तरह स्थिर रहता हो", bn: "একটি বহিঃস্থ সুষম চৌম্বক ক্ষেত্র যা সময়ের সাথে সম্পূর্ণ অপরিবর্তিত থাকে" } },
+        { id: "opt-3", text: { en: "An alternating 50 Hz AC magnetic field passing through the loop", hi: "एक प्रत्यावर्ती 50 Hz एसी चुंबकीय क्षेत्र जो लूप से होकर गुजरता हो", bn: "একটি পরিবর্তী ৫০ হার্টজ এসি চৌম্বক ক্ষেত্র যা লুপের মধ্য দিয়ে যায়" } },
+        { id: "opt-4", text: { en: "A permanent bar magnet moving rapidly toward the loop center", hi: "एक स्थायी छड़ चुंबक जो लूप के केंद्र की ओर तेजी से गति कर रहा हो", bn: "একটি স্থায়ী দণ্ডচুম্বক যা লুপের কেন্দ্রের দিকে দ্রুত গতিশীল" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Faraday’s law requires a time-varying magnetic flux (dΦ/dt ≠ 0). A constant magnetic field produces dΦ/dt = 0, so no EMF is induced.",
+        hi: "फैराडे के नियम के लिए समय के साथ बदलते चुंबकीय फ्लक्स (dΦ/dt ≠ 0) की आवश्यकता होती है। स्थिर चुंबकीय क्षेत्र में dΦ/dt = 0 होता है, अतः कोई EMF नहीं बनता।",
+        bn: "ফ্যারাডের সূত্রানুযায়ী ইএমএফ সৃষ্টির জন্য সময়ের সাথে ফ্লাক্সের পরিবর্তন (dΦ/dt ≠ ০) প্রয়োজন। স্থির চৌম্বক ক্ষেত্রে dΦ/dt = ০, তাই কোনো ইএমএফ আবিষ্ট হয় না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-07",
+      question: {
+        en: "If the rate of change of magnetic flux through a closed coil is doubled while the coil circuit resistance is halved, the induced current becomes:",
+        hi: "यदि किसी बंद कुंडली में फ्लक्स परिवर्तन की दर दोगुनी कर दी जाए और कुंडली का प्रतिरोध आधा कर दिया जाए, तो प्रेरित धारा होगी:",
+        bn: "যদি কোনো বদ্ধ কয়েলে ফ্লাক্স পরিবর্তনের হার দ্বিগুণ করা হয় এবং কয়েলের রোধ অর্ধেক করা হয়, তবে আবিষ্ট কারেন্ট হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Unchanged (1×)", hi: "अपरिवर्तित (1×)", bn: "অপরিবর্তিত (১×)" } },
+        { id: "opt-2", text: { en: "Doubled (2×)", hi: "दोगुनी (2×)", bn: "দ্বিগুণ (২×)" } },
+        { id: "opt-3", text: { en: "Quadrupled (4×)", hi: "चार गुनी (4×)", bn: "चार গুণ (৪×)" } },
+        { id: "opt-4", text: { en: "Halved (0.5×)", hi: "आधी (0.5×)", bn: "অর্ধেক (০.৫×)" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "Doubling dΦ/dt doubles the induced EMF (e’ = 2e). Since induced current is I = e / R, halving R gives I’ = (2e) / (R/2) = 4(e/R) = 4I.",
+        hi: "dΦ/dt को दोगुना करने से EMF दोगुना हो जाता है (e’ = 2e)। चूंकि I = e/R, अतः R को आधा करने पर धारा I’ = 2e / (R/2) = 4I (चार गुनी) हो जाती है।",
+        bn: "dΦ/dt দ্বিগুণ হলে আবিষ্ট EMF দ্বিগুণ হয় (e’ = 2e)। কারেন্ট I = e/R হওয়ায় রোধ অর্ধেক করলে I’ = 2e / (R/2) = 4I (চার গুণ) হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l01-08",
+      question: {
+        en: "When alternating sinusoidal magnetic flux Φ(t) = Φ_m sin(ωt) links a coil of N turns, the induced EMF e = -N(dΦ/dt) has a phase relationship such that it:",
+        hi: "जब ज्यावक्रीय फ्लक्स Φ(t) = Φ_m sin(ωt) N फेरों वाली कुंडली से जुड़ता है, तो प्रेरित ईएमएफ e = -N(dΦ/dt) का कला संबंध होता है कि यह:",
+        bn: "যখন সাইনোসয়ডাল ফ্লাক্স Φ(t) = Φ_m sin(ωt) N পাকের কয়েলকে যুক্ত করে, তখন আবিষ্ট ইএমএফ e = -N(dΦ/dt) এর ফেজ সম্পর্ক হলো এটি:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Leads the flux by 90°", hi: "फ्लक्स से 90° आगे (lead) रहता है", bn: "ফ্লাক্স থেকে ৯০° এগিয়ে (lead) থাকে" } },
+        { id: "opt-2", text: { en: "Lags the flux by 90°", hi: "फ्लक्स से 90° पीछे (lag) रहता है", bn: "ফ্লাক্স থেকে ৯০° পিছিয়ে (lag) থাকে" } },
+        { id: "opt-3", text: { en: "Is in identical phase with the flux (0° phase shift)", hi: "फ्लक्स के साथ समान कला (0°) में रहता है", bn: "ফ্লাক্সের সাথে সমদশা (০°) থাকে" } },
+        { id: "opt-4", text: { en: "Is in exact phase opposition (180°) without any quadrature component", hi: "बिना किसी लंबवत घटक के ठीक 180° विपरीत रहता है", bn: "কোনো সমকোণী অংশ ছাড়াই সম্পূর্ণ ১৮০° বিপরীতে থাকে" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "e(t) = -N d(Φ_m sin ωt)/dt = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - 90°). Therefore, the induced EMF waveform lags the magnetic flux by 90° in phase.",
+        hi: "e(t) = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - 90°)। अतः प्रेरित EMF ज्यावक्रीय फ्लक्स से कला में 90° पीछे (lag) रहता है।",
+        bn: "e(t) = -N ω Φ_m cos(ωt) = N ω Φ_m sin(ωt - ৯০°)। সুতরাং আবিষ্ট EMF তরঙ্গ চৌম্বক ফ্লাক্সের চেয়ে ৯০° ফেজে পিছিয়ে (lag) থাকে।"
       }
     }
   ],

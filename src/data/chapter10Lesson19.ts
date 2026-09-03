@@ -1,8 +1,8 @@
 import { Lesson } from '../types';
 
 export const LESSON_LINEAR_INDUCTION_MAGNETIC_LEVITATION: Lesson = {
-  id: 'lsn-ch10-linear-induction-maglev',
-  topicId: 'ch10-linear-induction-maglev',
+  id: 'lsn-ch10-linear-induction-magnetic-levitation',
+  topicId: 'ch10-linear-induction-magnetic-levitation',
   chapterId: 'ch-em-induction',
   order: 19,
   title: {
@@ -291,163 +291,325 @@ Conclusion: The track variable-frequency drive must generate 166.7 Hz three-phas
   ],
   mcqs: [
     {
-      id: 'mcq-ch10-l19-1',
+      id: "mcq-ch10-l19-1",
       question: {
-        en: 'What is the mathematical formula for the linear synchronous traveling magnetic wave speed (v_s) in a Linear Induction Motor with pole pitch τ and frequency f?',
-        hi: 'पोल पिच τ तथा आवृत्ति f वाले रैखिक प्रेरण मोटर में गतिमान चुंबकीय तरंग के वेग (v_s) का सूत्र क्या है?',
-        bn: 'পোল পিচ τ এবং কম্পাঙ্ক f বিশিষ্ট লিনিয়ার ইন্ডাকশন মোটরের ট্রাভেলিং চৌম্বক তরঙ্গের গতিবেগের (v_s) সূত্র কোনটি?'
+        en: "What is the mathematical formula for the linear synchronous traveling magnetic wave speed (v_s) in a Linear Induction Motor with pole pitch τ and frequency f?",
+        hi: "पोल पिच τ तथा आवृत्ति f वाले रैखिक प्रेरण मोटर में गतिमान चुंबकीय तरंग के वेग (v_s) का सूत्र क्या है?",
+        bn: "পোল পিচ τ এবং কম্পাঙ্ক f বিশিষ্ট লিনিয়ার ইন্ডাকশন মোটরের ট্রাভেলিং চৌম্বক তরঙ্গের গতিবেগের (v_s) সূত্র কোনটি?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'v_s = 2 · f · τ', hi: 'v_s = 2 · f · τ', bn: 'v_s = ২ · f · τ' } },
-        { id: 'opt-2', text: { en: 'v_s = f / (2 · τ)', hi: 'v_s = f / (2 · τ)', bn: 'v_s = f / (২ · τ)' } },
-        { id: 'opt-3', text: { en: 'v_s = √(2 · f · τ)', hi: 'v_s = √(2 · f · τ)', bn: 'v_s = √(২ · f · τ)' } },
-        { id: 'opt-4', text: { en: 'v_s = 120 · f / P', hi: 'v_s = 120 · f / P', bn: 'v_s = ১২০ · f / P' } }
+        { id: "opt-1", text: { en: "v_s = 2 · f · τ", hi: "v_s = 2 · f · τ", bn: "v_s = ২ · f · τ" } },
+        { id: "opt-2", text: { en: "v_s = f / (2 · τ)", hi: "v_s = f / (2 · τ)", bn: "v_s = f / (২ · τ)" } },
+        { id: "opt-3", text: { en: "v_s = √(2 · f · τ)", hi: "v_s = √(2 · f · τ)", bn: "v_s = √(২ · f · τ)" } },
+        { id: "opt-4", text: { en: "v_s = 120 · f / P", hi: "v_s = 120 · f / P", bn: "v_s = ১২০ · f / P" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'In one full electrical AC cycle (period T = 1/f), the traveling wave advances a distance equal to two pole pitches (2τ). Thus, speed v_s = distance / time = 2τ / (1/f) = 2·f·τ.',
-        hi: 'एक पूर्ण एसी चक्र में तरंग दो पोल पिचों (2τ) की दूरी तय करती है। अतः v_s = 2·f·τ।',
-        bn: 'একটি পূর্ণ এসি চক্রে তরঙ্গটি দুটি পোল পিচের সমান দূরত্ব (২τ) অতিক্রম করে। অতএব বেগ v_s = ২·f·τ।'
+        en: "In one full electrical AC cycle (period T = 1/f), the traveling wave advances a distance equal to two pole pitches (2τ). Thus, speed v_s = distance / time = 2τ / (1/f) = 2·f·τ.",
+        hi: "एक पूर्ण एसी चक्र में तरंग दो पोल पिचों (2τ) की दूरी तय करती है। अतः v_s = 2·f·τ।",
+        bn: "একটি পূর্ণ এসি চক্রে তরঙ্গটি দুটি পোল পিচের সমান দূরত্ব (২τ) অতিক্রম করে। অতএব বেগ v_s = ২·f·τ।"
       }
     },
     {
-      id: 'mcq-ch10-l19-2',
+      id: "mcq-ch10-l19-2",
       question: {
-        en: 'What happens to the forward propulsion thrust of a Linear Induction Motor if the vehicle travels at the exact synchronous speed of the traveling wave (v = v_s, slip s = 0)?',
-        hi: 'यदि वाहन ठीक चुंबकीय तरंग के तुल्यकालिक वेग से चलने लगे (v = v_s, स्लिप s = 0), तो मोटर के प्रणोद बल (Thrust) का क्या होगा?',
-        bn: 'গাড়িটি যদি চৌম্বক তরঙ্গের সমান সিনক্রোনাস বেগে চলে (v = v_s, স্লিপ s = ০), তবে লিনিয়ার মোটরের থ্রাস্ট বলের কী পরিবর্তন ঘটবে?'
+        en: "What happens to the forward propulsion thrust of a Linear Induction Motor if the vehicle travels at the exact synchronous speed of the traveling wave (v = v_s, slip s = 0)?",
+        hi: "यदि वाहन ठीक चुंबकीय तरंग के तुल्यकालिक वेग से चलने लगे (v = v_s, स्लिप s = 0), तो मोटर के प्रणोद बल (Thrust) का क्या होगा?",
+        bn: "গাড়িটি যদি চৌম্বক তরঙ্গের সমান সিনক্রোনাস বেগে চলে (v = v_s, স্লিপ s = ০), তবে লিনিয়ার মোটরের থ্রাস্ট বলের কী পরিবর্তন ঘটবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Thrust drops to strictly zero because relative flux cutting (dΦ/dt) is zero, inducing no secondary eddy currents', hi: 'थ्रस्ट पूरी तरह शून्य हो जाता है क्योंकि आपेक्षिक गति शून्य होने से कोई भंवर धारा नहीं बनती', bn: 'থ্রাস্ট বল পুরোপুরি শূন্য হয়ে যাবে কারণ আপেক্ষিক গতি শূন্য হওয়ায় কোনো এডি কারেন্ট উৎপন্ন হয় না' } },
-        { id: 'opt-2', text: { en: 'Thrust instantly becomes infinite', hi: 'थ्रस्ट अनंत हो जाता है', bn: 'থ্রাস্ট বল অসীম হয়ে যাবে' } },
-        { id: 'opt-3', text: { en: 'The motor begins rotating backward in a circle', hi: 'मोटर उल्टी दिशा में गोल घूमने लगती है', bn: 'মোটরটি উল্টো দিকে গোল ঘুরতে থাকে' } },
-        { id: 'opt-4', text: { en: 'The vehicle lifts vertically into outer space', hi: 'ट्रेन अंतरिक्ष में उड़ जाती है', bn: 'গাড়িটি মহাশূন্যে উড়ে যায়' } }
+        { id: "opt-1", text: { en: "Thrust drops to strictly zero because relative flux cutting (dΦ/dt) is zero, inducing no secondary eddy currents", hi: "थ्रस्ट पूरी तरह शून्य हो जाता है क्योंकि आपेक्षिक गति शून्य होने से कोई भंवर धारा नहीं बनती", bn: "থ্রাস্ট বল পুরোপুরি শূন্য হয়ে যাবে কারণ আপেক্ষিক গতি শূন্য হওয়ায় কোনো এডি কারেন্ট উৎপন্ন হয় না" } },
+        { id: "opt-2", text: { en: "Thrust instantly becomes infinite", hi: "थ्रस्ट अनंत हो जाता है", bn: "থ্রাস্ট বল অসীম হয়ে যাবে" } },
+        { id: "opt-3", text: { en: "The motor begins rotating backward in a circle", hi: "मोटर उल्टी दिशा में गोल घूमने लगती है", bn: "মোটরটি উল্টো দিকে গোল ঘুরতে থাকে" } },
+        { id: "opt-4", text: { en: "The vehicle lifts vertically into outer space", hi: "ट्रेन अंतरिक्ष में उड़ जाती है", bn: "গাড়িটি মহাশূন্যে উড়ে যায়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Induction requires relative velocity (v_s - v > 0) to cut flux lines and induce EMF. At zero slip (s = 0), dΦ/dt = 0, no secondary current flows, and Lorentz thrust vanishes.',
-        hi: 'प्रेरण के लिए आपेक्षिक गति आवश्यक है। स्लिप शून्य होने पर कोई ईएमएफ या करंट नहीं बनता, जिससे थ्रस्ट शून्य हो जाता है।',
-        bn: 'আবেশের জন্য আপেক্ষিক গতি অপরিহার্য। স্লিপ শূন্য হলে কোনো ভোল্টেজ বা কারেন্ট আবিষ্ট হয় না, ফলে লোরেন্টজ থ্রাস্ট শূন্য হয়।'
+        en: "Induction requires relative velocity (v_s - v > 0) to cut flux lines and induce EMF. At zero slip (s = 0), dΦ/dt = 0, no secondary current flows, and Lorentz thrust vanishes.",
+        hi: "प्रेरण के लिए आपेक्षिक गति आवश्यक है। स्लिप शून्य होने पर कोई ईएमएफ या करंट नहीं बनता, जिससे थ्रस्ट शून्य हो जाता है।",
+        bn: "আবেশের জন্য আপেক্ষিক গতি অপরিহার্য। স্লিপ শূন্য হলে কোনো ভোল্টেজ বা কারেন্ট আবিষ্ট হয় না, ফলে লোরেন্টজ থ্রাস্ট শূন্য হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l19-3',
+      id: "mcq-ch10-l19-3",
       question: {
-        en: 'Why do Electrodynamic Suspension (EDS) Maglev trains (such as the Japanese JR Yamanashi train) require retractable wheels at low speeds under 100 km/h?',
-        hi: 'EDS मैग्लेव ट्रेनों को 100 किमी/घंटा से कम गति पर मुड़ने वाले रबर पहियों की आवश्यकता क्यों होती है?',
-        bn: '১০০ km/h এর নিচে কম গতিতে চলার সময় জাপানি EDS ম্যাগলেভ ট্রেনের কেন চাকার প্রয়োজন হয়?'
+        en: "Why do Electrodynamic Suspension (EDS) Maglev trains (such as the Japanese JR Yamanashi train) require retractable wheels at low speeds under 100 km/h?",
+        hi: "EDS मैग्लेव ट्रेनों को 100 किमी/घंटा से कम गति पर मुड़ने वाले रबर पहियों की आवश्यकता क्यों होती है?",
+        bn: "১০০ km/h এর নিচে কম গতিতে চলার সময় জাপানি EDS ম্যাগলেভ ট্রেনের কেন চাকার প্রয়োজন হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'At low speeds, the rate of flux change (dΦ/dt) in the track coils is insufficient to induce repulsive currents strong enough to lift the train’s weight', hi: 'कम गति पर पटरी की कुंडलियों में फ्लक्स परिवर्तन की दर इतनी कम होती है कि ट्रेन को उठाने लायक पर्याप्त प्रतिकर्षण बल नहीं बन पाता', bn: 'কম গতিতে ট্র্যাকে ফ্লাক্স পরিবর্তনের হার (dΦ/dt) এত কম থাকে যে ট্রেনের ওজনকে শূন্যে ভাসানোর মতো পর্যাপ্ত বিকর্ষণ বল তৈরি হয় না' } },
-        { id: 'opt-2', text: { en: 'To physically crank the superconducting magnets like a bicycle', hi: 'साइकिल की तरह चुंबकों को घुमाने के लिए', bn: 'চৌম্বকগুলোকে সাইকেলের মতো ঘোরানোর জন্য' } },
-        { id: 'opt-3', text: { en: 'To keep the air conditioning compressor running', hi: 'एसी चलाने के लिए', bn: 'এসি সচল রাখার জন্য' } },
-        { id: 'opt-4', text: { en: 'Because magnets lose their magnetic field at low speeds', hi: 'क्योंकि कम गति पर चुंबकत्व समाप्त हो जाता है', bn: 'কারণ কম গতিতে চুম্বকত্ব হারিয়ে যায়' } }
+        { id: "opt-1", text: { en: "At low speeds, the rate of flux change (dΦ/dt) in the track coils is insufficient to induce repulsive currents strong enough to lift the train’s weight", hi: "कम गति पर पटरी की कुंडलियों में फ्लक्स परिवर्तन की दर इतनी कम होती है कि ट्रेन को उठाने लायक पर्याप्त प्रतिकर्षण बल नहीं बन पाता", bn: "কম গতিতে ট্র্যাকে ফ্লাক্স পরিবর্তনের হার (dΦ/dt) এত কম থাকে যে ট্রেনের ওজনকে শূন্যে ভাসানোর মতো পর্যাপ্ত বিকর্ষণ বল তৈরি হয় না" } },
+        { id: "opt-2", text: { en: "To physically crank the superconducting magnets like a bicycle", hi: "साइकिल की तरह चुंबकों को घुमाने के लिए", bn: "চৌম্বকগুলোকে সাইকেলের মতো ঘোরানোর জন্য" } },
+        { id: "opt-3", text: { en: "To keep the air conditioning compressor running", hi: "एसी चलाने के लिए", bn: "এসি সচল রাখার জন্য" } },
+        { id: "opt-4", text: { en: "Because magnets lose their magnetic field at low speeds", hi: "क्योंकि कम गति पर चुंबकत्व समाप्त हो जाता है", bn: "কারণ কম গতিতে চুম্বকত্ব হারিয়ে যায়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'EDS levitation force is dynamically induced by motion: F_lift ∝ v² / (v² + v_0²). At standstill (v = 0), lift is zero. The train takes off on rubber wheels until reaching transition speed (~100–150 km/h).',
-        hi: 'EDS उत्तोलन गति पर निर्भर करता है। शून्य गति पर कोई लिफ्ट नहीं होती, अतः 100-150 km/h की गति तक पहियों का उपयोग किया जाता है।',
-        bn: 'EDS লেভিটেশন গতির ওপর নির্ভরশীল। স্থির অবস্থায় কোনো লিফট থাকে না, তাই ১০০-১৫০ km/h গতি না পাওয়া পর্যন্ত চাকায় চলতে হয়।'
+        en: "EDS levitation force is dynamically induced by motion: F_lift ∝ v² / (v² + v_0²). At standstill (v = 0), lift is zero. The train takes off on rubber wheels until reaching transition speed (~100–150 km/h).",
+        hi: "EDS उत्तोलन गति पर निर्भर करता है। शून्य गति पर कोई लिफ्ट नहीं होती, अतः 100-150 km/h की गति तक पहियों का उपयोग किया जाता है।",
+        bn: "EDS লেভিটেশন গতির ওপর নির্ভরশীল। স্থির অবস্থায় কোনো লিফট থাকে না, তাই ১০০-১৫০ km/h গতি না পাওয়া পর্যন্ত চাকায় চলতে হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l19-4',
+      id: "mcq-ch10-l19-4",
       question: {
-        en: 'What is the construction of the typical secondary reaction plate mounted on the track or bogie of a Single-Sided Linear Induction Motor (SLIM)?',
-        hi: 'सिंगल-साइडेड रैखिक प्रेरण मोटर (SLIM) की द्वितीयक रिएक्शन प्लेट की बनावट कैसी होती है?',
-        bn: 'সিঙ্গেল-সাইডেড লিনিয়ার ইন্ডাকশন মোটরের (SLIM) সেকেন্ডারি রিঅ্যাকশন প্লেটের গঠন কেমন হয়?'
+        en: "What is the construction of the typical secondary reaction plate mounted on the track or bogie of a Single-Sided Linear Induction Motor (SLIM)?",
+        hi: "सिंगल-साइडेड रैखिक प्रेरण मोटर (SLIM) की द्वितीयक रिएक्शन प्लेट की बनावट कैसी होती है?",
+        bn: "সিঙ্গেল-সাইডেড লিনিয়ার ইন্ডাকশন মোটরের (SLIM) সেকেন্ডারি রিঅ্যাকশন প্লেটের গঠন কেমন হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'A highly conductive aluminum or copper top sheet bonded to a solid ferromagnetic steel backing plate', hi: 'एक अत्यधिक चालक एल्युमिनियम या तांबे की चादर जो ठोस फेरोमैग्नेटिक स्टील प्लेट के ऊपर जुड़ी होती है', bn: 'একটি উচ্চ পরিবাহী অ্যালুমিনিয়াম বা তামার পাত যা নিচে থাকা সলিড স্টিল ব্যাকপ্লেটের সাথে যুক্ত থাকে' } },
-        { id: 'opt-2', text: { en: 'A fragile hollow glass sheet filled with helium gas', hi: 'हीलियम गैस से भरी कांच की शीट', bn: 'হিলিয়াম গ্যাসে পূর্ণ ভঙ্গুর কাচের শিট' } },
-        { id: 'opt-3', text: { en: 'A thick sheet of vulcanized rubber', hi: 'रबर की मोटी चादर', bn: 'ভালকানাইজড রবারের মোটা শিট' } },
-        { id: 'opt-4', text: { en: 'A diamond crystal lattice with zero free electrons', hi: 'बिना मुक्त इलेक्ट्रॉनों वाला हीरा', bn: 'মুক্ত ইলেকট্রনহীন হীরার পাত' } }
+        { id: "opt-1", text: { en: "A highly conductive aluminum or copper top sheet bonded to a solid ferromagnetic steel backing plate", hi: "एक अत्यधिक चालक एल्युमिनियम या तांबे की चादर जो ठोस फेरोमैग्नेटिक स्टील प्लेट के ऊपर जुड़ी होती है", bn: "একটি উচ্চ পরিবাহী অ্যালুমিনিয়াম বা তামার পাত যা নিচে থাকা সলিড স্টিল ব্যাকপ্লেটের সাথে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "A fragile hollow glass sheet filled with helium gas", hi: "हीलियम गैस से भरी कांच की शीट", bn: "হিলিয়াম গ্যাসে পূর্ণ ভঙ্গুর কাচের শিট" } },
+        { id: "opt-3", text: { en: "A thick sheet of vulcanized rubber", hi: "रबर की मोटी चादर", bn: "ভালকানাইজড রবারের মোটা শিট" } },
+        { id: "opt-4", text: { en: "A diamond crystal lattice with zero free electrons", hi: "बिना मुक्त इलेक्ट्रॉनों वाला हीरा", bn: "মুক্ত ইলেকট্রনহীন হীরার পাত" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The aluminum sheet provides low electrical resistance for high induced eddy currents (thrust), while the steel backing provides a high-permeability magnetic path to close the magnetic flux loop.',
-        hi: 'एल्युमिनियम भंवर धाराओं (थ्रस्ट) के लिए कम प्रतिरोध देता है, तथा स्टील की प्लेट चुंबकीय फ्लक्स के रास्ते को पूरा करने के लिए उच्च चुंबकशीलता देती है।',
-        bn: 'অ্যালুমিনিয়াম পাত এডি কারেন্ট পরিবহনে কম রোধ প্রদান করে এবং স্টিলের ব্যাকপ্লেট চৌম্বক ফ্লাক্সের পথ সম্পূর্ণ করে।'
+        en: "The aluminum sheet provides low electrical resistance for high induced eddy currents (thrust), while the steel backing provides a high-permeability magnetic path to close the magnetic flux loop.",
+        hi: "एल्युमिनियम भंवर धाराओं (थ्रस्ट) के लिए कम प्रतिरोध देता है, तथा स्टील की प्लेट चुंबकीय फ्लक्स के रास्ते को पूरा करने के लिए उच्च चुंबकशीलता देती है।",
+        bn: "অ্যালুমিনিয়াম পাত এডি কারেন্ট পরিবহনে কম রোধ প্রদান করে এবং স্টিলের ব্যাকপ্লেট চৌম্বক ফ্লাক্সের পথ সম্পূর্ণ করে।"
       }
     },
     {
-      id: 'mcq-ch10-l19-5',
+      id: "mcq-ch10-l19-5",
       question: {
-        en: 'How can a Linear Induction Motor be immediately converted into a powerful contactless regenerative brake to slow down a speeding train?',
-        hi: 'तेज गति से दौड़ती ट्रेन को धीमा करने के लिए रैखिक प्रेरण मोटर को संपर्क-रहित रीजनरेटिव ब्रेक में कैसे बदला जाता है?',
-        bn: 'দ্রুতগামী ট্রেন থামাতে লিনিয়ার ইন্ডাকশন মোটরকে কীভাবে তাৎক্ষণিকভাবে কন্ট্যাক্টলেস রিজেনারেটিভ ব্রেকে রূপান্তর করা যায়?'
+        en: "How can a Linear Induction Motor be immediately converted into a powerful contactless regenerative brake to slow down a speeding train?",
+        hi: "तेज गति से दौड़ती ट्रेन को धीमा करने के लिए रैखिक प्रेरण मोटर को संपर्क-रहित रीजनरेटिव ब्रेक में कैसे बदला जाता है?",
+        bn: "দ্রুতগামী ট্রেন থামাতে লিনিয়ার ইন্ডাকশন মোটরকে কীভাবে তাৎক্ষণিকভাবে কন্ট্যাক্টলেস রিজেনারেটিভ ব্রেকে রূপান্তর করা যায়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Reverse the phase sequence of the 3-phase AC supply (e.g., swap Phase A and Phase B), driving the traveling wave in reverse and creating negative slip', hi: '3-फेज आपूर्ति के किन्हीं दो फेजों को आपस में बदल दें, जिससे चुंबकीय तरंग उल्टी दिशा में दौड़ने लगती है और ऋणात्मक स्लिप से भारी ब्रेकिंग बल बनता है', bn: '৩-ফেজ সরবরাহের দুটি ফেজ পরস্পর বদলে দিয়ে ট্রাভেলিং ওয়েভকে উল্টো দিকে চালনা করা, যা নেগেটিভ স্লিপের মাধ্যমে ব্রেকিং সৃষ্টি করে' } },
-        { id: 'opt-2', text: { en: 'Pour sand onto the stator coils', hi: 'स्टेटर कुंडलियों पर रेत डालना', bn: 'কয়েলে বালু ঢেলে দেওয়া' } },
-        { id: 'opt-3', text: { en: 'Disconnect all cables and let gravity stop the train', hi: 'सारे तार काट देना', bn: 'সব তার বিচ্ছিন্ন করা' } },
-        { id: 'opt-4', text: { en: 'Paint the aluminum plate with red paint', hi: 'एल्युमिनियम प्लेट पर लाल रंग पोतना', bn: 'প্লেটে লাল রং দেওয়া' } }
+        { id: "opt-1", text: { en: "Reverse the phase sequence of the 3-phase AC supply (e.g., swap Phase A and Phase B), driving the traveling wave in reverse and creating negative slip", hi: "3-फेज आपूर्ति के किन्हीं दो फेजों को आपस में बदल दें, जिससे चुंबकीय तरंग उल्टी दिशा में दौड़ने लगती है और ऋणात्मक स्लिप से भारी ब्रेकिंग बल बनता है", bn: "৩-ফেজ সরবরাহের দুটি ফেজ পরস্পর বদলে দিয়ে ট্রাভেলিং ওয়েভকে উল্টো দিকে চালনা করা, যা নেগেটিভ স্লিপের মাধ্যমে ব্রেকিং সৃষ্টি করে" } },
+        { id: "opt-2", text: { en: "Pour sand onto the stator coils", hi: "स्टेटर कुंडलियों पर रेत डालना", bn: "কয়েলে বালু ঢেলে দেওয়া" } },
+        { id: "opt-3", text: { en: "Disconnect all cables and let gravity stop the train", hi: "सारे तार काट देना", bn: "সব তার বিচ্ছিন্ন করা" } },
+        { id: "opt-4", text: { en: "Paint the aluminum plate with red paint", hi: "एल्युमिनियम प्लेट पर लाल रंग पोतना", bn: "প্লেটে লাল রং দেওয়া" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Swapping two phases reverses the direction of the linear traveling wave. The slip becomes s > 1 (plugging/counter-braking), generating immense reverse Lorentz thrust that rapidly decelerates the vehicle without mechanical wear.',
-        hi: 'दो फेजों को बदलने से चुंबकीय तरंग उल्टी दौड़ने लगती है। इससे भारी विपरीत थ्रस्ट उत्पन्न होता है जो ट्रेन को तुरंत रोक देता है।',
-        bn: 'দুটি ফেজ বদলে দিলে ট্রাভেলিং তরঙ্গ উল্টো দিকে ছুটে চলে। ফলে তীব্র বিপরীত লোরেন্টজ বল তৈরি হয়ে ট্রেনকে কোনো মেকানিক্যাল ঘর্ষণ ছাড়াই থামিয়ে দেয়।'
+        en: "Swapping two phases reverses the direction of the linear traveling wave. The slip becomes s > 1 (plugging/counter-braking), generating immense reverse Lorentz thrust that rapidly decelerates the vehicle without mechanical wear.",
+        hi: "दो फेजों को बदलने से चुंबकीय तरंग उल्टी दौड़ने लगती है। इससे भारी विपरीत थ्रस्ट उत्पन्न होता है जो ट्रेन को तुरंत रोक देता है।",
+        bn: "দুটি ফেজ বদলে দিলে ট্রাভেলিং তরঙ্গ উল্টো দিকে ছুটে চলে। ফলে তীব্র বিপরীত লোরেন্টজ বল তৈরি হয়ে ট্রেনকে কোনো মেকানিক্যাল ঘর্ষণ ছাড়াই থামিয়ে দেয়।"
       }
     },
     {
-      id: 'mcq-ch10-l19-6',
+      id: "mcq-ch10-l19-6",
       question: {
-        en: 'What distinct parasitic phenomenon occurs in Linear Induction Motors due to the open physical ends of the linear stator core?',
-        hi: 'रैखिक स्टेटर कोर के दोनों सिरे खुले होने के कारण रैखिक प्रेरण मोटरों में कौन सी विशिष्ट परजीवी घटना (Parasitic Phenomenon) होती है?',
-        bn: 'লিনিয়ার স্টেটর কোরের দুই প্রান্ত উন্মুক্ত থাকার কারণে লিনিয়ার মোটরে কোন ক্ষতিকর পরজীবী ঘটনাটি ঘটে?'
+        en: "What distinct parasitic phenomenon occurs in Linear Induction Motors due to the open physical ends of the linear stator core?",
+        hi: "रैखिक स्टेटर कोर के दोनों सिरे खुले होने के कारण रैखिक प्रेरण मोटरों में कौन सी विशिष्ट परजीवी घटना (Parasitic Phenomenon) होती है?",
+        bn: "লিনিয়ার স্টেটর কোরের দুই প্রান্ত উন্মুক্ত থাকার কারণে লিনিয়ার মোটরে কোন ক্ষতিকর পরজীবী ঘটনাটি ঘটে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Longitudinal End Effects: Discontinuous entry and exit transients that distort magnetic flux and degrade power factor at high speeds', hi: 'अनुदैर्ध्य एंड इफेक्ट्स (End Effects): प्रवेश और निकास पर फ्लक्स में विकृति, जो उच्च गति पर दक्षता घटाती है', bn: 'লঙ্গিচিউডিনাল এন্ড ইফেক্টস: প্রবেশ ও প্রস্থান মুখে ফ্লাক্সের বিকৃতি যা উচ্চ গতিতে মোটরের দক্ষতা কমিয়ে দেয়' } },
-        { id: 'opt-2', text: { en: 'Spontaneous combustion of the stator iron', hi: 'स्टेटर लोहे में स्वतः आग लगना', bn: 'স্টেটরে আপনা-আপনি আগুন ধরা' } },
-        { id: 'opt-3', text: { en: 'Complete loss of Earth’s gravitational field', hi: 'पृथ्वी के गुरुत्वाकर्षण का समाप्त हो जाना', bn: 'অভিকর্ষ বলের বিলুপ্তি' } },
-        { id: 'opt-4', text: { en: 'Generation of high-intensity ultrasonic music', hi: 'अल्ट्रासोनिक संगीत बजना', bn: 'শব্দ তৈরি হওয়া' } }
+        { id: "opt-1", text: { en: "Longitudinal End Effects: Discontinuous entry and exit transients that distort magnetic flux and degrade power factor at high speeds", hi: "अनुदैर्ध्य एंड इफेक्ट्स (End Effects): प्रवेश और निकास पर फ्लक्स में विकृति, जो उच्च गति पर दक्षता घटाती है", bn: "লঙ্গিচিউডিনাল এন্ড ইফেক্টস: প্রবেশ ও প্রস্থান মুখে ফ্লাক্সের বিকৃতি যা উচ্চ গতিতে মোটরের দক্ষতা কমিয়ে দেয়" } },
+        { id: "opt-2", text: { en: "Spontaneous combustion of the stator iron", hi: "स्टेटर लोहे में स्वतः आग लगना", bn: "স্টেটরে আপনা-আপনি আগুন ধরা" } },
+        { id: "opt-3", text: { en: "Complete loss of Earth’s gravitational field", hi: "पृथ्वी के गुरुत्वाकर्षण का समाप्त हो जाना", bn: "অভিকর্ষ বলের বিলুপ্তি" } },
+        { id: "opt-4", text: { en: "Generation of high-intensity ultrasonic music", hi: "अल्ट्रासोनिक संगीत बजना", bn: "শব্দ তৈরি হওয়া" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Unlike closed rotary cylinders, linear stators have distinct leading and trailing edges. When the secondary plate enters the stator, transient counter-currents are induced that weaken the main flux, known as "end effects".',
-        hi: 'रोटरी मोटर के विपरीत, लीनियर मोटर के सिरे खुले होते हैं। जब प्लेट स्टेटर में प्रवेश करती है तो एंड इफेक्ट्स के कारण मुख्य फ्लक्स कमजोर हो जाता है।',
-        bn: 'বৃত্তাকার মোটরের মতো রিং না থাকায় লিনিয়ার মোটরের দুই প্রান্ত উন্মুক্ত থাকে, ফলে নতুন উপাদান প্রবেশের মুখে ফ্লাক্স বিকৃত হয় যাকে এন্ড ইফেক্ট বলে।'
+        en: "Unlike closed rotary cylinders, linear stators have distinct leading and trailing edges. When the secondary plate enters the stator, transient counter-currents are induced that weaken the main flux, known as \"end effects\".",
+        hi: "रोटरी मोटर के विपरीत, लीनियर मोटर के सिरे खुले होते हैं। जब प्लेट स्टेटर में प्रवेश करती है तो एंड इफेक्ट्स के कारण मुख्य फ्लक्स कमजोर हो जाता है।",
+        bn: "বৃত্তাকার মোটরের মতো রিং না থাকায় লিনিয়ার মোটরের দুই প্রান্ত উন্মুক্ত থাকে, ফলে নতুন উপাদান প্রবেশের মুখে ফ্লাক্স বিকৃত হয় যাকে এন্ড ইফেক্ট বলে।"
       }
     },
     {
-      id: 'mcq-ch10-l19-7',
+      id: "mcq-ch10-l19-7",
       question: {
-        en: 'Why are Linear Induction Motors ideally suited for steep incline mountain railways and automated airport transit lines compared to conventional wheel-driven electric locomotives?',
-        hi: 'पारंपरिक पहिया चालित ट्रेनों की तुलना में खड़ी ढलान वाले पर्वतीय मार्गों एवं एयरपोर्ट ट्रेनों के लिए रैखिक प्रेरण मोटरें (LIM) क्यों बेहतर हैं?',
-        bn: 'খাড়া পাহাড়ি রেলপথ এবং বিমানবন্দর ট্রানজিটের জন্য প্রচলিত চাকা-চালিত ট্রেনের চেয়ে লিনিয়ার ইন্ডাকশন মোটর কেন বেশি উপযোগী?'
+        en: "Why are Linear Induction Motors ideally suited for steep incline mountain railways and automated airport transit lines compared to conventional wheel-driven electric locomotives?",
+        hi: "पारंपरिक पहिया चालित ट्रेनों की तुलना में खड़ी ढलान वाले पर्वतीय मार्गों एवं एयरपोर्ट ट्रेनों के लिए रैखिक प्रेरण मोटरें (LIM) क्यों बेहतर हैं?",
+        bn: "খাড়া পাহাড়ি রেলপথ এবং বিমানবন্দর ট্রানজিটের জন্য প্রচলিত চাকা-চালিত ট্রেনের চেয়ে লিনিয়ার ইন্ডাকশন মোটর কেন বেশি উপযোগী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'LIM traction is generated magnetically across the air gap, entirely independent of wheel-rail friction adhesion, preventing slippage in rain, snow, or steep grades (up to 8%)', hi: 'LIM का खिंचाव हवा के आर-पार चुंबकीय रूप से बनता है, यह पहियों के घर्षण पर निर्भर नहीं करता, जिससे बारिश, बर्फ या 8% ढलान पर भी पहिये नहीं फिसलते', bn: 'LIM ট্র্যাকশন চৌম্বকীয়ভাবে উৎপন্ন হয় যা চাকার ঘর্ষণের ওপর নির্ভরশীল নয়, ফলে বৃষ্টি, বরফ বা ৮% খাড়া ঢালেও কোনো চাকা পিছলে যায় না' } },
-        { id: 'opt-2', text: { en: 'They weigh 100 times more than conventional trains', hi: 'ये पारंपरिक ट्रेनों से 100 गुना भारी होती हैं', bn: 'এগুলো ১০০ গুণ বেশি ভারী' } },
-        { id: 'opt-3', text: { en: 'They require no electrical power supplies', hi: 'इन्हें बिजली की आवश्यकता नहीं होती', bn: 'কোনো বিদ্যুৎ প্রয়োজন হয় না' } },
-        { id: 'opt-4', text: { en: 'They produce thick clouds of white steam', hi: 'ये सफेद भाप छोड़ती हैं', bn: 'এগুলো বাষ্প তৈরি করে' } }
+        { id: "opt-1", text: { en: "LIM traction is generated magnetically across the air gap, entirely independent of wheel-rail friction adhesion, preventing slippage in rain, snow, or steep grades (up to 8%)", hi: "LIM का खिंचाव हवा के आर-पार चुंबकीय रूप से बनता है, यह पहियों के घर्षण पर निर्भर नहीं करता, जिससे बारिश, बर्फ या 8% ढलान पर भी पहिये नहीं फिसलते", bn: "LIM ট্র্যাকশন চৌম্বকীয়ভাবে উৎপন্ন হয় যা চাকার ঘর্ষণের ওপর নির্ভরশীল নয়, ফলে বৃষ্টি, বরফ বা ৮% খাড়া ঢালেও কোনো চাকা পিছলে যায় না" } },
+        { id: "opt-2", text: { en: "They weigh 100 times more than conventional trains", hi: "ये पारंपरिक ट्रेनों से 100 गुना भारी होती हैं", bn: "এগুলো ১০০ গুণ বেশি ভারী" } },
+        { id: "opt-3", text: { en: "They require no electrical power supplies", hi: "इन्हें बिजली की आवश्यकता नहीं होती", bn: "কোনো বিদ্যুৎ প্রয়োজন হয় না" } },
+        { id: "opt-4", text: { en: "They produce thick clouds of white steam", hi: "ये सफेद भाप छोड़ती हैं", bn: "এগুলো বাষ্প তৈরি করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Conventional steel wheels lose traction on inclines over 3% or when rails are wet/icy. LIMs generate direct linear electromagnetic thrust independent of contact friction.',
-        hi: 'पारंपरिक पहिये 3% से अधिक ढलान या बारिश में फिसलने लगते हैं। LIM सीधे विद्युत-चुंबकीय बल से चलती है, अतः यह फिसलन से पूरी तरह मुक्त है।',
-        bn: 'প্রচলিত ট্রেনের চাকা ৩% এর বেশি ঢালে বা ভেজা ট্র্যাকে স্লিপ করে। LIM সরাসরি তড়িৎচৌম্বক বল দিয়ে চলায় খাড়া ঢালেও অনায়াসে চলতে পারে।'
+        en: "Conventional steel wheels lose traction on inclines over 3% or when rails are wet/icy. LIMs generate direct linear electromagnetic thrust independent of contact friction.",
+        hi: "पारंपरिक पहिये 3% से अधिक ढलान या बारिश में फिसलने लगते हैं। LIM सीधे विद्युत-चुंबकीय बल से चलती है, अतः यह फिसलन से पूरी तरह मुक्त है।",
+        bn: "প্রচলিত ট্রেনের চাকা ৩% এর বেশি ঢালে বা ভেজা ট্র্যাকে স্লিপ করে। LIM সরাসরি তড়িৎচৌম্বক বল দিয়ে চলায় খাড়া ঢালেও অনায়াসে চলতে পারে।"
       }
     },
     {
-      id: 'mcq-ch10-l19-8',
+      id: "mcq-ch10-l19-8",
       question: {
-        en: 'In the US Navy’s aircraft carrier Electromagnetic Aircraft Launch System (EMALS), what replaced the historic high-pressure steam catapults?',
-        hi: 'अमेरिकी नौसेना के विमानवाहक पोत EMALS में पारंपरिक भाप गुलेल (Steam Catapult) की जगह किसने ले ली है?',
-        bn: 'মার্কিন বিমানবাহী জাহাজের EMALS সিস্টেমে সনাতন বাষ্পীয় ক্যাটাপল্টের স্থান দখল করেছে কোনটি?'
+        en: "In the US Navy’s aircraft carrier Electromagnetic Aircraft Launch System (EMALS), what replaced the historic high-pressure steam catapults?",
+        hi: "अमेरिकी नौसेना के विमानवाहक पोत EMALS में पारंपरिक भाप गुलेल (Steam Catapult) की जगह किसने ले ली है?",
+        bn: "মার্কিন বিমানবাহী জাহাজের EMALS সিস্টেমে সনাতন বাষ্পীয় ক্যাটাপল্টের স্থান দখল করেছে কোনটি?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Multi-megawatt Linear Induction / Synchronous Motors delivering electronically controlled, smooth, precise linear acceleration', hi: 'मल्टी-मेगावाट रैखिक प्रेरण/तुल्यकालिक मोटरें जो इलेक्ट्रॉनिक रूप से नियंत्रित एवं सटीक रैखिक त्वरण देती हैं', bn: 'মাল্টি-মেগাওয়াট লিনিয়ার ইন্ডাকশন/সিনক্রোনাস মোটর যা সুনির্দিষ্ট ও শক্তিশালী ত্বরণ প্রদান করে' } },
-        { id: 'opt-2', text: { en: 'Giant coiled mechanical steel springs', hi: 'विशालकाय स्टील स्प्रिंग्स', bn: 'বিশাল মেকানিক্যাল স্প্রিং' } },
-        { id: 'opt-3', text: { en: 'Heavy dynamite explosive charges', hi: 'डायनामाइट के धमाके', bn: 'ডিনামাইটের বিস্ফোরণ' } },
-        { id: 'opt-4', text: { en: 'Trained marine dolphins pulling ropes', hi: 'डॉल्फ़िन द्वारा खींचे जाने वाले रस्से', bn: 'ডলফিনের টানা রশি' } }
+        { id: "opt-1", text: { en: "Multi-megawatt Linear Induction / Synchronous Motors delivering electronically controlled, smooth, precise linear acceleration", hi: "मल्टी-मेगावाट रैखिक प्रेरण/तुल्यकालिक मोटरें जो इलेक्ट्रॉनिक रूप से नियंत्रित एवं सटीक रैखिक त्वरण देती हैं", bn: "মাল্টি-মেগাওয়াট লিনিয়ার ইন্ডাকশন/সিনক্রোনাস মোটর যা সুনির্দিষ্ট ও শক্তিশালী ত্বরণ প্রদান করে" } },
+        { id: "opt-2", text: { en: "Giant coiled mechanical steel springs", hi: "विशालकाय स्टील स्प्रिंग्स", bn: "বিশাল মেকানিক্যাল স্প্রিং" } },
+        { id: "opt-3", text: { en: "Heavy dynamite explosive charges", hi: "डायनामाइट के धमाके", bn: "ডিনামাইটের বিস্ফোরণ" } },
+        { id: "opt-4", text: { en: "Trained marine dolphins pulling ropes", hi: "डॉल्फ़िन द्वारा खींचे जाने वाले रस्से", bn: "ডলফিনের টানা রশি" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'EMALS uses linear electric motor drive carriages along the carrier flight deck. Microprocessor frequency control tunes thrust precisely to aircraft weight, drastically reducing airframe stress.',
-        hi: 'EMALS भारी लीनियर इलेक्ट्रिक मोटरों का उपयोग करता है जो विमान के वजन के अनुसार बिल्कुल सटीक और चिकना त्वरण प्रदान करती हैं।',
-        bn: 'EMALS ব্যবস্থায় শক্তিশালী লিনিয়ার মোটর ব্যবহার করা হয় যা বিমানের কাঠামোর কোনো ক্ষতি না করে নিখুঁত ত্বরণে বিমান আকাশে ছুড়ে দেয়।'
+        en: "EMALS uses linear electric motor drive carriages along the carrier flight deck. Microprocessor frequency control tunes thrust precisely to aircraft weight, drastically reducing airframe stress.",
+        hi: "EMALS भारी लीनियर इलेक्ट्रिक मोटरों का उपयोग करता है जो विमान के वजन के अनुसार बिल्कुल सटीक और चिकना त्वरण प्रदान करती हैं।",
+        bn: "EMALS ব্যবস্থায় শক্তিশালী লিনিয়ার মোটর ব্যবহার করা হয় যা বিমানের কাঠামোর কোনো ক্ষতি না করে নিখুঁত ত্বরণে বিমান আকাশে ছুড়ে দেয়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l19-1",
+      question: {
+        en: "What is the mathematical formula for the linear synchronous traveling magnetic wave speed (v_s) in a Linear Induction Motor with pole pitch τ and frequency f?",
+        hi: "पोल पिच τ तथा आवृत्ति f वाले रैखिक प्रेरण मोटर में गतिमान चुंबकीय तरंग के वेग (v_s) का सूत्र क्या है?",
+        bn: "পোল পিচ τ এবং কম্পাঙ্ক f বিশিষ্ট লিনিয়ার ইন্ডাকশন মোটরের ট্রাভেলিং চৌম্বক তরঙ্গের গতিবেগের (v_s) সূত্র কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "v_s = 2 · f · τ", hi: "v_s = 2 · f · τ", bn: "v_s = ২ · f · τ" } },
+        { id: "opt-2", text: { en: "v_s = f / (2 · τ)", hi: "v_s = f / (2 · τ)", bn: "v_s = f / (২ · τ)" } },
+        { id: "opt-3", text: { en: "v_s = √(2 · f · τ)", hi: "v_s = √(2 · f · τ)", bn: "v_s = √(২ · f · τ)" } },
+        { id: "opt-4", text: { en: "v_s = 120 · f / P", hi: "v_s = 120 · f / P", bn: "v_s = ১২০ · f / P" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "In one full electrical AC cycle (period T = 1/f), the traveling wave advances a distance equal to two pole pitches (2τ). Thus, speed v_s = distance / time = 2τ / (1/f) = 2·f·τ.",
+        hi: "एक पूर्ण एसी चक्र में तरंग दो पोल पिचों (2τ) की दूरी तय करती है। अतः v_s = 2·f·τ।",
+        bn: "একটি পূর্ণ এসি চক্রে তরঙ্গটি দুটি পোল পিচের সমান দূরত্ব (২τ) অতিক্রম করে। অতএব বেগ v_s = ২·f·τ।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-2",
+      question: {
+        en: "What happens to the forward propulsion thrust of a Linear Induction Motor if the vehicle travels at the exact synchronous speed of the traveling wave (v = v_s, slip s = 0)?",
+        hi: "यदि वाहन ठीक चुंबकीय तरंग के तुल्यकालिक वेग से चलने लगे (v = v_s, स्लिप s = 0), तो मोटर के प्रणोद बल (Thrust) का क्या होगा?",
+        bn: "গাড়িটি যদি চৌম্বক তরঙ্গের সমান সিনক্রোনাস বেগে চলে (v = v_s, স্লিপ s = ০), তবে লিনিয়ার মোটরের থ্রাস্ট বলের কী পরিবর্তন ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Thrust drops to strictly zero because relative flux cutting (dΦ/dt) is zero, inducing no secondary eddy currents", hi: "थ्रस्ट पूरी तरह शून्य हो जाता है क्योंकि आपेक्षिक गति शून्य होने से कोई भंवर धारा नहीं बनती", bn: "থ্রাস্ট বল পুরোপুরি শূন্য হয়ে যাবে কারণ আপেক্ষিক গতি শূন্য হওয়ায় কোনো এডি কারেন্ট উৎপন্ন হয় না" } },
+        { id: "opt-2", text: { en: "Thrust instantly becomes infinite", hi: "थ्रस्ट अनंत हो जाता है", bn: "থ্রাস্ট বল অসীম হয়ে যাবে" } },
+        { id: "opt-3", text: { en: "The motor begins rotating backward in a circle", hi: "मोटर उल्टी दिशा में गोल घूमने लगती है", bn: "মোটরটি উল্টো দিকে গোল ঘুরতে থাকে" } },
+        { id: "opt-4", text: { en: "The vehicle lifts vertically into outer space", hi: "ट्रेन अंतरिक्ष में उड़ जाती है", bn: "গাড়িটি মহাশূন্যে উড়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induction requires relative velocity (v_s - v > 0) to cut flux lines and induce EMF. At zero slip (s = 0), dΦ/dt = 0, no secondary current flows, and Lorentz thrust vanishes.",
+        hi: "प्रेरण के लिए आपेक्षिक गति आवश्यक है। स्लिप शून्य होने पर कोई ईएमएफ या करंट नहीं बनता, जिससे थ्रस्ट शून्य हो जाता है।",
+        bn: "আবেশের জন্য আপেক্ষিক গতি অপরিহার্য। স্লিপ শূন্য হলে কোনো ভোল্টেজ বা কারেন্ট আবিষ্ট হয় না, ফলে লোরেন্টজ থ্রাস্ট শূন্য হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-3",
+      question: {
+        en: "Why do Electrodynamic Suspension (EDS) Maglev trains (such as the Japanese JR Yamanashi train) require retractable wheels at low speeds under 100 km/h?",
+        hi: "EDS मैग्लेव ट्रेनों को 100 किमी/घंटा से कम गति पर मुड़ने वाले रबर पहियों की आवश्यकता क्यों होती है?",
+        bn: "১০০ km/h এর নিচে কম গতিতে চলার সময় জাপানি EDS ম্যাগলেভ ট্রেনের কেন চাকার প্রয়োজন হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "At low speeds, the rate of flux change (dΦ/dt) in the track coils is insufficient to induce repulsive currents strong enough to lift the train’s weight", hi: "कम गति पर पटरी की कुंडलियों में फ्लक्स परिवर्तन की दर इतनी कम होती है कि ट्रेन को उठाने लायक पर्याप्त प्रतिकर्षण बल नहीं बन पाता", bn: "কম গতিতে ট্র্যাকে ফ্লাক্স পরিবর্তনের হার (dΦ/dt) এত কম থাকে যে ট্রেনের ওজনকে শূন্যে ভাসানোর মতো পর্যাপ্ত বিকর্ষণ বল তৈরি হয় না" } },
+        { id: "opt-2", text: { en: "To physically crank the superconducting magnets like a bicycle", hi: "साइकिल की तरह चुंबकों को घुमाने के लिए", bn: "চৌম্বকগুলোকে সাইকেলের মতো ঘোরানোর জন্য" } },
+        { id: "opt-3", text: { en: "To keep the air conditioning compressor running", hi: "एसी चलाने के लिए", bn: "এসি সচল রাখার জন্য" } },
+        { id: "opt-4", text: { en: "Because magnets lose their magnetic field at low speeds", hi: "क्योंकि कम गति पर चुंबकत्व समाप्त हो जाता है", bn: "কারণ কম গতিতে চুম্বকত্ব হারিয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "EDS levitation force is dynamically induced by motion: F_lift ∝ v² / (v² + v_0²). At standstill (v = 0), lift is zero. The train takes off on rubber wheels until reaching transition speed (~100–150 km/h).",
+        hi: "EDS उत्तोलन गति पर निर्भर करता है। शून्य गति पर कोई लिफ्ट नहीं होती, अतः 100-150 km/h की गति तक पहियों का उपयोग किया जाता है।",
+        bn: "EDS লেভিটেশন গতির ওপর নির্ভরশীল। স্থির অবস্থায় কোনো লিফট থাকে না, তাই ১০০-১৫০ km/h গতি না পাওয়া পর্যন্ত চাকায় চলতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-4",
+      question: {
+        en: "What is the construction of the typical secondary reaction plate mounted on the track or bogie of a Single-Sided Linear Induction Motor (SLIM)?",
+        hi: "सिंगल-साइडेड रैखिक प्रेरण मोटर (SLIM) की द्वितीयक रिएक्शन प्लेट की बनावट कैसी होती है?",
+        bn: "সিঙ্গেল-সাইডেড লিনিয়ার ইন্ডাকশন মোটরের (SLIM) সেকেন্ডারি রিঅ্যাকশন প্লেটের গঠন কেমন হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A highly conductive aluminum or copper top sheet bonded to a solid ferromagnetic steel backing plate", hi: "एक अत्यधिक चालक एल्युमिनियम या तांबे की चादर जो ठोस फेरोमैग्नेटिक स्टील प्लेट के ऊपर जुड़ी होती है", bn: "একটি উচ্চ পরিবাহী অ্যালুমিনিয়াম বা তামার পাত যা নিচে থাকা সলিড স্টিল ব্যাকপ্লেটের সাথে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "A fragile hollow glass sheet filled with helium gas", hi: "हीलियम गैस से भरी कांच की शीट", bn: "হিলিয়াম গ্যাসে পূর্ণ ভঙ্গুর কাচের শিট" } },
+        { id: "opt-3", text: { en: "A thick sheet of vulcanized rubber", hi: "रबर की मोटी चादर", bn: "ভালকানাইজড রবারের মোটা শিট" } },
+        { id: "opt-4", text: { en: "A diamond crystal lattice with zero free electrons", hi: "बिना मुक्त इलेक्ट्रॉनों वाला हीरा", bn: "মুক্ত ইলেকট্রনহীন হীরার পাত" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The aluminum sheet provides low electrical resistance for high induced eddy currents (thrust), while the steel backing provides a high-permeability magnetic path to close the magnetic flux loop.",
+        hi: "एल्युमिनियम भंवर धाराओं (थ्रस्ट) के लिए कम प्रतिरोध देता है, तथा स्टील की प्लेट चुंबकीय फ्लक्स के रास्ते को पूरा करने के लिए उच्च चुंबकशीलता देती है।",
+        bn: "অ্যালুমিনিয়াম পাত এডি কারেন্ট পরিবহনে কম রোধ প্রদান করে এবং স্টিলের ব্যাকপ্লেট চৌম্বক ফ্লাক্সের পথ সম্পূর্ণ করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-5",
+      question: {
+        en: "How can a Linear Induction Motor be immediately converted into a powerful contactless regenerative brake to slow down a speeding train?",
+        hi: "तेज गति से दौड़ती ट्रेन को धीमा करने के लिए रैखिक प्रेरण मोटर को संपर्क-रहित रीजनरेटिव ब्रेक में कैसे बदला जाता है?",
+        bn: "দ্রুতগামী ট্রেন থামাতে লিনিয়ার ইন্ডাকশন মোটরকে কীভাবে তাৎক্ষণিকভাবে কন্ট্যাক্টলেস রিজেনারেটিভ ব্রেকে রূপান্তর করা যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Reverse the phase sequence of the 3-phase AC supply (e.g., swap Phase A and Phase B), driving the traveling wave in reverse and creating negative slip", hi: "3-फेज आपूर्ति के किन्हीं दो फेजों को आपस में बदल दें, जिससे चुंबकीय तरंग उल्टी दिशा में दौड़ने लगती है और ऋणात्मक स्लिप से भारी ब्रेकिंग बल बनता है", bn: "৩-ফেজ সরবরাহের দুটি ফেজ পরস্পর বদলে দিয়ে ট্রাভেলিং ওয়েভকে উল্টো দিকে চালনা করা, যা নেগেটিভ স্লিপের মাধ্যমে ব্রেকিং সৃষ্টি করে" } },
+        { id: "opt-2", text: { en: "Pour sand onto the stator coils", hi: "स्टेटर कुंडलियों पर रेत डालना", bn: "কয়েলে বালু ঢেলে দেওয়া" } },
+        { id: "opt-3", text: { en: "Disconnect all cables and let gravity stop the train", hi: "सारे तार काट देना", bn: "সব তার বিচ্ছিন্ন করা" } },
+        { id: "opt-4", text: { en: "Paint the aluminum plate with red paint", hi: "एल्युमिनियम प्लेट पर लाल रंग पोतना", bn: "প্লেটে লাল রং দেওয়া" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Swapping two phases reverses the direction of the linear traveling wave. The slip becomes s > 1 (plugging/counter-braking), generating immense reverse Lorentz thrust that rapidly decelerates the vehicle without mechanical wear.",
+        hi: "दो फेजों को बदलने से चुंबकीय तरंग उल्टी दौड़ने लगती है। इससे भारी विपरीत थ्रस्ट उत्पन्न होता है जो ट्रेन को तुरंत रोक देता है।",
+        bn: "দুটি ফেজ বদলে দিলে ট্রাভেলিং তরঙ্গ উল্টো দিকে ছুটে চলে। ফলে তীব্র বিপরীত লোরেন্টজ বল তৈরি হয়ে ট্রেনকে কোনো মেকানিক্যাল ঘর্ষণ ছাড়াই থামিয়ে দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-6",
+      question: {
+        en: "What distinct parasitic phenomenon occurs in Linear Induction Motors due to the open physical ends of the linear stator core?",
+        hi: "रैखिक स्टेटर कोर के दोनों सिरे खुले होने के कारण रैखिक प्रेरण मोटरों में कौन सी विशिष्ट परजीवी घटना (Parasitic Phenomenon) होती है?",
+        bn: "লিনিয়ার স্টেটর কোরের দুই প্রান্ত উন্মুক্ত থাকার কারণে লিনিয়ার মোটরে কোন ক্ষতিকর পরজীবী ঘটনাটি ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Longitudinal End Effects: Discontinuous entry and exit transients that distort magnetic flux and degrade power factor at high speeds", hi: "अनुदैर्ध्य एंड इफेक्ट्स (End Effects): प्रवेश और निकास पर फ्लक्स में विकृति, जो उच्च गति पर दक्षता घटाती है", bn: "লঙ্গিচিউডিনাল এন্ড ইফেক্টস: প্রবেশ ও প্রস্থান মুখে ফ্লাক্সের বিকৃতি যা উচ্চ গতিতে মোটরের দক্ষতা কমিয়ে দেয়" } },
+        { id: "opt-2", text: { en: "Spontaneous combustion of the stator iron", hi: "स्टेटर लोहे में स्वतः आग लगना", bn: "স্টেটরে আপনা-আপনি আগুন ধরা" } },
+        { id: "opt-3", text: { en: "Complete loss of Earth’s gravitational field", hi: "पृथ्वी के गुरुत्वाकर्षण का समाप्त हो जाना", bn: "অভিকর্ষ বলের বিলুপ্তি" } },
+        { id: "opt-4", text: { en: "Generation of high-intensity ultrasonic music", hi: "अल्ट्रासोनिक संगीत बजना", bn: "শব্দ তৈরি হওয়া" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Unlike closed rotary cylinders, linear stators have distinct leading and trailing edges. When the secondary plate enters the stator, transient counter-currents are induced that weaken the main flux, known as \"end effects\".",
+        hi: "रोटरी मोटर के विपरीत, लीनियर मोटर के सिरे खुले होते हैं। जब प्लेट स्टेटर में प्रवेश करती है तो एंड इफेक्ट्स के कारण मुख्य फ्लक्स कमजोर हो जाता है।",
+        bn: "বৃত্তাকার মোটরের মতো রিং না থাকায় লিনিয়ার মোটরের দুই প্রান্ত উন্মুক্ত থাকে, ফলে নতুন উপাদান প্রবেশের মুখে ফ্লাক্স বিকৃত হয় যাকে এন্ড ইফেক্ট বলে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-7",
+      question: {
+        en: "Why are Linear Induction Motors ideally suited for steep incline mountain railways and automated airport transit lines compared to conventional wheel-driven electric locomotives?",
+        hi: "पारंपरिक पहिया चालित ट्रेनों की तुलना में खड़ी ढलान वाले पर्वतीय मार्गों एवं एयरपोर्ट ट्रेनों के लिए रैखिक प्रेरण मोटरें (LIM) क्यों बेहतर हैं?",
+        bn: "খাড়া পাহাড়ি রেলপথ এবং বিমানবন্দর ট্রানজিটের জন্য প্রচলিত চাকা-চালিত ট্রেনের চেয়ে লিনিয়ার ইন্ডাকশন মোটর কেন বেশি উপযোগী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "LIM traction is generated magnetically across the air gap, entirely independent of wheel-rail friction adhesion, preventing slippage in rain, snow, or steep grades (up to 8%)", hi: "LIM का खिंचाव हवा के आर-पार चुंबकीय रूप से बनता है, यह पहियों के घर्षण पर निर्भर नहीं करता, जिससे बारिश, बर्फ या 8% ढलान पर भी पहिये नहीं फिसलते", bn: "LIM ট্র্যাকশন চৌম্বকীয়ভাবে উৎপন্ন হয় যা চাকার ঘর্ষণের ওপর নির্ভরশীল নয়, ফলে বৃষ্টি, বরফ বা ৮% খাড়া ঢালেও কোনো চাকা পিছলে যায় না" } },
+        { id: "opt-2", text: { en: "They weigh 100 times more than conventional trains", hi: "ये पारंपरिक ट्रेनों से 100 गुना भारी होती हैं", bn: "এগুলো ১০০ গুণ বেশি ভারী" } },
+        { id: "opt-3", text: { en: "They require no electrical power supplies", hi: "इन्हें बिजली की आवश्यकता नहीं होती", bn: "কোনো বিদ্যুৎ প্রয়োজন হয় না" } },
+        { id: "opt-4", text: { en: "They produce thick clouds of white steam", hi: "ये सफेद भाप छोड़ती हैं", bn: "এগুলো বাষ্প তৈরি করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Conventional steel wheels lose traction on inclines over 3% or when rails are wet/icy. LIMs generate direct linear electromagnetic thrust independent of contact friction.",
+        hi: "पारंपरिक पहिये 3% से अधिक ढलान या बारिश में फिसलने लगते हैं। LIM सीधे विद्युत-चुंबकीय बल से चलती है, अतः यह फिसलन से पूरी तरह मुक्त है।",
+        bn: "প্রচলিত ট্রেনের চাকা ৩% এর বেশি ঢালে বা ভেজা ট্র্যাকে স্লিপ করে। LIM সরাসরি তড়িৎচৌম্বক বল দিয়ে চলায় খাড়া ঢালেও অনায়াসে চলতে পারে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l19-8",
+      question: {
+        en: "In the US Navy’s aircraft carrier Electromagnetic Aircraft Launch System (EMALS), what replaced the historic high-pressure steam catapults?",
+        hi: "अमेरिकी नौसेना के विमानवाहक पोत EMALS में पारंपरिक भाप गुलेल (Steam Catapult) की जगह किसने ले ली है?",
+        bn: "মার্কিন বিমানবাহী জাহাজের EMALS সিস্টেমে সনাতন বাষ্পীয় ক্যাটাপল্টের স্থান দখল করেছে কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Multi-megawatt Linear Induction / Synchronous Motors delivering electronically controlled, smooth, precise linear acceleration", hi: "मल्टी-मेगावाट रैखिक प्रेरण/तुल्यकालिक मोटरें जो इलेक्ट्रॉनिक रूप से नियंत्रित एवं सटीक रैखिक त्वरण देती हैं", bn: "মাল্টি-মেগাওয়াট লিনিয়ার ইন্ডাকশন/সিনক্রোনাস মোটর যা সুনির্দিষ্ট ও শক্তিশালী ত্বরণ প্রদান করে" } },
+        { id: "opt-2", text: { en: "Giant coiled mechanical steel springs", hi: "विशालकाय स्टील स्प्रिंग्स", bn: "বিশাল মেকানিক্যাল স্প্রিং" } },
+        { id: "opt-3", text: { en: "Heavy dynamite explosive charges", hi: "डायनामाइट के धमाके", bn: "ডিনামাইটের বিস্ফোরণ" } },
+        { id: "opt-4", text: { en: "Trained marine dolphins pulling ropes", hi: "डॉल्फ़िन द्वारा खींचे जाने वाले रस्से", bn: "ডলফিনের টানা রশি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "EMALS uses linear electric motor drive carriages along the carrier flight deck. Microprocessor frequency control tunes thrust precisely to aircraft weight, drastically reducing airframe stress.",
+        hi: "EMALS भारी लीनियर इलेक्ट्रिक मोटरों का उपयोग करता है जो विमान के वजन के अनुसार बिल्कुल सटीक और चिकना त्वरण प्रदान करती हैं।",
+        bn: "EMALS ব্যবস্থায় শক্তিশালী লিনিয়ার মোটর ব্যবহার করা হয় যা বিমানের কাঠামোর কোনো ক্ষতি না করে নিখুঁত ত্বরণে বিমান আকাশে ছুড়ে দেয়।"
       }
     }
   ],

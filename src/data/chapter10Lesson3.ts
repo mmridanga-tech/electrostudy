@@ -373,63 +373,325 @@ Step 3: Determine Potential Polarity using Fleming's Right-Hand Rule:
   },
   mcqs: [
     {
-      id: 'mcq-ch10-l3-1',
+      id: "mcq-ch10-l3-1",
       question: {
-        en: 'In Fleming’s Right-Hand Rule, what does the Forefinger represent?',
-        hi: 'फ्लेमिंग के दाएं हाथ के नियम में तर्जनी (Forefinger) क्या दर्शाती है?',
-        bn: 'ফ্লেমিংয়ের ডান হস্ত নিয়মে তর্জনী কী নির্দেশ করে?'
+        en: "In Fleming’s Right-Hand Rule, what does the Forefinger represent?",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम में तर्जनी (Forefinger) क्या दर्शाती है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়মে তর্জনী কী নির্দেশ করে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Direction of Motion of conductor', hi: 'चालक की गति की दिशा', bn: 'পরিবাহীর গতির অভিমুখ' } },
-        { id: 'opt-2', text: { en: 'Direction of Magnetic Field (North to South)', hi: 'चुंबकीय क्षेत्र की दिशा (उत्तर से दक्षिण)', bn: 'চৌম্বক ক্ষেত্রের অভিমুখ (উত্তর থেকে দক্ষিণ)' } },
-        { id: 'opt-3', text: { en: 'Direction of Induced Current', hi: 'प्रेरित धारा की दिशा', bn: 'আবিষ্ট তড়িৎপ্রবাহের অভিমুখ' } },
-        { id: 'opt-4', text: { en: 'Direction of Gravitational force', hi: 'गुरुत्वाकर्षण बल की दिशा', bn: 'অভিকর্ষজ বলের অভিমুখ' } }
+        { id: "opt-1", text: { en: "Direction of Motion of conductor", hi: "चालक की गति की दिशा", bn: "পরিবাহীর গতির অভিমুখ" } },
+        { id: "opt-2", text: { en: "Direction of Magnetic Field (North to South)", hi: "चुंबकीय क्षेत्र की दिशा (उत्तर से दक्षिण)", bn: "চৌম্বক ক্ষেত্রের অভিমুখ (উত্তর থেকে দক্ষিণ)" } },
+        { id: "opt-3", text: { en: "Direction of Induced Current", hi: "प्रेरित धारा की दिशा", bn: "আবিষ্ট তড়িৎপ্রবাহের অভিমুখ" } },
+        { id: "opt-4", text: { en: "Direction of Gravitational force", hi: "गुरुत्वाकर्षण बल की दिशा", bn: "অভিকর্ষজ বলের অভিমুখ" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'In Fleming’s Right-Hand Rule: Forefinger = Field (B), Thumb = Motion (v), Middle finger = Induced Current (I).',
-        hi: 'फ्लेमिंग के नियम में: तर्जनी = चुंबकीय क्षेत्र (B), अंगूठा = गति (v), मध्यमा = प्रेरित धारा (I)।',
-        bn: 'ফ্লেমিংয়ের নিয়মে: তর্জনী = চৌম্বক ক্ষেত্র (B), বৃদ্ধাঙ্গুলি = গতি (v), মধ্যমা = আবিষ্ট প্রবাহ (I)।'
+        en: "In Fleming’s Right-Hand Rule: Forefinger = Field (B), Thumb = Motion (v), Middle finger = Induced Current (I).",
+        hi: "फ्लेमिंग के नियम में: तर्जनी = चुंबकीय क्षेत्र (B), अंगूठा = गति (v), मध्यमा = प्रेरित धारा (I)।",
+        bn: "ফ্লেমিংয়ের নিয়মে: তর্জনী = চৌম্বক ক্ষেত্র (B), বৃদ্ধাঙ্গুলি = গতি (v), মধ্যমা = আবিষ্ট প্রবাহ (I)।"
       }
     },
     {
-      id: 'mcq-ch10-l3-2',
+      id: "mcq-ch10-l3-2",
       question: {
-        en: 'Under which condition is the motional EMF induced in a moving conductor exactly ZERO?',
-        hi: 'किस स्थिति में गतिमान चालक में प्रेरित गतिक ईएमएफ ठीक शून्य (Zero) होता है?',
-        bn: 'কোন অবস্থায় গতিশীল পরিবাহীতে আবিষ্ট গতিজনিত ইএমএফ ঠিক শূন্য হয়?'
+        en: "Under which condition is the motional EMF induced in a moving conductor exactly ZERO?",
+        hi: "किस स्थिति में गतिमान चालक में प्रेरित गतिक ईएमएफ ठीक शून्य (Zero) होता है?",
+        bn: "কোন অবস্থায় গতিশীল পরিবাহীতে আবিষ্ট গতিজনিত ইএমএফ ঠিক শূন্য হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'When the conductor moves perpendicular to the magnetic field (θ = 90°)', hi: 'जब चालक चुंबकीय क्षेत्र के लंबवत चलता है (θ = 90°)', bn: 'যখন পরিবাহী চৌম্বক ক্ষেত্রের লম্বভাবে চলে (θ = ৯০°)' } },
-        { id: 'opt-2', text: { en: 'When the conductor moves parallel to the magnetic field lines (θ = 0°)', hi: 'जब चालक चुंबकीय क्षेत्र रेखाओं के समानांतर चलता है (θ = 0°)', bn: 'যখন পরিবাহী চৌম্বক বলরেখার সমান্তরালে চলে (θ = ০°)' } },
-        { id: 'opt-3', text: { en: 'When the magnetic field density is 2.0 Tesla', hi: 'जब चुंबकीय फ्लक्स घनत्व 2.0 Tesla हो', bn: 'যখন চৌম্বক ফ্লাক্স ঘনত্ব ২.০ Tesla হয়' } },
-        { id: 'opt-4', text: { en: 'When the velocity of the conductor is 100 m/s', hi: 'जब चालक का वेग 100 m/s हो', bn: 'যখন পরিবাহীর বেগ ১০০ m/s হয়' } }
+        { id: "opt-1", text: { en: "When the conductor moves perpendicular to the magnetic field (θ = 90°)", hi: "जब चालक चुंबकीय क्षेत्र के लंबवत चलता है (θ = 90°)", bn: "যখন পরিবাহী চৌম্বক ক্ষেত্রের লম্বভাবে চলে (θ = ৯০°)" } },
+        { id: "opt-2", text: { en: "When the conductor moves parallel to the magnetic field lines (θ = 0°)", hi: "जब चालक चुंबकीय क्षेत्र रेखाओं के समानांतर चलता है (θ = 0°)", bn: "যখন পরিবাহী চৌম্বক বলরেখার সমান্তরালে চলে (θ = ০°)" } },
+        { id: "opt-3", text: { en: "When the magnetic field density is 2.0 Tesla", hi: "जब चुंबकीय फ्लक्स घनत्व 2.0 Tesla हो", bn: "যখন চৌম্বক ফ্লাক্স ঘনত্ব ২.০ Tesla হয়" } },
+        { id: "opt-4", text: { en: "When the velocity of the conductor is 100 m/s", hi: "जब चालक का वेग 100 m/s हो", bn: "যখন পরিবাহীর বেগ ১০০ m/s হয়" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'When moving parallel (θ = 0°), sin(0°) = 0, so e = B l v sin(0°) = 0 V because no magnetic lines of force are cut.',
-        hi: 'समानांतर गति (θ = 0°) में sin(0°) = 0 होता है, अतः कोई फ्लक्स रेखा नहीं कटती और प्रेरित ईएमएफ शून्य होता है।',
-        bn: 'সমান্তরাল গতিতে (θ = ০°) sin(০°) = ০ হওয়ায় কোনো বলরেখা ছেদন হয় না, ফলে আবিষ্ট ইএমএফ শূন্য হয়।'
+        en: "When moving parallel (θ = 0°), sin(0°) = 0, so e = B l v sin(0°) = 0 V because no magnetic lines of force are cut.",
+        hi: "समानांतर गति (θ = 0°) में sin(0°) = 0 होता है, अतः कोई फ्लक्स रेखा नहीं कटती और प्रेरित ईएमएफ शून्य होता है।",
+        bn: "সমান্তরাল গতিতে (θ = ০°) sin(০°) = ০ হওয়ায় কোনো বলরেখা ছেদন হয় না, ফলে আবিষ্ট ইএমএফ শূন্য হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l3-3',
+      id: "mcq-ch10-l3-3",
       question: {
-        en: 'A straight wire of length 2 meters moves at a speed of 10 m/s perpendicular to a uniform magnetic field of 0.5 Tesla. The induced EMF is:',
-        hi: '2 मीटर लंबा एक सीधा तार 0.5 Tesla के एकसमान चुंबकीय क्षेत्र के लंबवत 10 m/s की गति से चलता है। प्रेरित ईएमएफ होगा:',
-        bn: '২ মিটার দীর্ঘ একটি সোজা তার ০.৫ Tesla সুষম চৌম্বক ক্ষেত্রের লম্বভাবে ১০ m/s বেগে গতিশীল। আবিষ্ট ইএমএফ কত?'
+        en: "A straight wire of length 2 meters moves at a speed of 10 m/s perpendicular to a uniform magnetic field of 0.5 Tesla. The induced EMF is:",
+        hi: "2 मीटर लंबा एक सीधा तार 0.5 Tesla के एकसमान चुंबकीय क्षेत्र के लंबवत 10 m/s की गति से चलता है। प्रेरित ईएमएफ होगा:",
+        bn: "২ মিটার দীর্ঘ একটি সোজা তার ০.৫ Tesla সুষম চৌম্বক ক্ষেত্রের লম্বভাবে ১০ m/s বেগে গতিশীল। আবিষ্ট ইএমএফ কত?"
       },
       options: [
-        { id: 'opt-1', text: { en: '5.0 Volts', hi: '5.0 वोल्ट', bn: '৫.০ ভোল্ট' } },
-        { id: 'opt-2', text: { en: '10.0 Volts', hi: '10.0 वोल्ट', bn: '১০.০ ভোল্ট' } },
-        { id: 'opt-3', text: { en: '20.0 Volts', hi: '20.0 वोल्ट', bn: '২০.০ ভোল্ট' } },
-        { id: 'opt-4', text: { en: '0.1 Volts', hi: '0.1 वोल्ट', bn: '০.১ ভোল্ট' } }
+        { id: "opt-1", text: { en: "5.0 Volts", hi: "5.0 वोल्ट", bn: "৫.০ ভোল্ট" } },
+        { id: "opt-2", text: { en: "10.0 Volts", hi: "10.0 वोल्ट", bn: "১০.০ ভোল্ট" } },
+        { id: "opt-3", text: { en: "20.0 Volts", hi: "20.0 वोल्ट", bn: "২০.০ ভোল্ট" } },
+        { id: "opt-4", text: { en: "0.1 Volts", hi: "0.1 वोल्ट", bn: "০.১ ভোল্ট" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'e = B · l · v · sin(90°) = 0.5 T × 2 m × 10 m/s × 1.0 = 10.0 Volts.',
-        hi: 'e = B · l · v · sin(90°) = 0.5 × 2 × 10 × 1 = 10.0 वोल्ट।',
-        bn: 'e = B · l · v · sin(৯০°) = ০.৫ × ২ × ১০ × ১ = ১০.০ ভোল্ট।'
+        en: "e = B · l · v · sin(90°) = 0.5 T × 2 m × 10 m/s × 1.0 = 10.0 Volts.",
+        hi: "e = B · l · v · sin(90°) = 0.5 × 2 × 10 × 1 = 10.0 वोल्ट।",
+        bn: "e = B · l · v · sin(৯০°) = ০.৫ × ২ × ১০ × ১ = ১০.০ ভোল্ট।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-04",
+      question: {
+        en: "Fleming’s Right-Hand Rule is specifically applied to find the direction of induced current in which type of electrical apparatus?",
+        hi: "फ्लेमिंग का दायां हाथ नियम विशेष रूप से किस प्रकार के विद्युत उपकरण में प्रेरित धारा की दिशा ज्ञात करने के लिए लगाया जाता है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম বিশেষভাবে কোন ধরনের বৈদ্যুতিক যন্ত্রে আবিষ্ট কারেন্টের দিক নির্ণয়ে ব্যবহৃত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Electrical generators (dynamos and alternators)", hi: "विद्युत जनरेटर (डायनेमो और अल्टरनेटर)", bn: "বৈদ্যুতিক জেনারেটর (ডায়নামো ও অল্টারনেটর)" } },
+        { id: "opt-2", text: { en: "Electric motors providing mechanical drive", hi: "विद्युत मोटरें जो यांत्रिक गति देती हैं", bn: "বৈদ্যুতিক মোটর যা যান্ত্রিক ঘূর্ণন তৈরি করে" } },
+        { id: "opt-3", text: { en: "Electrostatic air filters", hi: "स्थिरवैद्युत वायु शोधक", bn: "ইলেক্ট্রোস্ট্যাটিক এয়ার ফিল্টার" } },
+        { id: "opt-4", text: { en: "Chemical lead-acid storage batteries", hi: "रासायनिक लेड-एसिड बैटरी", bn: "রাসায়নিক লেড-অ্যাসিড ব্যাটারি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Fleming’s Right-Hand Rule is specifically designed for generators (dynamo rule), determining induced current from conductor motion across a magnetic field.",
+        hi: "फ्लेमिंग का दायां हाथ नियम विशेष रूप से जनरेटर (डायनेमो) के लिए बनाया गया है, जो गति और चुंबकीय क्षेत्र से प्रेरित धारा की दिशा बताता है।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়মটি বিশেষভাবে জেনারেটরের ক্ষেত্রে প্রযোজ্য, যা চৌম্বক ক্ষেত্রে পরিবাহীর গতির ফলে সৃষ্ট আবিষ্ট কারেন্টের দিক নির্দেশ করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-05",
+      question: {
+        en: "When setting up Fleming’s Right-Hand Rule, the relative spatial orientation between the thumb, forefinger, and middle finger must be:",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम को लागू करते समय अंगूठे, तर्जनी और मध्यमा के बीच पारस्परिक स्थिति क्या होनी चाहिए?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম প্রয়োগের সময় বৃদ্ধাঙ্গুলি, তর্জনী ও মধ্যমার মধ্যকার পারস্পরিক অবস্থান কেমন হতে হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Mutually perpendicular (at right angles, 90° to each other)", hi: "परस्पर लंबवत (एक-दूसरे से 90° के समकोण पर)", bn: "পরস্পর সমকোণে (একে অপরের সাথে ৯০° কোণে)" } },
+        { id: "opt-2", text: { en: "Parallel in the same plane at 45°", hi: "एक ही तल में 45° पर समानांतर", bn: "একই তলে ৪৫° কোণে সমান্তরাল" } },
+        { id: "opt-3", text: { en: "Folded tightly into a closed fist", hi: "मुट्ठी के रूप में कसकर बंद", bn: "মুষ্টিবদ্ধ অবস্থায় ভাঁজ করা" } },
+        { id: "opt-4", text: { en: "Collinear along a single straight axis", hi: "एक ही सीधी रेखा के अनुदिश", bn: "একটি সরলরেখা বরাবর" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The thumb (motion), forefinger (magnetic field), and middle finger (induced current) must be held mutually orthogonal at 90° angles to represent 3D Cartesian coordinates.",
+        hi: "अंगूठा (गति), तर्जनी (चुंबकीय क्षेत्र) और मध्यमा (प्रेरित धारा) तीनों को परस्पर 90° के समकोण पर रखना अनिवार्य है।",
+        bn: "বৃদ্ধাঙ্গুলি (গতি), তর্জনী (চৌম্বক ক্ষেত্র) এবং মধ্যমা (আবিষ্ট কারেন্ট)-এই তিনটিকে পরস্পরের সাথে সমকোণে (৯০°) ধরে রাখতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-06",
+      question: {
+        en: "A horizontal conductor aligned North-South is moved vertically upwards through a uniform horizontal magnetic field pointing from East to West. In what direction does induced current flow?",
+        hi: "उत्तर-दक्षिण दिशा में रखे एक क्षैतिज चालक को पूर्व से पश्चिम की ओर दिष्ट समान चुंबकीय क्षेत्र में लंबवत ऊपर की ओर ले जाया जाता है। प्रेरित धारा किस दिशा में बहेगी?",
+        bn: "উত্তর-দক্ষিণ বরাবর রাখা একটি অনুভূমিক পরিবাহীকে পূর্ব থেকে পশ্চিমে ক্রিয়াশীল সুষম চৌম্বক ক্ষেত্রে খাড়া ওপরের দিকে গতিশীল করা হলো। আবিষ্ট কারেন্ট কোন দিকে প্রবাহিত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "From South to North along the conductor", hi: "चालक में दक्षिण से उत्तर की ओर", bn: "পরিবাহীর মধ্য দিয়ে দক্ষিণ থেকে উত্তর দিকে" } },
+        { id: "opt-2", text: { en: "From North to South along the conductor", hi: "चालक में उत्तर से दक्षिण की ओर", bn: "পরিবাহীর মধ্য দিয়ে উত্তর থেকে দক্ষিণ দিকে" } },
+        { id: "opt-3", text: { en: "Vertically downward into the ground", hi: "लंबवत नीचे जमीन की ओर", bn: "খাড়া নিচের দিকে মাটির ভেতরে" } },
+        { id: "opt-4", text: { en: "Directly toward the East", hi: "सीधे पूर्व दिशा की ओर", bn: "সরাসরি পূর্ব দিকে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Using Fleming’s Right-Hand Rule: Thumb points Upwards (motion), Forefinger points West (field). The middle finger naturally points North (induced current flows from South to North).",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम से: अंगूठा ऊपर (गति), तर्जनी पश्चिम (क्षेत्र)। तब मध्यमा उत्तर की ओर इंगित करती है (धारा दक्षिण से उत्तर की ओर बहेगी)।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম অনুসারে: বৃদ্ধাঙ্গুলি ওপরের দিকে (গতি), তর্জনী পশ্চিম দিকে (ক্ষেত্র)। তখন মধ্যমা উত্তর নির্দেশ করে (কারেন্ট দক্ষিণ থেকে উত্তরে প্রবাহিত হবে)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-07",
+      question: {
+        en: "What is the primary fundamental distinction between Fleming’s Right-Hand Rule and Fleming’s Left-Hand Rule?",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम और बाएं हाथ के नियम के बीच मुख्य मौलिक अंतर क्या है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম এবং বাম হস্ত নিয়মের মধ্যকার প্রধান মৌলিক পার্থক্য কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Right-Hand Rule determines induced current in generators; Left-Hand Rule determines mechanical force in motors", hi: "दायां हाथ नियम जनरेटर में प्रेरित धारा ज्ञात करता है; बायां हाथ नियम मोटर में यांत्रिक बल ज्ञात करता है", bn: "ডান হস্ত নিয়ম জেনারেটরে আবিষ্ট কারেন্ট নির্ণয় করে; বাম হস্ত নিয়ম মোটরে যান্ত্রিক বল নির্ণয় করে" } },
+        { id: "opt-2", text: { en: "Right-Hand Rule applies only to DC; Left-Hand Rule applies only to AC", hi: "दायां हाथ नियम केवल डीसी पर और बायां हाथ केवल एसी पर लागू होता है", bn: "ডান হস্ত নিয়ম শুধু ডিসিতে এবং বাম হস্ত শুধু এসিতে প্রযোজ্য" } },
+        { id: "opt-3", text: { en: "Right-Hand Rule is for electrostatic charges; Left-Hand Rule is for magnetic poles", hi: "दायां हाथ नियम आवेशों के लिए है और बायां हाथ चुंबकीय ध्रुवों के लिए", bn: "ডান হস্ত নিয়ম স্থির আধানের জন্য এবং বাম হস্ত চৌম্বক মেরুর জন্য" } },
+        { id: "opt-4", text: { en: "They are completely identical and can be used interchangeably", hi: "दोनों बिल्कुल समान हैं और एक-दूसरे के स्थान पर प्रयुक्त हो सकते हैं", bn: "উভয় নিয়ম সম্পূর্ণ অভিন্ন এবং পারস্পরিকভাবে পরিবর্তনযোগ্য" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Fleming’s Right-Hand Rule governs electrical generation (finding induced current), whereas Fleming’s Left-Hand Rule governs motorized electromagnetic actuation (finding mechanical thrust).",
+        hi: "दायां हाथ नियम जनरेटर प्रभाव (विद्युत उत्पादन) के लिए है, जबकि बायां हाथ नियम मोटर प्रभाव (यांत्रिक बल) के लिए है।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম জেনারেটরের ক্ষেত্রে (কারেন্ট উৎপাদন) এবং বাম হস্ত নিয়ম মোটরের ক্ষেত্রে (যান্ত্রিক বল) প্রযোজ্য।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-08",
+      question: {
+        en: "A straight wire of active length 0.4 m moves at 15 m/s through a uniform magnetic field B = 0.8 T at an angle of 30° to the flux lines. What is the induced EMF?",
+        hi: "0.4 m सक्रिय लंबाई का एक सीधा तार 0.8 T के समान चुंबकीय क्षेत्र में फ्लक्स रेखाओं से 30° के कोण पर 15 m/s से गति करता है। प्रेरित EMF क्या है?",
+        bn: "০.৪ মিটার কার্যকরী দৈর্ঘ্যের একটি সোজা তার ০.৮ টেসলার সুষম চৌম্বক ক্ষেত্রে ফ্লাক্স রেখার সাথে ৩০° কোণে ১৫ m/s বেগে গতিশীল। আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "4.8 V", hi: "4.8 V", bn: "৪.৮ V" } },
+        { id: "opt-2", text: { en: "2.4 V", hi: "2.4 V", bn: "২.৪ V" } },
+        { id: "opt-3", text: { en: "1.2 V", hi: "1.2 V", bn: "১.২ V" } },
+        { id: "opt-4", text: { en: "0.6 V", hi: "0.6 V", bn: "০.৬ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "e = B · l · v · sin(θ) = 0.8 T × 0.4 m × 15 m/s × sin(30°) = 4.8 × 0.5 = 2.4 V.",
+        hi: "e = B · l · v · sin(θ) = 0.8 × 0.4 × 15 × sin(30°) = 4.8 × 0.5 = 2.4 V।",
+        bn: "e = B · l · v · sin(θ) = ০.৮ × ০.৪ × ১৫ × sin(৩০°) = ৪.৮ × ০.৫ = ২.৪ V।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l3-1",
+      question: {
+        en: "In Fleming’s Right-Hand Rule, what does the Forefinger represent?",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम में तर्जनी (Forefinger) क्या दर्शाती है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়মে তর্জনী কী নির্দেশ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Direction of Motion of conductor", hi: "चालक की गति की दिशा", bn: "পরিবাহীর গতির অভিমুখ" } },
+        { id: "opt-2", text: { en: "Direction of Magnetic Field (North to South)", hi: "चुंबकीय क्षेत्र की दिशा (उत्तर से दक्षिण)", bn: "চৌম্বক ক্ষেত্রের অভিমুখ (উত্তর থেকে দক্ষিণ)" } },
+        { id: "opt-3", text: { en: "Direction of Induced Current", hi: "प्रेरित धारा की दिशा", bn: "আবিষ্ট তড়িৎপ্রবাহের অভিমুখ" } },
+        { id: "opt-4", text: { en: "Direction of Gravitational force", hi: "गुरुत्वाकर्षण बल की दिशा", bn: "অভিকর্ষজ বলের অভিমুখ" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "In Fleming’s Right-Hand Rule: Forefinger = Field (B), Thumb = Motion (v), Middle finger = Induced Current (I).",
+        hi: "फ्लेमिंग के नियम में: तर्जनी = चुंबकीय क्षेत्र (B), अंगूठा = गति (v), मध्यमा = प्रेरित धारा (I)।",
+        bn: "ফ্লেমিংয়ের নিয়মে: তর্জনী = চৌম্বক ক্ষেত্র (B), বৃদ্ধাঙ্গুলি = গতি (v), মধ্যমা = আবিষ্ট প্রবাহ (I)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l3-2",
+      question: {
+        en: "Under which condition is the motional EMF induced in a moving conductor exactly ZERO?",
+        hi: "किस स्थिति में गतिमान चालक में प्रेरित गतिक ईएमएफ ठीक शून्य (Zero) होता है?",
+        bn: "কোন অবস্থায় গতিশীল পরিবাহীতে আবিষ্ট গতিজনিত ইএমএফ ঠিক শূন্য হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "When the conductor moves perpendicular to the magnetic field (θ = 90°)", hi: "जब चालक चुंबकीय क्षेत्र के लंबवत चलता है (θ = 90°)", bn: "যখন পরিবাহী চৌম্বক ক্ষেত্রের লম্বভাবে চলে (θ = ৯০°)" } },
+        { id: "opt-2", text: { en: "When the conductor moves parallel to the magnetic field lines (θ = 0°)", hi: "जब चालक चुंबकीय क्षेत्र रेखाओं के समानांतर चलता है (θ = 0°)", bn: "যখন পরিবাহী চৌম্বক বলরেখার সমান্তরালে চলে (θ = ০°)" } },
+        { id: "opt-3", text: { en: "When the magnetic field density is 2.0 Tesla", hi: "जब चुंबकीय फ्लक्स घनत्व 2.0 Tesla हो", bn: "যখন চৌম্বক ফ্লাক্স ঘনত্ব ২.০ Tesla হয়" } },
+        { id: "opt-4", text: { en: "When the velocity of the conductor is 100 m/s", hi: "जब चालक का वेग 100 m/s हो", bn: "যখন পরিবাহীর বেগ ১০০ m/s হয়" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "When moving parallel (θ = 0°), sin(0°) = 0, so e = B l v sin(0°) = 0 V because no magnetic lines of force are cut.",
+        hi: "समानांतर गति (θ = 0°) में sin(0°) = 0 होता है, अतः कोई फ्लक्स रेखा नहीं कटती और प्रेरित ईएमएफ शून्य होता है।",
+        bn: "সমান্তরাল গতিতে (θ = ০°) sin(০°) = ০ হওয়ায় কোনো বলরেখা ছেদন হয় না, ফলে আবিষ্ট ইএমএফ শূন্য হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l3-3",
+      question: {
+        en: "A straight wire of length 2 meters moves at a speed of 10 m/s perpendicular to a uniform magnetic field of 0.5 Tesla. The induced EMF is:",
+        hi: "2 मीटर लंबा एक सीधा तार 0.5 Tesla के एकसमान चुंबकीय क्षेत्र के लंबवत 10 m/s की गति से चलता है। प्रेरित ईएमएफ होगा:",
+        bn: "২ মিটার দীর্ঘ একটি সোজা তার ০.৫ Tesla সুষম চৌম্বক ক্ষেত্রের লম্বভাবে ১০ m/s বেগে গতিশীল। আবিষ্ট ইএমএফ কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "5.0 Volts", hi: "5.0 वोल्ट", bn: "৫.০ ভোল্ট" } },
+        { id: "opt-2", text: { en: "10.0 Volts", hi: "10.0 वोल्ट", bn: "১০.০ ভোল্ট" } },
+        { id: "opt-3", text: { en: "20.0 Volts", hi: "20.0 वोल्ट", bn: "২০.০ ভোল্ট" } },
+        { id: "opt-4", text: { en: "0.1 Volts", hi: "0.1 वोल्ट", bn: "০.১ ভোল্ট" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "e = B · l · v · sin(90°) = 0.5 T × 2 m × 10 m/s × 1.0 = 10.0 Volts.",
+        hi: "e = B · l · v · sin(90°) = 0.5 × 2 × 10 × 1 = 10.0 वोल्ट।",
+        bn: "e = B · l · v · sin(৯০°) = ০.৫ × ২ × ১০ × ১ = ১০.০ ভোল্ট।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-04",
+      question: {
+        en: "Fleming’s Right-Hand Rule is specifically applied to find the direction of induced current in which type of electrical apparatus?",
+        hi: "फ्लेमिंग का दायां हाथ नियम विशेष रूप से किस प्रकार के विद्युत उपकरण में प्रेरित धारा की दिशा ज्ञात करने के लिए लगाया जाता है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম বিশেষভাবে কোন ধরনের বৈদ্যুতিক যন্ত্রে আবিষ্ট কারেন্টের দিক নির্ণয়ে ব্যবহৃত হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Electrical generators (dynamos and alternators)", hi: "विद्युत जनरेटर (डायनेमो और अल्टरनेटर)", bn: "বৈদ্যুতিক জেনারেটর (ডায়নামো ও অল্টারনেটর)" } },
+        { id: "opt-2", text: { en: "Electric motors providing mechanical drive", hi: "विद्युत मोटरें जो यांत्रिक गति देती हैं", bn: "বৈদ্যুতিক মোটর যা যান্ত্রিক ঘূর্ণন তৈরি করে" } },
+        { id: "opt-3", text: { en: "Electrostatic air filters", hi: "स्थिरवैद्युत वायु शोधक", bn: "ইলেক্ট্রোস্ট্যাটিক এয়ার ফিল্টার" } },
+        { id: "opt-4", text: { en: "Chemical lead-acid storage batteries", hi: "रासायनिक लेड-एसिड बैटरी", bn: "রাসায়নিক লেড-অ্যাসিড ব্যাটারি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Fleming’s Right-Hand Rule is specifically designed for generators (dynamo rule), determining induced current from conductor motion across a magnetic field.",
+        hi: "फ्लेमिंग का दायां हाथ नियम विशेष रूप से जनरेटर (डायनेमो) के लिए बनाया गया है, जो गति और चुंबकीय क्षेत्र से प्रेरित धारा की दिशा बताता है।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়মটি বিশেষভাবে জেনারেটরের ক্ষেত্রে প্রযোজ্য, যা চৌম্বক ক্ষেত্রে পরিবাহীর গতির ফলে সৃষ্ট আবিষ্ট কারেন্টের দিক নির্দেশ করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-05",
+      question: {
+        en: "When setting up Fleming’s Right-Hand Rule, the relative spatial orientation between the thumb, forefinger, and middle finger must be:",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम को लागू करते समय अंगूठे, तर्जनी और मध्यमा के बीच पारस्परिक स्थिति क्या होनी चाहिए?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম প্রয়োগের সময় বৃদ্ধাঙ্গুলি, তর্জনী ও মধ্যমার মধ্যকার পারস্পরিক অবস্থান কেমন হতে হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Mutually perpendicular (at right angles, 90° to each other)", hi: "परस्पर लंबवत (एक-दूसरे से 90° के समकोण पर)", bn: "পরস্পর সমকোণে (একে অপরের সাথে ৯০° কোণে)" } },
+        { id: "opt-2", text: { en: "Parallel in the same plane at 45°", hi: "एक ही तल में 45° पर समानांतर", bn: "একই তলে ৪৫° কোণে সমান্তরাল" } },
+        { id: "opt-3", text: { en: "Folded tightly into a closed fist", hi: "मुट्ठी के रूप में कसकर बंद", bn: "মুষ্টিবদ্ধ অবস্থায় ভাঁজ করা" } },
+        { id: "opt-4", text: { en: "Collinear along a single straight axis", hi: "एक ही सीधी रेखा के अनुदिश", bn: "একটি সরলরেখা বরাবর" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The thumb (motion), forefinger (magnetic field), and middle finger (induced current) must be held mutually orthogonal at 90° angles to represent 3D Cartesian coordinates.",
+        hi: "अंगूठा (गति), तर्जनी (चुंबकीय क्षेत्र) और मध्यमा (प्रेरित धारा) तीनों को परस्पर 90° के समकोण पर रखना अनिवार्य है।",
+        bn: "বৃদ্ধাঙ্গুলি (গতি), তর্জনী (চৌম্বক ক্ষেত্র) এবং মধ্যমা (আবিষ্ট কারেন্ট)-এই তিনটিকে পরস্পরের সাথে সমকোণে (৯০°) ধরে রাখতে হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-06",
+      question: {
+        en: "A horizontal conductor aligned North-South is moved vertically upwards through a uniform horizontal magnetic field pointing from East to West. In what direction does induced current flow?",
+        hi: "उत्तर-दक्षिण दिशा में रखे एक क्षैतिज चालक को पूर्व से पश्चिम की ओर दिष्ट समान चुंबकीय क्षेत्र में लंबवत ऊपर की ओर ले जाया जाता है। प्रेरित धारा किस दिशा में बहेगी?",
+        bn: "উত্তর-দক্ষিণ বরাবর রাখা একটি অনুভূমিক পরিবাহীকে পূর্ব থেকে পশ্চিমে ক্রিয়াশীল সুষম চৌম্বক ক্ষেত্রে খাড়া ওপরের দিকে গতিশীল করা হলো। আবিষ্ট কারেন্ট কোন দিকে প্রবাহিত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "From South to North along the conductor", hi: "चालक में दक्षिण से उत्तर की ओर", bn: "পরিবাহীর মধ্য দিয়ে দক্ষিণ থেকে উত্তর দিকে" } },
+        { id: "opt-2", text: { en: "From North to South along the conductor", hi: "चालक में उत्तर से दक्षिण की ओर", bn: "পরিবাহীর মধ্য দিয়ে উত্তর থেকে দক্ষিণ দিকে" } },
+        { id: "opt-3", text: { en: "Vertically downward into the ground", hi: "लंबवत नीचे जमीन की ओर", bn: "খাড়া নিচের দিকে মাটির ভেতরে" } },
+        { id: "opt-4", text: { en: "Directly toward the East", hi: "सीधे पूर्व दिशा की ओर", bn: "সরাসরি পূর্ব দিকে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Using Fleming’s Right-Hand Rule: Thumb points Upwards (motion), Forefinger points West (field). The middle finger naturally points North (induced current flows from South to North).",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम से: अंगूठा ऊपर (गति), तर्जनी पश्चिम (क्षेत्र)। तब मध्यमा उत्तर की ओर इंगित करती है (धारा दक्षिण से उत्तर की ओर बहेगी)।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম অনুসারে: বৃদ্ধাঙ্গুলি ওপরের দিকে (গতি), তর্জনী পশ্চিম দিকে (ক্ষেত্র)। তখন মধ্যমা উত্তর নির্দেশ করে (কারেন্ট দক্ষিণ থেকে উত্তরে প্রবাহিত হবে)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-07",
+      question: {
+        en: "What is the primary fundamental distinction between Fleming’s Right-Hand Rule and Fleming’s Left-Hand Rule?",
+        hi: "फ्लेमिंग के दाएं हाथ के नियम और बाएं हाथ के नियम के बीच मुख्य मौलिक अंतर क्या है?",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম এবং বাম হস্ত নিয়মের মধ্যকার প্রধান মৌলিক পার্থক্য কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Right-Hand Rule determines induced current in generators; Left-Hand Rule determines mechanical force in motors", hi: "दायां हाथ नियम जनरेटर में प्रेरित धारा ज्ञात करता है; बायां हाथ नियम मोटर में यांत्रिक बल ज्ञात करता है", bn: "ডান হস্ত নিয়ম জেনারেটরে আবিষ্ট কারেন্ট নির্ণয় করে; বাম হস্ত নিয়ম মোটরে যান্ত্রিক বল নির্ণয় করে" } },
+        { id: "opt-2", text: { en: "Right-Hand Rule applies only to DC; Left-Hand Rule applies only to AC", hi: "दायां हाथ नियम केवल डीसी पर और बायां हाथ केवल एसी पर लागू होता है", bn: "ডান হস্ত নিয়ম শুধু ডিসিতে এবং বাম হস্ত শুধু এসিতে প্রযোজ্য" } },
+        { id: "opt-3", text: { en: "Right-Hand Rule is for electrostatic charges; Left-Hand Rule is for magnetic poles", hi: "दायां हाथ नियम आवेशों के लिए है और बायां हाथ चुंबकीय ध्रुवों के लिए", bn: "ডান হস্ত নিয়ম স্থির আধানের জন্য এবং বাম হস্ত চৌম্বক মেরুর জন্য" } },
+        { id: "opt-4", text: { en: "They are completely identical and can be used interchangeably", hi: "दोनों बिल्कुल समान हैं और एक-दूसरे के स्थान पर प्रयुक्त हो सकते हैं", bn: "উভয় নিয়ম সম্পূর্ণ অভিন্ন এবং পারস্পরিকভাবে পরিবর্তনযোগ্য" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Fleming’s Right-Hand Rule governs electrical generation (finding induced current), whereas Fleming’s Left-Hand Rule governs motorized electromagnetic actuation (finding mechanical thrust).",
+        hi: "दायां हाथ नियम जनरेटर प्रभाव (विद्युत उत्पादन) के लिए है, जबकि बायां हाथ नियम मोटर प्रभाव (यांत्रिक बल) के लिए है।",
+        bn: "ফ্লেমিংয়ের ডান হস্ত নিয়ম জেনারেটরের ক্ষেত্রে (কারেন্ট উৎপাদন) এবং বাম হস্ত নিয়ম মোটরের ক্ষেত্রে (যান্ত্রিক বল) প্রযোজ্য।"
+      }
+    },
+    {
+      id: "mcq-ch10-l03-08",
+      question: {
+        en: "A straight wire of active length 0.4 m moves at 15 m/s through a uniform magnetic field B = 0.8 T at an angle of 30° to the flux lines. What is the induced EMF?",
+        hi: "0.4 m सक्रिय लंबाई का एक सीधा तार 0.8 T के समान चुंबकीय क्षेत्र में फ्लक्स रेखाओं से 30° के कोण पर 15 m/s से गति करता है। प्रेरित EMF क्या है?",
+        bn: "০.৪ মিটার কার্যকরী দৈর্ঘ্যের একটি সোজা তার ০.৮ টেসলার সুষম চৌম্বক ক্ষেত্রে ফ্লাক্স রেখার সাথে ৩০° কোণে ১৫ m/s বেগে গতিশীল। আবিষ্ট EMF কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "4.8 V", hi: "4.8 V", bn: "৪.৮ V" } },
+        { id: "opt-2", text: { en: "2.4 V", hi: "2.4 V", bn: "২.৪ V" } },
+        { id: "opt-3", text: { en: "1.2 V", hi: "1.2 V", bn: "১.২ V" } },
+        { id: "opt-4", text: { en: "0.6 V", hi: "0.6 V", bn: "০.৬ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "e = B · l · v · sin(θ) = 0.8 T × 0.4 m × 15 m/s × sin(30°) = 4.8 × 0.5 = 2.4 V.",
+        hi: "e = B · l · v · sin(θ) = 0.8 × 0.4 × 15 × sin(30°) = 4.8 × 0.5 = 2.4 V।",
+        bn: "e = B · l · v · sin(θ) = ০.৮ × ০.৪ × ১৫ × sin(৩০°) = ৪.৮ × ০.৫ = ২.৪ V।"
       }
     }
   ],

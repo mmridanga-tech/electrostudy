@@ -252,43 +252,325 @@ Taking the square root on both sides:
   },
   mcqs: [
     {
-      id: 'mcq-ch10-k1',
+      id: "mcq-ch10-k1",
       question: {
-        en: 'What is the maximum theoretical value of the coefficient of coupling (k)?',
-        hi: 'युग्मन गुणांक (k) का अधिकतम सैद्धांतिक मान क्या होता है?',
-        bn: 'কাপলিং গুণাঙ্কের (k) সর্বোচ্চ তাত্ত্বিক মান কত?'
+        en: "What is the maximum theoretical value of the coefficient of coupling (k)?",
+        hi: "युग्मन गुणांक (k) का अधिकतम सैद्धांतिक मान क्या होता है?",
+        bn: "কাপলিং গুণাঙ্কের (k) সর্বোচ্চ তাত্ত্বিক মান কত?"
       },
       options: [
-        { id: 'opt-1', text: { en: '0.5', hi: '0.5', bn: '০.৫' } },
-        { id: 'opt-2', text: { en: '1.0', hi: '1.0', bn: '১.০' } },
-        { id: 'opt-3', text: { en: 'Infinity', hi: 'अनंत', bn: 'অসীম' } },
-        { id: 'opt-4', text: { en: '100', hi: '100', bn: '১০০' } }
+        { id: "opt-1", text: { en: "0.5", hi: "0.5", bn: "০.৫" } },
+        { id: "opt-2", text: { en: "1.0", hi: "1.0", bn: "১.০" } },
+        { id: "opt-3", text: { en: "Infinity", hi: "अनंत", bn: "অসীম" } },
+        { id: "opt-4", text: { en: "100", hi: "100", bn: "১০০" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Under perfect ideal coupling with zero leakage flux, k reaches its maximum limit of 1.0 (100%).',
-        hi: 'शून्य क्षरण फ्लक्स युक्त पूर्ण आदर्श युग्मन में k का अधिकतम मान 1.0 (100%) होता है।',
-        bn: 'শূন্য লিকেজ ফ্লাক্সযুক্ত নিখুঁত আদর্শ কাপলিংয়ে k এর সর্বোচ্চ মান ১.০ (১০০%) হয়।'
+        en: "Under perfect ideal coupling with zero leakage flux, k reaches its maximum limit of 1.0 (100%).",
+        hi: "शून्य क्षरण फ्लक्स युक्त पूर्ण आदर्श युग्मन में k का अधिकतम मान 1.0 (100%) होता है।",
+        bn: "শূন্য লিকেজ ফ্লাক্সযুক্ত নিখুঁত আদর্শ কাপলিংয়ে k এর সর্বোচ্চ মান ১.০ (১০০%) হয়।"
       }
     },
     {
-      id: 'mcq-ch10-k2',
+      id: "mcq-ch10-k2",
       question: {
-        en: 'If two identical coils of self-inductance L each are placed perpendicular (at 90°) to each other, their mutual inductance M will be:',
-        hi: 'यदि L स्व-प्रेरकत्व वाली दो समान कुंडलियां एक-दूसरे के लंबवत (90° पर) रखी जाएं, तो उनका अन्योन्य प्रेरकत्व M होगा:',
-        bn: 'প্রতিটি L স্ব-আবেশাঙ্কযুক্ত দুটি কয়েল পরস্পর ৯০° কোণে লম্বভাবে স্থাপন করলে তাদের পারস্পরিক আবেশাঙ্ক M হবে:'
+        en: "If two identical coils of self-inductance L each are placed perpendicular (at 90°) to each other, their mutual inductance M will be:",
+        hi: "यदि L स्व-प्रेरकत्व वाली दो समान कुंडलियां एक-दूसरे के लंबवत (90° पर) रखी जाएं, तो उनका अन्योन्य प्रेरकत्व M होगा:",
+        bn: "প্রতিটি L স্ব-আবেশাঙ্কযুক্ত দুটি কয়েল পরস্পর ৯০° কোণে লম্বভাবে স্থাপন করলে তাদের পারস্পরিক আবেশাঙ্ক M হবে:"
       },
       options: [
-        { id: 'opt-1', text: { en: 'L', hi: 'L', bn: 'L' } },
-        { id: 'opt-2', text: { en: 'L / 2', hi: 'L / 2', bn: 'L / ২' } },
-        { id: 'opt-3', text: { en: 'Zero (0)', hi: 'शून्य (0)', bn: 'শূন্য (০)' } },
-        { id: 'opt-4', text: { en: '2L', hi: '2L', bn: '২L' } }
+        { id: "opt-1", text: { en: "L", hi: "L", bn: "L" } },
+        { id: "opt-2", text: { en: "L / 2", hi: "L / 2", bn: "L / ২" } },
+        { id: "opt-3", text: { en: "Zero (0)", hi: "शून्य (0)", bn: "শূন্য (০)" } },
+        { id: "opt-4", text: { en: "2L", hi: "2L", bn: "২L" } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: "opt-3",
       explanation: {
-        en: 'At 90° orientation, magnetic flux from one coil is parallel to the plane of the other, resulting in zero linked flux (k = 0, M = 0).',
-        hi: '90° अभिविन्यास पर एक कुंडली का फ्लक्स दूसरी के समतल के समानांतर होता है, अतः सम्बद्ध फ्लक्स शून्य होता है (k = 0, M = 0)।',
-        bn: '৯০° কোণে একটি কয়েলের ফ্লাক্স অন্য কয়েলের তলের সমান্তরাল হয়, ফলে কোনো ফ্লাক্স লিংক হয় না (k = ০, M = ০)।'
+        en: "At 90° orientation, magnetic flux from one coil is parallel to the plane of the other, resulting in zero linked flux (k = 0, M = 0).",
+        hi: "90° अभिविन्यास पर एक कुंडली का फ्लक्स दूसरी के समतल के समानांतर होता है, अतः सम्बद्ध फ्लक्स शून्य होता है (k = 0, M = 0)।",
+        bn: "৯০° কোণে একটি কয়েলের ফ্লাক্স অন্য কয়েলের তলের সমান্তরাল হয়, ফলে কোনো ফ্লাক্স লিংক হয় না (k = ০, M = ০)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-03",
+      question: {
+        en: "In a practical power transformer constructed with a closed laminated iron core and interleaved windings, what is the typical value of the coupling coefficient k?",
+        hi: "बंद पटलित लोहे के कोर और परस्पर गुंथी वाइंडिंग वाले एक व्यावहारिक पावर ट्रांसफॉर्मर में युग्मन गुणांक k का सामान्य मान क्या होता है?",
+        bn: "বদ্ধ পাতযুক্ত লোহার কোর ও ইন্টারলিভড ওয়াইন্ডিংযুক্ত একটি ব্যবহারিক পাওয়ার ট্রান্সফরমারে কাপলিং গুণাঙ্ক k এর সাধারণ মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "k ≈ 0.98 to 0.999 (extremely tight magnetic coupling)", hi: "k ≈ 0.98 से 0.999 (अत्यंत दृढ़ चुंबकीय युग्मन)", bn: "k ≈ ০.৯৮ থেকে ০.৯৯৯ (অত্যন্ত দৃঢ় চৌম্বক কাপলিং)" } },
+        { id: "opt-2", text: { en: "k ≈ 0.10 to 0.20", hi: "k ≈ 0.10 से 0.20", bn: "k ≈ ০.১০ থেকে ০.২০" } },
+        { id: "opt-3", text: { en: "k = 0.00", hi: "k = 0.00", bn: "k = ০.০০" } },
+        { id: "opt-4", text: { en: "k = 2.50", hi: "k = 2.50", bn: "k = ২.৫০" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Iron cores provide a low-reluctance path that channels virtually all magnetic flux between primary and secondary, achieving tight coupling where k exceeds 0.98.",
+        hi: "लोहे का कोर कम प्रतिष्ठम्भ वाला मार्ग प्रदान करता है जिससे लगभग पूरा फ्लक्स दोनों वाइंडिंग्स से जुड़ता है और k का मान 0.98 से अधिक होता है।",
+        bn: "লোহার কোর নিম্ন রিলাকট্যান্সের পথ তৈরি করে প্রায় সমস্ত ফ্লাক্সকে প্রাইমারি ও সেকেন্ডারির সাথে যুক্ত করে, ফলে k এর মান ০.৯৮ এর বেশি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-04",
+      question: {
+        en: "Two coils with self-inductances L_1 = 16 mH and L_2 = 25 mH have a measured mutual inductance of M = 15 mH. What is their coupling coefficient k?",
+        hi: "L_1 = 16 mH और L_2 = 25 mH स्व-प्रेरकत्व वाली दो कुंडलियों का मापा गया पारस्परिक प्रेरकत्व M = 15 mH है। उनका युग्मन गुणांक k क्या है?",
+        bn: "L_1 = ১৬ mH এবং L_2 = ২৫ mH স্বকীয় আবেশাঙ্কের দুটি কয়েলের পারস্পরিক আবেশাঙ্ক M = ১৫ mH। তাদের কাপলিং গুণাঙ্ক k কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "k = 0.75", hi: "k = 0.75", bn: "k = ০.৭৫" } },
+        { id: "opt-2", text: { en: "k = 0.60", hi: "k = 0.60", bn: "k = ০.৬০" } },
+        { id: "opt-3", text: { en: "k = 0.375", hi: "k = 0.375", bn: "k = ০.৩৭৫" } },
+        { id: "opt-4", text: { en: "k = 1.00", hi: "k = 1.00", bn: "k = ১.০০" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "k = M / √(L₁ · L₂) = 15 / √(16 × 25) = 15 / √400 = 15 / 20 = 0.75.",
+        hi: "k = M / √(L₁ · L₂) = 15 / √(400) = 15 / 20 = 0.75।",
+        bn: "k = M / √(L₁ · L₂) = ১৫ / √(৪০০) = ১৫ / ২০ = ০.৭৫।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-05",
+      question: {
+        en: "What does the term \"magnetic leakage flux\" in a transformer describe?",
+        hi: "ट्रांसफॉर्मर में \"चुंबकीय क्षरण फ्लक्स\" (लीकेज फ्लक्स) पद क्या दर्शाता है?",
+        bn: "ট্রান্সফরমারে \"চৌম্বকীয় লিকেজ ফ্লাক্স\" পদটি কী নির্দেশ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The portion of magnetic flux that links only one winding without coupling to the other", hi: "चुंबकीय फ्लक्स का वह भाग जो केवल एक वाइंडिंग से जुड़ता है और दूसरी से नहीं जुड़ पाता", bn: "চৌম্বক ফ্লাক্সের যে অংশ কেবল একটি ওয়াইন্ডিংকে যুক্ত করে কিন্তু অন্যটির সাথে যুক্ত হতে পারে না" } },
+        { id: "opt-2", text: { en: "Flux that converts directly into radioactive emission", hi: "वह फ्लक्स जो सीधे रेडियोधर्मी विकिरण में बदल जाता है", bn: "ফ্লাক্স যা সরাসরি তেজস্ক্রিয় বিকিরণে রূপান্তরিত হয়" } },
+        { id: "opt-3", text: { en: "Flux that escapes into the cooling oil and disappears", hi: "वह फ्लक्स जो तेल में घुलकर नष्ट हो जाता है", bn: "ফ্লাক্স যা কুলিং অয়েলে মিলিয়ে যায়" } },
+        { id: "opt-4", text: { en: "The useful mutual flux linking both windings", hi: "दोनों वाइंडिंग को जोड़ने वाला उपयोगी मुख्य फ्लक्स", bn: "উভয় ওয়াইন্ডিংকে যুক্তকারী কার্যকর মূল ফ্লাক্স" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Leakage flux completes its magnetic circuit through the surrounding air rather than the core, linking only its parent winding and causing leakage reactance.",
+        hi: "लीकेज फ्लक्स कोर के बजाय हवा के माध्यम से अपना पथ पूरा करता है और केवल अपनी ही वाइंडिंग से जुड़ता है।",
+        bn: "লিকেজ ফ্লাক্স কোরের মধ্য দিয়ে না গিয়ে বাতাসের মধ্য দিয়ে পথ সম্পূর্ণ করে কেবল নিজ ওয়াইন্ডিংকে যুক্ত করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-06",
+      question: {
+        en: "In tuned radio frequency (RF) transformer circuits, what occurs when the coupling coefficient reaches the \"critical coupling\" threshold k_c = 1 / √(Q_1 · Q_2)?",
+        hi: "ट्यून्ड रेडियो फ्रीक्वेंसी (RF) ट्रांसफॉर्मर परिपथों में, जब युग्मन गुणांक क्रांतिक मान k_c = 1 / √(Q_1 · Q_2) पर पहुंचता है तो क्या होता है?",
+        bn: "টিউনড রেডিও ফ্রিকোয়েন্সি (RF) ট্রান্সফরমার বর্তনীতে কাপলিং গুণাঙ্ক যখন ক্রান্তি মান k_c = ১ / √(Q_1 · Q_2) এ পৌঁছায় তখন কী ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Secondary transferred voltage reaches its absolute maximum with optimal bandwidth", hi: "द्वितीयक स्थानांतरित वोल्टेज अपने अधिकतम मान पर पहुंचता है और बैंडविड्थ सर्वोत्तम होती है", bn: "সেকেন্ডারিতে স্থানান্তরিত ভোল্টেজ সর্বোচ্চ মানে পৌঁছায় এবং ব্যান্ডউইথ সর্বোত্তম হয়" } },
+        { id: "opt-2", text: { en: "The circuit burns instantly due to over-resonance", hi: "अत्यधिक अनुनाद के कारण परिपथ तुरंत जल जाता है", bn: "অতিরিক্ত অনুরণনের কারণে সার্কিট পুড়ে যায়" } },
+        { id: "opt-3", text: { en: "Mutual inductance drops to exactly zero", hi: "पारस्परिक प्रेरकत्व ठीक शून्य हो जाता है", bn: "পারস্পরিক আবেশাঙ্ক শূন্যে নেমে আসে" } },
+        { id: "opt-4", text: { en: "All signal reception is permanently blocked", hi: "सभी सिग्नल हमेशा के लिए अवरुद्ध हो जाते हैं", bn: "সমস্ত সিগন্যাল চিরতরে বন্ধ হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At critical coupling k = 1/√(Q1 Q2), maximum power transfer occurs between primary and secondary tuned circuits, providing a flat-topped response curve without double peaking.",
+        hi: "क्रांतिक युग्मन पर प्राथमिक और द्वितीयक के बीच अधिकतम शक्ति स्थानांतरण होता है तथा अधिकतम वोल्टेज प्राप्त होता है।",
+        bn: "ক্রান্তি কাপলিংয়ে প্রাইমারি ও সেকেন্ডারির মধ্যে সর্বোচ্চ ক্ষমতা সঞ্চালিত হয় এবং সর্বোচ্চ ভোল্টেজ আউটপুট পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-07",
+      question: {
+        en: "When 100% of the magnetic flux produced by primary coil 1 completely links every turn of secondary coil 2 without any leakage, the coupling coefficient k equals:",
+        hi: "जब प्राथमिक कुंडली द्वारा उत्पन्न 100% चुंबकीय फ्लक्स बिना किसी क्षरण के द्वितीयक कुंडली के प्रत्येक फेरे से जुड़ता है, तो युग्मन गुणांक k बराबर होता है:",
+        bn: "যখন প্রাইমারি কয়েল দ্বারা উৎপন্ন শতভাগ চৌম্বক ফ্লাক্স কোনো ক্ষয় ছাড়াই সেকেন্ডারির প্রতিটি পাকের সাথে যুক্ত হয়, তখন কাপলিং গুণাঙ্ক k এর মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.0 (Unity coupling)", hi: "1.0 (इकाई युग्मन)", bn: "১.০ (একক কাপলিং)" } },
+        { id: "opt-2", text: { en: "0.50", hi: "0.50", bn: "০.৫০" } },
+        { id: "opt-3", text: { en: "0.00", hi: "0.00", bn: "০.০০" } },
+        { id: "opt-4", text: { en: "Infinity (∞)", hi: "अनंत (∞)", bn: "অসীম (∞)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By definition, k = Φ₁₂ / Φ₁ = 1.0 under ideal unity coupling with zero leakage flux.",
+        hi: "परिभाषा के अनुसार, शून्य क्षरण फ्लक्स की स्थिति में k = 1.0 (इकाई युग्मन) होता है।",
+        bn: "সংজ্ঞা অনুসারে, শূন্য লিকেজ ফ্লাক্সের আদর্শ অবস্থায় k = ১.০ (একক কাপলিং) হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-08",
+      question: {
+        en: "How can unintended parasitic magnetic cross-coupling (crosstalk) between two adjacent inductor coils on a printed circuit board (PCB) be minimized?",
+        hi: "प्रिंटेड सर्किट बोर्ड (PCB) पर लगे दो पास-पास के प्रेरकों के बीच अवांछित चुंबकीय क्रॉस-युग्मन (क्रॉसटॉक) को कैसे न्यूनतम किया जा सकता है?",
+        bn: "একটি প্রিন্টেড সার্কিট বোর্ডে (PCB) পাশাপাশি অবস্থিত দুটি ইন্ডাক্টরের মধ্যকার অবাঞ্ছিত চৌম্বক ক্রস-কাপলিং (ক্রসটক) কীভাবে সর্বনিম্ন করা যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Orient their magnetic axes perpendicular (90°) to each other and increase physical separation", hi: "उनके चुंबकीय अक्षों को एक-दूसरे के लंबवत (90°) रखें और उनके बीच की दूरी बढ़ाएं", bn: "তাদের চৌম্বক অক্ষকে পরস্পরের সাথে লম্বভাবে (৯০°) স্থাপন করে এবং দূরত্ব বৃদ্ধি করে" } },
+        { id: "opt-2", text: { en: "Align their axes parallel and touch their cases together", hi: "उनके अक्षों को समानांतर रखें और उन्हें आपस में सटा दें", bn: "অক্ষগুলোকে সমান্তরাল রেখে পরস্পরকে স্পর্শ করিয়ে" } },
+        { id: "opt-3", text: { en: "Increase the current through both inductors by 10 times", hi: "दोनों प्रेरकों में धारा 10 गुना बढ़ा दें", bn: "উভয় ইন্ডাক্টরের কারেন্ট ১০ গুণ বাড়িয়ে" } },
+        { id: "opt-4", text: { en: "Coat the inductors in salt water", hi: "प्रेरकों पर खारा पानी छिड़क कर", bn: "ইন্ডাক্টরে লবণ জল লাগিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Mounting inductors orthogonally (at 90°) ensures cos θ = 0, virtually eliminating magnetic flux linkage (k ≈ 0) and suppressing unwanted EMI/crosstalk.",
+        hi: "प्रेरकों को परस्पर 90° पर रखने से फ्लक्स लिंकेज शून्य (cos 90° = 0) हो जाता है, जिससे क्रॉसटॉक समाप्त हो जाता है।",
+        bn: "ইন্ডাক্টরগুলোকে পরস্পরের সাথে ৯০° কোণে বসালে ফ্লাক্স সংযোগ শূন্য হয় (cos ৯০° = ০), ফলে ক্রসটক কার্যকরভাবে দূর হয়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-k1",
+      question: {
+        en: "What is the maximum theoretical value of the coefficient of coupling (k)?",
+        hi: "युग्मन गुणांक (k) का अधिकतम सैद्धांतिक मान क्या होता है?",
+        bn: "কাপলিং গুণাঙ্কের (k) সর্বোচ্চ তাত্ত্বিক মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "0.5", hi: "0.5", bn: "০.৫" } },
+        { id: "opt-2", text: { en: "1.0", hi: "1.0", bn: "১.০" } },
+        { id: "opt-3", text: { en: "Infinity", hi: "अनंत", bn: "অসীম" } },
+        { id: "opt-4", text: { en: "100", hi: "100", bn: "১০০" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Under perfect ideal coupling with zero leakage flux, k reaches its maximum limit of 1.0 (100%).",
+        hi: "शून्य क्षरण फ्लक्स युक्त पूर्ण आदर्श युग्मन में k का अधिकतम मान 1.0 (100%) होता है।",
+        bn: "শূন্য লিকেজ ফ্লাক্সযুক্ত নিখুঁত আদর্শ কাপলিংয়ে k এর সর্বোচ্চ মান ১.০ (১০০%) হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-k2",
+      question: {
+        en: "If two identical coils of self-inductance L each are placed perpendicular (at 90°) to each other, their mutual inductance M will be:",
+        hi: "यदि L स्व-प्रेरकत्व वाली दो समान कुंडलियां एक-दूसरे के लंबवत (90° पर) रखी जाएं, तो उनका अन्योन्य प्रेरकत्व M होगा:",
+        bn: "প্রতিটি L স্ব-আবেশাঙ্কযুক্ত দুটি কয়েল পরস্পর ৯০° কোণে লম্বভাবে স্থাপন করলে তাদের পারস্পরিক আবেশাঙ্ক M হবে:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "L", hi: "L", bn: "L" } },
+        { id: "opt-2", text: { en: "L / 2", hi: "L / 2", bn: "L / ২" } },
+        { id: "opt-3", text: { en: "Zero (0)", hi: "शून्य (0)", bn: "শূন্য (০)" } },
+        { id: "opt-4", text: { en: "2L", hi: "2L", bn: "২L" } }
+      ],
+      correctOptionId: "opt-3",
+      explanation: {
+        en: "At 90° orientation, magnetic flux from one coil is parallel to the plane of the other, resulting in zero linked flux (k = 0, M = 0).",
+        hi: "90° अभिविन्यास पर एक कुंडली का फ्लक्स दूसरी के समतल के समानांतर होता है, अतः सम्बद्ध फ्लक्स शून्य होता है (k = 0, M = 0)।",
+        bn: "৯০° কোণে একটি কয়েলের ফ্লাক্স অন্য কয়েলের তলের সমান্তরাল হয়, ফলে কোনো ফ্লাক্স লিংক হয় না (k = ০, M = ০)।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-03",
+      question: {
+        en: "In a practical power transformer constructed with a closed laminated iron core and interleaved windings, what is the typical value of the coupling coefficient k?",
+        hi: "बंद पटलित लोहे के कोर और परस्पर गुंथी वाइंडिंग वाले एक व्यावहारिक पावर ट्रांसफॉर्मर में युग्मन गुणांक k का सामान्य मान क्या होता है?",
+        bn: "বদ্ধ পাতযুক্ত লোহার কোর ও ইন্টারলিভড ওয়াইন্ডিংযুক্ত একটি ব্যবহারিক পাওয়ার ট্রান্সফরমারে কাপলিং গুণাঙ্ক k এর সাধারণ মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "k ≈ 0.98 to 0.999 (extremely tight magnetic coupling)", hi: "k ≈ 0.98 से 0.999 (अत्यंत दृढ़ चुंबकीय युग्मन)", bn: "k ≈ ০.৯৮ থেকে ০.৯৯৯ (অত্যন্ত দৃঢ় চৌম্বক কাপলিং)" } },
+        { id: "opt-2", text: { en: "k ≈ 0.10 to 0.20", hi: "k ≈ 0.10 से 0.20", bn: "k ≈ ০.১০ থেকে ০.২০" } },
+        { id: "opt-3", text: { en: "k = 0.00", hi: "k = 0.00", bn: "k = ০.০০" } },
+        { id: "opt-4", text: { en: "k = 2.50", hi: "k = 2.50", bn: "k = ২.৫০" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Iron cores provide a low-reluctance path that channels virtually all magnetic flux between primary and secondary, achieving tight coupling where k exceeds 0.98.",
+        hi: "लोहे का कोर कम प्रतिष्ठम्भ वाला मार्ग प्रदान करता है जिससे लगभग पूरा फ्लक्स दोनों वाइंडिंग्स से जुड़ता है और k का मान 0.98 से अधिक होता है।",
+        bn: "লোহার কোর নিম্ন রিলাকট্যান্সের পথ তৈরি করে প্রায় সমস্ত ফ্লাক্সকে প্রাইমারি ও সেকেন্ডারির সাথে যুক্ত করে, ফলে k এর মান ০.৯৮ এর বেশি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-04",
+      question: {
+        en: "Two coils with self-inductances L_1 = 16 mH and L_2 = 25 mH have a measured mutual inductance of M = 15 mH. What is their coupling coefficient k?",
+        hi: "L_1 = 16 mH और L_2 = 25 mH स्व-प्रेरकत्व वाली दो कुंडलियों का मापा गया पारस्परिक प्रेरकत्व M = 15 mH है। उनका युग्मन गुणांक k क्या है?",
+        bn: "L_1 = ১৬ mH এবং L_2 = ২৫ mH স্বকীয় আবেশাঙ্কের দুটি কয়েলের পারস্পরিক আবেশাঙ্ক M = ১৫ mH। তাদের কাপলিং গুণাঙ্ক k কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "k = 0.75", hi: "k = 0.75", bn: "k = ০.৭৫" } },
+        { id: "opt-2", text: { en: "k = 0.60", hi: "k = 0.60", bn: "k = ০.৬০" } },
+        { id: "opt-3", text: { en: "k = 0.375", hi: "k = 0.375", bn: "k = ০.৩৭৫" } },
+        { id: "opt-4", text: { en: "k = 1.00", hi: "k = 1.00", bn: "k = ১.০০" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "k = M / √(L₁ · L₂) = 15 / √(16 × 25) = 15 / √400 = 15 / 20 = 0.75.",
+        hi: "k = M / √(L₁ · L₂) = 15 / √(400) = 15 / 20 = 0.75।",
+        bn: "k = M / √(L₁ · L₂) = ১৫ / √(৪০০) = ১৫ / ২০ = ০.৭৫।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-05",
+      question: {
+        en: "What does the term \"magnetic leakage flux\" in a transformer describe?",
+        hi: "ट्रांसफॉर्मर में \"चुंबकीय क्षरण फ्लक्स\" (लीकेज फ्लक्स) पद क्या दर्शाता है?",
+        bn: "ট্রান্সফরমারে \"চৌম্বকীয় লিকেজ ফ্লাক্স\" পদটি কী নির্দেশ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The portion of magnetic flux that links only one winding without coupling to the other", hi: "चुंबकीय फ्लक्स का वह भाग जो केवल एक वाइंडिंग से जुड़ता है और दूसरी से नहीं जुड़ पाता", bn: "চৌম্বক ফ্লাক্সের যে অংশ কেবল একটি ওয়াইন্ডিংকে যুক্ত করে কিন্তু অন্যটির সাথে যুক্ত হতে পারে না" } },
+        { id: "opt-2", text: { en: "Flux that converts directly into radioactive emission", hi: "वह फ्लक्स जो सीधे रेडियोधर्मी विकिरण में बदल जाता है", bn: "ফ্লাক্স যা সরাসরি তেজস্ক্রিয় বিকিরণে রূপান্তরিত হয়" } },
+        { id: "opt-3", text: { en: "Flux that escapes into the cooling oil and disappears", hi: "वह फ्लक्स जो तेल में घुलकर नष्ट हो जाता है", bn: "ফ্লাক্স যা কুলিং অয়েলে মিলিয়ে যায়" } },
+        { id: "opt-4", text: { en: "The useful mutual flux linking both windings", hi: "दोनों वाइंडिंग को जोड़ने वाला उपयोगी मुख्य फ्लक्स", bn: "উভয় ওয়াইন্ডিংকে যুক্তকারী কার্যকর মূল ফ্লাক্স" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Leakage flux completes its magnetic circuit through the surrounding air rather than the core, linking only its parent winding and causing leakage reactance.",
+        hi: "लीकेज फ्लक्स कोर के बजाय हवा के माध्यम से अपना पथ पूरा करता है और केवल अपनी ही वाइंडिंग से जुड़ता है।",
+        bn: "লিকেজ ফ্লাক্স কোরের মধ্য দিয়ে না গিয়ে বাতাসের মধ্য দিয়ে পথ সম্পূর্ণ করে কেবল নিজ ওয়াইন্ডিংকে যুক্ত করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-06",
+      question: {
+        en: "In tuned radio frequency (RF) transformer circuits, what occurs when the coupling coefficient reaches the \"critical coupling\" threshold k_c = 1 / √(Q_1 · Q_2)?",
+        hi: "ट्यून्ड रेडियो फ्रीक्वेंसी (RF) ट्रांसफॉर्मर परिपथों में, जब युग्मन गुणांक क्रांतिक मान k_c = 1 / √(Q_1 · Q_2) पर पहुंचता है तो क्या होता है?",
+        bn: "টিউনড রেডিও ফ্রিকোয়েন্সি (RF) ট্রান্সফরমার বর্তনীতে কাপলিং গুণাঙ্ক যখন ক্রান্তি মান k_c = ১ / √(Q_1 · Q_2) এ পৌঁছায় তখন কী ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Secondary transferred voltage reaches its absolute maximum with optimal bandwidth", hi: "द्वितीयक स्थानांतरित वोल्टेज अपने अधिकतम मान पर पहुंचता है और बैंडविड्थ सर्वोत्तम होती है", bn: "সেকেন্ডারিতে স্থানান্তরিত ভোল্টেজ সর্বোচ্চ মানে পৌঁছায় এবং ব্যান্ডউইথ সর্বোত্তম হয়" } },
+        { id: "opt-2", text: { en: "The circuit burns instantly due to over-resonance", hi: "अत्यधिक अनुनाद के कारण परिपथ तुरंत जल जाता है", bn: "অতিরিক্ত অনুরণনের কারণে সার্কিট পুড়ে যায়" } },
+        { id: "opt-3", text: { en: "Mutual inductance drops to exactly zero", hi: "पारस्परिक प्रेरकत्व ठीक शून्य हो जाता है", bn: "পারস্পরিক আবেশাঙ্ক শূন্যে নেমে আসে" } },
+        { id: "opt-4", text: { en: "All signal reception is permanently blocked", hi: "सभी सिग्नल हमेशा के लिए अवरुद्ध हो जाते हैं", bn: "সমস্ত সিগন্যাল চিরতরে বন্ধ হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At critical coupling k = 1/√(Q1 Q2), maximum power transfer occurs between primary and secondary tuned circuits, providing a flat-topped response curve without double peaking.",
+        hi: "क्रांतिक युग्मन पर प्राथमिक और द्वितीयक के बीच अधिकतम शक्ति स्थानांतरण होता है तथा अधिकतम वोल्टेज प्राप्त होता है।",
+        bn: "ক্রান্তি কাপলিংয়ে প্রাইমারি ও সেকেন্ডারির মধ্যে সর্বোচ্চ ক্ষমতা সঞ্চালিত হয় এবং সর্বোচ্চ ভোল্টেজ আউটপুট পাওয়া যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-07",
+      question: {
+        en: "When 100% of the magnetic flux produced by primary coil 1 completely links every turn of secondary coil 2 without any leakage, the coupling coefficient k equals:",
+        hi: "जब प्राथमिक कुंडली द्वारा उत्पन्न 100% चुंबकीय फ्लक्स बिना किसी क्षरण के द्वितीयक कुंडली के प्रत्येक फेरे से जुड़ता है, तो युग्मन गुणांक k बराबर होता है:",
+        bn: "যখন প্রাইমারি কয়েল দ্বারা উৎপন্ন শতভাগ চৌম্বক ফ্লাক্স কোনো ক্ষয় ছাড়াই সেকেন্ডারির প্রতিটি পাকের সাথে যুক্ত হয়, তখন কাপলিং গুণাঙ্ক k এর মান কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "1.0 (Unity coupling)", hi: "1.0 (इकाई युग्मन)", bn: "১.০ (একক কাপলিং)" } },
+        { id: "opt-2", text: { en: "0.50", hi: "0.50", bn: "০.৫০" } },
+        { id: "opt-3", text: { en: "0.00", hi: "0.00", bn: "০.০০" } },
+        { id: "opt-4", text: { en: "Infinity (∞)", hi: "अनंत (∞)", bn: "অসীম (∞)" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "By definition, k = Φ₁₂ / Φ₁ = 1.0 under ideal unity coupling with zero leakage flux.",
+        hi: "परिभाषा के अनुसार, शून्य क्षरण फ्लक्स की स्थिति में k = 1.0 (इकाई युग्मन) होता है।",
+        bn: "সংজ্ঞা অনুসারে, শূন্য লিকেজ ফ্লাক্সের আদর্শ অবস্থায় k = ১.০ (একক কাপলিং) হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l08-08",
+      question: {
+        en: "How can unintended parasitic magnetic cross-coupling (crosstalk) between two adjacent inductor coils on a printed circuit board (PCB) be minimized?",
+        hi: "प्रिंटेड सर्किट बोर्ड (PCB) पर लगे दो पास-पास के प्रेरकों के बीच अवांछित चुंबकीय क्रॉस-युग्मन (क्रॉसटॉक) को कैसे न्यूनतम किया जा सकता है?",
+        bn: "একটি প্রিন্টেড সার্কিট বোর্ডে (PCB) পাশাপাশি অবস্থিত দুটি ইন্ডাক্টরের মধ্যকার অবাঞ্ছিত চৌম্বক ক্রস-কাপলিং (ক্রসটক) কীভাবে সর্বনিম্ন করা যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Orient their magnetic axes perpendicular (90°) to each other and increase physical separation", hi: "उनके चुंबकीय अक्षों को एक-दूसरे के लंबवत (90°) रखें और उनके बीच की दूरी बढ़ाएं", bn: "তাদের চৌম্বক অক্ষকে পরস্পরের সাথে লম্বভাবে (৯০°) স্থাপন করে এবং দূরত্ব বৃদ্ধি করে" } },
+        { id: "opt-2", text: { en: "Align their axes parallel and touch their cases together", hi: "उनके अक्षों को समानांतर रखें और उन्हें आपस में सटा दें", bn: "অক্ষগুলোকে সমান্তরাল রেখে পরস্পরকে স্পর্শ করিয়ে" } },
+        { id: "opt-3", text: { en: "Increase the current through both inductors by 10 times", hi: "दोनों प्रेरकों में धारा 10 गुना बढ़ा दें", bn: "উভয় ইন্ডাক্টরের কারেন্ট ১০ গুণ বাড়িয়ে" } },
+        { id: "opt-4", text: { en: "Coat the inductors in salt water", hi: "प्रेरकों पर खारा पानी छिड़क कर", bn: "ইন্ডাক্টরে লবণ জল লাগিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Mounting inductors orthogonally (at 90°) ensures cos θ = 0, virtually eliminating magnetic flux linkage (k ≈ 0) and suppressing unwanted EMI/crosstalk.",
+        hi: "प्रेरकों को परस्पर 90° पर रखने से फ्लक्स लिंकेज शून्य (cos 90° = 0) हो जाता है, जिससे क्रॉसटॉक समाप्त हो जाता है।",
+        bn: "ইন্ডাক্টরগুলোকে পরস্পরের সাথে ৯০° কোণে বসালে ফ্লাক্স সংযোগ শূন্য হয় (cos ৯০° = ০), ফলে ক্রসটক কার্যকরভাবে দূর হয়।"
       }
     }
   ],

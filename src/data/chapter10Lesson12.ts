@@ -352,43 +352,325 @@ Practical DC machines employ:
   },
   mcqs: [
     {
-      id: 'q-dcgen-1',
+      id: "q-dcgen-1",
       question: {
-        en: 'What type of voltage is intrinsically generated inside the armature conductors of any rotating DC generator?',
-        hi: 'किसी भी घूर्णनशील डीसी जनरेटर के आर्मेचर चालकों के भीतर स्वाभाविक रूप से किस प्रकार का वोल्टेज उत्पन्न होता है?',
-        bn: 'ঘূর্ণনশীল যে কোনো ডিসি জেনারেটরের আর্মেচার কন্ডাক্টরের অভ্যন্তরে প্রকৃতপক্ষে কোন ধরনের ভোল্টেজ আবিষ্ট হয়?'
+        en: "What type of voltage is intrinsically generated inside the armature conductors of any rotating DC generator?",
+        hi: "किसी भी घूर्णनशील डीसी जनरेटर के आर्मेचर चालकों के भीतर स्वाभाविक रूप से किस प्रकार का वोल्टेज उत्पन्न होता है?",
+        bn: "ঘূর্ণনশীল যে কোনো ডিসি জেনারেটরের আর্মেচার কন্ডাক্টরের অভ্যন্তরে প্রকৃতপক্ষে কোন ধরনের ভোল্টেজ আবিষ্ট হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Pure steady ripple-free Direct Current (DC)', hi: 'शुद्ध स्थिर रिपल-रहित दिष्ट धारा (DC)', bn: 'বিশুদ্ধ স্থির রিপলহীন ডিসি ভোল্টেজ' } },
-        { id: 'opt-2', text: { en: 'Alternating Current (AC)', hi: 'प्रत्यावर्ती धारा (AC)', bn: 'অল্টারনেটিং বা দিক-পরিবর্তী ভোল্টেজ (AC)' } },
-        { id: 'opt-3', text: { en: 'Square wave DC', hi: 'वर्गाकार तरंग DC', bn: 'স্কয়ার ওয়েভ ডিসি' } },
-        { id: 'opt-4', text: { en: 'Triangular wave voltage', hi: 'त्रिभुजाकार तरंग वोल्टेज', bn: 'ত্রিভুজাকার ভোল্টেজ' } }
+        { id: "opt-1", text: { en: "Pure steady ripple-free Direct Current (DC)", hi: "शुद्ध स्थिर रिपल-रहित दिष्ट धारा (DC)", bn: "বিশুদ্ধ স্থির রিপলহীন ডিসি ভোল্টেজ" } },
+        { id: "opt-2", text: { en: "Alternating Current (AC)", hi: "प्रत्यावर्ती धारा (AC)", bn: "অল্টারনেটিং বা দিক-পরিবর্তী ভোল্টেজ (AC)" } },
+        { id: "opt-3", text: { en: "Square wave DC", hi: "वर्गाकार तरंग DC", bn: "স্কয়ার ওয়েভ ডিসি" } },
+        { id: "opt-4", text: { en: "Triangular wave voltage", hi: "त्रिभुजाकार तरंग वोल्टेज", bn: "ত্রিভুজাকার ভোল্টেজ" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'Inside every rotating generator armature, conductors cut alternating North and South polarities, so the intrinsically generated EMF is always alternating (AC). The commutator mechanically rectifies it to DC at the output terminals.',
-        hi: 'आर्मेचर चालक बारी-बारी से उत्तरी और दक्षिणी ध्रुवों के नीचे से गुजरते हैं, इसलिए अंदर हमेशा एसी ही उत्पन्न होती है। कम्यूटेटर इसे बाहर डीसी में बदलता है।',
-        bn: 'আর্মেচার কন্ডাক্টরগুলো পালাক্রমে উত্তর ও দক্ষিণ মেরুর মধ্য দিয়ে যাওয়ায় ভেতরে সর্বদা এসি উৎপন্ন হয়। কমিউটেটর যান্ত্রিকভাবে একে বাইরে ডিসিতে রূপান্তর করে।'
+        en: "Inside every rotating generator armature, conductors cut alternating North and South polarities, so the intrinsically generated EMF is always alternating (AC). The commutator mechanically rectifies it to DC at the output terminals.",
+        hi: "आर्मेचर चालक बारी-बारी से उत्तरी और दक्षिणी ध्रुवों के नीचे से गुजरते हैं, इसलिए अंदर हमेशा एसी ही उत्पन्न होती है। कम्यूटेटर इसे बाहर डीसी में बदलता है।",
+        bn: "আর্মেচার কন্ডাক্টরগুলো পালাক্রমে উত্তর ও দক্ষিণ মেরুর মধ্য দিয়ে যাওয়ায় ভেতরে সর্বদা এসি উৎপন্ন হয়। কমিউটেটর যান্ত্রিকভাবে একে বাইরে ডিসিতে রূপান্তর করে।"
       }
     },
     {
-      id: 'q-dcgen-2',
+      id: "q-dcgen-2",
       question: {
-        en: 'What is the average DC voltage of a single-loop generator whose peak AC voltage is 100 V?',
-        hi: '100 V शिखर वोल्टेज वाले सिंगल-लूप जनरेटर का औसत डीसी वोल्टेज क्या होगा?',
-        bn: 'শীর্ষ ভোল্টেজ ১০০ ভোল্ট হলে একটি সিঙ্গেল-লুপ জেনারেটরের গড় ডিসি ভোল্টেজ কত হবে?'
+        en: "What is the average DC voltage of a single-loop generator whose peak AC voltage is 100 V?",
+        hi: "100 V शिखर वोल्टेज वाले सिंगल-लूप जनरेटर का औसत डीसी वोल्टेज क्या होगा?",
+        bn: "শীর্ষ ভোল্টেজ ১০০ ভোল্ট হলে একটি সিঙ্গেল-লুপ জেনারেটরের গড় ডিসি ভোল্টেজ কত হবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: '50.0 V', hi: '50.0 V', bn: '৫০.০ V' } },
-        { id: 'opt-2', text: { en: '63.7 V', hi: '63.7 V', bn: '৬৩.৭ V' } },
-        { id: 'opt-3', text: { en: '70.7 V', hi: '70.7 V', bn: '৭০.৭ V' } },
-        { id: 'opt-4', text: { en: '100.0 V', hi: '100.0 V', bn: '১০০.০ V' } }
+        { id: "opt-1", text: { en: "50.0 V", hi: "50.0 V", bn: "৫০.০ V" } },
+        { id: "opt-2", text: { en: "63.7 V", hi: "63.7 V", bn: "৬৩.৭ V" } },
+        { id: "opt-3", text: { en: "70.7 V", hi: "70.7 V", bn: "৭০.৭ V" } },
+        { id: "opt-4", text: { en: "100.0 V", hi: "100.0 V", bn: "১০০.০ V" } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: "opt-2",
       explanation: {
-        en: 'V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.66 V ≈ 63.7 V.',
-        hi: 'V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.7 V।',
-        bn: 'V_dc,avg = (২ · E_m) / π = (২ × ১০০) / ৩.১৪১৬ ≈ ৬৩.৭ ভোল্ট।'
+        en: "V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.66 V ≈ 63.7 V.",
+        hi: "V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.7 V।",
+        bn: "V_dc,avg = (২ · E_m) / π = (২ × ১০০) / ৩.১৪১৬ ≈ ৬৩.৭ ভোল্ট।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-03",
+      question: {
+        en: "What is the primary operational function of the split-ring commutator in an elementary DC generator?",
+        hi: "एक बुनियादी डीसी जनरेटर में स्प्लिट-रिंग कम्यूटेटर का मुख्य कार्य क्या है?",
+        bn: "একটি প্রাথমিক ডিসি জেনারেটরে স্প্লিট-রিং কমিউটেটরের মূল কার্যকরী ভূমিকা কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It mechanically rectifies internal AC into pulsating unidirectional DC by reversing the coil connection to the external circuit every half-turn", hi: "यह प्रत्येक आधे चक्कर में बाहरी परिपथ से कनेक्शन को बदलकर आंतरिक एसी को एकदिशीय डीसी में यांत्रिक रूप से रेक्टिफाई करता है", bn: "এটি প্রতি অর্ধ-ঘূর্ণনে সংযোগ উল্টে দিয়ে অভ্যন্তরীণ এসি ভোল্টেজকে বহিঃস্থ বর্তনীর জন্য একমুখী ডিসি ভোল্টেজে রূপান্তর করে" } },
+        { id: "opt-2", text: { en: "It increases the magnetic flux of the stator", hi: "यह स्टेटर के चुंबकीय फ्लक्स को बढ़ाता है", bn: "এটি স্টেটের চৌম্বক ফ্লাক্স বৃদ্ধি করে" } },
+        { id: "opt-3", text: { en: "It steps up the generated voltage by 100 times", hi: "यह उत्पन्न वोल्टेज को 100 गुना बढ़ाता है", bn: "এটি উৎপন্ন ভোল্টেজ ১০০ গুণ বাড়িয়ে দেয়" } },
+        { id: "opt-4", text: { en: "It provides cooling air to the bearings", hi: "यह बियरिंग्स को ठंडी हवा देता है", bn: "এটি বিয়ারিংয়ে ঠান্ডা বাতাস জোগায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The commutator acts as a mechanical synchronous inverter/rectifier switch that swaps brush connections at the magnetic neutral plane, keeping the output terminal polarity constant.",
+        hi: "कम्यूटेटर यांत्रिक रेक्टिफायर के रूप में कार्य करता है जो ब्रश कनेक्शन को ठीक समय पर बदलकर बाहरी लोड को हमेशा एक ही दिशा में धारा देता है।",
+        bn: "কমিউটেটর একটি যান্ত্রিক রেকটিফায়ার হিসেবে কাজ করে যা ব্রাশ সংযোগ অদলবদল করে বহিঃস্থ লোডে সর্বদা একইমুখী ডিসি কারেন্ট নিশ্চিত করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-04",
+      question: {
+        en: "At what precise moment during armature rotation do the stationary carbon brushes cross the insulating gap between commutator segments?",
+        hi: "आर्मेचर के घूमने के दौरान स्थिर कार्बन ब्रश कम्यूटेटर सेगमेंट के बीच की इंसुलेटिंग गैप को ठीक किस समय पार करते हैं?",
+        bn: "আর্মেচার ঘূর্ণনের সময় স্থির কার্বন ব্রাশগুলো ঠিক কোন মুহূর্তে কমিউটেটর সেগমেন্টের মধ্যবর্তী ইনসুলেটিং ফাঁক অতিক্রম করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "When the coil passes through the Magnetic Neutral Axis (MNA) where induced EMF is instantaneously zero", hi: "जब कॉइल चुंबकीय तटस्थ अक्ष (MNA) से गुजरती है जहाँ प्रेरित EMF शून्य होता है", bn: "কয়েলটি যখন ম্যাগনেটিক নিউট্রাল অক্ষ (MNA) অতিক্রম করে যেখানে আবিষ্ট EMF শূন্য থাকে" } },
+        { id: "opt-2", text: { en: "When induced EMF is at its maximum peak value", hi: "जब प्रेरित EMF अधिकतम शिखर पर होता है", bn: "যখন আবিষ্ট EMF সর্বোচ্চ শীর্ষ মানে থাকে" } },
+        { id: "opt-3", text: { en: "When armature speed reaches zero", hi: "जब आर्मेचर की गति शून्य होती है", bn: "যখন আর্মেচারের গতি শূন্যে নেমে আসে" } },
+        { id: "opt-4", text: { en: "Continuously at all angles without pause", hi: "बिना रुके हर कोण पर लगातार", bn: "কোনো বিরতি ছাড়া সমস্ত কোণ জুড়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Commutation occurs at the Magnetic Neutral Axis where coil EMF is zero. This prevents momentary short-circuit spark damage across the brush face.",
+        hi: "कम्यूटेशन न्यूट्रल अक्ष (MNA) पर होता है जहाँ EMF शून्य होता है ताकि ब्रश शॉर्ट होने पर स्पार्किंग न हो।",
+        bn: "কমিউটেশন ম্যাগনেটিক নিউট্রাল অক্ষে (MNA) ঘটে যেখানে EMF শূন্য থাকে, ফলে ব্রাশ শর্ট হলেও স্পার্কিং হয় না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-05",
+      question: {
+        en: "How is the high ripple voltage of an elementary single-coil DC generator smoothed into virtually steady DC in practical industrial machines?",
+        hi: "एक साधारण सिंगल-कॉइल डीसी जनरेटर के अत्यधिक रिपल (कंपन) को व्यावहारिक मशीनों में स्थिर डीसी में कैसे बदला जाता है?",
+        bn: "একটি সাধারণ সিঙ্গেল-কয়েল ডিসি জেনারেটরের অতিরিক্ত রিপল ভোল্টেজকে বাস্তব শিল্প জেনারেটরে কীভাবে মসৃণ ডিসিতে পরিণত করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "By using many armature coils distributed around the periphery connected to a multi-segment commutator", hi: "परिधि पर कई कॉइल्स को बांटकर उन्हें बहु-सेगमेंट कम्यूटेटर से जोड़कर", bn: "পরিধি জুড়ে বহুসংখ্যক আর্মেচার কয়েল স্থাপন করে বহু-সেগমেন্ট বিশিষ্ট কমিউটেটরে যুক্ত করার মাধ্যমে" } },
+        { id: "opt-2", text: { en: "By increasing brush spring tension tenfold", hi: "ब्रश के स्प्रिंग का तनाव 10 गुना बढ़ाकर", bn: "ব্রাশের স্প্রিং টান ১০ গুণ বৃদ্ধি করে" } },
+        { id: "opt-3", text: { en: "By immersing the commutator in lubricating oil", hi: "कम्यूटेटर को तेल में डुबोकर", bn: "কমিউটেটরকে তেলে ডুবিয়ে রেখে" } },
+        { id: "opt-4", text: { en: "By spinning the generator backward", hi: "जनरेटर को उल्टी दिशा में चलाकर", bn: "জেনারেটরকে উল্টো দিকে ঘুরিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Distributing dozens of overlapping coils around the armature core connects each coil to its own commutator bar pair, producing overlapping sine waves that sum into an almost flat DC line with <1% ripple.",
+        hi: "अनेक कॉइल्स और बहु-सेगमेंट कम्यूटेटर का उपयोग करने से अलग-अलग तरंगें जुड़कर लगभग पूर्णतः स्थिर डीसी वोल्टेज बनाती हैं।",
+        bn: "একাধিক কয়েল ও বহু-সেগমেন্টের কমিউটেটর ব্যবহার করলে উপরিপাতিত তরঙ্গের সমষ্টি প্রায় সম্পূর্ণ সোজা ও মসৃণ ডিসি লাইন দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-06",
+      question: {
+        en: "What detrimental physical effect occurs during heavy load operation of a DC generator if armature reaction is not compensated?",
+        hi: "यदि आर्मेचर प्रतिक्रिया की भरपाई न की जाए, तो डीसी जनरेटर पर भारी लोड पड़ने पर कौन सा हानिकारक प्रभाव पड़ता है?",
+        bn: "আর্মেচার প্রতিক্রিয়া প্রশমিত না করা হলে ভারী লোডের সময় ডিসি জেনারেটরে কোন ক্ষতিকর প্রভাব দেখা যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The magnetic neutral axis shifts in the direction of rotation, causing severe sparking at the brushes", hi: "चुंबकीय तटस्थ अक्ष घूमने की दिशा में खिसक जाता है, जिससे ब्रश पर भारी स्पार्किंग होती है", bn: "ম্যাগনেটিক নিউট্রাল অক্ষ ঘূর্ণনের দিকে সরে যায়, ফলে ব্রাশে তীব্র ক্ষতিকর স্পার্কিং হয়" } },
+        { id: "opt-2", text: { en: "The commutator segments turn permanently into glass", hi: "कम्यूटेटर सेगमेंट कांच बन जाते हैं", bn: "কমিউটেটরের তামার পাত কাচে রূপান্তরিত হয়" } },
+        { id: "opt-3", text: { en: "The field magnets demagnetize completely in 1 millisecond", hi: "चुंबक 1 मिलीसेकंड में पूरी तरह निष्क्रिय हो जाते हैं", bn: "১ মিলিসেকেন্ডে ফিল্ড ম্যাগনেট অকেজো হয়" } },
+        { id: "opt-4", text: { en: "Output voltage drops to exactly zero volts immediately", hi: "आउटपुट तुरंत शून्य वोल्ट हो जाता है", bn: "আউটপুট সাথে সাথে শূন্য ভোল্ট হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Armature cross-magnetization distorts the main flux and shifts the Magnetic Neutral Axis (MNA) forward in the direction of rotation, shorting coils with active EMF and producing destructive brush sparking.",
+        hi: "आर्मेचर धारा मुख्य फ्लक्स को विकृत कर देती है जिससे MNA घूमने की दिशा में आगे बढ़ जाता है और ब्रश पर भारी स्पार्क होता है।",
+        bn: "আর্মেচার কারেন্ট মূল ফ্লাক্সকে বিকৃত করে MNA কে ঘূর্ণনের দিকে সরিয়ে দেয়, ফলে কয়েলে ভোল্টেজ থাকা অবস্থাতেই ব্রাশ শর্ট হয়ে স্পার্ক সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-07",
+      question: {
+        en: "What auxiliary components are installed in modern DC generators between the main poles to eliminate brush sparking caused by armature reaction and coil inductance?",
+        hi: "आर्मेचर प्रतिक्रिया और कॉइल प्रेरकत्व से होने वाली स्पार्किंग को रोकने के लिए आधुनिक डीसी मशीनों में मुख्य ध्रुवों के बीच कौन से घटक लगाए जाते हैं?",
+        bn: "আর্মেচার প্রতিক্রিয়া ও কয়েল আবেশাঙ্কের কারণে সৃষ্ট স্পার্কিং রোধে আধুনিক ডিসি মেশিনে প্রধান মেরুগুলোর মাঝে কী বসানো হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Interpoles (commutating poles) carrying armature current in series", hi: "इंटरपोल (कम्यूटेटिंग पोल) जो श्रेणीक्रम में आर्मेचर धारा ले जाते हैं", bn: "ইন্টারপোল (বা কমিউটেটিং পোল) যা আর্মেচার কারেন্টের সাথে শ্রেণীতে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "High-speed centrifugal water sprinklers", hi: "पानी छिड़कने वाले स्प्रिंकलर", bn: "উচ্চগতির পানি ছিটানোর স্প্রিংকলার" } },
+        { id: "opt-3", text: { en: "Permanent rubber dampers", hi: "स्थायी रबर डैम्पर", bn: "স্থায়ী রাবার ড্যাম্পার" } },
+        { id: "opt-4", text: { en: "Ceramic spark plugs", hi: "सिरेमिक स्पार्क प्लग", bn: "সিরামিক স্পার্ক প্লাগ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Interpoles (commutating poles) are narrow auxiliary poles positioned between the main poles to neutralize cross-magnetization and induce a rotational EMF that cancels the reactance voltage L(di/dt).",
+        hi: "इंटरपोल मुख्य ध्रुवों के बीच लगाए जाते हैं जो आर्मेचर फ्लक्स को संतुलित करके स्पार्क-रहित कम्यूटेशन प्रदान करते हैं।",
+        bn: "প্রধান মেরুগুলোর মাঝে ইন্টারপোল বসানো হয় যা আড়াআড়ি ফ্লাক্স প্রশমিত করে এবং বিক্রিয়া ভোল্টেজ বাতিল করে নিখুঁত স্পার্কহীন কমিউটেশন দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-08",
+      question: {
+        en: "A single-loop DC generator produces a peak alternating voltage of E_m = 150 V. After split-ring mechanical rectification, what is the average value (V_dc) of the pulsating output waveform?",
+        hi: "एक सिंगल-लूप डीसी जनरेटर 150 V का शिखर एसी वोल्टेज बनाता है। कम्यूटेटर रेक्टिफिकेशन के बाद औसत डीसी वोल्टेज क्या होगा?",
+        bn: "একটি সিঙ্গেল-লুপ ডিসি জেনারেটরে শীর্ষ এসি ভোল্টেজ E_m = ১৫০ V। স্প্লিট-রিং রেকটিফিকেশনের পর স্পন্দিত ডিসি আউটপুটের গড় মান (V_dc) কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "95.5 V", hi: "95.5 V", bn: "৯৫.৫ V" } },
+        { id: "opt-2", text: { en: "106.1 V", hi: "106.1 V", bn: "১০৬.১ V" } },
+        { id: "opt-3", text: { en: "75.0 V", hi: "75.0 V", bn: "৭৫.০ V" } },
+        { id: "opt-4", text: { en: "150.0 V", hi: "150.0 V", bn: "১৫০.০ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "V_avg = (2 / π) · E_m = (2 / 3.14159) × 150 V ≈ 0.6366 × 150 ≈ 95.5 V.",
+        hi: "औसत वोल्टेज V_avg = (2 / π) · E_m = 0.637 × 150 = 95.5 V।",
+        bn: "গড় ভোল্টেজ V_avg = (২ / π) · E_m = ০.৬৩৭ × ১৫০ = ৯৫.৫ V।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-dcgen-1",
+      question: {
+        en: "What type of voltage is intrinsically generated inside the armature conductors of any rotating DC generator?",
+        hi: "किसी भी घूर्णनशील डीसी जनरेटर के आर्मेचर चालकों के भीतर स्वाभाविक रूप से किस प्रकार का वोल्टेज उत्पन्न होता है?",
+        bn: "ঘূর্ণনশীল যে কোনো ডিসি জেনারেটরের আর্মেচার কন্ডাক্টরের অভ্যন্তরে প্রকৃতপক্ষে কোন ধরনের ভোল্টেজ আবিষ্ট হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Pure steady ripple-free Direct Current (DC)", hi: "शुद्ध स्थिर रिपल-रहित दिष्ट धारा (DC)", bn: "বিশুদ্ধ স্থির রিপলহীন ডিসি ভোল্টেজ" } },
+        { id: "opt-2", text: { en: "Alternating Current (AC)", hi: "प्रत्यावर्ती धारा (AC)", bn: "অল্টারনেটিং বা দিক-পরিবর্তী ভোল্টেজ (AC)" } },
+        { id: "opt-3", text: { en: "Square wave DC", hi: "वर्गाकार तरंग DC", bn: "স্কয়ার ওয়েভ ডিসি" } },
+        { id: "opt-4", text: { en: "Triangular wave voltage", hi: "त्रिभुजाकार तरंग वोल्टेज", bn: "ত্রিভুজাকার ভোল্টেজ" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "Inside every rotating generator armature, conductors cut alternating North and South polarities, so the intrinsically generated EMF is always alternating (AC). The commutator mechanically rectifies it to DC at the output terminals.",
+        hi: "आर्मेचर चालक बारी-बारी से उत्तरी और दक्षिणी ध्रुवों के नीचे से गुजरते हैं, इसलिए अंदर हमेशा एसी ही उत्पन्न होती है। कम्यूटेटर इसे बाहर डीसी में बदलता है।",
+        bn: "আর্মেচার কন্ডাক্টরগুলো পালাক্রমে উত্তর ও দক্ষিণ মেরুর মধ্য দিয়ে যাওয়ায় ভেতরে সর্বদা এসি উৎপন্ন হয়। কমিউটেটর যান্ত্রিকভাবে একে বাইরে ডিসিতে রূপান্তর করে।"
+      }
+    },
+    {
+      id: "q-dcgen-2",
+      question: {
+        en: "What is the average DC voltage of a single-loop generator whose peak AC voltage is 100 V?",
+        hi: "100 V शिखर वोल्टेज वाले सिंगल-लूप जनरेटर का औसत डीसी वोल्टेज क्या होगा?",
+        bn: "শীর্ষ ভোল্টেজ ১০০ ভোল্ট হলে একটি সিঙ্গেল-লুপ জেনারেটরের গড় ডিসি ভোল্টেজ কত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "50.0 V", hi: "50.0 V", bn: "৫০.০ V" } },
+        { id: "opt-2", text: { en: "63.7 V", hi: "63.7 V", bn: "৬৩.৭ V" } },
+        { id: "opt-3", text: { en: "70.7 V", hi: "70.7 V", bn: "৭০.৭ V" } },
+        { id: "opt-4", text: { en: "100.0 V", hi: "100.0 V", bn: "১০০.০ V" } }
+      ],
+      correctOptionId: "opt-2",
+      explanation: {
+        en: "V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.66 V ≈ 63.7 V.",
+        hi: "V_dc,avg = (2 · E_m) / π = (2 × 100) / 3.1416 ≈ 63.7 V।",
+        bn: "V_dc,avg = (২ · E_m) / π = (২ × ১০০) / ৩.১৪১৬ ≈ ৬৩.৭ ভোল্ট।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-03",
+      question: {
+        en: "What is the primary operational function of the split-ring commutator in an elementary DC generator?",
+        hi: "एक बुनियादी डीसी जनरेटर में स्प्लिट-रिंग कम्यूटेटर का मुख्य कार्य क्या है?",
+        bn: "একটি প্রাথমিক ডিসি জেনারেটরে স্প্লিট-রিং কমিউটেটরের মূল কার্যকরী ভূমিকা কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It mechanically rectifies internal AC into pulsating unidirectional DC by reversing the coil connection to the external circuit every half-turn", hi: "यह प्रत्येक आधे चक्कर में बाहरी परिपथ से कनेक्शन को बदलकर आंतरिक एसी को एकदिशीय डीसी में यांत्रिक रूप से रेक्टिफाई करता है", bn: "এটি প্রতি অর্ধ-ঘূর্ণনে সংযোগ উল্টে দিয়ে অভ্যন্তরীণ এসি ভোল্টেজকে বহিঃস্থ বর্তনীর জন্য একমুখী ডিসি ভোল্টেজে রূপান্তর করে" } },
+        { id: "opt-2", text: { en: "It increases the magnetic flux of the stator", hi: "यह स्टेटर के चुंबकीय फ्लक्स को बढ़ाता है", bn: "এটি স্টেটের চৌম্বক ফ্লাক্স বৃদ্ধি করে" } },
+        { id: "opt-3", text: { en: "It steps up the generated voltage by 100 times", hi: "यह उत्पन्न वोल्टेज को 100 गुना बढ़ाता है", bn: "এটি উৎপন্ন ভোল্টেজ ১০০ গুণ বাড়িয়ে দেয়" } },
+        { id: "opt-4", text: { en: "It provides cooling air to the bearings", hi: "यह बियरिंग्स को ठंडी हवा देता है", bn: "এটি বিয়ারিংয়ে ঠান্ডা বাতাস জোগায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The commutator acts as a mechanical synchronous inverter/rectifier switch that swaps brush connections at the magnetic neutral plane, keeping the output terminal polarity constant.",
+        hi: "कम्यूटेटर यांत्रिक रेक्टिफायर के रूप में कार्य करता है जो ब्रश कनेक्शन को ठीक समय पर बदलकर बाहरी लोड को हमेशा एक ही दिशा में धारा देता है।",
+        bn: "কমিউটেটর একটি যান্ত্রিক রেকটিফায়ার হিসেবে কাজ করে যা ব্রাশ সংযোগ অদলবদল করে বহিঃস্থ লোডে সর্বদা একইমুখী ডিসি কারেন্ট নিশ্চিত করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-04",
+      question: {
+        en: "At what precise moment during armature rotation do the stationary carbon brushes cross the insulating gap between commutator segments?",
+        hi: "आर्मेचर के घूमने के दौरान स्थिर कार्बन ब्रश कम्यूटेटर सेगमेंट के बीच की इंसुलेटिंग गैप को ठीक किस समय पार करते हैं?",
+        bn: "আর্মেচার ঘূর্ণনের সময় স্থির কার্বন ব্রাশগুলো ঠিক কোন মুহূর্তে কমিউটেটর সেগমেন্টের মধ্যবর্তী ইনসুলেটিং ফাঁক অতিক্রম করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "When the coil passes through the Magnetic Neutral Axis (MNA) where induced EMF is instantaneously zero", hi: "जब कॉइल चुंबकीय तटस्थ अक्ष (MNA) से गुजरती है जहाँ प्रेरित EMF शून्य होता है", bn: "কয়েলটি যখন ম্যাগনেটিক নিউট্রাল অক্ষ (MNA) অতিক্রম করে যেখানে আবিষ্ট EMF শূন্য থাকে" } },
+        { id: "opt-2", text: { en: "When induced EMF is at its maximum peak value", hi: "जब प्रेरित EMF अधिकतम शिखर पर होता है", bn: "যখন আবিষ্ট EMF সর্বোচ্চ শীর্ষ মানে থাকে" } },
+        { id: "opt-3", text: { en: "When armature speed reaches zero", hi: "जब आर्मेचर की गति शून्य होती है", bn: "যখন আর্মেচারের গতি শূন্যে নেমে আসে" } },
+        { id: "opt-4", text: { en: "Continuously at all angles without pause", hi: "बिना रुके हर कोण पर लगातार", bn: "কোনো বিরতি ছাড়া সমস্ত কোণ জুড়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Commutation occurs at the Magnetic Neutral Axis where coil EMF is zero. This prevents momentary short-circuit spark damage across the brush face.",
+        hi: "कम्यूटेशन न्यूट्रल अक्ष (MNA) पर होता है जहाँ EMF शून्य होता है ताकि ब्रश शॉर्ट होने पर स्पार्किंग न हो।",
+        bn: "কমিউটেশন ম্যাগনেটিক নিউট্রাল অক্ষে (MNA) ঘটে যেখানে EMF শূন্য থাকে, ফলে ব্রাশ শর্ট হলেও স্পার্কিং হয় না।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-05",
+      question: {
+        en: "How is the high ripple voltage of an elementary single-coil DC generator smoothed into virtually steady DC in practical industrial machines?",
+        hi: "एक साधारण सिंगल-कॉइल डीसी जनरेटर के अत्यधिक रिपल (कंपन) को व्यावहारिक मशीनों में स्थिर डीसी में कैसे बदला जाता है?",
+        bn: "একটি সাধারণ সিঙ্গেল-কয়েল ডিসি জেনারেটরের অতিরিক্ত রিপল ভোল্টেজকে বাস্তব শিল্প জেনারেটরে কীভাবে মসৃণ ডিসিতে পরিণত করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "By using many armature coils distributed around the periphery connected to a multi-segment commutator", hi: "परिधि पर कई कॉइल्स को बांटकर उन्हें बहु-सेगमेंट कम्यूटेटर से जोड़कर", bn: "পরিধি জুড়ে বহুসংখ্যক আর্মেচার কয়েল স্থাপন করে বহু-সেগমেন্ট বিশিষ্ট কমিউটেটরে যুক্ত করার মাধ্যমে" } },
+        { id: "opt-2", text: { en: "By increasing brush spring tension tenfold", hi: "ब्रश के स्प्रिंग का तनाव 10 गुना बढ़ाकर", bn: "ব্রাশের স্প্রিং টান ১০ গুণ বৃদ্ধি করে" } },
+        { id: "opt-3", text: { en: "By immersing the commutator in lubricating oil", hi: "कम्यूटेटर को तेल में डुबोकर", bn: "কমিউটেটরকে তেলে ডুবিয়ে রেখে" } },
+        { id: "opt-4", text: { en: "By spinning the generator backward", hi: "जनरेटर को उल्टी दिशा में चलाकर", bn: "জেনারেটরকে উল্টো দিকে ঘুরিয়ে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Distributing dozens of overlapping coils around the armature core connects each coil to its own commutator bar pair, producing overlapping sine waves that sum into an almost flat DC line with <1% ripple.",
+        hi: "अनेक कॉइल्स और बहु-सेगमेंट कम्यूटेटर का उपयोग करने से अलग-अलग तरंगें जुड़कर लगभग पूर्णतः स्थिर डीसी वोल्टेज बनाती हैं।",
+        bn: "একাধিক কয়েল ও বহু-সেগমেন্টের কমিউটেটর ব্যবহার করলে উপরিপাতিত তরঙ্গের সমষ্টি প্রায় সম্পূর্ণ সোজা ও মসৃণ ডিসি লাইন দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-06",
+      question: {
+        en: "What detrimental physical effect occurs during heavy load operation of a DC generator if armature reaction is not compensated?",
+        hi: "यदि आर्मेचर प्रतिक्रिया की भरपाई न की जाए, तो डीसी जनरेटर पर भारी लोड पड़ने पर कौन सा हानिकारक प्रभाव पड़ता है?",
+        bn: "আর্মেচার প্রতিক্রিয়া প্রশমিত না করা হলে ভারী লোডের সময় ডিসি জেনারেটরে কোন ক্ষতিকর প্রভাব দেখা যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The magnetic neutral axis shifts in the direction of rotation, causing severe sparking at the brushes", hi: "चुंबकीय तटस्थ अक्ष घूमने की दिशा में खिसक जाता है, जिससे ब्रश पर भारी स्पार्किंग होती है", bn: "ম্যাগনেটিক নিউট্রাল অক্ষ ঘূর্ণনের দিকে সরে যায়, ফলে ব্রাশে তীব্র ক্ষতিকর স্পার্কিং হয়" } },
+        { id: "opt-2", text: { en: "The commutator segments turn permanently into glass", hi: "कम्यूटेटर सेगमेंट कांच बन जाते हैं", bn: "কমিউটেটরের তামার পাত কাচে রূপান্তরিত হয়" } },
+        { id: "opt-3", text: { en: "The field magnets demagnetize completely in 1 millisecond", hi: "चुंबक 1 मिलीसेकंड में पूरी तरह निष्क्रिय हो जाते हैं", bn: "১ মিলিসেকেন্ডে ফিল্ড ম্যাগনেট অকেজো হয়" } },
+        { id: "opt-4", text: { en: "Output voltage drops to exactly zero volts immediately", hi: "आउटपुट तुरंत शून्य वोल्ट हो जाता है", bn: "আউটপুট সাথে সাথে শূন্য ভোল্ট হয়ে যায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Armature cross-magnetization distorts the main flux and shifts the Magnetic Neutral Axis (MNA) forward in the direction of rotation, shorting coils with active EMF and producing destructive brush sparking.",
+        hi: "आर्मेचर धारा मुख्य फ्लक्स को विकृत कर देती है जिससे MNA घूमने की दिशा में आगे बढ़ जाता है और ब्रश पर भारी स्पार्क होता है।",
+        bn: "আর্মেচার কারেন্ট মূল ফ্লাক্সকে বিকৃত করে MNA কে ঘূর্ণনের দিকে সরিয়ে দেয়, ফলে কয়েলে ভোল্টেজ থাকা অবস্থাতেই ব্রাশ শর্ট হয়ে স্পার্ক সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-07",
+      question: {
+        en: "What auxiliary components are installed in modern DC generators between the main poles to eliminate brush sparking caused by armature reaction and coil inductance?",
+        hi: "आर्मेचर प्रतिक्रिया और कॉइल प्रेरकत्व से होने वाली स्पार्किंग को रोकने के लिए आधुनिक डीसी मशीनों में मुख्य ध्रुवों के बीच कौन से घटक लगाए जाते हैं?",
+        bn: "আর্মেচার প্রতিক্রিয়া ও কয়েল আবেশাঙ্কের কারণে সৃষ্ট স্পার্কিং রোধে আধুনিক ডিসি মেশিনে প্রধান মেরুগুলোর মাঝে কী বসানো হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Interpoles (commutating poles) carrying armature current in series", hi: "इंटरपोल (कम्यूटेटिंग पोल) जो श्रेणीक्रम में आर्मेचर धारा ले जाते हैं", bn: "ইন্টারপোল (বা কমিউটেটিং পোল) যা আর্মেচার কারেন্টের সাথে শ্রেণীতে যুক্ত থাকে" } },
+        { id: "opt-2", text: { en: "High-speed centrifugal water sprinklers", hi: "पानी छिड़कने वाले स्प्रिंकलर", bn: "উচ্চগতির পানি ছিটানোর স্প্রিংকলার" } },
+        { id: "opt-3", text: { en: "Permanent rubber dampers", hi: "स्थायी रबर डैम्पर", bn: "স্থায়ী রাবার ড্যাম্পার" } },
+        { id: "opt-4", text: { en: "Ceramic spark plugs", hi: "सिरेमिक स्पार्क प्लग", bn: "সিরামিক স্পার্ক প্লাগ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Interpoles (commutating poles) are narrow auxiliary poles positioned between the main poles to neutralize cross-magnetization and induce a rotational EMF that cancels the reactance voltage L(di/dt).",
+        hi: "इंटरपोल मुख्य ध्रुवों के बीच लगाए जाते हैं जो आर्मेचर फ्लक्स को संतुलित करके स्पार्क-रहित कम्यूटेशन प्रदान करते हैं।",
+        bn: "প্রধান মেরুগুলোর মাঝে ইন্টারপোল বসানো হয় যা আড়াআড়ি ফ্লাক্স প্রশমিত করে এবং বিক্রিয়া ভোল্টেজ বাতিল করে নিখুঁত স্পার্কহীন কমিউটেশন দেয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l12-08",
+      question: {
+        en: "A single-loop DC generator produces a peak alternating voltage of E_m = 150 V. After split-ring mechanical rectification, what is the average value (V_dc) of the pulsating output waveform?",
+        hi: "एक सिंगल-लूप डीसी जनरेटर 150 V का शिखर एसी वोल्टेज बनाता है। कम्यूटेटर रेक्टिफिकेशन के बाद औसत डीसी वोल्टेज क्या होगा?",
+        bn: "একটি সিঙ্গেল-লুপ ডিসি জেনারেটরে শীর্ষ এসি ভোল্টেজ E_m = ১৫০ V। স্প্লিট-রিং রেকটিফিকেশনের পর স্পন্দিত ডিসি আউটপুটের গড় মান (V_dc) কত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "95.5 V", hi: "95.5 V", bn: "৯৫.৫ V" } },
+        { id: "opt-2", text: { en: "106.1 V", hi: "106.1 V", bn: "১০৬.১ V" } },
+        { id: "opt-3", text: { en: "75.0 V", hi: "75.0 V", bn: "৭৫.০ V" } },
+        { id: "opt-4", text: { en: "150.0 V", hi: "150.0 V", bn: "১৫০.০ V" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "V_avg = (2 / π) · E_m = (2 / 3.14159) × 150 V ≈ 0.6366 × 150 ≈ 95.5 V.",
+        hi: "औसत वोल्टेज V_avg = (2 / π) · E_m = 0.637 × 150 = 95.5 V।",
+        bn: "গড় ভোল্টেজ V_avg = (২ / π) · E_m = ০.৬৩৭ × ১৫০ = ৯৫.৫ V।"
       }
     }
   ],

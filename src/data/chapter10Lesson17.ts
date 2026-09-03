@@ -294,163 +294,325 @@ Step 4: Calculate time required at 120 kW (120,000 J/s):
   ],
   mcqs: [
     {
-      id: 'mcq-ch10-l17-1',
+      id: "mcq-ch10-l17-1",
       question: {
-        en: 'What is the primary mechanism of heat generation in a conductive metallic workpiece during electromagnetic induction heating?',
-        hi: 'विद्युत-चुंबकीय प्रेरण तापन के दौरान चालक धातु वर्कपीस में ऊष्मा उत्पादन का प्राथमिक तंत्र क्या है?',
-        bn: 'তড়িৎচৌম্বকীয় আবেশ উত্তাপনের সময় পরিবাহী ধাতব বস্তুতে তাপ উৎপাদনের প্রাথমিক প্রক্রিয়া কোনটি?'
+        en: "What is the primary mechanism of heat generation in a conductive metallic workpiece during electromagnetic induction heating?",
+        hi: "विद्युत-चुंबकीय प्रेरण तापन के दौरान चालक धातु वर्कपीस में ऊष्मा उत्पादन का प्राथमिक तंत्र क्या है?",
+        bn: "তড়িৎচৌম্বকীয় আবেশ উত্তাপনের সময় পরিবাহী ধাতব বস্তুতে তাপ উৎপাদনের প্রাথমিক প্রক্রিয়া কোনটি?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Joule heating produced by induced closed-loop eddy currents (I²R losses)', hi: 'प्रेरित बंद-लूप भंवर धाराओं द्वारा उत्पन्न जूल तापन (I²R हानियां)', bn: 'আবিষ্ট লুপ এডি কারেন্ট দ্বারা উৎপন্ন জুল তাপ (I²R অপচয়)' } },
-        { id: 'opt-2', text: { en: 'Thermal conduction of hot gases leaking from the copper coil', hi: 'तांबे की कुण्डली से गर्म गैसों का रिसाव', bn: 'কয়েল থেকে নির্গত গরম গ্যাসের পরিচলন' } },
-        { id: 'opt-3', text: { en: 'Nuclear fission of surface atoms in the billet', hi: 'बिलेट के सतही परमाणुओं का परमाणु विखंडन', bn: 'পৃষ্ঠতলের পরমাণুর পারমাণবিক বিভাজন' } },
-        { id: 'opt-4', text: { en: 'Frictional rubbing between coil turns and the workpiece', hi: 'कुण्डली और वर्कपीस के बीच घर्षण', bn: 'কয়েল এবং ধাতব বস্তুর পারস্পরিক ঘর্ষণ' } }
+        { id: "opt-1", text: { en: "Joule heating produced by induced closed-loop eddy currents (I²R losses)", hi: "प्रेरित बंद-लूप भंवर धाराओं द्वारा उत्पन्न जूल तापन (I²R हानियां)", bn: "আবিষ্ট লুপ এডি কারেন্ট দ্বারা উৎপন্ন জুল তাপ (I²R অপচয়)" } },
+        { id: "opt-2", text: { en: "Thermal conduction of hot gases leaking from the copper coil", hi: "तांबे की कुण्डली से गर्म गैसों का रिसाव", bn: "কয়েল থেকে নির্গত গরম গ্যাসের পরিচলন" } },
+        { id: "opt-3", text: { en: "Nuclear fission of surface atoms in the billet", hi: "बिलेट के सतही परमाणुओं का परमाणु विखंडन", bn: "পৃষ্ঠতলের পরমাণুর পারমাণবিক বিভাজন" } },
+        { id: "opt-4", text: { en: "Frictional rubbing between coil turns and the workpiece", hi: "कुण्डली और वर्कपीस के बीच घर्षण", bn: "কয়েল এবং ধাতব বস্তুর পারস্পরিক ঘর্ষণ" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The alternating magnetic field induces closed eddy currents inside the conductive metal; electrical resistance converts this current into intense Joule heat (P = I²R).',
-        hi: 'बदलता चुंबकीय क्षेत्र धातु के अंदर भंवर धाराएं प्रेरित करता है; धातु का प्रतिरोध इसे जूल ऊष्मा (I²R) में बदल देता है।',
-        bn: 'পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট আবিষ্ট করে; ধাতুর রোধের ফলে জুল তাপ (I²R) উৎপন্ন হয়।'
+        en: "The alternating magnetic field induces closed eddy currents inside the conductive metal; electrical resistance converts this current into intense Joule heat (P = I²R).",
+        hi: "बदलता चुंबकीय क्षेत्र धातु के अंदर भंवर धाराएं प्रेरित करता है; धातु का प्रतिरोध इसे जूल ऊष्मा (I²R) में बदल देता है।",
+        bn: "পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট আবিষ্ট করে; ধাতুর রোধের ফলে জুল তাপ (I²R) উৎপন্ন হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l17-2',
+      id: "mcq-ch10-l17-2",
       question: {
-        en: 'If the alternating frequency of an induction heating power supply is increased by a factor of 4, the skin depth δ in the workpiece will:',
-        hi: 'यदि प्रेरण तापन विद्युत आपूर्ति की आवृत्ति को 4 गुना बढ़ा दिया जाए, तो स्किन डेप्थ δ होगी:',
-        bn: 'একটি ইন্ডাকশন হিটিং পাওয়ার সাপ্লাইয়ের কম্পাঙ্ক ৪ গুণ বৃদ্ধি করা হলে স্কিন ডেপথ δ কত হবে?'
+        en: "If the alternating frequency of an induction heating power supply is increased by a factor of 4, the skin depth δ in the workpiece will:",
+        hi: "यदि प्रेरण तापन विद्युत आपूर्ति की आवृत्ति को 4 गुना बढ़ा दिया जाए, तो स्किन डेप्थ δ होगी:",
+        bn: "একটি ইন্ডাকশন হিটিং পাওয়ার সাপ্লাইয়ের কম্পাঙ্ক ৪ গুণ বৃদ্ধি করা হলে স্কিন ডেপথ δ কত হবে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Halve (decrease to 1/2 of original)', hi: 'आधी रह जाएगी (1/2)', bn: 'অর্ধেক হবে (আগের মানের ১/২)' } },
-        { id: 'opt-2', text: { en: 'Double (increase by 2x)', hi: 'दोगुनी हो जाएगी (2x)', bn: 'দ্বিগুণ হবে (২ গুণ বৃদ্ধি)' } },
-        { id: 'opt-3', text: { en: 'Quarter (decrease to 1/4 of original)', hi: 'एक-चौथाई रह जाएगी (1/4)', bn: 'এক-চতুর্থাংশ হবে (১/৪)' } },
-        { id: 'opt-4', text: { en: 'Remain strictly unchanged', hi: 'अपरिवर्तित रहेगी', bn: 'সম্পূর্ণ অপরিবর্তিত থাকবে' } }
+        { id: "opt-1", text: { en: "Halve (decrease to 1/2 of original)", hi: "आधी रह जाएगी (1/2)", bn: "অর্ধেক হবে (আগের মানের ১/২)" } },
+        { id: "opt-2", text: { en: "Double (increase by 2x)", hi: "दोगुनी हो जाएगी (2x)", bn: "দ্বিগুণ হবে (২ গুণ বৃদ্ধি)" } },
+        { id: "opt-3", text: { en: "Quarter (decrease to 1/4 of original)", hi: "एक-चौथाई रह जाएगी (1/4)", bn: "এক-চতুর্থাংশ হবে (১/৪)" } },
+        { id: "opt-4", text: { en: "Remain strictly unchanged", hi: "अपरिवर्तित रहेगी", bn: "সম্পূর্ণ অপরিবর্তিত থাকবে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. Increasing f by 4 reduces δ to 1/√4 = 1/2 of its initial value.',
-        hi: 'स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 4 गुना करने पर गहराई 1/√4 = 1/2 रह जाती है।',
-        bn: 'স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক (δ ∝ ১/√f)। কম্পাঙ্ক ৪ গুণ বাড়ালে গভীরতা ১/√৪ = ১/২ হয়ে যায়।'
+        en: "Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. Increasing f by 4 reduces δ to 1/√4 = 1/2 of its initial value.",
+        hi: "स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 4 गुना करने पर गहराई 1/√4 = 1/2 रह जाती है।",
+        bn: "স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক (δ ∝ ১/√f)। কম্পাঙ্ক ৪ গুণ বাড়ালে গভীরতা ১/√৪ = ১/২ হয়ে যায়।"
       }
     },
     {
-      id: 'mcq-ch10-l17-3',
+      id: "mcq-ch10-l17-3",
       question: {
-        en: 'What critical physical transition occurs when a carbon steel billet in an induction furnace passes through its Curie temperature (~770°C)?',
-        hi: 'जब प्रेरण भट्टी में कार्बन स्टील बिलेट अपने क्यूरी तापमान (~770°C) से ऊपर जाता है तो कौन सा महत्वपूर्ण भौतिक परिवर्तन होता है?',
-        bn: 'একটি কার্বন স্টিল বিলেট ইন্ডাকশন ফার্নেসে কুরি তাপমাত্রা (~৭৭০°C) অতিক্রম করলে কোন ভৌত পরিবর্তনটি ঘটে?'
+        en: "What critical physical transition occurs when a carbon steel billet in an induction furnace passes through its Curie temperature (~770°C)?",
+        hi: "जब प्रेरण भट्टी में कार्बन स्टील बिलेट अपने क्यूरी तापमान (~770°C) से ऊपर जाता है तो कौन सा महत्वपूर्ण भौतिक परिवर्तन होता है?",
+        bn: "একটি কার্বন স্টিল বিলেট ইন্ডাকশন ফার্নেসে কুরি তাপমাত্রা (~৭৭০°C) অতিক্রম করলে কোন ভৌত পরিবর্তনটি ঘটে?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Relative permeability collapses from μ_r ≈ 150 to μ_r = 1, abruptly increasing skin depth and halting hysteresis heating', hi: 'चुंबकशीलता μ_r ≈ 150 से गिरकर 1 हो जाती है, स्किन डेप्थ बढ़ जाती है और हिस्टेरेसिस तापन समाप्त हो जाता है', bn: 'আপেক্ষিক ভেদ্যতা μ_r ১৫০ থেকে কমে ১ হয়, স্কিন ডেপথ হঠাৎ বৃদ্ধি পায় এবং হিস্টেরেসিস বন্ধ হয়' } },
-        { id: 'opt-2', text: { en: 'The metal instantly freezes into diamond ice', hi: 'धातु तुरंत हीरे की तरह जम जाती है', bn: 'ধাতুটি তাৎক্ষণিকভাবে কঠিনে জমে যায়' } },
-        { id: 'opt-3', text: { en: 'The electrical conductivity becomes infinite (superconducting)', hi: 'विद्युत चालकता अनंत (अतिचालक) हो जाती है', bn: 'বৈদ্যুতিক পরিবাহিতা অসীম হয়ে সুপারকন্ডাক্টরে রূপ নেয়' } },
-        { id: 'opt-4', text: { en: 'Eddy currents reverse and flow into the power grid', hi: 'भंवर धाराएं ग्रिड में वापस बहने लगती हैं', bn: 'এডি কারেন্ট উল্টো দিকে প্রবাহিত হয়' } }
+        { id: "opt-1", text: { en: "Relative permeability collapses from μ_r ≈ 150 to μ_r = 1, abruptly increasing skin depth and halting hysteresis heating", hi: "चुंबकशीलता μ_r ≈ 150 से गिरकर 1 हो जाती है, स्किन डेप्थ बढ़ जाती है और हिस्टेरेसिस तापन समाप्त हो जाता है", bn: "আপেক্ষিক ভেদ্যতা μ_r ১৫০ থেকে কমে ১ হয়, স্কিন ডেপথ হঠাৎ বৃদ্ধি পায় এবং হিস্টেরেসিস বন্ধ হয়" } },
+        { id: "opt-2", text: { en: "The metal instantly freezes into diamond ice", hi: "धातु तुरंत हीरे की तरह जम जाती है", bn: "ধাতুটি তাৎক্ষণিকভাবে কঠিনে জমে যায়" } },
+        { id: "opt-3", text: { en: "The electrical conductivity becomes infinite (superconducting)", hi: "विद्युत चालकता अनंत (अतिचालक) हो जाती है", bn: "বৈদ্যুতিক পরিবাহিতা অসীম হয়ে সুপারকন্ডাক্টরে রূপ নেয়" } },
+        { id: "opt-4", text: { en: "Eddy currents reverse and flow into the power grid", hi: "भंवर धाराएं ग्रिड में वापस बहने लगती हैं", bn: "এডি কারেন্ট উল্টো দিকে প্রবাহিত হয়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'At the Curie point, ferromagnetic steel becomes paramagnetic (μ_r = 1). Since δ ∝ 1/√μ, the skin depth widens significantly, and hysteresis losses vanish.',
-        hi: 'क्यूरी बिंदु पर स्टील अचुंबकीय (μ_r = 1) हो जाता है। अतः स्किन डेप्थ बढ़ जाती है तथा हिस्टेरेसिस हानियां समाप्त हो जाती हैं।',
-        bn: 'কুরি তাপমাত্রায় স্টিল প্যারাচৌম্বক হয় (μ_r = ১)। ফলে স্কিন ডেপথ বাড়ে এবং হিস্টেরেসিস ক্ষয় সম্পূর্ণ বন্ধ হয়।'
+        en: "At the Curie point, ferromagnetic steel becomes paramagnetic (μ_r = 1). Since δ ∝ 1/√μ, the skin depth widens significantly, and hysteresis losses vanish.",
+        hi: "क्यूरी बिंदु पर स्टील अचुंबकीय (μ_r = 1) हो जाता है। अतः स्किन डेप्थ बढ़ जाती है तथा हिस्टेरेसिस हानियां समाप्त हो जाती हैं।",
+        bn: "কুরি তাপমাত্রায় স্টিল প্যারাচৌম্বক হয় (μ_r = ১)। ফলে স্কিন ডেপথ বাড়ে এবং হিস্টেরেসিস ক্ষয় সম্পূর্ণ বন্ধ হয়।"
       }
     },
     {
-      id: 'mcq-ch10-l17-4',
+      id: "mcq-ch10-l17-4",
       question: {
-        en: 'Why is water-cooling continuously pumped through the primary copper work coil in an induction furnace?',
-        hi: 'प्रेरण भट्टी की प्राथमिक कॉपर कुण्डली में लगातार ठंडा पानी क्यों प्रवाहित किया जाता है?',
-        bn: 'ইন্ডাকশন ফার্নেসের প্রধান তামার কয়েলের ভেতর দিয়ে কেন সার্বক্ষণিক শীতল পানি প্রবাহিত করা হয়?'
+        en: "Why is water-cooling continuously pumped through the primary copper work coil in an induction furnace?",
+        hi: "प्रेरण भट्टी की प्राथमिक कॉपर कुण्डली में लगातार ठंडा पानी क्यों प्रवाहित किया जाता है?",
+        bn: "ইন্ডাকশন ফার্নেসের প্রধান তামার কয়েলের ভেতর দিয়ে কেন সার্বক্ষণিক শীতল পানি প্রবাহিত করা হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'To remove internal I²R Joule heating from heavy coil currents and prevent the copper coil from melting', hi: 'भारी धारा के कारण होने वाले I²R तापन को हटाकर तांबे की कुण्डली को पिघलने से बचाने के लिए', bn: 'তীব্র কারেন্টের কারণে উৎপন্ন I²R তাপ অপসারণ করে তামার কয়েল গলে যাওয়া প্রতিরোধ করতে' } },
-        { id: 'opt-2', text: { en: 'To chemically lubricate the workpiece inside', hi: 'वर्कपीस को रासायनिक रूप से चिकना करने के लिए', bn: 'ওয়ার্কপিসকে পিচ্ছিল করার জন্য' } },
-        { id: 'opt-3', text: { en: 'To amplify the magnetic flux by 100 times', hi: 'चुंबकीय फ्लक्स को 100 गुना बढ़ाने के लिए', bn: 'চৌম্বক ফ্লাক্স ১০০ গুণ বৃদ্ধি করতে' } },
-        { id: 'opt-4', text: { en: 'To prevent electrical current from flowing in the coil', hi: 'कुण्डली में करंट को बहने से रोकने के लिए', bn: 'কয়েলে বিদ্যুৎ প্রবাহ বন্ধ করতে' } }
+        { id: "opt-1", text: { en: "To remove internal I²R Joule heating from heavy coil currents and prevent the copper coil from melting", hi: "भारी धारा के कारण होने वाले I²R तापन को हटाकर तांबे की कुण्डली को पिघलने से बचाने के लिए", bn: "তীব্র কারেন্টের কারণে উৎপন্ন I²R তাপ অপসারণ করে তামার কয়েল গলে যাওয়া প্রতিরোধ করতে" } },
+        { id: "opt-2", text: { en: "To chemically lubricate the workpiece inside", hi: "वर्कपीस को रासायनिक रूप से चिकना करने के लिए", bn: "ওয়ার্কপিসকে পিচ্ছিল করার জন্য" } },
+        { id: "opt-3", text: { en: "To amplify the magnetic flux by 100 times", hi: "चुंबकीय फ्लक्स को 100 गुना बढ़ाने के लिए", bn: "চৌম্বক ফ্লাক্স ১০০ গুণ বৃদ্ধি করতে" } },
+        { id: "opt-4", text: { en: "To prevent electrical current from flowing in the coil", hi: "कुण्डली में करंट को बहने से रोकने के लिए", bn: "কয়েলে বিদ্যুৎ প্রবাহ বন্ধ করতে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Hundreds of amperes of high-frequency current flow through the coil, creating high I²R copper losses. Forced deionized water cooling prevents the coil from self-destructing.',
-        hi: 'सैकड़ों एम्पीयर की उच्च-आवृत्ति धारा कॉपर में भारी I²R ऊष्मा बनाती है। पानी का शीतलन कुण्डली को जलने से बचाता है।',
-        bn: 'কয়েলের ভেতর দিয়ে শত শত অ্যাম্পিয়ার কারেন্ট প্রবাহিত হওয়ায় উৎপন্ন তীব্র I²R তাপ অপসারণে পানি কুলিং আবশ্যক।'
+        en: "Hundreds of amperes of high-frequency current flow through the coil, creating high I²R copper losses. Forced deionized water cooling prevents the coil from self-destructing.",
+        hi: "सैकड़ों एम्पीयर की उच्च-आवृत्ति धारा कॉपर में भारी I²R ऊष्मा बनाती है। पानी का शीतलन कुण्डली को जलने से बचाता है।",
+        bn: "কয়েলের ভেতর দিয়ে শত শত অ্যাম্পিয়ার কারেন্ট প্রবাহিত হওয়ায় উৎপন্ন তীব্র I²R তাপ অপসারণে পানি কুলিং আবশ্যক।"
       }
     },
     {
-      id: 'mcq-ch10-l17-5',
+      id: "mcq-ch10-l17-5",
       question: {
-        en: 'Which frequency range is best suited for deep through-heating of large steel billets prior to heavy mechanical forging?',
-        hi: 'भारी यांत्रिक फोर्जिंग से पहले बड़े स्टील बिलेट को गहराई तक गर्म करने के लिए कौन सी आवृत्ति सबसे उपयुक्त है?',
-        bn: 'ভারী ফোরজিংয়ের আগে বড় স্টিল বিলেটের গভীরে সমভাবে উত্তপ্ত করার জন্য কোন কম্পাঙ্ক পরিসর সবচেয়ে উপযুক্ত?'
+        en: "Which frequency range is best suited for deep through-heating of large steel billets prior to heavy mechanical forging?",
+        hi: "भारी यांत्रिक फोर्जिंग से पहले बड़े स्टील बिलेट को गहराई तक गर्म करने के लिए कौन सी आवृत्ति सबसे उपयुक्त है?",
+        bn: "ভারী ফোরজিংয়ের আগে বড় স্টিল বিলেটের গভীরে সমভাবে উত্তপ্ত করার জন্য কোন কম্পাঙ্ক পরিসর সবচেয়ে উপযুক্ত?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Low frequency: 50 Hz to 1 kHz', hi: 'निम्न आवृत्ति: 50 Hz से 1 kHz', bn: 'নিম্ন কম্পাঙ্ক: ৫০ Hz থেকে ১ kHz' } },
-        { id: 'opt-2', text: { en: 'Ultra-high frequency: 10 MHz to 30 MHz', hi: 'अति-उच्च आवृत्ति: 10 MHz से 30 MHz', bn: 'অতি-উচ্চ কম্পাঙ্ক: ১০ MHz থেকে ৩০ MHz' } },
-        { id: 'opt-3', text: { en: 'Pure direct current (0 Hz DC)', hi: 'शुद्ध दिष्ट धारा (0 Hz DC)', bn: 'বিশুদ্ধ ডিসি (০ Hz)' } },
-        { id: 'opt-4', text: { en: 'Microwave frequency: 2.45 GHz', hi: 'माइक्रोवेव आवृत्ति: 2.45 GHz', bn: 'মাইক্রোওয়েভ কম্পাঙ্ক: ২.৪৫ GHz' } }
+        { id: "opt-1", text: { en: "Low frequency: 50 Hz to 1 kHz", hi: "निम्न आवृत्ति: 50 Hz से 1 kHz", bn: "নিম্ন কম্পাঙ্ক: ৫০ Hz থেকে ১ kHz" } },
+        { id: "opt-2", text: { en: "Ultra-high frequency: 10 MHz to 30 MHz", hi: "अति-उच्च आवृत्ति: 10 MHz से 30 MHz", bn: "অতি-উচ্চ কম্পাঙ্ক: ১০ MHz থেকে ৩০ MHz" } },
+        { id: "opt-3", text: { en: "Pure direct current (0 Hz DC)", hi: "शुद्ध दिष्ट धारा (0 Hz DC)", bn: "বিশুদ্ধ ডিসি (০ Hz)" } },
+        { id: "opt-4", text: { en: "Microwave frequency: 2.45 GHz", hi: "माइक्रोवेव आवृत्ति: 2.45 GHz", bn: "মাইক্রোওয়েভ কম্পাঙ্ক: ২.৪৫ GHz" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Low frequencies (50 Hz – 1 kHz) have a large skin depth (δ ≈ 15–35 mm), ensuring heat penetrates all the way to the core rather than staying on the surface.',
-        hi: 'निम्न आवृत्तियों में स्किन डेप्थ अधिक होती है, जिससे ऊष्मा केवल सतह पर न रहकर पूरे कोर तक समान रूप से पहुंचती है।',
-        bn: 'নিম্ন কম্পাঙ্কে স্কিন ডেপথ অনেক বেশি (১৫-৩৫ মিমি) হওয়ায় উত্তাপ কেবল পৃষ্ঠে না থেকে ভেতরের কোরেও প্রবেশ করে।'
+        en: "Low frequencies (50 Hz – 1 kHz) have a large skin depth (δ ≈ 15–35 mm), ensuring heat penetrates all the way to the core rather than staying on the surface.",
+        hi: "निम्न आवृत्तियों में स्किन डेप्थ अधिक होती है, जिससे ऊष्मा केवल सतह पर न रहकर पूरे कोर तक समान रूप से पहुंचती है।",
+        bn: "নিম্ন কম্পাঙ্কে স্কিন ডেপথ অনেক বেশি (১৫-৩৫ মিমি) হওয়ায় উত্তাপ কেবল পৃষ্ঠে না থেকে ভেতরের কোরেও প্রবেশ করে।"
       }
     },
     {
-      id: 'mcq-ch10-l17-6',
+      id: "mcq-ch10-l17-6",
       question: {
-        en: 'What beneficial hydrodynamic effect occurs naturally in coreless induction melting furnaces due to the interaction of induced currents with the magnetic field?',
-        hi: 'कोरलेस प्रेरण गलन भट्टी में प्रेरित धाराओं एवं चुंबकीय क्षेत्र की पारस्परिक क्रिया से कौन सा प्राकृतिक लाभ मिलता है?',
-        bn: 'কোরলেস ইন্ডাকশন মেল্টিং ফার্নেসে আবিষ্ট কারেন্ট ও চৌম্বক ক্ষেত্রের মিথস্ক্রিয়ায় কোন প্রাকৃতিক সুবিধা পাওয়া যায়?'
+        en: "What beneficial hydrodynamic effect occurs naturally in coreless induction melting furnaces due to the interaction of induced currents with the magnetic field?",
+        hi: "कोरलेस प्रेरण गलन भट्टी में प्रेरित धाराओं एवं चुंबकीय क्षेत्र की पारस्परिक क्रिया से कौन सा प्राकृतिक लाभ मिलता है?",
+        bn: "কোরলেস ইন্ডাকশন মেল্টিং ফার্নেসে আবিষ্ট কারেন্ট ও চৌম্বক ক্ষেত্রের মিথস্ক্রিয়ায় কোন প্রাকৃতিক সুবিধা পাওয়া যায়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Electromagnetic stirring (Lorentz J × B forces) that automatically homogenizes the molten alloy without mechanical impellers', hi: 'विद्युत-चुंबकीय मथना (लॉरेंट्ज़ J × B बल) जो बिना किसी यांत्रिक पंखे के पिघली धातु को एकसमान मिला देता है', bn: 'তড়িৎচৌম্বকীয় নাড়াচাড়া (লোরেন্টজ J × B বল) যা কোনো যান্ত্রিক নাড়ানি ছাড়াই সংকর ধাতু সমসত্ত্ব করে' } },
-        { id: 'opt-2', text: { en: 'Solidification of metal at room temperature', hi: 'कमरे के तापमान पर धातु का जमना', bn: 'স্বাভাবিক তাপমাত্রায় ধাতু জমে যাওয়া' } },
-        { id: 'opt-3', text: { en: 'Instant elimination of all atmospheric air in the room', hi: 'कमरे की सारी हवा का नष्ट हो जाना', bn: 'ঘরের সমস্ত বাতাস নাই হয়ে যাওয়া' } },
-        { id: 'opt-4', text: { en: 'Formation of permanent diamond coatings', hi: 'स्थायी हीरे की परत बनना', bn: 'হীরার প্রলেপ সৃষ্টি হওয়া' } }
+        { id: "opt-1", text: { en: "Electromagnetic stirring (Lorentz J × B forces) that automatically homogenizes the molten alloy without mechanical impellers", hi: "विद्युत-चुंबकीय मथना (लॉरेंट्ज़ J × B बल) जो बिना किसी यांत्रिक पंखे के पिघली धातु को एकसमान मिला देता है", bn: "তড়িৎচৌম্বকীয় নাড়াচাড়া (লোরেন্টজ J × B বল) যা কোনো যান্ত্রিক নাড়ানি ছাড়াই সংকর ধাতু সমসত্ত্ব করে" } },
+        { id: "opt-2", text: { en: "Solidification of metal at room temperature", hi: "कमरे के तापमान पर धातु का जमना", bn: "স্বাভাবিক তাপমাত্রায় ধাতু জমে যাওয়া" } },
+        { id: "opt-3", text: { en: "Instant elimination of all atmospheric air in the room", hi: "कमरे की सारी हवा का नष्ट हो जाना", bn: "ঘরের সমস্ত বাতাস নাই হয়ে যাওয়া" } },
+        { id: "opt-4", text: { en: "Formation of permanent diamond coatings", hi: "स्थायी हीरे की परत बनना", bn: "হীরার প্রলেপ সৃষ্টি হওয়া" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The Lorentz force density f = J × B exerts inward and axial forces on the liquid metal pool, continuously stirring the melt for perfect chemical uniformity.',
-        hi: 'लॉरेंट्ज़ बल पिघली धातु पर अंदरूनी और ऊर्ध्वाधर बल लगाता है, जिससे धातु स्वतः मिलकर पूर्णतः समरूप बन जाती है।',
-        bn: 'লোরেন্টজ বল (J × B) তরল ধাতুতে অবিরাম আলোড়ন তৈরি করে, যা সংকর ধাতুর প্রতিটি উপাদানের সমসত্ত্ব মিশ্রণ নিশ্চিত করে।'
+        en: "The Lorentz force density f = J × B exerts inward and axial forces on the liquid metal pool, continuously stirring the melt for perfect chemical uniformity.",
+        hi: "लॉरेंट्ज़ बल पिघली धातु पर अंदरूनी और ऊर्ध्वाधर बल लगाता है, जिससे धातु स्वतः मिलकर पूर्णतः समरूप बन जाती है।",
+        bn: "লোরেন্টজ বল (J × B) তরল ধাতুতে অবিরাম আলোড়ন তৈরি করে, যা সংকর ধাতুর প্রতিটি উপাদানের সমসত্ত্ব মিশ্রণ নিশ্চিত করে।"
       }
     },
     {
-      id: 'mcq-ch10-l17-7',
+      id: "mcq-ch10-l17-7",
       question: {
-        en: 'What is the purpose of installing vertically laminated silicon steel magnetic shunts around the outside of an industrial induction melting furnace?',
-        hi: 'औद्योगिक प्रेरण भट्टी के बाहर लंबवत लैमिनेटेड सिलिकॉन स्टील चुंबकीय शंट लगाने का क्या उद्देश्य है?',
-        bn: 'শিল্প ইন্ডাকশন ফার্নেসের বাইরের অংশে লম্বভাবে ল্যামিনেটেড সিলিকন স্টিল ম্যাগনেটিক শান্ট বসানোর উদ্দেশ্য কী?'
+        en: "What is the purpose of installing vertically laminated silicon steel magnetic shunts around the outside of an industrial induction melting furnace?",
+        hi: "औद्योगिक प्रेरण भट्टी के बाहर लंबवत लैमिनेटेड सिलिकॉन स्टील चुंबकीय शंट लगाने का क्या उद्देश्य है?",
+        bn: "শিল্প ইন্ডাকশন ফার্নেসের বাইরের অংশে লম্বভাবে ল্যামিনেটেড সিলিকন স্টিল ম্যাগনেটিক শান্ট বসানোর উদ্দেশ্য কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'To capture stray external magnetic flux and prevent dangerous eddy-current overheating of the structural steel furnace frame', hi: 'आवारा चुंबकीय फ्लक्स को कैद करके भट्टी के बाहरी स्टील फ्रेम को गर्म होकर पिघलने से बचाना', bn: 'বাইরের স্ট্রে চৌম্বক ফ্লাক্স আটকে দিয়ে কাঠামোর স্টিল ফ্রেমকে বিপজ্জনক এডি উত্তাপন থেকে রক্ষা করা' } },
-        { id: 'opt-2', text: { en: 'To increase the noise of the furnace for operator alert', hi: 'ऑपरेटर को सचेत करने के लिए आवाज बढ़ाना', bn: 'শব্দ বৃদ্ধি করে অপারেটরকে সতর্ক করা' } },
-        { id: 'opt-3', text: { en: 'To convert AC electricity directly into light', hi: 'एसी बिजली को सीधे रोशनी में बदलना', bn: 'এসি কারেন্টকে সরাসরি আলোতে রূপান্তর করা' } },
-        { id: 'opt-4', text: { en: 'To chemically deoxidize the molten aluminum slag', hi: 'पिघले एल्युमिनियम को रासायनिक रूप से साफ करना', bn: 'রাসায়নিকভাবে স্লাগ পরিষ্কার করা' } }
+        { id: "opt-1", text: { en: "To capture stray external magnetic flux and prevent dangerous eddy-current overheating of the structural steel furnace frame", hi: "आवारा चुंबकीय फ्लक्स को कैद करके भट्टी के बाहरी स्टील फ्रेम को गर्म होकर पिघलने से बचाना", bn: "বাইরের স্ট্রে চৌম্বক ফ্লাক্স আটকে দিয়ে কাঠামোর স্টিল ফ্রেমকে বিপজ্জনক এডি উত্তাপন থেকে রক্ষা করা" } },
+        { id: "opt-2", text: { en: "To increase the noise of the furnace for operator alert", hi: "ऑपरेटर को सचेत करने के लिए आवाज बढ़ाना", bn: "শব্দ বৃদ্ধি করে অপারেটরকে সতর্ক করা" } },
+        { id: "opt-3", text: { en: "To convert AC electricity directly into light", hi: "एसी बिजली को सीधे रोशनी में बदलना", bn: "এসি কারেন্টকে সরাসরি আলোতে রূপান্তর করা" } },
+        { id: "opt-4", text: { en: "To chemically deoxidize the molten aluminum slag", hi: "पिघले एल्युमिनियम को रासायनिक रूप से साफ करना", bn: "রাসায়নিকভাবে স্লাগ পরিষ্কার করা" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Without magnetic shunts, intense stray AC magnetic fields would induce heavy eddy currents in the structural support beams, bolts, and chassis, causing hazardous overheating.',
-        hi: 'बिना शंट के आवारा चुंबकीय फ्लक्स बाहरी लोहे के खंभों और नट-बोल्ट में भंवर धाराएं बनाकर उन्हें अत्यधिक गर्म कर देगा।',
-        bn: 'ম্যাগনেটিক শান্ট না থাকলে স্ট্রে ফ্লাক্স কাঠামোর স্টিল বিমে এডি কারেন্ট তৈরি করে মারাত্মক অগ্নিকাণ্ড বা বিকৃতি ঘটাবে।'
+        en: "Without magnetic shunts, intense stray AC magnetic fields would induce heavy eddy currents in the structural support beams, bolts, and chassis, causing hazardous overheating.",
+        hi: "बिना शंट के आवारा चुंबकीय फ्लक्स बाहरी लोहे के खंभों और नट-बोल्ट में भंवर धाराएं बनाकर उन्हें अत्यधिक गर्म कर देगा।",
+        bn: "ম্যাগনেটিক শান্ট না থাকলে স্ট্রে ফ্লাক্স কাঠামোর স্টিল বিমে এডি কারেন্ট তৈরি করে মারাত্মক অগ্নিকাণ্ড বা বিকৃতি ঘটাবে।"
       }
     },
     {
-      id: 'mcq-ch10-l17-8',
+      id: "mcq-ch10-l17-8",
       question: {
-        en: 'Why is an induction furnace widely considered superior to fossil-fuel coal/gas cupola furnaces in modern foundries?',
-        hi: 'आधुनिक फाउंड्री में प्रेरण भट्टी को कोयला/गैस भट्टियों की तुलना में श्रेष्ठ क्यों माना जाता है?',
-        bn: 'আধুনিক ঢালাই কারখানায় কয়লা বা গ্যাস ফার্নেসের চেয়ে ইন্ডাকশন ফার্নেসকে কেন উন্নত বিবেচনা করা হয়?'
+        en: "Why is an induction furnace widely considered superior to fossil-fuel coal/gas cupola furnaces in modern foundries?",
+        hi: "आधुनिक फाउंड्री में प्रेरण भट्टी को कोयला/गैस भट्टियों की तुलना में श्रेष्ठ क्यों माना जाता है?",
+        bn: "আধুনিক ঢালাই কারখানায় কয়লা বা গ্যাস ফার্নেসের চেয়ে ইন্ডাকশন ফার্নেসকে কেন উন্নত বিবেচনা করা হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Zero on-site combustion emissions, higher energy efficiency (>80%), precise temperature control, and rapid melting', hi: 'शून्य धुआं/उत्सर्जन, 80% से अधिक उच्च ऊर्जा दक्षता, सटीक तापमान नियंत्रण एवं तीव्र गलन', bn: 'কোনো নির্গমন দূষণ নেই, ৮০% এর বেশি উচ্চ দক্ষতা, নিখুঁত তাপমাত্রা নিয়ন্ত্রণ ও দ্রুত গলন' } },
-        { id: 'opt-2', text: { en: 'It operates without any source of electricity', hi: 'यह बिना किसी बिजली के चलती है', bn: 'এটি কোনো বিদ্যুৎ ছাড়াই চলে' } },
-        { id: 'opt-3', text: { en: 'It turns iron into pure gold automatically', hi: 'यह लोहे को सोने में बदल देती है', bn: 'এটি লোহাকে সোনায় রূপান্তর করে' } },
-        { id: 'opt-4', text: { en: 'It requires zero water or insulation maintenance', hi: 'इसमें किसी रखरखाव की आवश्यकता नहीं होती', bn: 'এতে কোনো রক্ষণাবেক্ষণের প্রয়োজন হয় না' } }
+        { id: "opt-1", text: { en: "Zero on-site combustion emissions, higher energy efficiency (>80%), precise temperature control, and rapid melting", hi: "शून्य धुआं/उत्सर्जन, 80% से अधिक उच्च ऊर्जा दक्षता, सटीक तापमान नियंत्रण एवं तीव्र गलन", bn: "কোনো নির্গমন দূষণ নেই, ৮০% এর বেশি উচ্চ দক্ষতা, নিখুঁত তাপমাত্রা নিয়ন্ত্রণ ও দ্রুত গলন" } },
+        { id: "opt-2", text: { en: "It operates without any source of electricity", hi: "यह बिना किसी बिजली के चलती है", bn: "এটি কোনো বিদ্যুৎ ছাড়াই চলে" } },
+        { id: "opt-3", text: { en: "It turns iron into pure gold automatically", hi: "यह लोहे को सोने में बदल देती है", bn: "এটি লোহাকে সোনায় রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It requires zero water or insulation maintenance", hi: "इसमें किसी रखरखाव की आवश्यकता नहीं होती", bn: "এতে কোনো রক্ষণাবেক্ষণের প্রয়োজন হয় না" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'Induction furnaces eliminate fossil fuel combustion and smoke, achieve over 80% thermal efficiency, and allow precise electronic power modulation.',
-        hi: 'प्रेरण भट्टियां धुएं और प्रदूषण को समाप्त करती हैं, 80% से अधिक ऊर्जा दक्षता देती हैं तथा सटीक तापमान नियंत्रण प्रदान करती हैं।',
-        bn: 'ইন্ডাকশন ফার্নেসে কোনো ধোঁয়া বা গ্যাস নির্গমন হয় না, ৮০% এর বেশি শক্তি সাশ্রয়ী এবং সুনির্দিষ্টভাবে তাপমাত্রা নিয়ন্ত্রণ করা যায়।'
+        en: "Induction furnaces eliminate fossil fuel combustion and smoke, achieve over 80% thermal efficiency, and allow precise electronic power modulation.",
+        hi: "प्रेरण भट्टियां धुएं और प्रदूषण को समाप्त करती हैं, 80% से अधिक ऊर्जा दक्षता देती हैं तथा सटीक तापमान नियंत्रण प्रदान करती हैं।",
+        bn: "ইন্ডাকশন ফার্নেসে কোনো ধোঁয়া বা গ্যাস নির্গমন হয় না, ৮০% এর বেশি শক্তি সাশ্রয়ী এবং সুনির্দিষ্টভাবে তাপমাত্রা নিয়ন্ত্রণ করা যায়।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "mcq-ch10-l17-1",
+      question: {
+        en: "What is the primary mechanism of heat generation in a conductive metallic workpiece during electromagnetic induction heating?",
+        hi: "विद्युत-चुंबकीय प्रेरण तापन के दौरान चालक धातु वर्कपीस में ऊष्मा उत्पादन का प्राथमिक तंत्र क्या है?",
+        bn: "তড়িৎচৌম্বকীয় আবেশ উত্তাপনের সময় পরিবাহী ধাতব বস্তুতে তাপ উৎপাদনের প্রাথমিক প্রক্রিয়া কোনটি?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Joule heating produced by induced closed-loop eddy currents (I²R losses)", hi: "प्रेरित बंद-लूप भंवर धाराओं द्वारा उत्पन्न जूल तापन (I²R हानियां)", bn: "আবিষ্ট লুপ এডি কারেন্ট দ্বারা উৎপন্ন জুল তাপ (I²R অপচয়)" } },
+        { id: "opt-2", text: { en: "Thermal conduction of hot gases leaking from the copper coil", hi: "तांबे की कुण्डली से गर्म गैसों का रिसाव", bn: "কয়েল থেকে নির্গত গরম গ্যাসের পরিচলন" } },
+        { id: "opt-3", text: { en: "Nuclear fission of surface atoms in the billet", hi: "बिलेट के सतही परमाणुओं का परमाणु विखंडन", bn: "পৃষ্ঠতলের পরমাণুর পারমাণবিক বিভাজন" } },
+        { id: "opt-4", text: { en: "Frictional rubbing between coil turns and the workpiece", hi: "कुण्डली और वर्कपीस के बीच घर्षण", bn: "কয়েল এবং ধাতব বস্তুর পারস্পরিক ঘর্ষণ" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The alternating magnetic field induces closed eddy currents inside the conductive metal; electrical resistance converts this current into intense Joule heat (P = I²R).",
+        hi: "बदलता चुंबकीय क्षेत्र धातु के अंदर भंवर धाराएं प्रेरित करता है; धातु का प्रतिरोध इसे जूल ऊष्मा (I²R) में बदल देता है।",
+        bn: "পরিবর্তনশীল চৌম্বক ক্ষেত্র ধাতুতে এডি কারেন্ট আবিষ্ট করে; ধাতুর রোধের ফলে জুল তাপ (I²R) উৎপন্ন হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-2",
+      question: {
+        en: "If the alternating frequency of an induction heating power supply is increased by a factor of 4, the skin depth δ in the workpiece will:",
+        hi: "यदि प्रेरण तापन विद्युत आपूर्ति की आवृत्ति को 4 गुना बढ़ा दिया जाए, तो स्किन डेप्थ δ होगी:",
+        bn: "একটি ইন্ডাকশন হিটিং পাওয়ার সাপ্লাইয়ের কম্পাঙ্ক ৪ গুণ বৃদ্ধি করা হলে স্কিন ডেপথ δ কত হবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Halve (decrease to 1/2 of original)", hi: "आधी रह जाएगी (1/2)", bn: "অর্ধেক হবে (আগের মানের ১/২)" } },
+        { id: "opt-2", text: { en: "Double (increase by 2x)", hi: "दोगुनी हो जाएगी (2x)", bn: "দ্বিগুণ হবে (২ গুণ বৃদ্ধি)" } },
+        { id: "opt-3", text: { en: "Quarter (decrease to 1/4 of original)", hi: "एक-चौथाई रह जाएगी (1/4)", bn: "এক-চতুর্থাংশ হবে (১/৪)" } },
+        { id: "opt-4", text: { en: "Remain strictly unchanged", hi: "अपरिवर्तित रहेगी", bn: "সম্পূর্ণ অপরিবর্তিত থাকবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Skin depth is inversely proportional to the square root of frequency: δ ∝ 1/√f. Increasing f by 4 reduces δ to 1/√4 = 1/2 of its initial value.",
+        hi: "स्किन डेप्थ आवृत्ति के वर्गमूल के व्युत्क्रमानुपाती होती है: δ ∝ 1/√f। आवृत्ति 4 गुना करने पर गहराई 1/√4 = 1/2 रह जाती है।",
+        bn: "স্কিন ডেপথ কম্পাঙ্কের বর্গমূলের ব্যস্তানুপাতিক (δ ∝ ১/√f)। কম্পাঙ্ক ৪ গুণ বাড়ালে গভীরতা ১/√৪ = ১/২ হয়ে যায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-3",
+      question: {
+        en: "What critical physical transition occurs when a carbon steel billet in an induction furnace passes through its Curie temperature (~770°C)?",
+        hi: "जब प्रेरण भट्टी में कार्बन स्टील बिलेट अपने क्यूरी तापमान (~770°C) से ऊपर जाता है तो कौन सा महत्वपूर्ण भौतिक परिवर्तन होता है?",
+        bn: "একটি কার্বন স্টিল বিলেট ইন্ডাকশন ফার্নেসে কুরি তাপমাত্রা (~৭৭০°C) অতিক্রম করলে কোন ভৌত পরিবর্তনটি ঘটে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Relative permeability collapses from μ_r ≈ 150 to μ_r = 1, abruptly increasing skin depth and halting hysteresis heating", hi: "चुंबकशीलता μ_r ≈ 150 से गिरकर 1 हो जाती है, स्किन डेप्थ बढ़ जाती है और हिस्टेरेसिस तापन समाप्त हो जाता है", bn: "আপেক্ষিক ভেদ্যতা μ_r ১৫০ থেকে কমে ১ হয়, স্কিন ডেপথ হঠাৎ বৃদ্ধি পায় এবং হিস্টেরেসিস বন্ধ হয়" } },
+        { id: "opt-2", text: { en: "The metal instantly freezes into diamond ice", hi: "धातु तुरंत हीरे की तरह जम जाती है", bn: "ধাতুটি তাৎক্ষণিকভাবে কঠিনে জমে যায়" } },
+        { id: "opt-3", text: { en: "The electrical conductivity becomes infinite (superconducting)", hi: "विद्युत चालकता अनंत (अतिचालक) हो जाती है", bn: "বৈদ্যুতিক পরিবাহিতা অসীম হয়ে সুপারকন্ডাক্টরে রূপ নেয়" } },
+        { id: "opt-4", text: { en: "Eddy currents reverse and flow into the power grid", hi: "भंवर धाराएं ग्रिड में वापस बहने लगती हैं", bn: "এডি কারেন্ট উল্টো দিকে প্রবাহিত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At the Curie point, ferromagnetic steel becomes paramagnetic (μ_r = 1). Since δ ∝ 1/√μ, the skin depth widens significantly, and hysteresis losses vanish.",
+        hi: "क्यूरी बिंदु पर स्टील अचुंबकीय (μ_r = 1) हो जाता है। अतः स्किन डेप्थ बढ़ जाती है तथा हिस्टेरेसिस हानियां समाप्त हो जाती हैं।",
+        bn: "কুরি তাপমাত্রায় স্টিল প্যারাচৌম্বক হয় (μ_r = ১)। ফলে স্কিন ডেপথ বাড়ে এবং হিস্টেরেসিস ক্ষয় সম্পূর্ণ বন্ধ হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-4",
+      question: {
+        en: "Why is water-cooling continuously pumped through the primary copper work coil in an induction furnace?",
+        hi: "प्रेरण भट्टी की प्राथमिक कॉपर कुण्डली में लगातार ठंडा पानी क्यों प्रवाहित किया जाता है?",
+        bn: "ইন্ডাকশন ফার্নেসের প্রধান তামার কয়েলের ভেতর দিয়ে কেন সার্বক্ষণিক শীতল পানি প্রবাহিত করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To remove internal I²R Joule heating from heavy coil currents and prevent the copper coil from melting", hi: "भारी धारा के कारण होने वाले I²R तापन को हटाकर तांबे की कुण्डली को पिघलने से बचाने के लिए", bn: "তীব্র কারেন্টের কারণে উৎপন্ন I²R তাপ অপসারণ করে তামার কয়েল গলে যাওয়া প্রতিরোধ করতে" } },
+        { id: "opt-2", text: { en: "To chemically lubricate the workpiece inside", hi: "वर्कपीस को रासायनिक रूप से चिकना करने के लिए", bn: "ওয়ার্কপিসকে পিচ্ছিল করার জন্য" } },
+        { id: "opt-3", text: { en: "To amplify the magnetic flux by 100 times", hi: "चुंबकीय फ्लक्स को 100 गुना बढ़ाने के लिए", bn: "চৌম্বক ফ্লাক্স ১০০ গুণ বৃদ্ধি করতে" } },
+        { id: "opt-4", text: { en: "To prevent electrical current from flowing in the coil", hi: "कुण्डली में करंट को बहने से रोकने के लिए", bn: "কয়েলে বিদ্যুৎ প্রবাহ বন্ধ করতে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Hundreds of amperes of high-frequency current flow through the coil, creating high I²R copper losses. Forced deionized water cooling prevents the coil from self-destructing.",
+        hi: "सैकड़ों एम्पीयर की उच्च-आवृत्ति धारा कॉपर में भारी I²R ऊष्मा बनाती है। पानी का शीतलन कुण्डली को जलने से बचाता है।",
+        bn: "কয়েলের ভেতর দিয়ে শত শত অ্যাম্পিয়ার কারেন্ট প্রবাহিত হওয়ায় উৎপন্ন তীব্র I²R তাপ অপসারণে পানি কুলিং আবশ্যক।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-5",
+      question: {
+        en: "Which frequency range is best suited for deep through-heating of large steel billets prior to heavy mechanical forging?",
+        hi: "भारी यांत्रिक फोर्जिंग से पहले बड़े स्टील बिलेट को गहराई तक गर्म करने के लिए कौन सी आवृत्ति सबसे उपयुक्त है?",
+        bn: "ভারী ফোরজিংয়ের আগে বড় স্টিল বিলেটের গভীরে সমভাবে উত্তপ্ত করার জন্য কোন কম্পাঙ্ক পরিসর সবচেয়ে উপযুক্ত?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Low frequency: 50 Hz to 1 kHz", hi: "निम्न आवृत्ति: 50 Hz से 1 kHz", bn: "নিম্ন কম্পাঙ্ক: ৫০ Hz থেকে ১ kHz" } },
+        { id: "opt-2", text: { en: "Ultra-high frequency: 10 MHz to 30 MHz", hi: "अति-उच्च आवृत्ति: 10 MHz से 30 MHz", bn: "অতি-উচ্চ কম্পাঙ্ক: ১০ MHz থেকে ৩০ MHz" } },
+        { id: "opt-3", text: { en: "Pure direct current (0 Hz DC)", hi: "शुद्ध दिष्ट धारा (0 Hz DC)", bn: "বিশুদ্ধ ডিসি (০ Hz)" } },
+        { id: "opt-4", text: { en: "Microwave frequency: 2.45 GHz", hi: "माइक्रोवेव आवृत्ति: 2.45 GHz", bn: "মাইক্রোওয়েভ কম্পাঙ্ক: ২.৪৫ GHz" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Low frequencies (50 Hz – 1 kHz) have a large skin depth (δ ≈ 15–35 mm), ensuring heat penetrates all the way to the core rather than staying on the surface.",
+        hi: "निम्न आवृत्तियों में स्किन डेप्थ अधिक होती है, जिससे ऊष्मा केवल सतह पर न रहकर पूरे कोर तक समान रूप से पहुंचती है।",
+        bn: "নিম্ন কম্পাঙ্কে স্কিন ডেপথ অনেক বেশি (১৫-৩৫ মিমি) হওয়ায় উত্তাপ কেবল পৃষ্ঠে না থেকে ভেতরের কোরেও প্রবেশ করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-6",
+      question: {
+        en: "What beneficial hydrodynamic effect occurs naturally in coreless induction melting furnaces due to the interaction of induced currents with the magnetic field?",
+        hi: "कोरलेस प्रेरण गलन भट्टी में प्रेरित धाराओं एवं चुंबकीय क्षेत्र की पारस्परिक क्रिया से कौन सा प्राकृतिक लाभ मिलता है?",
+        bn: "কোরলেস ইন্ডাকশন মেল্টিং ফার্নেসে আবিষ্ট কারেন্ট ও চৌম্বক ক্ষেত্রের মিথস্ক্রিয়ায় কোন প্রাকৃতিক সুবিধা পাওয়া যায়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Electromagnetic stirring (Lorentz J × B forces) that automatically homogenizes the molten alloy without mechanical impellers", hi: "विद्युत-चुंबकीय मथना (लॉरेंट्ज़ J × B बल) जो बिना किसी यांत्रिक पंखे के पिघली धातु को एकसमान मिला देता है", bn: "তড়িৎচৌম্বকীয় নাড়াচাড়া (লোরেন্টজ J × B বল) যা কোনো যান্ত্রিক নাড়ানি ছাড়াই সংকর ধাতু সমসত্ত্ব করে" } },
+        { id: "opt-2", text: { en: "Solidification of metal at room temperature", hi: "कमरे के तापमान पर धातु का जमना", bn: "স্বাভাবিক তাপমাত্রায় ধাতু জমে যাওয়া" } },
+        { id: "opt-3", text: { en: "Instant elimination of all atmospheric air in the room", hi: "कमरे की सारी हवा का नष्ट हो जाना", bn: "ঘরের সমস্ত বাতাস নাই হয়ে যাওয়া" } },
+        { id: "opt-4", text: { en: "Formation of permanent diamond coatings", hi: "स्थायी हीरे की परत बनना", bn: "হীরার প্রলেপ সৃষ্টি হওয়া" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The Lorentz force density f = J × B exerts inward and axial forces on the liquid metal pool, continuously stirring the melt for perfect chemical uniformity.",
+        hi: "लॉरेंट्ज़ बल पिघली धातु पर अंदरूनी और ऊर्ध्वाधर बल लगाता है, जिससे धातु स्वतः मिलकर पूर्णतः समरूप बन जाती है।",
+        bn: "লোরেন্টজ বল (J × B) তরল ধাতুতে অবিরাম আলোড়ন তৈরি করে, যা সংকর ধাতুর প্রতিটি উপাদানের সমসত্ত্ব মিশ্রণ নিশ্চিত করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-7",
+      question: {
+        en: "What is the purpose of installing vertically laminated silicon steel magnetic shunts around the outside of an industrial induction melting furnace?",
+        hi: "औद्योगिक प्रेरण भट्टी के बाहर लंबवत लैमिनेटेड सिलिकॉन स्टील चुंबकीय शंट लगाने का क्या उद्देश्य है?",
+        bn: "শিল্প ইন্ডাকশন ফার্নেসের বাইরের অংশে লম্বভাবে ল্যামিনেটেড সিলিকন স্টিল ম্যাগনেটিক শান্ট বসানোর উদ্দেশ্য কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To capture stray external magnetic flux and prevent dangerous eddy-current overheating of the structural steel furnace frame", hi: "आवारा चुंबकीय फ्लक्स को कैद करके भट्टी के बाहरी स्टील फ्रेम को गर्म होकर पिघलने से बचाना", bn: "বাইরের স্ট্রে চৌম্বক ফ্লাক্স আটকে দিয়ে কাঠামোর স্টিল ফ্রেমকে বিপজ্জনক এডি উত্তাপন থেকে রক্ষা করা" } },
+        { id: "opt-2", text: { en: "To increase the noise of the furnace for operator alert", hi: "ऑपरेटर को सचेत करने के लिए आवाज बढ़ाना", bn: "শব্দ বৃদ্ধি করে অপারেটরকে সতর্ক করা" } },
+        { id: "opt-3", text: { en: "To convert AC electricity directly into light", hi: "एसी बिजली को सीधे रोशनी में बदलना", bn: "এসি কারেন্টকে সরাসরি আলোতে রূপান্তর করা" } },
+        { id: "opt-4", text: { en: "To chemically deoxidize the molten aluminum slag", hi: "पिघले एल्युमिनियम को रासायनिक रूप से साफ करना", bn: "রাসায়নিকভাবে স্লাগ পরিষ্কার করা" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Without magnetic shunts, intense stray AC magnetic fields would induce heavy eddy currents in the structural support beams, bolts, and chassis, causing hazardous overheating.",
+        hi: "बिना शंट के आवारा चुंबकीय फ्लक्स बाहरी लोहे के खंभों और नट-बोल्ट में भंवर धाराएं बनाकर उन्हें अत्यधिक गर्म कर देगा।",
+        bn: "ম্যাগনেটিক শান্ট না থাকলে স্ট্রে ফ্লাক্স কাঠামোর স্টিল বিমে এডি কারেন্ট তৈরি করে মারাত্মক অগ্নিকাণ্ড বা বিকৃতি ঘটাবে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l17-8",
+      question: {
+        en: "Why is an induction furnace widely considered superior to fossil-fuel coal/gas cupola furnaces in modern foundries?",
+        hi: "आधुनिक फाउंड्री में प्रेरण भट्टी को कोयला/गैस भट्टियों की तुलना में श्रेष्ठ क्यों माना जाता है?",
+        bn: "আধুনিক ঢালাই কারখানায় কয়লা বা গ্যাস ফার্নেসের চেয়ে ইন্ডাকশন ফার্নেসকে কেন উন্নত বিবেচনা করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Zero on-site combustion emissions, higher energy efficiency (>80%), precise temperature control, and rapid melting", hi: "शून्य धुआं/उत्सर्जन, 80% से अधिक उच्च ऊर्जा दक्षता, सटीक तापमान नियंत्रण एवं तीव्र गलन", bn: "কোনো নির্গমন দূষণ নেই, ৮০% এর বেশি উচ্চ দক্ষতা, নিখুঁত তাপমাত্রা নিয়ন্ত্রণ ও দ্রুত গলন" } },
+        { id: "opt-2", text: { en: "It operates without any source of electricity", hi: "यह बिना किसी बिजली के चलती है", bn: "এটি কোনো বিদ্যুৎ ছাড়াই চলে" } },
+        { id: "opt-3", text: { en: "It turns iron into pure gold automatically", hi: "यह लोहे को सोने में बदल देती है", bn: "এটি লোহাকে সোনায় রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It requires zero water or insulation maintenance", hi: "इसमें किसी रखरखाव की आवश्यकता नहीं होती", bn: "এতে কোনো রক্ষণাবেক্ষণের প্রয়োজন হয় না" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Induction furnaces eliminate fossil fuel combustion and smoke, achieve over 80% thermal efficiency, and allow precise electronic power modulation.",
+        hi: "प्रेरण भट्टियां धुएं और प्रदूषण को समाप्त करती हैं, 80% से अधिक ऊर्जा दक्षता देती हैं तथा सटीक तापमान नियंत्रण प्रदान करती हैं।",
+        bn: "ইন্ডাকশন ফার্নেসে কোনো ধোঁয়া বা গ্যাস নির্গমন হয় না, ৮০% এর বেশি শক্তি সাশ্রয়ী এবং সুনির্দিষ্টভাবে তাপমাত্রা নিয়ন্ত্রণ করা যায়।"
       }
     }
   ],

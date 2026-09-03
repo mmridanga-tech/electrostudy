@@ -353,43 +353,325 @@ Demonstrating that smaller parasitic capacitance and faster magnetic interruptio
   },
   mcqs: [
     {
-      id: 'q-indcoil-1',
+      id: "q-indcoil-1",
       question: {
-        en: 'Why is the high-voltage spark produced predominantly at the "break" (contact opening) rather than at the "make" (contact closing) of the interrupter?',
-        hi: 'इंटरप्टर के "जुड़ने" (make) के बजाय "टूटने" (break) पर मुख्य रूप से हाई-वोल्टेज स्पार्क क्यों उत्पन्न होता है?',
-        bn: 'ইন্টারাপ্টার "যুক্ত" হওয়ার সময়ের চেয়ে "বিচ্ছিন্ন" (break) হওয়ার সময় প্রধানত কেন অতি উচ্চ ভোল্টেজ স্পার্ক সৃষ্টি হয়?'
+        en: "Why is the high-voltage spark produced predominantly at the \"break\" (contact opening) rather than at the \"make\" (contact closing) of the interrupter?",
+        hi: "इंटरप्टर के \"जुड़ने\" (make) के बजाय \"टूटने\" (break) पर मुख्य रूप से हाई-वोल्टेज स्पार्क क्यों उत्पन्न होता है?",
+        bn: "ইন্টারাপ্টার \"যুক্ত\" হওয়ার সময়ের চেয়ে \"বিচ্ছিন্ন\" (break) হওয়ার সময় প্রধানত কেন অতি উচ্চ ভোল্টেজ স্পার্ক সৃষ্টি হয়?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'Because (dI/dt) at contact break is hundreds of times faster than (dI/dt) at contact make', hi: 'क्योंकि संपर्क टूटने पर धारा परिवर्तन की दर (dI/dt) जुड़ने की तुलना में सैकड़ों गुना तेज होती है', bn: 'কারণ সংযোগ বিচ্ছিন্নকালে কারেন্ট পরিবর্তনের হার (dI/dt) সংযোগকালের চেয়ে শতগুণ দ্রুত হয়' } },
-        { id: 'opt-2', text: { en: 'Because battery voltage doubles during contact opening', hi: 'क्योंकि संपर्क खुलने पर बैटरी का वोल्टेज दोगुना हो जाता है', bn: 'কারণ সংযোগ খোলার সময় ব্যাটারি ভোল্টেজ দ্বিগুণ হয়' } },
-        { id: 'opt-3', text: { en: 'Because the secondary winding changes direction at break', hi: 'क्योंकि टूटने पर द्वितीयक वाइंडिंग अपनी दिशा बदल लेती है', bn: 'কারণ বিচ্ছিন্নকালে সেকেন্ডারি ওয়াইন্ডিং দিক পরিবর্তন করে' } },
-        { id: 'opt-4', text: { en: 'Because the iron core loses its mass at break', hi: 'क्योंकि लोहे का कोर अपना द्रव्यमान खो देता है', bn: 'কারণ বিচ্ছিন্নকালে লোহার কোর ভর হারায়' } }
+        { id: "opt-1", text: { en: "Because (dI/dt) at contact break is hundreds of times faster than (dI/dt) at contact make", hi: "क्योंकि संपर्क टूटने पर धारा परिवर्तन की दर (dI/dt) जुड़ने की तुलना में सैकड़ों गुना तेज होती है", bn: "কারণ সংযোগ বিচ্ছিন্নকালে কারেন্ট পরিবর্তনের হার (dI/dt) সংযোগকালের চেয়ে শতগুণ দ্রুত হয়" } },
+        { id: "opt-2", text: { en: "Because battery voltage doubles during contact opening", hi: "क्योंकि संपर्क खुलने पर बैटरी का वोल्टेज दोगुना हो जाता है", bn: "কারণ সংযোগ খোলার সময় ব্যাটারি ভোল্টেজ দ্বিগুণ হয়" } },
+        { id: "opt-3", text: { en: "Because the secondary winding changes direction at break", hi: "क्योंकि टूटने पर द्वितीयक वाइंडिंग अपनी दिशा बदल लेती है", bn: "কারণ বিচ্ছিন্নকালে সেকেন্ডারি ওয়াইন্ডিং দিক পরিবর্তন করে" } },
+        { id: "opt-4", text: { en: "Because the iron core loses its mass at break", hi: "क्योंकि लोहे का कोर अपना द्रव्यमान खो देता है", bn: "কারণ বিচ্ছিন্নকালে লোহার কোর ভর হারায়" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'At "make", primary current rises slowly governed by τ = L/R. At "break", aided by the quench capacitor, current collapses virtually instantaneously, resulting in an enormous dI/dt that multiplies e_s = -M(dI/dt).',
-        hi: 'जुड़ते समय धारा τ = L/R के कारण धीरे-धीरे बढ़ती है। टूटते समय कैपेसिटर की सहायता से धारा कुछ ही माइक्रोसेकंड में शून्य हो जाती है, जिससे dI/dt अत्यधिक विशाल हो जाता है।',
-        bn: 'সংযোগের সময় L/R টাইম কনস্ট্যান্টের কারণে কারেন্ট ধীরে বৃদ্ধি পায়। কিন্তু বিচ্ছিন্নকালে ক্যাপাসিটরের সহায়তায় কয়েক মাইক্রোসেকেন্ডে কারেন্ট শূন্য হওয়ায় dI/dt অত্যন্ত তীব্র হয়।'
+        en: "At \"make\", primary current rises slowly governed by τ = L/R. At \"break\", aided by the quench capacitor, current collapses virtually instantaneously, resulting in an enormous dI/dt that multiplies e_s = -M(dI/dt).",
+        hi: "जुड़ते समय धारा τ = L/R के कारण धीरे-धीरे बढ़ती है। टूटते समय कैपेसिटर की सहायता से धारा कुछ ही माइक्रोसेकंड में शून्य हो जाती है, जिससे dI/dt अत्यधिक विशाल हो जाता है।",
+        bn: "সংযোগের সময় L/R টাইম কনস্ট্যান্টের কারণে কারেন্ট ধীরে বৃদ্ধি পায়। কিন্তু বিচ্ছিন্নকালে ক্যাপাসিটরের সহায়তায় কয়েক মাইক্রোসেকেন্ডে কারেন্ট শূন্য হওয়ায় dI/dt অত্যন্ত তীব্র হয়।"
       }
     },
     {
-      id: 'q-indcoil-2',
+      id: "q-indcoil-2",
       question: {
-        en: 'What critical role does the parallel capacitor serve across the mechanical interrupter contacts?',
-        hi: 'यांत्रिक इंटरप्टर संपर्कों के समानांतर लगा कैपेसिटर क्या महत्वपूर्ण कार्य करता है?',
-        bn: 'মেকানিক্যাল ইন্টারাপ্টার কন্টাক্টের সমান্তরালে যুক্ত ক্যাপাসিটরের প্রধান ভূমিকা কী?'
+        en: "What critical role does the parallel capacitor serve across the mechanical interrupter contacts?",
+        hi: "यांत्रिक इंटरप्टर संपर्कों के समानांतर लगा कैपेसिटर क्या महत्वपूर्ण कार्य करता है?",
+        bn: "মেকানিক্যাল ইন্টারাপ্টার কন্টাক্টের সমান্তরালে যুক্ত ক্যাপাসিটরের প্রধান ভূমিকা কী?"
       },
       options: [
-        { id: 'opt-1', text: { en: 'It absorbs the inductive kick to extinguish contact arcing and accelerates primary current collapse', hi: 'यह संपर्कों के बीच के स्पार्क को बुझाता है और धारा पतन को अत्यधिक तीव्र बनाता है', bn: 'এটি কন্টাক্টের মধ্যকার ক্ষতিকর আর্ক নিভিয়ে দেয় এবং প্রাইমারি কারেন্ট পতনকে দ্রুততর করে' } },
-        { id: 'opt-2', text: { en: 'It converts the direct current into 50 Hz sine wave AC', hi: 'यह डीसी को 50 Hz साइन वेव एसी में बदलता है', bn: 'এটি ডিসিকে ৫০ হার্টজ সাইন ওয়েভ এসিতে রূপান্তর করে' } },
-        { id: 'opt-3', text: { en: 'It steps down the secondary voltage for user safety', hi: 'यह सुरक्षा के लिए द्वितीयक वोल्टेज को घटाता है', bn: 'এটি নিরাপত্তার জন্য সেকেন্ডারি ভোল্টেজ হ্রাস করে' } },
-        { id: 'opt-4', text: { en: 'It permanently magnetizes the soft iron core', hi: 'यह लोहे के कोर को स्थायी रूप से चुंबकित करता है', bn: 'এটি কোরের লোহাকে স্থায়ীভাবে চুম্বক করে' } }
+        { id: "opt-1", text: { en: "It absorbs the inductive kick to extinguish contact arcing and accelerates primary current collapse", hi: "यह संपर्कों के बीच के स्पार्क को बुझाता है और धारा पतन को अत्यधिक तीव्र बनाता है", bn: "এটি কন্টাক্টের মধ্যকার ক্ষতিকর আর্ক নিভিয়ে দেয় এবং প্রাইমারি কারেন্ট পতনকে দ্রুততর করে" } },
+        { id: "opt-2", text: { en: "It converts the direct current into 50 Hz sine wave AC", hi: "यह डीसी को 50 Hz साइन वेव एसी में बदलता है", bn: "এটি ডিসিকে ৫০ হার্টজ সাইন ওয়েভ এসিতে রূপান্তর করে" } },
+        { id: "opt-3", text: { en: "It steps down the secondary voltage for user safety", hi: "यह सुरक्षा के लिए द्वितीयक वोल्टेज को घटाता है", bn: "এটি নিরাপত্তার জন্য সেকেন্ডারি ভোল্টেজ হ্রাস করে" } },
+        { id: "opt-4", text: { en: "It permanently magnetizes the soft iron core", hi: "यह लोहे के कोर को स्थायी रूप से चुंबकित करता है", bn: "এটি কোরের লোহাকে স্থায়ীভাবে চুম্বক করে" } }
       ],
-      correctOptionId: 'opt-1',
+      correctOptionId: "opt-1",
       explanation: {
-        en: 'The quench capacitor suppresses destructive contact arcing by absorbing the inductive energy, preventing a plasma channel and collapsing the core flux in microseconds.',
-        hi: 'कैपेसिटर संपर्कों पर स्पार्क नहीं बनने देता, जिससे प्राथमिक धारा अत्यंत तेजी से गिरती है और द्वितीयक में प्रचंड वोल्टेज उत्पन्न होता है।',
-        bn: 'ক্যাপাসিটর কন্টাক্টের মাঝে আর্ক দমন করে প্রাইমারি কারেন্টকে তাৎক্ষণিকভাবে শূন্যে নামিয়ে আনে।'
+        en: "The quench capacitor suppresses destructive contact arcing by absorbing the inductive energy, preventing a plasma channel and collapsing the core flux in microseconds.",
+        hi: "कैपेसिटर संपर्कों पर स्पार्क नहीं बनने देता, जिससे प्राथमिक धारा अत्यंत तेजी से गिरती है और द्वितीयक में प्रचंड वोल्टेज उत्पन्न होता है।",
+        bn: "ক্যাপাসিটর কন্টাক্টের মাঝে আর্ক দমন করে প্রাইমারি কারেন্টকে তাৎক্ষণিকভাবে শূন্যে নামিয়ে আনে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-03",
+      question: {
+        en: "A classic Ruhmkorff induction coil transforms low-voltage DC from a 12 V battery into tens of thousands of volts because:",
+        hi: "एक क्लासिक रुहमकॉर्फ इंडक्शन कॉइल 12 V की बैटरी को हजारों वोल्ट में बदल देती है क्योंकि:",
+        bn: "একটি ক্লাসিক রুহমকরফ ইন্ডাকশন কয়েল ১২ V ব্যাটারির ডিসিকে হাজার হাজার ভোল্টে রূপান্তর করে কারণ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The secondary has a massive number of turns (thousands of turns of fine wire) and primary current is interrupted with extreme rapidity (high dI/dt)", hi: "द्वितीयक में बहुत अधिक फेरे (हजारों महीन फेरे) होते हैं और संपर्क टूटने पर धारा की पतन दर (dI/dt) अत्यंत तीव्र होती है", bn: "সেকেন্ডারিতে বিপুল সংখ্যক পাক (হাজার হাজার সরু তারের পাক) থাকে এবং সংযোগ বিচ্ছিন্নকালে কারেন্টের পতন হার (dI/dt) অত্যন্ত তীব্র হয়" } },
+        { id: "opt-2", text: { en: "The battery produces infinite power during contact make", hi: "बैटरी संपर्क बनते समय अनंत शक्ति बनाती है", bn: "সংযোগ তৈরির সময় ব্যাটারি অসীম শক্তি তৈরি করে" } },
+        { id: "opt-3", text: { en: "The iron core becomes a permanent superconductor", hi: "लोहे का कोर स्थायी अतिचालक बन जाता है", bn: "লোহার কোরটি স্থায়ী সুপারকন্ডাক্টর হয়ে যায়" } },
+        { id: "opt-4", text: { en: "The spark creates free nuclear energy", hi: "स्पार्क से परमाणु ऊर्जा निकलती है", bn: "স্পার্ক থেকে পারমাণবিক শক্তি নির্গত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e₂ = -M (di₁/dt). The secondary has tens of thousands of turns (huge M), and the spring interrupter assisted by the quenching capacitor cuts the primary current in microseconds, creating astronomical di₁/dt and high spark voltages.",
+        hi: "e₂ = -M (di/dt) सूत्र के अनुसार भारी संख्या में फेरों (बड़ा M) और माइक्रोसेकंड में धारा गिरने से हजारों वोल्ट का स्पार्क उत्पन्न होता है।",
+        bn: "e₂ = -M (di/dt) সূত্রানুযায়ী সেকেন্ডারির বিপুল পাকসংখ্যা (উচ্চ M) এবং ক্যাপাসিটরের সহায়তায় মাইক্রোসেকেন্ডে কারেন্ট পতনের ফলে তীব্র ভোল্টেজ সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-04",
+      question: {
+        en: "In internal combustion gasoline engines, how does the automotive ignition coil apply the Ruhmkorff induction coil principle?",
+        hi: "पेट्रोल इंजनों में ऑटोमोटिव इग्निशन कॉइल रुहमकॉर्फ इंडक्शन कॉइल सिद्धांत को कैसे लागू करती है?",
+        bn: "পেট্রোল ইঞ্জিনে অটোমোটিভ ইগনিশন কয়েল কীভাবে রুহমকরফ আবেশ কয়েলের নীতি প্রয়োগ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It steps up 12 V battery DC to 20–40 kV by interrupting primary current via an electronic switch (or breaker points) to fire the spark plug", hi: "यह इलेक्ट्रॉनिक स्विच द्वारा 12 V प्राथमिक धारा को काटकर 20-40 kV बनाती है जिससे स्पार्क प्लग में चिंगारी कूदती है", bn: "এটি ইলেকট্রনিক সুইচের মাধ্যমে ১২ V প্রাইমারি কারেন্ট আকস্মিক বন্ধ করে ২০-৪০ kV তৈরি করে স্পার্ক প্লাগে স্ফুলিঙ্গ ঘটায়" } },
+        { id: "opt-2", text: { en: "It uses sound waves to detonate the fuel vapor", hi: "यह ध्वनि तरंगों से ईंधन जलाती है", bn: "এটি শব্দ তরঙ্গের সাহায্যে জ্বালানি বাষ্পে বিস্ফোরণ ঘটায়" } },
+        { id: "opt-3", text: { en: "It converts gasoline into electric current directly", hi: "यह पेट्रोल को सीधे बिजली में बदलती है", bn: "এটি পেট্রোলকে সরাসরি বৈদ্যুতিক কারেন্টে রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It cools the engine block with electrostatic charges", hi: "यह इंजन को स्थिर आवेशों से ठंडा करती है", bn: "এটি স্থির আধানের সাহায্যে ইঞ্জিন ব্লককে ঠান্ডা রাখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The car ignition coil charges from the 12V battery; when the engine control unit (ECU) abruptly opens the primary transistor switch, the collapsing flux induces 25,000+ volts in the secondary to ionize the spark plug gap.",
+        hi: "इग्निशन कॉइल 12V से चार्ज होती है; जब ट्रांजिस्टर प्राथमिक धारा काटता है, तो फ्लक्स गिरने से 25 kV से अधिक वोल्टेज बनकर स्पार्क प्लग पर चिंगारी बनाता है।",
+        bn: "ইগনিশন কয়েল ১২V এ চার্জ হয়; ট্রানজিস্টর প্রাইমারি কারেন্ট হঠাৎ বন্ধ করামাত্র ফ্লাক্স ধসে পড়ে সেকেন্ডারিতে ২৫,০০০+ ভোল্ট তৈরি করে প্লাগে স্পার্ক ঘটায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-05",
+      question: {
+        en: "Why is the secondary winding of a high-voltage induction coil typically divided into dozens of separate insulated pies (pancakes) rather than wound continuously end-to-end?",
+        hi: "उच्च-वोल्टेज इंडक्शन कॉइल की द्वितीयक वाइंडिंग को एक सिरे से दूसरे सिरे तक लगातार लपेटने के बजाय अलग-अलग पैनकेक (पाई) सेक्शन में क्यों बांटा जाता है?",
+        bn: "উচ্চ-ভোল্টেজের আবেশ কয়েলের সেকেন্ডারি ওয়াইন্ডিংকে এক প্রান্ত থেকে অন্য প্রান্তে সরাসরি না পেঁচিয়ে কেন বহুসংখ্যক আলাদা প্যানকেক (পাই) অংশে বিভক্ত করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To divide the massive total voltage across many insulation partitions, preventing dielectric breakdown between adjacent layers", hi: "भारी कुल वोल्टेज को कई छोटे हिस्सों में बांटने के लिए ताकि आसन्न परतों के बीच इंसुलेशन न फटे", bn: "বিপুল মোট ভোল্টেজকে অনেকগুলো অন্তরিত খণ্ডে ভাগ করে রাখতে যাতে পাশাপাশি স্তরের মাঝে ডাইইলেক্ট্রিক ব্রেকডাউন না ঘটে" } },
+        { id: "opt-2", text: { en: "To allow the coil to be folded into a pocket", hi: "कॉइल को मोड़कर जेब में रखने के लिए", bn: "কয়েলটি ভাঁজ করে পকেটে রাখার জন্য" } },
+        { id: "opt-3", text: { en: "To make the copper wire lighter in weight", hi: "तार का वजन कम करने के लिए", bn: "তামার তারের ওজন হালকা করার জন্য" } },
+        { id: "opt-4", text: { en: "To eliminate the magnetic field completely", hi: "चुंबकीय क्षेत्र को पूरी तरह समाप्त करने के लिए", bn: "চৌম্বক ক্ষেত্রকে সম্পূর্ণরূপে নিশ্চিহ্ন করতে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "A 50,000 V winding wound in continuous layers would subject adjacent bottom and top turns to thousands of volts of stress, causing immediate insulation puncture. Sectional pie winding keeps layer-to-layer voltage safely under 1,000 V.",
+        hi: "लगातार लपेटने पर परतों के बीच हजारों वोल्ट का तनाव आ जाता है और इंसुलेशन जल जाता है; पैनकेक वाइंडिंग से परतों के बीच वोल्टेज सुरक्षित स्तर पर रहता है।",
+        bn: "টানা ল্যাপটালে পাশাপাশি স্তরের মাঝে হাজার হাজার ভোল্টের চাপ তৈরি হয়ে ইনসুলেশন পুড়ে যায়; প্যানকেক বিন্যাস স্তরের মধ্যবর্তী ভোল্টেজ নিরাপদ সীমার মধ্যে রাখে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-06",
+      question: {
+        en: "What occurs if the buffer capacitor connected across the mechanical interrupter points of an induction coil is completely disconnected?",
+        hi: "यदि इंडक्शन कॉइल के मैकेनिकल ब्रेकर संपर्कों पर लगा बफर कैपेसिटर पूरी तरह हटा दिया जाए तो क्या होगा?",
+        bn: "যদি একটি আবেশ কয়েলের মেকানিক্যাল ব্রেকার কন্টাক্টের সাথে যুক্ত বাফার ক্যাপাসিটরটি সম্পূর্ণ বিচ্ছিন্ন করে দেওয়া হয় তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A heavy destructive arc forms across the opening contact points, primary current collapses slowly, and the secondary spark shrinks drastically or disappears", hi: "संपर्कों पर तेज विनाशकारी स्पार्क बनेगा, प्राथमिक धारा धीरे-धीरे गिरेगी, और द्वितीयक का स्पार्क बहुत छोटा या समाप्त हो जाएगा", bn: "কন্টাক্ট পয়েন্টে মারাত্মক আর্ক তৈরি হবে, প্রাইমারি কারেন্ট খুব ধীরে কমবে এবং সেকেন্ডারির উচ্চ-ভোল্টেজ স্পার্ক প্রায় মিলিয়ে যাবে" } },
+        { id: "opt-2", text: { en: "The secondary spark length triples in size", hi: "द्वितीयक स्पार्क तीन गुना बड़ा हो जाएगा", bn: "সেকেন্ডারির স্পার্কের দৈর্ঘ্য তিন গুণ বৃদ্ধি পাবে" } },
+        { id: "opt-3", text: { en: "The battery starts recharging itself automatically", hi: "बैटरी अपने आप चार्ज होने लगेगी", bn: "ব্যাটারি আপনা-আপনি পুনরায় চার্জ হতে শুরু করবে" } },
+        { id: "opt-4", text: { en: "The iron core melts into liquid within 1 second", hi: "कोर 1 सेकंड में पिघल जाएगा", bn: "১ সেকেন্ডের মধ্যে লোহার কোর গলে তরল হবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The capacitor absorbs the inductive kickback energy at break, quenching the contact arc instantly. Without it, the arc sustains current flow, reducing dI/dt to a crawl and killing the secondary induced EMF.",
+        hi: "कैपेसिटर संपर्कों पर स्पार्क को तुरंत बुझा देता है जिससे धारा तेजी से गिरती है; इसके बिना स्पार्क जलता रहता है और आउटपुट वोल्टेज बहुत घट जाता है।",
+        bn: "ক্যাপাসিটর কন্টাক্টের আর্ক সাথে সাথে নিভিয়ে দিয়ে কারেন্ট দ্রুত হ্রাস করে; এটি না থাকলে আর্ক জ্বলতে থাকে এবং সেকেন্ডারির ভোল্টেজ বিনষ্ট হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-07",
+      question: {
+        en: "How does an AC power transformer fundamentally differ in construction and operation from a classical DC induction coil?",
+        hi: "एक एसी पावर ट्रांसफॉर्मर शास्त्रीय डीसी इंडक्शन कॉइल से बनावट और कार्य में मौलिक रूप से कैसे भिन्न है?",
+        bn: "একটি এসি পাওয়ার ট্রান্সফরমার চিরায়ত ডিসি আবেশ কয়েল থেকে গঠন ও কাজের দিক দিয়ে কীভাবে মৌলিকভাবে পৃথক?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The transformer uses a closed magnetic iron core driven by continuous AC without any mechanical interrupter, whereas the induction coil uses an open iron core with a pulsing DC mechanical breaker", hi: "ट्रांसफॉर्मर बंद लोहे के कोर और निरंतर एसी पर बिना किसी यांत्रिक ब्रेकर के काम करता है, जबकि इंडक्शन कॉइल खुले कोर और डीसी ब्रेकर का उपयोग करती है", bn: "ট্রান্সফরমার বদ্ধ লোহার কোর ও অবিরাম এসিতে কোনো মেকানিক্যাল ব্রেকার ছাড়া চলে, আর আবেশ কয়েল খোলা কোর ও ডিসি ব্রেকার দিয়ে কাজ করে" } },
+        { id: "opt-2", text: { en: "Transformers operate only on liquid mercury", hi: "ट्रांसफॉर्मर केवल पारे पर काम करते हैं", bn: "ট্রান্সফরমার কেবল তরল পারদে চলে" } },
+        { id: "opt-3", text: { en: "Induction coils can only produce 12 volts", hi: "इंडक्शन कॉइल केवल 12 वोल्ट बना सकती हैं", bn: "আবেশ কয়েল কেবল ১২ ভোল্ট তৈরি করতে পারে" } },
+        { id: "opt-4", text: { en: "Transformers have zero turns on their secondary", hi: "ट्रांसफॉर्मर की द्वितीयक में शून्य फेरे होते हैं", bn: "ট্রান্সফরমারের সেকেন্ডারিতে শূন্য পাক থাকে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Transformers require time-harmonic alternating current through continuous closed low-reluctance magnetic cores. Ruhmkorff coils utilize open-ended iron wire bundles driven by interrupted direct current pulses.",
+        hi: "ट्रांसफॉर्मर बंद कोर पर निरंतर एसी से चलते हैं, जबकि इंडक्शन कॉइल खुले कोर पर रुक-रुक कर चलने वाली डीसी से चलती है।",
+        bn: "ট্রান্সফরমার বদ্ধ কোরে নিরবচ্ছিন্ন এসির সাহায্যে কাজ করে, যেখানে আবেশ কয়েল খোলা কোরে স্পন্দিত ডিসি ও মেকানিক্যাল ব্রেকার ব্যবহার করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-08",
+      question: {
+        en: "In historic physics laboratories, Heinrich Hertz used a Ruhmkorff induction coil to achieve what monumental scientific breakthrough in 1887?",
+        hi: "1887 में हेनरिक हर्ट्ज़ ने रुहमकॉर्फ इंडक्शन कॉइल का उपयोग करके कौन सी ऐतिहासिक वैज्ञानिक खोज की थी?",
+        bn: "১৮৮৭ সালে হাইনরিখ হার্টজ রুহমকরফ আবেশ কয়েল ব্যবহার করে কোন ঐতিহাসিক বৈজ্ঞানিক সাফল্য অর্জন করেছিলেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The first experimental generation, transmission, and detection of electromagnetic radio waves in space", hi: "अंतरिक्ष में विद्युत-चुंबकीय रेडियो तरंगों का पहला प्रायोगिक उत्पादन, प्रसारण और संसूचन", bn: "মহাশূন্যে তড়িৎচৌম্বকীয় বেতার তরঙ্গের প্রথম পরীক্ষামূলক সৃষ্টি, সঞ্চালন ও শনাক্তকরণ" } },
+        { id: "opt-2", text: { en: "The discovery of the electron charge using oil drops", hi: "तेल की बूंदों से इलेक्ट्रॉन आवेश की खोज", bn: "তেলের ফোঁটা দিয়ে ইলেকট্রন আধানের আবিষ্কার" } },
+        { id: "opt-3", text: { en: "The invention of the chemical lead-acid storage battery", hi: "लेड-एसिड स्टोरेज बैटरी का आविष्कार", bn: "লেড-অ্যাসিড ব্যাটারির উদ্ভাবন" } },
+        { id: "opt-4", text: { en: "The synthesis of artificial diamonds from coal", hi: "कोयले से कृत्रिम हीरे बनाना", bn: "কয়লা থেকে কৃত্রিম হীরা তৈরি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Hertz used a high-voltage Ruhmkorff coil connected to a spark gap to prove James Clerk Maxwell’s theoretical prediction of electromagnetic waves, launching the modern wireless era.",
+        hi: "हर्ट्ज़ ने रुहमकॉर्फ कॉइल के स्पार्क गैप से मैक्सवेल की विद्युत-चुंबकीय तरंगों की प्रायोगिक पुष्टि की, जिसने रेडियो संचार की नींव रखी।",
+        bn: "হার্টজ রুহমকরফ কয়েল দিয়ে স্পার্ক তৈরি করে ম্যাক্সওয়েলের ভবিষ্যৎবাণী করা তড়িৎচৌম্বকীয় তরঙ্গের বাস্তব প্রমাণ দেন, যা বেতার প্রযুক্তির সূচনা করে।"
+      }
+    }
+  ],
+  mcqQuestions: [
+    {
+      id: "q-indcoil-1",
+      question: {
+        en: "Why is the high-voltage spark produced predominantly at the \"break\" (contact opening) rather than at the \"make\" (contact closing) of the interrupter?",
+        hi: "इंटरप्टर के \"जुड़ने\" (make) के बजाय \"टूटने\" (break) पर मुख्य रूप से हाई-वोल्टेज स्पार्क क्यों उत्पन्न होता है?",
+        bn: "ইন্টারাপ্টার \"যুক্ত\" হওয়ার সময়ের চেয়ে \"বিচ্ছিন্ন\" (break) হওয়ার সময় প্রধানত কেন অতি উচ্চ ভোল্টেজ স্পার্ক সৃষ্টি হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "Because (dI/dt) at contact break is hundreds of times faster than (dI/dt) at contact make", hi: "क्योंकि संपर्क टूटने पर धारा परिवर्तन की दर (dI/dt) जुड़ने की तुलना में सैकड़ों गुना तेज होती है", bn: "কারণ সংযোগ বিচ্ছিন্নকালে কারেন্ট পরিবর্তনের হার (dI/dt) সংযোগকালের চেয়ে শতগুণ দ্রুত হয়" } },
+        { id: "opt-2", text: { en: "Because battery voltage doubles during contact opening", hi: "क्योंकि संपर्क खुलने पर बैटरी का वोल्टेज दोगुना हो जाता है", bn: "কারণ সংযোগ খোলার সময় ব্যাটারি ভোল্টেজ দ্বিগুণ হয়" } },
+        { id: "opt-3", text: { en: "Because the secondary winding changes direction at break", hi: "क्योंकि टूटने पर द्वितीयक वाइंडिंग अपनी दिशा बदल लेती है", bn: "কারণ বিচ্ছিন্নকালে সেকেন্ডারি ওয়াইন্ডিং দিক পরিবর্তন করে" } },
+        { id: "opt-4", text: { en: "Because the iron core loses its mass at break", hi: "क्योंकि लोहे का कोर अपना द्रव्यमान खो देता है", bn: "কারণ বিচ্ছিন্নকালে লোহার কোর ভর হারায়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "At \"make\", primary current rises slowly governed by τ = L/R. At \"break\", aided by the quench capacitor, current collapses virtually instantaneously, resulting in an enormous dI/dt that multiplies e_s = -M(dI/dt).",
+        hi: "जुड़ते समय धारा τ = L/R के कारण धीरे-धीरे बढ़ती है। टूटते समय कैपेसिटर की सहायता से धारा कुछ ही माइक्रोसेकंड में शून्य हो जाती है, जिससे dI/dt अत्यधिक विशाल हो जाता है।",
+        bn: "সংযোগের সময় L/R টাইম কনস্ট্যান্টের কারণে কারেন্ট ধীরে বৃদ্ধি পায়। কিন্তু বিচ্ছিন্নকালে ক্যাপাসিটরের সহায়তায় কয়েক মাইক্রোসেকেন্ডে কারেন্ট শূন্য হওয়ায় dI/dt অত্যন্ত তীব্র হয়।"
+      }
+    },
+    {
+      id: "q-indcoil-2",
+      question: {
+        en: "What critical role does the parallel capacitor serve across the mechanical interrupter contacts?",
+        hi: "यांत्रिक इंटरप्टर संपर्कों के समानांतर लगा कैपेसिटर क्या महत्वपूर्ण कार्य करता है?",
+        bn: "মেকানিক্যাল ইন্টারাপ্টার কন্টাক্টের সমান্তরালে যুক্ত ক্যাপাসিটরের প্রধান ভূমিকা কী?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It absorbs the inductive kick to extinguish contact arcing and accelerates primary current collapse", hi: "यह संपर्कों के बीच के स्पार्क को बुझाता है और धारा पतन को अत्यधिक तीव्र बनाता है", bn: "এটি কন্টাক্টের মধ্যকার ক্ষতিকর আর্ক নিভিয়ে দেয় এবং প্রাইমারি কারেন্ট পতনকে দ্রুততর করে" } },
+        { id: "opt-2", text: { en: "It converts the direct current into 50 Hz sine wave AC", hi: "यह डीसी को 50 Hz साइन वेव एसी में बदलता है", bn: "এটি ডিসিকে ৫০ হার্টজ সাইন ওয়েভ এসিতে রূপান্তর করে" } },
+        { id: "opt-3", text: { en: "It steps down the secondary voltage for user safety", hi: "यह सुरक्षा के लिए द्वितीयक वोल्टेज को घटाता है", bn: "এটি নিরাপত্তার জন্য সেকেন্ডারি ভোল্টেজ হ্রাস করে" } },
+        { id: "opt-4", text: { en: "It permanently magnetizes the soft iron core", hi: "यह लोहे के कोर को स्थायी रूप से चुंबकित करता है", bn: "এটি কোরের লোহাকে স্থায়ীভাবে চুম্বক করে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The quench capacitor suppresses destructive contact arcing by absorbing the inductive energy, preventing a plasma channel and collapsing the core flux in microseconds.",
+        hi: "कैपेसिटर संपर्कों पर स्पार्क नहीं बनने देता, जिससे प्राथमिक धारा अत्यंत तेजी से गिरती है और द्वितीयक में प्रचंड वोल्टेज उत्पन्न होता है।",
+        bn: "ক্যাপাসিটর কন্টাক্টের মাঝে আর্ক দমন করে প্রাইমারি কারেন্টকে তাৎক্ষণিকভাবে শূন্যে নামিয়ে আনে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-03",
+      question: {
+        en: "A classic Ruhmkorff induction coil transforms low-voltage DC from a 12 V battery into tens of thousands of volts because:",
+        hi: "एक क्लासिक रुहमकॉर्फ इंडक्शन कॉइल 12 V की बैटरी को हजारों वोल्ट में बदल देती है क्योंकि:",
+        bn: "একটি ক্লাসিক রুহমকরফ ইন্ডাকশন কয়েল ১২ V ব্যাটারির ডিসিকে হাজার হাজার ভোল্টে রূপান্তর করে কারণ:"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The secondary has a massive number of turns (thousands of turns of fine wire) and primary current is interrupted with extreme rapidity (high dI/dt)", hi: "द्वितीयक में बहुत अधिक फेरे (हजारों महीन फेरे) होते हैं और संपर्क टूटने पर धारा की पतन दर (dI/dt) अत्यंत तीव्र होती है", bn: "সেকেন্ডারিতে বিপুল সংখ্যক পাক (হাজার হাজার সরু তারের পাক) থাকে এবং সংযোগ বিচ্ছিন্নকালে কারেন্টের পতন হার (dI/dt) অত্যন্ত তীব্র হয়" } },
+        { id: "opt-2", text: { en: "The battery produces infinite power during contact make", hi: "बैटरी संपर्क बनते समय अनंत शक्ति बनाती है", bn: "সংযোগ তৈরির সময় ব্যাটারি অসীম শক্তি তৈরি করে" } },
+        { id: "opt-3", text: { en: "The iron core becomes a permanent superconductor", hi: "लोहे का कोर स्थायी अतिचालक बन जाता है", bn: "লোহার কোরটি স্থায়ী সুপারকন্ডাক্টর হয়ে যায়" } },
+        { id: "opt-4", text: { en: "The spark creates free nuclear energy", hi: "स्पार्क से परमाणु ऊर्जा निकलती है", bn: "স্পার্ক থেকে পারমাণবিক শক্তি নির্গত হয়" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "e₂ = -M (di₁/dt). The secondary has tens of thousands of turns (huge M), and the spring interrupter assisted by the quenching capacitor cuts the primary current in microseconds, creating astronomical di₁/dt and high spark voltages.",
+        hi: "e₂ = -M (di/dt) सूत्र के अनुसार भारी संख्या में फेरों (बड़ा M) और माइक्रोसेकंड में धारा गिरने से हजारों वोल्ट का स्पार्क उत्पन्न होता है।",
+        bn: "e₂ = -M (di/dt) সূত্রানুযায়ী সেকেন্ডারির বিপুল পাকসংখ্যা (উচ্চ M) এবং ক্যাপাসিটরের সহায়তায় মাইক্রোসেকেন্ডে কারেন্ট পতনের ফলে তীব্র ভোল্টেজ সৃষ্টি হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-04",
+      question: {
+        en: "In internal combustion gasoline engines, how does the automotive ignition coil apply the Ruhmkorff induction coil principle?",
+        hi: "पेट्रोल इंजनों में ऑटोमोटिव इग्निशन कॉइल रुहमकॉर्फ इंडक्शन कॉइल सिद्धांत को कैसे लागू करती है?",
+        bn: "পেট্রোল ইঞ্জিনে অটোমোটিভ ইগনিশন কয়েল কীভাবে রুহমকরফ আবেশ কয়েলের নীতি প্রয়োগ করে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "It steps up 12 V battery DC to 20–40 kV by interrupting primary current via an electronic switch (or breaker points) to fire the spark plug", hi: "यह इलेक्ट्रॉनिक स्विच द्वारा 12 V प्राथमिक धारा को काटकर 20-40 kV बनाती है जिससे स्पार्क प्लग में चिंगारी कूदती है", bn: "এটি ইলেকট্রনিক সুইচের মাধ্যমে ১২ V প্রাইমারি কারেন্ট আকস্মিক বন্ধ করে ২০-৪০ kV তৈরি করে স্পার্ক প্লাগে স্ফুলিঙ্গ ঘটায়" } },
+        { id: "opt-2", text: { en: "It uses sound waves to detonate the fuel vapor", hi: "यह ध्वनि तरंगों से ईंधन जलाती है", bn: "এটি শব্দ তরঙ্গের সাহায্যে জ্বালানি বাষ্পে বিস্ফোরণ ঘটায়" } },
+        { id: "opt-3", text: { en: "It converts gasoline into electric current directly", hi: "यह पेट्रोल को सीधे बिजली में बदलती है", bn: "এটি পেট্রোলকে সরাসরি বৈদ্যুতিক কারেন্টে রূপান্তর করে" } },
+        { id: "opt-4", text: { en: "It cools the engine block with electrostatic charges", hi: "यह इंजन को स्थिर आवेशों से ठंडा करती है", bn: "এটি স্থির আধানের সাহায্যে ইঞ্জিন ব্লককে ঠান্ডা রাখে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The car ignition coil charges from the 12V battery; when the engine control unit (ECU) abruptly opens the primary transistor switch, the collapsing flux induces 25,000+ volts in the secondary to ionize the spark plug gap.",
+        hi: "इग्निशन कॉइल 12V से चार्ज होती है; जब ट्रांजिस्टर प्राथमिक धारा काटता है, तो फ्लक्स गिरने से 25 kV से अधिक वोल्टेज बनकर स्पार्क प्लग पर चिंगारी बनाता है।",
+        bn: "ইগনিশন কয়েল ১২V এ চার্জ হয়; ট্রানজিস্টর প্রাইমারি কারেন্ট হঠাৎ বন্ধ করামাত্র ফ্লাক্স ধসে পড়ে সেকেন্ডারিতে ২৫,০০০+ ভোল্ট তৈরি করে প্লাগে স্পার্ক ঘটায়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-05",
+      question: {
+        en: "Why is the secondary winding of a high-voltage induction coil typically divided into dozens of separate insulated pies (pancakes) rather than wound continuously end-to-end?",
+        hi: "उच्च-वोल्टेज इंडक्शन कॉइल की द्वितीयक वाइंडिंग को एक सिरे से दूसरे सिरे तक लगातार लपेटने के बजाय अलग-अलग पैनकेक (पाई) सेक्शन में क्यों बांटा जाता है?",
+        bn: "উচ্চ-ভোল্টেজের আবেশ কয়েলের সেকেন্ডারি ওয়াইন্ডিংকে এক প্রান্ত থেকে অন্য প্রান্তে সরাসরি না পেঁচিয়ে কেন বহুসংখ্যক আলাদা প্যানকেক (পাই) অংশে বিভক্ত করা হয়?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "To divide the massive total voltage across many insulation partitions, preventing dielectric breakdown between adjacent layers", hi: "भारी कुल वोल्टेज को कई छोटे हिस्सों में बांटने के लिए ताकि आसन्न परतों के बीच इंसुलेशन न फटे", bn: "বিপুল মোট ভোল্টেজকে অনেকগুলো অন্তরিত খণ্ডে ভাগ করে রাখতে যাতে পাশাপাশি স্তরের মাঝে ডাইইলেক্ট্রিক ব্রেকডাউন না ঘটে" } },
+        { id: "opt-2", text: { en: "To allow the coil to be folded into a pocket", hi: "कॉइल को मोड़कर जेब में रखने के लिए", bn: "কয়েলটি ভাঁজ করে পকেটে রাখার জন্য" } },
+        { id: "opt-3", text: { en: "To make the copper wire lighter in weight", hi: "तार का वजन कम करने के लिए", bn: "তামার তারের ওজন হালকা করার জন্য" } },
+        { id: "opt-4", text: { en: "To eliminate the magnetic field completely", hi: "चुंबकीय क्षेत्र को पूरी तरह समाप्त करने के लिए", bn: "চৌম্বক ক্ষেত্রকে সম্পূর্ণরূপে নিশ্চিহ্ন করতে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "A 50,000 V winding wound in continuous layers would subject adjacent bottom and top turns to thousands of volts of stress, causing immediate insulation puncture. Sectional pie winding keeps layer-to-layer voltage safely under 1,000 V.",
+        hi: "लगातार लपेटने पर परतों के बीच हजारों वोल्ट का तनाव आ जाता है और इंसुलेशन जल जाता है; पैनकेक वाइंडिंग से परतों के बीच वोल्टेज सुरक्षित स्तर पर रहता है।",
+        bn: "টানা ল্যাপটালে পাশাপাশি স্তরের মাঝে হাজার হাজার ভোল্টের চাপ তৈরি হয়ে ইনসুলেশন পুড়ে যায়; প্যানকেক বিন্যাস স্তরের মধ্যবর্তী ভোল্টেজ নিরাপদ সীমার মধ্যে রাখে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-06",
+      question: {
+        en: "What occurs if the buffer capacitor connected across the mechanical interrupter points of an induction coil is completely disconnected?",
+        hi: "यदि इंडक्शन कॉइल के मैकेनिकल ब्रेकर संपर्कों पर लगा बफर कैपेसिटर पूरी तरह हटा दिया जाए तो क्या होगा?",
+        bn: "যদি একটি আবেশ কয়েলের মেকানিক্যাল ব্রেকার কন্টাক্টের সাথে যুক্ত বাফার ক্যাপাসিটরটি সম্পূর্ণ বিচ্ছিন্ন করে দেওয়া হয় তবে কী ঘটবে?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "A heavy destructive arc forms across the opening contact points, primary current collapses slowly, and the secondary spark shrinks drastically or disappears", hi: "संपर्कों पर तेज विनाशकारी स्पार्क बनेगा, प्राथमिक धारा धीरे-धीरे गिरेगी, और द्वितीयक का स्पार्क बहुत छोटा या समाप्त हो जाएगा", bn: "কন্টাক্ট পয়েন্টে মারাত্মক আর্ক তৈরি হবে, প্রাইমারি কারেন্ট খুব ধীরে কমবে এবং সেকেন্ডারির উচ্চ-ভোল্টেজ স্পার্ক প্রায় মিলিয়ে যাবে" } },
+        { id: "opt-2", text: { en: "The secondary spark length triples in size", hi: "द्वितीयक स्पार्क तीन गुना बड़ा हो जाएगा", bn: "সেকেন্ডারির স্পার্কের দৈর্ঘ্য তিন গুণ বৃদ্ধি পাবে" } },
+        { id: "opt-3", text: { en: "The battery starts recharging itself automatically", hi: "बैटरी अपने आप चार्ज होने लगेगी", bn: "ব্যাটারি আপনা-আপনি পুনরায় চার্জ হতে শুরু করবে" } },
+        { id: "opt-4", text: { en: "The iron core melts into liquid within 1 second", hi: "कोर 1 सेकंड में पिघल जाएगा", bn: "১ সেকেন্ডের মধ্যে লোহার কোর গলে তরল হবে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "The capacitor absorbs the inductive kickback energy at break, quenching the contact arc instantly. Without it, the arc sustains current flow, reducing dI/dt to a crawl and killing the secondary induced EMF.",
+        hi: "कैपेसिटर संपर्कों पर स्पार्क को तुरंत बुझा देता है जिससे धारा तेजी से गिरती है; इसके बिना स्पार्क जलता रहता है और आउटपुट वोल्टेज बहुत घट जाता है।",
+        bn: "ক্যাপাসিটর কন্টাক্টের আর্ক সাথে সাথে নিভিয়ে দিয়ে কারেন্ট দ্রুত হ্রাস করে; এটি না থাকলে আর্ক জ্বলতে থাকে এবং সেকেন্ডারির ভোল্টেজ বিনষ্ট হয়।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-07",
+      question: {
+        en: "How does an AC power transformer fundamentally differ in construction and operation from a classical DC induction coil?",
+        hi: "एक एसी पावर ट्रांसफॉर्मर शास्त्रीय डीसी इंडक्शन कॉइल से बनावट और कार्य में मौलिक रूप से कैसे भिन्न है?",
+        bn: "একটি এসি পাওয়ার ট্রান্সফরমার চিরায়ত ডিসি আবেশ কয়েল থেকে গঠন ও কাজের দিক দিয়ে কীভাবে মৌলিকভাবে পৃথক?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The transformer uses a closed magnetic iron core driven by continuous AC without any mechanical interrupter, whereas the induction coil uses an open iron core with a pulsing DC mechanical breaker", hi: "ट्रांसफॉर्मर बंद लोहे के कोर और निरंतर एसी पर बिना किसी यांत्रिक ब्रेकर के काम करता है, जबकि इंडक्शन कॉइल खुले कोर और डीसी ब्रेकर का उपयोग करती है", bn: "ট্রান্সফরমার বদ্ধ লোহার কোর ও অবিরাম এসিতে কোনো মেকানিক্যাল ব্রেকার ছাড়া চলে, আর আবেশ কয়েল খোলা কোর ও ডিসি ব্রেকার দিয়ে কাজ করে" } },
+        { id: "opt-2", text: { en: "Transformers operate only on liquid mercury", hi: "ट्रांसफॉर्मर केवल पारे पर काम करते हैं", bn: "ট্রান্সফরমার কেবল তরল পারদে চলে" } },
+        { id: "opt-3", text: { en: "Induction coils can only produce 12 volts", hi: "इंडक्शन कॉइल केवल 12 वोल्ट बना सकती हैं", bn: "আবেশ কয়েল কেবল ১২ ভোল্ট তৈরি করতে পারে" } },
+        { id: "opt-4", text: { en: "Transformers have zero turns on their secondary", hi: "ट्रांसफॉर्मर की द्वितीयक में शून्य फेरे होते हैं", bn: "ট্রান্সফরমারের সেকেন্ডারিতে শূন্য পাক থাকে" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Transformers require time-harmonic alternating current through continuous closed low-reluctance magnetic cores. Ruhmkorff coils utilize open-ended iron wire bundles driven by interrupted direct current pulses.",
+        hi: "ट्रांसफॉर्मर बंद कोर पर निरंतर एसी से चलते हैं, जबकि इंडक्शन कॉइल खुले कोर पर रुक-रुक कर चलने वाली डीसी से चलती है।",
+        bn: "ট্রান্সফরমার বদ্ধ কোরে নিরবচ্ছিন্ন এসির সাহায্যে কাজ করে, যেখানে আবেশ কয়েল খোলা কোরে স্পন্দিত ডিসি ও মেকানিক্যাল ব্রেকার ব্যবহার করে।"
+      }
+    },
+    {
+      id: "mcq-ch10-l15-08",
+      question: {
+        en: "In historic physics laboratories, Heinrich Hertz used a Ruhmkorff induction coil to achieve what monumental scientific breakthrough in 1887?",
+        hi: "1887 में हेनरिक हर्ट्ज़ ने रुहमकॉर्फ इंडक्शन कॉइल का उपयोग करके कौन सी ऐतिहासिक वैज्ञानिक खोज की थी?",
+        bn: "১৮৮৭ সালে হাইনরিখ হার্টজ রুহমকরফ আবেশ কয়েল ব্যবহার করে কোন ঐতিহাসিক বৈজ্ঞানিক সাফল্য অর্জন করেছিলেন?"
+      },
+      options: [
+        { id: "opt-1", text: { en: "The first experimental generation, transmission, and detection of electromagnetic radio waves in space", hi: "अंतरिक्ष में विद्युत-चुंबकीय रेडियो तरंगों का पहला प्रायोगिक उत्पादन, प्रसारण और संसूचन", bn: "মহাশূন্যে তড়িৎচৌম্বকীয় বেতার তরঙ্গের প্রথম পরীক্ষামূলক সৃষ্টি, সঞ্চালন ও শনাক্তকরণ" } },
+        { id: "opt-2", text: { en: "The discovery of the electron charge using oil drops", hi: "तेल की बूंदों से इलेक्ट्रॉन आवेश की खोज", bn: "তেলের ফোঁটা দিয়ে ইলেকট্রন আধানের আবিষ্কার" } },
+        { id: "opt-3", text: { en: "The invention of the chemical lead-acid storage battery", hi: "लेड-एसिड स्टोरेज बैटरी का आविष्कार", bn: "লেড-অ্যাসিড ব্যাটারির উদ্ভাবন" } },
+        { id: "opt-4", text: { en: "The synthesis of artificial diamonds from coal", hi: "कोयले से कृत्रिम हीरे बनाना", bn: "কয়লা থেকে কৃত্রিম হীরা তৈরি" } }
+      ],
+      correctOptionId: "opt-1",
+      explanation: {
+        en: "Hertz used a high-voltage Ruhmkorff coil connected to a spark gap to prove James Clerk Maxwell’s theoretical prediction of electromagnetic waves, launching the modern wireless era.",
+        hi: "हर्ट्ज़ ने रुहमकॉर्फ कॉइल के स्पार्क गैप से मैक्सवेल की विद्युत-चुंबकीय तरंगों की प्रायोगिक पुष्टि की, जिसने रेडियो संचार की नींव रखी।",
+        bn: "হার্টজ রুহমকরফ কয়েল দিয়ে স্পার্ক তৈরি করে ম্যাক্সওয়েলের ভবিষ্যৎবাণী করা তড়িৎচৌম্বকীয় তরঙ্গের বাস্তব প্রমাণ দেন, যা বেতার প্রযুক্তির সূচনা করে।"
       }
     }
   ],
