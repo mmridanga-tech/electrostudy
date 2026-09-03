@@ -9,6 +9,7 @@ import { CHAPTER_7_LESSONS } from './chapter7Lessons';
 import { CHAPTER_8_LESSONS } from './chapter8Lessons';
 import { CHAPTER_9_LESSONS } from './chapter9Lessons';
 import { CHAPTER_10_LESSONS } from './chapter10Lessons';
+import { CHAPTER_11_LESSONS } from './chapter11Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
 import { MEASUREMENTS_SUBJECT } from './measurementsData';
@@ -2080,143 +2081,83 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         ]
       },
       {
-        id: 'ch-ac-fundamentals',
+        id: 'ch-em-waves',
         subjectId: 'basic-electrical',
         order: 11,
         title: {
-          en: 'Chapter 11: AC Fundamentals',
-          hi: 'अध्याय 11: एसी मूलभूत सिद्धांत',
-          bn: 'অধ্যায় ১১: এসি মৌলিক ভিত্তি'
+          en: 'Chapter 11: Electromagnetic Waves & Electromagnetic Field Theory',
+          hi: 'अध्याय 11: विद्युत चुंबकीय तरंगें एवं क्षेत्र सिद्धांत',
+          bn: 'অধ্যায় ১১: তড়িৎচৌম্বকীয় তরঙ্গ ও ক্ষেত্র তত্ত্ব'
         },
         topics: [
           {
-            id: 'tp-ac-vs-dc',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-field-fundamentals",
+            chapterId: "ch-em-waves",
             order: 1,
             title: {
-              en: 'AC vs DC',
-              hi: 'एसी बनाम डीसी',
-              bn: 'এসি বনাম ডিসি'
+              en: "Electromagnetic Field Fundamentals: E, D, B, H Vectors & Permittivity/Permeability",
+              hi: "विद्युत चुंबकीय क्षेत्र के मूल सिद्धांत: E, D, B, H सदिश एवं परावैद्युतांक/चुंबकशीलता",
+              bn: "তড়িৎচৌম্বকীয় ক্ষেত্রের মৌলিক ভিত্তি: E, D, B, H ভেক্টর এবং প্রবেশ্যতা/ভেদ্যতা"
             }
           },
           {
-            id: 'tp-sinusoidal-waveform',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-gauss-law",
+            chapterId: "ch-em-waves",
             order: 2,
             title: {
-              en: 'Sinusoidal Waveform',
-              hi: 'साइनसोइडल तरंगरूप',
-              bn: 'সাইনুসয়েডাল ওয়েভফর্ম'
+              en: "Gauss’s Law for Electrostatics & Magnetostatics (Divergence Laws)",
+              hi: "स्थिरवैद्युतिकी एवं स्थिरचुंबकत्व के लिए गाउस का नियम (अपसरण नियम)",
+              bn: "স্থিরতড়িৎ ও স্থিরচুম্বকত্বে গাউসের সূত্র (ডাইভারজেন্স সূত্র)"
             }
           },
           {
-            id: 'tp-cycle',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-ampere-law",
+            chapterId: "ch-em-waves",
             order: 3,
             title: {
-              en: 'Cycle',
-              hi: 'चक्र (साइकिल)',
-              bn: 'সাইকেল'
+              en: "Ampere’s Circuital Law & Magnetic Circulation (Curl of H)",
+              hi: "एम्पीयर का परिपथीय नियम एवं चुंबकीय परिसंचरण (H का कर्ल)",
+              bn: "অ্যাম্পিয়ারের বর্তনী সূত্র ও চৌম্বক সঞ্চালন (H এর কার্ল)"
             }
           },
           {
-            id: 'tp-time-period',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-faraday-law",
+            chapterId: "ch-em-waves",
             order: 4,
             title: {
-              en: 'Time Period',
-              hi: 'आवर्तकाल (टाइम पीरियड)',
-              bn: 'পর্যায়কাল (টাইম পিরিয়ড)'
+              en: "Faraday’s Law of Induction: Field Formulation & Maxwell-Faraday Curl Equation",
+              hi: "फैराडे का प्रेरण नियम: क्षेत्र निरूपण एवं मैक्सवेल-फैराडे कर्ल समीकरण",
+              bn: "ফ্যারাডের আবেশ সূত্র: ক্ষেত্র রূপ ও ম্যাক্সওয়েল-ফ্যারাডে কার্ল সমীকরণ"
             }
           },
           {
-            id: 'tp-frequency',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-displacement-current",
+            chapterId: "ch-em-waves",
             order: 5,
             title: {
-              en: 'Frequency',
-              hi: 'आवृत्ति (फ्रीक्वेंसी)',
-              bn: 'কম্পাঙ্ক (ফ্রিকোয়েন্সি)'
+              en: "Displacement Current Density & The Generalized Ampere-Maxwell Law",
+              hi: "विस्थापन धारा घनत्व एवं सामान्यीकृत एम्पीयर-मैक्सवेल नियम",
+              bn: "সরণ প্রবাহ ঘনত্ব ও সার্বিক অ্যাম্পিয়ার-ম্যাক্সওয়েল সূত্র"
             }
           },
           {
-            id: 'tp-angular-frequency',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-maxwell-equations",
+            chapterId: "ch-em-waves",
             order: 6,
             title: {
-              en: 'Angular Frequency',
-              hi: 'कोणीय आवृत्ति',
-              bn: 'কৌণিক কম্পাঙ্ক'
+              en: "Maxwell’s Four Fundamental Equations & Electromagnetic Boundary Conditions",
+              hi: "मैक्सवेल के चार मौलिक समीकरण एवं विद्युत चुंबकीय परिसीमा स्थितियाँ",
+              bn: "ম্যাক্সওয়েলের চারটি মৌলিক সমীকরণ ও তড়িৎচৌম্বকীয় সীমানা শর্ত"
             }
           },
           {
-            id: 'tp-amplitude',
-            chapterId: 'ch-ac-fundamentals',
+            id: "ch11-wave-propagation-plane-waves",
+            chapterId: "ch-em-waves",
             order: 7,
             title: {
-              en: 'Amplitude',
-              hi: 'आयाम (एंप्लीटुड)',
-              bn: 'বিস্তার (অ্যাম্প্লিচিউড)'
-            }
-          },
-          {
-            id: 'tp-instantaneous-value',
-            chapterId: 'ch-ac-fundamentals',
-            order: 8,
-            title: {
-              en: 'Instantaneous Value',
-              hi: 'तात्क्षणिक मान',
-              bn: 'তাৎক্ষণিক মান'
-            }
-          },
-          {
-            id: 'tp-average-value',
-            chapterId: 'ch-ac-fundamentals',
-            order: 9,
-            title: {
-              en: 'Average Value',
-              hi: 'औसत मान (एवरेज वैल्यू)',
-              bn: 'গড় মান (অ্যাভারেজ ভ্যালু)'
-            }
-          },
-          {
-            id: 'tp-rms-value',
-            chapterId: 'ch-ac-fundamentals',
-            order: 10,
-            title: {
-              en: 'RMS Value',
-              hi: 'आरएमएस मान (RMS Value)',
-              bn: 'আরএমএস মান (RMS ভ্যালু)'
-            }
-          },
-          {
-            id: 'tp-form-factor',
-            chapterId: 'ch-ac-fundamentals',
-            order: 11,
-            title: {
-              en: 'Form Factor',
-              hi: 'फॉर्म फैक्टर',
-              bn: 'ফর্ম ফ্যাক্টর'
-            }
-          },
-          {
-            id: 'tp-peak-factor',
-            chapterId: 'ch-ac-fundamentals',
-            order: 12,
-            title: {
-              en: 'Peak Factor',
-              hi: 'पीक फैक्टर',
-              bn: 'পিক ফ্যাক্টর'
-            }
-          },
-          {
-            id: 'tp-phase-difference',
-            chapterId: 'ch-ac-fundamentals',
-            order: 13,
-            title: {
-              en: 'Phase & Phase Difference',
-              hi: 'कला एवं कलांतर (फेज एवं फेज अंतर)',
-              bn: 'ফেজ ও ফেজ পার্থক্য'
+              en: "Electromagnetic Wave Propagation, Uniform Plane Waves (UPW) & Poynting Vector",
+              hi: "विद्युत चुंबकीय तरंग संचरण, एकसमान समतल तरंगें (UPW) एवं पॉइंटिंग सदिश",
+              bn: "তড়িৎচৌম্বকীয় তরঙ্গ সঞ্চালন, সমরূপ সমতল তরঙ্গ (UPW) ও পয়েন্টিং ভেক্টর"
             }
           }
         ]
@@ -2803,6 +2744,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_10_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-em-waves' || chapter.id === 'ch-ac-fundamentals') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_11_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

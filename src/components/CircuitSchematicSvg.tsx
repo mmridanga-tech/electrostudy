@@ -5275,6 +5275,553 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+
+    /* =========================================================================
+       CHAPTER 11 — ELECTROMAGNETIC WAVES & ELECTROMAGNETIC FIELD THEORY
+       ========================================================================= */
+
+    case 'circuit-ch11-field-fundamentals':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <defs>
+              <marker id="ch11EArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch11DArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#818cf8" />
+              </marker>
+              <marker id="ch11BArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#10b981" />
+              </marker>
+              <marker id="ch11HArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#f59e0b" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="22" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Electromagnetic Field Vectors: E, D, B, H & Constitutive Relations
+            </text>
+
+            {/* Left Panel: Electric Field (E) & Electric Flux Density (D) */}
+            <g transform="translate(30, 40)">
+              <rect x="0" y="0" width="225" height="165" rx="6" fill="#0b132b" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="112" y="20" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">
+                Electric Field Domain (E, D)
+              </text>
+
+              {/* Positive and Negative Source Charges */}
+              <circle cx="45" cy="65" r="14" fill="#ef4444" stroke="#fca5a5" strokeWidth="1.5" />
+              <text x="45" y="70" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle">+</text>
+              <text x="45" y="92" fill="#ef4444" fontSize="8.5" fontWeight="bold" textAnchor="middle">+q (Source)</text>
+
+              <circle cx="180" cy="65" r="14" fill="#3b82f6" stroke="#93c5fd" strokeWidth="1.5" />
+              <text x="180" y="70" fill="#ffffff" fontSize="13" fontWeight="bold" textAnchor="middle">-</text>
+              <text x="180" y="92" fill="#93c5fd" fontSize="8.5" fontWeight="bold" textAnchor="middle">-q (Sink)</text>
+
+              {/* Electric Field lines E */}
+              <path d="M 60 65 L 165 65" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#ch11EArrow)" />
+              <path d="M 57 55 Q 112 35 167 55" fill="none" stroke="#38bdf8" strokeWidth="1.6" markerEnd="url(#ch11EArrow)" />
+              <path d="M 57 75 Q 112 95 167 75" fill="none" stroke="#38bdf8" strokeWidth="1.6" markerEnd="url(#ch11EArrow)" />
+              <text x="112" y="60" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">E (V/m)</text>
+
+              {/* Dielectric Slab Interface with D and P */}
+              <rect x="90" y="105" width="45" height="48" fill="#1e293b" stroke="#818cf8" strokeDasharray="3 2" rx="2" />
+              <text x="112" y="118" fill="#c7d2fe" fontSize="7.5" textAnchor="middle">Dielectric (ε)</text>
+              <path d="M 75 135 L 150 135" stroke="#818cf8" strokeWidth="1.8" markerEnd="url(#ch11DArrow)" />
+              <text x="112" y="131" fill="#818cf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">D = εE = ε0E + P</text>
+              <text x="112" y="148" fill="#94a3b8" fontSize="7" textAnchor="middle">D in C/m² (Flux Density)</text>
+            </g>
+
+            {/* Right Panel: Magnetic Flux Density (B) & Magnetic Field Intensity (H) */}
+            <g transform="translate(285, 40)">
+              <rect x="0" y="0" width="225" height="165" rx="6" fill="#061f14" stroke="#10b981" strokeWidth="1.2" />
+              <text x="112" y="20" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">
+                Magnetic Field Domain (B, H)
+              </text>
+
+              {/* Conductor Carrying Current I (Out of Page) */}
+              <circle cx="112" cy="75" r="16" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" />
+              <circle cx="112" cy="75" r="4" fill="#f59e0b" />
+              <text x="112" y="105" fill="#f59e0b" fontSize="8.5" fontWeight="bold" textAnchor="middle">I (Conductor Current)</text>
+
+              {/* Circular B and H loops */}
+              <ellipse cx="112" cy="75" rx="55" ry="32" fill="none" stroke="#10b981" strokeWidth="1.8" strokeDasharray="4 2" />
+              <path d="M 112 43 L 118 43" stroke="#10b981" strokeWidth="2" markerEnd="url(#ch11BArrow)" />
+              <path d="M 112 107 L 106 107" stroke="#10b981" strokeWidth="2" markerEnd="url(#ch11BArrow)" />
+              <text x="175" y="65" fill="#34d399" fontSize="9" fontWeight="bold">B (Tesla)</text>
+
+              {/* Magnetic medium relationship */}
+              <rect x="25" y="118" width="175" height="36" rx="4" fill="#022c22" stroke="#047857" strokeWidth="1" />
+              <text x="112" y="132" fill="#facc15" fontSize="8.5" fontWeight="bold" textAnchor="middle">B = μ H = μ0 (H + M)</text>
+              <text x="112" y="146" fill="#6ee7b7" fontSize="7.5" textAnchor="middle">H (A/m) | μ0 = 4π × 10⁻⁷ H/m</text>
+            </g>
+
+            {/* Bottom Unified Constitutive Banner */}
+            <rect x="30" y="215" width="480" height="32" rx="4" fill="#090d16" stroke="#1e293b" />
+            <text x="270" y="235" fill="#f59e0b" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Constitutive Relations: D = ε E | B = μ H | J = σ E | Medium Parameters: ε, μ, σ
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electromagnetic Field Vectors: Distinguishing force fields (E, H) from flux densities (D, B) coupled by constitutive parameters ε, μ, and σ."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-gauss-law':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <defs>
+              <marker id="ch11FluxArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch11BFluxArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#10b981" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="22" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Gauss’s Laws: Electric Divergence (Sources) vs. Magnetic Non-Divergence
+            </text>
+
+            {/* Left Box: Gauss’s Law for Electrostatics (∇ · D = ρ) */}
+            <g transform="translate(30, 38)">
+              <rect x="0" y="0" width="225" height="168" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="112" y="20" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Gauss’s Law (Electrostatics)
+              </text>
+
+              {/* Closed Gaussian Surface */}
+              <ellipse cx="112" cy="78" rx="65" ry="42" fill="#1e293b" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="4 3" />
+              <text x="165" y="50" fill="#38bdf8" fontSize="7.5">Closed Surface S</text>
+
+              {/* Enclosed Free Charge */}
+              <circle cx="112" cy="78" r="16" fill="#ef4444" stroke="#fca5a5" strokeWidth="1.5" />
+              <text x="112" y="83" fill="#ffffff" fontSize="12" fontWeight="bold" textAnchor="middle">+Q</text>
+              <text x="112" y="103" fill="#fca5a5" fontSize="8" textAnchor="middle">Q_enc = ∭ ρ_v dV</text>
+
+              {/* Outward Outgoing Flux Lines */}
+              <path d="M 112 60 L 112 25" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11FluxArrow)" />
+              <path d="M 112 96 L 112 130" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11FluxArrow)" />
+              <path d="M 130 78 L 190 78" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11FluxArrow)" />
+              <path d="M 94 78 L 35 78" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11FluxArrow)" />
+
+              {/* Formula Badge */}
+              <rect x="15" y="132" width="195" height="28" rx="4" fill="#020617" stroke="#334155" />
+              <text x="112" y="146" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+                ∯ D · dA = Q_enc  ⇔  ∇ · D = ρ_v
+              </text>
+              <text x="112" y="156" fill="#94a3b8" fontSize="7" textAnchor="middle">Net flux leaves positive charges</text>
+            </g>
+
+            {/* Right Box: Gauss’s Law for Magnetism (∇ · B = 0) */}
+            <g transform="translate(285, 38)">
+              <rect x="0" y="0" width="225" height="168" rx="6" fill="#061f14" stroke="#10b981" strokeWidth="1.2" />
+              <text x="112" y="20" fill="#34d399" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Gauss’s Law (Magnetostatics)
+              </text>
+
+              {/* Magnetic Dipole (N-S) */}
+              <rect x="80" y="66" width="32" height="24" fill="#ef4444" stroke="#f87171" rx="2" />
+              <text x="96" y="82" fill="#ffffff" fontSize="10" fontWeight="bold" textAnchor="middle">N</text>
+              <rect x="112" y="66" width="32" height="24" fill="#3b82f6" stroke="#60a5fa" rx="2" />
+              <text x="128" y="82" fill="#ffffff" fontSize="10" fontWeight="bold" textAnchor="middle">S</text>
+
+              {/* Continuous Closed B Flux Loop */}
+              <path d="M 96 66 C 96 28 128 28 128 66" fill="none" stroke="#10b981" strokeWidth="1.8" markerEnd="url(#ch11BFluxArrow)" />
+              <path d="M 128 90 C 128 126 96 126 96 90" fill="none" stroke="#10b981" strokeWidth="1.8" markerEnd="url(#ch11BFluxArrow)" />
+
+              {/* Closed Gaussian Surface Enclosing Both Poles */}
+              <ellipse cx="112" cy="78" rx="72" ry="46" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="112" y="46" fill="#f59e0b" fontSize="7.5" textAnchor="middle">Gaussian Surface S (Net Flux = 0)</text>
+
+              {/* Formula Badge */}
+              <rect x="15" y="132" width="195" height="28" rx="4" fill="#020617" stroke="#064e3b" />
+              <text x="112" y="146" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+                ∯ B · dA = 0  ⇔  ∇ · B = 0
+              </text>
+              <text x="112" y="156" fill="#a7f3d0" fontSize="7" textAnchor="middle">No isolated magnetic monopoles</text>
+            </g>
+
+            {/* Divergence Theorem Connection */}
+            <rect x="30" y="214" width="480" height="32" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="234" fill="#f59e0b" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Divergence Theorem: ∯ D · dA = ∭ (∇ · D) dV  |  Magnetic Flux Tubes Always Close on Themselves
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Gauss’s Laws: Divergence theorem equates surface flux to enclosed volume sources (free charges for D; strictly zero for B because magnetic monopoles do not exist)."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-ampere-law':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <defs>
+              <marker id="ch11AmpArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#f59e0b" />
+              </marker>
+              <marker id="ch11IArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="22" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Ampere’s Circuital Law & Magnetic Circulation (Curl of H)
+            </text>
+
+            {/* Main Diagram Area */}
+            <g transform="translate(40, 38)">
+              {/* Conductor Carrying Current I */}
+              <rect x="220" y="10" width="20" height="150" fill="#334155" stroke="#f59e0b" strokeWidth="1.5" rx="3" />
+              <path d="M 230 150 L 230 15" stroke="#f59e0b" strokeWidth="3" markerEnd="url(#ch11IArrow)" />
+              <text x="245" y="30" fill="#f59e0b" fontSize="10" fontWeight="bold">I_enc (Current)</text>
+              <text x="245" y="44" fill="#94a3b8" fontSize="7.5">Conductor axis</text>
+
+              {/* Amperian Loop C around conductor */}
+              <ellipse cx="230" cy="85" rx="120" ry="42" fill="none" stroke="#38bdf8" strokeWidth="2" strokeDasharray="5 3" />
+              <text x="360" y="88" fill="#38bdf8" fontSize="8.5" fontWeight="bold">Amperian Loop C (radius r)</text>
+
+              {/* Magnetic Intensity Vector H along Loop Tangent */}
+              <path d="M 230 127 L 275 127" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#ch11AmpArrow)" />
+              <text x="280" y="130" fill="#facc15" fontSize="9.5" fontWeight="bold">H (Tangent)</text>
+
+              <path d="M 230 43 L 185 43" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#ch11AmpArrow)" />
+              <text x="175" y="41" fill="#facc15" fontSize="9.5" fontWeight="bold" textAnchor="end">H (Tangent)</text>
+
+              <path d="M 110 85 L 110 95" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#ch11AmpArrow)" />
+              <path d="M 350 85 L 350 75" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#ch11AmpArrow)" />
+
+              {/* Differential line element dl */}
+              <path d="M 290 123 L 305 120" stroke="#10b981" strokeWidth="2" />
+              <text x="312" y="121" fill="#34d399" fontSize="8" fontWeight="bold">dl</text>
+
+              {/* Stokes’ Theorem Callout Box */}
+              <rect x="0" y="25" width="165" height="120" rx="5" fill="#0f172a" stroke="#1e293b" />
+              <text x="82" y="42" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">Stokes’ Curl Theorem</text>
+              <text x="82" y="60" fill="#94a3b8" fontSize="8" textAnchor="middle">∮_C H · dl = ∬_S (∇ × H) · dA</text>
+              <text x="82" y="78" fill="#facc15" fontSize="8.5" fontWeight="bold" textAnchor="middle">∇ × H = J</text>
+              <text x="82" y="96" fill="#cbd5e1" fontSize="7.5" textAnchor="middle">In cylindrical coordinates:</text>
+              <text x="82" y="112" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">H_φ (2πr) = I_enc</text>
+              <text x="82" y="128" fill="#f59e0b" fontSize="8" textAnchor="middle">⇒ H_φ = I / (2πr)</text>
+            </g>
+
+            {/* Bottom Invariant Banner */}
+            <rect x="30" y="214" width="480" height="32" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="234" fill="#f59e0b" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Ampere’s Circuital Law: ∮ H · dl = I_enclosed | Stokes’ Theorem: ∇ × H = J (Static limit only)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Ampere’s Circuital Law: Line integral of magnetic intensity H around any closed contour equals the total net electric current passing through the contour."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-faraday-law':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <defs>
+              <marker id="ch11EInducedArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch11BFluxDot" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#ef4444" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="22" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Maxwell-Faraday Law: Time-Varying Magnetic Field Inducing Vortex E-Field
+            </text>
+
+            {/* Left Area: Time-Varying Magnetic Field dB/dt */}
+            <g transform="translate(30, 40)">
+              <rect x="0" y="0" width="230" height="165" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="115" y="20" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Dynamic Magnetic Flux (dB/dt)
+              </text>
+
+              {/* Time-varying magnetic flux tube */}
+              <circle cx="115" cy="80" r="38" fill="#1e293b" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="115" y="74" fill="#fca5a5" fontSize="11" fontWeight="bold" textAnchor="middle">B(t) ⊙</text>
+              <text x="115" y="90" fill="#fca5a5" fontSize="8" textAnchor="middle">Flux increasing (out)</text>
+
+              {/* Circulating Induced Non-Conservative Electric Field */}
+              <ellipse cx="115" cy="80" rx="68" ry="46" fill="none" stroke="#38bdf8" strokeWidth="2.2" />
+              <path d="M 115 126 L 125 126" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#ch11EInducedArrow)" />
+              <path d="M 115 34 L 105 34" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#ch11EInducedArrow)" />
+              <text x="115" y="142" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Induced E Vortex (∮ E · dl ≠ 0)
+              </text>
+
+              {/* Lenz’s Law Negative Sign Indicator */}
+              <rect x="15" y="128" width="200" height="28" rx="3" fill="#020617" stroke="#334155" />
+              <text x="115" y="146" fill="#f87171" fontSize="9" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+                EMF = - dΦ_B / dt  (Lenz Opposition)
+              </text>
+            </g>
+
+            {/* Right Area: Differential Maxwell-Faraday Law Formulation */}
+            <g transform="translate(280, 40)">
+              <rect x="0" y="0" width="230" height="165" rx="6" fill="#0b132b" stroke="#818cf8" strokeWidth="1.2" />
+              <text x="115" y="20" fill="#818cf8" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Field Formulation (Maxwell Equation 3)
+              </text>
+
+              {/* Mathematical formulation block */}
+              <rect x="15" y="32" width="200" height="52" rx="4" fill="#020617" stroke="#4338ca" />
+              <text x="115" y="52" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+                ∇ × E = - ∂B / ∂t
+              </text>
+              <text x="115" y="72" fill="#c7d2fe" fontSize="8" textAnchor="middle">
+                Point form: Curl of E equals negative rate of B
+              </text>
+
+              {/* Key Concept bullets */}
+              <text x="20" y="102" fill="#93c5fd" fontSize="8" fontWeight="bold">• Non-conservative: Work around loop ≠ 0</text>
+              <text x="20" y="118" fill="#93c5fd" fontSize="8" fontWeight="bold">• No electric charges needed to create E</text>
+              <text x="20" y="134" fill="#93c5fd" fontSize="8" fontWeight="bold">• Forms the foundation of EM wave propagation</text>
+              <text x="20" y="150" fill="#34d399" fontSize="8" fontWeight="bold">• Drives transformers, inductors, generators</text>
+            </g>
+
+            {/* Bottom Banner */}
+            <rect x="30" y="214" width="480" height="32" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="234" fill="#f59e0b" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Maxwell-Faraday Equation: ∮ E · dl = - ∬ (∂B/∂t) · dA ⇔ ∇ × E = - ∂B / ∂t
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Faraday’s Law Field Formulation: A time-varying magnetic flux generates a circulating, vortex electric field whose closed line integral equals the induced EMF."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-displacement-current':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <defs>
+              <marker id="ch11DCurrentArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#f59e0b" />
+              </marker>
+              <marker id="ch11DFieldArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="22" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Maxwell’s Displacement Current: Resolving the Capacitor Dilemma
+            </text>
+
+            {/* Capacitor Plates and Circuit */}
+            <g transform="translate(50, 40)">
+              {/* AC Input source left */}
+              <circle cx="20" cy="80" r="14" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.8" />
+              <path d="M 12 80 Q 16 73 20 80 T 28 80" fill="none" stroke="#f59e0b" strokeWidth="2" />
+              <text x="20" y="106" fill="#f59e0b" fontSize="8" fontWeight="bold" textAnchor="middle">AC Source</text>
+
+              {/* Wire with Conduction Current Ic */}
+              <path d="M 34 80 L 170 80" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#ch11DCurrentArrow)" />
+              <text x="100" y="70" fill="#facc15" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+                I_c = dq/dt (Conduction)
+              </text>
+
+              {/* Left Capacitor Plate */}
+              <rect x="170" y="30" width="12" height="100" fill="#3b82f6" stroke="#60a5fa" strokeWidth="1.5" rx="2" />
+              <text x="176" y="22" fill="#93c5fd" fontSize="9" fontWeight="bold" textAnchor="middle">+Q(t)</text>
+
+              {/* Right Capacitor Plate */}
+              <rect x="260" y="30" width="12" height="100" fill="#ef4444" stroke="#f87171" strokeWidth="1.5" rx="2" />
+              <text x="266" y="22" fill="#fca5a5" fontSize="9" fontWeight="bold" textAnchor="middle">-Q(t)</text>
+
+              {/* Wire out with Conduction Current */}
+              <path d="M 272 80 L 400 80" stroke="#f59e0b" strokeWidth="2.5" markerEnd="url(#ch11DCurrentArrow)" />
+              <text x="340" y="70" fill="#facc15" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+                I_c (Conduction)
+              </text>
+
+              {/* Dielectric Space Between Plates: Time-Varying E and D Field */}
+              <rect x="182" y="35" width="78" height="90" fill="#0f172a" fillOpacity="0.8" stroke="#38bdf8" strokeDasharray="3 2" />
+              <path d="M 188 55 L 254 55" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11DFieldArrow)" />
+              <path d="M 188 80 L 254 80" stroke="#38bdf8" strokeWidth="2.2" markerEnd="url(#ch11DFieldArrow)" />
+              <path d="M 188 105 L 254 105" stroke="#38bdf8" strokeWidth="1.8" markerEnd="url(#ch11DFieldArrow)" />
+
+              <text x="221" y="72" fill="#38bdf8" fontSize="8" fontWeight="bold" textAnchor="middle">E(t) Field</text>
+              <text x="221" y="98" fill="#facc15" fontSize="9" fontWeight="bold" textAnchor="middle">
+                I_d = ε A (dE/dt)
+              </text>
+              <text x="221" y="118" fill="#cbd5e1" fontSize="7" textAnchor="middle">Displacement Current</text>
+
+              {/* Amperian Loop bulging between plates */}
+              <path d="M 140 45 C 140 10 221 10 221 35" fill="none" stroke="#a855f7" strokeWidth="1.8" strokeDasharray="4 2" />
+              <text x="140" y="18" fill="#c084fc" fontSize="8">Surface S2 bulges across gap</text>
+            </g>
+
+            {/* Bottom Equation Continuity Banner */}
+            <rect x="30" y="200" width="480" height="44" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="218" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              I_total = I_conduction + I_displacement = I_c + ∬ (∂D/∂t) · dA = Constant
+            </text>
+            <text x="270" y="234" fill="#34d399" fontSize="8.5" textAnchor="middle">
+              Ampere-Maxwell Law: ∇ × H = J + ∂D/∂t  |  Guarantees conservation of charge: ∇ · J + ∂ρ/∂t = 0
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Displacement Current: Maxwell’s stroke of genius adding ∂D/∂t restored charge continuity and predicted self-propagating electromagnetic waves."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-maxwell-equations':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 270" className="w-full max-w-xl h-68">
+            {/* Title */}
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Maxwell’s Four Unified Field Equations & Boundary Conditions
+            </text>
+
+            {/* 4 Quadrants Grid */}
+            {/* Box 1: Gauss’s Law for Electricity */}
+            <g transform="translate(30, 32)">
+              <rect x="0" y="0" width="230" height="78" rx="5" fill="#0b132b" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="12" y="18" fill="#38bdf8" fontSize="9.5" fontWeight="bold">1. Gauss’s Law (Electric)</text>
+              <text x="12" y="38" fill="#facc15" fontSize="11" fontWeight="bold" fontFamily="monospace">∇ · D = ρ_v</text>
+              <text x="12" y="55" fill="#93c5fd" fontSize="8.5" fontFamily="monospace">∯ D · dA = Q_enclosed</text>
+              <text x="12" y="70" fill="#94a3b8" fontSize="7.5">Electric charges are divergence sources of D</text>
+            </g>
+
+            {/* Box 2: Gauss’s Law for Magnetism */}
+            <g transform="translate(280, 32)">
+              <rect x="0" y="0" width="230" height="78" rx="5" fill="#061f14" stroke="#10b981" strokeWidth="1.2" />
+              <text x="12" y="18" fill="#34d399" fontSize="9.5" fontWeight="bold">2. Gauss’s Law (Magnetic)</text>
+              <text x="12" y="38" fill="#facc15" fontSize="11" fontWeight="bold" fontFamily="monospace">∇ · B = 0</text>
+              <text x="12" y="55" fill="#a7f3d0" fontSize="8.5" fontFamily="monospace">∯ B · dA = 0</text>
+              <text x="12" y="70" fill="#94a3b8" fontSize="7.5">No magnetic monopoles; B lines form closed loops</text>
+            </g>
+
+            {/* Box 3: Maxwell-Faraday Law */}
+            <g transform="translate(30, 118)">
+              <rect x="0" y="0" width="230" height="78" rx="5" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.2" />
+              <text x="12" y="18" fill="#a5b4fc" fontSize="9.5" fontWeight="bold">3. Maxwell-Faraday Law</text>
+              <text x="12" y="38" fill="#facc15" fontSize="11" fontWeight="bold" fontFamily="monospace">∇ × E = - ∂B / ∂t</text>
+              <text x="12" y="55" fill="#c7d2fe" fontSize="8.5" fontFamily="monospace">∮ E · dl = - dΦ_B / dt</text>
+              <text x="12" y="70" fill="#94a3b8" fontSize="7.5">Time-varying magnetic flux induces curl of E</text>
+            </g>
+
+            {/* Box 4: Ampere-Maxwell Law */}
+            <g transform="translate(280, 118)">
+              <rect x="0" y="0" width="230" height="78" rx="5" fill="#2d1500" stroke="#f59e0b" strokeWidth="1.2" />
+              <text x="12" y="18" fill="#fbbf24" fontSize="9.5" fontWeight="bold">4. Ampere-Maxwell Law</text>
+              <text x="12" y="38" fill="#facc15" fontSize="11" fontWeight="bold" fontFamily="monospace">∇ × H = J + ∂D / ∂t</text>
+              <text x="12" y="55" fill="#fde68a" fontSize="8.5" fontFamily="monospace">∮ H · dl = I_c + ∬ (∂D/∂t) · dA</text>
+              <text x="12" y="70" fill="#94a3b8" fontSize="7.5">Conduction + displacement currents induce curl of H</text>
+            </g>
+
+            {/* Electromagnetic Boundary Conditions Sub-Strip */}
+            <rect x="30" y="204" width="480" height="42" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="219" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Interface Conditions: E_1t = E_2t | H_1t - H_2t = K × n | D_1n - D_2n = ρ_s | B_1n = B_2n
+            </text>
+            <text x="270" y="235" fill="#cbd5e1" fontSize="8" textAnchor="middle">
+              At Perfect Electrical Conductor (PEC): E_tangential = 0, B_normal = 0
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Maxwell’s Four Equations: The unified foundation of classical electromagnetism, optics, and radio communications."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-wave-propagation-plane-waves':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 270" className="w-full max-w-xl h-68">
+            <defs>
+              <marker id="ch11ZAxisArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#f59e0b" />
+              </marker>
+              <marker id="ch11XAxisArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#38bdf8" />
+              </marker>
+              <marker id="ch11YAxisArrow" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto">
+                <path d="M 0 0 L 5 3 L 0 6 z" fill="#10b981" />
+              </marker>
+            </defs>
+
+            {/* Title */}
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Uniform Plane Wave (TEM): Orthogonal E & H Fields and Poynting Vector S
+            </text>
+
+            {/* 3D Wave Propagation Diagram */}
+            <g transform="translate(50, 45)">
+              {/* Axes: Z (Propagation), X (Electric Field), Y (Magnetic Field) */}
+              <path d="M 20 100 L 420 100" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#ch11ZAxisArrow)" />
+              <text x="430" y="104" fill="#facc15" fontSize="10" fontWeight="bold">+z (Propagation Direction)</text>
+
+              <path d="M 40 100 L 40 10" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#ch11XAxisArrow)" />
+              <text x="40" y="5" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">+x (E-Field)</text>
+
+              <path d="M 40 100 L 10 140" stroke="#10b981" strokeWidth="2" markerEnd="url(#ch11YAxisArrow)" />
+              <text x="8" y="152" fill="#34d399" fontSize="10" fontWeight="bold">+y (H-Field)</text>
+
+              {/* Electric Field Wave (Vertical sinusoidal oscillation along x in cyan) */}
+              {/* Cycle 1 */}
+              <path d="M 40 100 Q 80 20 120 100 T 200 100 T 280 100 T 360 100" fill="none" stroke="#38bdf8" strokeWidth="2.5" />
+              {/* Vertical E vectors */}
+              <path d="M 80 100 L 80 35" stroke="#38bdf8" strokeWidth="1.5" markerEnd="url(#ch11XAxisArrow)" />
+              <path d="M 160 100 L 160 165" stroke="#38bdf8" strokeWidth="1.5" />
+              <path d="M 240 100 L 240 35" stroke="#38bdf8" strokeWidth="1.5" markerEnd="url(#ch11XAxisArrow)" />
+              <path d="M 320 100 L 320 165" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="80" y="25" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">E(z,t)</text>
+
+              {/* Magnetic Field Wave (Horizontal/oblique oscillation along y in green) */}
+              <path d="M 40 100 Q 70 125 120 100 T 200 100 T 280 100 T 360 100" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="4 2" />
+              {/* Horizontal H vectors */}
+              <path d="M 80 100 L 100 125" stroke="#10b981" strokeWidth="1.5" markerEnd="url(#ch11YAxisArrow)" />
+              <path d="M 240 100 L 260 125" stroke="#10b981" strokeWidth="1.5" markerEnd="url(#ch11YAxisArrow)" />
+              <text x="110" y="135" fill="#34d399" fontSize="9" fontWeight="bold">H(z,t)</text>
+
+              {/* Wavelength λ bracket */}
+              <path d="M 80 28 L 240 28" stroke="#cbd5e1" strokeWidth="1.2" strokeDasharray="2 2" />
+              <path d="M 80 24 L 80 32" stroke="#cbd5e1" strokeWidth="1.2" />
+              <path d="M 240 24 L 240 32" stroke="#cbd5e1" strokeWidth="1.2" />
+              <text x="160" y="22" fill="#cbd5e1" fontSize="8.5" fontWeight="bold" textAnchor="middle">Wavelength λ = 2π / β = c / f</text>
+
+              {/* Poynting Vector S indicator */}
+              <rect x="290" y="55" width="115" height="30" rx="3" fill="#020617" stroke="#f59e0b" strokeWidth="1.2" />
+              <text x="347" y="70" fill="#facc15" fontSize="9" fontWeight="bold" textAnchor="middle">
+                S = E × H (W/m²)
+              </text>
+              <text x="347" y="81" fill="#94a3b8" fontSize="7" textAnchor="middle">Energy Flux Density</text>
+            </g>
+
+            {/* Bottom Parameters Strip */}
+            <rect x="30" y="210" width="480" height="42" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="226" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Speed: c = 1 / √(μ0 ε0) ≈ 3 × 10⁸ m/s | Intrinsic Impedance: η0 = √(μ0 / ε0) ≈ 377 Ω (120π Ω)
+            </text>
+            <text x="270" y="242" fill="#38bdf8" fontSize="8" textAnchor="middle">
+              Skin Depth in Conductors: δ = √(2 / (ω μ σ)) | Wave Impedance: E_x / H_y = η
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Uniform Plane Wave: Electric and magnetic fields oscillate perpendicularly to each other and to the direction of propagation (Transverse Electromagnetic, TEM wave)."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (

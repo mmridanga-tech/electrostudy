@@ -122,6 +122,13 @@ import { InductionHeatingAnimation } from './interactive/InductionHeatingAnimati
 import { WirelessPowerRFIDAnimation } from './interactive/WirelessPowerRFIDAnimation';
 import { LinearInductionMaglevAnimation } from './interactive/LinearInductionMaglevAnimation';
 import { EMInductionTestingSafetyCapstoneAnimation } from './interactive/EMInductionTestingSafetyCapstoneAnimation';
+import { ElectromagneticFieldFundamentalsAnimation } from './interactive/ElectromagneticFieldFundamentalsAnimation';
+import { GaussLawFieldFluxAnimation } from './interactive/GaussLawFieldFluxAnimation';
+import { AmpereCircuitalLawAnimation } from './interactive/AmpereCircuitalLawAnimation';
+import { FaradayLawFieldInductionAnimation } from './interactive/FaradayLawFieldInductionAnimation';
+import { DisplacementCurrentAnimation } from './interactive/DisplacementCurrentAnimation';
+import { MaxwellEquationsExplorerAnimation } from './interactive/MaxwellEquationsExplorerAnimation';
+import { ElectromagneticWavePropagationAnimation } from './interactive/ElectromagneticWavePropagationAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -727,6 +734,72 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'tp-em-induction-testing-safety-capstone'
   ) {
     return <EMInductionTestingSafetyCapstoneAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Chapter 11: Electromagnetic Waves & Field Theory
+  if (
+    topicId === 'ch11-field-fundamentals' ||
+    lessonId === 'lsn-ch11-field-fundamentals' ||
+    topicId === 'tp-ch11-field-fundamentals' ||
+    lessonId === 'ch11-field-fundamentals'
+  ) {
+    return <ElectromagneticFieldFundamentalsAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-gauss-law' ||
+    lessonId === 'lsn-ch11-gauss-law' ||
+    topicId === 'tp-ch11-gauss-law' ||
+    lessonId === 'ch11-gauss-law'
+  ) {
+    return <GaussLawFieldFluxAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-ampere-law' ||
+    lessonId === 'lsn-ch11-ampere-law' ||
+    topicId === 'tp-ch11-ampere-law' ||
+    lessonId === 'ch11-ampere-law'
+  ) {
+    return <AmpereCircuitalLawAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-faraday-law' ||
+    lessonId === 'lsn-ch11-faraday-law' ||
+    topicId === 'tp-ch11-faraday-law' ||
+    lessonId === 'ch11-faraday-law'
+  ) {
+    return <FaradayLawFieldInductionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-displacement-current' ||
+    lessonId === 'lsn-ch11-displacement-current' ||
+    topicId === 'tp-ch11-displacement-current' ||
+    lessonId === 'ch11-displacement-current'
+  ) {
+    return <DisplacementCurrentAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-maxwell-equations' ||
+    lessonId === 'lsn-ch11-maxwell-equations' ||
+    topicId === 'tp-ch11-maxwell-equations' ||
+    lessonId === 'ch11-maxwell-equations'
+  ) {
+    return <MaxwellEquationsExplorerAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-wave-propagation-plane-waves' ||
+    lessonId === 'lsn-ch11-wave-propagation-plane-waves' ||
+    topicId === 'tp-ch11-wave-propagation-plane-waves' ||
+    lessonId === 'ch11-wave-propagation-plane-waves' ||
+    topicId === 'ch11-uniform-plane-waves' ||
+    topicId === 'ch11-em-wave-propagation'
+  ) {
+    return <ElectromagneticWavePropagationAnimation currentLanguage={currentLanguage} />;
   }
 
   if (
