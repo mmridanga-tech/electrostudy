@@ -129,6 +129,16 @@ import { FaradayLawFieldInductionAnimation } from './interactive/FaradayLawField
 import { DisplacementCurrentAnimation } from './interactive/DisplacementCurrentAnimation';
 import { MaxwellEquationsExplorerAnimation } from './interactive/MaxwellEquationsExplorerAnimation';
 import { ElectromagneticWavePropagationAnimation } from './interactive/ElectromagneticWavePropagationAnimation';
+import { WavePolarizationAnimation } from './interactive/WavePolarizationAnimation';
+import { ReflectionRefractionNormalAnimation } from './interactive/ReflectionRefractionNormalAnimation';
+import { ObliqueIncidenceBrewsterAnimation } from './interactive/ObliqueIncidenceBrewsterAnimation';
+import { SkinDepthShieldingAnimation } from './interactive/SkinDepthShieldingAnimation';
+import { WaveguidesCutoffDispersionAnimation } from './interactive/WaveguidesCutoffDispersionAnimation';
+import { ElectromagneticSpectrumAnimation } from './interactive/ElectromagneticSpectrumAnimation';
+import { AntennaFundamentalsLinkBudgetAnimation } from './interactive/AntennaFundamentalsLinkBudgetAnimation';
+import { ElectricShockSimulation } from './interactive/ElectricShockSimulation';
+import { EarthingSafetySimulation } from './interactive/EarthingSafetySimulation';
+import { CircuitProtectionSimulation } from './interactive/CircuitProtectionSimulation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -803,6 +813,69 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   }
 
   if (
+    topicId === 'ch11-wave-polarization' ||
+    lessonId === 'lsn-ch11-wave-polarization' ||
+    topicId === 'tp-ch11-wave-polarization' ||
+    lessonId === 'ch11-wave-polarization'
+  ) {
+    return <WavePolarizationAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-reflection-refraction-normal' ||
+    lessonId === 'lsn-ch11-reflection-refraction-normal' ||
+    topicId === 'tp-ch11-reflection-refraction-normal' ||
+    lessonId === 'ch11-reflection-refraction-normal'
+  ) {
+    return <ReflectionRefractionNormalAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-oblique-incidence-snell-brewster' ||
+    lessonId === 'lsn-ch11-oblique-incidence-snell-brewster' ||
+    topicId === 'tp-ch11-oblique-incidence-snell-brewster' ||
+    lessonId === 'ch11-oblique-incidence-snell-brewster'
+  ) {
+    return <ObliqueIncidenceBrewsterAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-skin-depth-shielding' ||
+    lessonId === 'lsn-ch11-skin-depth-shielding' ||
+    topicId === 'tp-ch11-skin-depth-shielding' ||
+    lessonId === 'ch11-skin-depth-shielding'
+  ) {
+    return <SkinDepthShieldingAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-waveguides-cutoff-dispersion' ||
+    lessonId === 'lsn-ch11-waveguides-cutoff-dispersion' ||
+    topicId === 'tp-ch11-waveguides-cutoff-dispersion' ||
+    lessonId === 'ch11-waveguides-cutoff-dispersion'
+  ) {
+    return <WaveguidesCutoffDispersionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-em-spectrum-radio-to-gamma' ||
+    lessonId === 'lsn-ch11-em-spectrum-radio-to-gamma' ||
+    topicId === 'tp-ch11-em-spectrum-radio-to-gamma' ||
+    lessonId === 'ch11-em-spectrum-radio-to-gamma'
+  ) {
+    return <ElectromagneticSpectrumAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'ch11-antenna-fundamentals-link-budget' ||
+    lessonId === 'lsn-ch11-antenna-fundamentals-link-budget' ||
+    topicId === 'tp-ch11-antenna-fundamentals-link-budget' ||
+    lessonId === 'ch11-antenna-fundamentals-link-budget'
+  ) {
+    return <AntennaFundamentalsLinkBudgetAnimation currentLanguage={currentLanguage} />;
+  }
+
+  if (
     topicId.startsWith('ps-') ||
     lessonId.startsWith('lesson-ps-') ||
     topicId.includes('transmission') ||
@@ -823,6 +896,53 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId.includes('bridge')
   ) {
     return <MeasurementLabSimulator currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-electric-shock' ||
+    lessonId === 'lsn-ch15-electric-shock' ||
+    topicId === 'ch15-electric-shock' ||
+    lessonId === 'ch15-electric-shock' ||
+    topicId === 'tp-causes-electrical-accidents' ||
+    lessonId === 'lsn-ch15-causes-electrical-accidents' ||
+    topicId.includes('electric-shock') ||
+    lessonId.includes('electric-shock')
+  ) {
+    return <ElectricShockSimulation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-earthing-concept' ||
+    lessonId === 'lsn-ch15-earthing-concept' ||
+    topicId === 'ch15-earthing-concept' ||
+    lessonId === 'ch15-earthing-concept' ||
+    topicId.includes('earthing') ||
+    lessonId.includes('earthing') ||
+    topicId.includes('grounding')
+  ) {
+    return <EarthingSafetySimulation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-fuse' ||
+    topicId === 'tp-fuse-concept' ||
+    lessonId === 'lsn-ch15-fuse-concept' ||
+    topicId === 'tp-mcb-concept' ||
+    lessonId === 'lsn-ch15-mcb-concept' ||
+    topicId === 'tp-rccb-elcb-concept' ||
+    lessonId === 'lsn-ch15-rccb-elcb-concept' ||
+    topicId === 'tp-electrical-isolation' ||
+    lessonId === 'lsn-ch15-electrical-isolation' ||
+    topicId.includes('fuse') ||
+    topicId.includes('mcb') ||
+    topicId.includes('rccb') ||
+    topicId.includes('isolation') ||
+    lessonId.includes('fuse') ||
+    lessonId.includes('mcb') ||
+    lessonId.includes('rccb') ||
+    lessonId.includes('isolation')
+  ) {
+    return <CircuitProtectionSimulation currentLanguage={currentLanguage} />;
   }
 
   return null;

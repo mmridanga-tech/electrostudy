@@ -10,6 +10,7 @@ import { CHAPTER_8_LESSONS } from './chapter8Lessons';
 import { CHAPTER_9_LESSONS } from './chapter9Lessons';
 import { CHAPTER_10_LESSONS } from './chapter10Lessons';
 import { CHAPTER_11_LESSONS } from './chapter11Lessons';
+import { CHAPTER_15_LESSONS } from './chapter15Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
 import { MEASUREMENTS_SUBJECT } from './measurementsData';
@@ -2159,6 +2160,76 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
               hi: "विद्युत चुंबकीय तरंग संचरण, एकसमान समतल तरंगें (UPW) एवं पॉइंटिंग सदिश",
               bn: "তড়িৎচৌম্বকীয় তরঙ্গ সঞ্চালন, সমরূপ সমতল তরঙ্গ (UPW) ও পয়েন্টিং ভেক্টর"
             }
+          },
+          {
+            id: "ch11-wave-polarization",
+            chapterId: "ch-em-waves",
+            order: 8,
+            title: {
+              en: "Wave Polarization (Linear, Circular, Elliptical) & Axial Ratio",
+              hi: "तरंग ध्रुवीकरण (रैखिक, वृत्ताकार, दीर्घवृत्ताकार) एवं अक्षीय अनुपात",
+              bn: "তরঙ্গ সমবর্তন (রৈখিক, বৃত্তাকার, উপবৃত্তাকার) ও অক্ষীয় অনুপাত"
+            }
+          },
+          {
+            id: "ch11-reflection-refraction-normal",
+            chapterId: "ch-em-waves",
+            order: 9,
+            title: {
+              en: "Normal Incidence Reflection & Transmission, Wave Impedance and VSWR",
+              hi: "अभिलम्ब आपतन परावर्तन एवं संचरण, तरंग प्रतिबाधा तथा VSWR",
+              bn: "অভিলম্ব আপতন প্রতিফলন ও সঞ্চালন, তরঙ্গ প্রতিবন্ধকতা এবং VSWR"
+            }
+          },
+          {
+            id: "ch11-oblique-incidence-snell-brewster",
+            chapterId: "ch-em-waves",
+            order: 10,
+            title: {
+              en: "Oblique Incidence: Snell's Law, Brewster Angle & Total Internal Reflection (TIR)",
+              hi: "तिर्यक आपतन: स्नेल का नियम, ब्रूस्टर कोण एवं पूर्ण आंतरिक परावर्तन (TIR)",
+              bn: "তির্যক আপতন: স্নেলের সূত্র, ব্রুস্টার কোণ ও অভ্যন্তরীণ পূর্ণ প্রতিফলন (TIR)"
+            }
+          },
+          {
+            id: "ch11-skin-depth-shielding",
+            chapterId: "ch-em-waves",
+            order: 11,
+            title: {
+              en: "Attenuation Constant, Skin Depth & Electromagnetic Shielding Effectiveness",
+              hi: "क्षीणन स्थिरांक, त्वचा गहराई (स्किन डेप्थ) एवं विद्युत चुंबकीय परिरक्षण प्रभावशीलता",
+              bn: "ক্ষীণন ধ্রুবক, স্কিন ডেপথ ও তড়িৎচৌম্বকীয় শিল্ডিং কার্যকারিতা"
+            }
+          },
+          {
+            id: "ch11-waveguides-cutoff-dispersion",
+            chapterId: "ch-em-waves",
+            order: 12,
+            title: {
+              en: "Rectangular Waveguides: TE/TM Modes, Cutoff Frequencies & Phase/Group Velocity",
+              hi: "आयताकार वेवगाइड: TE/TM विधाएं, अंतक आवृत्तियां एवं कला/समूह वेग",
+              bn: "আয়তাকার ওয়েভগাইড: TE/TM মোড, কাট-অফ কম্পাঙ্ক ও ফেজ/গ্রুপ বেগ"
+            }
+          },
+          {
+            id: "ch11-em-spectrum-radio-to-gamma",
+            chapterId: "ch-em-waves",
+            order: 13,
+            title: {
+              en: "The Electromagnetic Spectrum & Modern Communications (Radio to Gamma Rays)",
+              hi: "विद्युत चुंबकीय स्पेक्ट्रम एवं आधुनिक संचार (रेडियो से गामा किरणों तक)",
+              bn: "তড়িৎচৌম্বকীয় বর্ণালী ও আধুনিক যোগাযোগ (রেডিও থেকে গামা রশ্মি)"
+            }
+          },
+          {
+            id: "ch11-antenna-fundamentals-link-budget",
+            chapterId: "ch-em-waves",
+            order: 14,
+            title: {
+              en: "Antenna Fundamentals: Radiation Patterns, Directivity, Gain & Friis Link Budget",
+              hi: "एंटीना मूल सिद्धांत: विकिरण प्रतिरूप, दिशात्मकता, लब्धि एवं फ़्रीस लिंक बजट",
+              bn: "অ্যান্টেনার মৌলিক বিষয়: বিকিরণ প্যাটার্ন, নির্দেশকতা, গেইন ও ফ্রিস লিঙ্ক বাজেট"
+            }
           }
         ]
       },
@@ -2753,6 +2824,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_11_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-electrical-safety') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_15_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

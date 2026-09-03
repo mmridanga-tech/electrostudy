@@ -5822,6 +5822,1121 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch11-wave-polarization':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Electromagnetic Wave Polarization: Linear, Circular, and Elliptical States
+            </text>
+
+            {/* Sub-panel 1: Linear Polarization */}
+            <g transform="translate(30, 40)">
+              <rect x="0" y="0" width="145" height="150" rx="4" fill="#020617" stroke="#334155" />
+              <text x="72" y="20" textAnchor="middle" fill="#38bdf8" fontSize="11" fontWeight="bold">Linear Polarization</text>
+              <line x1="72" y1="30" x2="72" y2="135" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              <line x1="15" y1="85" x2="130" y2="85" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              {/* Slanted linear vector */}
+              <line x1="32" y1="125" x2="112" y2="45" stroke="#38bdf8" strokeWidth="2.5" />
+              <polygon points="112,45 102,48 108,54" fill="#38bdf8" />
+              <text x="72" y="142" textAnchor="middle" fill="#94a3b8" fontSize="9">δ = 0° or 180° (In Phase)</text>
+            </g>
+
+            {/* Sub-panel 2: Circular Polarization */}
+            <g transform="translate(195, 40)">
+              <rect x="0" y="0" width="145" height="150" rx="4" fill="#020617" stroke="#334155" />
+              <text x="72" y="20" textAnchor="middle" fill="#34d399" fontSize="11" fontWeight="bold">Circular (RHCP / LHCP)</text>
+              <line x1="72" y1="30" x2="72" y2="135" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              <line x1="15" y1="85" x2="130" y2="85" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              {/* Circle */}
+              <circle cx="72" cy="85" r="40" fill="none" stroke="#34d399" strokeWidth="2" strokeDasharray="3 2" />
+              <line x1="72" y1="85" x2="100" y2="57" stroke="#34d399" strokeWidth="2.5" />
+              <polygon points="100,57 92,60 97,65" fill="#34d399" />
+              <path d="M 105,75 A 35 35 0 0 1 75,120" fill="none" stroke="#facc15" strokeWidth="1.5" />
+              <polygon points="75,120 79,114 83,119" fill="#facc15" />
+              <text x="72" y="142" textAnchor="middle" fill="#94a3b8" fontSize="9">Ex0 = Ey0, δ = ±90° (AR = 1)</text>
+            </g>
+
+            {/* Sub-panel 3: Elliptical Polarization */}
+            <g transform="translate(360, 40)">
+              <rect x="0" y="0" width="145" height="150" rx="4" fill="#020617" stroke="#334155" />
+              <text x="72" y="20" textAnchor="middle" fill="#c084fc" fontSize="11" fontWeight="bold">Elliptical (General)</text>
+              <line x1="72" y1="30" x2="72" y2="135" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              <line x1="15" y1="85" x2="130" y2="85" stroke="#475569" strokeWidth="1" strokeDasharray="2 2" />
+              {/* Rotated Ellipse */}
+              <ellipse cx="72" cy="85" rx="45" ry="24" transform="rotate(-30 72 85)" fill="none" stroke="#c084fc" strokeWidth="2" />
+              <text x="72" y="142" textAnchor="middle" fill="#94a3b8" fontSize="9">Arbitrary Ex0, Ey0 & δ</text>
+            </g>
+
+            {/* Bottom Summary Strip */}
+            <rect x="30" y="200" width="475" height="42" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="267" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Axial Ratio: AR = Major Axis / Minor Axis (1.0 = Circular, ∞ = Linear)
+            </text>
+            <text x="267" y="232" fill="#38bdf8" fontSize="8" textAnchor="middle">
+              E(z,t) = [Ex0 cos(ωt - βz) ax + Ey0 cos(ωt - βz + δ) ay] | Polarizer transmission: Malus’ Law I = I0 cos²θ
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Wave Polarization: Trajectory traced by the tip of the instantaneous Electric Field vector E(t) in the transverse plane."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-normal-incidence-reflection':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Normal Incidence Plane Wave Reflection & Transmission at Dielectric Interface
+            </text>
+
+            {/* Boundary Interface at z = 0 */}
+            <g transform="translate(40, 35)">
+              {/* Region 1: Medium 1 */}
+              <rect x="0" y="0" width="220" height="155" fill="#0f172a" fillOpacity="0.5" stroke="#334155" />
+              <text x="20" y="25" fill="#38bdf8" fontSize="11" fontWeight="bold">Medium 1 (z &lt; 0)</text>
+              <text x="20" y="42" fill="#94a3b8" fontSize="9">ε1, μ1, η1 = √(μ1/ε1)</text>
+
+              {/* Interface Line */}
+              <line x1="220" y1="0" x2="220" y2="155" stroke="#f59e0b" strokeWidth="3" />
+              <text x="220" y="170" textAnchor="middle" fill="#facc15" fontSize="10" fontWeight="bold">Interface (z = 0)</text>
+
+              {/* Region 2: Medium 2 */}
+              <rect x="220" y="0" width="240" height="155" fill="#1e1b4b" fillOpacity="0.5" stroke="#334155" />
+              <text x="240" y="25" fill="#a78bfa" fontSize="11" fontWeight="bold">Medium 2 (z &gt; 0)</text>
+              <text x="240" y="42" fill="#94a3b8" fontSize="9">ε2, μ2, η2 = √(μ2/ε2)</text>
+
+              {/* Incident Wave Ei, Hi -> */}
+              <g transform="translate(30, 65)">
+                <line x1="0" y1="0" x2="120" y2="0" stroke="#38bdf8" strokeWidth="2.5" />
+                <polygon points="120,0 110,-4 110,4" fill="#38bdf8" />
+                <text x="60" y="-8" fill="#38bdf8" fontSize="10" fontWeight="bold">Incident: Ei, Hi →</text>
+              </g>
+
+              {/* Reflected Wave Er, Hr <- */}
+              <g transform="translate(30, 105)">
+                <line x1="120" y1="0" x2="0" y2="0" stroke="#f43f5e" strokeWidth="2.5" />
+                <polygon points="0,0 10,-4 10,4" fill="#f43f5e" />
+                <text x="60" y="-8" fill="#f43f5e" fontSize="10" fontWeight="bold">← Reflected: Er, Hr</text>
+              </g>
+
+              {/* Transmitted Wave Et, Ht -> */}
+              <g transform="translate(260, 85)">
+                <line x1="0" y1="0" x2="140" y2="0" stroke="#34d399" strokeWidth="2.5" />
+                <polygon points="140,0 130,-4 130,4" fill="#34d399" />
+                <text x="70" y="-8" fill="#34d399" fontSize="10" fontWeight="bold">Transmitted: Et, Ht →</text>
+              </g>
+            </g>
+
+            {/* Bottom Analytical Equations */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Reflection: Γ = (η2 - η1) / (η2 + η1) | Transmission: τ = 2η2 / (η2 + η1) = 1 + Γ
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              Power Conservation: R + T = |Γ|² + (|τ|² η1/η2) = 1 | Standing Wave Ratio: S = (1 + |Γ|) / (1 - |Γ|)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Normal Incidence: Continuity of tangential fields yields Fresnel reflection Γ and transmission τ coefficients."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-oblique-incidence-snell-brewster':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Oblique Incidence: Snell's Law, Brewster Angle & Total Internal Reflection (TIR)
+            </text>
+
+            <g transform="translate(40, 35)">
+              {/* Interface dividing top (Medium 1) and bottom (Medium 2) */}
+              <rect x="0" y="0" width="460" height="75" fill="#0f172a" fillOpacity="0.4" />
+              <rect x="0" y="75" width="460" height="85" fill="#1e1b4b" fillOpacity="0.4" />
+              <line x1="0" y1="75" x2="460" y2="75" stroke="#f59e0b" strokeWidth="2" />
+
+              {/* Normal axis (perpendicular to interface) */}
+              <line x1="230" y1="10" x2="230" y2="150" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 3" />
+              <text x="235" y="25" fill="#64748b" fontSize="8.5">Normal</text>
+
+              {/* Incident Ray */}
+              <line x1="80" y1="20" x2="230" y2="75" stroke="#38bdf8" strokeWidth="2.5" />
+              <polygon points="170,53 160,47 163,55" fill="#38bdf8" />
+              <text x="135" y="38" fill="#38bdf8" fontSize="10" fontWeight="bold">Incident Ray (θi)</text>
+
+              {/* Reflected Ray */}
+              <line x1="230" y1="75" x2="380" y2="20" stroke="#f43f5e" strokeWidth="2.5" />
+              <polygon points="315,44 318,52 308,48" fill="#f43f5e" />
+              <text x="315" y="38" fill="#f43f5e" fontSize="10" fontWeight="bold">Reflected (θr = θi)</text>
+
+              {/* Refracted/Transmitted Ray */}
+              <line x1="230" y1="75" x2="340" y2="150" stroke="#34d399" strokeWidth="2.5" />
+              <polygon points="290,116 283,110 282,118" fill="#34d399" />
+              <text x="300" y="130" fill="#34d399" fontSize="10" fontWeight="bold">Refracted (θt)</text>
+
+              {/* Labels for Media */}
+              <text x="15" y="25" fill="#38bdf8" fontSize="10" fontWeight="bold">Medium 1 (n1 = √εr1)</text>
+              <text x="15" y="100" fill="#a78bfa" fontSize="10" fontWeight="bold">Medium 2 (n2 = √εr2)</text>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Snell’s Law: n1 sin(θi) = n2 sin(θt) | Brewster Angle (Parallel Γ|| = 0): tan(θB) = n2 / n1
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              Critical Angle (TIR when n1 &gt; n2): sin(θc) = n2 / n1 | Evanescent wave penetrates into Medium 2
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Oblique Incidence: Wavefront geometry governing refraction, polarizing Brewster angle, and total internal reflection."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-skin-depth-conductors-shielding':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Skin Depth Effect, Exponential Attenuation & Conductor Shielding
+            </text>
+
+            <g transform="translate(40, 35)">
+              {/* Air / Dielectric (z < 0) */}
+              <rect x="0" y="0" width="160" height="155" fill="#0f172a" fillOpacity="0.4" />
+              <text x="20" y="25" fill="#38bdf8" fontSize="11" fontWeight="bold">Air / Free Space</text>
+              <text x="20" y="42" fill="#94a3b8" fontSize="9">Propagation without loss</text>
+
+              {/* Conductor Block (z >= 0) */}
+              <rect x="160" y="0" width="300" height="155" fill="#334155" fillOpacity="0.4" stroke="#475569" />
+              <line x1="160" y1="0" x2="160" y2="155" stroke="#f59e0b" strokeWidth="2.5" />
+              <text x="175" y="25" fill="#facc15" fontSize="11" fontWeight="bold">Good Conductor (σ &gt;&gt; ωε)</text>
+
+              {/* Exponential Decay Envelope in conductor */}
+              <path d="M 160,40 Q 220,110 420,135" fill="none" stroke="#ef4444" strokeWidth="2.5" />
+              <path d="M 160,130 Q 220,60 420,35" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3 3" />
+
+              {/* Oscillating Field under decay envelope */}
+              <path d="M 60,85 Q 85,30 110,85 T 160,85 Q 185,55 210,85 T 260,85 T 310,85" fill="none" stroke="#38bdf8" strokeWidth="2" />
+
+              {/* 1 Skin Depth Marker */}
+              <line x1="220" y1="30" x2="220" y2="140" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="2 2" />
+              <text x="220" y="152" textAnchor="middle" fill="#c084fc" fontSize="9" fontWeight="bold">z = δ (36.8%)</text>
+
+              {/* 3 Skin Depths Marker */}
+              <line x1="340" y1="30" x2="340" y2="140" stroke="#64748b" strokeWidth="1.5" strokeDasharray="2 2" />
+              <text x="340" y="152" textAnchor="middle" fill="#94a3b8" fontSize="9">z = 3δ (5%)</text>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Skin Depth: δ = √(2 / (ω μ σ)) = 1 / √(π f μ σ) | Field Decay: E(z) = E0 e^(-z/δ) e^(-j z/δ)
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              Shielding Effectiveness: SE = R + A + B ≈ 8.686 (t / δ) dB | High frequencies confine current to conductor surface
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Skin Depth: Penetration depth where wave amplitude attenuates to 1/e (36.8%) of its surface value."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-waveguides-cutoff-dispersion':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Rectangular Waveguide: TE10 Dominant Mode, Cutoff Frequencies & Dispersion
+            </text>
+
+            <g transform="translate(40, 35)">
+              {/* 3D Rectangular Waveguide Perspective */}
+              {/* Front Cross-section (width a, height b) */}
+              <polygon points="40,130 180,130 180,50 40,50" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+              {/* Perspective depth along z */}
+              <polygon points="180,130 380,80 380,15 180,50" fill="#1e293b" fillOpacity="0.7" stroke="#38bdf8" strokeWidth="1.5" />
+              <polygon points="40,50 180,50 380,15 240,15" fill="#334155" fillOpacity="0.5" stroke="#38bdf8" strokeWidth="1.5" />
+
+              {/* Dimensions: a (broad wall) and b (narrow wall) */}
+              <line x1="40" y1="140" x2="180" y2="140" stroke="#facc15" strokeWidth="1.5" />
+              <text x="110" y="152" textAnchor="middle" fill="#facc15" fontSize="10" fontWeight="bold">Broad Wall width (a)</text>
+
+              <line x1="30" y1="50" x2="30" y2="130" stroke="#facc15" strokeWidth="1.5" />
+              <text x="18" y="94" textAnchor="middle" fill="#facc15" fontSize="10" fontWeight="bold">b</text>
+
+              {/* TE10 Electric Field half-sine arrows in front cross-section */}
+              <line x1="75" y1="120" x2="75" y2="60" stroke="#34d399" strokeWidth="1.5" />
+              <line x1="110" y1="125" x2="110" y2="55" stroke="#34d399" strokeWidth="2.5" />
+              <polygon points="110,55 106,63 114,63" fill="#34d399" />
+              <line x1="145" y1="120" x2="145" y2="60" stroke="#34d399" strokeWidth="1.5" />
+              <text x="110" y="42" textAnchor="middle" fill="#34d399" fontSize="9" fontWeight="bold">Ey(x) = E0 sin(πx / a)</text>
+
+              {/* Propagation direction z */}
+              <line x1="180" y1="90" x2="430" y2="40" stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 2" />
+              <polygon points="430,40 420,39 423,47" fill="#f59e0b" />
+              <text x="420" y="28" fill="#facc15" fontSize="10" fontWeight="bold">+z (Guide)</text>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Dominant Cutoff: fc(TE10) = c / (2a) | Guide Wavelength: λg = λ0 / √(1 - (fc/f)²) &gt; λ0
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              Phase Velocity vp = c / √(1 - (fc/f)²) &gt; c | Group Velocity vg = c √(1 - (fc/f)²) &lt; c | vp · vg = c²
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Waveguides: Hollow conducting pipes supporting TE and TM modes with frequency cutoff and modal dispersion."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-em-spectrum-radio-to-gamma':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Electromagnetic Spectrum: From Radio Waves to High-Energy Gamma Rays
+            </text>
+
+            <g transform="translate(30, 40)">
+              {/* Spectrum Bands Ribbon */}
+              {/* 1. Radio */}
+              <rect x="0" y="20" width="80" height="50" fill="#0284c7" />
+              <text x="40" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">Radio</text>
+              <text x="40" y="62" textAnchor="middle" fill="#bae6fd" fontSize="7.5">&gt; 1 m</text>
+
+              {/* 2. Microwave */}
+              <rect x="80" y="20" width="75" height="50" fill="#0d9488" />
+              <text x="117" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">Microwave</text>
+              <text x="117" y="62" textAnchor="middle" fill="#ccfbf1" fontSize="7.5">1 mm - 1 m</text>
+
+              {/* 3. Infrared */}
+              <rect x="155" y="20" width="75" height="50" fill="#d97706" />
+              <text x="192" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">Infrared</text>
+              <text x="192" y="62" textAnchor="middle" fill="#fef3c7" fontSize="7.5">700 nm - 1 mm</text>
+
+              {/* 4. Visible */}
+              <rect x="230" y="20" width="40" height="50" fill="#16a34a" />
+              <text x="250" y="48" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">Vis</text>
+              <text x="250" y="62" textAnchor="middle" fill="#dcfce7" fontSize="7">0.5 µm</text>
+
+              {/* 5. UV */}
+              <rect x="270" y="20" width="65" height="50" fill="#6366f1" />
+              <text x="302" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">UV</text>
+              <text x="302" y="62" textAnchor="middle" fill="#e0e7ff" fontSize="7.5">10 - 400 nm</text>
+
+              {/* 6. X-Ray */}
+              <rect x="335" y="20" width="75" height="50" fill="#a855f7" />
+              <text x="372" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">X-Ray</text>
+              <text x="372" y="62" textAnchor="middle" fill="#f3e8ff" fontSize="7.5">0.01 - 10 nm</text>
+
+              {/* 7. Gamma */}
+              <rect x="410" y="20" width="70" height="50" fill="#e11d48" />
+              <text x="445" y="48" textAnchor="middle" fill="#ffffff" fontSize="9.5" fontWeight="bold">Gamma</text>
+              <text x="445" y="62" textAnchor="middle" fill="#ffe4e6" fontSize="7.5">&lt; 0.01 nm</text>
+
+              {/* Frequency axis arrow */}
+              <line x1="0" y1="85" x2="480" y2="85" stroke="#f59e0b" strokeWidth="2" />
+              <polygon points="480,85 470,81 470,89" fill="#f59e0b" />
+              <text x="240" y="100" textAnchor="middle" fill="#facc15" fontSize="9.5" fontWeight="bold">Increasing Frequency (f) &amp; Photon Energy (E = hf) →</text>
+
+              {/* Ionizing divider */}
+              <line x1="300" y1="10" x2="300" y2="135" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x="290" y="125" textAnchor="end" fill="#94a3b8" fontSize="8">Non-Ionizing</text>
+              <text x="310" y="125" textAnchor="start" fill="#f87171" fontSize="8" fontWeight="bold">Ionizing Radiation (&gt; 10 eV)</text>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              c = λ · f = 2.998 × 10⁸ m/s | Photon Energy: E = h·f (h = 6.626 × 10⁻³⁴ J·s = 4.136 × 10⁻¹⁵ eV·s)
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              Wien's Law: λpeak · T = 2.898 × 10⁻³ m·K | Atmosphere transparent to Radio and Optical windows
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electromagnetic Spectrum: Continuous range of electromagnetic radiation classified by frequency and wavelength."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch11-antenna-fundamentals-link-budget':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 260" className="w-full max-w-xl h-64">
+            <text x="270" y="20" textAnchor="middle" fill="#38bdf8" fontSize="13" fontWeight="bold">
+              Antenna Radiation Patterns, Directivity & Friis Free-Space Link Budget
+            </text>
+
+            <g transform="translate(30, 35)">
+              {/* Transmitter Antenna (Left) */}
+              <g transform="translate(40, 70)">
+                <circle cx="0" cy="0" r="12" fill="#0284c7" stroke="#38bdf8" strokeWidth="2" />
+                <line x1="0" y1="12" x2="0" y2="55" stroke="#64748b" strokeWidth="3" />
+                <polygon points="-15,55 15,55 0,12" fill="none" stroke="#64748b" strokeWidth="1.5" />
+                <text x="0" y="-18" textAnchor="middle" fill="#38bdf8" fontSize="10" fontWeight="bold">TX: Pt, Gt</text>
+
+                {/* Directional Radiation Lobe */}
+                <path d="M 0,0 Q 80,-40 100,0 Q 80,40 0,0" fill="#0284c7" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="1.8" />
+                <text x="65" y="4" fill="#facc15" fontSize="8.5" fontWeight="bold">Main Beam</text>
+              </g>
+
+              {/* Free-Space Path Loss Wavefronts (Center) */}
+              <g transform="translate(180, 20)">
+                <path d="M 10,20 A 80 80 0 0 1 10,100" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 2" />
+                <path d="M 50,10 A 110 110 0 0 1 50,110" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 2" />
+                <path d="M 90,0 A 140 140 0 0 1 90,120" fill="none" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 2" />
+                {/* Distance arrow */}
+                <line x1="-30" y1="130" x2="160" y2="130" stroke="#64748b" strokeWidth="1.5" />
+                <text x="65" y="142" textAnchor="middle" fill="#94a3b8" fontSize="9">Link Distance (d)</text>
+              </g>
+
+              {/* Receiver Antenna (Right) */}
+              <g transform="translate(390, 70)">
+                <circle cx="0" cy="0" r="12" fill="#059669" stroke="#34d399" strokeWidth="2" />
+                <line x1="0" y1="12" x2="0" y2="55" stroke="#64748b" strokeWidth="3" />
+                <polygon points="-15,55 15,55 0,12" fill="none" stroke="#64748b" strokeWidth="1.5" />
+                <text x="0" y="-18" textAnchor="middle" fill="#34d399" fontSize="10" fontWeight="bold">RX: Pr, Gr</text>
+              </g>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="30" y="200" width="480" height="46" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="216" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">
+              Friis Formula: Pr = Pt · Gt · Gr · (λ / 4π d)² | EIRP = Pt · Gt (W or dBm)
+            </text>
+            <text x="270" y="234" fill="#38bdf8" fontSize="8.5" textAnchor="middle">
+              FSPL(dB) = 32.44 + 20 log10(d_km) + 20 log10(f_MHz) | Link Margin = Pr(dBm) - Psensitivity(dBm) ≥ 0
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Antenna & Link Budget: Effective radiated power, free-space spreading loss, and receiver signal margin."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-shock-pathway-impedance':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="24" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Electric Shock Pathway & Human Body Equivalent Circuit (IEC 60479-1)
+            </text>
+
+            {/* Mains Supply (Left) */}
+            <g transform="translate(40, 45)">
+              <rect x="0" y="0" width="75" height="150" rx="6" fill="#0f172a" stroke="#dc2626" strokeWidth="1.5" />
+              <text x="37" y="22" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">230 V AC</text>
+              <text x="37" y="38" fill="#94a3b8" fontSize="9" textAnchor="middle">Mains Source</text>
+              
+              {/* Phase Terminal */}
+              <circle cx="75" cy="55" r="5" fill="#dc2626" />
+              <text x="50" y="59" fill="#ef4444" fontSize="10" fontWeight="bold">L</text>
+              
+              {/* Neutral Terminal */}
+              <circle cx="75" cy="115" r="5" fill="#2563eb" />
+              <text x="50" y="119" fill="#60a5fa" fontSize="10" fontWeight="bold">N</text>
+
+              {/* Source Neutral Earth */}
+              <line x1="37" y1="150" x2="37" y2="190" stroke="#10b981" strokeWidth="2" />
+              <line x1="20" y1="190" x2="54" y2="190" stroke="#10b981" strokeWidth="2" />
+              <line x1="26" y1="195" x2="48" y2="195" stroke="#10b981" strokeWidth="1.5" />
+              <line x1="32" y1="200" x2="42" y2="200" stroke="#10b981" strokeWidth="1" />
+              <text x="37" y="214" fill="#34d399" fontSize="8.5" textAnchor="middle">Substation Earth</text>
+            </g>
+
+            {/* Live Wire to Hand */}
+            <line x1="115" y1="100" x2="190" y2="100" stroke="#ef4444" strokeWidth="3" />
+            <polygon points="175,96 185,100 175,104" fill="#ef4444" />
+            <text x="145" y="92" fill="#fca5a5" fontSize="9" textAnchor="middle" fontWeight="bold">Touch (230 V)</text>
+
+            {/* Body Equivalent Impedance Model (Center) */}
+            <g transform="translate(190, 45)">
+              <rect x="0" y="0" width="220" height="150" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 2" />
+              <text x="110" y="18" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">Human Body Impedance Zb</text>
+
+              {/* Entrance Skin: Rskin1 // Cskin1 */}
+              <g transform="translate(15, 35)">
+                <rect x="0" y="5" width="42" height="24" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.2" />
+                <text x="21" y="20" fill="#fde68a" fontSize="8" textAnchor="middle">R_skin1</text>
+                <text x="21" y="44" fill="#94a3b8" fontSize="7.5" textAnchor="middle">(500-100kΩ)</text>
+              </g>
+
+              {/* Arrow */}
+              <line x1="65" y1="55" x2="85" y2="55" stroke="#fbbf24" strokeWidth="2" />
+              <polygon points="80,51 88,55 80,59" fill="#fbbf24" />
+
+              {/* Internal Body Resistance: Rinternal */}
+              <g transform="translate(90, 35)">
+                <rect x="0" y="5" width="45" height="24" rx="3" fill="#1e293b" stroke="#ef4444" strokeWidth="1.2" />
+                <text x="22" y="20" fill="#fca5a5" fontSize="8" textAnchor="middle">R_internal</text>
+                <text x="22" y="44" fill="#ef4444" fontSize="7.5" textAnchor="middle" fontWeight="bold">≈ 500 Ω</text>
+              </g>
+
+              {/* Arrow */}
+              <line x1="140" y1="55" x2="160" y2="55" stroke="#fbbf24" strokeWidth="2" />
+              <polygon points="155,51 163,55 155,59" fill="#fbbf24" />
+
+              {/* Exit Skin: Rskin2 */}
+              <g transform="translate(165, 35)">
+                <rect x="0" y="5" width="42" height="24" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.2" />
+                <text x="21" y="20" fill="#fde68a" fontSize="8" textAnchor="middle">R_skin2</text>
+                <text x="21" y="44" fill="#94a3b8" fontSize="7.5" textAnchor="middle">(Foot Contact)</text>
+              </g>
+
+              {/* Current Vector Flow Arrow */}
+              <line x1="15" y1="95" x2="195" y2="95" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="5 3" />
+              <polygon points="190,91 200,95 190,99" fill="#ef4444" />
+              <text x="105" y="112" fill="#ef4444" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+                Shock Current Ib = Vtouch / Zb
+              </text>
+              <text x="105" y="132" fill="#94a3b8" fontSize="8" textAnchor="middle">
+                Heart in thoracic path → Ventricular Fibrillation risk
+              </text>
+            </g>
+
+            {/* Foot contact to Ground & Soil Return Path */}
+            <line x1="400" y1="120" x2="445" y2="120" stroke="#10b981" strokeWidth="2" />
+            <line x1="445" y1="120" x2="445" y2="190" stroke="#10b981" strokeWidth="2" />
+            
+            {/* Person Foot Ground electrode */}
+            <line x1="430" y1="190" x2="460" y2="190" stroke="#10b981" strokeWidth="2" />
+            <line x1="435" y1="195" x2="455" y2="195" stroke="#10b981" strokeWidth="1.5" />
+            <line x1="440" y1="200" x2="450" y2="200" stroke="#10b981" strokeWidth="1" />
+            <text x="445" y="214" fill="#34d399" fontSize="8.5" textAnchor="middle">Earth Ground</text>
+
+            {/* Earth Mass Loop */}
+            <path d="M 445,220 C 445,260 77,260 77,220" fill="none" stroke="#10b981" strokeWidth="1.5" strokeDasharray="3 3" />
+            <text x="260" y="248" fill="#34d399" fontSize="9" textAnchor="middle" fontWeight="bold">
+              Earth Return Loop to Source Neutral Closes Shock Circuit
+            </text>
+
+            {/* Bottom Warning Pill */}
+            <rect x="40" y="258" width="460" height="18" rx="4" fill="#450a0a" stroke="#dc2626" />
+            <text x="270" y="271" fill="#fecaca" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Ib &gt; 10 mA: Muscular "Can't Let Go" | Ib &gt; 50-100 mA: Ventricular Fibrillation (Fatal in &lt; 1 s)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electric Shock Pathway: Hand-to-foot current loop through body impedance Zb into ground return."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-accident-mechanisms':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Primary Causes &amp; Mechanisms of Electrical Accidents
+            </text>
+
+            {/* 4 Quadrants */}
+            {/* Quadrant 1: Insulation Failure */}
+            <g transform="translate(25, 38)">
+              <rect width="235" height="102" rx="6" fill="#0f172a" stroke="#dc2626" strokeWidth="1.2" />
+              <text x="12" y="20" fill="#ef4444" fontSize="11" fontWeight="bold">1. Insulation Breakdown</text>
+              <line x1="20" y1="45" x2="80" y2="45" stroke="#ef4444" strokeWidth="4" />
+              {/* Damaged insulation notch */}
+              <circle cx="50" cy="45" r="7" fill="#fbbf24" stroke="#dc2626" strokeWidth="1.5" />
+              <text x="50" y="48" fill="#000" fontSize="8" fontWeight="bold" textAnchor="middle">⚡</text>
+              <text x="95" y="42" fill="#fca5a5" fontSize="8.5">Cracked PVC sleeve</text>
+              <text x="95" y="55" fill="#fca5a5" fontSize="8.5">Exposed copper conductor</text>
+              <text x="12" y="80" fill="#94a3b8" fontSize="8">
+                Aging, UV, vibration, thermal cycles degrade dielectric strength.
+              </text>
+              <text x="12" y="93" fill="#f87171" fontSize="8" fontWeight="bold">
+                Direct contact shock hazard
+              </text>
+            </g>
+
+            {/* Quadrant 2: Missing / Severed Earthing */}
+            <g transform="translate(280, 38)">
+              <rect width="235" height="102" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.2" />
+              <text x="12" y="20" fill="#fbbf24" fontSize="11" fontWeight="bold">2. Disconnected Earth (PE)</text>
+              <rect x="25" y="35" width="45" height="30" rx="3" fill="#1e293b" stroke="#f59e0b" />
+              <text x="47" y="52" fill="#fbbf24" fontSize="8" textAnchor="middle">Chassis</text>
+              <line x1="70" y1="50" x2="100" y2="50" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="85" y="42" fill="#ef4444" fontSize="12" fontWeight="bold">✕</text>
+              <text x="110" y="42" fill="#fde68a" fontSize="8.5">Broken ground wire</text>
+              <text x="110" y="55" fill="#fde68a" fontSize="8.5">Floating frame at 230 V</text>
+              <text x="12" y="80" fill="#94a3b8" fontSize="8">
+                Metal enclosure becomes live without tripping overcurrent breaker.
+              </text>
+              <text x="12" y="93" fill="#fbbf24" fontSize="8" fontWeight="bold">
+                Indirect contact electrocution
+              </text>
+            </g>
+
+            {/* Quadrant 3: Water & Moisture Ingress */}
+            <g transform="translate(25, 150)">
+              <rect width="235" height="105" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="12" y="20" fill="#38bdf8" fontSize="11" fontWeight="bold">3. Moisture &amp; Water Ingress</text>
+              <circle cx="45" cy="50" r="16" fill="#0284c7" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="45" y="54" fill="#38bdf8" fontSize="10" textAnchor="middle">💧</text>
+              <text x="75" y="42" fill="#bae6fd" fontSize="8.5">Skin Zb drops from 100kΩ</text>
+              <text x="75" y="55" fill="#bae6fd" fontSize="8.5">to &lt; 1,000 Ω when wet</text>
+              <text x="12" y="82" fill="#94a3b8" fontSize="8">
+                Conductive dissolved salts bridge terminals; creates tracking arc.
+              </text>
+              <text x="12" y="95" fill="#38bdf8" fontSize="8" fontWeight="bold">
+                Lethal shock at standard 230 V
+              </text>
+            </g>
+
+            {/* Quadrant 4: Overloading & Daisy-Chaining */}
+            <g transform="translate(280, 150)">
+              <rect width="235" height="105" rx="6" fill="#0f172a" stroke="#ea580c" strokeWidth="1.2" />
+              <text x="12" y="20" fill="#f97316" fontSize="11" fontWeight="bold">4. Overloading &amp; Daisy-Chains</text>
+              <rect x="25" y="38" width="55" height="22" rx="3" fill="#1e293b" stroke="#ea580c" />
+              <text x="52" y="52" fill="#fdba74" fontSize="8" textAnchor="middle">Strip: 28 A</text>
+              <text x="90" y="42" fill="#fdba74" fontSize="8.5">Rated: 13 A max</text>
+              <text x="90" y="55" fill="#ef4444" fontSize="8.5" fontWeight="bold">Heat P = I² · R</text>
+              <text x="12" y="82" fill="#94a3b8" fontSize="8">
+                Excessive Joulean dissipation melts sockets, burns PVC insulation.
+              </text>
+              <text x="12" y="95" fill="#ea580c" fontSize="8" fontWeight="bold">
+                Catastrophic electrical fire
+              </text>
+            </g>
+
+            {/* Bottom summary */}
+            <rect x="25" y="260" width="490" height="16" rx="3" fill="#020617" stroke="#334155" />
+            <text x="270" y="272" fill="#cbd5e1" fontSize="8.5" textAnchor="middle">
+              Prevention: IS 732 / NFPA 70 compliant wiring, 30 mA RCCB, certified PPE, and regular thermography.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Four Root Causes of Electrical Accidents: Insulation aging, broken earthing, moisture, and overload."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-earthing-protection-circuit':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Earthing Protection Mechanics: Unearthed vs Properly Earthed Chassis Fault
+            </text>
+
+            {/* Left Case: UN-EARTHED (Lethal) */}
+            <g transform="translate(20, 40)">
+              <rect width="240" height="195" rx="6" fill="#0f172a" stroke="#dc2626" strokeWidth="1.5" />
+              <text x="120" y="20" fill="#ef4444" fontSize="11" fontWeight="bold" textAnchor="middle">
+                CASE A: UNEARTHED CHASSIS
+              </text>
+
+              {/* Mains Line */}
+              <text x="15" y="45" fill="#f87171" fontSize="9" fontWeight="bold">Phase (230 V)</text>
+              <line x1="85" y1="42" x2="140" y2="42" stroke="#ef4444" strokeWidth="2.5" />
+              
+              {/* Internal Fault touching metal frame */}
+              <line x1="140" y1="42" x2="140" y2="70" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+              <polygon points="137,65 140,73 143,65" fill="#ef4444" />
+              <text x="150" y="62" fill="#ef4444" fontSize="8" fontWeight="bold">Internal Fault</text>
+
+              {/* Metal Casing */}
+              <rect x="70" y="70" width="105" height="55" rx="4" fill="#1e293b" stroke="#f87171" strokeWidth="2" />
+              <text x="122" y="92" fill="#fca5a5" fontSize="9" textAnchor="middle" fontWeight="bold">Metal Chassis</text>
+              <text x="122" y="108" fill="#ef4444" fontSize="10" textAnchor="middle" fontWeight="bold">Vtouch = 230 V!</text>
+
+              {/* Person Touching Frame */}
+              <circle cx="195" cy="80" r="8" fill="#fca5a5" stroke="#dc2626" />
+              <line x1="195" y1="88" x2="195" y2="120" stroke="#fca5a5" strokeWidth="2" />
+              <line x1="175" y1="92" x2="195" y2="92" stroke="#ef4444" strokeWidth="2" />
+              <line x1="195" y1="120" x2="195" y2="155" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="195" y="145" fill="#fca5a5" fontSize="7.5" textAnchor="end">Shock Current</text>
+
+              {/* Ground return through person */}
+              <line x1="180" y1="155" x2="210" y2="155" stroke="#10b981" strokeWidth="2" />
+              <line x1="185" y1="160" x2="205" y2="160" stroke="#10b981" strokeWidth="1.5" />
+              <text x="195" y="172" fill="#34d399" fontSize="8" textAnchor="middle">Ground</text>
+
+              {/* Result callout */}
+              <rect x="10" y="140" width="130" height="46" rx="4" fill="#450a0a" stroke="#ef4444" />
+              <text x="75" y="154" fill="#fecaca" fontSize="8" textAnchor="middle" fontWeight="bold">Current = 230 V / 1000 Ω</text>
+              <text x="75" y="167" fill="#f87171" fontSize="9" textAnchor="middle" fontWeight="bold">= 230 mA (FATAL!)</text>
+              <text x="75" y="180" fill="#fca5a5" fontSize="7.5" textAnchor="middle">Fuse does NOT blow!</text>
+            </g>
+
+            {/* Right Case: PROPERLY EARTHED (Safe) */}
+            <g transform="translate(280, 40)">
+              <rect width="240" height="195" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+              <text x="120" y="20" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">
+                CASE B: EARTHED CHASSIS (IS 3043)
+              </text>
+
+              {/* Fuse in Phase Line */}
+              <text x="15" y="45" fill="#38bdf8" fontSize="9" fontWeight="bold">Phase</text>
+              <rect x="52" y="37" width="22" height="10" rx="2" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <line x1="74" y1="42" x2="135" y2="42" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="63" y="33" fill="#fbbf24" fontSize="7.5" textAnchor="middle">16A Fuse</text>
+
+              {/* Internal Fault touching metal frame */}
+              <line x1="135" y1="42" x2="135" y2="70" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+
+              {/* Metal Casing */}
+              <rect x="70" y="70" width="105" height="55" rx="4" fill="#1e293b" stroke="#10b981" strokeWidth="2" />
+              <text x="122" y="92" fill="#a7f3d0" fontSize="9" textAnchor="middle" fontWeight="bold">Metal Chassis</text>
+              <text x="122" y="108" fill="#34d399" fontSize="10" textAnchor="middle" fontWeight="bold">Vtouch &lt; 0.5 V (Safe)</text>
+
+              {/* Heavy Low-Resistance Earth Conductor (PE) */}
+              <line x1="90" y1="125" x2="90" y2="155" stroke="#10b981" strokeWidth="4" />
+              <line x1="75" y1="155" x2="105" y2="155" stroke="#10b981" strokeWidth="2.5" />
+              <line x1="80" y1="160" x2="100" y2="160" stroke="#10b981" strokeWidth="1.8" />
+              <text x="90" y="172" fill="#34d399" fontSize="8" textAnchor="middle" fontWeight="bold">RA = 2.0 Ω</text>
+
+              {/* Person Touching Safe Frame */}
+              <circle cx="195" cy="80" r="8" fill="#a7f3d0" stroke="#10b981" />
+              <line x1="195" y1="88" x2="195" y2="120" stroke="#a7f3d0" strokeWidth="2" />
+              <line x1="175" y1="92" x2="195" y2="92" stroke="#94a3b8" strokeWidth="1.5" />
+              <text x="195" y="132" fill="#34d399" fontSize="7.5" textAnchor="middle">Safe Touch</text>
+
+              {/* Result callout */}
+              <rect x="110" y="140" width="120" height="46" rx="4" fill="#064e3b" stroke="#10b981" />
+              <text x="170" y="154" fill="#a7f3d0" fontSize="8" textAnchor="middle" fontWeight="bold">Ifault = 230 / 2.1 = 109 A</text>
+              <text x="170" y="167" fill="#34d399" fontSize="9" textAnchor="middle" fontWeight="bold">Fuse Blows in &lt; 40 ms!</text>
+              <text x="170" y="180" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">Iperson &lt; 0.5 mA (Harmless)</text>
+            </g>
+
+            {/* Bottom Analytical Rule */}
+            <rect x="20" y="245" width="500" height="26" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="258" fill="#fbbf24" fontSize="8.5" textAnchor="middle" fontWeight="bold">
+              Earthing provides low-impedance parallel path (RA &lt;&lt; Rperson), forcing massive fault current to trip fuse instantly!
+            </text>
+            <text x="270" y="268" fill="#94a3b8" fontSize="8" textAnchor="middle">
+              Standard: Touch voltage must remain below 50 V AC per IEC 60364-4-41.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Earthing Protection: Low-resistance ground path diverts current and triggers instantaneous fuse clearance."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-fuse-construction-characteristics':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              High Rupturing Capacity (HRC) Fuse Construction &amp; I²t Inverse Tripping
+            </text>
+
+            {/* Left: Cutaway Diagram of HRC Cartridge */}
+            <g transform="translate(25, 45)">
+              <text x="110" y="14" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                HRC Fuse Internal Construction
+              </text>
+
+              {/* Ceramic Cartridge Body */}
+              <rect x="25" y="30" width="170" height="75" rx="5" fill="#f8fafc" stroke="#64748b" strokeWidth="2" />
+              <rect x="35" y="38" width="150" height="59" fill="#fef08a" fillOpacity="0.4" stroke="#eab308" strokeDasharray="2 2" />
+              <text x="110" y="72" fill="#854d0e" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Granular Quartz Silica Sand
+              </text>
+              <text x="110" y="84" fill="#854d0e" fontSize="7.5" textAnchor="middle">
+                (Arc Extinguishing &amp; Quenching Medium)
+              </text>
+
+              {/* End Caps (Silver/Brass) */}
+              <rect x="10" y="25" width="20" height="85" rx="3" fill="#cbd5e1" stroke="#475569" strokeWidth="2" />
+              <rect x="190" y="25" width="20" height="85" rx="3" fill="#cbd5e1" stroke="#475569" strokeWidth="2" />
+              
+              {/* Fixing Tags */}
+              <rect x="0" y="55" width="10" height="25" fill="#94a3b8" stroke="#475569" />
+              <circle cx="5" cy="67" r="3" fill="#020617" />
+              <rect x="210" y="55" width="10" height="25" fill="#94a3b8" stroke="#475569" />
+              <circle cx="215" cy="67" r="3" fill="#020617" />
+
+              {/* Pure Silver Fuse Element with Waisted Notches */}
+              <path d="M 30,55 L 70,55 L 75,53 L 80,55 L 105,55 L 110,53 L 115,55 L 140,55 L 145,53 L 150,55 L 190,55" fill="none" stroke="#dc2626" strokeWidth="2.5" />
+              <circle cx="75" cy="53" r="3" fill="#fef08a" stroke="#dc2626" />
+              <circle cx="110" cy="53" r="3" fill="#fef08a" stroke="#dc2626" />
+              <circle cx="145" cy="53" r="3" fill="#fef08a" stroke="#dc2626" />
+              <text x="110" y="47" fill="#ef4444" fontSize="8" fontWeight="bold" textAnchor="middle">
+                Calibrated Waisted Melting Notches
+              </text>
+
+              {/* Labels below */}
+              <text x="110" y="125" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
+                Steatite Ceramic Body | High Rupturing Capacity: 80 kA to 120 kA
+              </text>
+            </g>
+
+            {/* Right: Time-Current Characteristic Curve */}
+            <g transform="translate(280, 45)">
+              <text x="115" y="14" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Inverse Time-Current Characteristic (I²t)
+              </text>
+
+              {/* Axes */}
+              <line x1="35" y1="120" x2="215" y2="120" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="35" y1="25" x2="35" y2="120" stroke="#64748b" strokeWidth="1.5" />
+              <text x="125" y="134" fill="#94a3b8" fontSize="8" textAnchor="middle">Current (Multiples of In) →</text>
+              <text x="25" y="70" fill="#94a3b8" fontSize="8" textAnchor="middle" transform="rotate(-90 25 70)">Time (s) →</text>
+
+              {/* Inverse Curve */}
+              <path d="M 45,30 Q 55,100 205,115" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+              
+              {/* Operating Points */}
+              <circle cx="55" cy="65" r="4" fill="#ef4444" />
+              <text x="65" y="62" fill="#fca5a5" fontSize="7.5">Overload: Long delay</text>
+
+              <circle cx="170" cy="113" r="4" fill="#ef4444" />
+              <text x="160" y="105" fill="#ef4444" fontSize="7.5" fontWeight="bold">Short-Circuit: &lt; 5 ms</text>
+
+              {/* Mathematical Box */}
+              <rect x="25" y="145" width="200" height="42" rx="4" fill="#0f172a" stroke="#334155" />
+              <text x="125" y="160" fill="#fbbf24" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+                Pre-Arcing Joule Integral: I²t = Constant
+              </text>
+              <text x="125" y="176" fill="#38bdf8" fontSize="8" textAnchor="middle">
+                Preece Law: I_fusing = k · d^(1.5)
+              </text>
+            </g>
+
+            {/* Bottom Comparison */}
+            <rect x="25" y="244" width="490" height="26" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="258" fill="#fbbf24" fontSize="8.5" textAnchor="middle" fontWeight="bold">
+              Fusing Factor = Minimum Fusing Current / Rated Current (HRC ≈ 1.2 to 1.25; Rewireable ≈ 1.6 to 2.0)
+            </text>
+            <text x="270" y="267" fill="#94a3b8" fontSize="7.5" textAnchor="middle">
+              Rewireable fuses age and oxidize; HRC fuses provide hermetically sealed, non-deteriorating cutoff.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "HRC Fuse Construction & I²t Characteristic: Silver notched element, silica sand quenching, and inverse time clearance."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-mcb-construction-tripping':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Miniature Circuit Breaker (MCB) Internal Cutaway &amp; Dual Tripping Mechanism
+            </text>
+
+            {/* Outer MCB Enclosure */}
+            <g transform="translate(30, 38)">
+              <rect width="270" height="200" rx="8" fill="#0f172a" stroke="#64748b" strokeWidth="2" />
+              
+              {/* Top Terminal (Line) */}
+              <rect x="20" y="0" width="35" height="18" rx="2" fill="#334155" stroke="#94a3b8" />
+              <text x="37" y="13" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">IN</text>
+
+              {/* Bottom Terminal (Load) */}
+              <rect x="215" y="182" width="35" height="18" rx="2" fill="#334155" stroke="#94a3b8" />
+              <text x="232" y="195" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">OUT</text>
+
+              {/* Operating Handle */}
+              <rect x="20" y="80" width="22" height="40" rx="4" fill="#dc2626" stroke="#ef4444" />
+              <text x="31" y="104" fill="#fff" fontSize="8" fontWeight="bold" textAnchor="middle" transform="rotate(-90 31 104)">ON</text>
+
+              {/* 1. Bimetallic Strip (Thermal Overload Trip) */}
+              <g transform="translate(195, 40)">
+                <rect x="0" y="0" width="6" height="55" fill="#ef4444" />
+                <rect x="6" y="0" width="6" height="55" fill="#3b82f6" />
+                <text x="16" y="25" fill="#fbbf24" fontSize="8" fontWeight="bold">Bimetal Strip</text>
+                <text x="16" y="36" fill="#94a3b8" fontSize="7">Thermal Overload</text>
+                <text x="16" y="47" fill="#94a3b8" fontSize="7">(1.13 - 1.45 In)</text>
+              </g>
+
+              {/* 2. Magnetic Trip Solenoid (Instant Short-Circuit) */}
+              <g transform="translate(65, 40)">
+                <rect x="0" y="0" width="45" height="35" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+                {/* Solenoid Coils */}
+                <path d="M 5,8 Q 22,0 40,8 M 5,16 Q 22,8 40,16 M 5,24 Q 22,16 40,24" stroke="#f59e0b" strokeWidth="2" fill="none" />
+                <rect x="18" y="28" width="8" height="16" fill="#cbd5e1" />
+                <text x="22" y="55" fill="#fbbf24" fontSize="7.5" textAnchor="middle" fontWeight="bold">Magnetic Coil</text>
+                <text x="22" y="65" fill="#ef4444" fontSize="7" textAnchor="middle">&lt; 10 ms Trip</text>
+              </g>
+
+              {/* 3. Arc Chute & De-ion Plates */}
+              <g transform="translate(115, 110)">
+                <rect x="0" y="0" width="70" height="55" rx="3" fill="#1e293b" stroke="#ef4444" strokeWidth="1.2" />
+                <line x1="12" y1="10" x2="58" y2="10" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="12" y1="20" x2="58" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="12" y1="30" x2="58" y2="30" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="12" y1="40" x2="58" y2="40" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="12" y1="48" x2="58" y2="48" stroke="#cbd5e1" strokeWidth="2" />
+                <text x="35" y="32" fill="#f87171" fontSize="8" fontWeight="bold" textAnchor="middle">
+                  Arc Chute Plates
+                </text>
+                <text x="35" y="64" fill="#94a3b8" fontSize="7" textAnchor="middle">
+                  De-ionizes &amp; splits arc
+                </text>
+              </g>
+
+              {/* Main Contacts */}
+              <circle cx="100" cy="95" r="5" fill="#cbd5e1" stroke="#f59e0b" strokeWidth="2" />
+              <line x1="100" y1="95" x2="120" y2="85" stroke="#ef4444" strokeWidth="3" />
+            </g>
+
+            {/* Right: Characteristic Types & Tripping Table */}
+            <g transform="translate(320, 38)">
+              <rect width="190" height="200" rx="6" fill="#0f172a" stroke="#334155" />
+              <text x="95" y="20" fill="#38bdf8" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                MCB Tripping Curves (EN 60898)
+              </text>
+
+              {/* Type B */}
+              <rect x="10" y="32" width="170" height="42" rx="3" fill="#1e293b" stroke="#38bdf8" />
+              <text x="18" y="47" fill="#38bdf8" fontSize="9" fontWeight="bold">TYPE B (3 - 5 × In)</text>
+              <text x="18" y="62" fill="#cbd5e1" fontSize="7.5">Domestic lighting, resistive heaters.</text>
+
+              {/* Type C */}
+              <rect x="10" y="80" width="170" height="42" rx="3" fill="#1e293b" stroke="#fbbf24" />
+              <text x="18" y="95" fill="#fbbf24" fontSize="9" fontWeight="bold">TYPE C (5 - 10 × In)</text>
+              <text x="18" y="110" fill="#cbd5e1" fontSize="7.5">Commercial inductive loads, ACs, pumps.</text>
+
+              {/* Type D */}
+              <rect x="10" y="128" width="170" height="42" rx="3" fill="#1e293b" stroke="#ef4444" />
+              <text x="18" y="143" fill="#ef4444" fontSize="9" fontWeight="bold">TYPE D (10 - 20 × In)</text>
+              <text x="18" y="158" fill="#cbd5e1" fontSize="7.5">High inrush motors, welders, X-ray.</text>
+
+              {/* Key rule */}
+              <text x="95" y="188" fill="#a7f3d0" fontSize="8" textAnchor="middle" fontWeight="bold">
+                Rated Breaking Capacity: 6 kA to 10 kA
+              </text>
+            </g>
+
+            {/* Bottom rule */}
+            <rect x="30" y="248" width="480" height="22" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="262" fill="#fbbf24" fontSize="8.5" textAnchor="middle" fontWeight="bold">
+              Dual Protection: Bimetal bends slowly for thermal overloads; Solenoid plunger strikes latch in &lt; 10 ms on short circuits.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "MCB Internal Cutaway: Bimetallic thermal overload strip, magnetic short-circuit coil, and de-ionizing arc chute."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-rccb-core-operation':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Residual Current Circuit Breaker (RCCB): Core Balance Transformer (CBCT) Principle
+            </text>
+
+            {/* Main Toroidal Core (Center Left) */}
+            <g transform="translate(140, 125)">
+              {/* Outer and Inner Circle of Toroid */}
+              <circle cx="0" cy="0" r="55" fill="#1e293b" stroke="#0284c7" strokeWidth="8" />
+              <circle cx="0" cy="0" r="35" fill="#020617" stroke="#0284c7" strokeWidth="2" />
+              <text x="0" y="4" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+                Toroidal Core
+              </text>
+              <text x="0" y="16" fill="#94a3b8" fontSize="7" textAnchor="middle">(CBCT)</text>
+
+              {/* Flux cancellation note */}
+              <text x="0" y="-62" fill="#38bdf8" fontSize="8" fontWeight="bold" textAnchor="middle">
+                Φ_L + Φ_N = 0 (Healthy)
+              </text>
+
+              {/* Search / Secondary Sensing Winding */}
+              <g transform="translate(38, -25)">
+                <path d="M 0,0 Q 15,5 0,10 Q 15,15 0,20 Q 15,25 0,30 Q 15,35 0,40 Q 15,45 0,50" fill="none" stroke="#f59e0b" strokeWidth="3" />
+                <text x="25" y="28" fill="#fbbf24" fontSize="8" fontWeight="bold">Sensing Coil</text>
+              </g>
+            </g>
+
+            {/* Phase Conductor Line */}
+            <line x1="40" y1="95" x2="310" y2="95" stroke="#ef4444" strokeWidth="3.5" />
+            <polygon points="200,91 212,95 200,99" fill="#ef4444" />
+            <text x="50" y="88" fill="#fca5a5" fontSize="9" fontWeight="bold">Phase: IL →</text>
+
+            {/* Neutral Conductor Line */}
+            <line x1="310" y1="155" x2="40" y2="155" stroke="#3b82f6" strokeWidth="3.5" />
+            <polygon points="150,159 138,155 150,151" fill="#3b82f6" />
+            <text x="50" y="172" fill="#93c5fd" fontSize="9" fontWeight="bold">← Neutral: IN</text>
+
+            {/* Load (Right) */}
+            <g transform="translate(310, 80)">
+              <rect width="60" height="90" rx="4" fill="#0f172a" stroke="#64748b" strokeWidth="1.5" />
+              <text x="30" y="48" fill="#e2e8f0" fontSize="9.5" fontWeight="bold" textAnchor="middle">Load</text>
+            </g>
+
+            {/* Earth Leakage Current Path (Bypassing Neutral) */}
+            <path d="M 340,170 L 340,210 L 190,210" fill="none" stroke="#eab308" strokeWidth="2.5" strokeDasharray="4 2" />
+            <polygon points="195,206 185,210 195,214" fill="#eab308" />
+            <text x="260" y="202" fill="#fde047" fontSize="8.5" fontWeight="bold">
+              Earth Leakage Current IΔn (e.g. 30 mA)
+            </text>
+            {/* Earth Ground Electrode */}
+            <line x1="175" y1="210" x2="175" y2="225" stroke="#10b981" strokeWidth="2" />
+            <line x1="165" y1="225" x2="185" y2="225" stroke="#10b981" strokeWidth="2" />
+            <line x1="170" y1="230" x2="180" y2="230" stroke="#10b981" strokeWidth="1.5" />
+
+            {/* Polarized Trip Relay & Mechanical Latch */}
+            <g transform="translate(200, 40)">
+              <rect width="80" height="42" rx="4" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="40" y="16" fill="#fbbf24" fontSize="8.5" fontWeight="bold" textAnchor="middle">Trip Relay</text>
+              <text x="40" y="30" fill="#ef4444" fontSize="7.5" fontWeight="bold" textAnchor="middle">Trip in &lt; 30 ms</text>
+              {/* Connection from sensing coil */}
+              <line x1="-20" y1="60" x2="0" y2="30" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 2" />
+              {/* Trip link to breaker contact */}
+              <line x1="40" y1="42" x2="40" y2="55" stroke="#ef4444" strokeWidth="2" />
+            </g>
+
+            {/* Test Circuit with Test Push Button & Resistor */}
+            <g transform="translate(385, 45)">
+              <rect width="135" height="135" rx="5" fill="#0f172a" stroke="#a855f7" strokeWidth="1.2" />
+              <text x="67" y="18" fill="#c084fc" fontSize="9" fontWeight="bold" textAnchor="middle">
+                Monthly Test Circuit
+              </text>
+              <circle cx="67" cy="45" r="12" fill="#7e22ce" stroke="#c084fc" strokeWidth="2" />
+              <text x="67" y="49" fill="#fff" fontSize="10" fontWeight="bold" textAnchor="middle">"T"</text>
+              
+              {/* Internal Test Resistor Rtest */}
+              <rect x="42" y="70" width="50" height="20" rx="3" fill="#1e293b" stroke="#f59e0b" />
+              <text x="67" y="83" fill="#fde047" fontSize="7.5" textAnchor="middle">R_test = 5.6 kΩ</text>
+              
+              <text x="67" y="108" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Injects ~40 mA across core</text>
+              <text x="67" y="122" fill="#34d399" fontSize="7" textAnchor="middle">Verifies mechanism freedom</text>
+            </g>
+
+            {/* Bottom Analytical Summary */}
+            <rect x="25" y="246" width="490" height="25" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="259" fill="#fbbf24" fontSize="8.5" textAnchor="middle" fontWeight="bold">
+              Operation: If IL - IN ≥ IΔn (30 mA), net core flux induces EMF in sensing coil, energizing relay to break circuit in &lt; 40 ms.
+            </text>
+            <text x="270" y="268" fill="#fca5a5" fontSize="7.5" textAnchor="middle">
+              CRITICAL: RCCB provides ZERO overcurrent protection! Must be paired with an MCB, or replaced with an RCBO.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "RCCB Core Balance Transformer: Differential current sensing, trip relay tripping, and monthly 'T' test button."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-isolation-loto-procedure':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 280" className="w-full max-w-2xl h-64">
+            <rect width="540" height="280" rx="8" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="22" fill="#38bdf8" fontSize="13" fontWeight="bold" textAnchor="middle">
+              Electrical Isolation &amp; The 5 Golden Safety Rules (EN 50110-1 / OSHA 1910.147)
+            </text>
+
+            {/* 5 Step Process Containers */}
+            {/* Step 1: Disconnect */}
+            <g transform="translate(15, 38)">
+              <rect width="95" height="135" rx="5" fill="#0f172a" stroke="#dc2626" strokeWidth="1.2" />
+              <text x="47" y="16" fill="#ef4444" fontSize="9" fontWeight="bold" textAnchor="middle">1. DISCONNECT</text>
+              {/* Open Isolator with Air Gap */}
+              <circle cx="25" cy="55" r="4" fill="#ef4444" />
+              <circle cx="70" cy="55" r="4" fill="#ef4444" />
+              <line x1="25" y1="55" x2="60" y2="35" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="47" y="75" fill="#fca5a5" fontSize="7.5" textAnchor="middle">Visible Air Gap</text>
+              <text x="47" y="90" fill="#94a3b8" fontSize="7" textAnchor="middle">Breaker opened</text>
+              <text x="47" y="102" fill="#94a3b8" fontSize="7" textAnchor="middle">Isolator opened</text>
+              <text x="47" y="122" fill="#ef4444" fontSize="7" fontWeight="bold" textAnchor="middle">(Off-Load Only)</text>
+            </g>
+
+            {/* Step 2: LOTO */}
+            <g transform="translate(120, 38)">
+              <rect width="95" height="135" rx="5" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.2" />
+              <text x="47" y="16" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">2. LOCKOUT (LOTO)</text>
+              {/* Padlock and Tag */}
+              <rect x="32" y="32" width="30" height="24" rx="3" fill="#dc2626" stroke="#fca5a5" />
+              <path d="M 37,32 L 37,22 A 10 10 0 0 1 57,22 L 57,32" fill="none" stroke="#e2e8f0" strokeWidth="2.5" />
+              <rect x="25" y="60" width="45" height="25" rx="2" fill="#fff" stroke="#dc2626" />
+              <text x="47" y="72" fill="#dc2626" fontSize="7" fontWeight="bold" textAnchor="middle">DANGER</text>
+              <text x="47" y="80" fill="#000" fontSize="6" textAnchor="middle">DO NOT OPERATE</text>
+              <text x="47" y="100" fill="#fde68a" fontSize="7" textAnchor="middle">Personal Lock</text>
+              <text x="47" y="112" fill="#fde68a" fontSize="7" textAnchor="middle">Multi-Lock Hasp</text>
+              <text x="47" y="124" fill="#fbbf24" fontSize="6.5" fontWeight="bold" textAnchor="middle">1 Person = 1 Key</text>
+            </g>
+
+            {/* Step 3: Verify Dead */}
+            <g transform="translate(225, 38)">
+              <rect width="95" height="135" rx="5" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.2" />
+              <text x="47" y="16" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">3. VERIFY DEAD</text>
+              {/* Voltage Tester & Proving Unit */}
+              <rect x="25" y="30" width="45" height="28" rx="3" fill="#1e293b" stroke="#38bdf8" />
+              <text x="47" y="47" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">0.0 V</text>
+              <text x="47" y="72" fill="#bae6fd" fontSize="7.5" fontWeight="bold" textAnchor="middle">Live-Dead-Live</text>
+              <text x="47" y="85" fill="#94a3b8" fontSize="7" textAnchor="middle">1. Test on Prover</text>
+              <text x="47" y="97" fill="#94a3b8" fontSize="7" textAnchor="middle">2. Test on Circuit</text>
+              <text x="47" y="109" fill="#94a3b8" fontSize="7" textAnchor="middle">3. Re-test Prover</text>
+              <text x="47" y="124" fill="#38bdf8" fontSize="6.5" fontWeight="bold" textAnchor="middle">No False Zeroes!</text>
+            </g>
+
+            {/* Step 4: Earth & Short */}
+            <g transform="translate(330, 38)">
+              <rect width="95" height="135" rx="5" fill="#0f172a" stroke="#10b981" strokeWidth="1.2" />
+              <text x="47" y="16" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">4. EARTH &amp; SHORT</text>
+              {/* Grounding cluster */}
+              <line x1="20" y1="35" x2="75" y2="35" stroke="#ef4444" strokeWidth="2" />
+              <line x1="47" y1="35" x2="47" y2="65" stroke="#10b981" strokeWidth="3" />
+              <line x1="35" y1="65" x2="60" y2="65" stroke="#10b981" strokeWidth="2" />
+              <line x1="40" y1="70" x2="55" y2="70" stroke="#10b981" strokeWidth="1.5" />
+              <text x="47" y="85" fill="#a7f3d0" fontSize="7.5" fontWeight="bold" textAnchor="middle">Portable Earth</text>
+              <text x="47" y="98" fill="#94a3b8" fontSize="7" textAnchor="middle">Bleeds capacitor</text>
+              <text x="47" y="110" fill="#94a3b8" fontSize="7" textAnchor="middle">stored energy</text>
+              <text x="47" y="124" fill="#34d399" fontSize="6.5" fontWeight="bold" textAnchor="middle">Trips upstream switch</text>
+            </g>
+
+            {/* Step 5: Barrier / Shroud */}
+            <g transform="translate(435, 38)">
+              <rect width="90" height="135" rx="5" fill="#0f172a" stroke="#a855f7" strokeWidth="1.2" />
+              <text x="45" y="16" fill="#c084fc" fontSize="8.5" fontWeight="bold" textAnchor="middle">5. SHROUD LIVE</text>
+              {/* Insulating mat / barrier */}
+              <rect x="20" y="32" width="50" height="28" rx="3" fill="#ea580c" fillOpacity="0.4" stroke="#f97316" strokeDasharray="3 2" />
+              <text x="45" y="49" fill="#fed7aa" fontSize="7" fontWeight="bold" textAnchor="middle">Insulating Mat</text>
+              <text x="45" y="75" fill="#d8b4fe" fontSize="7.5" fontWeight="bold" textAnchor="middle">Physical Barrier</text>
+              <text x="45" y="90" fill="#94a3b8" fontSize="7" textAnchor="middle">Shields adjacent</text>
+              <text x="45" y="102" fill="#94a3b8" fontSize="7" textAnchor="middle">energized gear</text>
+              <text x="45" y="124" fill="#c084fc" fontSize="6.5" fontWeight="bold" textAnchor="middle">Approach Boundary</text>
+            </g>
+
+            {/* Stored Energy / Capacitive Discharge Box */}
+            <g transform="translate(15, 185)">
+              <rect width="510" height="50" rx="4" fill="#0f172a" stroke="#334155" />
+              <text x="15" y="18" fill="#fbbf24" fontSize="9.5" fontWeight="bold">
+                Residual Stored Energy Warning (Capacitor Banks, DC Links &amp; HV Cables):
+              </text>
+              <text x="15" y="32" fill="#cbd5e1" fontSize="8">
+                Turning off isolator does NOT instantly de-energize capacitors! Voltage decays exponentially: Vc(t) = V0 · e^(-t / RC).
+              </text>
+              <text x="15" y="44" fill="#f87171" fontSize="8" fontWeight="bold">
+                Mandatory: Discharge rod with current-limiting resistor MUST be applied to ground before touching terminals!
+              </text>
+            </g>
+
+            {/* Bottom summary */}
+            <rect x="15" y="244" width="510" height="26" rx="4" fill="#020617" stroke="#1e293b" />
+            <text x="270" y="258" fill="#fbbf24" fontSize="8.5" textAnchor="middle" fontWeight="bold">
+              Permit-to-Work (PTW) &amp; LOTO: No person works alone; each worker holds exclusive custody of their lock and key.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electrical Isolation: 5 Golden Safety Rules, Lockout/Tagout (LOTO), and Live-Dead-Live voltage verification."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
