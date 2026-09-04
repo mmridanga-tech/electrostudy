@@ -1,251 +1,269 @@
 import { Lesson } from '../types';
 
-export const LESSON_PASSIVE_FILTERS_BODE: Lesson = {
+export const LESSON_BODE_PLOTS_FREQUENCY_RESPONSE: Lesson = {
   id: 'lsn-ch12-bode-plots-frequency-response',
   topicId: 'tp-rlc-circuit',
   chapterId: 'ch-ac-circuits',
   order: 6,
   title: {
-    en: 'Passive Filters & Frequency Response (Bode Plots)',
-    hi: 'निष्क्रिय फिल्टर एवं आवृत्ति अनुक्रिया (बोडे प्लॉट)',
-    bn: 'প্যাসিভ ফিল্টার ও কম্পাঙ্ক প্রতিক্রিয়া (বোড প্লট)'
+    en: 'Bode Plots & Frequency Response of AC Circuits',
+    hi: 'बोडे प्लॉट एवं एसी परिपथों की आवृत्ति अनुक्रिया',
+    bn: 'বোড প্লট ও এসি বর্তনীর কম্পাঙ্ক প্রতিক্রিয়া'
   },
   description: {
-    en: 'Design and synthesize passive low-pass, high-pass, band-pass, and band-stop (notch) filters using RC, RL, and RLC networks. Master network transfer functions H(jω), half-power cutoff frequencies (-3 dB points), roll-off slopes (-20 dB/dec, -40 dB/dec), and asymptotic Bode magnitude and phase plotting.',
-    hi: 'RC, RL, एवं RLC नेटवर्कों का उपयोग करके निष्क्रिय लो-पास, हाई-पास, बैंड-पास, एवं बैंड-स्टॉप (नॉच) फिल्टरों का डिजाइन करें। नेटवर्क ट्रांसफर फंक्शन H(jω), अर्ध-शक्ति कटऑफ आवृत्तियों (-3 dB बिंदु), रोल-ऑफ ढलानों (-20 dB/dec, -40 dB/dec), और असममित बोडे परिमाण एवं कला आलेखों में पारंगत हों।',
-    bn: 'RC, RL ও RLC নেটওয়ার্ক ব্যবহার করে প্যাসিভ লো-পাস, হাই-পাস, ব্যান্ড-পাস এবং ব্যান্ড-স্টপ (নচ) ফিল্টার ডিজাইন করুন। নেটওয়ার্ক ট্রান্সফার ফাংশন H(jω), অর্ধ-ক্ষমতা কাট-অফ কম্পাঙ্ক (-৩ dB বিন্দু), রোল-অফ ঢাল এবং বোড ম্যাগনিটিউড ও ফেজ প্লট পুঙ্খানুপুঙ্খভাবে শিখুন।'
+    en: 'Master frequency-domain network transfer functions H(jω), logarithmic decibel scales, decade/octave axes, asymptotic Bode magnitude and phase approximations, corner break frequencies, second-order quadratic poles with damping ratio ζ and resonance peaking Mp, bandwidth, and gain/phase margin stability analysis.',
+    hi: 'आवृत्ति-डोमेन नेटवर्क ट्रांसफर फंक्शन H(jω), लघुगणकीय डेसिबल पैमानों, दशक/अष्टक अक्षों, असममित बोडे परिमाण एवं कला सन्निकटनों, कॉर्नर ब्रेक आवृत्तियों, अवमंदन अनुपात ζ एवं अनुनादी शिखर Mp वाले द्वितीय-कोटि द्विघात ध्रुवों, बैंडविड्थ, और गेन/फेज मार्जिन स्थिरता विश्लेषण में महारत हासिल करें।',
+    bn: 'কম্পাঙ্ক-ডোমেন নেটওয়ার্ক ট্রান্সফার ফাংশন H(jω), লগারিদমিক ডেসিবেল স্কেল, ডেকেড/অক্টেভ অক্ষ, অ্যাসিম্পটোটিক বোড ম্যাগনিটিউড ও ফেজ চিত্র, কাট-অফ ব্রেক কম্পাঙ্ক, ড্যাম্পিং অনুপাত ζ ও রেজোন্যান্ট পিক Mp সহ দ্বিতীয়-ক্রমের পোল, ব্যান্ডউইথ এবং গেইন/ফেজ মার্জিন স্থায়িত্ব বিশ্লেষণ পুঙ্খানুপুঙ্খভাবে শিখুন।'
   },
   estimatedMinutes: 42,
   easyExplanation: {
-    en: 'An electrical filter is a frequency-selective circuit that allows signals in certain frequency bands to pass through while blocking or attenuating unwanted frequencies (such as noise or hum). A Low-Pass Filter (LPF) passes DC and low frequencies while attenuating high frequencies; a High-Pass Filter (HPF) does the exact opposite. Band-Pass Filters pass only frequencies near a center frequency, while Band-Stop (notch) filters reject a specific interference frequency (like 50 Hz/60 Hz power-line hum). Engineers evaluate filter performance using Bode plots—graphs of logarithmic gain in decibels (dB) versus logarithmic frequency—revealing the cutoff frequency (where output power drops by 50% or -3 dB) and the roll-off steepness.',
-    hi: 'एक विद्युत फिल्टर एक आवृत्ति-चयनात्मक परिपथ है जो कुछ आवृत्तियों के संकेतों को गुजरने देता है जबकि अवांछित आवृत्तियों (जैसे शोर या हम) को रोकता है। लो-पास फिल्टर (LPF) कम आवृत्तियों को जाने देता है और उच्च आवृत्तियों को रोकता है; हाई-पास फिल्टर (HPF) इसका ठीक उल्टा करता है। बैंड-पास केवल एक निश्चित बैंड को पास करता है, जबकि बैंड-स्टॉप किसी विशिष्ट हस्तक्षेप (जैसे 50 Hz एसी शोर) को ब्लॉक करता है। इंजीनियर बोडे प्लॉट (Bode Plot) का उपयोग करके फिल्टर के प्रदर्शन का विश्लेषण करते हैं।',
-    bn: 'বৈদ্যুতিক ফিল্টার হলো একটি কম্পাঙ্ক-নির্বাচনী বর্তনী যা নির্দিষ্ট কম্পাঙ্কের সংকেত পার হতে দেয় এবং অনাকাঙ্ক্ষিত কম্পাঙ্ককে (যেমন নয়েজ) আটকে দেয়। লো-পাস ফিল্টার (LPF) কম কম্পাঙ্ক পার করে এবং উচ্চ কম্পাঙ্ক রোধ করে; হাই-পাস ফিল্টার (HPF) এর বিপরীত কাজ করে। ব্যান্ড-পাস কেবল নির্দিষ্ট ব্যান্ড পার করে এবং ব্যান্ড-স্টপ ফিল্টার কোনো নির্দিষ্ট অনাকাঙ্ক্ষিত কম্পাঙ্ককে বাধা দেয়। বোড প্লটের সাহায্যে গেইন (dB) এবং ফেজের পরিবর্তন দেখে ফিল্টারের কার্যকারিতা পরিমাপ করা হয়।'
+    en: 'When AC signals pass through linear circuits containing resistors, capacitors, and inductors, both the signal amplitude (gain) and the timing (phase shift) change as the frequency changes. A Bode plot is the universal engineering method for visualizing this frequency response. Invented by Hendrik Wade Bode at Bell Labs, it splits the circuit behavior into two separate graphs plotted against frequency on a logarithmic scale: (1) Magnitude in decibels (dB), where multiplication of gains turns into simple addition, and (2) Phase in degrees (°). Instead of calculating complex math for every frequency point, engineers use straight-line asymptotic approximations. At low frequencies, response curves follow simple horizontal lines, and past a corner frequency (break frequency), they roll off along straight lines sloping at -20 dB per decade (for single-pole circuits) or -40 dB per decade (for second-order RLC circuits). In resonant systems, a sharp resonant peak appears near the corner frequency before plunging downward.',
+    hi: 'जब एसी संकेत प्रतिरोधकों, संधारित्रों और प्रेरकों वाले परिपथों से गुजरते हैं, तो संकेत का परिमाण (गेन) और कला (फेज) आवृत्ति के अनुसार बदलते हैं। बोडे प्लॉट (Bode Plot) इस आवृत्ति अनुक्रिया को चित्रित करने की मानक इंजीनियरिंग विधि है। बेल लैब्स के हेंड्रिक वेड बोडे द्वारा विकसित इस तकनीक में दो आलेख होते हैं जिन्हें लघुगणकीय आवृत्ति अक्ष पर बनाया जाता है: (1) डेसिबल (dB) में परिमाण आलेख, और (2) डिग्री (°) में कला आलेख। इंजीनियर जटिल गणनाओं के बजाय सीधी असममित रेखाओं (asymptotes) का उपयोग करते हैं। कॉर्नर आवृत्ति (ब्रेक फ्रीक्वेंसी) से आगे वक्र -20 dB प्रति दशक (प्रथम-कोटि) या -40 dB प्रति दशक (द्वितीय-कोटि RLC) की ढलान से गिरता है। अनुनादी परिपथों में कॉर्नर आवृत्ति के पास एक तीखा शिखर (resonant peak) भी प्रकट होता है।',
+    bn: 'যখন এসি সিগন্যাল রোধ, ধারক ও আবেশকযুক্ত বর্তনীর মধ্য দিয়ে যায়, তখন কম্পাঙ্কের পরিবর্তনের সাথে সাথে সিগন্যালের মান (গেইন) এবং সময়কাল (ফেজ) উভয়ই পরিবর্তিত হয়। বোড প্লট হলো এই কম্পাঙ্ক প্রতিক্রিয়া বিশ্লেষণের সর্বজনীন ইঞ্জিনিয়ারিং পদ্ধতি। এতে লগারিদমিক কম্পাঙ্ক অক্ষের বিপরীতে দুটি আলাদা গ্রাফ আঁকা হয়: (১) ডেসিবেলে (dB) ম্যাগনিটিউড গ্রাফ, এবং (২) ডিগ্রিতে (°) ফেজ গ্রাফ। জটিল সমীকরণ এড়িয়ে সরলরৈখিক অ্যাসিম্পটোট ব্যবহার করে সহজেই এটি অঙ্কন করা যায়। কাট-অফ কম্পাঙ্ক পেরিয়ে গেলে রেখাটি প্রতি দশকে -২০ dB (একক পোলের জন্য) বা প্রতি দশকে -৪০ dB (দ্বিতীয়-ক্রম RLC এর জন্য) ঢালে নামতে থাকে। রেজোন্যান্ট বর্তনীতে কাট-অফের কাছে একটি তীক্ষ্ণ পিক তৈরি হয়।'
   },
   detailedExplanation: {
-    en: '1. Network Transfer Functions:\nIn linear AC circuits, the sinusoidal steady-state transfer function relates output phasor V_out(jω) to input phasor V_in(jω):\nH(jω) = V_out(jω) / V_in(jω) = |H(jω)| e^{j∠H(jω)}.\n- Magnitude response: Gain |H(jω)| = |V_out| / |V_in|.\n- Decibel gain: Gain_{dB} = 20 log_{10} |H(jω)|.\n- Phase response: θ(ω) = ∠H(jω) = ∠V_out - ∠V_in.\n\n2. First-Order Passive Filters:\n- First-Order RC Low-Pass Filter (R in series, C across output):\n  H(jω) = (1 / jωC) / [R + (1 / jωC)] = 1 / (1 + jωRC) = 1 / [1 + j(ω/ω_c)].\n  Cutoff frequency: ω_c = 1 / (RC) rad/s  ⇒  f_c = 1 / (2πRC) Hz.\n  At ω = ω_c: |H(jω_c)| = 1 / √2 ≈ 0.7071 (-3.01 dB), phase ∠H = -45°.\n  High frequencies (ω >> ω_c): |H| ≈ ω_c / ω, rolling off at -20 dB/decade (-6 dB/octave).\n- First-Order RC High-Pass Filter (C in series, R across output):\n  H(jω) = R / [R + (1 / jωC)] = jωRC / (1 + jωRC) = j(ω/ω_c) / [1 + j(ω/ω_c)].\n  Cutoff frequency: ω_c = 1 / (RC) rad/s.\n  At ω = ω_c: |H| = 1 / √2 (-3 dB), phase ∠H = +45°.\n  Low frequencies (ω << ω_c): rolls off at +20 dB/decade.\n\n3. Second-Order Filters (Series RLC):\n- Band-Pass Filter (output taken across resistor R):\n  H(jω) = R / [R + j(ωL - 1/ωC)] = 1 / [1 + j Q (ω/ω_0 - ω_0/ω)].\n  Resonant center frequency: ω_0 = 1 / √(LC).\n  Quality factor: Q = (ω_0 L) / R = 1 / (ω_0 R C) = (1/R) √(L/C).\n  Bandwidth: BW = ω_2 - ω_1 = ω_0 / Q rad/s  ⇒  Δf = f_0 / Q Hz.\n  Upper and lower half-power frequencies: ω_{1,2} = ∓ (R / 2L) + √[(R / 2L)^2 + ω_0^2].\n- Band-Stop / Notch Filter (output taken across series LC combination):\n  H(jω) = [j(ωL - 1/ωC)] / [R + j(ωL - 1/ωC)].\n  At resonance ω = ω_0: LC impedance is zero, so V_out = 0 (infinite notch attenuation).\n\n4. Asymptotic Bode Plots:\nBode magnitude graphs plot Gain in dB on a linear y-axis versus frequency ω on a logarithmic x-axis.\n- Low-Pass asymptote: 0 dB horizontal line for ω < ω_c; straight line sloping downward at -20 dB/decade for ω > ω_c.\n- Maximum asymptotic error occurs at the corner frequency ω = ω_c, where actual response is exactly -3.01 dB below the asymptote.\n- Phase asymptote: 0° for ω ≤ 0.1 ω_c; -45° at ω = ω_c; -90° for ω ≥ 10 ω_c.',
-    hi: '1. ट्रांसफर फंक्शन H(jω) = V_out / V_in। डेसिबल गेन: Gain_dB = 20 log10 |H(jω)|।\n2. प्रथम-कोटि RC फिल्टर:\n- लो-पास: H(jω) = 1 / (1 + jωRC), कटऑफ ω_c = 1/(RC)। कटऑफ पर गेन -3 dB और फेज -45° होता है। रोल-ऑफ -20 dB/decade है।\n- हाई-पास: H(jω) = jωRC / (1 + jωRC), कटऑफ ω_c = 1/(RC)।\n3. द्वितीय-कोटि RLC फिल्टर:\n- बैंड-पास (आउटपुट R पर): केंद्र आवृत्ति ω_0 = 1/√(LC), क्वालिटी फैक्टर Q = (1/R)√(L/C), बैंडविड्थ BW = ω_0 / Q।\n- बैंड-स्टॉप (आउटपुट LC पर): अनुनाद पर आउटपुट शून्य हो जाता है (नॉच फिल्टर)।\n4. बोडे प्लॉट: लॉग आवृत्ति के विरुद्ध dB गेन का ग्राफ। कटऑफ आवृत्ति पर वास्तविक वक्र असममित रेखा से ठीक 3 dB नीचे होता है।',
-    bn: '১. ট্রান্সফার ফাংশন H(jω) = V_out / V_in। ডেসিবেল গেইন: Gain_dB = ২০ log10 |H(jω)|।\n২. প্রথম-ক্রমের RC ফিল্টার:\n- লো-পাস: H(jω) = ১ / (১ + jωRC), কাট-অফ কম্পাঙ্ক ω_c = ১/(RC)। কাট-অফে গেইন -৩ dB ও ফেজ -৪৫°। রোল-অফ -২০ dB/decade।\n- হাই-পাস: H(jω) = jωRC / (১ + jωRC)।\n৩. দ্বিতীয়-ক্রমের RLC ফিল্টার:\n- ব্যান্ড-পাস: কেন্দ্র কম্পাঙ্ক ω_0 = ১/√(LC), কোয়ালিটি ফ্যাক্টর Q = (১/R)√(L/C), ব্যান্ডউইথ BW = ω_0 / Q।\n- ব্যান্ড-স্টপ: কেন্দ্র কম্পাঙ্কে আউটপুট শূন্য হয়।\n৪. বোড প্লট: লগ কম্পাঙ্কের বিপরীতে dB গেইনের গ্রাফ। কাট-অফে প্রকৃত প্রতিক্রিয়া অ্যাসিম্পটোট থেকে ৩ dB নিচে থাকে।'
+    en: '1. Network Transfer Functions in the Frequency Domain:\nIn linear, time-invariant (LTI) AC circuits operating in sinusoidal steady-state, the system behavior is fully described by the complex transfer function H(s) evaluated on the imaginary axis s = jω:\nH(jω) = V_out(jω) / V_in(jω) = |H(jω)| e^{j∠H(jω)} = |H(jω)| ∠θ(ω).\n- Magnitude Response: Gain |H(jω)| = |V_out| / |V_in|.\n- Decibel (dB) Magnitude: |H(jω)|_{dB} = 20 log10 |H(jω)|.\n- Phase Response: θ(ω) = ∠H(jω) = ∠V_out(jω) - ∠V_in(jω) in degrees or radians.\n\n2. The Decibel Scale & Logarithmic Frequency Axis:\n- Why Decibels? Using logarithms transforms cascading series stages from multiplication into simple linear addition:\n  |H_total(jω)| = |H_1| · |H_2|  ⇒  |H_total|_{dB} = |H_1|_{dB} + |H_2|_{dB}.\n- Decades and Octaves:\n  A decade represents a ten-fold increase in frequency: ω_2 / ω_1 = 10.\n  An octave represents a two-fold doubling in frequency: ω_2 / ω_1 = 2.\n  Conversion: 20 dB/decade = 20 log10(2) ≈ 6.02 dB/octave (commonly simplified as 6 dB/octave).\n\n3. Corner (Break) Frequency & Asymptotic Straight-Line Approximations:\nConsider the standard first-order low-pass transfer function with a real pole at s = -p = -ω_c:\nH(jω) = K / [1 + j(ω / ω_c)].\n- Low-frequency asymptote (ω << ω_c): |H(jω)| ≈ K  ⇒  |H|_{dB} = 20 log10(K) (a flat horizontal line).\n- High-frequency asymptote (ω >> ω_c): |H(jω)| ≈ K / (jω / ω_c)  ⇒  |H|_{dB} = 20 log10(K) - 20 log10(ω / ω_c).\n  This represents a straight line with a constant slope of -20 dB/decade (-6 dB/octave).\n- Corner Frequency (ω = ω_c):\n  The two asymptotes intersect precisely at ω = ω_c where asymptotic gain is 20 log10(K).\n  The exact actual magnitude is |H(jω_c)| = K / √[1 + 1²] = K / √2.\n  In dB: |H(jω_c)|_{dB} = 20 log10(K) - 20 log10(√2) = 20 log10(K) - 3.01 dB.\n  The maximum discrepancy (asymptotic error) between the straight-line approximation and true response is exactly 3.01 dB at the corner!\n- Phase Asymptote for a Single Real Pole:\n  Actual phase: θ(ω) = -arctan(ω / ω_c).\n  Asymptotic approximation: 0° for ω ≤ 0.1 ω_c; a straight sloping line at -45°/decade between 0.1 ω_c and 10 ω_c; passing through -45° at ω = ω_c; and -90° for ω ≥ 10 ω_c.\n\n4. First-Order Bode Factor Catalog:\n- Constant Gain K: Flat line at 20 log10|K| dB; phase 0° (if K > 0) or -180° (if K < 0).\n- Pole at Origin (1 / s): Continuous slope of -20 dB/decade passing through 0 dB at ω = 1 rad/s; constant phase of -90°.\n- Zero at Origin (s): Continuous slope of +20 dB/decade passing through 0 dB at ω = 1 rad/s; constant phase of +90°.\n- Simple Zero (1 + s / ω_z): 0 dB for ω < ω_z; rises at +20 dB/decade for ω > ω_z; phase goes from 0° to +90° (+45° at ω_z).\n- Simple Pole (1 / [1 + s / ω_p]): 0 dB for ω < ω_p; rolls off at -20 dB/decade for ω > ω_p; phase goes from 0° to -90° (-45° at ω_p).\n\n5. Second-Order Systems (Quadratic Poles & Resonance):\nThe canonical second-order transfer function is expressed in standard form as:\nH(s) = ω_0² / [s² + 2ζ ω_0 s + ω_0²] = 1 / [ (1 - (ω/ω_0)²) + j 2ζ (ω/ω_0) ],\nwhere ω_0 is the undamped natural frequency and ζ is the damping ratio (ζ = 1 / (2Q)).\n- High-frequency asymptote (ω >> ω_0): drops as 1 / ω², rolling off at -40 dB/decade (-12 dB/octave).\n- Resonant Peaking (Underdamped systems with ζ < 1/√2 ≈ 0.707 or Q > 0.707):\n  The magnitude exhibits a distinct peak Mp at the resonant frequency ω_p = ω_0 √(1 - 2ζ²).\n  The maximum peak magnitude is: M_p = 1 / [2ζ √(1 - ζ²)].\n  For high Q (low damping ζ << 1): ω_p ≈ ω_0 and M_p ≈ Q (in dB: M_{p,dB} ≈ 20 log10(Q)).\n- Second-Order Phase Response:\n  At DC: 0°.\n  At resonance (ω = ω_0): exactly -90° regardless of damping ζ.\n  At high frequencies (ω >> ω_0): approaches -180° asymptotically.\n\n6. Engineering Interpretation: Stability & System Compensation:\n- Gain Margin (GM): The difference between 0 dB and the actual gain at the phase crossover frequency ω_π (where phase = -180°). GM = -|H(jω_π)|_{dB}.\n- Phase Margin (PM): The difference between the actual phase and -180° at the gain crossover frequency ω_g (where gain = 0 dB). PM = 180° + ∠H(jω_g).\n- Stable closed-loop feedback requires both GM > 0 dB (typically ≥ 6 to 10 dB) and PM > 0° (typically ≥ 45° to 60°) to prevent oscillations.',
+    hi: '1. ट्रांसफर फंक्शन H(jω) = V_out / V_in = |H| ∠θ। परिमाण dB में: 20 log10 |H|।\n2. डेसिबल पैमाना: चरणों को गुणा करने के बजाय सीधे जोड़ दिया जाता है। 1 दशक = 10 गुना आवृत्ति = 20 dB। 1 अष्टक (ऑक्टेव) = 2 गुना आवृत्ति = 6 dB।\n3. कॉर्नर आवृत्ति एवं असममित रेखाएँ: H(jω) = K / (1 + jω/ω_c)।\n- कम आवृत्ति पर क्षैतिज रेखा (20 log10 K)।\n- उच्च आवृत्ति पर -20 dB/decade की ढलान।\n- कॉर्नर आवृत्ति पर वास्तविक मान असममित रेखा से ठीक 3.01 dB नीचे होता है और कला कोण -45° होता है।\n4. द्वितीय-कोटि परिपथ (RLC): H(s) = ω_0² / (s² + 2ζω_0 s + ω_0²)।\n- उच्च आवृत्ति पर रोल-ऑफ -40 dB/decade (-12 dB/octave) होता है।\n- यदि अवमंदन ζ < 0.707 (या Q > 0.707) हो, तो अनुनादी शिखर M_p = 1 / [2ζ√(1-ζ²)] उत्पन्न होता है।\n- कला कोण 0° से शुरू होकर अनुनाद पर -90° और अंत में -180° तक जाता है।\n5. स्थिरता विश्लेषण: गेन मार्जिन (GM) और फेज मार्जिन (PM) फीडबैक सिस्टम में स्थिरता सुनिश्चित करते हैं (PM ≥ 45° आदर्श)।',
+    bn: '১. ট্রান্সফার ফাংশন H(jω) = V_out / V_in = |H| ∠θ। ডেসিবেলে মান: ২০ log10 |H|।\n২. ডেসিবেল স্কেল: একাধিক ধাপের গেইন সরাসরি যোগ করা যায়। ১ ডেকেড = ১০ গুণ কম্পাঙ্ক = ২০ dB। ১ অক্টেভ = ২ গুণ কম্পাঙ্ক = ৬ dB।\n৩. কাট-অফ কম্পাঙ্ক ও সরলরৈখিক অ্যাসিম্পটোট: H(jω) = K / (১ + jω/ω_c)।\n- নিম্ন কম্পাঙ্কে সমান্তরাল সরলরেখা।\n- কাট-অফের পর প্রতি দশকে -২০ dB হারে নামে।\n- কাট-অফে প্রকৃত প্রতিক্রিয়া অ্যাসিম্পটোট থেকে ঠিক ৩.০১ dB নিচে থাকে এবং ফেজ কোণ -৪৫° হয়।\n৪. দ্বিতীয়-ক্রমের RLC বর্তনী: H(s) = ω_0² / (s² + ২ζω_0 s + ω_0²)।\n- উচ্চ কম্পাঙ্কে রোল-অফ -৪০ dB/decade (-১২ dB/octave)।\n- ড্যাম্পিং ζ < ০.৭০৭ (বা Q > ০.৭০৭) হলে রেজোন্যান্ট পিক M_p তৈরি হয়।\n- ফেজ কোণ ০° থেকে অনুরণনে -৯০° এবং উচ্চ কম্পাঙ্কে -১৮০° তে পৌঁছায়।\n৫. সিস্টেমের স্থায়িত্ব: গেইন মার্জিন (GM) এবং ফেজ মার্জিন (PM) এর মান ধনাত্মক হলে সিস্টেম স্থিতিশীল থাকে।'
   },
   formulas: [
     {
-      id: 'f-rc-cutoff-freq',
-      symbol: 'f_c',
-      expression: 'f_c = \\frac{1}{2\\pi R C}, \\quad \\omega_c = \\frac{1}{RC}',
-      title: {
-        en: 'Half-Power Cutoff Frequency (First-Order RC)',
-        hi: 'अर्ध-शक्ति कटऑफ आवृत्ति (प्रथम-कोटि RC)',
-        bn: 'অর্ধ-ক্ষমতা কাট-অফ কম্পাঙ্ক (প্রথম-ক্রম RC)'
-      },
-      description: {
-        en: 'The frequency where filter output voltage drops to 1/√2 (0.707) of maximum, or -3 dB in power.',
-        hi: 'वह आवृत्ति जहाँ आउटपुट वोल्टेज अधिकतम मान का 1/√2 (0.707) या शक्ति में -3 dB रह जाती है।',
-        bn: 'যে কম্পাঙ্কে আউটপুট ভোল্টেজ সর্বোচ্চ মানের ১/√২ (০.৭০৭) বা শক্তিতে -৩ dB হ্রাস পায়।'
-      },
-      variables: [
-        { symbol: 'f_c', name: { en: 'Cutoff frequency (Hz)', hi: 'कटऑफ आवृत्ति (Hz)', bn: 'কাট-অফ কম্পাঙ্ক (Hz)' } },
-        { symbol: 'R', name: { en: 'Filter resistance (Ω)', hi: 'फिल्टर प्रतिरोध (Ω)', bn: 'ফিল্টার রোধ (Ω)' } },
-        { symbol: 'C', name: { en: 'Filter capacitance (F)', hi: 'फिल्टर धारिता (F)', bn: 'ফিল্টার ধারকত্ব (F)' } }
-      ]
-    },
-    {
-      id: 'f-bode-decibel-gain',
+      id: 'f-transfer-func-db',
       symbol: '|H|_{dB}',
-      expression: '|H(j\\omega)|_{dB} = 20 \\log_{10} \\left| \\frac{\\mathbf{V}_{out}}{\\mathbf{V}_{in}} \\right|',
+      expression: '|H(j\\omega)|_{dB} = 20 \\log_{10} |H(j\\omega)| = 20 \\log_{10} \\left| \\frac{\\mathbf{V}_{out}(j\\omega)}{\\mathbf{V}_{in}(j\\omega)} \\right|',
       title: {
-        en: 'Decibel Voltage Gain',
-        hi: 'डेसिबल वोल्टेज गेन',
-        bn: 'ডেসিবেল ভোল্টেজ গেইন'
+        en: 'Bode Decibel Magnitude Definition',
+        hi: 'बोडे डेसिबल परिमाण परिभाषा',
+        bn: 'বোড ডেসিবেল ম্যাগনিটিউড সংজ্ঞা'
       },
       description: {
-        en: 'Logarithmic representation of voltage transfer ratio on Bode plots.',
-        hi: 'बोडे प्लॉट पर वोल्टेज ट्रांसफर अनुपात का लघुगणकीय निरूपण।',
-        bn: 'বোড প্লটে ভোল্টেজ রূপান্তর অনুপাতের লগারিদমিক প্রকাশ।'
+        en: 'Converts voltage transfer gain to logarithmic decibels for additive cascading on Bode plots.',
+        hi: 'बोडे प्लॉट पर योगात्मक विश्लेषण के लिए वोल्टेज गेन को डेसिबल में बदलता है।',
+        bn: 'বোড প্লটে সহজে যোগ করার জন্য ভোল্টেজ গেইনকে ডেসিবেলে রূপান্তর করে।'
       },
       variables: [
-        { symbol: '|H|_{dB}', name: { en: 'Gain in decibels (dB)', hi: 'डेसिबल में गेन (dB)', bn: 'ডেসিবেলে গেইন (dB)' } }
+        { symbol: '|H|_{dB}', name: { en: 'Magnitude in decibels (dB)', hi: 'डेसिबल में परिमाण (dB)', bn: 'ডেসিবেলে মান (dB)' } },
+        { symbol: 'V_out, V_in', name: { en: 'Output and input voltage phasors (V)', hi: 'आउटपुट एवं इनपुट फेजर (V)', bn: 'আউটপুট ও ইনপুট ফেজর (V)' } }
       ]
     },
     {
-      id: 'f-rlc-bandwidth-q',
-      symbol: 'BW',
-      expression: 'BW = \\Delta \\omega = \\frac{\\omega_0}{Q} = \\frac{R}{L}, \\quad Q = \\frac{\\omega_0 L}{R} = \\frac{1}{R}\\sqrt{\\frac{L}{C}}',
+      id: 'f-corner-break-frequency',
+      symbol: '\\omega_c',
+      expression: '\\omega_c = \\frac{1}{\\tau}, \\quad f_c = \\frac{\\omega_c}{2\\pi} = \\frac{1}{2\\pi \\tau}',
       title: {
-        en: 'Bandwidth and Quality Factor of Series RLC Filter',
-        hi: 'श्रेणी RLC फिल्टर की बैंडविड्थ एवं क्वालिटी फैक्टर',
-        bn: 'শ্রেণি RLC ফিল্টারের ব্যান্ডউইথ ও কোয়ালিটি ফ্যাক্টর'
+        en: 'Corner (Break) Frequency for First-Order Systems',
+        hi: 'प्रथम-कोटि सिस्टम की कॉर्नर (ब्रेक) आवृत्ति',
+        bn: 'প্রথম-ক্রম সিস্টেমের ব্রেক (কাট-অফ) কম্পাঙ্ক'
       },
       description: {
-        en: 'Relates resonant frequency, filter selectivity Q, and -3 dB bandwidth.',
-        hi: 'अनुनादी आवृत्ति, फिल्टर चयनात्मकता Q, एवं -3 dB बैंडविड्थ को संबंधित करता है।',
-        bn: 'অনুরণন কম্পাঙ্ক, নির্বাচনী গুণাগুণ Q এবং -৩ dB ব্যান্ডউইথ নির্দেশ করে।'
+        en: 'The frequency where asymptotes intersect and actual response is exactly -3.01 dB below the low-frequency asymptote.',
+        hi: 'वह आवृत्ति जहाँ असममित रेखाएँ मिलती हैं और वास्तविक वक्र 3.01 dB नीचे होता है।',
+        bn: 'যে কম্পাঙ্কে অ্যাসিম্পটোট রেখাদ্বয় ছেদ করে এবং প্রকৃত মান ৩.০১ dB নিচে থাকে।'
       },
       variables: [
-        { symbol: 'BW', name: { en: 'Bandwidth (rad/s)', hi: 'बैंडविड्थ (rad/s)', bn: 'ব্যান্ডউইথ (rad/s)' } },
-        { symbol: 'Q', name: { en: 'Quality factor (dimensionless)', hi: 'क्वालिटी फैक्टर (विमाहीन)', bn: 'কোয়ালিটি ফ্যাক্টর (মাত্রাহীন)' } }
+        { symbol: 'ω_c', name: { en: 'Corner angular frequency (rad/s)', hi: 'कॉर्नर कोणीय आवृत्ति (rad/s)', bn: 'কৌণিক কাট-অফ কম্পাঙ্ক (rad/s)' } },
+        { symbol: 'τ', name: { en: 'Circuit time constant: RC or L/R (s)', hi: 'समय नियतांक: RC या L/R (s)', bn: 'সময় ধ্রুবক: RC বা L/R (s)' } }
       ]
-    }
-  ],
-  sections: [
-    {
-      id: 'sec-ch12-l06-filter-types',
-      title: {
-        en: 'Comparison of Passive Filter Types and Characteristics',
-        hi: 'निष्क्रिय फिल्टर प्रकारों एवं विशेषताओं की तुलना',
-        bn: 'প্যাসিভ ফিল্টারের প্রকারভেদ ও বৈশিষ্ট্যের তুলনা'
-      },
-      content: {
-        en: 'Passive filters rely solely on passive components (resistors, inductors, capacitors) without external power supplies or amplifiers:\n\n1. Low-Pass Filter (LPF):\nPasses signals from DC up to cutoff frequency f_c; attenuates higher frequencies. Essential as anti-aliasing filters before ADC samplers and power supply ripple filters.\n\n2. High-Pass Filter (HPF):\nBlocks DC and low frequencies while passing frequencies above f_c. Ubiquitous as DC-blocking coupling capacitors between audio stages and high-frequency antenna feeds.\n\n3. Band-Pass Filter (BPF):\nPasses a specific frequency window [f_1, f_2] around center frequency f_0 while attenuating both lower and higher frequencies. Crucial for radio tuner station selection and musical equalizers.\n\n4. Band-Stop / Notch Filter (BSF):\nRejects a narrow band of frequencies around f_0 while passing all lower and higher frequencies. Widely deployed to eliminate 50 Hz/60 Hz mains interference in biomedical instrumentation (ECG/EEG).',
-        hi: 'निष्क्रिय फिल्टर केवल प्रतिरोधकों, प्रेरकों और संधारित्रों पर निर्भर करते हैं:\n1. लो-पास (LPF): DC से f_c तक जाने देता है, उच्च आवृत्तियों को रोकता है (एंटी-अलियासिंग एवं पावर सप्लाई)।\n2. हाई-पास (HPF): DC को रोकता है और f_c से अधिक आवृत्तियों को जाने देता है (DC ब्लॉकिंग)।\n3. बैंड-पास (BPF): केंद्र f_0 के चारों ओर एक संकीर्ण बैंड पास करता है (रेडियो ट्यूनर)।\n4. बैंड-स्टॉप/नॉच (BSF): किसी विशिष्ट अवांछित आवृत्ति (जैसे 50 Hz पावर हम) को नष्ट करता है (ईसीजी मशीनें)।',
-        bn: 'প্যাসিভ ফিল্টারে কেবল রোধক, আবেশক ও ধারক ব্যবহৃত হয়:\n১. লো-পাস: ডিসি থেকে f_c পর্যন্ত পার করে, উচ্চ কম্পাঙ্ক রোধ করে।\n২. হাই-পাস: ডিসি ব্লক করে এবং f_c এর উপরের কম্পাঙ্ক পার করে।\n৩. ব্যান্ড-পাস: কেন্দ্র কম্পাঙ্কের চারপাশে নির্দিষ্ট ব্যান্ড পার করে (রেডিও টিউনার)।\n৪. ব্যান্ড-স্টপ/নচ: কোনো নির্দিষ্ট ক্ষতিকর কম্পাঙ্ক (যেমন ৫০ Hz নয়েজ) আটকে দেয়।'
-      }
     },
     {
-      id: 'sec-ch12-l06-bode-rules',
+      id: 'f-bode-phase-asymptote',
+      symbol: '\\theta(\\omega)',
+      expression: '\\theta(\\omega) \\approx -45^\\circ \\log_{10}\\left(\\frac{\\omega}{0.1\\omega_c}\\right) = -45^\\circ - 45^\\circ \\log_{10}\\left(\\frac{\\omega}{\\omega_c}\\right)',
       title: {
-        en: 'Rules for Asymptotic Bode Construction',
-        hi: 'असममित बोडे आलेख निर्माण के नियम',
-        bn: 'বোড প্লট অঙ্কনের নিয়মাবলী'
+        en: 'Asymptotic Phase Approximation (Single Real Pole)',
+        hi: 'असममित कला सन्निकटन (एकल वास्तविक ध्रुव)',
+        bn: 'অ্যাসিম্পটোটিক ফেজ সমীকরণ (একক পোল)'
       },
-      content: {
-        en: 'Constructing Bode magnitude and phase curves without a computer relies on asymptotic approximations:\n\n1. Identify Break/Corner Frequencies (Poles and Zeros):\n- Each real pole (1 + jω/ω_p) introduces a downward slope of -20 dB/decade (-6 dB/octave) at frequencies above ω_p.\n- Each real zero (1 + jω/ω_z) introduces an upward slope of +20 dB/decade (+6 dB/octave) above ω_z.\n\n2. Octave vs. Decade:\n- A decade is a 10-fold frequency factor (e.g., 100 Hz to 1000 Hz). Slope = -20 dB/decade.\n- An octave is a 2-fold frequency factor (e.g., 100 Hz to 200 Hz). Slope = -6.02 dB/octave.\n\n3. Actual vs. Asymptotic Response:\n- At the corner frequency ω = ω_c: the actual magnitude is exactly 20 log10(1/√2) = -3.01 dB.\n- One octave below (ω = 0.5 ω_c): actual response is -1.0 dB.\n- One octave above (ω = 2 ω_c): actual response is -7.0 dB (-1 dB below the -6 dB asymptote).\n- Phase response: changes linearly by -45°/decade between 0.1 ω_c and 10 ω_c, passing through -45° at exactly ω_c.',
-        hi: 'बोडे प्लॉट निर्माण के नियम:\n1. प्रत्येक पोल (Pole) आवृत्ति ω_p के ऊपर -20 dB/decade की ढलान लाता है।\n2. प्रत्येक जीरो (Zero) आवृत्ति ω_z के ऊपर +20 dB/decade की ढलान लाता है।\n3. कॉर्नर आवृत्ति पर वास्तविक मान असममित रेखा से ठीक -3.01 dB नीचे होता है।\n4. फेज कॉर्नर आवृत्ति पर ठीक -45° होता है और 0.1 ω_c से 10 ω_c के बीच बदलता है।',
-        bn: 'বোড প্লট তৈরির নিয়মাবলী:\n১. প্রতিটি পোল ω_p এর উপরে -২০ dB/decade ঢাল তৈরি করে।\n২. প্রতিটি জিরো ω_z এর উপরে +২০ dB/decade ঢাল তৈরি করে।\n৩. কাট-অফ কম্পাঙ্কে প্রকৃত মান অ্যাসিম্পটোট থেকে হুবহু -৩.০১ dB নিচে থাকে।\n৪. ফেজ কাট-অফে ঠিক -৪৫° হয় এবং ০.১ ω_c থেকে ১০ ω_c এর মধ্যে পরিবর্তিত হয়।'
-      }
+      description: {
+        en: 'Linear phase approximation sloping at -45°/decade between 0.1 ω_c and 10 ω_c.',
+        hi: '0.1 ω_c और 10 ω_c के बीच -45°/दशक की ढलान वाली रैखिक कला सन्निकटन रेखा।',
+        bn: '০.১ ω_c এবং ১০ ω_c এর মাঝে প্রতি দশকে -৪৫° হারে হ্রাস পাওয়া রৈখিক ফেজ সমীকরণ।'
+      },
+      variables: [
+        { symbol: 'θ(ω)', name: { en: 'Phase angle (degrees)', hi: 'कला कोण (डिग्री)', bn: 'ফেজ কোণ (ডিগ্রি)' } },
+        { symbol: 'ω, ω_c', name: { en: 'Operating and corner frequencies (rad/s)', hi: 'कार्यकारी एवं कॉर्नर आवृत्तियाँ (rad/s)', bn: 'কার্যকরী ও কাট-অফ কম্পাঙ্ক (rad/s)' } }
+      ]
+    },
+    {
+      id: 'f-second-order-standard',
+      symbol: 'H(s)',
+      expression: 'H(s) = \\frac{\\omega_0^2}{s^2 + 2\\zeta \\omega_0 s + \\omega_0^2}, \\quad \\zeta = \\frac{1}{2Q}',
+      title: {
+        en: 'Standard Second-Order Quadratic Pole Transfer Function',
+        hi: 'मानक द्वितीय-कोटि द्विघात ध्रुव ट्रांसफर फंक्शन',
+        bn: 'আদর্শ দ্বিতীয়-ক্রমের ট্রান্সফার ফাংশন'
+      },
+      description: {
+        en: 'Canonical form relating undamped natural frequency ω_0, damping ratio ζ, and quality factor Q.',
+        hi: 'प्राकृतिक आवृत्ति ω_0, अवमंदन अनुपात ζ और क्वालिटी फैक्टर Q को जोड़ने वाला मानक रूप।',
+        bn: 'প্রাকৃতিক কম্পাঙ্ক ω_0, ড্যাম্পিং অনুপাত ζ এবং কোয়ালিটি ফ্যাক্টর Q এর প্রমিত সমীকরণ।'
+      },
+      variables: [
+        { symbol: 'ω_0', name: { en: 'Undamped natural frequency (rad/s)', hi: 'अनवमंदित प्राकृतिक आवृत्ति (rad/s)', bn: 'আনড্যাম্পড স্বাভাবিক কম্পাঙ্ক (rad/s)' } },
+        { symbol: 'ζ', name: { en: 'Damping ratio (dimensionless)', hi: 'अवमंदन अनुपात (विमाहीन)', bn: 'ড্যাম্পিং অনুপাত (মাত্রাহীন)' } },
+        { symbol: 'Q', name: { en: 'Quality factor Q = 1 / (2ζ)', hi: 'क्वालिटी फैक्टर Q = 1 / (2ζ)', bn: 'কোয়ালিটি ফ্যাক্টর Q = ১ / (২ζ)' } }
+      ]
+    },
+    {
+      id: 'f-resonant-peak-bode',
+      symbol: 'M_p',
+      expression: 'M_p = \\frac{1}{2\\zeta \\sqrt{1 - \\zeta^2}}, \\quad \\omega_p = \\omega_0 \\sqrt{1 - 2\\zeta^2} \\quad (\\text{for } \\zeta < 1/\\sqrt{2})',
+      title: {
+        en: 'Second-Order Resonant Peak Magnitude and Frequency',
+        hi: 'द्वितीय-कोटि अनुनादी शिखर परिमाण एवं आवृत्ति',
+        bn: 'দ্বিতীয়-ক্রম রেজোন্যান্ট পিক ম্যাগনিটিউড ও কম্পাঙ্ক'
+      },
+      description: {
+        en: 'Calculates the height of the resonant peaking spike in underdamped second-order frequency response.',
+        hi: 'अल्प-अवमंदित द्वितीय-कोटि आवृत्ति अनुक्रिया में अनुनादी शिखर की ऊँचाई की गणना करता है।',
+        bn: 'আন্ডারড্যাম্পড দ্বিতীয়-ক্রমের কম্পাঙ্ক প্রতিক্রিয়ায় রেজোন্যান্ট পিকের উচ্চতা নির্ণয় করে।'
+      },
+      variables: [
+        { symbol: 'M_p', name: { en: 'Peak resonant magnitude (linear ratio)', hi: 'शिखर अनुनादी परिमाण (रैखिक अनुपात)', bn: 'পিক রেজোন্যান্ট মান (অনুপাত)' } },
+        { symbol: 'ω_p', name: { en: 'Peak frequency where Mp occurs (rad/s)', hi: 'शिखर आवृत्ति (rad/s)', bn: 'পিক কম্পাঙ্ক (rad/s)' } },
+        { symbol: 'ζ', name: { en: 'Damping ratio (must be < 0.7071 for peak to exist)', hi: 'अवमंदन अनुपात (< 0.7071)', bn: 'ড্যাম্পিং অনুপাত (< ০.৭০৭১)' } }
+      ]
     }
   ],
   solvedExamples: [
     {
       id: 'ex-ch12-l06-01',
+      title: {
+        en: 'Bode Plot Construction for a First-Order System',
+        hi: 'प्रथम-कोटि सिस्टम के लिए बोडे प्लॉट निर्माण',
+        bn: 'প্রথম-ক্রম সিস্টেমের জন্য বোড প্লট অঙ্কন'
+      },
       problem: {
-        en: 'An audio engineer needs to design a first-order passive RC low-pass filter to attenuate high-frequency radio noise above the audible spectrum. The required -3 dB cutoff frequency is f_c = 20 kHz. A standard capacitor C = 10 nF is available. Calculate: (a) the required resistance R, (b) the filter transfer function H(jω), (c) the magnitude response |H| in dB at f = 20 kHz, (d) the magnitude response in dB at f = 200 kHz (one decade above cutoff), and (e) the phase angle at f = 200 kHz.',
-        hi: 'एक ऑडियो इंजीनियर को 20 kHz की -3 dB कटऑफ आवृत्ति वाला प्रथम-कोटि RC लो-पास फिल्टर डिजाइन करना है। उपलब्ध संधारित्र C = 10 nF है। ज्ञात कीजिए: (a) आवश्यक प्रतिरोध R, (b) ट्रांसफर फंक्शन H(jω), (c) 20 kHz पर dB गेन, (d) 200 kHz पर dB गेन, एवं (e) 200 kHz पर कला कोण।',
-        bn: 'একজন অডিও ইঞ্জিনিয়ারকে ২০ kHz কাট-অফ কম্পাঙ্কের প্রথম-ক্রমের RC লো-পাস ফিল্টার ডিজাইন করতে হবে। ধারক C = ১০ nF। নির্ণয় করুন: (ক) প্রয়োজনীয় রোধ R, (খ) ট্রান্সফার ফাংশন H(jω), (গ) ২০ kHz এ dB গেইন, (ঘ) ২০০ kHz এ dB গেইন এবং (ঙ) ২০০ kHz এ ফেজ কোণ।'
+        en: 'A low-pass network transfer function is given by H(s) = 500 / (s + 50). (a) Convert H(s) to Bode standard form and find the DC gain K and corner frequency ω_c in rad/s and Hz. (b) Determine the asymptotic and exact gain in dB at ω = 50 rad/s and at ω = 500 rad/s. (c) Calculate the phase angle at ω = 50 rad/s and ω = 500 rad/s.',
+        hi: 'एक लो-पास नेटवर्क का ट्रांसफर फंक्शन H(s) = 500 / (s + 50) है। (a) इसे बोडे मानक रूप में बदलें और डीसी गेन K तथा कॉर्नर आवृत्ति ω_c ज्ञात करें। (b) ω = 50 rad/s और ω = 500 rad/s पर असममित एवं वास्तविक dB गेन ज्ञात करें। (c) ω = 50 rad/s और ω = 500 rad/s पर कला कोण की गणना करें।',
+        bn: 'একটি লো-পাস ট্রান্সফার ফাংশন H(s) = ৫০০ / (s + ৫০)। (a) একে বোড প্রমিত আকারে প্রকাশ করুন এবং ডিসি গেইন K ও ব্রেক কম্পাঙ্ক ω_c নির্ণয় করুন। (b) ω = ৫০ rad/s এবং ω = ৫০০ rad/s এ অ্যাসিম্পটোটিক ও প্রকৃত dB গেইন বের করুন। (c) উভয় কম্পাঙ্কে ফেজ কোণ নির্ণয় করুন।'
       },
-      formula: {
-        en: 'f_c = 1 / (2πRC) ⇒ R = 1 / (2π f_c C).\nω_c = 2π f_c = 1.2566 × 10^5 rad/s.\nH(jω) = 1 / [1 + j(f / f_c)].\n|H(jf)| = 1 / sqrt[1 + (f / f_c)^2].\n|H|_{dB} = 20 log10 |H|.\n∠H(jf) = -arctan(f / f_c).',
-        hi: 'R = 1 / (2π f_c C), H(jω) = 1 / [1 + j(f/f_c)], |H|_dB = 20 log10 |H|, ∠H = -arctan(f/f_c)।',
-        bn: 'R = ১ / (২π f_c C), H(jω) = ১ / [১ + j(f/f_c)], |H|_dB = ২০ log10 |H|, ∠H = -arctan(f/f_c)।'
-      },
-      substitution: {
-        en: '(a) R = 1 / (2π · 20000 · 10 × 10^-9) = 1 / (1.2566 × 10^-3) = 795.8 Ω ≈ 796 Ω (nearest standard 1% resistor: 806 Ω).\n(b) H(jω) = 1 / [1 + j(ω / 125,664)].\n(c) At f = 20 kHz (f / f_c = 1):\n|H| = 1 / sqrt(1 + 1^2) = 1 / √2 = 0.7071.\n|H|_{dB} = 20 log10(0.7071) = -3.01 dB.\n(d) At f = 200 kHz (f / f_c = 10):\n|H| = 1 / sqrt(1 + 10^2) = 1 / sqrt(101) = 1 / 10.05 = 0.0995.\n|H|_{dB} = 20 log10(0.0995) = -20.04 dB.\n(e) At f = 200 kHz:\n∠H = -arctan(10) = -84.29°.',
-        hi: '(a) R = 1 / (2π × 20000 × 10^-8) = 795.8 Ω।\n(b) H(jω) = 1 / [1 + j(f / 20 kHz)]।\n(c) 20 kHz पर: |H|_dB = 20 log10(1/√2) = -3.01 dB।\n(d) 200 kHz पर (1 दशक ऊपर): |H|_dB = 20 log10(1/√101) = -20.04 dB।\n(e) कला कोण = -arctan(10) = -84.29°।',
-        bn: '(ক) R = ১ / (২π × ২০০০০ × ১০^-৮) = ৭৯৫.৮ Ω।\n(খ) H(jω) = ১ / [১ + j(f / ২০ kHz)]।\n(গ) ২০ kHz এ: |H|_dB = ২০ log10(১/√২) = -৩.০১ dB।\n(ঘ) ২০০ kHz এ: |H|_dB = ২০ log10(১/√১০১) = -২০.০৪ dB।\n(ঙ) ফেজ কোণ = -arctan(১০) = -৮৪.২৯°।'
-      },
-      calculation: {
-        en: 'Notice that from 20 kHz (-3 dB) to 200 kHz (-20 dB), the gain drops by 17 dB. Above 200 kHz, the response follows the exact -20 dB/decade asymptotic slope.',
-        hi: '20 kHz से 200 kHz तक गेन लगभग 17 dB घटता है, और आगे -20 dB/decade की ढलान पर चलता है।',
-        bn: '২০ kHz থেকে ২০০ kHz পর্যন্ত গেইন প্রায় ১৭ dB কমে এবং পরবর্তীতে -২০ dB/decade ঢালে অগ্রসর হয়।'
-      },
-      finalAnswer: {
-        en: 'R = 796 Ω; H(jω) = 1 / [1 + j(f / 20 kHz)]; at 20 kHz: -3.01 dB; at 200 kHz: -20.04 dB and -84.29° phase',
-        hi: 'R = 796 Ω; H(jω) = 1 / [1 + j(f / 20 kHz)]; 20 kHz पर: -3.01 dB; 200 kHz पर: -20.04 dB एवं -84.29°',
-        bn: 'R = ৭৯৬ Ω; H(jω) = ১ / [১ + j(f / ২০ kHz)]; ২০ kHz এ: -৩.০১ dB; ২০০ kHz এ: -২০.০৪ dB ও -৮৪.২৯°'
+      solution: {
+        en: 'Step 1: Put H(s) in Bode standard form by factoring out the constant 50 from the denominator:\nH(s) = 500 / [50 · (1 + s / 50)] = 10 / [1 + s / 50].\n- DC Gain: K = 10  ⇒  K_{dB} = 20 log10(10) = +20 dB.\n- Corner frequency: ω_c = 50 rad/s.\n- Frequency in Hz: f_c = ω_c / (2π) = 50 / (2π) ≈ 7.96 Hz.\n\nStep 2: Magnitude Calculations:\n- At ω = 50 rad/s (the corner frequency ω = ω_c):\n  Asymptotic magnitude = 20 dB.\n  Exact magnitude: |H(j50)| = 10 / |1 + j(50/50)| = 10 / |1 + j1| = 10 / √2 ≈ 7.071.\n  In dB: |H(j50)|_{dB} = 20 log10(7.071) = 20 dB - 3.01 dB = +16.99 dB (exact 3.01 dB drop!).\n- At ω = 500 rad/s (one decade above corner, ω = 10 ω_c):\n  Asymptotic magnitude: Since slope is -20 dB/decade, gain = 20 dB - 20 dB = 0 dB.\n  Exact magnitude: |H(j500)| = 10 / |1 + j10| = 10 / √(1 + 100) = 10 / √101 ≈ 0.995.\n  In dB: |H(j500)|_{dB} = 20 log10(0.995) ≈ -0.043 dB (within 0.04 dB of the 0 dB asymptote).\n\nStep 3: Phase Calculations:\nθ(ω) = -arctan(ω / 50).\n- At ω = 50 rad/s: θ = -arctan(1) = -45.0°.\n- At ω = 500 rad/s: θ = -arctan(10) ≈ -84.29° (approaching the -90° high-frequency asymptote).',
+        hi: 'चरण 1: मानक रूप: H(s) = 10 / (1 + s/50)। K = 10 (20 dB), ω_c = 50 rad/s (f_c ≈ 7.96 Hz)।\nचरण 2: परिमाण: ω = 50 rad/s पर असममित = 20 dB, वास्तविक = 16.99 dB (ठीक 3.01 dB त्रुटि)। ω = 500 rad/s (एक दशक ऊपर) पर असममित = 0 dB, वास्तविक = -0.043 dB।\nचरण 3: कला कोण: ω = 50 पर -45°, ω = 500 पर -arctan(10) = -84.29°।',
+        bn: 'ধাপ ১: প্রমিত রূপ: H(s) = ১০ / (১ + s/৫০)। ডিসি গেইন K = ১০ (২০ dB), ব্রেক কম্পাঙ্ক ω_c = ৫০ rad/s (f_c ≈ ৭.৯৬ Hz)।\nধাপ ২: ম্যাগনিটিউড: ω = ৫০ rad/s এ অ্যাসিম্পটোট = ২০ dB, প্রকৃত = ১৬.৯৯ dB (৩.০১ dB পার্থক্য)। ω = ৫০০ rad/s এ অ্যাসিম্পটোট = ০ dB, প্রকৃত = -০.০৪৩ dB।\nধাপ ৩: ফেজ: ω = ৫০ এ -৪৫°, ω = ৫০০ এ -৮৪.২৯° (-৯০° এর কাছাকাছি)।'
       }
     },
     {
       id: 'ex-ch12-l06-02',
+      title: {
+        en: 'Resonant Peaking and High-Frequency Roll-off in a Second-Order System',
+        hi: 'द्वितीय-कोटि सिस्टम में अनुनादी शिखर एवं उच्च-आवृत्ति रोल-ऑफ',
+        bn: 'দ্বিতীয়-ক্রম সিস্টেমে রেজোন্যান্ট পিক ও উচ্চ-কম্পাঙ্ক রোল-অফ'
+      },
       problem: {
-        en: 'A series RLC band-pass filter has R = 20 Ω, L = 5 mH, and C = 0.2 μF. The output voltage is taken across the resistor. Calculate: (a) the resonant center frequency f_0 in Hz, (b) the quality factor Q, (c) the bandwidth BW in Hz, and (d) the half-power cutoff frequencies f_1 and f_2.',
-        hi: 'एक श्रेणी RLC बैंड-पास फिल्टर में R = 20 Ω, L = 5 mH, और C = 0.2 μF है। आउटपुट प्रतिरोधक पर लिया गया है। ज्ञात कीजिए: (a) अनुनादी केंद्र आवृत्ति f_0, (b) क्वालिटी फैक्टर Q, (c) बैंडविड्थ BW, एवं (d) अर्ध-शक्ति कटऑफ आवृत्तियाँ f_1 एवं f_2।',
-        bn: 'একটি শ্রেণি RLC ব্যান্ড-পাস ফিল্টারে R = ২০ Ω, L = ৫ mH এবং C = ০.২ μF। রোধকের আড়াআড়ি আউটপুট নেওয়া হয়েছে। নির্ণয় করুন: (ক) কেন্দ্র কম্পাঙ্ক f_0, (খ) কোয়ালিটি ফ্যাক্টর Q, (গ) ব্যান্ডউইথ BW এবং (ঘ) অর্ধ-ক্ষমতা কাট-অফ কম্পাঙ্ক f_1 ও f_2।'
+        en: 'A second-order RLC network has transfer function H(s) = 10^8 / (s² + 400 s + 10^8). Calculate: (a) The undamped natural frequency ω_0 and quality factor Q, (b) The damping ratio ζ, (c) The peak resonant frequency ω_p and peak magnitude M_p in dB, and (d) The asymptotic attenuation in dB at a frequency two decades above resonance (ω = 10^6 rad/s).',
+        hi: 'एक द्वितीय-कोटि RLC नेटवर्क का ट्रांसफर फंक्शन H(s) = 10^8 / (s² + 400 s + 10^8) है। गणना करें: (a) प्राकृतिक आवृत्ति ω_0 एवं क्वालिटी फैक्टर Q, (b) अवमंदन अनुपात ζ, (c) शिखर आवृत्ति ω_p एवं शिखर मान M_p (dB में), और (d) अनुनाद से दो दशक ऊपर (ω = 10^6 rad/s) पर असममित क्षीणन।',
+        bn: 'একটি দ্বিতীয়-ক্রম ট্রান্সফার ফাংশন H(s) = ১০^৮ / (s² + ৪০০ s + ১০^৮)। নির্ণয় করুন: (a) স্বাভাবিক কম্পাঙ্ক ω_0 ও কোয়ালিটি ফ্যাক্টর Q, (b) ড্যাম্পিং অনুপাত ζ, (c) পিক কম্পাঙ্ক ω_p ও পিক গেইন M_p (dB তে), এবং (d) অনুরণনের দুই দশক উপরে (ω = ১০^৬ rad/s) অ্যাসিম্পটোটিক ক্ষয়।'
       },
-      formula: {
-        en: 'ω_0 = 1 / sqrt(LC), f_0 = ω_0 / (2π).\nQ = (ω_0 L) / R.\nBW_{Hz} = f_0 / Q = R / (2πL).\nf_{1,2} = f_0 sqrt[1 + (1 / (2Q))^2] ∓ (BW / 2) ≈ f_0 ∓ (BW / 2) for Q ≥ 5.',
-        hi: 'ω_0 = 1 / sqrt(LC), Q = ω_0 L / R, BW = f_0 / Q, f_{1,2} ≈ f_0 ∓ BW/2।',
-        bn: 'ω_0 = ১ / রুট(LC), Q = ω_0 L / R, BW = f_0 / Q, f_{1,2} ≈ f_0 ∓ BW/২।'
-      },
-      substitution: {
-        en: '(a) ω_0 = 1 / sqrt(5 × 10^-3 · 0.2 × 10^-6) = 1 / sqrt(10^-9) = 1 / (3.1623 × 10^-5) = 31,623 rad/s.\nf_0 = 31,623 / (2π) = 5,033 Hz = 5.033 kHz.\n(b) Q = (ω_0 L) / R = (31,623 · 5 × 10^-3) / 20 = 158.11 / 20 = 7.906 ≈ 7.91.\n(c) Bandwidth in Hz:\nBW_{Hz} = f_0 / Q = 5,033 / 7.906 = 636.6 Hz.\nAlternatively: BW_{Hz} = R / (2πL) = 20 / (2π · 0.005) = 20 / 0.031416 = 636.6 Hz.\n(d) Half-power frequencies (since Q = 7.91 > 5, narrow-band approximation holds):\nf_1 ≈ f_0 - BW/2 = 5,033 - (636.6 / 2) = 5,033 - 318.3 = 4,714.7 Hz ≈ 4.715 kHz.\nf_2 ≈ f_0 + BW/2 = 5,033 + 318.3 = 5,351.3 Hz ≈ 5.351 kHz.\nExact formula check: sqrt(f_1 · f_2) = sqrt(4714.7 · 5351.3) = 5023 Hz ≈ 5033 Hz.',
-        hi: '(a) ω_0 = 31,623 rad/s ⇒ f_0 = 5,033 Hz = 5.033 kHz।\n(b) Q = (31623 × 0.005) / 20 = 7.91।\n(c) BW = 5033 / 7.91 = 636.6 Hz।\n(d) f_1 = 5033 - 318.3 = 4,714.7 Hz (4.715 kHz)।\nf_2 = 5033 + 318.3 = 5,351.3 Hz (5.351 kHz)।',
-        bn: '(ক) ω_0 = ৩১,৬২৩ rad/s ⇒ f_0 = ৫,০৩৩ Hz = ৫.০৩৩ kHz।\n(খ) Q = (৩১,৬২৩ × ০.০০৫) / ২০ = ৭.৯১।\n(গ) BW = ৫,০৩৩ / ৭.৯১ = ৬৩৬.৬ Hz।\n(ঘ) f_1 = ৫,০৩৩ - ৩১৮.৩ = ৪,৭১৪.৭ Hz (৪.৭১৫ kHz)।\nf_2 = ৫,০৩৩ + ৩১৮.৩ = ৫,৩৫১.৩ Hz (৫.৩৫১ kHz)।'
-      },
-      calculation: {
-        en: 'The filter offers sharp selectivity (Q = 7.91) centered tightly at 5.03 kHz with a narrow passband spanning 4.71 kHz to 5.35 kHz.',
-        hi: 'यह फिल्टर 5.03 kHz पर तीव्र चयनात्मकता (Q = 7.91) प्रदान करता है।',
-        bn: 'ফিল্টারটি ৫.০৩ kHz এ তীক্ষ্ণ নির্বাচনী গুণাগুণ (Q = ৭.৯১) প্রদর্শন করে।'
-      },
-      finalAnswer: {
-        en: 'f_0 = 5.033 kHz; Q = 7.91; BW = 636.6 Hz; f_1 = 4.715 kHz; f_2 = 5.351 kHz',
-        hi: 'f_0 = 5.033 kHz; Q = 7.91; BW = 636.6 Hz; f_1 = 4.715 kHz; f_2 = 5.351 kHz',
-        bn: 'f_0 = ৫.০৩৩ kHz; Q = ৭.৯১; BW = ৬৩৬.৬ Hz; f_1 = ৪.৭১৫ kHz; f_2 = ৫.৩৫১ kHz'
-      },
+      solution: {
+        en: 'Step 1: Match denominator with canonical form s² + 2ζ ω_0 s + ω_0²:\nω_0² = 10^8  ⇒  ω_0 = √(10^8) = 10,000 rad/s = 10 krad/s.\n2ζ ω_0 = 400  ⇒  ζ = 400 / (2 · 10,000) = 400 / 20,000 = 0.02.\nQuality factor: Q = 1 / (2ζ) = 1 / (2 · 0.02) = 25.0.\nSince ζ = 0.02 << 0.707, this is a highly underdamped resonant system.\n\nStep 2: Calculate peak resonant frequency ω_p:\nω_p = ω_0 √(1 - 2ζ²) = 10,000 · √[1 - 2(0.02)²] = 10,000 · √(1 - 0.0008) = 10,000 · √0.9992 ≈ 9,996 rad/s (essentially equal to ω_0).\n\nStep 3: Calculate peak magnitude M_p:\nM_p = 1 / [2ζ √(1 - ζ²)] = 1 / [2(0.02) √(1 - 0.0004)] = 1 / [0.04 · 0.9998] ≈ 1 / 0.039992 ≈ 25.005.\nIn dB: M_{p,dB} = 20 log10(25.005) ≈ +27.96 dB.\nNotice that M_{p,dB} ≈ 20 log10(Q) = 20 log10(25) = 27.96 dB.\n\nStep 4: Asymptotic gain at two decades above resonance (ω = 10^6 rad/s = 100 ω_0):\nA second-order system rolls off at -40 dB/decade.\nFor 2 decades: Gain_{dB} = 0 dB - (2 decades · 40 dB/decade) = -80 dB.\nExact check: |H(j·10^6)| ≈ 10^8 / (10^6)² = 10^8 / 10^12 = 10^-4  ⇒  20 log10(10^-4) = -80.0 dB.',
+        hi: 'चरण 1: ω_0² = 10^8 से ω_0 = 10,000 rad/s। 2ζω_0 = 400 से ζ = 0.02। Q = 1/(2ζ) = 25।\nचरण 2: शिखर आवृत्ति ω_p = 10,000√(1 - 2(0.02)²) ≈ 9,996 rad/s।\nचरण 3: शिखर गेन M_p ≈ 25.005, dB में 20 log10(25) ≈ +27.96 dB।\nचरण 4: दो दशक ऊपर (ω = 10^6 rad/s) पर रोल-ऑफ -40 dB/decade के कारण क्षीणन = -80 dB।',
+        bn: 'ধাপ ১: ω_0 = ১০,০০০ rad/s, ζ = ০.০২, Q = ২৫.০ (উচ্চ আন্ডারড্যাম্পড)।\nধাপ ২: পিক কম্পাঙ্ক ω_p ≈ ৯,৯৯৬ rad/s।\nধাপ ৩: পিক গেইন M_p ≈ ২৫.০১, ডেসিবেলে +২৭.৯৬ dB।\nধাপ ৪: দুই দশক উপরে (ω = ১০^৬ rad/s) -৪০ dB/decade ঢালের কারণে মোট ক্ষয় = -৮০ dB।'
       }
+    }
   ],
   practicalApplications: {
     en: [
-      'Loudspeaker Crossover Networks: High-fidelity audio enclosures split the audio spectrum using an LC low-pass filter to send low frequencies (< 2.5 kHz) to the heavy woofer, and an LC high-pass filter to send treble frequencies (> 2.5 kHz) to the delicate tweeter.',
-      'Power Supply DC Rectifier Smoothing Filters: AC-to-DC converters use low-pass LC choke-input or capacitor-input pi filters with cutoff frequencies far below 100/120 Hz to eliminate rectifier ripple voltage and deliver smooth DC to microelectronics.'
+      'Operational Amplifier Feedback Loop Compensation: Control engineers use Bode plots to verify phase margin (PM ≥ 45°) to prevent closed-loop op-amp circuits from oscillating into instability.',
+      'Audio Equalizer & Preamplifier Design: Bass, midrange, and treble shelving filters are designed by placing precise lead-lag zeros and poles on Bode plots across the 20 Hz to 20 kHz audio band.',
+      'Switch-Mode Power Supply (SMPS) Stability Testing: Frequency response analyzers measure the loop gain and phase of SMPS voltage regulators to ensure robust regulation under rapid load transients.',
+      'RF & Microwave Filter Characterization: Vector Network Analyzers (VNAs) plot S21 transmission scattering parameters in decibels and phase, directly producing the RF equivalent of a Bode magnitude plot.'
     ],
     hi: [
-      'लाउडस्पीकर क्रॉसओवर नेटवर्क: हाई-फाई स्पीकर बॉक्स ध्वनि आवृत्तियों को अलग करने के लिए क्रॉसओवर फिल्टर का उपयोग करते हैं: कम आवृत्तियाँ वूफर को और उच्च आवृत्तियाँ ट्वीटर को भेजी जाती हैं।',
-      'पावर सप्लाई डीसी रेक्टिफायर स्मूथिंग फिल्टर: एसी-से-डीसी कन्वर्टर 100/120 Hz रिपल वोल्टेज को खत्म करने और माइक्रोइलेक्ट्रॉनिक को स्थिर डीसी प्रदान करने के लिए लो-पास फिल्टर का उपयोग करते हैं।'
+      'ऑप-ऐम्प फीडबैक लूप क्षतिपूर्ति: इंजीनियर ऑप-ऐम्प फीडबैक में दोलन रोकने के लिए बोडे प्लॉट से फेज मार्जिन (PM ≥ 45°) की पुष्टि करते हैं।',
+      'ऑडियो इक्वलाइज़र एवं प्री-एम्पलीफायर डिजाइन: 20 Hz से 20 kHz ऑडियो बैंड में बेस एवं ट्रेबल फिल्टर डिजाइन करने के लिए बोडे प्लॉट पर ध्रुव एवं शून्य स्थापित किए जाते हैं।',
+      'स्विच-मोड पावर सप्लाई (SMPS) स्थिरता परीक्षण: फ्रीक्वेंसी रिस्पॉन्स एनालाइजर तेजी से लोड बदलने पर SMPS रेगुलेटर के लूप गेन और फेज को मापते हैं।',
+      'आरएफ एवं माइक्रोवेव फिल्टर लक्षण वर्णन: नेटवर्क एनालाइजर सीधे डेसिबल और फेज में ट्रांसमिशन मापदंडों का आलेखन करके आरएफ बोडे प्लॉट बनाते हैं।'
     ],
     bn: [
-      'লাউডস্পিকার ক্রসওভার নেটওয়ার্ক: হাই-ফাই স্পিকার বক্সে ক্রসওভার ফিল্টার ব্যবহার করে নিম্ন কম্পাঙ্ক উফারে এবং উচ্চ কম্পাঙ্ক টুইটারে পাঠিয়ে নির্ভুল শব্দ তৈরি করা হয়।',
-      'পাওয়ার সাপ্লাই ডিসি রেকটিফায়ার ফিল্টার: এসি-টু-ডিসি কনভার্টারে লো-পাস পাই ফিল্টার ব্যবহার করে ১০০/১২০ Hz রিপল দূর করে স্থিতিশীল ডিসি সরবরাহ নিশ্চিত করা হয়।'
+      'অপ-অ্যাম্প ফিডব্যাক লুপ কম্পেনসেশন: অপ-অ্যাম্প বর্তনীতে অনাকাঙ্ক্ষিত অসসিলেশন রোধ করতে বোড প্লট দিয়ে ফেজ মার্জিন (PM ≥ ৪৫°) নিশ্চিত করা হয়।',
+      'অডিও ইকুয়ালাইজার ও প্রি-অ্যামপ্লিফায়ার ডিজাইন: ২০ Hz থেকে ২০ kHz অডিও রেঞ্জে বেস ও ট্রিবল নিয়ন্ত্রণের জন্য বোড প্লটে পোল ও জিরো স্থাপন করা হয়।',
+      'সুইচ-মোড পাওয়ার সাপ্লাই (SMPS) স্থায়িত্ব পরীক্ষা: লোড পরিবর্তনের সাথে দ্রুত ভোল্টেজ নিয়ন্ত্রণের জন্য SMPS লুপের গেইন ও ফেজ পরিমাপ করা হয়।',
+      'আরএফ ও মাইক্রোওয়েভ ফিল্টার বৈশিষ্ট্য নির্ণয়: ভেক্টর নেটওয়ার্ক অ্যানালাইজার সরাসরি ডেসিবেল ও ফেজে ট্রান্সমিশন পরিমাপ করে আরএফ বোড প্লট প্রদর্শন করে।'
     ]
   },
-  importantPoints: {
-    en: [
-      'At the half-power cutoff frequency f_c, the voltage gain is exactly 1/√2 (-3.01 dB) and the phase shift of a first-order filter is exactly ±45°.',
-      'Each pole in a filter transfer function adds -20 dB/decade to the high-frequency roll-off slope (1st-order: -20 dB/dec; 2nd-order: -40 dB/dec; 4th-order: -80 dB/dec).'
-    ],
-    hi: [
-      'अर्ध-शक्ति कटऑफ आवृत्ति f_c पर वोल्टेज गेन ठीक 1/√2 (-3.01 dB) होता है और प्रथम-कोटि फिल्टर का कलांतर ठीक ±45° होता है।',
-      'फिल्टर ट्रांसफर फंक्शन में प्रत्येक पोल उच्च-आवृत्ति रोल-ऑफ ढलान में -20 dB/decade जोड़ता है (प्रथम-कोटि: -20 dB/dec; द्वितीय-कोटि: -40 dB/dec)।'
-    ],
-    bn: [
-      'কাট-অফ কম্পাঙ্ক f_c তে ভোল্টেজ গেইন ঠিক ১/√২ (-৩.০১ dB) এবং প্রথম-ক্রমের ফিল্টারের ফেজ শিফট ঠিক ±৪৫° হয়।',
-      'ফিল্টারের প্রতিটি পোল উচ্চ-কম্পাঙ্কের রোল-অফ ঢালে -২০ dB/decade যুক্ত করে (১ম-ক্রম: -২০ dB/dec; ২য়-ক্রম: -৪০ dB/dec)।'
-    ]
-  },
-  commonMistakes: {
-    en: [
-      'Mistake: Confusing angular frequency ω (in rad/s) with cyclic frequency f (in Hz), leading to a factor of 2π error in cutoff calculations. Correction: Always remember: ω_c = 1/(RC) is in rad/s. To find f_c in Hz, you must divide by 2π: f_c = 1 / (2πRC).'
-    ],
-    hi: [
-      'त्रुटि: कोणीय आवृत्ति ω (rad/s) और चक्रीय आवृत्ति f (Hz) में भ्रमित होना, जिससे 2π का गुणन त्रुटि हो जाती है। सुधार: हमेशा याद रखें: ω_c = 1/(RC) rad/s में होता है। Hz में f_c के लिए 2π से भाग दें: f_c = 1 / (2πRC)।'
-    ],
-    bn: [
-      'ভুল: কৌণিক কম্পাঙ্ক ω (rad/s) এবং সাধারণ কম্পাঙ্ক f (Hz) গুলিয়ে ফেলে ২π এর ভুল করা। সংশোধন: সর্বদা মনে রাখুন: ω_c = ১/(RC) rad/s এককে। Hz এ f_c পেতে ২π দিয়ে ভাগ করতে হবে: f_c = ১ / (২πRC)।'
-    ]
-  },
-  keyTakeaways: {
-    en: [
-      'Bode plots provide a complete logarithmic visualization of filter magnitude and phase. First-order RC filters provide -20 dB/dec attenuation above f_c = 1/(2πRC).'
-    ],
-    hi: [
-      'बोडे प्लॉट फिल्टर के परिमाण और कला का संपूर्ण लघुगणकीय दृश्य प्रदान करते हैं। प्रथम-कोटि RC फिल्टर f_c = 1/(2πRC) के ऊपर -20 dB/dec का क्षीणन देते हैं।'
-    ],
-    bn: [
-      'বোড প্লট ফিল্টারের বিস্তার ও ফেজের স্পষ্ট ধারণা দেয়। প্রথম-ক্রমের RC ফিল্টার f_c = ১/(২πRC) এর উপরে -২০ dB/dec ক্ষয় প্রদান করে।'
-    ]
-  },
+  importantPoints: [
+    {
+      en: 'A decade on a Bode plot corresponds to a 10-fold multiplication of frequency (e.g., 10 Hz to 100 Hz); an octave corresponds to a 2-fold multiplication (e.g., 100 Hz to 200 Hz).',
+      hi: 'बोडे प्लॉट पर एक दशक (decade) का अर्थ आवृत्ति का 10 गुना होना है; एक अष्टक (octave) का अर्थ आवृत्ति का 2 गुना होना है।',
+      bn: 'বোড প্লটে এক ডেকেড মানে কম্পাঙ্কের ১০ গুণ বৃদ্ধি; এক অক্টেভ মানে কম্পাঙ্কের দ্বিগুণ বৃদ্ধি।'
+    },
+    {
+      en: 'The maximum error between the asymptotic straight-line Bode approximation and the actual curve is 3.01 dB for a simple real pole or zero, occurring exactly at the corner frequency ω = ω_c.',
+      hi: 'सरल वास्तविक ध्रुव या शून्य के लिए असममित रेखा और वास्तविक वक्र के बीच अधिकतम अंतर ठीक कॉर्नर आवृत्ति पर 3.01 dB होता है।',
+      bn: 'একক পোলের ক্ষেত্রে সরলরৈখিক অ্যাসিম্পটোট ও প্রকৃত গ্রাফের মধ্যে সর্বোচ্চ ৩.০১ dB ব্যবধান ঠিক কাট-অফ কম্পাঙ্কে ঘটে।'
+    },
+    {
+      en: 'A transfer function zero adds a +20 dB/decade upward slope and +90° phase lead; a transfer function pole introduces a -20 dB/decade downward roll-off and -90° phase lag.',
+      hi: 'ट्रांसफर फंक्शन का शून्य (Zero) +20 dB/दशक की ऊपर उठती ढलान और +90° कला जोड़ता है; ध्रुव (Pole) -20 dB/दशक की गिरावट और -90° पश्चगामी कला देता है।',
+      bn: 'একটি জিরো প্রতি দশকে +২০ dB ঊর্ধ্বমুখী ঢাল ও +৯০° ফেজ লিড যোগ করে; একটি পোল প্রতি দশকে -২০ dB নিম্নমুখী ঢাল ও -৯০° ফেজ ল্যাগ দেয়।'
+    },
+    {
+      en: 'Second-order resonant peaking occurs ONLY when damping ratio ζ < 1/√2 ≈ 0.7071 (or quality factor Q > 0.7071); for ζ ≥ 0.7071, magnitude decreases monotonically without a peak.',
+      hi: 'द्वितीय-कोटि अनुनादी शिखर केवल तभी प्रकट होता है जब अवमंदन अनुपात ζ < 0.7071 (या Q > 0.7071) हो।',
+      bn: 'দ্বিতীয়-ক্রম রেজোন্যান্ট পিক কেবল তখনই তৈরি হয় যখন ড্যাম্পিং অনুপাত ζ < ০.৭০৭১ (বা Q > ০.৭০৭১) হয়।'
+    }
+  ],
+  commonMistakes: [
+    {
+      en: 'Using 10 log10 instead of 20 log10 for voltage or current gains: decibels for field quantities (voltage, current) use 20 log10, whereas power quantities use 10 log10.',
+      hi: 'वोल्टेज गेन के लिए 10 log10 का उपयोग करना: वोल्टेज एवं धारा के लिए 20 log10 का उपयोग किया जाता है, जबकि शक्ति के लिए 10 log10 का।',
+      bn: 'ভোল্টেজ গেইনে 10 log10 ব্যবহার করা: ভোল্টেজ বা কারেন্টের ক্ষেত্রে 20 log10 এবং ক্ষমতার ক্ষেত্রে 10 log10 ব্যবহৃত হয়।'
+    },
+    {
+      en: 'Assuming second-order systems always exhibit a resonant spike: if damping ratio ζ ≥ 0.707 (critically damped or overdamped), there is NO resonant peak.',
+      hi: 'यह मान लेना कि द्वितीय-कोटि परिपथों में सदैव अनुनादी शिखर होता है: यदि ζ ≥ 0.707 हो, तो कोई शिखर नहीं बनता।',
+      bn: 'মনে করা যে দ্বিতীয়-ক্রম সিস্টেমে সর্বদা রেজোন্যান্ট পিক থাকবে: যদি ζ ≥ ০.৭০৭ হয়, তবে কোনো পিক থাকে না।'
+    },
+    {
+      en: 'Forgetting that phase angles add directly when poles and zeros are cascaded, while decibel magnitudes add algebraically.',
+      hi: 'यह भूलना कि कैस्केड चरणों में डेसिबल परिमाण और कला कोण दोनों सीधे जोड़े जाते हैं।',
+      bn: 'ভুলে যাওয়া যে একাধিক ধাপ যুক্ত থাকলে ডেসিবেল মান এবং ফেজ কোণ উভয়ই সরাসরি যোগ হয়।'
+    }
+  ],
+  keyTakeaways: [
+    {
+      en: 'Bode magnitude plots display 20 log10|H| against log frequency, turning cascaded product stages into simple visual additions.',
+      hi: 'बोडे परिमाण आलेख 20 log10|H| को लॉग आवृत्ति के विरुद्ध प्रदर्शित करता है, जिससे कैस्केड चरणों का विश्लेषण सरल हो जाता है।',
+      bn: 'বোড ম্যাগনিটিউড গ্রাফ ২০ log10|H| কে লগ কম্পাঙ্কের বিপরীতে দেখায়, ফলে ধাপসমূহের সম্মিলিত প্রভাব সরাসরি যোগ করা যায়।'
+    },
+    {
+      en: 'First-order poles roll off at -20 dB/decade (-6 dB/octave); second-order quadratic poles roll off at -40 dB/decade (-12 dB/octave).',
+      hi: 'प्रथम-कोटि ध्रुव -20 dB/दशक से और द्वितीय-कोटि द्विघात ध्रुव -40 dB/दशक से गिरते हैं।',
+      bn: 'একক পোল প্রতি দশকে -২০ dB এবং দ্বিতীয়-ক্রম পোল প্রতি দশকে -৪০ dB হারে ঢাল তৈরি করে।'
+    },
+    {
+      en: 'Phase margin (PM = 180° + ∠H at 0 dB crossover) must be positive and typically ≥ 45° to guarantee closed-loop feedback stability.',
+      hi: 'स्थिरता की गारंटी के लिए 0 dB क्रॉसओवर पर फेज मार्जिन धनात्मक (आदर्श रूप से ≥ 45°) होना चाहिए।',
+      bn: 'ফিডব্যাক সিস্টেম স্থিতিশীল রাখতে ০ dB ক্রসওভারে ফেজ মার্জিন অবশ্যই ধনাত্মক ও সাধারণত ≥ ৪৫° হতে হবে।'
+    }
+  ],
   practiceQuestions: [
     {
       id: 'pq-ch12-l06-01',
       question: {
-        en: 'Calculate the cutoff frequency f_c of a first-order RL low-pass filter having R = 100 Ω and L = 25 mH.',
-        hi: 'R = 100 Ω और L = 25 mH वाले प्रथम-कोटि RL लो-पास फिल्टर की कटऑफ आवृत्ति f_c ज्ञात कीजिए।',
-        bn: 'R = ১০০ Ω এবং L = ২৫ mH বিশিষ্ট প্রথম-ক্রমের RL লো-পাস ফিল্টারের কাট-অফ কম্পাঙ্ক f_c গণনা করুন।'
+        en: 'A filter has transfer function H(s) = (1 + s/100) / (1 + s/10,000). Describe the asymptotic slope of its Bode magnitude plot across the frequency range 1 rad/s to 100,000 rad/s.',
+        hi: 'एक फिल्टर का ट्रांसफर फंक्शन H(s) = (1 + s/100) / (1 + s/10,000) है। 1 rad/s से 100,000 rad/s के बीच इसके बोडे परिमाण आलेख की ढलान का वर्णन करें।',
+        bn: 'একটি ফিল্টারের ট্রান্সফার ফাংশন H(s) = (১ + s/১০০) / (১ + s/১০,০০০)। ১ rad/s থেকে ১০০,০০০ rad/s রেঞ্জে এর বোড ম্যাগনিটিউডের অ্যাসিম্পটোটিক ঢাল বর্ণনা করুন।'
       },
       hint: {
-        en: 'ω_c = R / L = 100 / 0.025 = 4000 rad/s. f_c = 4000 / (2π) = 636.6 Hz.',
-        hi: 'ω_c = R / L = 4000 rad/s। f_c = 4000 / (2π) = 636.6 Hz।',
-        bn: 'ω_c = R / L = ৪০০০ rad/s। f_c = ৪০০০ / (২π) = ৬৩৬.৬ Hz।'
+        en: 'From 0 to 100 rad/s: flat at 0 dB (slope = 0). From 100 to 10,000 rad/s: zero at ω=100 causes slope of +20 dB/decade. Above 10,000 rad/s: pole at ω=10,000 cancels zero slope (+20 - 20 = 0 dB/decade flat again at +40 dB).',
+        hi: '100 rad/s तक 0 dB/दशक। 100 से 10,000 rad/s तक +20 dB/दशक। 10,000 rad/s से ऊपर शून्य और ध्रुव संतुलित होकर पुनः 0 dB/दशक (स्थिर +40 dB) हो जाते हैं।',
+        bn: '১০০ rad/s পর্যন্ত ০ dB/decade। ১০০ থেকে ১০,০০০ rad/s পর্যন্ত জিরোর কারণে +২০ dB/decade। ১০,০০০ rad/s এর উপরে পোলের কারণে পুনরায় সমান্তরাল (০ dB/decade)।'
       }
     },
     {
       id: 'pq-ch12-l06-02',
       question: {
-        en: 'What is the attenuation in dB of a second-order low-pass filter at a frequency two decades above its cutoff frequency (f = 100 f_c)?',
-        hi: 'एक द्वितीय-कोटि लो-पास फिल्टर का इसकी कटऑफ आवृत्ति से दो दशक ऊपर (f = 100 f_c) dB में क्षीणन क्या होगा?',
-        bn: 'একটি দ্বিতীয়-ক্রমের লো-পাস ফিল্টারে কাট-অফ কম্পাঙ্কের দুই দশক উপরে (f = ১০০ f_c) dB তে ক্ষয় কত হবে?'
+        en: 'Why is the phase margin evaluated specifically at the gain crossover frequency (where |H(jω)| = 1 or 0 dB)?',
+        hi: 'फेज मार्जिन का मूल्यांकन विशेष रूप से गेन क्रॉसओवर आवृत्ति (जहाँ |H(jω)| = 0 dB हो) पर ही क्यों किया जाता है?',
+        bn: 'কেন ফেজ মার্জিন কেবল গেইন ক্রসওভার কম্পাঙ্কেই (যেখানে |H(jω)| = ০ dB) পরিমাপ করা হয়?'
       },
       hint: {
-        en: 'A 2nd-order filter rolls off at -40 dB/decade. Two decades corresponds to 2 × (-40 dB) = -80 dB attenuation.',
-        hi: 'द्वितीय-कोटि फिल्टर -40 dB/decade से गिरता है। दो दशकों के लिए: 2 × (-40) = -80 dB।',
-        bn: '২য়-ক্রমের ফিল্টারের ঢাল -৪০ dB/decade। দুই দশকে ক্ষয় হবে ২ × (-৪০) = -৮০ dB।'
+        en: 'At unity loop gain (|T| = 1 or 0 dB), if the phase shift reaches -180°, the negative feedback inverts into regenerative positive feedback, causing sustained unattenuated oscillations.',
+        hi: '0 dB गेन पर यदि कला -180° हो जाए, तो नकारात्मक फीडबैक सकारात्मक फीडबैक में बदल जाता है और दोलन शुरू हो जाते हैं।',
+        bn: '০ dB গেইনে যদি ফেজ -১৮০° তে পৌঁছায়, তবে নেগেটিভ ফিডব্যাক পজিটিভ ফিডব্যাকে রূপ নিয়ে অসসিলেশন শুরু করে।'
       }
     }
   ],
@@ -253,109 +271,29 @@ export const LESSON_PASSIVE_FILTERS_BODE: Lesson = {
     {
       id: 'mcq-ch12-l06-01',
       question: {
-        en: 'What is the voltage gain |H(jω)| in decibels at the half-power cutoff frequency f_c of any first-order passive filter?',
-        hi: 'किसी प्रथम-कोटि निष्क्रिय फिल्टर की अर्ध-शक्ति कटऑफ आवृत्ति f_c पर डेसिबल में वोल्टेज गेन |H(jω)| क्या होता है?',
-        bn: 'যেকোনো প্রথম-ক্রমের প্যাসিভ ফিল্টারের কাট-অফ কম্পাঙ্ক f_c তে ডেসিবেলে ভোল্টেজ গেইন |H(jω)| কত হয়?'
+        en: 'On a logarithmic frequency axis of a Bode plot, what does an interval of one "decade" represent?',
+        hi: 'बोडे प्लॉट के लघुगणकीय आवृत्ति अक्ष पर एक "दशक" (decade) का अंतराल क्या दर्शाता है?',
+        bn: 'বোড প্লটের লগারিদমিক কম্পাঙ্ক অক্ষে এক "ডেকেড" ব্যবধান কী নির্দেশ করে?'
       },
       options: [
-        { id: 'opt-1', text: { en: '0 dB', hi: '0 dB', bn: '০ dB' } },
-        { id: 'opt-2', text: { en: '-3.01 dB', hi: '-3.01 dB', bn: '-৩.০১ dB' } },
-        { id: 'opt-3', text: { en: '-6.02 dB', hi: '-6.02 dB', bn: '-৬.০২ dB' } },
-        { id: 'opt-4', text: { en: '-20 dB', hi: '-20 dB', bn: '-২০ dB' } }
+        { id: 'opt-1', text: { en: 'A 10-fold multiplication of frequency (f_2 = 10 f_1)', hi: 'आवृत्ति का 10 गुना बढ़ना (f_2 = 10 f_1)', bn: 'কম্পাঙ্কের ১০ গুণ বৃদ্ধি (f_2 = ১০ f_1)' } },
+        { id: 'opt-2', text: { en: 'A 2-fold multiplication of frequency (doubling)', hi: 'आवृत्ति का 2 गुना बढ़ना (दोगुना)', bn: 'কম্পাঙ্কের দ্বিগুণ বৃদ্ধি' } },
+        { id: 'opt-3', text: { en: 'An addition of 10 Hz to the frequency', hi: 'आवृत्ति में 10 Hz का जुड़ना', bn: 'কম্পাঙ্কে ১০ Hz যোগ হওয়া' } },
+        { id: 'opt-4', text: { en: 'A fixed duration of 10 seconds', hi: '10 सेकंड का निश्चित समय', bn: '১০ সেকেন্ড সময়কাল' } }
       ],
-      correctOptionId: 'opt-2',
+      correctOptionId: 'opt-1',
       explanation: {
-        en: 'At cutoff, |H| = 1/√2 ≈ 0.7071. In decibels: 20 log10(1/√2) = -3.01 dB (half power).',
-        hi: 'कटऑफ पर |H| = 1/√2 होता है, जो 20 log10(1/√2) = -3.01 dB के बराबर है।',
-        bn: 'কাট-অফে |H| = ১/√২ হয়, যা ডেসিবেলে ২০ log10(১/√২) = -৩.০১ dB।'
+        en: 'A decade represents a frequency ratio of exactly 10 (f_2 / f_1 = 10), such as from 100 Hz to 1,000 Hz or from 1 kHz to 10 kHz.',
+        hi: 'लघुगणकीय पैमाने पर एक दशक का अर्थ आवृत्ति का ठीक 10 गुना होना है (जैसे 100 Hz से 1 kHz)।',
+        bn: 'লগ স্কেলে এক ডেকেড বলতে কম্পাঙ্ক ঠিক ১০ গুণ হওয়া বোঝায় (যেমন ১০০ Hz থেকে ১ kHz)।'
       }
     },
     {
       id: 'mcq-ch12-l06-02',
       question: {
-        en: 'What is the high-frequency roll-off rate (asymptotic slope) of a single-pole (first-order) RC low-pass filter?',
-        hi: 'एकल-पोल (प्रथम-कोटि) RC लो-पास फिल्टर की उच्च-आवृत्ति रोल-ऑफ दर क्या होती है?',
-        bn: 'একক-পোল (প্রথম-ক্রম) RC লো-পাস ফিল্টারের উচ্চ-কম্পাঙ্কের রোল-অফ ঢাল কত?'
-      },
-      options: [
-        { id: 'opt-1', text: { en: '-6 dB/decade', hi: '-6 dB/decade', bn: '-৬ dB/decade' } },
-        { id: 'opt-2', text: { en: '-12 dB/decade', hi: '-12 dB/decade', bn: '-১২ dB/decade' } },
-        { id: 'opt-3', text: { en: '-20 dB/decade (-6 dB/octave)', hi: '-20 dB/decade (-6 dB/octave)', bn: '-২০ dB/decade (-৬ dB/octave)' } },
-        { id: 'opt-4', text: { en: '-40 dB/decade', hi: '-40 dB/decade', bn: '-৪০ dB/decade' } }
-      ],
-      correctOptionId: 'opt-3',
-      explanation: {
-        en: 'A single real pole rolls off inversely with frequency (1/ω), which is -20 dB per decade (a 10x frequency increase decreases gain by a factor of 10 = -20 dB).',
-        hi: 'एकल पोल आवृत्ति के व्युत्क्रमानुपाती (1/ω) होता है, जिससे -20 dB प्रति दशक की ढलान मिलती है।',
-        bn: 'একক পোল কম্পাঙ্কের ব্যস্তানুপাতে পরিবর্তিত হয়ে প্রতি দশকে -২০ dB ঢাল তৈরি করে।'
-      }
-    },
-    {
-      id: 'mcq-ch12-l06-03',
-      question: {
-        en: 'What is the phase shift between output and input voltages at the cutoff frequency f_c of a first-order RC LOW-PASS filter?',
-        hi: 'प्रथम-कोटि RC लो-पास फिल्टर की कटऑफ आवृत्ति f_c पर आउटपुट और इनपुट वोल्टेज के बीच कलांतर क्या होता है?',
-        bn: 'প্রথম-ক্রমের RC লো-পাস ফিল্টারের কাট-অফ কম্পাঙ্ক f_c তে আউটপুট ও ইনপুট ভোল্টেজের মাঝে ফেজ পার্থক্য কত?'
-      },
-      options: [
-        { id: 'opt-1', text: { en: '0°', hi: '0°', bn: '০°' } },
-        { id: 'opt-2', text: { en: '-45° (lagging)', hi: '-45° (पश्चगामी)', bn: '-৪৫° (ল্যাগিং)' } },
-        { id: 'opt-3', text: { en: '+45° (leading)', hi: '+45° (अग्रगामी)', bn: '+৪৫° (লিডিং)' } },
-        { id: 'opt-4', text: { en: '-90°', hi: '-90°', bn: '-৯০°' } }
-      ],
-      correctOptionId: 'opt-2',
-      explanation: {
-        en: 'H(jω_c) = 1 / (1 + j1). Phase = 0° - arctan(1) = -45° (output lags input by 45°).',
-        hi: 'H(jω_c) = 1 / (1 + j1) से कला कोण = -arctan(1) = -45° होता है।',
-        bn: 'H(jω_c) = ১ / (১ + j১) থেকে ফেজ কোণ = -arctan(১) = -৪৫° পাওয়া যায়।'
-      }
-    },
-    {
-      id: 'mcq-ch12-l06-04',
-      question: {
-        en: 'In a series RLC band-pass filter with output taken across resistor R, what is the output voltage at the exact resonant frequency ω_0 = 1/√(LC)?',
-        hi: 'प्रतिरोधक R पर आउटपुट वाले श्रेणी RLC बैंड-पास फिल्टर में अनुनादी आवृत्ति ω_0 पर आउटपुट वोल्टेज क्या होता है?',
-        bn: 'রোধক R এর আড়াআড়ি আউটপুটযুক্ত শ্রেণি RLC ব্যান্ড-পাস ফিল্টারে ঠিক অনুরণন কম্পাঙ্কে আউটপুট ভোল্টেজ কত হয়?'
-      },
-      options: [
-        { id: 'opt-1', text: { en: 'Zero', hi: 'शून्य', bn: 'শূন্য' } },
-        { id: 'opt-2', text: { en: '0.707 V_in', hi: '0.707 V_in', bn: '০.৭০৭ V_in' } },
-        { id: 'opt-3', text: { en: 'Equal to V_in (gain = 1 or 0 dB)', hi: 'V_in के बराबर (गेन = 1 या 0 dB)', bn: 'V_in এর সমান (গেইন = ১ বা ০ dB)' } },
-        { id: 'opt-4', text: { en: 'Infinite', hi: 'अनंत', bn: 'অসীম' } }
-      ],
-      correctOptionId: 'opt-3',
-      explanation: {
-        en: 'At resonance, inductor and capacitor reactances cancel exactly (jωL + 1/jωC = 0). The entire input voltage drops across R, so V_out = V_in (0 dB attenuation).',
-        hi: 'अनुनाद पर प्रेरक और संधारित्र के प्रतिघात एक-दूसरे को रद्द कर देते हैं, जिससे पूरा इनपुट R पर मिलता है (V_out = V_in)।',
-        bn: 'অনুরণনে আবেশক ও ধারকের প্রতিঘাত পরস্পরকে নাকচ করে দেয়, ফলে সম্পূর্ণ ইনপুট ভোল্টেজ R এ পাওয়া যায় (V_out = V_in)।'
-      }
-    },
-    {
-      id: 'mcq-ch12-l06-05',
-      question: {
-        en: 'How does doubling the quality factor Q of a band-pass filter affect its fractional bandwidth BW?',
-        hi: 'बैंड-पास फिल्टर के क्वालिटी फैक्टर Q को दोगुना करने से इसकी बैंडविड्थ BW पर क्या प्रभाव पड़ता है?',
-        bn: 'ব্যান্ড-পাস ফিল্টারের কোয়ালিটি ফ্যাক্টর Q দ্বিগুণ করলে এর ব্যান্ডউইথ BW কীভাবে পরিবর্তিত হয়?'
-      },
-      options: [
-        { id: 'opt-1', text: { en: 'Bandwidth doubles', hi: 'बैंडविड्थ दोगुनी हो जाती है', bn: 'ব্যান্ডউইথ দ্বিগুণ হয়' } },
-        { id: 'opt-2', text: { en: 'Bandwidth is halved (filter becomes narrower/more selective)', hi: 'बैंडविड्थ आधी हो जाती है (अधिक चयनात्मक)', bn: 'ব্যান্ডউইথ অর্ধেক হয় (বেশি সিলেক্টিভ)' } },
-        { id: 'opt-3', text: { en: 'Bandwidth quadruples', hi: 'बैंडविड्थ चार गुना हो जाती है', bn: 'ব্যান্ডউইথ চারগুণ হয়' } },
-        { id: 'opt-4', text: { en: 'Bandwidth is unchanged', hi: 'बैंडविड्थ अपरिवर्तित रहती है', bn: 'ব্যান্ডউইথ অপরিবর্তিত থাকে' } }
-      ],
-      correctOptionId: 'opt-2',
-      explanation: {
-        en: 'Since BW = ω_0 / Q, bandwidth is inversely proportional to Q. Doubling Q halves the bandwidth, making the passband sharper.',
-        hi: 'BW = ω_0 / Q होने के कारण Q दोगुना करने से बैंडविड्थ आधी हो जाती है।',
-        bn: 'যেহেতু BW = ω_0 / Q, তাই Q দ্বিগুণ করলে ব্যান্ডউইথ অর্ধেক হয়ে যায়।'
-      }
-    },
-    {
-      id: 'mcq-ch12-l06-06',
-      question: {
-        en: 'In an asymptotic Bode magnitude plot, what is the discrepancy (error) between the straight-line asymptotes and the true curve at the corner frequency ω_c?',
-        hi: 'असममित बोडे परिमाण आलेख में कॉर्नर आवृत्ति ω_c पर सीधी असममित रेखा और वास्तविक वक्र के बीच कितना अंतर (त्रुटि) होता है?',
-        bn: 'বোড ম্যাগনিটিউড প্লটে কাট-অফ কম্পাঙ্ক ω_c তে সরলরৈখিক অ্যাসিম্পটোট ও প্রকৃত বক্ররেখার মধ্যে পার্থক্য (ত্রুটি) কত?'
+        en: 'In an asymptotic Bode magnitude plot of a single-pole low-pass filter, what is the exact discrepancy (error) between the straight-line asymptotes and the true curve at the corner frequency ω_c?',
+        hi: 'एकल-ध्रुव लो-पास फिल्टर के असममित बोडे आलेख में कॉर्नर आवृत्ति ω_c पर सीधी रेखा और वास्तविक वक्र के बीच त्रुटि कितनी होती है?',
+        bn: 'একক-পোল লো-পাস ফিল্টারের অ্যাসিম্পটোটিক বোড চিত্রে কাট-অফ কম্পাঙ্ক ω_c তে সরলরেখা ও প্রকৃত গ্রাফের পার্থক্য কত?'
       },
       options: [
         { id: 'opt-1', text: { en: '0 dB (no error)', hi: '0 dB (कोई त्रुटि नहीं)', bn: '০ dB (কোনো ভুল নেই)' } },
@@ -365,49 +303,129 @@ export const LESSON_PASSIVE_FILTERS_BODE: Lesson = {
       ],
       correctOptionId: 'opt-2',
       explanation: {
-        en: 'The low-frequency asymptote is 0 dB and high-frequency asymptote is 0 dB at ω = ω_c. The true response is -3.01 dB, yielding an exact maximum asymptotic error of 3.01 dB.',
-        hi: 'कॉर्नर आवृत्ति पर असममित मान 0 dB होता है जबकि वास्तविक मान -3.01 dB होता है, अतः त्रुटि ठीक 3.01 dB है।',
-        bn: 'কাট-অফে অ্যাসিম্পটোটের মান ০ dB এবং প্রকৃত মান -৩.০১ dB, তাই সর্বোচ্চ পার্থক্য ৩.০১ dB।'
+        en: 'At ω = ω_c, both low-frequency (0 dB) and high-frequency (0 dB) asymptotes meet at 0 dB, while the true response is 20 log10(1/√2) = -3.01 dB. Thus the maximum asymptotic error is exactly 3.01 dB.',
+        hi: 'कॉर्नर आवृत्ति पर असममित मान 0 dB होता है जबकि वास्तविक मान -3.01 dB होता है, अतः त्रुटि 3.01 dB है।',
+        bn: 'কাট-অফে অ্যাসিম্পটোটের মান ০ dB এবং প্রকৃত মান -৩.০১ dB, তাই পার্থক্য ৩.০১ dB।'
+      }
+    },
+    {
+      id: 'mcq-ch12-l06-03',
+      question: {
+        en: 'What is the high-frequency asymptotic roll-off slope of a linear transfer function containing two real poles and no zeros?',
+        hi: 'दो वास्तविक ध्रुवों और बिना शून्य वाले रैखिक ट्रांसफर फंक्शन की उच्च-आवृत्ति असममित रोल-ऑफ ढलान क्या होती है?',
+        bn: 'দুটি বাস্তব পোল এবং কোনো জিরোবিহীন লিনিয়ার ট্রান্সফার ফাংশনের উচ্চ-কম্পাঙ্ক রোল-অফ ঢাল কত?'
+      },
+      options: [
+        { id: 'opt-1', text: { en: '-10 dB/decade', hi: '-10 dB/दशक', bn: '-১০ dB/ডেকেড' } },
+        { id: 'opt-2', text: { en: '-20 dB/decade (-6 dB/octave)', hi: '-20 dB/दशक (-6 dB/octave)', bn: '-২০ dB/ডেকেড (-৬ dB/octave)' } },
+        { id: 'opt-3', text: { en: '-40 dB/decade (-12 dB/octave)', hi: '-40 dB/दशक (-12 dB/octave)', bn: '-৪০ dB/ডেকেড (-১২ dB/octave)' } },
+        { id: 'opt-4', text: { en: '-60 dB/decade', hi: '-60 dB/दशक', bn: '-৬০ dB/ডেকেড' } }
+      ],
+      correctOptionId: 'opt-3',
+      explanation: {
+        en: 'Each real pole contributes -20 dB/decade to the high-frequency roll-off. Two poles contribute 2 × (-20 dB/decade) = -40 dB/decade (which equals -12 dB/octave).',
+        hi: 'प्रत्येक ध्रुव -20 dB/दशक जोड़ता है। दो ध्रुव मिलकर 2 × (-20) = -40 dB/दशक (-12 dB/octave) ढलान बनाते हैं।',
+        bn: 'প্রতিটি পোল -২০ dB/ডেকেড ঢাল তৈরি করে। দুটি পোল মিলে মোট ২ × (-২০) = -৪০ dB/ডেকেড ঢাল প্রদান করে।'
+      }
+    },
+    {
+      id: 'mcq-ch12-l06-04',
+      question: {
+        en: 'For a transfer function with a single real pole H(s) = 1 / (1 + s/ω_c), what is the phase shift at a frequency one decade above the corner frequency (ω = 10 ω_c)?',
+        hi: 'एकल वास्तविक ध्रुव H(s) = 1 / (1 + s/ω_c) के लिए कॉर्नर आवृत्ति से एक दशक ऊपर (ω = 10 ω_c) कलांतर क्या होता है?',
+        bn: 'একক বাস্তব পোলযুক্ত সিস্টেমে কাট-অফ কম্পাঙ্কের এক দশক উপরে (ω = ১০ ω_c) ফেজ পার্থক্য কত?'
+      },
+      options: [
+        { id: 'opt-1', text: { en: '-45°', hi: '-45°', bn: '-৪৫°' } },
+        { id: 'opt-2', text: { en: '-84.3° (asymptotically -90°)', hi: '-84.3° (असममित रूप से -90°)', bn: '-৮৪.৩° (অ্যাসিম্পটোটিকভাবে -৯০°)' } },
+        { id: 'opt-3', text: { en: '-135°', hi: '-135°', bn: '-১৩৫°' } },
+        { id: 'opt-4', text: { en: '0°', hi: '0°', bn: '০°' } }
+      ],
+      correctOptionId: 'opt-2',
+      explanation: {
+        en: 'The exact phase is θ = -arctan(ω / ω_c) = -arctan(10) ≈ -84.29° (which in asymptotic straight-line phase approximations is represented as having reached the -90° asymptote at 10 ω_c).',
+        hi: 'वास्तविक कला कोण -arctan(10) ≈ -84.29° होता है, जो असममित नियम में -90° के अत्यंत निकट है।',
+        bn: 'প্রকৃত ফেজ -arctan(১০) ≈ -৮৪.২৯°, যা অ্যাসিম্পটোট অনুসারে প্রায় -৯০° এ পৌঁছায়।'
+      }
+    },
+    {
+      id: 'mcq-ch12-l06-05',
+      question: {
+        en: 'Under what condition does a standard second-order system H(s) = ω_0² / (s² + 2ζω_0 s + ω_0²) exhibit a resonant peak (Mp > 1) in its Bode magnitude plot?',
+        hi: 'किस स्थिति में द्वितीय-कोटि सिस्टम के बोडे परिमाण आलेख में अनुनादी शिखर (Mp > 1) प्रकट होता है?',
+        bn: 'কোন শর্তে একটি দ্বিতীয়-ক্রম সিস্টেমের বোড ম্যাগনিটিউড গ্রাফে রেজোন্যান্ট পিক (Mp > ১) দেখা যায়?'
+      },
+      options: [
+        { id: 'opt-1', text: { en: 'Damping ratio ζ > 1.0 (overdamped)', hi: 'अवमंदन अनुपात ζ > 1.0 (अति-अवमंदित)', bn: 'ড্যাম্পিং অনুপাত ζ > ১.০' } },
+        { id: 'opt-2', text: { en: 'Damping ratio ζ < 1/√2 ≈ 0.7071 (or Q > 0.7071)', hi: 'अवमंदन अनुपात ζ < 1/√2 ≈ 0.7071 (या Q > 0.7071)', bn: 'ড্যাম্পিং অনুপাত ζ < ১/√২ ≈ ০.৭০৭১ (বা Q > ০.৭০৭১)' } },
+        { id: 'opt-3', text: { en: 'Only when ζ = 1.0 (critically damped)', hi: 'केवल जब ζ = 1.0 हो', bn: 'কেবল যখন ζ = ১.০ হয়' } },
+        { id: 'opt-4', text: { en: 'A resonant peak exists for all possible values of ζ', hi: 'ζ के सभी मानों के लिए शिखर मौजूद रहता है', bn: 'ζ এর সব মানের জন্যই পিক থাকে' } }
+      ],
+      correctOptionId: 'opt-2',
+      explanation: {
+        en: 'The peak magnitude formula Mp = 1 / [2ζ √(1 - ζ²)] is valid and greater than 1 only when ζ < 1/√2 ≈ 0.7071. For ζ ≥ 0.7071, the frequency response rolls off monotonically without peaking.',
+        hi: 'अनुनादी शिखर केवल तभी बनता है जब अवमंदन अनुपात ζ < 1/√2 (0.7071) हो। ζ ≥ 0.7071 के लिए वक्र बिना किसी शिखर के गिरता है।',
+        bn: 'রেজোন্যান্ট পিক কেবল তখনই গঠিত হয় যখন ζ < ১/√২ (০.৭০৭১) হয়। ζ ≥ ০.৭০৭১ হলে কোনো পিক তৈরি হয় না।'
+      }
+    },
+    {
+      id: 'mcq-ch12-l06-06',
+      question: {
+        en: 'A circuit voltage gain of +40 dB corresponds to what linear voltage multiplication ratio (|V_out / V_in|)?',
+        hi: '+40 dB का सर्किट वोल्टेज गेन किस रैखिक वोल्टेज गुणन अनुपात के बराबर है?',
+        bn: '+৪০ dB ভোল্টেজ গেইন কোন রৈখিক ভোল্টেজ অনুপাতের সমান?'
+      },
+      options: [
+        { id: 'opt-1', text: { en: '20', hi: '20', bn: '২০' } },
+        { id: 'opt-2', text: { en: '40', hi: '40', bn: '৪০' } },
+        { id: 'opt-3', text: { en: '100', hi: '100', bn: '১০০' } },
+        { id: 'opt-4', text: { en: '10,000', hi: '10,000', bn: '১০,০০০' } }
+      ],
+      correctOptionId: 'opt-3',
+      explanation: {
+        en: '|H|_{dB} = 20 log10(|H|)  ⇒  40 = 20 log10(|H|)  ⇒  log10(|H|) = 2  ⇒  |H| = 10^2 = 100.',
+        hi: '40 dB = 20 log10(|H|) से log10(|H|) = 2, अतः रैखिक अनुपात |H| = 10^2 = 100।',
+        bn: '৪০ dB = ২০ log10(|H|) থেকে log10(|H|) = ২, সুতরাং রৈখিক অনুপাত |H| = ১০^২ = ১০০।'
       }
     },
     {
       id: 'mcq-ch12-l06-07',
       question: {
-        en: 'Which filter configuration eliminates a single specific interference frequency (such as 50 Hz power-line hum) while passing all other frequencies?',
-        hi: 'कौन सा फिल्टर विन्यास अन्य सभी आवृत्तियों को पारित करते हुए एकल विशिष्ट हस्तक्षेप आवृत्ति (जैसे 50 Hz पावर हम) को समाप्त करता है?',
-        bn: 'কোন ফিল্টারটি অন্যান্য সব কম্পাঙ্ক পার করে কেবল একটি নির্দিষ্ট অনাকাঙ্ক্ষিত কম্পাঙ্ককে (যেমন ৫০ Hz নয়েজ) আটকে দেয়?'
+        en: 'How does a simple transfer function zero (1 + s/ω_z) affect the asymptotic Bode magnitude slope for frequencies above its corner frequency ω_z?',
+        hi: 'एक सरल ट्रांसफर फंक्शन शून्य (1 + s/ω_z) अपनी कॉर्नर आवृत्ति ω_z से ऊपर बोडे परिमाण ढलान को कैसे प्रभावित करता है?',
+        bn: 'একটি সরল ট্রান্সফার ফাংশন জিরো (১ + s/ω_z) কাট-অফ কম্পাঙ্ক ω_z এর উপরে বোড ম্যাগনিটিউড ঢালকে কীভাবে প্রভাবিত করে?'
       },
       options: [
-        { id: 'opt-1', text: { en: 'Low-Pass Filter', hi: 'लो-पास फिल्टर', bn: 'লো-পাস ফিল্টার' } },
-        { id: 'opt-2', text: { en: 'High-Pass Filter', hi: 'हाई-पास फिल्टर', bn: 'হাই-পাস ফিল্টার' } },
-        { id: 'opt-3', text: { en: 'Band-Stop / Notch Filter', hi: 'बैंड-स्टॉप / नॉच फिल्टर', bn: 'ব্যান্ড-স্টপ / নচ ফিল্টার' } },
-        { id: 'opt-4', text: { en: 'All-Pass Filter', hi: 'ऑल-पास फिल्टर', bn: 'অল-পাস ফিল্টার' } }
+        { id: 'opt-1', text: { en: 'It introduces a downward slope of -20 dB/decade', hi: 'यह -20 dB/दशक की नीचे गिरती ढलान जोड़ता है', bn: 'এটি প্রতি দশকে -২০ dB নিম্নমুখী ঢাল যোগ করে' } },
+        { id: 'opt-2', text: { en: 'It introduces an upward slope of +20 dB/decade (+6 dB/octave)', hi: 'यह +20 dB/दशक (+6 dB/octave) की ऊपर उठती ढलान जोड़ता है', bn: 'এটি প্রতি দশকে +২০ dB (+৬ dB/octave) ঊর্ধ্বমুখী ঢাল যোগ করে' } },
+        { id: 'opt-3', text: { en: 'It causes the gain to immediately drop to zero (-∞ dB)', hi: 'यह गेन को तुरंत शून्य कर देता है', bn: 'এটি গেইন শূন্য করে দেয়' } },
+        { id: 'opt-4', text: { en: 'It has no effect on magnitude slope', hi: 'इसका ढलान पर कोई प्रभाव नहीं पड़ता', bn: 'এর ঢালের ওপর কোনো প্রভাব নেই' } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: 'opt-2',
       explanation: {
-        en: 'A Band-Stop (or Notch) filter introduces an infinite attenuation dip at its resonant center frequency ω_0 to reject unwanted single-frequency hum.',
-        hi: 'बैंड-स्टॉप (नॉच) फिल्टर अपनी अनुनादी आवृत्ति पर तीव्र क्षीणन उत्पन्न करके अवांछित आवृत्ति को रोकता है।',
-        bn: 'ব্যান্ড-স্টপ (নচ) ফিল্টার নির্দিষ্ট রেজোন্যান্ট কম্পাঙ্কে তীব্র বাধা সৃষ্টি করে অনাকাঙ্ক্ষিত নয়েজ দূর করে।'
+        en: 'Unlike poles which cause downward attenuation (-20 dB/decade), zeros in the numerator cause gain to rise with frequency at an asymptotic rate of +20 dB/decade (+6 dB/octave).',
+        hi: 'ध्रुवों (-20 dB/दशक) के विपरीत, अंश में उपस्थित शून्य आवृत्ति बढ़ने के साथ +20 dB/दशक (+6 dB/octave) की वृद्धि करता है।',
+        bn: 'পোলের বিপরীতভাবে, লবে অবস্থিত জিরো কম্পাঙ্ক বৃদ্ধির সাথে সাথে প্রতি দশকে +২০ dB ঊর্ধ্বমুখী ঢাল তৈরি করে।'
       }
     },
     {
       id: 'mcq-ch12-l06-08',
       question: {
-        en: 'A second-order RLC filter has an asymptotic high-frequency roll-off rate of:',
-        hi: 'एक द्वितीय-कोटि RLC फिल्टर की असममित उच्च-आवृत्ति रोल-ऑफ दर होती है:',
-        bn: 'একটি দ্বিতীয়-ক্রমের RLC ফিল্টারের অ্যাসিম্পটোটিক উচ্চ-কম্পাঙ্ক রোল-অফ ঢাল কত?'
+        en: 'In frequency response and feedback stability analysis, how is Phase Margin (PM) defined?',
+        hi: 'आवृत्ति अनुक्रिया एवं फीडबैक स्थिरता विश्लेषण में फेज मार्जिन (PM) को कैसे परिभाषित किया जाता है?',
+        bn: 'কম্পাঙ্ক প্রতিক্রিয়া ও ফিডব্যাক স্থায়িত্ব বিশ্লেষণে ফেজ মার্জিন (PM) কীভাবে সংজ্ঞায়িত করা হয়?'
       },
       options: [
-        { id: 'opt-1', text: { en: '-10 dB/decade', hi: '-10 dB/decade', bn: '-১০ dB/decade' } },
-        { id: 'opt-2', text: { en: '-20 dB/decade', hi: '-20 dB/decade', bn: '-২০ dB/decade' } },
-        { id: 'opt-3', text: { en: '-40 dB/decade (-12 dB/octave)', hi: '-40 dB/decade (-12 dB/octave)', bn: '-৪০ dB/decade (-১২ dB/octave)' } },
-        { id: 'opt-4', text: { en: '-80 dB/decade', hi: '-80 dB/decade', bn: '-৮০ dB/decade' } }
+        { id: 'opt-1', text: { en: 'The gain in dB at zero frequency (DC)', hi: 'शून्य आवृत्ति (DC) पर dB में गेन', bn: 'শূন্য কম্পাঙ্কে (ডিসিতে) dB গেইন' } },
+        { id: 'opt-2', text: { en: 'PM = 180° + ∠H(jω_g), where ω_g is the gain crossover frequency (|H| = 0 dB)', hi: 'PM = 180° + ∠H(jω_g), जहाँ ω_g गेन क्रॉसओवर आवृत्ति (|H| = 0 dB) है', bn: 'PM = ১৮০° + ∠H(jω_g), যেখানে ω_g হলো গেইন ক্রসওভার কম্পাঙ্ক (|H| = ০ dB)' } },
+        { id: 'opt-3', text: { en: 'The frequency where phase equals exactly 0°', hi: 'वह आवृत्ति जहाँ कला ठीक 0° होती है', bn: 'যে কম্পাঙ্কে ফেজ ঠিক ০° হয়' } },
+        { id: 'opt-4', text: { en: 'The maximum phase shift divided by the quality factor Q', hi: 'अधिकतम कलांतर भाग क्वालिटी फैक्टर Q', bn: 'সর্বোচ্চ ফেজকে Q দিয়ে ভাগফল' } }
       ],
-      correctOptionId: 'opt-3',
+      correctOptionId: 'opt-2',
       explanation: {
-        en: 'With two reactive elements (L and C), the denominator transfer function contains (jω)^2 = -ω^2. Gain drops proportionally to 1/ω^2, which corresponds to -40 dB/decade (-12 dB/octave).',
-        hi: 'दो ऊर्जा संग्राहक तत्वों (L एवं C) के कारण हर में ω^2 आता है, जिससे -40 dB/decade की तीव्र ढलान मिलती है।',
-        bn: 'দুটি শক্তি সঞ্চয়ী উপাদান (L ও C) থাকার কারণে হরে ω^২ আসে, যা -৪০ dB/decade রোল-অফ প্রদান করে।'
+        en: 'Phase Margin measures how much additional phase lag can be tolerated before the system reaches -180° at unity gain (|H| = 1 or 0 dB). It is calculated as PM = 180° + ∠H(jω_g), where positive PM indicates stable closed-loop operation.',
+        hi: 'फेज मार्जिन 0 dB गेन पर -180° तक पहुँचने से बची हुई कला दूरी है: PM = 180° + ∠H(jω_g)। धनात्मक PM स्थिरता का संकेत है।',
+        bn: '০ dB গেইন ক্রসওভারে -১৮০° হতে কতটুকু ফেজ অবশিষ্ট আছে তা হলো ফেজ মার্জিন: PM = ১৮০° + ∠H(jω_g)।'
       }
     }
   ],
@@ -415,16 +433,19 @@ export const LESSON_PASSIVE_FILTERS_BODE: Lesson = {
     {
       id: 'diag-ch12-l06-01',
       title: {
-        en: 'Passive Filter Topologies and Asymptotic Bode Responses',
-        hi: 'परिपथ योजनाबद्ध आरेख',
-        bn: 'বর্তনী স্কিম্যাটিক চিত্র'
+        en: 'Bode Magnitude & Phase Asymptotic Plots',
+        hi: 'बोडे परिमाण एवं कला असममित आलेख',
+        bn: 'বোড ম্যাগনিটিউড ও ফেজ অ্যাসিম্পটোটিক গ্রাফ'
       },
       caption: {
-        en: 'Passive Filter Topologies and Asymptotic Bode Responses',
-        hi: 'निष्क्रिय फिल्टर विन्यास एवं असममित बोडे अनुक्रियाएँ',
-        bn: 'প্যাসিভ ফিল্টার বর্তনী ও বোড প্রতিক্রিয়া'
+        en: 'Bode Magnitude and Phase Frequency Response: Straight-line asymptotic approximations, -3.01 dB corner corrections, and second-order resonance peaking.',
+        hi: 'बोडे परिमाण एवं कला आवृत्ति अनुक्रिया: सीधी-रेखा असममित सन्निकटन, -3.01 dB कॉर्नर सुधार, एवं द्वितीय-कोटि अनुनादी शिखर।',
+        bn: 'বোড ম্যাগনিটিউড ও ফেজ কম্পাঙ্ক প্রতিক্রিয়া: সরলরৈখিক অ্যাসিম্পটোট, কাট-অফে -৩.০১ dB সংশোধন এবং দ্বিতীয়-ক্রমের রেজোন্যান্ট পিক।'
       },
       svgType: 'circuit-ch12-bode-plots-frequency-response'
     }
   ]
 };
+
+// Legacy compatibility export
+export const LESSON_PASSIVE_FILTERS_BODE = LESSON_BODE_PLOTS_FREQUENCY_RESPONSE;

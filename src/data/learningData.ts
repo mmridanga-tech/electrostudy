@@ -2289,9 +2289,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 5,
             title: {
-              en: 'Ideal Transformers, Complex Turns Ratio & Per-Unit (p.u.) Impedance',
-              hi: 'आदर्श ट्रांसफार्मर, सम्मिश्र फेरा अनुपात एवं प्रति-इकाई (p.u.) प्रतिबाधा',
-              bn: 'আদর্শ ট্রান্সফরমার, জটিল টার্নস রেশিও ও পার-ইউনিট (p.u.) প্রতিবাধা'
+              en: 'Passive AC Filter Design',
+              hi: 'निष्क्रिय एसी फिल्टर डिजाइन',
+              bn: 'প্যাসিভ এসি ফিল্টার ডিজাইন'
             }
           },
           {
@@ -2299,9 +2299,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 6,
             title: {
-              en: 'Passive Filters & Frequency Response (Bode Plots)',
-              hi: 'निष्क्रिय फिल्टर एवं आवृत्ति अनुक्रिया (बोडे प्लॉट)',
-              bn: 'প্যাসিভ ফিল্টার ও কম্পাঙ্ক প্রতিক্রিয়া (বোড প্লট)'
+              en: 'Bode Plots & Frequency Response of AC Circuits',
+              hi: 'बोडे प्लॉट एवं एसी परिपथों की आवृत्ति अनुक्रिया',
+              bn: 'বোড প্লট ও এসি বর্তনীর কম্পাঙ্ক প্রতিক্রিয়া'
             }
           },
           {
@@ -2312,6 +2312,36 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
               en: 'Two-Port Network Parameters in the AC Domain (Z, Y, ABCD, h)',
               hi: 'एसी डोमेन में टू-पोर्ट नेटवर्क प्राचल (Z, Y, ABCD, h)',
               bn: 'এসি ডোমেনে টু-পোর্ট নেটওয়ার্ক প্যারামিটার (Z, Y, ABCD, h)'
+            }
+          },
+          {
+            id: 'tp-reactance',
+            chapterId: 'ch-ac-circuits',
+            order: 8,
+            title: {
+              en: 'Non-Sinusoidal AC Waveforms & Harmonics',
+              hi: 'अ-ज्यावक्रीय (Non-Sinusoidal) एसी तरंगरूप एवं हार्मोनिक्स',
+              bn: 'নন-সাইনুসয়েডাল এসি তরঙ্গরূপ ও হারমোনিক্স'
+            }
+          },
+          {
+            id: 'tp-phasor-concept',
+            chapterId: 'ch-ac-circuits',
+            order: 9,
+            title: {
+              en: 'Total Harmonic Distortion & Network Impact',
+              hi: 'कुल हार्मोनिक विरूपण (THD) एवं नेटवर्क पर प्रभाव',
+              bn: 'টোটাল হারমোনিক ডিস্টরশন (THD) ও নেটওয়ার্ক প্রভাব'
+            }
+          },
+          {
+            id: 'tp-power-ac-circuit',
+            chapterId: 'ch-ac-circuits',
+            order: 10,
+            title: {
+              en: 'AC Locus Diagrams',
+              hi: 'एसी लोकस (बिंदुपथ) आरेख',
+              bn: 'এসি লোকাস ডায়াগ্রাম'
             }
           }
         ]

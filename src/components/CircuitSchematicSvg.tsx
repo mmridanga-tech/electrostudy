@@ -7664,7 +7664,6 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
-    case 'circuit-ch12-passive-filters-design':
     case 'circuit-ch12-ideal-transformers-puz':
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
@@ -7717,74 +7716,210 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch12-passive-filters-design':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 250" className="w-full max-w-xl h-64">
+            {/* Passive AC Filter Topologies & Responses */}
+            <rect x="15" y="15" width="510" height="225" rx="8" fill="#0f172a" stroke="#0ea5e9" strokeWidth="1.5" />
+            <text x="270" y="36" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Passive AC Filter Topologies & Half-Power Cutoff Characteristics
+            </text>
+
+            {/* 4 Quadrants for LPF, HPF, BPF, Notch */}
+            {/* Top-Left: Low-Pass Filter (Series R, Shunt C) */}
+            <g transform="translate(30, 48)">
+              <rect x="0" y="0" width="230" height="72" rx="4" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+              <text x="10" y="16" fill="#38bdf8" fontSize="10" fontWeight="bold">1st-Order Low-Pass (LPF)</text>
+              <text x="220" y="16" fill="#94a3b8" fontSize="8" textAnchor="end">f_c = 1 / (2πRC)</text>
+              {/* Circuit schematic */}
+              <line x1="15" y1="42" x2="35" y2="42" stroke="#94a3b8" strokeWidth="1.5" />
+              <rect x="35" y="35" width="35" height="14" rx="2" fill="#0284c7" stroke="#38bdf8" strokeWidth="1" />
+              <text x="52.5" y="46" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">R</text>
+              <line x1="70" y1="42" x2="105" y2="42" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="90" y1="42" x2="90" y2="48" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="82" y1="48" x2="98" y2="48" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="82" y1="52" x2="98" y2="52" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="90" y1="52" x2="90" y2="62" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="85" y1="62" x2="95" y2="62" stroke="#64748b" strokeWidth="1.5" />
+              <text x="102" y="52" fill="#38bdf8" fontSize="8">C</text>
+              <circle cx="15" cy="42" r="2" fill="#38bdf8" />
+              <text x="8" y="44" fill="#38bdf8" fontSize="7" textAnchor="end">V_in</text>
+              <circle cx="105" cy="42" r="2" fill="#38bdf8" />
+              <text x="110" y="44" fill="#38bdf8" fontSize="7">V_out</text>
+              {/* Response curve mini */}
+              <path d="M 140,55 L 175,55 Q 190,55 215,68" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="135" y1="68" x2="220" y2="68" stroke="#475569" strokeWidth="1" />
+              <circle cx="185" cy="58" r="2" fill="#f43f5e" />
+              <text x="185" y="52" fill="#f43f5e" fontSize="7" textAnchor="middle">-3 dB</text>
+              <text x="215" y="62" fill="#94a3b8" fontSize="6.5" textAnchor="end">-20 dB/dec</text>
+            </g>
+
+            {/* Top-Right: High-Pass Filter (Series C, Shunt R) */}
+            <g transform="translate(280, 48)">
+              <rect x="0" y="0" width="230" height="72" rx="4" fill="#1e293b" stroke="#34d399" strokeWidth="1" />
+              <text x="10" y="16" fill="#34d399" fontSize="10" fontWeight="bold">1st-Order High-Pass (HPF)</text>
+              <text x="220" y="16" fill="#94a3b8" fontSize="8" textAnchor="end">f_c = 1 / (2πRC)</text>
+              {/* Circuit schematic */}
+              <line x1="15" y1="42" x2="45" y2="42" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="45" y1="36" x2="45" y2="48" stroke="#34d399" strokeWidth="2" />
+              <line x1="49" y1="36" x2="49" y2="48" stroke="#34d399" strokeWidth="2" />
+              <text x="47" y="32" fill="#34d399" fontSize="8" textAnchor="middle">C</text>
+              <line x1="49" y1="42" x2="105" y2="42" stroke="#94a3b8" strokeWidth="1.5" />
+              <line x1="80" y1="42" x2="80" y2="48" stroke="#94a3b8" strokeWidth="1.5" />
+              <rect x="74" y="48" width="12" height="16" rx="1" fill="#059669" stroke="#34d399" strokeWidth="1" />
+              <text x="80" y="59" fill="#ffffff" fontSize="7" textAnchor="middle">R</text>
+              <line x1="80" y1="64" x2="80" y2="68" stroke="#94a3b8" strokeWidth="1" />
+              <line x1="76" y1="68" x2="84" y2="68" stroke="#64748b" strokeWidth="1.5" />
+              <circle cx="15" cy="42" r="2" fill="#34d399" />
+              <text x="8" y="44" fill="#34d399" fontSize="7" textAnchor="end">V_in</text>
+              <circle cx="105" cy="42" r="2" fill="#34d399" />
+              <text x="110" y="44" fill="#34d399" fontSize="7">V_out</text>
+              {/* Response curve mini */}
+              <path d="M 140,68 Q 165,55 180,55 L 215,55" fill="none" stroke="#34d399" strokeWidth="2" />
+              <line x1="135" y1="68" x2="220" y2="68" stroke="#475569" strokeWidth="1" />
+              <circle cx="170" cy="58" r="2" fill="#f43f5e" />
+              <text x="170" y="52" fill="#f43f5e" fontSize="7" textAnchor="middle">-3 dB</text>
+              <text x="145" y="62" fill="#94a3b8" fontSize="6.5">+20 dB/dec</text>
+            </g>
+
+            {/* Bottom-Left: 2nd-Order Series RLC Band-Pass Filter */}
+            <g transform="translate(30, 126)">
+              <rect x="0" y="0" width="230" height="66" rx="4" fill="#1e293b" stroke="#fbbf24" strokeWidth="1" />
+              <text x="10" y="15" fill="#fbbf24" fontSize="9.5" fontWeight="bold">2nd-Order Band-Pass (BPF)</text>
+              <text x="220" y="15" fill="#94a3b8" fontSize="7.5" textAnchor="end">f₀ = 1/(2π√LC) | Q = f₀/BW</text>
+              <text x="10" y="32" fill="#cbd5e1" fontSize="8">Series R-L-C Network, V_out across Resistor R</text>
+              <text x="10" y="45" fill="#94a3b8" fontSize="7.5">Resonance: X_L = X_C  ⇒  |H(jω₀)| = 1 (0 dB maximum)</text>
+              <text x="10" y="58" fill="#fbbf24" fontSize="7.5">Roll-off: -20 dB/dec skirts (-40 dB/dec 2nd-order pole)</text>
+              {/* Mini resonant bell curve */}
+              <path d="M 160,60 Q 185,25 210,60" fill="none" stroke="#fbbf24" strokeWidth="2" />
+              <line x1="155" y1="60" x2="215" y2="60" stroke="#475569" strokeWidth="1" />
+              <circle cx="185" cy="27" r="2" fill="#38bdf8" />
+              <text x="185" y="22" fill="#38bdf8" fontSize="7" textAnchor="middle">f₀</text>
+            </g>
+
+            {/* Bottom-Right: Band-Stop / Notch Filter */}
+            <g transform="translate(280, 126)">
+              <rect x="0" y="0" width="230" height="66" rx="4" fill="#1e293b" stroke="#f43f5e" strokeWidth="1" />
+              <text x="10" y="15" fill="#f43f5e" fontSize="9.5" fontWeight="bold">Band-Stop / Notch Filter</text>
+              <text x="220" y="15" fill="#94a3b8" fontSize="7.5" textAnchor="end">Deep Transmission Null at f₀</text>
+              <text x="10" y="32" fill="#cbd5e1" fontSize="8">Output across series LC or shunt LC tank</text>
+              <text x="10" y="45" fill="#94a3b8" fontSize="7.5">At ω₀: LC short-circuits signal to ground (V_out ≈ 0)</text>
+              <text x="10" y="58" fill="#f43f5e" fontSize="7.5">Application: Eliminates 50 Hz/60 Hz power-line hum</text>
+              {/* Mini notch curve */}
+              <path d="M 160,30 Q 180,30 185,58 Q 190,30 210,30" fill="none" stroke="#f43f5e" strokeWidth="2" />
+              <line x1="155" y1="60" x2="215" y2="60" stroke="#475569" strokeWidth="1" />
+              <circle cx="185" cy="58" r="2" fill="#f43f5e" />
+              <text x="185" y="24" fill="#f43f5e" fontSize="7" textAnchor="middle">Null</text>
+            </g>
+
+            {/* Bottom Summary Bar */}
+            <rect x="30" y="198" width="480" height="34" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="212" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Half-Power Cutoff: |H(jω_c)| = 1/√2 ≈ 0.7071 (-3.01 dB) | P_out = 0.5 P_in | Phase: -45° (LPF), +45° (HPF)
+            </text>
+            <text x="270" y="225" fill="#94a3b8" fontSize="8" textAnchor="middle">
+              Cascaded 1st-order stages roll off at -20 dB/dec per pole; 2nd-order RLC stages roll off at -40 dB/dec.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-sky-300 mt-2 text-center font-semibold">
+            {caption || "Passive AC Filter Design: 1st-order RC/RL and 2nd-order RLC network topologies with -3 dB cutoff boundaries."}
+          </p>
+        </div>
+      );
+
     case 'circuit-ch12-bode-plots-frequency-response':
     case 'circuit-ch12-passive-filters-bode':
       return (
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
-          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
-            {/* Passive Filters & Bode Plots */}
-            <rect x="20" y="20" width="500" height="200" rx="8" fill="#0f172a" stroke="#6366f1" strokeWidth="1.5" />
-            <text x="270" y="42" fill="#a5b4fc" fontSize="12" fontWeight="bold" textAnchor="middle">
-              Passive Filter Topologies & Asymptotic Bode Plot Response
+          <svg viewBox="0 0 540 250" className="w-full max-w-xl h-64">
+            {/* Bode Plots: Magnitude & Phase Frequency Response */}
+            <rect x="15" y="15" width="510" height="225" rx="8" fill="#0f172a" stroke="#6366f1" strokeWidth="1.5" />
+            <text x="270" y="34" fill="#a5b4fc" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Bode Magnitude & Phase Asymptotic Frequency Response
             </text>
 
-            {/* Bode Magnitude Plot */}
-            <g transform="translate(45, 60)">
+            {/* Top Left: Bode Magnitude Plot (Linear dB vs Log ω) */}
+            <g transform="translate(30, 46)">
+              <rect x="0" y="0" width="235" height="108" rx="4" fill="#020617" stroke="#334155" />
+              <text x="10" y="14" fill="#38bdf8" fontSize="9" fontWeight="bold">Magnitude Response |H(jω)| (dB)</text>
               {/* Axes */}
-              <line x1="20" y1="10" x2="20" y2="90" stroke="#64748b" strokeWidth="1.5" />
-              <line x1="20" y1="90" x2="210" y2="90" stroke="#64748b" strokeWidth="1.5" />
-              <text x="15" y="12" fill="#94a3b8" fontSize="8" textAnchor="end">|H| (dB)</text>
-              <text x="210" y="102" fill="#94a3b8" fontSize="8" textAnchor="end">log ω</text>
-
-              {/* 0 dB level */}
-              <line x1="20" y1="30" x2="210" y2="30" stroke="#334155" strokeWidth="1" strokeDasharray="3 2" />
-              <text x="15" y="33" fill="#94a3b8" fontSize="8" textAnchor="end">0 dB</text>
-
-              {/* LPF Curve */}
-              <path d="M 20,30 L 95,30 L 190,85" fill="none" stroke="#22d3ee" strokeWidth="2.5" />
-              {/* -3 dB point */}
-              <circle cx="95" cy="33" r="3" fill="#f43f5e" />
-              <text x="95" y="24" fill="#f43f5e" fontSize="8" fontWeight="bold" textAnchor="middle">-3 dB</text>
-              <text x="95" y="102" fill="#22d3ee" fontSize="8" textAnchor="middle">ω_c = 1/RC</text>
-
-              {/* Slope label */}
-              <text x="165" y="55" fill="#22d3ee" fontSize="8" fontWeight="bold">-20 dB/dec</text>
+              <line x1="30" y1="22" x2="30" y2="92" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="30" y1="62" x2="225" y2="62" stroke="#475569" strokeWidth="1" strokeDasharray="3 2" />
+              <line x1="30" y1="92" x2="225" y2="92" stroke="#64748b" strokeWidth="1.5" />
+              {/* Y ticks */}
+              <text x="25" y="36" fill="#94a3b8" fontSize="7.5" textAnchor="end">+20 dB</text>
+              <text x="25" y="65" fill="#38bdf8" fontSize="7.5" fontWeight="bold" textAnchor="end">0 dB</text>
+              <text x="25" y="90" fill="#94a3b8" fontSize="7.5" textAnchor="end">-20 dB</text>
+              {/* X ticks */}
+              <text x="35" y="103" fill="#64748b" fontSize="7">0.1ω_c</text>
+              <text x="95" y="103" fill="#fbbf24" fontSize="7.5" fontWeight="bold">ω_c</text>
+              <text x="155" y="103" fill="#64748b" fontSize="7">10ω_c</text>
+              <text x="215" y="103" fill="#64748b" fontSize="7">100ω_c</text>
+              {/* Asymptote (0 dB to ω_c, then -20 dB/dec) */}
+              <line x1="30" y1="62" x2="95" y2="62" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 2" />
+              <line x1="95" y1="62" x2="200" y2="92" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x="160" y="78" fill="#64748b" fontSize="7">-20 dB/dec</text>
+              {/* True 1st-order curve */}
+              <path d="M 30,62 L 70,62 Q 95,64 125,72 L 200,92" fill="none" stroke="#22d3ee" strokeWidth="2" />
+              {/* -3.01 dB corner marker */}
+              <circle cx="95" cy="66" r="2.5" fill="#f43f5e" />
+              <text x="95" y="57" fill="#f43f5e" fontSize="7" fontWeight="bold" textAnchor="middle">-3 dB</text>
+              {/* 2nd-order resonance peak */}
+              <path d="M 30,62 L 75,62 Q 90,40 100,45 Q 115,75 160,92" fill="none" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="2 1" />
+              <text x="100" y="36" fill="#fbbf24" fontSize="7" fontWeight="bold" textAnchor="middle">Resonant Peak M_p</text>
             </g>
 
-            {/* 4 Filter Topology Mini-Cards */}
-            <g transform="translate(275, 55)">
-              <rect x="0" y="0" width="105" height="42" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
-              <text x="52" y="15" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">Low-Pass (LPF)</text>
-              <text x="52" y="28" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series R, Shunt C</text>
-              <text x="52" y="38" fill="#94a3b8" fontSize="7" textAnchor="middle">H = 1 / (1 + jω/ωc)</text>
-
-              <rect x="115" y="0" width="105" height="42" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="1" />
-              <text x="167" y="15" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">High-Pass (HPF)</text>
-              <text x="167" y="28" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series C, Shunt R</text>
-              <text x="167" y="38" fill="#94a3b8" fontSize="7" textAnchor="middle">H = jω/ωc / (1 + jω/ωc)</text>
-
-              <rect x="0" y="48" width="105" height="42" rx="3" fill="#1e293b" stroke="#fbbf24" strokeWidth="1" />
-              <text x="52" y="63" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">Band-Pass (BPF)</text>
-              <text x="52" y="76" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series R-L-C</text>
-              <text x="52" y="86" fill="#94a3b8" fontSize="7" textAnchor="middle">Q = ω₀ / BW</text>
-
-              <rect x="115" y="48" width="105" height="42" rx="3" fill="#1e293b" stroke="#ec4899" strokeWidth="1" />
-              <text x="167" y="63" fill="#ec4899" fontSize="9" fontWeight="bold" textAnchor="middle">Notch / Band-Stop</text>
-              <text x="167" y="76" fill="#cbd5e1" fontSize="8" textAnchor="middle">Parallel Tank Shunt</text>
-              <text x="167" y="86" fill="#94a3b8" fontSize="7" textAnchor="middle">Rejects 50/60 Hz hum</text>
+            {/* Top Right: Bode Phase Plot (Linear Degrees vs Log ω) */}
+            <g transform="translate(275, 46)">
+              <rect x="0" y="0" width="235" height="108" rx="4" fill="#020617" stroke="#334155" />
+              <text x="10" y="14" fill="#a78bfa" fontSize="9" fontWeight="bold">Phase Response ∠H(jω) (Degrees)</text>
+              {/* Axes */}
+              <line x1="30" y1="22" x2="30" y2="92" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="30" y1="92" x2="225" y2="92" stroke="#64748b" strokeWidth="1.5" />
+              {/* Y ticks */}
+              <text x="25" y="32" fill="#34d399" fontSize="7.5" textAnchor="end">0°</text>
+              <line x1="28" y1="30" x2="225" y2="30" stroke="#334155" strokeWidth="1" strokeDasharray="2 2" />
+              <text x="25" y="58" fill="#fbbf24" fontSize="7.5" fontWeight="bold" textAnchor="end">-45°</text>
+              <line x1="28" y1="56" x2="225" y2="56" stroke="#334155" strokeWidth="1" strokeDasharray="2 2" />
+              <text x="25" y="86" fill="#f43f5e" fontSize="7.5" textAnchor="end">-90°</text>
+              <line x1="28" y1="84" x2="225" y2="84" stroke="#334155" strokeWidth="1" strokeDasharray="2 2" />
+              {/* X ticks */}
+              <text x="35" y="103" fill="#64748b" fontSize="7">0.1ω_c</text>
+              <text x="95" y="103" fill="#fbbf24" fontSize="7.5" fontWeight="bold">ω_c</text>
+              <text x="155" y="103" fill="#64748b" fontSize="7">10ω_c</text>
+              {/* Asymptotic phase line: 0° up to 0.1wc, sloping at -45°/dec, -90° past 10wc */}
+              <polyline points="30,30 45,30 155,84 220,84" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 2" />
+              <text x="120" y="68" fill="#64748b" fontSize="7">-45°/dec</text>
+              {/* True smooth phase curve */}
+              <path d="M 30,30 Q 55,30 95,56 Q 135,84 220,84" fill="none" stroke="#a78bfa" strokeWidth="2" />
+              <circle cx="95" cy="56" r="2.5" fill="#fbbf24" />
+              <text x="102" y="52" fill="#fbbf24" fontSize="7" fontWeight="bold">-45° at ω_c</text>
             </g>
 
-            {/* Bottom summary */}
-            <rect x="40" y="160" width="460" height="48" rx="4" fill="#020617" stroke="#334155" />
-            <text x="270" y="178" fill="#a5b4fc" fontSize="9.5" fontWeight="bold" textAnchor="middle">
-              Cutoff Frequency: |H(jω_c)| = 1/√2 = -3.01 dB (Half-Power Point) | Phase Shift: -45° (LPF) / +45° (HPF)
+            {/* Bottom: Transfer Function & Stability Reference */}
+            <rect x="30" y="162" width="480" height="70" rx="4" fill="#020617" stroke="#334155" />
+            <text x="45" y="178" fill="#fbbf24" fontSize="9.5" fontWeight="bold">
+              Standard Forms:
             </text>
-            <text x="270" y="195" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
-              Bode Plots decompose transfer functions into straight-line asymptotic magnitude slopes and phase tangents.
+            <text x="145" y="178" fill="#38bdf8" fontSize="9">
+              1st-Order: H(s) = K / [1 + s/ω_c]  ⇒  Roll-off: -20 dB/decade (-6 dB/octave)
+            </text>
+            <text x="145" y="193" fill="#a5b4fc" fontSize="9">
+              2nd-Order: H(s) = ω₀² / [s² + 2ζω₀s + ω₀²]  ⇒  Roll-off: -40 dB/decade (-12 dB/octave)
+            </text>
+            <text x="45" y="210" fill="#34d399" fontSize="9" fontWeight="bold">
+              Stability Metrics:
+            </text>
+            <text x="145" y="210" fill="#cbd5e1" fontSize="8.5">
+              Gain Margin GM = -|H(jω_π)|_dB (at ∠H = -180°) | Phase Margin PM = 180° + ∠H(jω_g) (at |H| = 0 dB)
+            </text>
+            <text x="45" y="225" fill="#94a3b8" fontSize="8">
+              Resonant Peak occurs when damping ratio ζ &lt; 0.7071 (Q &gt; 0.7071): M_p = 1 / [2ζ√(1 - ζ²)] ≈ Q
             </text>
           </svg>
           <p className="text-xs font-mono text-indigo-300 mt-2 text-center font-semibold">
-            {caption || "Frequency Response & Bode Plots: 1st and 2nd order passive filters with cutoff frequencies and decibel roll-offs."}
+            {caption || "Bode Plots & Frequency Response: Magnitude asymptotes, -3 dB corner error, and phase response."}
           </p>
         </div>
       );
@@ -7855,6 +7990,229 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
           </svg>
           <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
             {caption || "AC Two-Port Parameters: Formal matrix representations with reciprocity (AD - BC = 1) and symmetry (A = D) conditions."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-non-sinusoidal-harmonics':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            <rect x="15" y="15" width="510" height="210" rx="8" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
+            <text x="270" y="36" fill="#22d3ee" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Non-Sinusoidal AC Waveform Fourier Decomposition & Harmonic Impedance
+            </text>
+
+            {/* Source Decomposition on Left */}
+            <g transform="translate(40, 55)">
+              <rect x="0" y="0" width="170" height="110" rx="6" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="85" y="20" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">
+                Fourier Series Source v(t)
+              </text>
+              {/* Stacked Sources */}
+              <circle cx="45" cy="50" r="13" fill="#0f172a" stroke="#a855f7" strokeWidth="1.5" />
+              <text x="45" y="54" fill="#a855f7" fontSize="9" fontWeight="bold" textAnchor="middle">V_dc</text>
+              
+              <circle cx="85" cy="50" r="13" fill="#0f172a" stroke="#3b82f6" strokeWidth="1.5" />
+              <text x="85" y="54" fill="#60a5fa" fontSize="9" fontWeight="bold" textAnchor="middle">v₁(t)</text>
+
+              <circle cx="125" cy="50" r="13" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="125" y="54" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">v_n(t)</text>
+
+              <text x="85" y="85" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
+                v(t) = V_dc + Σ V_n sin(nωt + θ_n)
+              </text>
+              <text x="85" y="100" fill="#22d3ee" fontSize="8" textAnchor="middle">
+                Superposition Principle
+              </text>
+            </g>
+
+            {/* Connecting Lines */}
+            <line x1="210" y1="80" x2="260" y2="80" stroke="#f59e0b" strokeWidth="2.5" />
+            <polygon points="250,76 260,80 250,84" fill="#f59e0b" />
+            <text x="235" y="72" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">i(t)</text>
+
+            <line x1="210" y1="140" x2="480" y2="140" stroke="#64748b" strokeWidth="2" />
+            <line x1="480" y1="80" x2="480" y2="140" stroke="#64748b" strokeWidth="2" />
+
+            {/* Load Branch on Right (Series R-L) */}
+            <g transform="translate(260, 68)">
+              {/* Resistor R */}
+              <rect x="0" y="0" width="60" height="24" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="1.5" />
+              <text x="30" y="15" fill="#34d399" fontSize="10" fontWeight="bold" textAnchor="middle">R (Fixed)</text>
+
+              <line x1="60" y1="12" x2="90" y2="12" stroke="#64748b" strokeWidth="2" />
+
+              {/* Inductor L with frequency-dependent reactance */}
+              <g transform="translate(90, 0)">
+                <rect x="0" y="0" width="90" height="24" rx="3" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+                <text x="45" y="15" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle">X_Ln = n · ωL</text>
+              </g>
+
+              <line x1="180" y1="12" x2="220" y2="12" stroke="#64748b" strokeWidth="2" />
+
+              <text x="110" y="42" fill="#e2e8f0" fontSize="9" textAnchor="middle">
+                Z_n = R + j(nωL) ⟹ Attenuates Higher Harmonics
+              </text>
+            </g>
+
+            {/* Parseval RMS Formula Box */}
+            <rect x="35" y="175" width="470" height="38" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="191" fill="#22d3ee" fontSize="10" fontWeight="bold" textAnchor="middle">
+              V_rms = √( V_dc² + V₁,rms² + V₃,rms² + V₅,rms² + ... )  |  Form Factor k_f = V_rms / V_avg
+            </text>
+            <text x="270" y="205" fill="#fbbf24" fontSize="9" textAnchor="middle">
+              Cross-frequency active power is zero: P_total = V_dc · I_dc + Σ V_n,rms · I_n,rms · cos(φ_n)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Non-Sinusoidal AC Harmonics: Fourier series decomposition, frequency-dependent branch impedance Z_n, and Parseval true RMS power."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-thd-distortion-power':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            <rect x="15" y="15" width="510" height="210" rx="8" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="270" y="36" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Total Harmonic Distortion (THD), Neutral Overload & Budeanu Power (S² = P² + Q² + D²)
+            </text>
+
+            {/* 3-Phase 4-Wire System with Non-Linear Loads */}
+            <g transform="translate(35, 55)">
+              {/* Supply Lines */}
+              <text x="0" y="18" fill="#ef4444" fontSize="10" fontWeight="bold">Phase A:</text>
+              <line x1="55" y1="15" x2="200" y2="15" stroke="#ef4444" strokeWidth="2" />
+              <text x="120" y="11" fill="#fca5a5" fontSize="8">I_A (Fundamental + 3rd + 5th)</text>
+
+              <text x="0" y="43" fill="#eab308" fontSize="10" fontWeight="bold">Phase B:</text>
+              <line x1="55" y1="40" x2="200" y2="40" stroke="#eab308" strokeWidth="2" />
+              <text x="120" y="36" fill="#fef08a" fontSize="8">I_B (Fundamental + 3rd + 5th)</text>
+
+              <text x="0" y="68" fill="#3b82f6" fontSize="10" fontWeight="bold">Phase C:</text>
+              <line x1="55" y1="65" x2="200" y2="65" stroke="#3b82f6" strokeWidth="2" />
+              <text x="120" y="61" fill="#93c5fd" fontSize="8">I_C (Fundamental + 3rd + 5th)</text>
+
+              {/* Neutral Conductor */}
+              <text x="0" y="96" fill="#f43f5e" fontSize="10" fontWeight="bold">Neutral N:</text>
+              <line x1="55" y1="92" x2="200" y2="92" stroke="#f43f5e" strokeWidth="3" strokeDasharray="5 2" />
+              <text x="120" y="106" fill="#fb7185" fontSize="9" fontWeight="bold">I_N = 3 · I₃ (Triplens in Phase!)</text>
+            </g>
+
+            {/* Non-Linear Loads Block on Right */}
+            <g transform="translate(250, 55)">
+              <rect x="0" y="5" width="240" height="98" rx="6" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="120" y="24" fill="#fbbf24" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+                Nonlinear Rectifier / SMPS / VFD
+              </text>
+              
+              {/* Diode Bridge Symbol snippet */}
+              <g transform="translate(40, 35)">
+                <rect x="0" y="0" width="160" height="42" rx="4" fill="#0f172a" stroke="#64748b" />
+                <text x="80" y="18" fill="#38bdf8" fontSize="9" textAnchor="middle">
+                  Current THD_i = √(Σ I_n²) / I₁ × 100%
+                </text>
+                <text x="80" y="33" fill="#ec4899" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+                  Distortion Factor: ν = I₁ / I_rms = 1 / √(1 + THD²)
+                </text>
+              </g>
+
+              <text x="120" y="93" fill="#a855f7" fontSize="8.5" textAnchor="middle">
+                True PF = DPF · Distortion Factor = cos(φ₁) · ν
+              </text>
+            </g>
+
+            {/* Budeanu Orthogonal Power Triangle Box */}
+            <rect x="35" y="168" width="470" height="44" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="184" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Apparent Power: S² = P² + Q² + D²  |  Distortion Power D = V₁ · √(Σ I_n²)  [Units: VAD]
+            </text>
+            <text x="270" y="200" fill="#f87171" fontSize="9" textAnchor="middle">
+              ⚠️ Shunt power-factor capacitors cannot cancel D! Active Harmonic Filters (AHF) or detuned reactors required.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-semibold">
+            {caption || "Total Harmonic Distortion (THD): Triplen harmonic neutral current multiplication (I_N = 3·I_3) and Budeanu distortion power D."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-ac-locus-diagrams':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            <rect x="15" y="15" width="510" height="210" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+            <text x="270" y="36" fill="#34d399" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Complex Plane Inversion (w = 1/z) & AC Current Locus Semicircles
+            </text>
+
+            {/* Left: Impedance Plane Z = R + jXL */}
+            <g transform="translate(30, 50)">
+              <rect x="0" y="0" width="220" height="110" rx="6" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+              <text x="110" y="18" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">
+                Impedance Z-Plane (R varies 0 → ∞)
+              </text>
+
+              {/* Axes */}
+              <line x1="25" y1="85" x2="200" y2="85" stroke="#64748b" strokeWidth="1" />
+              <line x1="45" y1="100" x2="45" y2="25" stroke="#64748b" strokeWidth="1" />
+              <text x="200" y="95" fill="#94a3b8" fontSize="8">Re(Z)</text>
+              <text x="35" y="28" fill="#94a3b8" fontSize="8">+j</text>
+
+              {/* Horizontal line locus at jXL */}
+              <line x1="45" y1="50" x2="195" y2="50" stroke="#38bdf8" strokeWidth="2.5" />
+              <circle cx="45" cy="50" r="3" fill="#38bdf8" />
+              <text x="38" y="53" fill="#38bdf8" fontSize="8" textAnchor="end">jX_L</text>
+              <text x="120" y="44" fill="#38bdf8" fontSize="8.5" fontWeight="bold">Z = R + jX_L (Straight Line)</text>
+              <text x="110" y="102" fill="#94a3b8" fontSize="8" textAnchor="middle">d = X_L (Distance to Origin)</text>
+            </g>
+
+            {/* Conformal Mapping Arrow */}
+            <g transform="translate(255, 95)">
+              <line x1="0" y1="10" x2="25" y2="10" stroke="#10b981" strokeWidth="2.5" />
+              <polygon points="23,6 30,10 23,14" fill="#10b981" />
+              <text x="14" y="2" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">Y = 1/Z</text>
+              <text x="14" y="24" fill="#94a3b8" fontSize="7.5" textAnchor="middle">I = V·Y</text>
+            </g>
+
+            {/* Right: Current Locus Plane (Semicircle in 4th quadrant) */}
+            <g transform="translate(290, 50)">
+              <rect x="0" y="0" width="220" height="110" rx="6" fill="#1e293b" stroke="#f59e0b" strokeWidth="1" />
+              <text x="110" y="18" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">
+                Current I-Plane (4th Quadrant Semicircle)
+              </text>
+
+              {/* Axes */}
+              <line x1="25" y1="35" x2="200" y2="35" stroke="#64748b" strokeWidth="1" />
+              <line x1="45" y1="25" x2="45" y2="100" stroke="#64748b" strokeWidth="1" />
+              <text x="200" y="30" fill="#94a3b8" fontSize="8">+Re(I)</text>
+              <text x="35" y="100" fill="#94a3b8" fontSize="8">-j</text>
+
+              {/* Semicircle Arc from (45, 35) to (45, 95) */}
+              <path d="M 45 35 A 30 30 0 0 1 45 95" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+              <circle cx="45" cy="95" r="3" fill="#f59e0b" />
+              <text x="38" y="98" fill="#fbbf24" fontSize="8" textAnchor="end">V/X_L</text>
+
+              {/* Phasor Arrow to 45 deg */}
+              <line x1="45" y1="35" x2="66" y2="56" stroke="#10b981" strokeWidth="2" />
+              <circle cx="66" cy="56" r="3" fill="#10b981" />
+              <text x="72" y="60" fill="#34d399" fontSize="8" fontWeight="bold">P_max (R = X_L)</text>
+              <text x="110" y="102" fill="#fbbf24" fontSize="8" textAnchor="middle">Diameter D = V / X_L along -j axis</text>
+            </g>
+
+            {/* Bottom Summary Box */}
+            <rect x="35" y="168" width="470" height="44" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="184" fill="#34d399" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Circle Inversion: Any line in Z-plane transforms into a circle passing through the origin in I-plane
+            </text>
+            <text x="270" y="200" fill="#fbbf24" fontSize="9" textAnchor="middle">
+              Maximum Active Power: P_max = V² / (2X_L) at φ = -45°  |  Foundation for Induction Motor Heyland Circle Diagrams
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "AC Locus Diagrams: Conformal mapping w = 1/z turning linear impedance into circular current loci with maximum active power tangent."}
           </p>
         </div>
       );

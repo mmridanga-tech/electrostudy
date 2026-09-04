@@ -150,6 +150,9 @@ import { IdealTransformerComplexPerUnitAnimation } from './interactive/IdealTran
 import { PassiveFilterDesignAnimation } from './interactive/PassiveFilterDesignAnimation';
 import { BodePlotFrequencyResponseAnimation } from './interactive/BodePlotFrequencyResponseAnimation';
 import { TwoPortNetworkParametersAnimation } from './interactive/TwoPortNetworkParametersAnimation';
+import { NonSinusoidalHarmonicsVisualizer } from './interactive/NonSinusoidalHarmonicsVisualizer';
+import { THDDistortionPowerAnalyzer } from './interactive/THDDistortionPowerAnalyzer';
+import { ACLocusDiagramsExplorer } from './interactive/ACLocusDiagramsExplorer';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -922,27 +925,26 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     return <ReflectedImpedanceTNetworkAnimation currentLanguage={currentLanguage} />;
   }
 
-  // Lesson 5: Ideal Transformers, Complex Turns Ratio & Per-Unit (p.u.) Impedance
+  // Lesson 5: Passive AC Filter Design
   if (
     lessonId === 'lsn-ch12-passive-filters-design' ||
-    lessonId === 'lsn-ch12-ideal-transformers-puz' ||
     ((topicId === 'tp-rc-circuit' || topicId === 'tp-rc-series') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
   ) {
+    return <PassiveFilterDesignAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Legacy fallback for Ideal Transformers if requested
+  if (lessonId === 'lsn-ch12-ideal-transformers-puz') {
     return <IdealTransformerComplexPerUnitAnimation currentLanguage={currentLanguage} />;
   }
 
-  // Lesson 6: Passive Filters & Frequency Response (Bode Plots)
+  // Lesson 6: Bode Plots & Frequency Response of AC Circuits
   if (
     lessonId === 'lsn-ch12-bode-plots-frequency-response' ||
     lessonId === 'lsn-ch12-passive-filters-bode' ||
     ((topicId === 'tp-rlc-circuit' || topicId === 'tp-rlc-series') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
   ) {
-    return (
-      <div className="space-y-6">
-        <PassiveFilterDesignAnimation currentLanguage={currentLanguage} />
-        <BodePlotFrequencyResponseAnimation currentLanguage={currentLanguage} />
-      </div>
-    );
+    return <BodePlotFrequencyResponseAnimation currentLanguage={currentLanguage} />;
   }
 
   // Lesson 7: Two-Port Network Parameters in the AC Domain (Z, Y, ABCD, h)
@@ -952,6 +954,30 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     ((topicId === 'tp-admittance-intro' || topicId === 'tp-rlc-parallel' || topicId === 'tp-impedance') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
   ) {
     return <TwoPortNetworkParametersAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 8: Non-Sinusoidal AC Waveforms & Harmonics
+  if (
+    lessonId === 'lsn-ch12-non-sinusoidal-harmonics' ||
+    ((topicId === 'tp-reactance' || topicId === 'tp-non-sinusoidal-harmonics' || topicId === 'tp-harmonics') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <NonSinusoidalHarmonicsVisualizer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 9: Total Harmonic Distortion & Network Impact
+  if (
+    lessonId === 'lsn-ch12-thd-distortion-power' ||
+    ((topicId === 'tp-phasor-concept' || topicId === 'tp-thd-distortion-power') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <THDDistortionPowerAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 10: AC Locus Diagrams
+  if (
+    lessonId === 'lsn-ch12-ac-locus-diagrams' ||
+    ((topicId === 'tp-power-ac-circuit' || topicId === 'tp-ac-locus-diagrams' || topicId === 'tp-locus-diagrams') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <ACLocusDiagramsExplorer currentLanguage={currentLanguage} />;
   }
 
   if (
