@@ -11,6 +11,7 @@ import { CHAPTER_9_LESSONS } from './chapter9Lessons';
 import { CHAPTER_10_LESSONS } from './chapter10Lessons';
 import { CHAPTER_11_LESSONS } from './chapter11Lessons';
 import { CHAPTER_12_LESSONS } from './chapter12Lessons';
+import { CHAPTER_13_LESSONS } from './chapter13Lessons';
 import { CHAPTER_15_LESSONS } from './chapter15Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
@@ -2351,109 +2352,109 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 13,
         title: {
-          en: 'Chapter 13: Power Factor',
-          hi: 'अध्याय 13: पावर फैक्टर (शक्ति गुणांक)',
-          bn: 'অধ্যায় ১৩: পাওয়ার ফ্যাক্টর'
+          en: 'Chapter 13: Power Factor Engineering & Reactive Power Compensation',
+          hi: 'अध्याय 13: पावर फैक्टर इंजीनियरिंग एवं रिएक्टिव पावर कंपेंसेशन',
+          bn: 'অধ্যায় ১৩: পাওয়ার ফ্যাক্টর ইঞ্জিনিয়ারিং ও রিঅ্যাক্টিভ পাওয়ার ক্ষতিপূরণ'
         },
         topics: [
           {
-            id: 'tp-pf-definition',
+            id: 'tp-power-factor-intro',
             chapterId: 'ch-power-factor',
             order: 1,
             title: {
-              en: 'Definition of Power Factor',
-              hi: 'पावर फैक्टर की परिभाषा',
-              bn: 'পাওয়ার ফ্যাক্টরের সংজ্ঞায়ন'
+              en: 'Fundamentals of Power Factor & The Power Triangle',
+              hi: 'पावर फैक्टर के मूल सिद्धांत एवं शक्ति त्रिभुज',
+              bn: 'পাওয়ার ফ্যাক্টরের মৌলিক নীতি ও পাওয়ার ট্রায়াঙ্গেল'
             }
           },
           {
-            id: 'tp-lagging-pf',
+            id: 'tp-power-factor-correction',
             chapterId: 'ch-power-factor',
             order: 2,
             title: {
-              en: 'Lagging Power Factor',
-              hi: 'लैगिंग पावर फैक्टर',
-              bn: 'ল্যাগিং পাওয়ার ফ্যাক্টর'
+              en: 'Practical Power Factor Correction Methods',
+              hi: 'व्यावहारिक पावर फैक्टर सुधार विधियाँ',
+              bn: 'ব্যবহারিক পাওয়ার ফ্যাক্টর সংশোধন পদ্ধতি'
             }
           },
           {
-            id: 'tp-leading-pf',
+            id: 'tp-capacitor-bank-sizing',
             chapterId: 'ch-power-factor',
             order: 3,
             title: {
-              en: 'Leading Power Factor',
-              hi: 'लीडिंग पावर फैक्टर',
-              bn: 'লিডিং পাওয়ার ফ্যাক্টর'
+              en: 'Capacitor Bank Sizing & Engineering Design',
+              hi: 'कैपेसिटर बैंक साइज़िंग एवं इंजीनियरिंग डिज़ाइन',
+              bn: 'ক্যাপাসিটর ব্যাংক সাইজিং ও ইঞ্জিনিয়ারিং নকশা'
             }
           },
           {
-            id: 'tp-unity-pf',
+            id: 'tp-automatic-pfc',
             chapterId: 'ch-power-factor',
             order: 4,
             title: {
-              en: 'Unity Power Factor',
-              hi: 'यूनिटी पावर फैक्टर',
-              bn: 'ইউনিটি পাওয়ার ফ্যাক্টর'
+              en: 'APFC Panels & Automation',
+              hi: 'APFC पैनल एवं ऑटोमेशन',
+              bn: 'APFC প্যানেল ও স্বয়ংক্রিয় নিয়ন্ত্রণ'
             }
           },
           {
-            id: 'tp-active-power',
+            id: 'tp-reactive-power-flow',
             chapterId: 'ch-power-factor',
             order: 5,
             title: {
-              en: 'Active Power',
-              hi: 'एक्टिव पावर (वास्तविक शक्ति)',
-              bn: 'অ্যাক্টিভ পাওয়ার (প্রকৃত শক্তি)'
+              en: 'Reactive Power Flow & Voltage Stability',
+              hi: 'रिएक्टिव पावर प्रवाह एवं वोल्टेज स्थिरता',
+              bn: 'রিঅ্যাক্টিভ পাওয়ার প্রবাহ ও ভোল্টেজ স্থায়িত্ব'
             }
           },
           {
-            id: 'tp-reactive-power',
+            id: 'tp-harmonic-pfc-interaction',
             chapterId: 'ch-power-factor',
             order: 6,
             title: {
-              en: 'Reactive Power',
-              hi: 'रिएक्टिव पावर (प्रतिघाती शक्ति)',
-              bn: 'রিয়্যাক্টিভ পাওয়ার (প্রতিক্রিয়াশীল শক্তি)'
+              en: 'Harmonics, Resonance & Detuned Filter Design',
+              hi: 'हार्मोनिक्स, अनुनाद एवं डिट्यून्ड फिल्टर डिज़ाइन',
+              bn: 'হারমোনিকস, রেজোন্যান্স ও ডিটিউনড ফিল্টার ডিজাইন'
             }
           },
           {
-            id: 'tp-apparent-power',
+            id: 'tp-power-quality-compensation',
             chapterId: 'ch-power-factor',
             order: 7,
             title: {
-              en: 'Apparent Power',
-              hi: 'एपेरेंट पावर (आभासी शक्ति)',
-              bn: 'অ্যাপারেন্ট পাওয়ার (আপাত শক্তি)'
+              en: 'Industrial Power Factor Economics & Case Studies',
+              hi: 'औद्योगिक पावर फैक्टर अर्थशास्त्र एवं केस स्टडीज',
+              bn: 'শিল্প পাওয়ার ফ্যাক্টর অর্থনীতি ও কেস স্টাডি'
             }
           },
           {
-            id: 'tp-power-triangle',
+            id: 'tp-demand-tariff-pf-economics',
             chapterId: 'ch-power-factor',
             order: 8,
             title: {
-              en: 'Power Triangle',
-              hi: 'पावर ट्रायंगल (शक्ति त्रिभुज)',
-              bn: 'পাওয়ার ট্রায়াঙ্গেল'
+              en: 'Maximum Demand, Utility Tariffs & PFC Economics',
+              hi: 'अधिकतम मांग, बिजली टैरिफ एवं PFC अर्थशास्त्र',
+              bn: 'সর্বোচ্চ চাহিদা, ইউটিলিটি ট্যারিফ ও PFC অর্থনীতি'
             }
           },
           {
-            id: 'tp-pf-calculation',
+            id: 'tp-pfc-commissioning-troubleshooting',
             chapterId: 'ch-power-factor',
             order: 9,
             title: {
-              en: 'Power Factor Calculation',
-              hi: 'पावर फैक्टर की गणना',
-              bn: 'পাওয়ার ফ্যাক্টর গণনা'
+              en: 'Commissioning, Field Testing & APFC Troubleshooting',
+              hi: 'कमिशनिंग, फील्ड टेस्टिंग एवं APFC ट्रबलशूटिंग',
+              bn: 'কমিশনিং, ফিল্ড টেস্টিং ও APFC ট্রাবলশুটিং'
             }
           },
           {
-            id: 'tp-pf-improvement-intro',
+            id: 'tp-pfc-engineering-capstone',
             chapterId: 'ch-power-factor',
             order: 10,
             title: {
-              en: 'Power Factor Improvement — Introduction',
-              hi: 'पावर फैक्टर सुधार — परिचय',
-              bn: 'পাওয়ার ফ্যাক্টর উন্নয়ন — পরিচিতি'
+              en: 'Complete Industrial PFC Design Capstone',
+              hi: 'पूर्ण औद्योगिक PFC डिजाइन कैपस्टोन',
+              bn: 'সম্পূর্ণ শিল্প PFC নকশা ক্যাপস্টোন'
             }
           }
         ]
@@ -2824,6 +2825,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_12_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-power-factor') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_13_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

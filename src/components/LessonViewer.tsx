@@ -154,6 +154,18 @@ import { NonSinusoidalHarmonicsVisualizer } from './interactive/NonSinusoidalHar
 import { THDDistortionPowerAnalyzer } from './interactive/THDDistortionPowerAnalyzer';
 import { ACLocusDiagramsExplorer } from './interactive/ACLocusDiagramsExplorer';
 
+// Chapter 13: Power Factor Engineering & Reactive Power Compensation
+import { PowerFactorTriangleAnalyzer } from './interactive/PowerFactorTriangleAnalyzer';
+import { PFCompensationMethodsExplorer } from './interactive/PFCompensationMethodsExplorer';
+import { CapacitorBankSizingCalculator } from './interactive/CapacitorBankSizingCalculator';
+import { APFCPanelSimulator } from './interactive/APFCPanelSimulator';
+import { ReactivePowerFlowVisualizer } from './interactive/ReactivePowerFlowVisualizer';
+import { HarmonicResonanceAnalyzer } from './interactive/HarmonicResonanceAnalyzer';
+import { IndustrialPFCaseStudySimulator } from './interactive/IndustrialPFCaseStudySimulator';
+import { PowerFactorTariffSavingsCalculator } from './interactive/PowerFactorTariffSavingsCalculator';
+import { PFCCommissioningTroubleshooter } from './interactive/PFCCommissioningTroubleshooter';
+import { IndustrialPFCDesignCapstone } from './interactive/IndustrialPFCDesignCapstone';
+
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
   const lessonId = lesson.id || '';
@@ -980,6 +992,115 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     return <ACLocusDiagramsExplorer currentLanguage={currentLanguage} />;
   }
 
+  // Chapter 13: Power Factor Engineering & Reactive Power Compensation
+  // Lesson 1: Fundamentals of Power Factor & The Power Triangle
+  if (
+    lessonId === 'lsn-ch13-pf-engineering-fundamentals' ||
+    lessonId === 'lsn-ch13-fundamentals-power-factor' ||
+    topicId === 'tp-power-factor-intro' ||
+    topicId === 'tp-pf-definition' ||
+    lessonId === 'ch13-pf-engineering-fundamentals'
+  ) {
+    return <PowerFactorTriangleAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 2: Practical Power Factor Correction Methods
+  if (
+    lessonId === 'lsn-ch13-pf-correction-methods' ||
+    lessonId === 'lsn-ch13-practical-pfc-methods' ||
+    topicId === 'tp-power-factor-correction' ||
+    topicId === 'tp-lagging-pf' ||
+    lessonId === 'ch13-pf-correction-methods'
+  ) {
+    return <PFCompensationMethodsExplorer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 3: Capacitor Bank Sizing & Engineering Design
+  if (
+    lessonId === 'lsn-ch13-capacitor-bank-sizing' ||
+    topicId === 'tp-capacitor-bank-sizing' ||
+    topicId === 'tp-leading-pf' ||
+    lessonId === 'ch13-capacitor-bank-sizing'
+  ) {
+    return <CapacitorBankSizingCalculator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 4: Automatic Power Factor Correction (APFC) Panels
+  if (
+    lessonId === 'lsn-ch13-apfc-panel-design' ||
+    lessonId === 'lsn-ch13-apfc-panels-automation' ||
+    topicId === 'tp-automatic-pfc' ||
+    topicId === 'tp-unity-pf' ||
+    lessonId === 'ch13-apfc-panel-design'
+  ) {
+    return <APFCPanelSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 5: Reactive Power Flow & Voltage Regulation
+  if (
+    lessonId === 'lsn-ch13-reactive-power-flow-voltage' ||
+    lessonId === 'lsn-ch13-reactive-power-flow' ||
+    topicId === 'tp-reactive-power-flow' ||
+    topicId === 'tp-active-power' ||
+    lessonId === 'ch13-reactive-power-flow-voltage'
+  ) {
+    return <ReactivePowerFlowVisualizer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 6: Harmonics, Capacitor Banks & Resonance
+  if (
+    lessonId === 'lsn-ch13-harmonics-capacitor-resonance' ||
+    lessonId === 'lsn-ch13-harmonics-resonance-detuning' ||
+    topicId === 'tp-harmonic-pfc-interaction' ||
+    topicId === 'tp-harmonic-resonance' ||
+    topicId === 'tp-reactive-power' ||
+    lessonId === 'ch13-harmonics-capacitor-resonance'
+  ) {
+    return <HarmonicResonanceAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 7: Industrial Power Quality & Compensation Case Studies
+  if (
+    lessonId === 'lsn-ch13-power-quality-compensation' ||
+    lessonId === 'lsn-ch13-industrial-pf-case-study' ||
+    topicId === 'tp-power-quality-compensation' ||
+    topicId === 'tp-pf-economics' ||
+    topicId === 'tp-apparent-power' ||
+    lessonId === 'ch13-power-quality-compensation'
+  ) {
+    return <IndustrialPFCaseStudySimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 8: Maximum Demand, Utility Tariffs & PFC Economics
+  if (
+    lessonId === 'lsn-ch13-pf-economics-demand-tariff' ||
+    topicId === 'tp-demand-tariff-pf-economics' ||
+    lessonId === 'ch13-pf-economics-demand-tariff' ||
+    topicId === 'ch13-pf-economics-demand-tariff'
+  ) {
+    return <PowerFactorTariffSavingsCalculator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 9: Commissioning, Field Testing & APFC Troubleshooting
+  if (
+    lessonId === 'lsn-ch13-pfc-commissioning-troubleshooting' ||
+    topicId === 'tp-pfc-commissioning-troubleshooting' ||
+    lessonId === 'ch13-pfc-commissioning-troubleshooting' ||
+    topicId === 'ch13-pfc-commissioning-troubleshooting'
+  ) {
+    return <PFCCommissioningTroubleshooter currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 10: Complete Industrial PFC Design Capstone
+  if (
+    lessonId === 'lsn-ch13-pfc-engineering-capstone' ||
+    topicId === 'tp-pfc-engineering-capstone' ||
+    lessonId === 'ch13-pfc-engineering-capstone' ||
+    topicId === 'ch13-pfc-engineering-capstone'
+  ) {
+    return <IndustrialPFCDesignCapstone currentLanguage={currentLanguage} />;
+  }
+
   if (
     topicId.startsWith('ps-') ||
     lessonId.startsWith('lesson-ps-') ||
@@ -1304,7 +1425,7 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
             <CheckCircle2 className="w-4 h-4 text-emerald-500" />
             <span>Step-by-Step Solved Example</span>
           </h4>
-          {(lesson.solvedExamples || lesson.workedExamples || []).map((ex, idx) => (
+          {(lesson.solvedExamples || lesson.workedExamples || lesson.examples || []).map((ex, idx) => (
             <div key={ex.id || idx} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3 print-avoid-break">
               <div className="font-semibold text-sm text-slate-900 dark:text-white">
                 <span className="text-cyan-600 dark:text-cyan-400 font-bold mr-2">Problem:</span>
@@ -1442,10 +1563,15 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                    {mcq.options.map((opt) => {
-                      const optText = opt.text[currentLanguage] || opt.text.en;
-                      const isSelected = userSelected === opt.id;
-                      const isCorrect = mcq.correctOptionId === opt.id;
+                    {mcq.options.map((opt, oIdx) => {
+                      const optId = opt.id || `opt-${oIdx + 1}`;
+                      const optText = opt.text
+                        ? (opt.text[currentLanguage] || opt.text.en)
+                        : (opt[currentLanguage] || opt.en || '');
+                      const isSelected = userSelected === optId;
+                      const isCorrect = mcq.correctOptionId
+                        ? mcq.correctOptionId === optId
+                        : mcq.correctAnswer === oIdx;
 
                       let btnStyle = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-cyan-400";
                       
@@ -1459,12 +1585,12 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
 
                       return (
                         <button
-                          key={opt.id}
-                          onClick={() => handleSelectOption(mcq.id, opt.id)}
+                          key={optId}
+                          onClick={() => handleSelectOption(mcq.id, optId)}
                           className={`p-3 rounded-lg border text-xs text-left transition-all flex items-center justify-between ${btnStyle} ${isCorrect ? 'print:border-emerald-600 print:bg-emerald-50 print:font-bold' : 'print:border-slate-300'}`}
                         >
                           <span>
-                            <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({opt.id})</strong>
+                            <strong className="uppercase mr-2 font-mono text-cyan-600 dark:text-cyan-400 print:text-black">({opt.id || String.fromCharCode(65 + oIdx)})</strong>
                             {optText}
                           </span>
                           {userSelected && isCorrect && <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 ml-2" />}

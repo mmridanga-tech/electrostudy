@@ -50,15 +50,19 @@ export interface SolvedExample {
 }
 
 export interface MCQOption {
-  id: string;
-  text: MultilingualText;
+  id?: string;
+  text?: MultilingualText;
+  en?: string;
+  hi?: string;
+  bn?: string;
 }
 
 export interface MCQQuestion {
   id: string;
   question: MultilingualText;
   options: MCQOption[];
-  correctOptionId: string;
+  correctOptionId?: string;
+  correctAnswer?: number;
   explanation: MultilingualText;
 }
 
@@ -100,6 +104,7 @@ export interface Lesson {
   diagrams?: LessonDiagram[];
   solvedExamples?: SolvedExample[];
   workedExamples?: SolvedExample[];
+  examples?: SolvedExample[];
   practicalApplications?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   importantPoints?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   keyTakeaways?: MultilingualList | MultilingualText[] | Record<string, string[]>;

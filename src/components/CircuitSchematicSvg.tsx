@@ -8217,6 +8217,707 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch13-pf-power-triangle':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Grid and Axes */}
+            <line x1="40" y1="40" x2="40" y2="180" stroke="#334155" strokeWidth="1" strokeDasharray="3 3" />
+            <line x1="40" y1="50" x2="340" y2="50" stroke="#334155" strokeWidth="1" strokeDasharray="3 3" />
+
+            {/* Triangle Background */}
+            <polygon points="50,50 290,50 290,170" fill="rgba(245,158,11,0.08)" stroke="none" />
+
+            {/* Vector P (Active Power) */}
+            <line x1="50" y1="50" x2="290" y2="50" stroke="#10b981" strokeWidth="4" strokeLinecap="round" />
+            <polygon points="290,50 280,45 280,55" fill="#10b981" />
+            <text x="170" y="40" fill="#34d399" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Active Power P = V · I · cos φ (kW)
+            </text>
+
+            {/* Vector Q_L (Lagging Inductive Reactive Power) */}
+            <line x1="290" y1="50" x2="290" y2="170" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" />
+            <polygon points="290,170 285,160 295,160" fill="#38bdf8" />
+            <text x="305" y="115" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="start">
+              Q_L = V · I · sin φ (kVAR)
+            </text>
+
+            {/* Vector S (Apparent Power Hypotenuse) */}
+            <line x1="50" y1="50" x2="290" y2="170" stroke="#f59e0b" strokeWidth="4" strokeLinecap="round" />
+            <polygon points="290,170 280,165 285,155" fill="#f59e0b" />
+            <text x="150" y="125" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="end">
+              S = V · I (kVA)
+            </text>
+
+            {/* Phase Angle Arc */}
+            <path d="M 90 50 A 40 40 0 0 1 84 75" fill="none" stroke="#f43f5e" strokeWidth="2.5" />
+            <text x="100" y="70" fill="#f43f5e" fontSize="11" fontWeight="bold">φ</text>
+
+            {/* Right-angle square */}
+            <rect x="274" y="50" width="16" height="16" fill="none" stroke="#64748b" strokeWidth="1.5" />
+
+            {/* Info Box */}
+            <rect x="365" y="30" width="165" height="145" rx="6" fill="#0f172a" stroke="#475569" strokeWidth="1.5" />
+            <text x="447" y="52" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Power Relations</text>
+            <text x="380" y="74" fill="#e2e8f0" fontSize="10" fontFamily="monospace">S² = P² + Q²</text>
+            <text x="380" y="94" fill="#10b981" fontSize="10" fontFamily="monospace">PF = cos φ = P / S</text>
+            <text x="380" y="114" fill="#38bdf8" fontSize="10" fontFamily="monospace">tan φ = Q / P</text>
+            <text x="380" y="134" fill="#fbbf24" fontSize="10" fontFamily="monospace">I = S / (√3 · V_L)</text>
+            <text x="380" y="154" fill="#f43f5e" fontSize="9.5" fontFamily="monospace">I_loss ∝ (1/PF)²</text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Vector Power Triangle: Active power P (kW), reactive power Q (kVAR), and apparent power S (kVA) with phase angle φ."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-pf-correction-methods':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 210" className="w-full max-w-xl h-52">
+            {/* Main Substation */}
+            <rect x="20" y="25" width="80" height="42" rx="4" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+            <text x="60" y="43" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">11kV / 415V</text>
+            <text x="60" y="56" fill="#94a3b8" fontSize="8.5" textAnchor="middle">Transformer</text>
+
+            {/* Main Busbar */}
+            <line x1="140" y1="15" x2="140" y2="195" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
+            <text x="135" y="12" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="end">415V Main Bus</text>
+
+            <line x1="100" y1="46" x2="137" y2="46" stroke="#38bdf8" strokeWidth="3" />
+
+            {/* Scheme 1: Centralized APFC */}
+            <g transform="translate(140, 46)">
+              <line x1="0" y1="0" x2="55" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              <rect x="55" y="-18" width="80" height="36" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="1.8" />
+              <text x="95" y="-3" fill="#6ee7b7" fontSize="9" fontWeight="bold" textAnchor="middle">1. Central APFC</text>
+              <text x="95" y="10" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">At Main Intake</text>
+            </g>
+
+            {/* Scheme 2: Group Compensation */}
+            <g transform="translate(140, 105)">
+              <line x1="0" y1="0" x2="70" y2="0" stroke="#38bdf8" strokeWidth="2.5" />
+              <rect x="70" y="-16" width="70" height="32" rx="3" fill="#1e293b" stroke="#64748b" strokeWidth="1.5" />
+              <text x="105" y="2" fill="#cbd5e1" fontSize="9" textAnchor="middle">Sub DB</text>
+
+              <line x1="105" y1="16" x2="105" y2="38" stroke="#10b981" strokeWidth="2" />
+              <rect x="75" y="38" width="60" height="26" rx="3" fill="#064e3b" stroke="#10b981" strokeWidth="1.5" />
+              <text x="105" y="54" fill="#6ee7b7" fontSize="8" fontWeight="bold" textAnchor="middle">2. Group Cap</text>
+            </g>
+
+            {/* Scheme 3: Individual Motor Compensation */}
+            <g transform="translate(260, 105)">
+              <line x1="-50" y1="0" x2="35" y2="0" stroke="#38bdf8" strokeWidth="2" />
+              <circle cx="55" cy="0" r="18" fill="#0f172a" stroke="#f59e0b" strokeWidth="2" />
+              <text x="55" y="4" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">M</text>
+
+              <line x1="55" y1="-18" x2="55" y2="-40" stroke="#10b981" strokeWidth="2" />
+              <rect x="25" y="-62" width="60" height="22" rx="3" fill="#064e3b" stroke="#10b981" strokeWidth="1.5" />
+              <text x="55" y="-48" fill="#6ee7b7" fontSize="7.5" fontWeight="bold" textAnchor="middle">3. Local Cap</text>
+            </g>
+
+            {/* Scheme 4: Synchronous Condenser */}
+            <g transform="translate(140, 168)">
+              <line x1="0" y1="0" x2="55" y2="0" stroke="#c084fc" strokeWidth="2.5" />
+              <rect x="55" y="-16" width="85" height="32" rx="4" fill="#3b0764" stroke="#c084fc" strokeWidth="1.8" />
+              <text x="97" y="-2" fill="#e9d5ff" fontSize="8.5" fontWeight="bold" textAnchor="middle">4. Sync Condenser</text>
+              <text x="97" y="10" fill="#d8b4fe" fontSize="7.5" textAnchor="middle">Rotating Var Gen</text>
+            </g>
+
+            {/* Comparison Callout */}
+            <rect x="375" y="25" width="150" height="165" rx="5" fill="#020617" stroke="#334155" />
+            <text x="450" y="44" fill="#34d399" fontSize="9.5" fontWeight="bold" textAnchor="middle">Strategy Selection</text>
+            <text x="385" y="66" fill="#e2e8f0" fontSize="8">Centralized: Lowest Capex</text>
+            <text x="385" y="86" fill="#94a3b8" fontSize="8">Group: Balances cost &amp; losses</text>
+            <text x="385" y="106" fill="#e2e8f0" fontSize="8">Individual: Maximum cable relief</text>
+            <text x="385" y="126" fill="#94a3b8" fontSize="8">Sync: Stepless, inertia added</text>
+            <line x1="385" y1="140" x2="515" y2="140" stroke="#334155" strokeWidth="1" />
+            <text x="450" y="156" fill="#fbbf24" fontSize="8" textAnchor="middle">Optimal: Hybrid Central APFC</text>
+            <text x="450" y="172" fill="#38bdf8" fontSize="8" textAnchor="middle">+ Local Caps on Heavy Motors</text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Power Factor Correction Topologies: Centralized APFC, Group, Individual (Local), and Synchronous Condenser."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-capacitor-bank-sizing':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 210" className="w-full max-w-xl h-52">
+            {/* Delta Connected 3-Phase Bank */}
+            <g transform="translate(40, 25)">
+              <text x="100" y="12" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">
+                Delta (Δ) Bank — Standard 415V
+              </text>
+              {/* Delta Triangle */}
+              <polygon points="100,30 30,140 170,140" fill="none" stroke="#334155" strokeWidth="1.5" />
+              {/* Three capacitor branches */}
+              {/* Top to Bottom-Left branch */}
+              <g transform="translate(65, 85) rotate(-60)">
+                <line x1="-15" y1="0" x2="-3" y2="0" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="-3" y1="-10" x2="-3" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="3" y1="-10" x2="3" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="3" y1="0" x2="15" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              </g>
+              {/* Top to Bottom-Right branch */}
+              <g transform="translate(135, 85) rotate(60)">
+                <line x1="-15" y1="0" x2="-3" y2="0" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="-3" y1="-10" x2="-3" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="3" y1="-10" x2="3" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="3" y1="0" x2="15" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              </g>
+              {/* Bottom horizontal branch */}
+              <g transform="translate(100, 140)">
+                <line x1="-20" y1="0" x2="-4" y2="0" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="-4" y1="-10" x2="-4" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="4" y1="-10" x2="4" y2="10" stroke="#10b981" strokeWidth="2.5" />
+                <line x1="4" y1="0" x2="20" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              </g>
+              <text x="100" y="165" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+                V_cap = V_L = 415V | C_Δ = Q_c / (3ωV_L²)
+              </text>
+            </g>
+
+            {/* Sizing Formulas Panel */}
+            <rect x="250" y="20" width="270" height="175" rx="6" fill="#020617" stroke="#334155" />
+            <text x="385" y="42" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Engineering Sizing Equations
+            </text>
+
+            <text x="265" y="65" fill="#34d399" fontSize="9.5" fontFamily="monospace">
+              Q_c = P · [tan(φ₁) - tan(φ₂)] (kVAR)
+            </text>
+            <text x="265" y="85" fill="#e2e8f0" fontSize="9" fontFamily="monospace">
+              tan(φ) = √(1 - PF²) / PF
+            </text>
+            <text x="265" y="105" fill="#38bdf8" fontSize="9.5" fontFamily="monospace">
+              I_c = Q_c / (√3 · V_L) (Amperes)
+            </text>
+            <text x="265" y="125" fill="#fbbf24" fontSize="9" fontFamily="monospace">
+              C_Δ = C_Y / 3  (Requires 3× less μF!)
+            </text>
+            <text x="265" y="145" fill="#f43f5e" fontSize="9" fontFamily="monospace">
+              Q_actual = Q_rated · (V_actual / V_rated)²
+            </text>
+            <text x="265" y="165" fill="#a7f3d0" fontSize="9" fontFamily="monospace">
+              Discharge Resistors: &lt;50V in 60s
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Capacitor Bank Sizing Architecture: Delta cell topology, net kVAR calculation, and voltage derating relationships."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-apfc-panel':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 215" className="w-full max-w-xl h-52">
+            {/* Incoming 3-phase feeder */}
+            <line x1="20" y1="40" x2="520" y2="40" stroke="#f59e0b" strokeWidth="4" />
+            <text x="30" y="30" fill="#f59e0b" fontSize="9.5" fontWeight="bold">Main 415V Busbar</text>
+
+            {/* Current Transformer (CT) on Incoming Feeder BEFORE Bank */}
+            <rect x="80" y="28" width="30" height="24" rx="2" fill="#0f172a" stroke="#38bdf8" strokeWidth="2" />
+            <text x="95" y="44" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">CT</text>
+            <text x="95" y="65" fill="#93c5fd" fontSize="8" textAnchor="middle">S1/S2</text>
+
+            {/* Lead to APFC Controller */}
+            <line x1="95" y1="68" x2="95" y2="120" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3 2" />
+            <line x1="95" y1="120" x2="140" y2="120" stroke="#38bdf8" strokeWidth="1.5" />
+
+            {/* APFC Microprocessor Controller */}
+            <rect x="140" y="95" width="110" height="75" rx="5" fill="#020617" stroke="#10b981" strokeWidth="2" />
+            <text x="195" y="115" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">APFC Controller</text>
+            <text x="195" y="130" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">Target cos φ = 0.98</text>
+            <text x="195" y="144" fill="#94a3b8" fontSize="7.5" textAnchor="middle">C/k Hunting Guard</text>
+            <text x="195" y="158" fill="#fbbf24" fontSize="7.5" textAnchor="middle">Discharge Timer 60s</text>
+
+            {/* Capacitor Steps 1, 2, 3 branching off bus */}
+            {[
+              { x: 290, label: 'Step 1 (25k)', detune: '7% L' },
+              { x: 370, label: 'Step 2 (50k)', detune: '7% L' },
+              { x: 450, label: 'Step 3 (50k)', detune: '7% L' }
+            ].map((st, i) => (
+              <g key={i} transform={`translate(${st.x}, 40)`}>
+                {/* MCCB / Backup Fuse */}
+                <line x1="0" y1="0" x2="0" y2="20" stroke="#cbd5e1" strokeWidth="2" />
+                <rect x="-8" y="20" width="16" height="14" rx="2" fill="#1e293b" stroke="#94a3b8" strokeWidth="1" />
+                <text x="0" y="30" fill="#e2e8f0" fontSize="7" textAnchor="middle">CB</text>
+
+                {/* Contactor with damping auxiliary */}
+                <line x1="0" y1="34" x2="0" y2="48" stroke="#cbd5e1" strokeWidth="2" />
+                <rect x="-10" y="48" width="20" height="16" rx="2" fill="#064e3b" stroke="#10b981" strokeWidth="1.5" />
+                <text x="0" y="60" fill="#6ee7b7" fontSize="8" fontWeight="bold" textAnchor="middle">KM{i + 1}</text>
+
+                {/* Control wire from relay */}
+                <path d={`M ${140 + 110} 130 H ${st.x - 20} V ${40 + 56} H ${st.x - 10}`} fill="none" stroke="#10b981" strokeWidth="1" strokeDasharray="2 2" />
+
+                {/* Detuned Reactor */}
+                <line x1="0" y1="64" x2="0" y2="76" stroke="#cbd5e1" strokeWidth="2" />
+                <rect x="-8" y="76" width="16" height="14" rx="2" fill="#3b0764" stroke="#c084fc" strokeWidth="1.2" />
+                <text x="0" y="86" fill="#e9d5ff" fontSize="7" textAnchor="middle">7%</text>
+
+                {/* Capacitor Cell */}
+                <line x1="0" y1="90" x2="0" y2="102" stroke="#cbd5e1" strokeWidth="2" />
+                <line x1="-10" y1="102" x2="10" y2="102" stroke="#38bdf8" strokeWidth="2.5" />
+                <line x1="-10" y1="108" x2="10" y2="108" stroke="#38bdf8" strokeWidth="2.5" />
+                <line x1="0" y1="108" x2="0" y2="120" stroke="#cbd5e1" strokeWidth="2" />
+
+                <text x="0" y="132" fill="#38bdf8" fontSize="7.5" fontWeight="bold" textAnchor="middle">{st.label}</text>
+              </g>
+            ))}
+
+            {/* Warning Callout */}
+            <rect x="20" y="175" width="230" height="28" rx="3" fill="#450a0a" stroke="#f43f5e" strokeWidth="1" />
+            <text x="135" y="193" fill="#fecdd3" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+              CT must be on main feeder BEFORE capacitor connection!
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "APFC Panel Engineering Architecture: Incoming CT sensor, microprocessor relay, capacitor-duty contactors, detuned reactors, and cells."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-reactive-power-flow':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 210" className="w-full max-w-xl h-52">
+            {/* Grid Generator / Substation */}
+            <circle cx="50" cy="80" r="24" fill="#0f172a" stroke="#38bdf8" strokeWidth="2.5" />
+            <text x="50" y="84" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">Vs ∠0°</text>
+            <text x="50" y="120" fill="#94a3b8" fontSize="9" textAnchor="middle">Grid Source</text>
+
+            {/* Feeder Line with Impedance R + jX */}
+            <line x1="74" y1="80" x2="135" y2="80" stroke="#cbd5e1" strokeWidth="2.5" />
+            {/* Line Resistance R */}
+            <rect x="135" y="70" width="34" height="20" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.8" />
+            <text x="152" y="83" fill="#fbbf24" fontSize="9" textAnchor="middle">R_line</text>
+            <line x1="169" y1="80" x2="195" y2="80" stroke="#cbd5e1" strokeWidth="2.5" />
+            {/* Line Reactance X */}
+            <rect x="195" y="70" width="34" height="20" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.8" />
+            <text x="212" y="83" fill="#38bdf8" fontSize="9" textAnchor="middle">jX_line</text>
+            <line x1="229" y1="80" x2="310" y2="80" stroke="#cbd5e1" strokeWidth="2.5" />
+
+            {/* Power Flow Arrow on Feeder */}
+            <path d="M 120 56 L 240 56" stroke="#10b981" strokeWidth="2.5" />
+            <polygon points="240,56 230,51 230,61" fill="#10b981" />
+            <text x="180" y="48" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+              Feeder Flow: P + j(Q_L - Q_c)
+            </text>
+
+            {/* Receiving End Busbar */}
+            <line x1="310" y1="30" x2="310" y2="180" stroke="#f59e0b" strokeWidth="5" strokeLinecap="round" />
+            <text x="310" y="22" fill="#f59e0b" fontSize="9.5" fontWeight="bold" textAnchor="middle">V_R Bus</text>
+
+            {/* Industrial Inductive Load Branch */}
+            <line x1="310" y1="65" x2="370" y2="65" stroke="#cbd5e1" strokeWidth="2" />
+            <rect x="370" y="45" width="60" height="40" rx="4" fill="#0f172a" stroke="#ef4444" strokeWidth="2" />
+            <text x="400" y="62" fill="#f87171" fontSize="9" fontWeight="bold" textAnchor="middle">Plant Load</text>
+            <text x="400" y="75" fill="#fca5a5" fontSize="7.5" textAnchor="middle">P + jQ_L</text>
+
+            {/* Shunt Capacitor Bank Branch */}
+            <line x1="310" y1="135" x2="370" y2="135" stroke="#cbd5e1" strokeWidth="2" />
+            <rect x="370" y="115" width="60" height="40" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="2" />
+            <text x="400" y="132" fill="#6ee7b7" fontSize="9" fontWeight="bold" textAnchor="middle">Cap Bank</text>
+            <text x="400" y="145" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">-jQ_c (Local)</text>
+
+            {/* Local Reactive Current Circulation Loop */}
+            <path d="M 370 145 C 340 145, 340 55, 370 55" fill="none" stroke="#10b981" strokeWidth="2" strokeDasharray="3 2" />
+            <text x="325" y="102" fill="#34d399" fontSize="7.5" fontWeight="bold">Local Q_c</text>
+
+            {/* Voltage Drop Formula Box */}
+            <rect x="445" y="35" width="85" height="120" rx="4" fill="#020617" stroke="#334155" />
+            <text x="487" y="52" fill="#fbbf24" fontSize="8.5" fontWeight="bold" textAnchor="middle">Voltage Drop</text>
+            <text x="450" y="72" fill="#e2e8f0" fontSize="7.5" fontFamily="monospace">ΔV ≈ (PR+QX)/V</text>
+            <text x="450" y="92" fill="#34d399" fontSize="7.5" fontFamily="monospace">Q_net = Q_L-Q_c</text>
+            <text x="450" y="112" fill="#38bdf8" fontSize="7.5" fontFamily="monospace">If Q_net → 0</text>
+            <text x="450" y="130" fill="#a7f3d0" fontSize="7.5" fontFamily="monospace">ΔV is minimized!</text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Reactive Power Flow & Voltage Regulation: Shunt capacitors circulate reactive VARs locally, relieving transmission feeder current and voltage drop."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-harmonic-resonance':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 210" className="w-full max-w-xl h-52">
+            {/* Grid / Transformer Equivalent Inductance */}
+            <g transform="translate(30, 40)">
+              <rect x="0" y="10" width="75" height="40" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="37" y="27" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">Grid Trafo</text>
+              <text x="37" y="40" fill="#93c5fd" fontSize="8" textAnchor="middle">L_trafo (X_sc)</text>
+            </g>
+
+            {/* Busbar */}
+            <line x1="140" y1="20" x2="140" y2="190" stroke="#f59e0b" strokeWidth="5" strokeLinecap="round" />
+            <text x="135" y="16" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="end">Plant Bus</text>
+
+            <line x1="105" y1="60" x2="137" y2="60" stroke="#38bdf8" strokeWidth="2.5" />
+
+            {/* Branch 1: Non-Linear Harmonic Source (VFD) */}
+            <g transform="translate(140, 50)">
+              <line x1="0" y1="0" x2="50" y2="0" stroke="#ef4444" strokeWidth="2" />
+              <circle cx="70" cy="0" r="20" fill="#450a0a" stroke="#ef4444" strokeWidth="2" />
+              <text x="70" y="-3" fill="#fca5a5" fontSize="8.5" fontWeight="bold" textAnchor="middle">I_h</text>
+              <text x="70" y="8" fill="#f87171" fontSize="7.5" textAnchor="middle">5th, 7th</text>
+              <text x="100" y="3" fill="#ef4444" fontSize="8" fontWeight="bold">Harmonic Current Source</text>
+            </g>
+
+            {/* Branch 2: Detuned Capacitor Bank */}
+            <g transform="translate(140, 130)">
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* 7% Detuning Reactor */}
+              <rect x="40" y="-12" width="38" height="24" rx="3" fill="#3b0764" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="59" y="3" fill="#e9d5ff" fontSize="8" fontWeight="bold" textAnchor="middle">L (7%)</text>
+
+              <line x1="78" y1="0" x2="98" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* Capacitor Bank */}
+              <line x1="98" y1="-12" x2="98" y2="12" stroke="#10b981" strokeWidth="2.5" />
+              <line x1="104" y1="-12" x2="104" y2="12" stroke="#10b981" strokeWidth="2.5" />
+              <line x1="104" y1="0" x2="125" y2="0" stroke="#10b981" strokeWidth="2" />
+
+              <text x="140" y="3" fill="#10b981" fontSize="8.5" fontWeight="bold">Detuned Bank (189 Hz)</text>
+            </g>
+
+            {/* Formula & Anti-Resonance Explanation */}
+            <rect x="290" y="25" width="235" height="165" rx="5" fill="#020617" stroke="#334155" />
+            <text x="407" y="44" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">
+              Resonance Mechanics &amp; Detuning
+            </text>
+            <text x="302" y="66" fill="#f43f5e" fontSize="8.5" fontFamily="monospace">
+              Bare Resonant Order: hr = √(S_sc / Q_c)
+            </text>
+            <text x="302" y="84" fill="#fca5a5" fontSize="7.8">
+              If hr ≈ 5 or 7: Massive Harmonic Amplification!
+            </text>
+            <line x1="302" y1="94" x2="515" y2="94" stroke="#334155" strokeWidth="1" />
+            <text x="302" y="112" fill="#34d399" fontSize="8.5" fontFamily="monospace">
+              Detuned Series Frequency: f_s = f_1 / √p
+            </text>
+            <text x="302" y="130" fill="#a7f3d0" fontSize="7.8">
+              For p = 7%: f_s = 189 Hz (&lt; 250 Hz 5th harmonic)
+            </text>
+            <text x="302" y="148" fill="#e2e8f0" fontSize="7.8">
+              Above 189 Hz: Branch is inductive (X_L &gt; X_C)
+            </text>
+            <text x="302" y="166" fill="#38bdf8" fontSize="7.8" fontWeight="bold">
+              Parallel resonance is rendered physically impossible!
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Harmonic Resonance & Detuning Reactor Architecture: Shunt capacitor-transformer parallel resonance suppressed by series detuned reactors."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-industrial-pf-case-study':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 215" className="w-full max-w-xl h-52">
+            {/* 11 kV Substation Transformer */}
+            <rect x="20" y="25" width="85" height="50" rx="4" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+            <text x="62" y="44" fill="#93c5fd" fontSize="9" fontWeight="bold" textAnchor="middle">1000 kVA Trafo</text>
+            <text x="62" y="58" fill="#cbd5e1" fontSize="8" textAnchor="middle">11 kV / 415 V</text>
+            <text x="62" y="69" fill="#f59e0b" fontSize="7.5" textAnchor="middle">%Z = 5.0%</text>
+
+            {/* Main 415V Bus */}
+            <line x1="140" y1="15" x2="140" y2="195" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
+            <text x="135" y="12" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="end">415V Bus</text>
+
+            <line x1="105" y1="50" x2="137" y2="50" stroke="#38bdf8" strokeWidth="3" />
+
+            {/* 7% Detuned APFC Panel */}
+            <g transform="translate(140, 40)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              <rect x="45" y="-18" width="95" height="38" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="2" />
+              <text x="92" y="-3" fill="#6ee7b7" fontSize="8.5" fontWeight="bold" textAnchor="middle">450 kVAR APFC</text>
+              <text x="92" y="11" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">7% Detuned (480V Caps)</text>
+            </g>
+
+            {/* Active Harmonic Filter (AHF) */}
+            <g transform="translate(140, 95)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#06b6d4" strokeWidth="2.5" />
+              <rect x="45" y="-16" width="95" height="32" rx="4" fill="#083344" stroke="#06b6d4" strokeWidth="1.8" />
+              <text x="92" y="-1" fill="#67e8f9" fontSize="8.5" fontWeight="bold" textAnchor="middle">150A Hybrid AHF</text>
+              <text x="92" y="11" fill="#a5f3fc" fontSize="7.5" textAnchor="middle">Harmonics Cancellation</text>
+            </g>
+
+            {/* Factory Loads */}
+            <g transform="translate(140, 155)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#ef4444" strokeWidth="2.5" />
+              <rect x="45" y="-18" width="95" height="38" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="2" />
+              <text x="92" y="-3" fill="#fca5a5" fontSize="8.5" fontWeight="bold" textAnchor="middle">600 kW Factory</text>
+              <text x="92" y="11" fill="#f87171" fontSize="7.5" textAnchor="middle">Motors + 35% VFDs</text>
+            </g>
+
+            {/* Case Study Audit Summary */}
+            <rect x="295" y="20" width="230" height="175" rx="5" fill="#020617" stroke="#334155" />
+            <text x="410" y="38" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">
+              Case Study Engineering Results
+            </text>
+
+            <text x="305" y="58" fill="#94a3b8" fontSize="8">Initial Load:</text>
+            <text x="380" y="58" fill="#f87171" fontSize="8" fontFamily="monospace">600 kW @ 0.72 Lag (833 kVA)</text>
+
+            <text x="305" y="76" fill="#94a3b8" fontSize="8">Target Load:</text>
+            <text x="380" y="76" fill="#34d399" fontSize="8" fontFamily="monospace">600 kW @ 0.98 Lag (612 kVA)</text>
+
+            <text x="305" y="94" fill="#94a3b8" fontSize="8">Line Current:</text>
+            <text x="380" y="94" fill="#38bdf8" fontSize="8" fontFamily="monospace">1160 A ➔ 852 A (-26.5%)</text>
+
+            <text x="305" y="112" fill="#94a3b8" fontSize="8">Released Trafo:</text>
+            <text x="380" y="112" fill="#fbbf24" fontSize="8" fontFamily="monospace">+221 kVA (Enables +216 kW)</text>
+
+            <text x="305" y="130" fill="#94a3b8" fontSize="8">Voltage THD:</text>
+            <text x="380" y="130" fill="#a7f3d0" fontSize="8" fontFamily="monospace">3.8% (Complies &lt;5% IEEE 519)</text>
+
+            <line x1="305" y1="140" x2="515" y2="140" stroke="#334155" strokeWidth="1" />
+            <text x="410" y="156" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Annual Utility Savings: $36,900 / yr
+            </text>
+            <text x="410" y="172" fill="#e2e8f0" fontSize="8" textAnchor="middle">
+              Payback Period: 8.5 months
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Industrial Power Factor Case Study: 1000 kVA substation transformer with 7% detuned APFC and hybrid active filter."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-pf-tariff-economics':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Grid Utility Metering */}
+            <rect x="20" y="25" width="115" height="75" rx="5" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+            <text x="77" y="44" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">Utility kVA Meter</text>
+            <text x="77" y="59" fill="#94a3b8" fontSize="8" textAnchor="middle">Two-Part Tariff Billing</text>
+            <text x="77" y="73" fill="#f59e0b" fontSize="7.5" textAnchor="middle">Demand Charge: $/kVA/mo</text>
+            <text x="77" y="86" fill="#10b981" fontSize="7.5" textAnchor="middle">PF Threshold: 0.90 Lag</text>
+
+            {/* Incomer Line */}
+            <line x1="135" y1="62" x2="190" y2="62" stroke="#38bdf8" strokeWidth="3" />
+            <polygon points="175,58 185,62 175,66" fill="#38bdf8" />
+            <text x="162" y="53" fill="#93c5fd" fontSize="7.5" textAnchor="middle">I₁ ➔ I₂</text>
+
+            {/* Main Busbar */}
+            <line x1="190" y1="20" x2="190" y2="200" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
+            <text x="185" y="15" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="end">415V Bus</text>
+
+            {/* Shunt Capacitor Bank Branch */}
+            <g transform="translate(190, 55)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              <rect x="45" y="-18" width="90" height="36" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="2" />
+              <text x="90" y="-3" fill="#6ee7b7" fontSize="8.5" fontWeight="bold" textAnchor="middle">PFC Capacitor Bank</text>
+              <text x="90" y="11" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">Supplies Local Q_c</text>
+            </g>
+
+            {/* Plant Motor Load Branch */}
+            <g transform="translate(190, 145)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#ef4444" strokeWidth="2.5" />
+              <rect x="45" y="-18" width="90" height="36" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="2" />
+              <text x="90" y="-3" fill="#fca5a5" fontSize="8.5" fontWeight="bold" textAnchor="middle">Industrial Load</text>
+              <text x="90" y="11" fill="#f87171" fontSize="7.5" textAnchor="middle">P (kW) + Q_L (kVAR)</text>
+            </g>
+
+            {/* Tariff Savings Dashboard Card */}
+            <rect x="340" y="20" width="185" height="180" rx="6" fill="#020617" stroke="#334155" />
+            <text x="432" y="38" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Economic Tariff Impacts
+            </text>
+
+            <text x="350" y="58" fill="#94a3b8" fontSize="8">Demand Drop:</text>
+            <text x="430" y="58" fill="#38bdf8" fontSize="8" fontFamily="monospace">S₁ ➔ S₂ (-15% to 30%)</text>
+
+            <text x="350" y="76" fill="#94a3b8" fontSize="8">Current Drop:</text>
+            <text x="430" y="76" fill="#34d399" fontSize="8" fontFamily="monospace">I₁ ➔ I₂ (Less I²R heat)</text>
+
+            <text x="350" y="94" fill="#94a3b8" fontSize="8">PF Penalty:</text>
+            <text x="430" y="94" fill="#4ade80" fontSize="8" fontFamily="monospace">100% ELIMINATED</text>
+
+            <text x="350" y="112" fill="#94a3b8" fontSize="8">PF Incentive:</text>
+            <text x="430" y="112" fill="#a7f3d0" fontSize="8" fontFamily="monospace">+0.5% to +1% Rebate</text>
+
+            <text x="350" y="130" fill="#94a3b8" fontSize="8">Trafo Capacity:</text>
+            <text x="430" y="130" fill="#fbbf24" fontSize="8" fontFamily="monospace">Recovers 150–300 kVA</text>
+
+            <line x1="350" y1="142" x2="515" y2="142" stroke="#334155" strokeWidth="1" />
+            <text x="432" y="158" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+              Payback: 6 – 14 Months
+            </text>
+            <text x="432" y="174" fill="#e2e8f0" fontSize="8" textAnchor="middle">
+              ROI: 80% – 160% / Year
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Power Factor & Maximum Demand Tariff Economics: Local kVAR compensation slashes billed kVA demand charges, eliminates utility penalties, and unlocks transformer headroom."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-pfc-commissioning':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Incoming Feeder with CT */}
+            <line x1="20" y1="40" x2="160" y2="40" stroke="#38bdf8" strokeWidth="4" />
+            <text x="35" y="30" fill="#38bdf8" fontSize="9" fontWeight="bold">Main Incomer</text>
+
+            {/* CT Toroid */}
+            <circle cx="90" cy="40" r="16" fill="none" stroke="#f59e0b" strokeWidth="3.5" />
+            <text x="90" y="20" fill="#f59e0b" fontSize="8" fontWeight="bold" textAnchor="middle">CT (P1 ➔ P2)</text>
+            <line x1="85" y1="56" x2="85" y2="90" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="2,2" />
+            <line x1="95" y1="56" x2="95" y2="90" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="2,2" />
+            <text x="90" y="75" fill="#fde047" fontSize="7" textAnchor="end">S1/S2</text>
+
+            {/* Main Busbar */}
+            <line x1="160" y1="20" x2="160" y2="200" stroke="#f59e0b" strokeWidth="5" strokeLinecap="round" />
+            <text x="155" y="15" fill="#f59e0b" fontSize="8.5" fontWeight="bold" textAnchor="end">415V Bus</text>
+
+            {/* APFC Microprocessor Controller */}
+            <rect x="50" y="90" width="85" height="95" rx="5" fill="#1e293b" stroke="#06b6d4" strokeWidth="2" />
+            <text x="92" y="108" fill="#67e8f9" fontSize="8.5" fontWeight="bold" textAnchor="middle">APFC Relay</text>
+            <rect x="62" y="116" width="60" height="20" rx="2" fill="#083344" stroke="#0e7490" />
+            <text x="92" y="130" fill="#22d3ee" fontSize="8" fontFamily="monospace" textAnchor="middle">cos φ = 0.98</text>
+            <text x="92" y="148" fill="#94a3b8" fontSize="7" textAnchor="middle">C/k &amp; Deadband</text>
+            <text x="92" y="160" fill="#94a3b8" fontSize="7" textAnchor="middle">Reconnection Delay</text>
+            <text x="92" y="172" fill="#34d399" fontSize="7" textAnchor="middle">Linear/FIFO Logic</text>
+
+            {/* Control Signals */}
+            <line x1="135" y1="135" x2="205" y2="135" stroke="#06b6d4" strokeWidth="1.5" strokeDasharray="3,3" />
+
+            {/* Step Branch Architecture */}
+            <g transform="translate(160, 45)">
+              <line x1="0" y1="0" x2="45" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* Fuse */}
+              <rect x="45" y="-6" width="22" height="12" rx="2" fill="#334155" stroke="#94a3b8" />
+              <text x="56" y="3" fill="#f1f5f9" fontSize="6.5" textAnchor="middle">HRC</text>
+              <line x1="67" y1="0" x2="85" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* Contactor */}
+              <rect x="85" y="-12" width="28" height="24" rx="3" fill="#064e3b" stroke="#10b981" strokeWidth="1.5" />
+              <text x="99" y="-2" fill="#6ee7b7" fontSize="6.5" fontWeight="bold" textAnchor="middle">Cap.</text>
+              <text x="99" y="7" fill="#6ee7b7" fontSize="6.5" textAnchor="middle">Cont.</text>
+              <line x1="113" y1="0" x2="130" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* 7% Reactor */}
+              <circle cx="140" cy="0" r="10" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.5" />
+              <text x="140" y="3" fill="#c7d2fe" fontSize="6.5" textAnchor="middle">7% L</text>
+              <line x1="150" y1="0" x2="165" y2="0" stroke="#10b981" strokeWidth="2" />
+              {/* Capacitor Can */}
+              <rect x="165" y="-16" width="36" height="32" rx="3" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.8" />
+              <text x="183" y="-3" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">50 kVAR</text>
+              <text x="183" y="8" fill="#93c5fd" fontSize="6.5" textAnchor="middle">480V Cap</text>
+            </g>
+
+            {/* Discharge Resistor Callout */}
+            <g transform="translate(325, 85)">
+              <rect x="0" y="0" width="195" height="110" rx="5" fill="#020617" stroke="#334155" />
+              <text x="97" y="16" fill="#f87171" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+                Commissioning Safety Checklist
+              </text>
+              <text x="10" y="34" fill="#94a3b8" fontSize="7.5">1. CT Upstream of PFC tap: YES</text>
+              <text x="10" y="49" fill="#94a3b8" fontSize="7.5">2. CT S1/S2 Polarity aligned: YES</text>
+              <text x="10" y="64" fill="#94a3b8" fontSize="7.5">3. V-sense phase angle matched: YES</text>
+              <text x="10" y="79" fill="#94a3b8" fontSize="7.5">4. Discharge resistors &lt;50V in 60s: PASS</text>
+              <text x="10" y="94" fill="#94a3b8" fontSize="7.5">5. Reconnection delay &gt;60s timer: PASS</text>
+              <text x="10" y="104" fill="#34d399" fontSize="7" fontWeight="bold">Safe for Automatic Energization</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "APFC Panel Commissioning & Testing Schematic: Upstream sensing CT, microprocessor relay, capacitor-duty contactors, detuning reactors, and discharge safety network."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch13-pfc-engineering-capstone':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Utility Grid & 11kV / 415V Transformer */}
+            <rect x="15" y="25" width="80" height="55" rx="4" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+            <text x="55" y="44" fill="#93c5fd" fontSize="8.5" fontWeight="bold" textAnchor="middle">1000 kVA Trafo</text>
+            <text x="55" y="57" fill="#cbd5e1" fontSize="7.5" textAnchor="middle">11 kV / 415 V</text>
+            <text x="55" y="68" fill="#f59e0b" fontSize="7.5" textAnchor="middle">%Z = 5.5%</text>
+
+            {/* Incomer Line with Sensing CT */}
+            <line x1="95" y1="52" x2="155" y2="52" stroke="#38bdf8" strokeWidth="3.5" />
+            <circle cx="125" cy="52" r="11" fill="none" stroke="#f59e0b" strokeWidth="2.5" />
+            <text x="125" y="38" fill="#f59e0b" fontSize="7" fontWeight="bold" textAnchor="middle">APFC CT</text>
+
+            {/* Main 415V Busbar */}
+            <line x1="155" y1="15" x2="155" y2="205" stroke="#f59e0b" strokeWidth="6" strokeLinecap="round" />
+            <text x="150" y="12" fill="#f59e0b" fontSize="8.5" fontWeight="bold" textAnchor="end">Main 415V Bus</text>
+
+            {/* Branch 1: 450 kVAR Detuned APFC Panel */}
+            <g transform="translate(155, 38)">
+              <line x1="0" y1="0" x2="35" y2="0" stroke="#10b981" strokeWidth="2.5" />
+              <rect x="35" y="-16" width="105" height="34" rx="4" fill="#064e3b" stroke="#10b981" strokeWidth="2" />
+              <text x="87" y="-2" fill="#6ee7b7" fontSize="8" fontWeight="bold" textAnchor="middle">450 kVAR APFC Panel</text>
+              <text x="87" y="10" fill="#a7f3d0" fontSize="7" textAnchor="middle">7% Detuned (480V Caps)</text>
+            </g>
+
+            {/* Branch 2: Motor Control Center (MCC) Linear Load */}
+            <g transform="translate(155, 95)">
+              <line x1="0" y1="0" x2="35" y2="0" stroke="#38bdf8" strokeWidth="2.5" />
+              <rect x="35" y="-16" width="105" height="34" rx="4" fill="#0c4a6e" stroke="#38bdf8" strokeWidth="1.8" />
+              <text x="87" y="-2" fill="#7dd3fc" fontSize="8" fontWeight="bold" textAnchor="middle">400 kW Induction Motors</text>
+              <text x="87" y="10" fill="#bae6fd" fontSize="7" textAnchor="middle">cos φ = 0.78 Lag (Pumps/Fans)</text>
+            </g>
+
+            {/* Branch 3: Nonlinear Loads / VFD Automation */}
+            <g transform="translate(155, 155)">
+              <line x1="0" y1="0" x2="35" y2="0" stroke="#ef4444" strokeWidth="2.5" />
+              <rect x="35" y="-16" width="105" height="34" rx="4" fill="#450a0a" stroke="#ef4444" strokeWidth="1.8" />
+              <text x="87" y="-2" fill="#fca5a5" fontSize="8" fontWeight="bold" textAnchor="middle">250 kW VFD Automation</text>
+              <text x="87" y="10" fill="#f87171" fontSize="7" textAnchor="middle">6-Pulse Rectifiers (THD_I 32%)</text>
+            </g>
+
+            {/* Capstone Engineering Design Ledger */}
+            <rect x="315" y="15" width="210" height="190" rx="5" fill="#020617" stroke="#334155" />
+            <text x="420" y="32" fill="#fbbf24" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Capstone Engineering Deliverables
+            </text>
+
+            <text x="325" y="50" fill="#94a3b8" fontSize="7.5">Total Plant Load:</text>
+            <text x="420" y="50" fill="#f87171" fontSize="7.5" fontFamily="monospace">650 kW @ 0.72 Lag</text>
+
+            <text x="325" y="66" fill="#94a3b8" fontSize="7.5">Initial Demand:</text>
+            <text x="420" y="66" fill="#f87171" fontSize="7.5" fontFamily="monospace">903 kVA (1256 A)</text>
+
+            <text x="325" y="82" fill="#94a3b8" fontSize="7.5">APFC Bank Sizing:</text>
+            <text x="420" y="82" fill="#34d399" fontSize="7.5" fontFamily="monospace">9 x 50 kVAR (450 kVAR)</text>
+
+            <text x="325" y="98" fill="#94a3b8" fontSize="7.5">Target Operating PF:</text>
+            <text x="420" y="98" fill="#38bdf8" fontSize="7.5" fontFamily="monospace">0.98 Lagging</text>
+
+            <text x="325" y="114" fill="#94a3b8" fontSize="7.5">Compensated Demand:</text>
+            <text x="420" y="114" fill="#38bdf8" fontSize="7.5" fontFamily="monospace">663 kVA (923 A, -26.5%)</text>
+
+            <text x="325" y="130" fill="#94a3b8" fontSize="7.5">Released Headroom:</text>
+            <text x="420" y="130" fill="#fbbf24" fontSize="7.5" fontFamily="monospace">+240 kVA Trafo Capacity</text>
+
+            <text x="325" y="146" fill="#94a3b8" fontSize="7.5">Harmonic Detuning:</text>
+            <text x="420" y="146" fill="#a7f3d0" fontSize="7.5" fontFamily="monospace">7% (189 Hz Tuning)</text>
+
+            <line x1="325" y1="156" x2="515" y2="156" stroke="#334155" strokeWidth="1" />
+            <text x="420" y="172" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">
+              Annual Bill Savings: $43,200 / yr
+            </text>
+            <text x="420" y="188" fill="#e2e8f0" fontSize="7.5" textAnchor="middle">
+              Project Payback: 6.9 Months (ROI 174%)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Complete Industrial Power Factor Correction Design Capstone: Single-line diagram showing 1000 kVA transformer, 450 kVAR 7% detuned APFC panel, motor control center, and VFD automation load."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
