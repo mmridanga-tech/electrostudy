@@ -139,6 +139,17 @@ import { AntennaFundamentalsLinkBudgetAnimation } from './interactive/AntennaFun
 import { ElectricShockSimulation } from './interactive/ElectricShockSimulation';
 import { EarthingSafetySimulation } from './interactive/EarthingSafetySimulation';
 import { CircuitProtectionSimulation } from './interactive/CircuitProtectionSimulation';
+import { SafeWorkingPracticesSimulation } from './interactive/SafeWorkingPracticesSimulation';
+import { BasicPPESimulation } from './interactive/BasicPPESimulation';
+import { FirstResponseAccidentSimulation } from './interactive/FirstResponseAccidentSimulation';
+import { ACTheveninNortonAnimation } from './interactive/ACTheveninNortonAnimation';
+import { ACSuperpositionMaxPowerAnimation } from './interactive/ACSuperpositionMaxPowerAnimation';
+import { CoupledCircuitsDotConventionAnimation } from './interactive/CoupledCircuitsDotConventionAnimation';
+import { ReflectedImpedanceTNetworkAnimation } from './interactive/ReflectedImpedanceTNetworkAnimation';
+import { IdealTransformerComplexPerUnitAnimation } from './interactive/IdealTransformerComplexPerUnitAnimation';
+import { PassiveFilterDesignAnimation } from './interactive/PassiveFilterDesignAnimation';
+import { BodePlotFrequencyResponseAnimation } from './interactive/BodePlotFrequencyResponseAnimation';
+import { TwoPortNetworkParametersAnimation } from './interactive/TwoPortNetworkParametersAnimation';
 
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
@@ -875,6 +886,74 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     return <AntennaFundamentalsLinkBudgetAnimation currentLanguage={currentLanguage} />;
   }
 
+  // Chapter 12: Advanced AC Network Analysis & Coupled Circuits
+  // Lesson 1: AC Thevenin & Norton Theorems
+  if (
+    lessonId === 'lsn-ch12-ac-thevenin-norton' ||
+    ((topicId === 'tp-pure-resistive' || topicId === 'tp-pure-resis') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <ACTheveninNortonAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 2: AC Superposition & Maximum Power Transfer
+  if (
+    lessonId === 'lsn-ch12-ac-superposition-max-power' ||
+    lessonId === 'lsn-ch12-ac-superposition-maxpower' ||
+    ((topicId === 'tp-pure-inductive' || topicId === 'tp-pure-induct') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <ACSuperpositionMaxPowerAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 3: Coupled Inductors, Mutual Inductance & Dot Convention
+  if (
+    lessonId === 'lsn-ch12-coupled-circuits-dot-convention' ||
+    lessonId === 'lsn-ch12-coupled-circuits-dot' ||
+    (topicId === 'tp-pure-capacitive' && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <CoupledCircuitsDotConventionAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 4: Linear Transformers, Reflected Impedance & Equivalent T/Π Models
+  if (
+    lessonId === 'lsn-ch12-reflected-impedance-t-models' ||
+    lessonId === 'lsn-ch12-linear-transformers-reflected' ||
+    ((topicId === 'tp-rl-circuit' || topicId === 'tp-rl-series') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <ReflectedImpedanceTNetworkAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 5: Ideal Transformers, Complex Turns Ratio & Per-Unit (p.u.) Impedance
+  if (
+    lessonId === 'lsn-ch12-passive-filters-design' ||
+    lessonId === 'lsn-ch12-ideal-transformers-puz' ||
+    ((topicId === 'tp-rc-circuit' || topicId === 'tp-rc-series') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <IdealTransformerComplexPerUnitAnimation currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 6: Passive Filters & Frequency Response (Bode Plots)
+  if (
+    lessonId === 'lsn-ch12-bode-plots-frequency-response' ||
+    lessonId === 'lsn-ch12-passive-filters-bode' ||
+    ((topicId === 'tp-rlc-circuit' || topicId === 'tp-rlc-series') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return (
+      <div className="space-y-6">
+        <PassiveFilterDesignAnimation currentLanguage={currentLanguage} />
+        <BodePlotFrequencyResponseAnimation currentLanguage={currentLanguage} />
+      </div>
+    );
+  }
+
+  // Lesson 7: Two-Port Network Parameters in the AC Domain (Z, Y, ABCD, h)
+  if (
+    lessonId === 'lsn-ch12-two-port-network-parameters' ||
+    lessonId === 'lsn-ch12-two-port-parameters-ac' ||
+    ((topicId === 'tp-admittance-intro' || topicId === 'tp-rlc-parallel' || topicId === 'tp-impedance') && (lesson.chapterId === 'ch-ac-circuits' || !lesson.chapterId))
+  ) {
+    return <TwoPortNetworkParametersAnimation currentLanguage={currentLanguage} />;
+  }
+
   if (
     topicId.startsWith('ps-') ||
     lessonId.startsWith('lesson-ps-') ||
@@ -943,6 +1022,41 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     lessonId.includes('isolation')
   ) {
     return <CircuitProtectionSimulation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-safe-working-practices' ||
+    lessonId === 'lsn-ch15-safe-working-practices' ||
+    topicId === 'ch15-safe-working-practices' ||
+    lessonId === 'ch15-safe-working-practices' ||
+    topicId.includes('safe-working') ||
+    lessonId.includes('safe-working')
+  ) {
+    return <SafeWorkingPracticesSimulation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-basic-ppe' ||
+    lessonId === 'lsn-ch15-basic-ppe' ||
+    topicId === 'ch15-basic-ppe' ||
+    lessonId === 'ch15-basic-ppe' ||
+    topicId.includes('basic-ppe') ||
+    lessonId.includes('basic-ppe') ||
+    topicId.includes('ppe')
+  ) {
+    return <BasicPPESimulation currentLanguage={currentLanguage} />;
+  }
+
+  if (
+    topicId === 'tp-first-response-accidents' ||
+    lessonId === 'lsn-ch15-first-response-accidents' ||
+    topicId === 'ch15-first-response-accidents' ||
+    lessonId === 'ch15-first-response-accidents' ||
+    topicId.includes('first-response') ||
+    lessonId.includes('first-response') ||
+    topicId.includes('cpr')
+  ) {
+    return <FirstResponseAccidentSimulation currentLanguage={currentLanguage} />;
   }
 
   return null;
@@ -1187,10 +1301,33 @@ export const LessonViewer: React.FC<LessonViewerProps> = ({
                 </div>
               )}
 
-              <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed">
-                <span className="font-bold text-slate-900 dark:text-white block mb-1">Solution Steps:</span>
-                {ex.solution[currentLanguage] || ex.solution.en}
-              </div>
+              {ex.solution ? (
+                <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed">
+                  <span className="font-bold text-slate-900 dark:text-white block mb-1">Solution Steps:</span>
+                  {ex.solution[currentLanguage] || ex.solution.en}
+                </div>
+              ) : (
+                <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 font-mono text-xs text-slate-700 dark:text-slate-300 whitespace-pre-line leading-relaxed space-y-2">
+                  {ex.formula && (
+                    <div>
+                      <span className="font-bold text-slate-900 dark:text-white block mb-0.5">Formula:</span>
+                      {typeof ex.formula === 'object' ? (ex.formula[currentLanguage] || ex.formula.en) : ex.formula}
+                    </div>
+                  )}
+                  {ex.substitution && (
+                    <div>
+                      <span className="font-bold text-slate-900 dark:text-white block mb-0.5">Substitution:</span>
+                      {ex.substitution[currentLanguage] || ex.substitution.en}
+                    </div>
+                  )}
+                  {ex.calculation && (
+                    <div>
+                      <span className="font-bold text-slate-900 dark:text-white block mb-0.5">Calculation:</span>
+                      {ex.calculation[currentLanguage] || ex.calculation.en}
+                    </div>
+                  )}
+                </div>
+              )}
 
               {ex.finalAnswer && (
                 <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-800 dark:text-emerald-300 font-mono font-bold">

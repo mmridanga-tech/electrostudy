@@ -10,6 +10,7 @@ import { CHAPTER_8_LESSONS } from './chapter8Lessons';
 import { CHAPTER_9_LESSONS } from './chapter9Lessons';
 import { CHAPTER_10_LESSONS } from './chapter10Lessons';
 import { CHAPTER_11_LESSONS } from './chapter11Lessons';
+import { CHAPTER_12_LESSONS } from './chapter12Lessons';
 import { CHAPTER_15_LESSONS } from './chapter15Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
@@ -2238,9 +2239,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 12,
         title: {
-          en: 'Chapter 12: AC Circuits',
-          hi: 'अध्याय 12: एसी परिपथ',
-          bn: 'অধ্যায় ১২: এসি সার্কিট'
+          en: 'Chapter 12: Advanced AC Network Analysis & Coupled Circuits',
+          hi: 'अध्याय 12: उन्नत एसी नेटवर्क विश्लेषण एवं युग्मित परिपथ',
+          bn: 'অধ্যায় ১২: উন্নত এসি নেটওয়ার্ক বিশ্লেষণ ও কাপল্ড সার্কিট'
         },
         topics: [
           {
@@ -2248,9 +2249,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 1,
             title: {
-              en: 'Pure Resistive Circuit',
-              hi: 'शुद्ध प्रतिरोधी परिपथ',
-              bn: 'পিওর রেজিস্ট্রিভ সার্কিট'
+              en: 'AC Thevenin & Norton Theorems',
+              hi: 'एसी थेवेनिन एवं नॉर्टन प्रमेय',
+              bn: 'এসি থেভেনিন ও নর্টন উপপাদ্য'
             }
           },
           {
@@ -2258,9 +2259,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 2,
             title: {
-              en: 'Pure Inductive Circuit',
-              hi: 'शुद्ध प्रेरक परिपथ',
-              bn: 'পিওর ইন্ডাক্টিভ সার্কিট'
+              en: 'AC Superposition & Maximum Power Transfer',
+              hi: 'एसी अध्यारोपण एवं अधिकतम शक्ति स्थानांतरण',
+              bn: 'এসি সুপারপজিশন ও সর্বোচ্চ শক্তি স্থানান্তর'
             }
           },
           {
@@ -2268,9 +2269,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 3,
             title: {
-              en: 'Pure Capacitive Circuit',
-              hi: 'शुद्ध कैपेसिटिव परिपथ',
-              bn: 'পিওর ক্যাপাসিটিভ সার্কিট'
+              en: 'Coupled Inductors, Mutual Inductance & Dot Convention',
+              hi: 'युग्मित प्रेरक, अन्योन्य प्रेरकत्व एवं डॉट परिपाटी',
+              bn: 'কাপল্ড ইন্ডাক্টর, পারস্পরিক ইন্ডাকট্যান্স ও ডট কনভেনশন'
             }
           },
           {
@@ -2278,9 +2279,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 4,
             title: {
-              en: 'RL Circuit',
-              hi: 'आरएल परिपथ (RL Circuit)',
-              bn: 'আরএল সার্কিট (RL Circuit)'
+              en: 'Linear Transformers, Reflected Impedance & Equivalent T/Π Models',
+              hi: 'रैखिक ट्रांसफार्मर, परावर्तित प्रतिबाधा एवं समतुल्य T/Π मॉडल',
+              bn: 'লিনিয়ার ট্রান্সফরমার, প্রতিফলিত প্রতিবাধা ও তুল্য টি/পাই মডেল'
             }
           },
           {
@@ -2288,9 +2289,9 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 5,
             title: {
-              en: 'RC Circuit',
-              hi: 'आरसी परिपथ (RC Circuit)',
-              bn: 'আরসি সার্কিট (RC Circuit)'
+              en: 'Ideal Transformers, Complex Turns Ratio & Per-Unit (p.u.) Impedance',
+              hi: 'आदर्श ट्रांसफार्मर, सम्मिश्र फेरा अनुपात एवं प्रति-इकाई (p.u.) प्रतिबाधा',
+              bn: 'আদর্শ ট্রান্সফরমার, জটিল টার্নস রেশিও ও পার-ইউনিট (p.u.) প্রতিবাধা'
             }
           },
           {
@@ -2298,59 +2299,19 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             chapterId: 'ch-ac-circuits',
             order: 6,
             title: {
-              en: 'RLC Circuit',
-              hi: 'आरएलसी परिपथ (RLC Circuit)',
-              bn: 'আরএলসি সার্কিট (RLC Circuit)'
-            }
-          },
-          {
-            id: 'tp-impedance',
-            chapterId: 'ch-ac-circuits',
-            order: 7,
-            title: {
-              en: 'Impedance',
-              hi: 'प्रतिबाधा (इम्पीडेंस)',
-              bn: 'ইম্পিডেন্স'
-            }
-          },
-          {
-            id: 'tp-reactance',
-            chapterId: 'ch-ac-circuits',
-            order: 8,
-            title: {
-              en: 'Reactance',
-              hi: 'रिएक्टेंस',
-              bn: 'রিয়্যাক্ট্যান্স'
+              en: 'Passive Filters & Frequency Response (Bode Plots)',
+              hi: 'निष्क्रिय फिल्टर एवं आवृत्ति अनुक्रिया (बोडे प्लॉट)',
+              bn: 'প্যাসিভ ফিল্টার ও কম্পাঙ্ক প্রতিক্রিয়া (বোড প্লট)'
             }
           },
           {
             id: 'tp-admittance-intro',
             chapterId: 'ch-ac-circuits',
-            order: 9,
+            order: 7,
             title: {
-              en: 'Admittance — Introduction',
-              hi: 'प्रवेश्यता (एडमिटेंस) — परिचय',
-              bn: 'অ্যাডমিট্যান্স — পরিচিতি'
-            }
-          },
-          {
-            id: 'tp-phasor-concept',
-            chapterId: 'ch-ac-circuits',
-            order: 10,
-            title: {
-              en: 'Phasor Concept',
-              hi: 'फेजर अवधारणा',
-              bn: 'ফেজর ধারণা'
-            }
-          },
-          {
-            id: 'tp-power-ac-circuit',
-            chapterId: 'ch-ac-circuits',
-            order: 11,
-            title: {
-              en: 'Power in AC Circuit',
-              hi: 'एसी परिपथ में शक्ति',
-              bn: 'এসি সার্কিটে পাওয়ার'
+              en: 'Two-Port Network Parameters in the AC Domain (Z, Y, ABCD, h)',
+              hi: 'एसी डोमेन में टू-पोर्ट नेटवर्क प्राचल (Z, Y, ABCD, h)',
+              bn: 'এসি ডোমেনে টু-পোর্ট নেটওয়ার্ক প্যারামিটার (Z, Y, ABCD, h)'
             }
           }
         ]
@@ -2824,6 +2785,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_11_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-ac-circuits') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_12_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

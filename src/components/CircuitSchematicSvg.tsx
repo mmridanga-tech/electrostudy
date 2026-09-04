@@ -6937,9 +6937,932 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'circuit-ch15-safe-working-practices':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 310" className="w-full max-w-2xl h-auto font-sans">
+            {/* Background Canvas */}
+            <rect width="540" height="310" rx="8" fill="#030712" stroke="#1e293b" strokeWidth="1.5" />
+
+            {/* Title Header */}
+            <rect x="12" y="10" width="516" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
+              SAFE WORKING PRACTICES, NFPA 70E BOUNDARIES &amp; HIERARCHY OF CONTROLS
+            </text>
+
+            {/* Section 1: Hierarchy of Controls Pyramid (Left, x=15, w=160) */}
+            <g transform="translate(15, 44)">
+              <rect width="165" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="82" y="16" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+                HIERARCHY OF CONTROLS
+              </text>
+              <text x="82" y="28" fill="#64748b" fontSize="7" textAnchor="middle">
+                ISO 45001 / ANSI Z590.3
+              </text>
+
+              {/* Tier 1: Elimination */}
+              <polygon points="12,38 153,38 143,68 22,68" fill="#065f46" stroke="#34d399" strokeWidth="1" />
+              <text x="82" y="52" fill="#ecfdf5" fontSize="8" fontWeight="bold" textAnchor="middle">1. ELIMINATION (100%)</text>
+              <text x="82" y="62" fill="#a7f3d0" fontSize="6.5" textAnchor="middle">De-energize &amp; Lockout</text>
+
+              {/* Tier 2: Substitution */}
+              <polygon points="23,71 142,71 133,101 32,101" fill="#115e59" stroke="#2dd4bf" strokeWidth="1" />
+              <text x="82" y="85" fill="#f0fdfa" fontSize="8" fontWeight="bold" textAnchor="middle">2. SUBSTITUTION (85%)</text>
+              <text x="82" y="95" fill="#99f6e4" fontSize="6.5" textAnchor="middle">Use 24V SELV vs 230V AC</text>
+
+              {/* Tier 3: Engineering */}
+              <polygon points="33,104 132,104 123,134 42,134" fill="#854d0e" stroke="#facc15" strokeWidth="1" />
+              <text x="82" y="118" fill="#fefce8" fontSize="8" fontWeight="bold" textAnchor="middle">3. ENGINEERING (70%)</text>
+              <text x="82" y="128" fill="#fef08a" fontSize="6.5" textAnchor="middle">IP2X shrouds, Arc relays</text>
+
+              {/* Tier 4: Administrative */}
+              <polygon points="43,137 122,137 112,167 53,167" fill="#9a3412" stroke="#fb923c" strokeWidth="1" />
+              <text x="82" y="151" fill="#fff7ed" fontSize="7.5" fontWeight="bold" textAnchor="middle">4. ADMIN (45%)</text>
+              <text x="82" y="161" fill="#fed7aa" fontSize="6.5" textAnchor="middle">PTW, JHA, One-Hand Rule</text>
+
+              {/* Tier 5: PPE */}
+              <polygon points="54,170 111,170 82,204 82,204" fill="#881337" stroke="#f43f5e" strokeWidth="1" />
+              <text x="82" y="184" fill="#fff1f2" fontSize="7.5" fontWeight="bold" textAnchor="middle">5. PPE (20%)</text>
+              <text x="82" y="196" fill="#fecdd3" fontSize="6" textAnchor="middle">Last Line Shield</text>
+
+              <text x="82" y="214" fill="#94a3b8" fontSize="6.5" textAnchor="middle">▲ Most Effective to Least ▼</text>
+            </g>
+
+            {/* Section 2: NFPA 70E Boundaries Diagram (Middle, x=190, w=175) */}
+            <g transform="translate(190, 44)">
+              <rect width="175" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="87" y="16" fill="#f59e0b" fontSize="9" fontWeight="bold" textAnchor="middle">
+                NFPA 70E APPROACH ZONES
+              </text>
+              <text x="87" y="28" fill="#64748b" fontSize="7" textAnchor="middle">
+                415V Three-Phase AC System
+              </text>
+
+              {/* Concentric rings */}
+              {/* Outer ring: Arc Flash Boundary */}
+              <circle cx="87" cy="115" r="75" fill="#f43f5e" fillOpacity="0.1" stroke="#f43f5e" strokeWidth="1.5" strokeDasharray="4 2" />
+              <text x="87" y="48" fill="#fda4af" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                Arc Flash Boundary (4.6m)
+              </text>
+
+              {/* Middle ring: Limited Approach Boundary */}
+              <circle cx="87" cy="115" r="50" fill="#f59e0b" fillOpacity="0.15" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="87" y="74" fill="#fde68a" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                Limited Approach (1.0m)
+              </text>
+
+              {/* Inner ring: Restricted Approach Boundary */}
+              <circle cx="87" cy="115" r="28" fill="#ef4444" fillOpacity="0.25" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="87" y="96" fill="#fca5a5" fontSize="6" fontWeight="bold" textAnchor="middle">
+                Restricted (0.3m)
+              </text>
+
+              {/* Exposed Live Busbar at center */}
+              <rect x="79" y="107" width="16" height="16" rx="2" fill="#eab308" stroke="#fef08a" strokeWidth="1.5" />
+              <text x="87" y="119" fill="#000" fontSize="8" fontWeight="bold" textAnchor="middle">415V</text>
+
+              {/* Footnote notes */}
+              <text x="87" y="200" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">
+                Restricted: Qualified only with 1kV gloves
+              </text>
+              <text x="87" y="212" fill="#94a3b8" fontSize="6" textAnchor="middle">
+                Limited: Unqualified must be escorted
+              </text>
+            </g>
+
+            {/* Section 3: IEC 60900 1,000 V Insulated Hand Tool (Right, x=375, w=153) */}
+            <g transform="translate(375, 44)">
+              <rect width="153" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="76" y="16" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">
+                IEC 60900 INSULATED TOOLS
+              </text>
+              <text x="76" y="28" fill="#64748b" fontSize="7" textAnchor="middle">
+                Rated 1,000V AC / 1,500V DC
+              </text>
+
+              {/* Tool Anatomy Illustration */}
+              {/* Metal shaft */}
+              <rect x="72" y="40" width="8" height="65" fill="#94a3b8" stroke="#cbd5e1" strokeWidth="0.8" />
+              <text x="76" y="75" fill="#0f172a" fontSize="6" fontWeight="bold" textAnchor="middle" transform="rotate(-90 76 75)">
+                STEEL CORE
+              </text>
+
+              {/* Inner yellow insulation warning layer */}
+              <rect x="68" y="105" width="16" height="60" rx="4" fill="#eab308" stroke="#ca8a04" strokeWidth="1" />
+              {/* Outer red dielectric layer */}
+              <rect x="65" y="112" width="22" height="75" rx="6" fill="#dc2626" stroke="#b91c1c" strokeWidth="1" />
+
+              {/* Double triangle symbol */}
+              <polygon points="76,145 71,155 81,155" fill="none" stroke="#fff" strokeWidth="1" />
+              <polygon points="76,152 71,162 81,162" fill="none" stroke="#fff" strokeWidth="1" />
+              <text x="76" y="172" fill="#fff" fontSize="6.5" fontWeight="bold" textAnchor="middle">1000 V</text>
+
+              {/* Annotations */}
+              <text x="76" y="194" fill="#f87171" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                Dual-Layer Wear Indicator:
+              </text>
+              <text x="76" y="204" fill="#fef08a" fontSize="6" textAnchor="middle">
+                If yellow shows through red,
+              </text>
+              <text x="76" y="214" fill="#fca5a5" fontSize="6" fontWeight="bold" textAnchor="middle">
+                DESTROY &amp; REPLACE TOOL!
+              </text>
+            </g>
+
+            {/* Bottom summary banner */}
+            <rect x="15" y="272" width="513" height="28" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="290" fill="#38bdf8" fontSize="8" fontWeight="bold" textAnchor="middle">
+              ONE-HAND RULE: Left hand in pocket breaks the thoracic heart circuit | BUDDY SYSTEM: Observer holds rescue crook
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Safe Working Practices: Hierarchy of Controls, NFPA 70E Boundary Zones, and IEC 60900 Tool Insulation."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-electrical-ppe-matrix':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 310" className="w-full max-w-2xl h-auto font-sans">
+            {/* Background Canvas */}
+            <rect width="540" height="310" rx="8" fill="#030712" stroke="#1e293b" strokeWidth="1.5" />
+
+            {/* Title Header */}
+            <rect x="12" y="10" width="516" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
+              ELECTRICAL PPE STANDARDS: ASTM D120 GLOVE CLASSES &amp; NFPA 70E ARC FLUID MATRIX
+            </text>
+
+            {/* Section 1: 3-Layer Glove System (Left, x=15, w=150) */}
+            <g transform="translate(15, 44)">
+              <rect width="150" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="75" y="16" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">
+                3-LAYER GLOVE SYSTEM
+              </text>
+              <text x="75" y="28" fill="#64748b" fontSize="7" textAnchor="middle">
+                ASTM D120 &amp; ASTM F696
+              </text>
+
+              {/* Outer Leather Protector */}
+              <rect x="25" y="42" width="100" height="42" rx="4" fill="#78350f" stroke="#b45309" strokeWidth="1.2" />
+              <text x="75" y="58" fill="#fef3c7" fontSize="8" fontWeight="bold" textAnchor="middle">1. LEATHER OUTER</text>
+              <text x="75" y="70" fill="#fde68a" fontSize="6.5" textAnchor="middle">Top-Grain Cowhide Protector</text>
+              <text x="75" y="80" fill="#fcd34d" fontSize="6" textAnchor="middle">Puncture &amp; Cut Defense</text>
+
+              {/* Clearance Gap indicator */}
+              <line x1="20" y1="86" x2="130" y2="86" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 2" />
+              <text x="75" y="96" fill="#fbbf24" fontSize="7" fontWeight="bold" textAnchor="middle">
+                ▲ Clearance Gap (13-102mm) ▲
+              </text>
+              <line x1="20" y1="100" x2="130" y2="100" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 2" />
+
+              {/* Middle Dielectric Rubber Glove */}
+              <rect x="25" y="104" width="100" height="46" rx="4" fill="#991b1b" stroke="#dc2626" strokeWidth="1.2" />
+              <text x="75" y="122" fill="#fee2e2" fontSize="8" fontWeight="bold" textAnchor="middle">2. DIELECTRIC RUBBER</text>
+              <text x="75" y="134" fill="#fca5a5" fontSize="6.5" textAnchor="middle">ASTM D120 Voltage Barrier</text>
+              <text x="75" y="144" fill="#f87171" fontSize="6" textAnchor="middle">6-Month Lab Proof Re-Test</text>
+
+              {/* Inner Cotton Liner */}
+              <rect x="25" y="154" width="100" height="38" rx="4" fill="#334155" stroke="#64748b" strokeWidth="1.2" />
+              <text x="75" y="170" fill="#f8fafc" fontSize="8" fontWeight="bold" textAnchor="middle">3. COTTON LINER</text>
+              <text x="75" y="182" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">Perspiration Absorption</text>
+
+              <text x="75" y="208" fill="#34d399" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                Daily Air Inflation Test Required!
+              </text>
+            </g>
+
+            {/* Section 2: ASTM D120 Voltage Glove Classes (Middle, x=173, w=180) */}
+            <g transform="translate(173, 44)">
+              <rect width="180" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="90" y="16" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">
+                GLOVE VOLTAGE CLASSES
+              </text>
+              <text x="90" y="27" fill="#64748b" fontSize="7" textAnchor="middle">
+                ASTM D120 / IEC 60903
+              </text>
+
+              {/* Table header */}
+              <rect x="6" y="34" width="168" height="15" fill="#1e293b" rx="2" />
+              <text x="24" y="44" fill="#94a3b8" fontSize="6.5" fontWeight="bold" textAnchor="middle">CLASS</text>
+              <text x="60" y="44" fill="#94a3b8" fontSize="6.5" fontWeight="bold" textAnchor="middle">TAG COLOR</text>
+              <text x="108" y="44" fill="#94a3b8" fontSize="6.5" fontWeight="bold" textAnchor="middle">MAX AC USE</text>
+              <text x="152" y="44" fill="#94a3b8" fontSize="6.5" fontWeight="bold" textAnchor="middle">PROOF</text>
+
+              {/* Class 00 */}
+              <rect x="6" y="52" width="168" height="18" fill="#0f172a" rx="2" />
+              <text x="24" y="64" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">00</text>
+              <rect x="42" y="55" width="36" height="12" rx="2" fill="#fef3c7" />
+              <text x="60" y="64" fill="#78350f" fontSize="6.5" fontWeight="bold" textAnchor="middle">Beige</text>
+              <text x="108" y="64" fill="#34d399" fontSize="7" fontWeight="bold" textAnchor="middle">500 V</text>
+              <text x="152" y="64" fill="#cbd5e1" fontSize="7" textAnchor="middle">2.5 kV</text>
+
+              {/* Class 0 */}
+              <rect x="6" y="73" width="168" height="18" fill="#1e1e2e" rx="2" />
+              <text x="24" y="85" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">0</text>
+              <rect x="42" y="76" width="36" height="12" rx="2" fill="#ef4444" />
+              <text x="60" y="85" fill="#fff" fontSize="6.5" fontWeight="bold" textAnchor="middle">Red</text>
+              <text x="108" y="85" fill="#34d399" fontSize="7" fontWeight="bold" textAnchor="middle">1,000 V</text>
+              <text x="152" y="85" fill="#cbd5e1" fontSize="7" textAnchor="middle">5.0 kV</text>
+
+              {/* Class 1 */}
+              <rect x="6" y="94" width="168" height="18" fill="#0f172a" rx="2" />
+              <text x="24" y="106" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">1</text>
+              <rect x="42" y="97" width="36" height="12" rx="2" fill="#f8fafc" />
+              <text x="60" y="106" fill="#0f172a" fontSize="6.5" fontWeight="bold" textAnchor="middle">White</text>
+              <text x="108" y="106" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">7,500 V</text>
+              <text x="152" y="106" fill="#cbd5e1" fontSize="7" textAnchor="middle">10 kV</text>
+
+              {/* Class 2 */}
+              <rect x="6" y="115" width="168" height="18" fill="#1e1e2e" rx="2" />
+              <text x="24" y="127" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">2</text>
+              <rect x="42" y="118" width="36" height="12" rx="2" fill="#eab308" />
+              <text x="60" y="127" fill="#0f172a" fontSize="6.5" fontWeight="bold" textAnchor="middle">Yellow</text>
+              <text x="108" y="127" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">17,000 V</text>
+              <text x="152" y="127" fill="#cbd5e1" fontSize="7" textAnchor="middle">20 kV</text>
+
+              {/* Class 3 */}
+              <rect x="6" y="136" width="168" height="18" fill="#0f172a" rx="2" />
+              <text x="24" y="148" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">3</text>
+              <rect x="42" y="139" width="36" height="12" rx="2" fill="#10b981" />
+              <text x="60" y="148" fill="#fff" fontSize="6.5" fontWeight="bold" textAnchor="middle">Green</text>
+              <text x="108" y="148" fill="#a855f7" fontSize="7" fontWeight="bold" textAnchor="middle">26,500 V</text>
+              <text x="152" y="148" fill="#cbd5e1" fontSize="7" textAnchor="middle">30 kV</text>
+
+              {/* Class 4 */}
+              <rect x="6" y="157" width="168" height="18" fill="#1e1e2e" rx="2" />
+              <text x="24" y="169" fill="#fff" fontSize="7" fontWeight="bold" textAnchor="middle">4</text>
+              <rect x="42" y="160" width="36" height="12" rx="2" fill="#f97316" />
+              <text x="60" y="169" fill="#fff" fontSize="6.5" fontWeight="bold" textAnchor="middle">Orange</text>
+              <text x="108" y="169" fill="#a855f7" fontSize="7" fontWeight="bold" textAnchor="middle">36,000 V</text>
+              <text x="152" y="169" fill="#cbd5e1" fontSize="7" textAnchor="middle">40 kV</text>
+
+              <rect x="6" y="180" width="168" height="34" rx="3" fill="#020617" stroke="#334155" />
+              <text x="90" y="194" fill="#38bdf8" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                11 kV Systems Require Class 2 (Yellow)
+              </text>
+              <text x="90" y="206" fill="#94a3b8" fontSize="6" textAnchor="middle">
+                415 V Systems Require Class 0 (Red)
+              </text>
+            </g>
+
+            {/* Section 3: NFPA 70E Arc Flash Categories (Right, x=361, w=167) */}
+            <g transform="translate(361, 44)">
+              <rect width="167" height="220" rx="6" fill="#090d16" stroke="#1e293b" />
+              <text x="83" y="16" fill="#f43f5e" fontSize="9" fontWeight="bold" textAnchor="middle">
+                ARC FLASH CATEGORIES
+              </text>
+              <text x="83" y="27" fill="#64748b" fontSize="7" textAnchor="middle">
+                NFPA 70E Table 130.7(C)(15)
+              </text>
+
+              {/* Cat 1 */}
+              <rect x="8" y="34" width="151" height="36" rx="3" fill="#0284c7" fillOpacity="0.15" stroke="#0284c7" strokeWidth="1" />
+              <text x="16" y="47" fill="#38bdf8" fontSize="7.5" fontWeight="bold">CAT 1 (Min 4 cal/cm²)</text>
+              <text x="16" y="58" fill="#cbd5e1" fontSize="6.5">AR shirt, pants, face shield</text>
+
+              {/* Cat 2 */}
+              <rect x="8" y="74" width="151" height="38" rx="3" fill="#059669" fillOpacity="0.15" stroke="#059669" strokeWidth="1" />
+              <text x="16" y="87" fill="#34d399" fontSize="7.5" fontWeight="bold">CAT 2 (Min 8 cal/cm²)</text>
+              <text x="16" y="98" fill="#cbd5e1" fontSize="6.5">8 cal coverall + balaclava hood</text>
+
+              {/* Cat 3 */}
+              <rect x="8" y="116" width="151" height="38" rx="3" fill="#d97706" fillOpacity="0.15" stroke="#d97706" strokeWidth="1" />
+              <text x="16" y="129" fill="#fbbf24" fontSize="7.5" fontWeight="bold">CAT 3 (Min 25 cal/cm²)</text>
+              <text x="16" y="140" fill="#cbd5e1" fontSize="6.5">25 cal Flash Suit &amp; full hood</text>
+
+              {/* Cat 4 */}
+              <rect x="8" y="158" width="151" height="38" rx="3" fill="#e11d48" fillOpacity="0.15" stroke="#e11d48" strokeWidth="1" />
+              <text x="16" y="171" fill="#fb7185" fontSize="7.5" fontWeight="bold">CAT 4 (Min 40 cal/cm²)</text>
+              <text x="16" y="182" fill="#cbd5e1" fontSize="6.5">Multi-layer 40 cal suit &amp; air hood</text>
+
+              <text x="83" y="210" fill="#f87171" fontSize="6.5" fontWeight="bold" textAnchor="middle">
+                &gt; 40 cal/cm²: NO WORK ALLOWED!
+              </text>
+            </g>
+
+            {/* Bottom auxiliary gear specs */}
+            <rect x="15" y="272" width="513" height="28" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="285" fill="#e2e8f0" fontSize="7.5" fontWeight="bold" textAnchor="middle">
+              CLASS E HARD HAT: Tested to 20,000 V AC | EH FOOTWEAR: ASTM F2413 tested to 18,000 V AC (Leakage &lt; 1mA)
+            </text>
+            <text x="270" y="295" fill="#f87171" fontSize="6.5" textAnchor="middle">
+              NEVER wear meltable synthetics (polyester, nylon) under arc gear—they liquefy and fuse into skin!
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-bold">
+            {caption || "Electrical PPE: ASTM D120 Glove Voltage Classes, Leather Protectors, and NFPA 70E Arc Flash Categories."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch15-first-response-cpr-flowchart':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 310" className="w-full max-w-2xl h-auto font-sans">
+            {/* Background Canvas */}
+            <rect width="540" height="310" rx="8" fill="#030712" stroke="#1e293b" strokeWidth="1.5" />
+
+            {/* Title Header */}
+            <rect x="12" y="10" width="516" height="26" rx="4" fill="#0f172a" stroke="#334155" />
+            <text x="270" y="27" fill="#f43f5e" fontSize="11" fontWeight="bold" textAnchor="middle" letterSpacing="0.5">
+              ELECTRICAL ACCIDENT FIRST RESPONSE, STEP POTENTIAL &amp; CPR RESUSCITATION
+            </text>
+
+            {/* Step 1: Separation / De-energization (x=15, w=120) */}
+            <g transform="translate(15, 44)">
+              <rect width="120" height="220" rx="6" fill="#090d16" stroke="#3b82f6" strokeWidth="1.2" />
+              <rect x="0" y="0" width="120" height="22" rx="6" fill="#1e3a8a" />
+              <text x="60" y="15" fill="#bfdbfe" fontSize="8" fontWeight="bold" textAnchor="middle">
+                1. SCENE SAFETY
+              </text>
+
+              <circle cx="60" cy="55" r="18" fill="#1e293b" stroke="#f43f5e" strokeWidth="1.5" />
+              <text x="60" y="59" fill="#f43f5e" fontSize="12" fontWeight="bold" textAnchor="middle">⚡</text>
+
+              <text x="60" y="88" fill="#fca5a5" fontSize="7.5" fontWeight="bold" textAnchor="middle">
+                NEVER TOUCH BARE!
+              </text>
+              <text x="60" y="99" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">
+                Victim is electrified!
+              </text>
+
+              <rect x="8" y="112" width="104" height="42" rx="3" fill="#020617" stroke="#334155" />
+              <text x="60" y="125" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">PRIMARY ACTION:</text>
+              <text x="60" y="137" fill="#ecfdf5" fontSize="6.5" textAnchor="middle">Open Main Breaker</text>
+              <text x="60" y="147" fill="#94a3b8" fontSize="6.5" textAnchor="middle">or Pull Emergency Stop</text>
+
+              <rect x="8" y="162" width="104" height="48" rx="3" fill="#020617" stroke="#334155" />
+              <text x="60" y="175" fill="#fbbf24" fontSize="7" fontWeight="bold" textAnchor="middle">IF SWITCH BLOCKED:</text>
+              <text x="60" y="187" fill="#fed7aa" fontSize="6" textAnchor="middle">Use Fiberglass Rescue</text>
+              <text x="60" y="197" fill="#fed7aa" fontSize="6" textAnchor="middle">Crook Hook around belt</text>
+            </g>
+
+            {/* Step 2: Step Potential & Evacuation Physics (x=143, w=135) */}
+            <g transform="translate(143, 44)">
+              <rect width="135" height="220" rx="6" fill="#090d16" stroke="#f59e0b" strokeWidth="1.2" />
+              <rect x="0" y="0" width="135" height="22" rx="6" fill="#78350f" />
+              <text x="67" y="15" fill="#fef3c7" fontSize="8" fontWeight="bold" textAnchor="middle">
+                2. STEP POTENTIAL
+              </text>
+
+              {/* Concentric ground ripple circles */}
+              <circle cx="67" cy="65" r="32" fill="#f59e0b" fillOpacity="0.1" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 2" />
+              <circle cx="67" cy="65" r="20" fill="#f59e0b" fillOpacity="0.2" stroke="#f59e0b" strokeWidth="1" />
+              <circle cx="67" cy="65" r="8" fill="#ef4444" stroke="#f87171" strokeWidth="1" />
+              <text x="67" y="68" fill="#fff" fontSize="6" fontWeight="bold" textAnchor="middle">HV Wire</text>
+
+              <text x="67" y="112" fill="#fde68a" fontSize="7" fontWeight="bold" textAnchor="middle">
+                V(r) = (ρ·I) / (2π·r)
+              </text>
+
+              <rect x="6" y="122" width="123" height="40" rx="3" fill="#881337" fillOpacity="0.3" stroke="#f43f5e" strokeWidth="1" />
+              <text x="67" y="135" fill="#fecdd3" fontSize="6.5" fontWeight="bold" textAnchor="middle">❌ NORMAL WALKING:</text>
+              <text x="67" y="146" fill="#fda4af" fontSize="6" textAnchor="middle">Stride gap s = 0.8m</text>
+              <text x="67" y="156" fill="#fda4af" fontSize="6" fontWeight="bold" textAnchor="middle">V_step &gt; 1,000 V (LETHAL!)</text>
+
+              <rect x="6" y="168" width="123" height="42" rx="3" fill="#065f46" fillOpacity="0.3" stroke="#34d399" strokeWidth="1" />
+              <text x="67" y="181" fill="#a7f3d0" fontSize="6.5" fontWeight="bold" textAnchor="middle">✔ SAFETY SHUFFLE:</text>
+              <text x="67" y="192" fill="#6ee7b7" fontSize="6" textAnchor="middle">Slide feet together (s = 0)</text>
+              <text x="67" y="202" fill="#ecfdf5" fontSize="6" fontWeight="bold" textAnchor="middle">V_step = 0 V (SAFE!)</text>
+            </g>
+
+            {/* Step 3: CPR & Resuscitation (x=286, w=128) */}
+            <g transform="translate(286, 44)">
+              <rect width="128" height="220" rx="6" fill="#090d16" stroke="#ec4899" strokeWidth="1.2" />
+              <rect x="0" y="0" width="128" height="22" rx="6" fill="#831843" />
+              <text x="64" y="15" fill="#fce7f3" fontSize="8" fontWeight="bold" textAnchor="middle">
+                3. CPR &amp; AED DEFIB
+              </text>
+
+              <circle cx="64" cy="55" r="18" fill="#1e293b" stroke="#ec4899" strokeWidth="1.5" />
+              <text x="64" y="60" fill="#ec4899" fontSize="13" fontWeight="bold" textAnchor="middle">♥</text>
+
+              <text x="64" y="88" fill="#fbcfe8" fontSize="7.5" fontWeight="bold" textAnchor="middle">
+                30 : 2 COMPRESSION
+              </text>
+              <text x="64" y="99" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">
+                Rate: 100-120 bpm
+              </text>
+              <text x="64" y="109" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">
+                Depth: 5 to 6 cm
+              </text>
+
+              <rect x="6" y="118" width="116" height="42" rx="3" fill="#020617" stroke="#334155" />
+              <text x="64" y="132" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">EARLY AED SHOCK:</text>
+              <text x="64" y="144" fill="#cbd5e1" fontSize="6" textAnchor="middle">Electric shock induces VFib;</text>
+              <text x="64" y="154" fill="#fbbf24" fontSize="6" fontWeight="bold" textAnchor="middle">-7% to -10% survival / min!</text>
+
+              <rect x="6" y="166" width="116" height="44" rx="3" fill="#020617" stroke="#334155" />
+              <text x="64" y="180" fill="#34d399" fontSize="6.5" fontWeight="bold" textAnchor="middle">AED PADS PLACEMENT:</text>
+              <text x="64" y="191" fill="#a7f3d0" fontSize="6" textAnchor="middle">1. Upper Right Sternum</text>
+              <text x="64" y="201" fill="#a7f3d0" fontSize="6" textAnchor="middle">2. Lower Left Apex (Ribs)</text>
+            </g>
+
+            {/* Step 4: Burn Care & Trauma Hospitalization (x=422, w=106) */}
+            <g transform="translate(422, 44)">
+              <rect width="106" height="220" rx="6" fill="#090d16" stroke="#8b5cf6" strokeWidth="1.2" />
+              <rect x="0" y="0" width="106" height="22" rx="6" fill="#4c1d95" />
+              <text x="53" y="15" fill="#ede9fe" fontSize="8" fontWeight="bold" textAnchor="middle">
+                4. BURN CARE
+              </text>
+
+              <rect x="6" y="32" width="94" height="44" rx="3" fill="#020617" stroke="#334155" />
+              <text x="53" y="46" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">COOL WATER:</text>
+              <text x="53" y="58" fill="#cbd5e1" fontSize="6" textAnchor="middle">Irrigate burns 20 min</text>
+              <text x="53" y="68" fill="#f87171" fontSize="5.5" fontWeight="bold" textAnchor="middle">NO ice, oil or butter!</text>
+
+              <rect x="6" y="82" width="94" height="44" rx="3" fill="#020617" stroke="#334155" />
+              <text x="53" y="96" fill="#fbbf24" fontSize="6.5" fontWeight="bold" textAnchor="middle">STERILE WRAP:</text>
+              <text x="53" y="108" fill="#cbd5e1" fontSize="6" textAnchor="middle">Cover loosely with</text>
+              <text x="53" y="118" fill="#cbd5e1" fontSize="6" textAnchor="middle">clean plastic wrap</text>
+
+              <rect x="6" y="132" width="94" height="78" rx="3" fill="#020617" stroke="#334155" />
+              <text x="53" y="146" fill="#c084fc" fontSize="6.5" fontWeight="bold" textAnchor="middle">DEEP TRAUMA:</text>
+              <text x="53" y="158" fill="#e2e8f0" fontSize="6" textAnchor="middle">• Internal muscle burns</text>
+              <text x="53" y="168" fill="#e2e8f0" fontSize="6" textAnchor="middle">• Myoglobinuria / Kidney</text>
+              <text x="53" y="178" fill="#e2e8f0" fontSize="6" textAnchor="middle">• Delayed dysrhythmia</text>
+              <text x="53" y="196" fill="#f43f5e" fontSize="6.5" fontWeight="bold" textAnchor="middle">HOSPITALIZE ALL!</text>
+            </g>
+
+            {/* Bottom protocol summary */}
+            <rect x="15" y="272" width="513" height="28" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="285" fill="#f43f5e" fontSize="7.5" fontWeight="bold" textAnchor="middle">
+              EMERGENCY DRSABCD: Danger → Response → Send Help → Airway → Breathing → CPR (30:2) → Defibrillation
+            </text>
+            <text x="270" y="296" fill="#94a3b8" fontSize="6.5" textAnchor="middle">
+              Keep at least 10 meters (33 ft) distance from grounded high-voltage cables until confirmed de-energized by utility.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-rose-300 mt-2 text-center font-bold">
+            {caption || "First Response to Electrical Accidents: De-energization, Step Potential Evacuation, and CPR/AED Resuscitation."}
+          </p>
+        </div>
+      );
+
+    /* =========================================================================
+       CHAPTER 12 — ADVANCED AC NETWORK ANALYSIS & COUPLED CIRCUITS
+       ========================================================================= */
+
+    case 'circuit-ch12-ac-thevenin-norton':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Thevenin Equivalent on Left */}
+            <g transform="translate(10, 20)">
+              <rect x="0" y="0" width="245" height="190" rx="6" fill="#0f172a" stroke="#0284c7" strokeWidth="1.5" strokeDasharray="4 2" />
+              <text x="122" y="22" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">AC Thevenin Equivalent</text>
+              
+              {/* AC Source */}
+              <circle cx="50" cy="110" r="20" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <path d="M 38 110 Q 44 98 50 110 T 62 110" fill="none" stroke="#38bdf8" strokeWidth="2" />
+              <text x="50" y="145" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">V_th</text>
+              <text x="50" y="80" fill="#94a3b8" fontSize="9" textAnchor="middle">+</text>
+              <text x="50" y="138" fill="#94a3b8" fontSize="9" textAnchor="middle">-</text>
+
+              {/* Wire to Z_th */}
+              <line x1="50" y1="90" x2="50" y2="60" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="50" y1="60" x2="90" y2="60" stroke="#94a3b8" strokeWidth="2" />
+
+              {/* Z_th Box */}
+              <rect x="90" y="48" width="70" height="24" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="125" y="64" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Z_th = R+jX</text>
+
+              {/* Terminal A */}
+              <line x1="160" y1="60" x2="230" y2="60" stroke="#94a3b8" strokeWidth="2" />
+              <circle cx="230" cy="60" r="4" fill="#38bdf8" />
+              <text x="220" y="52" fill="#38bdf8" fontSize="10" fontWeight="bold">A</text>
+
+              {/* Return Wire Terminal B */}
+              <line x1="50" y1="130" x2="50" y2="160" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="50" y1="160" x2="230" y2="160" stroke="#94a3b8" strokeWidth="2" />
+              <circle cx="230" cy="160" r="4" fill="#38bdf8" />
+              <text x="220" y="175" fill="#38bdf8" fontSize="10" fontWeight="bold">B</text>
+            </g>
+
+            {/* Norton Equivalent on Right */}
+            <g transform="translate(285, 20)">
+              <rect x="0" y="0" width="245" height="190" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" strokeDasharray="4 2" />
+              <text x="122" y="22" fill="#34d399" fontSize="11" fontWeight="bold" textAnchor="middle">AC Norton Equivalent</text>
+
+              {/* Current Source */}
+              <circle cx="50" cy="110" r="20" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <line x1="50" y1="122" x2="50" y2="98" stroke="#34d399" strokeWidth="2" />
+              <polygon points="46,104 50,96 54,104" fill="#34d399" />
+              <text x="50" y="145" fill="#34d399" fontSize="10" fontWeight="bold" textAnchor="middle">I_N = V_th/Z_th</text>
+
+              {/* Parallel Z_th */}
+              <line x1="50" y1="90" x2="50" y2="60" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="50" y1="60" x2="135" y2="60" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="135" y1="60" x2="135" y2="85" stroke="#94a3b8" strokeWidth="2" />
+              <rect x="110" y="85" width="50" height="50" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <text x="135" y="112" fill="#34d399" fontSize="10" fontWeight="bold" textAnchor="middle">Z_th</text>
+              <line x1="135" y1="135" x2="135" y2="160" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="50" y1="130" x2="50" y2="160" stroke="#94a3b8" strokeWidth="2" />
+              <line x1="50" y1="160" x2="135" y2="160" stroke="#94a3b8" strokeWidth="2" />
+
+              {/* Terminal A */}
+              <line x1="135" y1="60" x2="230" y2="60" stroke="#94a3b8" strokeWidth="2" />
+              <circle cx="230" cy="60" r="4" fill="#34d399" />
+              <text x="220" y="52" fill="#34d399" fontSize="10" fontWeight="bold">A</text>
+
+              {/* Terminal B */}
+              <line x1="135" y1="160" x2="230" y2="160" stroke="#94a3b8" strokeWidth="2" />
+              <circle cx="230" cy="160" r="4" fill="#34d399" />
+              <text x="220" y="175" fill="#34d399" fontSize="10" fontWeight="bold">B</text>
+            </g>
+
+            {/* Source Conversion Arrow */}
+            <text x="265" y="115" fill="#f59e0b" fontSize="12" fontWeight="bold" textAnchor="middle">⇄</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "AC Thevenin and Norton Duals: V_th = I_N · Z_th with complex phasor impedance Z_th = R_th + jX_th."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-ac-superposition-max-power':
+    case 'circuit-ch12-ac-superposition-maxpower':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Multi-frequency AC circuit */}
+            <g transform="translate(20, 20)">
+              <rect x="0" y="0" width="230" height="190" rx="6" fill="#0f172a" stroke="#8b5cf6" strokeWidth="1.5" />
+              <text x="115" y="22" fill="#a78bfa" fontSize="11" fontWeight="bold" textAnchor="middle">AC Superposition (ω1 ≠ ω2)</text>
+              
+              <circle cx="45" cy="80" r="16" fill="#1e293b" stroke="#a78bfa" strokeWidth="2" />
+              <text x="45" y="84" fill="#a78bfa" fontSize="9" fontWeight="bold" textAnchor="middle">V₁(ω₁)</text>
+              
+              <circle cx="45" cy="140" r="16" fill="#1e293b" stroke="#ec4899" strokeWidth="2" />
+              <text x="45" y="144" fill="#ec4899" fontSize="9" fontWeight="bold" textAnchor="middle">I₂(ω₂)</text>
+
+              <rect x="110" y="65" width="45" height="25" rx="3" fill="#1e293b" stroke="#cbd5e1" strokeWidth="1.5" />
+              <text x="132" y="81" fill="#cbd5e1" fontSize="9" textAnchor="middle">Z₁(ω)</text>
+
+              <rect x="110" y="125" width="45" height="25" rx="3" fill="#1e293b" stroke="#cbd5e1" strokeWidth="1.5" />
+              <text x="132" y="141" fill="#cbd5e1" fontSize="9" textAnchor="middle">Z₂(ω)</text>
+
+              <text x="115" y="175" fill="#f43f5e" fontSize="9" textAnchor="middle" fontWeight="bold">P_total = P(ω₁) + P(ω₂)</text>
+            </g>
+
+            {/* Maximum Power Transfer Conjugate Matching */}
+            <g transform="translate(280, 20)">
+              <rect x="0" y="0" width="240" height="190" rx="6" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="120" y="22" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">Complex Conjugate Matching</text>
+
+              {/* Source Z_th */}
+              <rect x="30" y="55" width="75" height="35" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="67" y="72" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">Z_th</text>
+              <text x="67" y="84" fill="#94a3b8" fontSize="8" textAnchor="middle">R_th + jX_th</text>
+
+              {/* Load Z_L */}
+              <rect x="135" y="55" width="75" height="35" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <text x="172" y="72" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">Z_L = Z_th*</text>
+              <text x="172" y="84" fill="#6ee7b7" fontSize="8" textAnchor="middle">R_th - jX_th</text>
+
+              <line x1="105" y1="72" x2="135" y2="72" stroke="#fbbf24" strokeWidth="2" />
+              <circle cx="120" cy="72" r="3" fill="#fbbf24" />
+
+              {/* Formula Callout */}
+              <rect x="25" y="115" width="190" height="60" rx="4" fill="#020617" stroke="#475569" />
+              <text x="120" y="135" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">P_max = |V_th|² / (4 · R_th)</text>
+              <text x="120" y="152" fill="#94a3b8" fontSize="8.5" textAnchor="middle">Net Reactance cancels: X_th + X_L = 0</text>
+              <text x="120" y="165" fill="#94a3b8" fontSize="8.5" textAnchor="middle">Resonance creates purely real circuit</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-semibold">
+            {caption || "AC Superposition & Conjugate Matching: Orthogonal frequencies superpose in time; maximum power demands Z_L = Z_th*."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-coupled-circuits-dot-convention':
+    case 'circuit-ch12-coupled-circuits-dot':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Coupled Inductors Schematic */}
+            <rect x="30" y="20" width="480" height="200" rx="8" fill="#0f172a" stroke="#0284c7" strokeWidth="1.5" />
+            <text x="270" y="42" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Coupled Inductors & Dot Convention Polarity
+            </text>
+
+            {/* Coil 1 (Primary) */}
+            <g transform="translate(130, 80)">
+              {/* Coils */}
+              <path d="M 0,0 Q 20,-15 20,15 Q 20,45 0,60" fill="none" stroke="#22d3ee" strokeWidth="3.5" />
+              {/* Dot at terminal 1 */}
+              <circle cx="0" cy="-5" r="5" fill="#ef4444" stroke="#ffffff" strokeWidth="1" />
+              <text x="-25" y="-3" fill="#ef4444" fontSize="10" fontWeight="bold">• Dot</text>
+              <text x="-35" y="35" fill="#22d3ee" fontSize="11" fontWeight="bold">L₁</text>
+              {/* Current arrow I1 entering dot */}
+              <line x1="-40" y1="0" x2="-5" y2="0" stroke="#22d3ee" strokeWidth="2" />
+              <polygon points="-12,-4 -2,0 -12,4" fill="#22d3ee" />
+              <text x="-25" y="-12" fill="#22d3ee" fontSize="10" fontWeight="bold">i₁</text>
+            </g>
+
+            {/* Mutual Flux Coupling M */}
+            <g transform="translate(230, 70)">
+              <path d="M 0,20 Q 40,-10 80,20" fill="none" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 3" />
+              <polygon points="76,14 84,21 76,26" fill="#f59e0b" />
+              <polygon points="4,26 -4,21 4,14" fill="#f59e0b" />
+              <text x="40" y="8" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">Mutual M</text>
+              <text x="40" y="26" fill="#94a3b8" fontSize="9" textAnchor="middle">k = M / √(L₁L₂)</text>
+
+              {/* Core bars */}
+              <line x1="36" y1="35" x2="36" y2="85" stroke="#64748b" strokeWidth="2" strokeDasharray="3 2" />
+              <line x1="44" y1="35" x2="44" y2="85" stroke="#64748b" strokeWidth="2" strokeDasharray="3 2" />
+            </g>
+
+            {/* Coil 2 (Secondary) */}
+            <g transform="translate(370, 80)">
+              <path d="M 40,0 Q 20,-15 20,15 Q 20,45 40,60" fill="none" stroke="#10b981" strokeWidth="3.5" />
+              {/* Dot at terminal 2 */}
+              <circle cx="40" cy="-5" r="5" fill="#ef4444" stroke="#ffffff" strokeWidth="1" />
+              <text x="50" y="-3" fill="#ef4444" fontSize="10" fontWeight="bold">• Dot</text>
+              <text x="55" y="35" fill="#10b981" fontSize="11" fontWeight="bold">L₂</text>
+              {/* Current arrow i2 */}
+              <line x1="75" y1="0" x2="42" y2="0" stroke="#10b981" strokeWidth="2" />
+              <polygon points="50,-4 42,0 50,4" fill="#10b981" />
+              <text x="60" y="-12" fill="#10b981" fontSize="10" fontWeight="bold">i₂</text>
+            </g>
+
+            {/* Dot Rule Summary */}
+            <rect x="50" y="165" width="440" height="42" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="182" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Dot Rule: If a current ENTERS a dotted terminal, the induced voltage in the coupled coil is POSITIVE at its dotted terminal.
+            </text>
+            <text x="270" y="197" fill="#fbbf24" fontSize="9" textAnchor="middle">
+              V₁ = jωL₁ I₁ + jωM I₂ (both currents entering dots)  |  V₂ = jωM I₁ + jωL₂ I₂
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Dot Convention: Defines relative magnetic polarity and sign of mutually induced voltages in coupled windings."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-reflected-impedance-t-models':
+    case 'circuit-ch12-linear-transformers-reflected':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Linear Transformer and Reflected Impedance */}
+            <rect x="20" y="20" width="500" height="200" rx="8" fill="#0f172a" stroke="#059669" strokeWidth="1.5" />
+            <text x="270" y="42" fill="#34d399" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Linear Transformer & Reflected Impedance Model
+            </text>
+
+            {/* Primary Mesh */}
+            <g transform="translate(40, 75)">
+              <circle cx="20" cy="35" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="20" y="39" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Vs</text>
+              <rect x="60" y="22" width="40" height="24" rx="2" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.5" />
+              <text x="80" y="38" fill="#94a3b8" fontSize="9" textAnchor="middle">R₁</text>
+              {/* Primary Inductor */}
+              <path d="M 120,20 Q 135,10 135,35 Q 135,55 120,60" fill="none" stroke="#22d3ee" strokeWidth="3" />
+              <text x="110" y="75" fill="#22d3ee" fontSize="9" fontWeight="bold">L₁</text>
+              <circle cx="120" cy="18" r="3" fill="#ef4444" />
+            </g>
+
+            {/* Coupling */}
+            <g transform="translate(200, 95)">
+              <text x="20" y="-8" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">M</text>
+              <line x1="16" y1="5" x2="16" y2="45" stroke="#475569" strokeWidth="2" strokeDasharray="3 2" />
+              <line x1="24" y1="5" x2="24" y2="45" stroke="#475569" strokeWidth="2" strokeDasharray="3 2" />
+            </g>
+
+            {/* Secondary Mesh */}
+            <g transform="translate(240, 75)">
+              <circle cx="10" cy="18" r="3" fill="#ef4444" />
+              <path d="M 10,20 Q -5,10 -5,35 Q -5,55 10,60" fill="none" stroke="#10b981" strokeWidth="3" />
+              <text x="0" y="75" fill="#10b981" fontSize="9" fontWeight="bold">L₂</text>
+              <rect x="40" y="22" width="40" height="24" rx="2" fill="#1e293b" stroke="#94a3b8" strokeWidth="1.5" />
+              <text x="60" y="38" fill="#94a3b8" fontSize="9" textAnchor="middle">R₂</text>
+              <rect x="110" y="15" width="50" height="40" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="2" />
+              <text x="135" y="34" fill="#34d399" fontSize="10" fontWeight="bold" textAnchor="middle">Z_L</text>
+              <text x="135" y="47" fill="#6ee7b7" fontSize="8" textAnchor="middle">R_L+jX_L</text>
+            </g>
+
+            {/* Equivalent Reflected Model Callout */}
+            <rect x="40" y="155" width="460" height="50" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="172" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">
+              Total Input Impedance: Z_in = Z₁₁ + Z_refl = (R₁ + jωL₁) + [ (ωM)² / Z₂₂ ]
+            </text>
+            <text x="270" y="188" fill="#fbbf24" fontSize="9" textAnchor="middle">
+              Reflected Reactance Inversion: Inductive load (X₂₂ {'>'} 0) reflects as CAPACITIVE (-j) into the primary!
+            </text>
+            <text x="270" y="200" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
+              Z_refl = [ (ωM)² / |Z₂₂|² ] · (R₂₂ - jX₂₂)
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Reflected Impedance in Linear Transformers: Secondary impedance couples back with sign-inverted reactance."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-passive-filters-design':
+    case 'circuit-ch12-ideal-transformers-puz':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Ideal Transformer with Complex Ratio & Per-Unit */}
+            <rect x="20" y="20" width="500" height="200" rx="8" fill="#0f172a" stroke="#d97706" strokeWidth="1.5" />
+            <text x="270" y="42" fill="#fbbf24" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Ideal Transformer with Complex Turns Ratio & Per-Unit Normalization
+            </text>
+
+            {/* Left: Complex Ratio a = a∠θ */}
+            <g transform="translate(40, 65)">
+              <rect x="0" y="0" width="210" height="85" rx="5" fill="#1e293b" stroke="#d97706" strokeWidth="1" />
+              <text x="105" y="18" fill="#fde68a" fontSize="10" fontWeight="bold" textAnchor="middle">Phase-Shifting Transformer</text>
+              <text x="105" y="38" fill="#38bdf8" fontSize="10" textAnchor="middle">V₁ = a · e^(jθ) · V₂</text>
+              <text x="105" y="55" fill="#34d399" fontSize="10" textAnchor="middle">I₁ = (1 / a*) · I₂</text>
+              <text x="105" y="72" fill="#a78bfa" fontSize="9" textAnchor="middle">Z_in = |a|² · Z_L (pure magnitude)</text>
+            </g>
+
+            {/* Right: Per-Unit Single Line Diagram */}
+            <g transform="translate(280, 65)">
+              <rect x="0" y="0" width="220" height="85" rx="5" fill="#1e293b" stroke="#0284c7" strokeWidth="1" />
+              <text x="110" y="18" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Per-Unit (p.u.) Normalization</text>
+              {/* Bus 1 */}
+              <line x1="25" y1="35" x2="25" y2="70" stroke="#f43f5e" strokeWidth="3" />
+              <text x="25" y="30" fill="#f43f5e" fontSize="9" textAnchor="middle">Bus 1</text>
+              {/* Series Z_pu (Ideal transformer disappears!) */}
+              <line x1="25" y1="52" x2="65" y2="52" stroke="#94a3b8" strokeWidth="2" />
+              <rect x="65" y="42" width="70" height="20" rx="2" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="100" y="56" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">X_tr (p.u.)</text>
+              <line x1="135" y1="52" x2="185" y2="52" stroke="#94a3b8" strokeWidth="2" />
+              {/* Bus 2 */}
+              <line x1="185" y1="35" x2="185" y2="70" stroke="#10b981" strokeWidth="3" />
+              <text x="185" y="30" fill="#10b981" fontSize="9" textAnchor="middle">Bus 2</text>
+              <text x="110" y="78" fill="#94a3b8" fontSize="8" textAnchor="middle">Turns ratio absorbed into base voltages!</text>
+            </g>
+
+            {/* Base Conversion Formula */}
+            <rect x="40" y="160" width="460" height="48" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="178" fill="#fbbf24" fontSize="10" fontWeight="bold" textAnchor="middle">
+              Impedance Base Change: Z_pu(new) = Z_pu(old) · [ S_base(new) / S_base(old) ] · [ V_base(old) / V_base(new) ]²
+            </text>
+            <text x="270" y="196" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
+              Eliminates ideal transformers from complex power flow and short-circuit fault equations.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-semibold">
+            {caption || "Complex Turns Ratio and Per-Unit Modeling: Transforms multi-voltage power networks into unified single-line circuits."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-bode-plots-frequency-response':
+    case 'circuit-ch12-passive-filters-bode':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Passive Filters & Bode Plots */}
+            <rect x="20" y="20" width="500" height="200" rx="8" fill="#0f172a" stroke="#6366f1" strokeWidth="1.5" />
+            <text x="270" y="42" fill="#a5b4fc" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Passive Filter Topologies & Asymptotic Bode Plot Response
+            </text>
+
+            {/* Bode Magnitude Plot */}
+            <g transform="translate(45, 60)">
+              {/* Axes */}
+              <line x1="20" y1="10" x2="20" y2="90" stroke="#64748b" strokeWidth="1.5" />
+              <line x1="20" y1="90" x2="210" y2="90" stroke="#64748b" strokeWidth="1.5" />
+              <text x="15" y="12" fill="#94a3b8" fontSize="8" textAnchor="end">|H| (dB)</text>
+              <text x="210" y="102" fill="#94a3b8" fontSize="8" textAnchor="end">log ω</text>
+
+              {/* 0 dB level */}
+              <line x1="20" y1="30" x2="210" y2="30" stroke="#334155" strokeWidth="1" strokeDasharray="3 2" />
+              <text x="15" y="33" fill="#94a3b8" fontSize="8" textAnchor="end">0 dB</text>
+
+              {/* LPF Curve */}
+              <path d="M 20,30 L 95,30 L 190,85" fill="none" stroke="#22d3ee" strokeWidth="2.5" />
+              {/* -3 dB point */}
+              <circle cx="95" cy="33" r="3" fill="#f43f5e" />
+              <text x="95" y="24" fill="#f43f5e" fontSize="8" fontWeight="bold" textAnchor="middle">-3 dB</text>
+              <text x="95" y="102" fill="#22d3ee" fontSize="8" textAnchor="middle">ω_c = 1/RC</text>
+
+              {/* Slope label */}
+              <text x="165" y="55" fill="#22d3ee" fontSize="8" fontWeight="bold">-20 dB/dec</text>
+            </g>
+
+            {/* 4 Filter Topology Mini-Cards */}
+            <g transform="translate(275, 55)">
+              <rect x="0" y="0" width="105" height="42" rx="3" fill="#1e293b" stroke="#38bdf8" strokeWidth="1" />
+              <text x="52" y="15" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="middle">Low-Pass (LPF)</text>
+              <text x="52" y="28" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series R, Shunt C</text>
+              <text x="52" y="38" fill="#94a3b8" fontSize="7" textAnchor="middle">H = 1 / (1 + jω/ωc)</text>
+
+              <rect x="115" y="0" width="105" height="42" rx="3" fill="#1e293b" stroke="#34d399" strokeWidth="1" />
+              <text x="167" y="15" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">High-Pass (HPF)</text>
+              <text x="167" y="28" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series C, Shunt R</text>
+              <text x="167" y="38" fill="#94a3b8" fontSize="7" textAnchor="middle">H = jω/ωc / (1 + jω/ωc)</text>
+
+              <rect x="0" y="48" width="105" height="42" rx="3" fill="#1e293b" stroke="#fbbf24" strokeWidth="1" />
+              <text x="52" y="63" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">Band-Pass (BPF)</text>
+              <text x="52" y="76" fill="#cbd5e1" fontSize="8" textAnchor="middle">Series R-L-C</text>
+              <text x="52" y="86" fill="#94a3b8" fontSize="7" textAnchor="middle">Q = ω₀ / BW</text>
+
+              <rect x="115" y="48" width="105" height="42" rx="3" fill="#1e293b" stroke="#ec4899" strokeWidth="1" />
+              <text x="167" y="63" fill="#ec4899" fontSize="9" fontWeight="bold" textAnchor="middle">Notch / Band-Stop</text>
+              <text x="167" y="76" fill="#cbd5e1" fontSize="8" textAnchor="middle">Parallel Tank Shunt</text>
+              <text x="167" y="86" fill="#94a3b8" fontSize="7" textAnchor="middle">Rejects 50/60 Hz hum</text>
+            </g>
+
+            {/* Bottom summary */}
+            <rect x="40" y="160" width="460" height="48" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="178" fill="#a5b4fc" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Cutoff Frequency: |H(jω_c)| = 1/√2 = -3.01 dB (Half-Power Point) | Phase Shift: -45° (LPF) / +45° (HPF)
+            </text>
+            <text x="270" y="195" fill="#94a3b8" fontSize="8.5" textAnchor="middle">
+              Bode Plots decompose transfer functions into straight-line asymptotic magnitude slopes and phase tangents.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-indigo-300 mt-2 text-center font-semibold">
+            {caption || "Frequency Response & Bode Plots: 1st and 2nd order passive filters with cutoff frequencies and decibel roll-offs."}
+          </p>
+        </div>
+      );
+
+    case 'circuit-ch12-two-port-network-parameters':
+    case 'circuit-ch12-two-port-parameters-ac':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 240" className="w-full max-w-xl h-60">
+            {/* Standard Two-Port Network Block */}
+            <rect x="20" y="20" width="500" height="200" rx="8" fill="#0f172a" stroke="#0ea5e9" strokeWidth="1.5" />
+            <text x="270" y="42" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">
+              Two-Port Network Parameter Representations (Z, Y, ABCD, h)
+            </text>
+
+            {/* Two-Port Box in Center */}
+            <g transform="translate(190, 65)">
+              <rect x="0" y="0" width="160" height="90" rx="6" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              <text x="80" y="35" fill="#38bdf8" fontSize="12" fontWeight="bold" textAnchor="middle">Linear Two-Port</text>
+              <text x="80" y="52" fill="#94a3b8" fontSize="10" textAnchor="middle">AC Network</text>
+              <text x="80" y="72" fill="#fbbf24" fontSize="9" fontWeight="bold" textAnchor="middle">[Z], [Y], [T], [h]</text>
+            </g>
+
+            {/* Port 1 (Input) */}
+            <g transform="translate(60, 65)">
+              {/* Terminals */}
+              <circle cx="130" cy="15" r="4" fill="#38bdf8" />
+              <circle cx="130" cy="75" r="4" fill="#38bdf8" />
+              <line x1="40" y1="15" x2="130" y2="15" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="40" y1="75" x2="130" y2="75" stroke="#38bdf8" strokeWidth="2" />
+              {/* Current I1 arrow entering */}
+              <line x1="60" y1="15" x2="95" y2="15" stroke="#f59e0b" strokeWidth="2.5" />
+              <polygon points="90,11 100,15 90,19" fill="#f59e0b" />
+              <text x="80" y="8" fill="#fbbf24" fontSize="10" fontWeight="bold">I₁</text>
+              {/* Voltage V1 */}
+              <text x="25" y="20" fill="#38bdf8" fontSize="11" fontWeight="bold">+</text>
+              <text x="25" y="50" fill="#38bdf8" fontSize="11" fontWeight="bold">V₁</text>
+              <text x="25" y="80" fill="#38bdf8" fontSize="11" fontWeight="bold">-</text>
+              <text x="80" y="105" fill="#94a3b8" fontSize="9" textAnchor="middle">Port 1 (Input)</text>
+            </g>
+
+            {/* Port 2 (Output) */}
+            <g transform="translate(350, 65)">
+              {/* Terminals */}
+              <circle cx="0" cy="15" r="4" fill="#10b981" />
+              <circle cx="0" cy="75" r="4" fill="#10b981" />
+              <line x1="0" y1="15" x2="90" y2="15" stroke="#10b981" strokeWidth="2" />
+              <line x1="0" y1="75" x2="90" y2="75" stroke="#10b981" strokeWidth="2" />
+              {/* Current I2 arrow entering */}
+              <line x1="70" y1="15" x2="35" y2="15" stroke="#f59e0b" strokeWidth="2.5" />
+              <polygon points="40,11 30,15 40,19" fill="#f59e0b" />
+              <text x="50" y="8" fill="#fbbf24" fontSize="10" fontWeight="bold">I₂</text>
+              {/* Voltage V2 */}
+              <text x="100" y="20" fill="#10b981" fontSize="11" fontWeight="bold">+</text>
+              <text x="100" y="50" fill="#10b981" fontSize="11" fontWeight="bold">V₂</text>
+              <text x="100" y="80" fill="#10b981" fontSize="11" fontWeight="bold">-</text>
+              <text x="45" y="105" fill="#94a3b8" fontSize="9" textAnchor="middle">Port 2 (Output)</text>
+            </g>
+
+            {/* Bottom reciprocity & cascade summary */}
+            <rect x="40" y="165" width="460" height="42" rx="4" fill="#020617" stroke="#334155" />
+            <text x="270" y="181" fill="#38bdf8" fontSize="9.5" fontWeight="bold" textAnchor="middle">
+              Reciprocity: z₁₂ = z₂₁  |  y₁₂ = y₂₁  |  AD - BC = 1 (T)  |  h₁₂ = -h₂₁
+            </text>
+            <text x="270" y="196" fill="#fbbf24" fontSize="9" textAnchor="middle">
+              Symmetry: z₁₁ = z₂₂  |  A = D  |  Cascade Connection: [T_total] = [T_A] · [T_B]
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "AC Two-Port Parameters: Formal matrix representations with reciprocity (AD - BC = 1) and symmetry (A = D) conditions."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
+
         <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
           <svg viewBox="0 0 340 180" className="w-full max-w-md h-44">
             <rect x="40" y="30" width="260" height="120" rx="6" fill="none" stroke="#38bdf8" strokeWidth="3" />

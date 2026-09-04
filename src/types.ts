@@ -38,10 +38,15 @@ export interface LessonDiagram {
 
 export interface SolvedExample {
   id?: string;
+  title?: MultilingualText;
   problem: MultilingualText;
-  solution: MultilingualText;
+  solution?: MultilingualText;
   givenValues?: Record<string, string>;
   finalAnswer?: MultilingualText;
+  formula?: MultilingualText | string;
+  substitution?: MultilingualText;
+  calculation?: MultilingualText;
+  required?: MultilingualText;
 }
 
 export interface MCQOption {
