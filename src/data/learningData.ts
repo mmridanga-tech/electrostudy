@@ -12,6 +12,7 @@ import { CHAPTER_10_LESSONS } from './chapter10Lessons';
 import { CHAPTER_11_LESSONS } from './chapter11Lessons';
 import { CHAPTER_12_LESSONS } from './chapter12Lessons';
 import { CHAPTER_13_LESSONS } from './chapter13Lessons';
+import { CHAPTER_14_LESSONS } from './chapter14Lessons';
 import { CHAPTER_15_LESSONS } from './chapter15Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
@@ -2464,119 +2465,109 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
         subjectId: 'basic-electrical',
         order: 14,
         title: {
-          en: 'Chapter 14: Three-Phase Fundamentals',
-          hi: 'अध्याय 14: थ्री-फेज मूलभूत सिद्धांत',
-          bn: 'অধ্যায় ১৪: থ্রি-ফেজ মৌলিক ভিত্তি'
+          en: 'Chapter 14: Three-Phase Systems, Unbalanced Networks & Industrial Power Measurement',
+          hi: 'अध्याय 14: थ्री-फेज प्रणालियां, असंतुलित नेटवर्क एवं औद्योगिक शक्ति मापन',
+          bn: 'অধ্যায় ১৪: থ্রি-ফেজ সিস্টেম, ভারসাম্যহীন নেটওয়ার্ক ও শিল্প বিদ্যুৎ পরিমাপ'
         },
         topics: [
           {
-            id: 'tp-single-vs-three-phase',
+            id: 'tp-three-phase-advanced-analysis',
             chapterId: 'ch-three-phase',
             order: 1,
             title: {
-              en: 'Single Phase vs Three Phase',
-              hi: 'सिंगल फेज बनाम थ्री फेज',
-              bn: 'সিঙ্গেল ফেজ বনাম থ্রি ফেজ'
+              en: 'Advanced Three-Phase System Analysis',
+              hi: 'उन्नत थ्री-फेज प्रणाली विश्लेषण',
+              bn: 'উন্নত থ্রি-ফেজ সিস্টেম বিশ্লেষণ'
             }
           },
           {
-            id: 'tp-three-phase-supply',
+            id: 'tp-three-phase-sequence-components',
             chapterId: 'ch-three-phase',
             order: 2,
             title: {
-              en: 'Three-Phase Supply',
-              hi: 'थ्री-फेज सप्लाई',
-              bn: 'থ্রি-ফেজ সরবরাহ'
+              en: 'Symmetrical Components & Sequence Networks',
+              hi: 'सममित घटक एवं अनुक्रम नेटवर्क',
+              bn: 'সিমেট্রিক্যাল কম্পোনেন্টস ও সিকোয়েন্স নেটওয়ার্ক'
             }
           },
           {
-            id: 'tp-star-connection',
+            id: 'tp-unbalanced-three-phase-loads',
             chapterId: 'ch-three-phase',
             order: 3,
             title: {
-              en: 'Star (Y) Connection',
-              hi: 'स्टार (Y) कनेक्शन',
-              bn: 'স্টার (Y) কানেকশন'
+              en: 'Unbalanced Three-Phase Loads & Neutral Displacement',
+              hi: 'असंतुलित थ्री-फेज लोड एवं न्यूट्रल विस्थापन',
+              bn: 'ভারসাম্যহীন থ্রি-ফেজ লোড ও নিউট্রাল সরণ'
             }
           },
           {
-            id: 'tp-delta-connection',
+            id: 'tp-neutral-displacement',
             chapterId: 'ch-three-phase',
             order: 4,
             title: {
-              en: 'Delta (Δ) Connection',
-              hi: 'डेल्टा (Δ) कनेक्शन',
-              bn: 'ডেল্টা (Δ) কানেকশন'
+              en: 'Neutral Displacement, Voltage Unbalance & Phase Failure',
+              hi: 'न्यूट्रल विस्थापन, वोल्टेज असंतुलन एवं फेज विफलता',
+              bn: 'নিউট্রাল সরণ, ভোল্টেজ ভারসাম্যহীনতা ও ফেজ ব্যর্থতা'
             }
           },
           {
-            id: 'tp-line-voltage',
+            id: 'tp-three-phase-power-measurement',
             chapterId: 'ch-three-phase',
             order: 5,
             title: {
-              en: 'Line Voltage',
-              hi: 'लाइन वोल्टेज',
-              bn: 'লাইন ভোল্টেজ'
+              en: 'Three-Phase Power Measurement — Wattmeter Methods',
+              hi: 'थ्री-फेज शक्ति मापन — वाटमीटर विधियां',
+              bn: 'থ্রি-ফেজ পাওয়ার পরিমাপ — ওয়াটমিটার পদ্ধতি'
             }
           },
           {
-            id: 'tp-phase-voltage',
+            id: 'tp-three-wattmeter-measurement',
             chapterId: 'ch-three-phase',
             order: 6,
             title: {
-              en: 'Phase Voltage',
-              hi: 'फेज वोल्टेज',
-              bn: 'ফেজ ভোল্টেজ'
+              en: 'Three-Wattmeter Method, Four-Wire Systems & Reactive Power',
+              hi: 'त्रि-वाटमीटर विधि, चार-तार प्रणालियां एवं प्रतिघाती शक्ति',
+              bn: 'ত্রি-ওয়াটমিটার পদ্ধতি, চার-তার সিস্টেম ও রিঅ্যাক্টিভ পাওয়ার'
             }
           },
           {
-            id: 'tp-line-current',
+            id: 'tp-ct-pt-industrial-metering',
             chapterId: 'ch-three-phase',
             order: 7,
             title: {
-              en: 'Line Current',
-              hi: 'लाइन करंट',
-              bn: 'লাইন কারেন্ট'
+              en: 'CT, PT/VT & Industrial Electrical Metering',
+              hi: 'CT, PT/VT एवं औद्योगिक विद्युत मीटरिंग',
+              bn: 'CT, PT/VT ও শিল্প বিদ্যুৎ মিটারিং'
             }
           },
           {
-            id: 'tp-phase-current',
+            id: 'tp-power-quality-three-phase',
             chapterId: 'ch-three-phase',
             order: 8,
             title: {
-              en: 'Phase Current',
-              hi: 'फेज करंट',
-              bn: 'ফেজ কারেন্ট'
+              en: 'Three-Phase Power Quality Measurement & Diagnostics',
+              hi: 'थ्री-फेज पावर क्वालिटी मापन एवं डायग्नोस्टिक्स',
+              bn: 'থ্রি-ফেজ পাওয়ার কোয়ালিটি পরিমাপ ও ডায়াগনস্টিকস'
             }
           },
           {
-            id: 'tp-star-delta-rel',
+            id: 'tp-industrial-three-phase-metering',
             chapterId: 'ch-three-phase',
             order: 9,
             title: {
-              en: 'Star-Delta Relationship',
-              hi: 'स्टार-डेल्टा संबंध',
-              bn: 'স্টার-ডেল্টা সম্পর্ক'
+              en: 'Industrial Three-Phase Measurement, Metering & Troubleshooting',
+              hi: 'औद्योगिक थ्री-फेज मापन, मीटरिंग एवं ट्रबलशूटिंग',
+              bn: 'শিল্প থ্রি-ফেজ পরিমাপ, মিটারিং ও ট্রাবলশুটিং'
             }
           },
           {
-            id: 'tp-three-phase-power',
+            id: 'tp-three-phase-engineering-capstone',
             chapterId: 'ch-three-phase',
             order: 10,
             title: {
-              en: 'Three-Phase Power',
-              hi: 'थ्री-फेज पावर',
-              bn: 'থ্রি-ফেজ পাওয়ার'
-            }
-          },
-          {
-            id: 'tp-balanced-load',
-            chapterId: 'ch-three-phase',
-            order: 11,
-            title: {
-              en: 'Balanced Load',
-              hi: 'बैलेंस्ड लोड (संतुलित भार)',
-              bn: 'ব্যালেন্সড লোড'
+              en: 'Complete Three-Phase Industrial System Analysis — Final Engineering Capstone',
+              hi: 'पूर्ण थ्री-फेज औद्योगिक प्रणाली विश्लेषण — अंतिम इंजीनियरिंग कैपस्टोन',
+              bn: 'সম্পূর্ণ থ্রি-ফেজ শিল্প সিস্টেম বিশ্লেষণ — চূড়ান্ত ইঞ্জিনিয়ারিং ক্যাপস্টোন'
             }
           }
         ]
@@ -2834,6 +2825,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           topics: chapter.topics.map((topic) => ({
             ...topic,
             lesson: CHAPTER_13_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
+      if (chapter.id === 'ch-three-phase') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_14_LESSONS[topic.id] || topic.lesson
           }))
         };
       }

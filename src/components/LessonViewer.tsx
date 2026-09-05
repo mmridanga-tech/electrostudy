@@ -166,6 +166,18 @@ import { PowerFactorTariffSavingsCalculator } from './interactive/PowerFactorTar
 import { PFCCommissioningTroubleshooter } from './interactive/PFCCommissioningTroubleshooter';
 import { IndustrialPFCDesignCapstone } from './interactive/IndustrialPFCDesignCapstone';
 
+// Chapter 14: Three-Phase Systems, Unbalanced Networks & Industrial Power Measurement
+import { ThreePhasePhasorAnalyzer } from './interactive/ThreePhasePhasorAnalyzer';
+import { SymmetricalComponentsVisualizer } from './interactive/SymmetricalComponentsVisualizer';
+import { UnbalancedThreePhaseLoadAnalyzer } from './interactive/UnbalancedThreePhaseLoadAnalyzer';
+import { NeutralDisplacementSimulator } from './interactive/NeutralDisplacementSimulator';
+import { TwoWattmeterMethodSimulator } from './interactive/TwoWattmeterMethodSimulator';
+import { ThreeWattmeterMeasurementSimulator } from './interactive/ThreeWattmeterMeasurementSimulator';
+import { CTPTMeteringCalculator } from './interactive/CTPTMeteringCalculator';
+import { ThreePhasePowerQualityAnalyzer } from './interactive/ThreePhasePowerQualityAnalyzer';
+import { IndustrialMeteringTroubleshooter } from './interactive/IndustrialMeteringTroubleshooter';
+import { ThreePhaseIndustrialEngineeringCapstone } from './interactive/ThreePhaseIndustrialEngineeringCapstone';
+
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
   const lessonId = lesson.id || '';
@@ -1099,6 +1111,131 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'ch13-pfc-engineering-capstone'
   ) {
     return <IndustrialPFCDesignCapstone currentLanguage={currentLanguage} />;
+  }
+
+  // Chapter 14: Three-Phase Systems, Unbalanced Networks & Industrial Power Measurement
+  // Lesson 1: Advanced Three-Phase System Analysis
+  if (
+    lessonId === 'lsn-ch14-three-phase-advanced-analysis' ||
+    topicId === 'tp-three-phase-advanced-analysis' ||
+    lessonId === 'lsn-ch14-three-phase-power-analysis' ||
+    topicId === 'tp-three-phase-power-analysis' ||
+    topicId === 'tp-single-vs-three-phase' ||
+    topicId === 'tp-three-phase-supply' ||
+    topicId === 'tp-three-phase-power' ||
+    topicId === 'tp-line-voltage' ||
+    topicId === 'tp-phase-voltage' ||
+    topicId === 'tp-line-current' ||
+    topicId === 'tp-phase-current' ||
+    lessonId === 'ch14-three-phase-power-analysis'
+  ) {
+    return <ThreePhasePhasorAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 2: Symmetrical Components & Sequence Networks
+  if (
+    lessonId === 'lsn-ch14-symmetrical-components' ||
+    topicId === 'tp-three-phase-sequence-components' ||
+    lessonId === 'lsn-ch14-star-delta-transformation-dynamics' ||
+    topicId === 'tp-star-delta-transformation-dynamics' ||
+    topicId === 'tp-star-connection' ||
+    topicId === 'tp-delta-connection' ||
+    topicId === 'tp-star-delta-rel' ||
+    lessonId === 'ch14-star-delta-transformation-dynamics'
+  ) {
+    return <SymmetricalComponentsVisualizer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 3: Unbalanced Three-Phase Loads & Neutral Displacement
+  if (
+    lessonId === 'lsn-ch14-unbalanced-three-phase-load-analysis' ||
+    topicId === 'tp-unbalanced-three-phase-loads' ||
+    lessonId === 'lsn-ch14-unbalanced-three-phase-loads' ||
+    topicId === 'tp-balanced-load' ||
+    lessonId === 'ch14-unbalanced-three-phase-loads'
+  ) {
+    return <UnbalancedThreePhaseLoadAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 4: Neutral Displacement, Voltage Unbalance & Phase Failure
+  if (
+    lessonId === 'lsn-ch14-neutral-displacement-voltage-unbalance' ||
+    topicId === 'tp-neutral-displacement' ||
+    lessonId === 'lsn-ch14-neutral-displacement-floating-neutral' ||
+    topicId === 'tp-neutral-displacement-floating-neutral' ||
+    lessonId === 'ch14-neutral-displacement-floating-neutral'
+  ) {
+    return <NeutralDisplacementSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 5: Three-Phase Power Measurement — Wattmeter Methods
+  if (
+    lessonId === 'lsn-ch14-three-phase-power-measurement' ||
+    topicId === 'tp-three-phase-power-measurement' ||
+    lessonId === 'lsn-ch14-two-wattmeter-method' ||
+    topicId === 'tp-two-wattmeter-method' ||
+    lessonId === 'ch14-two-wattmeter-method'
+  ) {
+    return <TwoWattmeterMethodSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 6: Three-Wattmeter Method, Four-Wire Systems & Reactive Power
+  if (
+    lessonId === 'lsn-ch14-three-wattmeter-method' ||
+    topicId === 'tp-three-wattmeter-method' ||
+    topicId === 'tp-three-wattmeter-measurement' ||
+    lessonId === 'lsn-ch14-three-wattmeter-reactive-measurement' ||
+    topicId === 'tp-three-wattmeter-reactive-measurement' ||
+    lessonId === 'ch14-three-wattmeter-reactive-measurement'
+  ) {
+    return <ThreeWattmeterMeasurementSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 7: CT, PT/VT & Industrial Electrical Metering
+  if (
+    lessonId === 'lsn-ch14-ct-pt-metering' ||
+    topicId === 'tp-ct-pt-metering' ||
+    topicId === 'tp-ct-pt-industrial-metering' ||
+    lessonId === 'lsn-ch14-instrument-transformers-ct-pt' ||
+    topicId === 'tp-instrument-transformers-ct-pt' ||
+    lessonId === 'ch14-instrument-transformers-ct-pt'
+  ) {
+    return <CTPTMeteringCalculator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 8: Three-Phase Power Quality Measurement & Diagnostics
+  if (
+    lessonId === 'lsn-ch14-three-phase-power-quality' ||
+    topicId === 'tp-three-phase-power-quality' ||
+    topicId === 'tp-power-quality-three-phase' ||
+    lessonId === 'lsn-ch14-harmonic-distortions-sequence-mapping' ||
+    topicId === 'tp-harmonic-distortions-sequence-mapping' ||
+    lessonId === 'ch14-harmonic-distortions-sequence-mapping'
+  ) {
+    return <ThreePhasePowerQualityAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 9: Industrial Three-Phase Measurement, Metering & Troubleshooting
+  if (
+    lessonId === 'lsn-ch14-industrial-metering-case-study' ||
+    topicId === 'tp-industrial-metering-case-study' ||
+    topicId === 'tp-industrial-three-phase-metering' ||
+    lessonId === 'lsn-ch14-asymmetrical-fault-analysis' ||
+    topicId === 'tp-asymmetrical-fault-analysis' ||
+    lessonId === 'ch14-asymmetrical-fault-analysis'
+  ) {
+    return <IndustrialMeteringTroubleshooter currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 10: Complete Three-Phase Industrial System Analysis — Final Engineering Capstone
+  if (
+    lessonId === 'lsn-ch14-three-phase-engineering-capstone' ||
+    topicId === 'tp-three-phase-engineering-capstone' ||
+    lessonId === 'lsn-ch14-industrial-substation-power-studio' ||
+    topicId === 'tp-industrial-substation-power-studio' ||
+    lessonId === 'ch14-industrial-substation-power-studio'
+  ) {
+    return <ThreePhaseIndustrialEngineeringCapstone currentLanguage={currentLanguage} />;
   }
 
   if (

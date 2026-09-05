@@ -33,7 +33,13 @@ export interface LessonDiagram {
   id: string;
   title: MultilingualText;
   caption: MultilingualText;
+  description?: MultilingualText;
   svgType?: string;
+}
+
+export interface SolvedExampleStep {
+  stepNumber?: number;
+  description: MultilingualText;
 }
 
 export interface SolvedExample {
@@ -41,6 +47,7 @@ export interface SolvedExample {
   title?: MultilingualText;
   problem: MultilingualText;
   solution?: MultilingualText;
+  solutionSteps?: SolvedExampleStep[];
   givenValues?: Record<string, string>;
   finalAnswer?: MultilingualText;
   formula?: MultilingualText | string;

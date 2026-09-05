@@ -8918,6 +8918,774 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
         </div>
       );
 
+    case 'sch-ch14-three-phase-phasors':
+    case 'circuit-ch14-phasor-sequence':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* 3-Phase Star Winding Source */}
+            <g transform="translate(40, 20)">
+              <text x="70" y="15" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">Star Source (Y)</text>
+              {/* Neutral point N */}
+              <circle cx="70" cy="100" r="4" fill="#94a3b8" />
+              <text x="56" y="104" fill="#94a3b8" fontSize="9" fontWeight="bold">N</text>
+
+              {/* Phase A winding */}
+              <line x1="70" y1="100" x2="70" y2="40" stroke="#ef4444" strokeWidth="2.5" />
+              <circle cx="70" cy="40" r="3" fill="#ef4444" />
+              <text x="70" y="32" fill="#ef4444" fontSize="9" fontWeight="bold" textAnchor="middle">A</text>
+
+              {/* Phase B winding (120 deg) */}
+              <line x1="70" y1="100" x2="20" y2="140" stroke="#eab308" strokeWidth="2.5" />
+              <circle cx="20" cy="140" r="3" fill="#eab308" />
+              <text x="12" y="152" fill="#eab308" fontSize="9" fontWeight="bold">B</text>
+
+              {/* Phase C winding (240 deg) */}
+              <line x1="70" y1="100" x2="120" y2="140" stroke="#3b82f6" strokeWidth="2.5" />
+              <circle cx="120" cy="140" r="3" fill="#3b82f6" />
+              <text x="125" y="152" fill="#3b82f6" fontSize="9" fontWeight="bold">C</text>
+
+              {/* Terminal Lines Out */}
+              <line x1="70" y1="40" x2="160" y2="40" stroke="#ef4444" strokeWidth="2" />
+              <line x1="20" y1="140" x2="160" y2="90" stroke="#eab308" strokeWidth="2" />
+              <line x1="120" y1="140" x2="160" y2="140" stroke="#3b82f6" strokeWidth="2" />
+              <line x1="70" y1="100" x2="160" y2="180" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3,3" />
+              <text x="165" y="184" fill="#94a3b8" fontSize="8" fontFamily="monospace">Neutral (N)</text>
+            </g>
+
+            {/* Phasor Diagram */}
+            <g transform="translate(300, 105)">
+              <circle cx="0" cy="0" r="70" fill="none" stroke="#1e293b" strokeWidth="1" strokeDasharray="2,2" />
+              <circle cx="0" cy="0" r="3" fill="#ffffff" />
+
+              {/* Van: 0 deg */}
+              <line x1="0" y1="0" x2="65" y2="0" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="70" y="4" fill="#ef4444" fontSize="9" fontWeight="bold">Van ∠0°</text>
+
+              {/* Vbn: -120 deg */}
+              <line x1="0" y1="0" x2="-32.5" y2="56.3" stroke="#eab308" strokeWidth="2.5" />
+              <text x="-40" y="70" fill="#eab308" fontSize="9" fontWeight="bold">Vbn ∠-120°</text>
+
+              {/* Vcn: +120 deg */}
+              <line x1="0" y1="0" x2="-32.5" y2="-56.3" stroke="#3b82f6" strokeWidth="2.5" />
+              <text x="-40" y="-62" fill="#3b82f6" fontSize="9" fontWeight="bold">Vcn ∠+120°</text>
+
+              {/* Vab Line-to-Line: Van - Vbn = √3 Van ∠30° */}
+              <line x1="0" y1="0" x2="90" y2="-52" stroke="#10b981" strokeWidth="2" strokeDasharray="3,2" />
+              <text x="96" y="-52" fill="#34d399" fontSize="8.5" fontWeight="bold">Vab = √3·Vph ∠30°</text>
+
+              {/* Rotation Direction Arrow */}
+              <path d="M 45 -40 A 55 55 0 0 0 -45 -40" fill="none" stroke="#38bdf8" strokeWidth="1.5" markerEnd="url(#arrow)" />
+              <text x="0" y="-48" fill="#38bdf8" fontSize="7.5" textAnchor="middle" fontWeight="bold">ω (ABC Positive Sequence)</text>
+            </g>
+
+            {/* Formula Callout Box */}
+            <rect x="390" y="130" width="135" height="75" rx="4" fill="#020617" stroke="#334155" />
+            <text x="457" y="146" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">3-Phase Relations</text>
+            <text x="400" y="162" fill="#cbd5e1" fontSize="8" fontFamily="monospace">VL = √3 · Vph</text>
+            <text x="400" y="176" fill="#cbd5e1" fontSize="8" fontFamily="monospace">IL = Iph (Star)</text>
+            <text x="400" y="190" fill="#34d399" fontSize="8" fontFamily="monospace">IL = √3·Iph (Delta)</text>
+            <text x="400" y="202" fill="#fbbf24" fontSize="7" fontFamily="monospace">P = √3 · VL · IL · cosφ</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Three-Phase Phasor Architecture: Phase sequence ABC, 120° spatial displacement, and phase-to-line voltage synthesis."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-symmetrical-components':
+    case 'circuit-ch14-symmetrical-components':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Header: Fortescue Decomposition */}
+            <text x="270" y="20" fill="#a855f7" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Fortescue Symmetrical Components: [V_abc] = [A] · [V_012]
+            </text>
+
+            {/* Column 1: Unbalanced Phase Set */}
+            <g transform="translate(80, 110)">
+              <rect x="-65" y="-75" width="130" height="150" rx="4" fill="#0f172a" stroke="#475569" />
+              <text x="0" y="-58" fill="#f8fafc" fontSize="9" fontWeight="bold" textAnchor="middle">Unbalanced System</text>
+              <circle cx="0" cy="10" r="45" fill="none" stroke="#1e293b" strokeWidth="1" />
+              {/* Asymmetric vectors */}
+              <line x1="0" y1="10" x2="40" y2="0" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="44" y="2" fill="#ef4444" fontSize="8" fontWeight="bold">Va</text>
+              <line x1="0" y1="10" x2="-20" y2="46" stroke="#eab308" strokeWidth="2.5" />
+              <text x="-26" y="52" fill="#eab308" fontSize="8" fontWeight="bold">Vb</text>
+              <line x1="0" y1="10" x2="-10" y2="-28" stroke="#3b82f6" strokeWidth="2.5" />
+              <text x="-12" y="-32" fill="#3b82f6" fontSize="8" fontWeight="bold">Vc</text>
+              <text x="0" y="70" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Arbitrary |V| &amp; Angles</text>
+            </g>
+
+            {/* Equals Sign */}
+            <text x="160" y="115" fill="#f8fafc" fontSize="20" fontWeight="bold">=</text>
+
+            {/* Column 2: Positive Sequence (V1) */}
+            <g transform="translate(225, 110)">
+              <rect x="-48" y="-75" width="96" height="150" rx="4" fill="#064e3b" stroke="#059669" />
+              <text x="0" y="-58" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">Positive (V₁)</text>
+              <circle cx="0" cy="10" r="32" fill="none" stroke="#047857" strokeWidth="1" strokeDasharray="2,2" />
+              {/* Balanced ABC */}
+              <line x1="0" y1="10" x2="30" y2="10" stroke="#10b981" strokeWidth="2" />
+              <text x="32" y="13" fill="#a7f3d0" fontSize="7">Va₁</text>
+              <line x1="0" y1="10" x2="-15" y2="36" stroke="#10b981" strokeWidth="2" />
+              <text x="-20" y="44" fill="#a7f3d0" fontSize="7">Vb₁</text>
+              <line x1="0" y1="10" x2="-15" y2="-16" stroke="#10b981" strokeWidth="2" />
+              <text x="-20" y="-18" fill="#a7f3d0" fontSize="7">Vc₁</text>
+              <text x="0" y="58" fill="#a7f3d0" fontSize="7" textAnchor="middle">ABC Sequence</text>
+              <text x="0" y="68" fill="#6ee7b7" fontSize="6.5" textAnchor="middle">Forward Torque</text>
+            </g>
+
+            {/* Plus Sign */}
+            <text x="282" y="115" fill="#f8fafc" fontSize="16" fontWeight="bold">+</text>
+
+            {/* Column 3: Negative Sequence (V2) */}
+            <g transform="translate(340, 110)">
+              <rect x="-48" y="-75" width="96" height="150" rx="4" fill="#4c0519" stroke="#be123c" />
+              <text x="0" y="-58" fill="#fb7185" fontSize="8.5" fontWeight="bold" textAnchor="middle">Negative (V₂)</text>
+              <circle cx="0" cy="10" r="26" fill="none" stroke="#9f1239" strokeWidth="1" strokeDasharray="2,2" />
+              {/* Counter-rotating ACB */}
+              <line x1="0" y1="10" x2="24" y2="10" stroke="#f43f5e" strokeWidth="2" />
+              <text x="26" y="13" fill="#fecdd3" fontSize="7">Va₂</text>
+              <line x1="0" y1="10" x2="-12" y2="-12" stroke="#f43f5e" strokeWidth="2" />
+              <text x="-16" y="-14" fill="#fecdd3" fontSize="7">Vb₂</text>
+              <line x1="0" y1="10" x2="-12" y2="32" stroke="#f43f5e" strokeWidth="2" />
+              <text x="-16" y="38" fill="#fecdd3" fontSize="7">Vc₂</text>
+              <text x="0" y="58" fill="#fecdd3" fontSize="7" textAnchor="middle">ACB Sequence</text>
+              <text x="0" y="68" fill="#fda4af" fontSize="6.5" textAnchor="middle">Braking &amp; Heating</text>
+            </g>
+
+            {/* Plus Sign */}
+            <text x="398" y="115" fill="#f8fafc" fontSize="16" fontWeight="bold">+</text>
+
+            {/* Column 4: Zero Sequence (V0) */}
+            <g transform="translate(460, 110)">
+              <rect x="-52" y="-75" width="104" height="150" rx="4" fill="#3b0764" stroke="#7e22ce" />
+              <text x="0" y="-58" fill="#c084fc" fontSize="8.5" fontWeight="bold" textAnchor="middle">Zero (V₀)</text>
+              {/* Co-phasal identical vectors */}
+              <line x1="-25" y1="10" x2="15" y2="10" stroke="#c084fc" strokeWidth="2.5" />
+              <text x="20" y="13" fill="#e9d5ff" fontSize="7">Va₀=Vb₀=Vc₀</text>
+              <text x="0" y="45" fill="#e9d5ff" fontSize="7" textAnchor="middle">Identical Phase</text>
+              <text x="0" y="58" fill="#d8b4fe" fontSize="7" textAnchor="middle">&amp; Magnitude</text>
+              <text x="0" y="68" fill="#a855f7" fontSize="6.5" textAnchor="middle">Returns via Earth/N</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-purple-300 mt-2 text-center font-semibold">
+            {caption || "Symmetrical Components Decoupling: Resolving arbitrary unbalanced three-phase quantities into balanced Positive, Negative, and Zero sequence components."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-unbalanced-load':
+    case 'circuit-ch14-unbalanced-loads':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* 4-Wire Star Connected Unbalanced Load */}
+            <g transform="translate(40, 20)">
+              <text x="95" y="15" fill="#38bdf8" fontSize="10" fontWeight="bold" textAnchor="middle">4-Wire Unbalanced Star Load</text>
+
+              {/* Feed lines */}
+              <line x1="0" y1="40" x2="60" y2="40" stroke="#ef4444" strokeWidth="2.5" />
+              <text x="-5" y="44" fill="#ef4444" fontSize="8" fontWeight="bold">Line A</text>
+              <line x1="0" y1="80" x2="60" y2="80" stroke="#eab308" strokeWidth="2.5" />
+              <text x="-5" y="84" fill="#eab308" fontSize="8" fontWeight="bold">Line B</text>
+              <line x1="0" y1="120" x2="60" y2="120" stroke="#3b82f6" strokeWidth="2.5" />
+              <text x="-5" y="124" fill="#3b82f6" fontSize="8" fontWeight="bold">Line C</text>
+              <line x1="0" y1="160" x2="150" y2="160" stroke="#94a3b8" strokeWidth="2" strokeDasharray="3,3" />
+              <text x="-5" y="164" fill="#94a3b8" fontSize="8" fontWeight="bold">Neutral (N)</text>
+
+              {/* Phase Impedance Boxes */}
+              <rect x="60" y="30" width="50" height="20" rx="3" fill="#1e293b" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="85" y="44" fill="#fca5a5" fontSize="8" textAnchor="middle">Za = 10Ω</text>
+
+              <rect x="60" y="70" width="50" height="20" rx="3" fill="#1e293b" stroke="#eab308" strokeWidth="1.5" />
+              <text x="85" y="84" fill="#fef08a" fontSize="8" textAnchor="middle">Zb = 25Ω</text>
+
+              <rect x="60" y="110" width="50" height="20" rx="3" fill="#1e293b" stroke="#3b82f6" strokeWidth="1.5" />
+              <text x="85" y="124" fill="#bfdbfe" fontSize="8" textAnchor="middle">Zc = 40Ω</text>
+
+              {/* Star point connections */}
+              <line x1="110" y1="40" x2="150" y2="40" stroke="#ef4444" strokeWidth="2" />
+              <line x1="110" y1="80" x2="150" y2="80" stroke="#eab308" strokeWidth="2" />
+              <line x1="110" y1="120" x2="150" y2="120" stroke="#3b82f6" strokeWidth="2" />
+
+              {/* Star Point Bus */}
+              <line x1="150" y1="40" x2="150" y2="160" stroke="#94a3b8" strokeWidth="3" />
+              <circle cx="150" cy="100" r="4" fill="#ffffff" />
+              <text x="160" y="104" fill="#ffffff" fontSize="9" fontWeight="bold">Star Pt N'</text>
+
+              {/* Neutral Return Current Arrow */}
+              <path d="M 110 160 L 70 160" stroke="#38bdf8" strokeWidth="2" markerEnd="url(#arrow)" />
+              <text x="90" y="176" fill="#38bdf8" fontSize="7.5" textAnchor="middle" fontWeight="bold">In = -(Ia + Ib + Ic)</text>
+            </g>
+
+            {/* Delta Load Diagram */}
+            <g transform="translate(320, 20)">
+              <text x="100" y="15" fill="#f59e0b" fontSize="10" fontWeight="bold" textAnchor="middle">Unbalanced Delta Load (Δ)</text>
+
+              {/* Delta Triangle */}
+              <polygon points="100,45 40,140 160,140" fill="none" stroke="#475569" strokeWidth="2" />
+
+              {/* Branches */}
+              <rect x="50" y="70" width="35" height="18" rx="2" fill="#1e293b" stroke="#ef4444" />
+              <text x="67" y="82" fill="#ef4444" fontSize="7" textAnchor="middle">Z_ab</text>
+
+              <rect x="80" y="132" width="40" height="16" rx="2" fill="#1e293b" stroke="#eab308" />
+              <text x="100" y="144" fill="#eab308" fontSize="7" textAnchor="middle">Z_bc</text>
+
+              <rect x="115" y="70" width="35" height="18" rx="2" fill="#1e293b" stroke="#3b82f6" />
+              <text x="132" y="82" fill="#3b82f6" fontSize="7" textAnchor="middle">Z_ca</text>
+
+              {/* Incomer Nodes */}
+              <circle cx="100" cy="45" r="4" fill="#ef4444" />
+              <text x="100" y="38" fill="#ef4444" fontSize="8" fontWeight="bold" textAnchor="middle">Node A (Ia = Iab - Ica)</text>
+
+              <circle cx="40" cy="140" r="4" fill="#eab308" />
+              <text x="20" y="156" fill="#eab308" fontSize="8" fontWeight="bold">Node B (Ib)</text>
+
+              <circle cx="160" cy="140" r="4" fill="#3b82f6" />
+              <text x="165" y="156" fill="#3b82f6" fontSize="8" fontWeight="bold">Node C (Ic)</text>
+
+              <text x="100" y="180" fill="#94a3b8" fontSize="8" textAnchor="middle">No Neutral Path in Delta</text>
+              <text x="100" y="194" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">Sum of Line Currents: Ia + Ib + Ic = 0</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Unbalanced Star & Delta Topologies: Neutral return current flow in 4-wire systems versus mesh circulation in 3-wire delta systems."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-neutral-displacement':
+    case 'circuit-ch14-neutral-displacement':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="20" fill="#f43f5e" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Broken Neutral Conductor &amp; Neutral Point Shift (Millman Effect)
+            </text>
+
+            {/* Source Star Point N */}
+            <g transform="translate(60, 110)">
+              <circle cx="0" cy="0" r="5" fill="#38bdf8" />
+              <text x="-12" y="4" fill="#38bdf8" fontSize="9" fontWeight="bold" textAnchor="end">Source N (0V Earth)</text>
+
+              {/* Earth Stake */}
+              <line x1="0" y1="0" x2="0" y2="25" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="-12" y1="25" x2="12" y2="25" stroke="#38bdf8" strokeWidth="2" />
+              <line x1="-8" y1="29" x2="8" y2="29" stroke="#38bdf8" strokeWidth="1.5" />
+              <line x1="-4" y1="33" x2="4" y2="33" stroke="#38bdf8" strokeWidth="1" />
+
+              {/* Source phase lines */}
+              <line x1="0" y1="0" x2="100" y2="-65" stroke="#ef4444" strokeWidth="2" />
+              <line x1="0" y1="0" x2="100" y2="0" stroke="#eab308" strokeWidth="2" />
+              <line x1="0" y1="0" x2="100" y2="65" stroke="#3b82f6" strokeWidth="2" />
+            </g>
+
+            {/* Broken Neutral Wire in Center */}
+            <g transform="translate(180, 110)">
+              <line x1="-20" y1="0" x2="40" y2="0" stroke="#94a3b8" strokeWidth="2" strokeDasharray="3,3" />
+              {/* Cut / Break symbol */}
+              <line x1="40" y1="-8" x2="55" y2="8" stroke="#ef4444" strokeWidth="3" />
+              <line x1="50" y1="-8" x2="65" y2="8" stroke="#ef4444" strokeWidth="3" />
+              <text x="52" y="-12" fill="#ef4444" fontSize="8" fontWeight="bold" textAnchor="middle">OPEN BREAK</text>
+              <line x1="65" y1="0" x2="120" y2="0" stroke="#94a3b8" strokeWidth="2" strokeDasharray="3,3" />
+            </g>
+
+            {/* Floating Load Star Point N' */}
+            <g transform="translate(360, 110)">
+              {/* Neutral Displacement Vector */}
+              <line x1="0" y1="0" x2="45" y2="35" stroke="#f59e0b" strokeWidth="2.5" strokeDasharray="4,2" />
+              <circle cx="45" cy="35" r="5" fill="#f59e0b" />
+              <text x="55" y="40" fill="#fbbf24" fontSize="9" fontWeight="bold">Floating N' (Shifted!)</text>
+              <text x="20" y="15" fill="#f59e0b" fontSize="7.5" fontWeight="bold">VN'N ≠ 0V</text>
+
+              {/* Load branches from N' */}
+              {/* Heavy Load Phase A: Voltage sags! */}
+              <line x1="45" y1="35" x2="100" y2="-55" stroke="#ef4444" strokeWidth="2" />
+              <rect x="85" y="-55" width="45" height="18" rx="2" fill="#1e293b" stroke="#ef4444" />
+              <text x="107" y="-43" fill="#fca5a5" fontSize="7.5" textAnchor="middle">Heavy Load</text>
+              <text x="107" y="-31" fill="#fca5a5" fontSize="7" textAnchor="middle" fontFamily="monospace">Va = 145V (SAG)</text>
+
+              {/* Light Load Phase C: Catastrophic Overvoltage! */}
+              <line x1="45" y1="35" x2="100" y2="60" stroke="#3b82f6" strokeWidth="2" />
+              <rect x="85" y="55" width="45" height="18" rx="2" fill="#4c0519" stroke="#f43f5e" strokeWidth="1.5" />
+              <text x="107" y="67" fill="#fecdd3" fontSize="7.5" textAnchor="middle">Light Load</text>
+              <text x="107" y="85" fill="#fb7185" fontSize="7.5" fontWeight="bold" textAnchor="middle" fontFamily="monospace">Vc = 320V (BLOWOUT!)</text>
+            </g>
+
+            {/* Warning Callout Box */}
+            <rect x="30" y="170" width="480" height="42" rx="4" fill="#450a0a" stroke="#b91c1c" />
+            <text x="40" y="186" fill="#fca5a5" fontSize="8" fontWeight="bold">
+              MILLMAN EQUATION: VN'N = (Van·Ya + Vbn·Yb + Vcn·Yc) / (Ya + Yb + Yc)
+            </text>
+            <text x="40" y="200" fill="#fecdd3" fontSize="7.5">
+              Danger: Open neutral floats the star point towards the phase with the lowest impedance (heaviest load), driving the voltage on lightly loaded phases up towards line-to-line 400V.
+            </text>
+          </svg>
+          <p className="text-xs font-mono text-rose-400 mt-2 text-center font-semibold">
+            {caption || "Neutral Displacement & Open Neutral Fault: Floating star point redistribution resulting in catastrophic equipment overvoltage."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-two-wattmeter':
+    case 'circuit-ch14-two-wattmeter':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="18" fill="#10b981" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Two-Wattmeter Method for 3-Phase 3-Wire Systems (Blondel's Theorem)
+            </text>
+
+            {/* Line 1 (Phase A / R) */}
+            <line x1="20" y1="45" x2="110" y2="45" stroke="#ef4444" strokeWidth="3" />
+            <text x="15" y="40" fill="#ef4444" fontSize="9" fontWeight="bold">Phase 1</text>
+            {/* W1 Current Coil */}
+            <rect x="110" y="37" width="35" height="16" rx="2" fill="#065f46" stroke="#10b981" strokeWidth="1.5" />
+            <text x="127" y="49" fill="#a7f3d0" fontSize="8" fontWeight="bold" textAnchor="middle">CC₁</text>
+            <line x1="145" y1="45" x2="380" y2="45" stroke="#ef4444" strokeWidth="3" />
+
+            {/* Line 2 (Phase B / Y) - Common Reference Line */}
+            <line x1="20" y1="105" x2="380" y2="105" stroke="#eab308" strokeWidth="3" />
+            <text x="15" y="100" fill="#eab308" fontSize="9" fontWeight="bold">Phase 2 (Common Reference)</text>
+
+            {/* Line 3 (Phase C / B) */}
+            <line x1="20" y1="165" x2="110" y2="165" stroke="#3b82f6" strokeWidth="3" />
+            <text x="15" y="160" fill="#3b82f6" fontSize="9" fontWeight="bold">Phase 3</text>
+            {/* W2 Current Coil */}
+            <rect x="110" y="157" width="35" height="16" rx="2" fill="#065f46" stroke="#10b981" strokeWidth="1.5" />
+            <text x="127" y="169" fill="#a7f3d0" fontSize="8" fontWeight="bold" textAnchor="middle">CC₂</text>
+            <line x1="145" y1="165" x2="380" y2="165" stroke="#3b82f6" strokeWidth="3" />
+
+            {/* Potential Coil 1: across Phase 1 and Phase 2 */}
+            <line x1="127" y1="53" x2="127" y2="70" stroke="#38bdf8" strokeWidth="1.5" />
+            <rect x="118" y="70" width="18" height="26" rx="2" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+            <text x="127" y="87" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">PC₁</text>
+            <line x1="127" y1="96" x2="127" y2="105" stroke="#38bdf8" strokeWidth="1.5" />
+            <circle cx="127" cy="105" r="3" fill="#eab308" />
+
+            {/* Potential Coil 2: across Phase 3 and Phase 2 */}
+            <line x1="127" y1="157" x2="127" y2="140" stroke="#38bdf8" strokeWidth="1.5" />
+            <rect x="118" y="114" width="18" height="26" rx="2" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+            <text x="127" y="130" fill="#38bdf8" fontSize="7" fontWeight="bold" textAnchor="middle">PC₂</text>
+            <line x1="127" y1="114" x2="127" y2="105" stroke="#38bdf8" strokeWidth="1.5" />
+
+            {/* Load Block */}
+            <rect x="380" y="35" width="80" height="145" rx="4" fill="#0f172a" stroke="#475569" strokeWidth="1.5" />
+            <text x="420" y="75" fill="#f8fafc" fontSize="9" fontWeight="bold" textAnchor="middle">3-Phase Load</text>
+            <text x="420" y="92" fill="#94a3b8" fontSize="7.5" textAnchor="middle">(Balanced or</text>
+            <text x="420" y="104" fill="#94a3b8" fontSize="7.5" textAnchor="middle">Unbalanced)</text>
+            <text x="420" y="130" fill="#34d399" fontSize="8" fontWeight="bold" textAnchor="middle">3-Wire Only</text>
+
+            {/* Formula Dashboard Sidebox */}
+            <rect x="175" y="40" width="185" height="135" rx="4" fill="#020617" stroke="#334155" />
+            <text x="267" y="56" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">Core Governing Relations</text>
+            <text x="185" y="74" fill="#e2e8f0" fontSize="7.5" fontFamily="monospace">W₁ = VL·IL·cos(30° - φ)</text>
+            <text x="185" y="90" fill="#e2e8f0" fontSize="7.5" fontFamily="monospace">W₂ = VL·IL·cos(30° + φ)</text>
+            <text x="185" y="106" fill="#38bdf8" fontSize="7.5" fontFamily="monospace">P_total = W₁ + W₂</text>
+            <text x="185" y="122" fill="#f59e0b" fontSize="7.5" fontFamily="monospace">Q_total = √3 · (W₁ - W₂)</text>
+            <text x="185" y="138" fill="#fbbf24" fontSize="7.5" fontFamily="monospace">tan φ = √3·(W₁ - W₂) / (W₁ + W₂)</text>
+            <text x="185" y="154" fill="#f87171" fontSize="7" fontWeight="bold">PF &lt; 0.5: W₂ reads NEGATIVE!</text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Two-Wattmeter Circuit Implementation: Current coils in lines 1 and 3, potential coils referenced to common line 2."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-three-wattmeter':
+    case 'circuit-ch14-three-wattmeter':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="18" fill="#38bdf8" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Three-Wattmeter Method for 3-Phase 4-Wire Distribution Networks
+            </text>
+
+            {/* Line A */}
+            <line x1="20" y1="40" x2="110" y2="40" stroke="#ef4444" strokeWidth="2.5" />
+            <text x="15" y="35" fill="#ef4444" fontSize="8.5" fontWeight="bold">Line A</text>
+            <rect x="110" y="32" width="30" height="16" rx="2" fill="#0369a1" stroke="#38bdf8" />
+            <text x="125" y="44" fill="#e0f2fe" fontSize="7.5" textAnchor="middle">CC₁</text>
+            <line x1="140" y1="40" x2="380" y2="40" stroke="#ef4444" strokeWidth="2.5" />
+
+            {/* Line B */}
+            <line x1="20" y1="85" x2="110" y2="85" stroke="#eab308" strokeWidth="2.5" />
+            <text x="15" y="80" fill="#eab308" fontSize="8.5" fontWeight="bold">Line B</text>
+            <rect x="110" y="77" width="30" height="16" rx="2" fill="#0369a1" stroke="#38bdf8" />
+            <text x="125" y="89" fill="#e0f2fe" fontSize="7.5" textAnchor="middle">CC₂</text>
+            <line x1="140" y1="85" x2="380" y2="85" stroke="#eab308" strokeWidth="2.5" />
+
+            {/* Line C */}
+            <line x1="20" y1="130" x2="110" y2="130" stroke="#3b82f6" strokeWidth="2.5" />
+            <text x="15" y="125" fill="#3b82f6" fontSize="8.5" fontWeight="bold">Line C</text>
+            <rect x="110" y="122" width="30" height="16" rx="2" fill="#0369a1" stroke="#38bdf8" />
+            <text x="125" y="134" fill="#e0f2fe" fontSize="7.5" textAnchor="middle">CC₃</text>
+            <line x1="140" y1="130" x2="380" y2="130" stroke="#3b82f6" strokeWidth="2.5" />
+
+            {/* Neutral Line */}
+            <line x1="20" y1="175" x2="380" y2="175" stroke="#94a3b8" strokeWidth="2" strokeDasharray="3,3" />
+            <text x="15" y="170" fill="#94a3b8" fontSize="8.5" fontWeight="bold">Neutral (N)</text>
+
+            {/* Potential Coils referenced to Neutral */}
+            {/* PC1 */}
+            <line x1="125" y1="48" x2="125" y2="175" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2,2" />
+            <rect x="116" y="55" width="18" height="20" rx="2" fill="#0f172a" stroke="#38bdf8" />
+            <text x="125" y="69" fill="#38bdf8" fontSize="6.5" textAnchor="middle">PC₁</text>
+
+            {/* PC2 */}
+            <line x1="165" y1="85" x2="165" y2="175" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2,2" />
+            <rect x="156" y="100" width="18" height="20" rx="2" fill="#0f172a" stroke="#38bdf8" />
+            <text x="165" y="114" fill="#38bdf8" fontSize="6.5" textAnchor="middle">PC₂</text>
+
+            {/* PC3 */}
+            <line x1="205" y1="130" x2="205" y2="175" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2,2" />
+            <rect x="196" y="142" width="18" height="20" rx="2" fill="#0f172a" stroke="#38bdf8" />
+            <text x="205" y="156" fill="#38bdf8" fontSize="6.5" textAnchor="middle">PC₃</text>
+
+            {/* Blondel Rule Callout */}
+            <rect x="250" y="45" width="120" height="115" rx="4" fill="#020617" stroke="#334155" />
+            <text x="310" y="62" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">Blondel's N-1 Rule</text>
+            <text x="260" y="80" fill="#e2e8f0" fontSize="7.5">N = 4 Wires</text>
+            <text x="260" y="94" fill="#34d399" fontSize="7.5" fontWeight="bold">Required = N - 1 = 3 Meters</text>
+            <line x1="260" y1="104" x2="360" y2="104" stroke="#334155" strokeWidth="1" />
+            <text x="260" y="120" fill="#cbd5e1" fontSize="7" fontFamily="monospace">W₁ = Va·Ia·cosφa</text>
+            <text x="260" y="134" fill="#cbd5e1" fontSize="7" fontFamily="monospace">W₂ = Vb·Ib·cosφb</text>
+            <text x="260" y="148" fill="#cbd5e1" fontSize="7" fontFamily="monospace">W₃ = Vc·Ic·cosφc</text>
+
+            {/* Load */}
+            <rect x="380" y="30" width="80" height="155" rx="4" fill="#0f172a" stroke="#475569" />
+            <text x="420" y="65" fill="#f8fafc" fontSize="8.5" fontWeight="bold" textAnchor="middle">Unbalanced</text>
+            <text x="420" y="78" fill="#f8fafc" fontSize="8.5" fontWeight="bold" textAnchor="middle">4-Wire Load</text>
+            <text x="420" y="105" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">P = W₁+W₂+W₃</text>
+            <text x="420" y="120" fill="#f59e0b" fontSize="7" textAnchor="middle">Measures True</text>
+            <text x="420" y="132" fill="#f59e0b" fontSize="7" textAnchor="middle">Power with</text>
+            <text x="420" y="144" fill="#f59e0b" fontSize="7" textAnchor="middle">Neutral Current</text>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Three-Wattmeter Measurement Topology: Blondel's N-1 law governing 4-wire unbalanced systems with non-zero neutral return."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-ct-pt-metering':
+    case 'circuit-ch14-ct-pt-metering':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="18" fill="#fbbf24" fontSize="11" fontWeight="bold" textAnchor="middle">
+              High-Voltage Instrument Transformer Metering: CT &amp; PT/VT Architecture
+            </text>
+
+            {/* Primary 11kV Bus */}
+            <line x1="20" y1="45" x2="300" y2="45" stroke="#ef4444" strokeWidth="4" />
+            <text x="25" y="36" fill="#ef4444" fontSize="8.5" fontWeight="bold">11 kV Primary Bus (P1 ➔ P2)</text>
+
+            {/* Current Transformer (CT) */}
+            <circle cx="110" cy="45" r="18" fill="none" stroke="#f59e0b" strokeWidth="3" />
+            <text x="110" y="22" fill="#f59e0b" fontSize="8" fontWeight="bold" textAnchor="middle">CT 400/5A</text>
+            {/* Secondary Terminals S1 & S2 */}
+            <line x1="102" y1="63" x2="102" y2="135" stroke="#fbbf24" strokeWidth="1.5" />
+            <line x1="118" y1="63" x2="118" y2="135" stroke="#fbbf24" strokeWidth="1.5" />
+            <text x="88" y="95" fill="#fbbf24" fontSize="7">S1/S2</text>
+            {/* Grounding S2 */}
+            <line x1="118" y1="95" x2="135" y2="95" stroke="#94a3b8" strokeWidth="1.5" />
+            <line x1="135" y1="90" x2="135" y2="100" stroke="#94a3b8" strokeWidth="2" />
+            <text x="142" y="98" fill="#94a3b8" fontSize="7">GND</text>
+
+            {/* Potential Transformer (PT/VT) */}
+            <g transform="translate(230, 45)">
+              <line x1="0" y1="0" x2="0" y2="25" stroke="#ef4444" strokeWidth="2" />
+              {/* Primary Fuse */}
+              <rect x="-6" y="25" width="12" height="18" rx="2" fill="#334155" stroke="#94a3b8" />
+              <text x="0" y="37" fill="#f1f5f9" fontSize="6.5" textAnchor="middle">HT</text>
+              <line x1="0" y1="43" x2="0" y2="55" stroke="#ef4444" strokeWidth="2" />
+              {/* PT Primary Coils */}
+              <rect x="-18" y="55" width="36" height="24" rx="2" fill="#1e293b" stroke="#38bdf8" />
+              <text x="0" y="70" fill="#38bdf8" fontSize="7" textAnchor="middle">11kV / 110V</text>
+              {/* Secondary Wires */}
+              <line x1="-8" y1="79" x2="-8" y2="135" stroke="#38bdf8" strokeWidth="1.5" />
+              <line x1="8" y1="79" x2="8" y2="135" stroke="#38bdf8" strokeWidth="1.5" />
+            </g>
+
+            {/* Digital Energy Meter / Multifunction Meter (MFM) */}
+            <rect x="70" y="135" width="220" height="70" rx="4" fill="#020617" stroke="#10b981" strokeWidth="2" />
+            <text x="180" y="152" fill="#34d399" fontSize="9" fontWeight="bold" textAnchor="middle">Digital Multifunction Meter (MFM)</text>
+            <rect x="85" y="160" width="100" height="36" rx="2" fill="#064e3b" stroke="#059669" />
+            <text x="135" y="174" fill="#6ee7b7" fontSize="7.5" fontFamily="monospace" textAnchor="middle">V_sec = 110.0 V</text>
+            <text x="135" y="188" fill="#6ee7b7" fontSize="7.5" fontFamily="monospace" textAnchor="middle">I_sec = 4.25 A</text>
+
+            <rect x="195" y="160" width="85" height="36" rx="2" fill="#083344" stroke="#0e7490" />
+            <text x="237" y="174" fill="#67e8f9" fontSize="7" textAnchor="middle">MF = CTR × PTR</text>
+            <text x="237" y="188" fill="#fbbf24" fontSize="8" fontWeight="bold" fontFamily="monospace" textAnchor="middle">MF = 80 × 100</text>
+
+            {/* Safety Warning Callout Box */}
+            <rect x="310" y="45" width="215" height="155" rx="4" fill="#450a0a" stroke="#ef4444" />
+            <text x="417" y="64" fill="#fca5a5" fontSize="8.5" fontWeight="bold" textAnchor="middle">CRITICAL SAFETY DIRECTIVE</text>
+            <text x="320" y="82" fill="#ffffff" fontSize="8" fontWeight="bold">NEVER OPEN-CIRCUIT A CT SECONDARY!</text>
+            <text x="320" y="98" fill="#fecdd3" fontSize="7.5">When secondary is open under primary current:</text>
+            <text x="320" y="112" fill="#fecdd3" fontSize="7.5">• Counter-MMF (I₂·N₂) drops to ZERO.</text>
+            <text x="320" y="126" fill="#fecdd3" fontSize="7.5">• 100% primary current magnetizes the core.</text>
+            <text x="320" y="140" fill="#fecdd3" fontSize="7.5">• Core saturates; dΦ/dt spikes to infinity.</text>
+            <text x="320" y="156" fill="#fbbf24" fontSize="7.5" fontWeight="bold">• Induced voltage reaches 2 kV – 10 kV!</text>
+            <text x="320" y="172" fill="#ffffff" fontSize="7.5">• Causes fatal electric shock &amp; arc flash.</text>
+            <text x="320" y="188" fill="#a7f3d0" fontSize="7.5">Rule: ALWAYS SHORT CT SECONDARY before removing meter!</text>
+          </svg>
+          <p className="text-xs font-mono text-amber-300 mt-2 text-center font-semibold">
+            {caption || "High-Voltage CT & PT Metering Schematics: Scaling factors (MF = CTR × PTR) and crucial secondary shorting safety requirements."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-power-quality':
+    case 'circuit-ch14-power-quality':
+    case 'circuit-ch14-power-quality-analyzer':
+    case 'circuit-ch14-harmonic-power':
+    case 'circuit-ch14-harmonic-mapping':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="18" fill="#f43f5e" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Triplen Harmonic Neutral Stacking &amp; Non-Linear Load Flow
+            </text>
+
+            {/* Non-Linear Loads (SMPS / VFD) */}
+            <g transform="translate(30, 35)">
+              <text x="65" y="12" fill="#38bdf8" fontSize="9" fontWeight="bold">3-Phase Non-Linear Loads</text>
+              {/* Phase A Load */}
+              <rect x="0" y="25" width="130" height="24" rx="3" fill="#1e293b" stroke="#ef4444" />
+              <text x="65" y="40" fill="#fca5a5" fontSize="7.5" textAnchor="middle">Phase A Rectifier: I₁ + I₃ + I₅ + I₇</text>
+
+              {/* Phase B Load */}
+              <rect x="0" y="60" width="130" height="24" rx="3" fill="#1e293b" stroke="#eab308" />
+              <text x="65" y="75" fill="#fef08a" fontSize="7.5" textAnchor="middle">Phase B Rectifier: I₁ + I₃ + I₅ + I₇</text>
+
+              {/* Phase C Load */}
+              <rect x="0" y="95" width="130" height="24" rx="3" fill="#1e293b" stroke="#3b82f6" />
+              <text x="65" y="110" fill="#bfdbfe" fontSize="7.5" textAnchor="middle">Phase C Rectifier: I₁ + I₃ + I₅ + I₇</text>
+            </g>
+
+            {/* Neutral Conductor Summation */}
+            <g transform="translate(190, 80)">
+              <line x1="0" y1="0" x2="60" y2="0" stroke="#f43f5e" strokeWidth="4" />
+              <circle cx="60" cy="0" r="16" fill="#4c0519" stroke="#f43f5e" strokeWidth="2" />
+              <text x="60" y="-3" fill="#fecdd3" fontSize="8" fontWeight="bold" textAnchor="middle">∑ In</text>
+              <text x="60" y="10" fill="#fb7185" fontSize="7" textAnchor="middle">Triplen</text>
+
+              <line x1="76" y1="0" x2="160" y2="0" stroke="#f43f5e" strokeWidth="4" markerEnd="url(#arrow)" />
+              <text x="120" y="-8" fill="#f43f5e" fontSize="8" fontWeight="bold">In ≈ 3 · I₃ (Triplen Stacking)</text>
+              <text x="120" y="16" fill="#fca5a5" fontSize="7.5">Zero Sequence adds in phase!</text>
+            </g>
+
+            {/* Waveform Representation Callout */}
+            <g transform="translate(365, 35)">
+              <rect x="0" y="0" width="155" height="170" rx="4" fill="#020617" stroke="#334155" />
+              <text x="77" y="18" fill="#38bdf8" fontSize="8.5" fontWeight="bold" textAnchor="middle">Harmonic Power Definitions</text>
+
+              <text x="10" y="38" fill="#e2e8f0" fontSize="7.5">Fundamental DPF:</text>
+              <text x="100" y="38" fill="#34d399" fontSize="7.5" fontFamily="monospace">cos φ₁</text>
+
+              <text x="10" y="56" fill="#e2e8f0" fontSize="7.5">Current Distortion:</text>
+              <text x="100" y="56" fill="#f59e0b" fontSize="7.5" fontFamily="monospace">THD_I = Ih / I₁</text>
+
+              <text x="10" y="74" fill="#e2e8f0" fontSize="7.5">True Power Factor:</text>
+              <text x="15" y="90" fill="#38bdf8" fontSize="7.5" fontFamily="monospace">TPF = DPF / √(1 + THD²)</text>
+
+              <line x1="10" y1="102" x2="145" y2="102" stroke="#334155" strokeWidth="1" />
+              <text x="77" y="118" fill="#fca5a5" fontSize="7.5" fontWeight="bold" textAnchor="middle">Triplen Consequence</text>
+              <text x="10" y="134" fill="#fecdd3" fontSize="7">In can reach 1.73 × I_phase!</text>
+              <text x="10" y="148" fill="#fecdd3" fontSize="7">Requires 200% neutral sizing</text>
+              <text x="10" y="162" fill="#a7f3d0" fontSize="7">or K-factor / APF filters</text>
+            </g>
+
+            {/* Active Harmonic Filter (APF) Symbol */}
+            <g transform="translate(200, 140)">
+              <rect x="0" y="0" width="140" height="45" rx="3" fill="#064e3b" stroke="#10b981" />
+              <text x="70" y="18" fill="#34d399" fontSize="8" fontWeight="bold" textAnchor="middle">Active Power Filter (APF)</text>
+              <text x="70" y="32" fill="#a7f3d0" fontSize="7" textAnchor="middle">Injects Canceling Counter-Harmonics</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-rose-400 mt-2 text-center font-semibold">
+            {caption || "Harmonics in Three-Phase Networks: Triplen superposition in the neutral conductor and Active Harmonic Filter (APF) cancellation."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-industrial-metering':
+    case 'circuit-ch14-industrial-metering':
+    case 'circuit-ch14-asymmetrical-faults':
+    case 'circuit-ch14-fault-analysis':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="18" fill="#f87171" fontSize="11" fontWeight="bold" textAnchor="middle">
+              Asymmetrical Fault Sequence Network Interconnections
+            </text>
+
+            {/* Scheme 1: SLG Fault (Series Connection) */}
+            <g transform="translate(25, 35)">
+              <rect x="0" y="0" width="115" height="165" rx="4" fill="#0f172a" stroke="#ef4444" strokeWidth="1.5" />
+              <text x="57" y="18" fill="#fca5a5" fontSize="8.5" fontWeight="bold" textAnchor="middle">1. SLG Fault (Phase A)</text>
+              <rect x="15" y="32" width="85" height="22" rx="2" fill="#064e3b" stroke="#059669" />
+              <text x="57" y="46" fill="#6ee7b7" fontSize="7.5" textAnchor="middle">Network 1 (Z₁)</text>
+              <line x1="57" y1="54" x2="57" y2="66" stroke="#f8fafc" strokeWidth="1.5" />
+              <rect x="15" y="66" width="85" height="22" rx="2" fill="#4c0519" stroke="#be123c" />
+              <text x="57" y="80" fill="#fecdd3" fontSize="7.5" textAnchor="middle">Network 2 (Z₂)</text>
+              <line x1="57" y1="88" x2="57" y2="100" stroke="#f8fafc" strokeWidth="1.5" />
+              <rect x="15" y="100" width="85" height="22" rx="2" fill="#3b0764" stroke="#7e22ce" />
+              <text x="57" y="114" fill="#d8b4fe" fontSize="7.5" textAnchor="middle">Network 0 (Z₀)</text>
+              <text x="57" y="136" fill="#f59e0b" fontSize="7.5" fontWeight="bold" textAnchor="middle">SERIES LOOP</text>
+              <text x="57" y="152" fill="#e2e8f0" fontSize="7" fontFamily="monospace" textAnchor="middle">Ia = 3·Ea/(Z₁+Z₂+Z₀)</text>
+            </g>
+
+            {/* Scheme 2: Line-to-Line Fault (Parallel Opposition) */}
+            <g transform="translate(150, 35)">
+              <rect x="0" y="0" width="115" height="165" rx="4" fill="#0f172a" stroke="#f59e0b" strokeWidth="1.5" />
+              <text x="57" y="18" fill="#fef08a" fontSize="8.5" fontWeight="bold" textAnchor="middle">2. Line-Line (B-C)</text>
+              <rect x="15" y="40" width="85" height="25" rx="2" fill="#064e3b" stroke="#059669" />
+              <text x="57" y="55" fill="#6ee7b7" fontSize="7.5" textAnchor="middle">Network 1 (Z₁)</text>
+              <line x1="25" y1="65" x2="25" y2="85" stroke="#f8fafc" strokeWidth="1.5" />
+              <line x1="90" y1="65" x2="90" y2="85" stroke="#f8fafc" strokeWidth="1.5" />
+              <rect x="15" y="85" width="85" height="25" rx="2" fill="#4c0519" stroke="#be123c" />
+              <text x="57" y="100" fill="#fecdd3" fontSize="7.5" textAnchor="middle">Network 2 (Z₂)</text>
+              <text x="57" y="126" fill="#f59e0b" fontSize="7.5" fontWeight="bold" textAnchor="middle">PARALLEL OPPOSING</text>
+              <text x="57" y="140" fill="#cbd5e1" fontSize="7" textAnchor="middle">Network 0 Isolated</text>
+              <text x="57" y="154" fill="#e2e8f0" fontSize="7" fontFamily="monospace" textAnchor="middle">Ib = -Ic = -j√3·Ia₁</text>
+            </g>
+
+            {/* Scheme 3: Double Line-to-Ground (LLG) */}
+            <g transform="translate(275, 35)">
+              <rect x="0" y="0" width="115" height="165" rx="4" fill="#0f172a" stroke="#c084fc" strokeWidth="1.5" />
+              <text x="57" y="18" fill="#e9d5ff" fontSize="8.5" fontWeight="bold" textAnchor="middle">3. Double L-G (B-C-G)</text>
+              <rect x="15" y="32" width="85" height="22" rx="2" fill="#064e3b" stroke="#059669" />
+              <text x="57" y="46" fill="#6ee7b7" fontSize="7.5" textAnchor="middle">Network 1 (Z₁)</text>
+              <line x1="57" y1="54" x2="57" y2="68" stroke="#f8fafc" strokeWidth="1.5" />
+              {/* Parallel branches for 2 & 0 */}
+              <rect x="10" y="68" width="45" height="24" rx="2" fill="#4c0519" stroke="#be123c" />
+              <text x="32" y="82" fill="#fecdd3" fontSize="6.5" textAnchor="middle">Net 2 (Z₂)</text>
+              <rect x="60" y="68" width="45" height="24" rx="2" fill="#3b0764" stroke="#7e22ce" />
+              <text x="82" y="82" fill="#d8b4fe" fontSize="6.5" textAnchor="middle">Net 0 (Z₀)</text>
+              <text x="57" y="112" fill="#c084fc" fontSize="7.5" fontWeight="bold" textAnchor="middle">Z₁ in Series with</text>
+              <text x="57" y="126" fill="#c084fc" fontSize="7.5" fontWeight="bold" textAnchor="middle">(Z₂ || Z₀)</text>
+              <text x="57" y="148" fill="#e2e8f0" fontSize="7" fontFamily="monospace" textAnchor="middle">Ig = 3·Ia₀</text>
+            </g>
+
+            {/* Scheme 4: 3-Phase Symmetrical Fault */}
+            <g transform="translate(400, 35)">
+              <rect x="0" y="0" width="115" height="165" rx="4" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+              <text x="57" y="18" fill="#bae6fd" fontSize="8.5" fontWeight="bold" textAnchor="middle">4. 3-Phase (L-L-L)</text>
+              <rect x="15" y="45" width="85" height="30" rx="2" fill="#064e3b" stroke="#059669" />
+              <text x="57" y="62" fill="#6ee7b7" fontSize="8" textAnchor="middle">Network 1 (Z₁)</text>
+              <text x="57" y="98" fill="#38bdf8" fontSize="7.5" fontWeight="bold" textAnchor="middle">SINGLE NETWORK</text>
+              <text x="57" y="116" fill="#cbd5e1" fontSize="7" textAnchor="middle">I₂ = 0, I₀ = 0</text>
+              <text x="57" y="132" fill="#cbd5e1" fontSize="7" textAnchor="middle">System remains</text>
+              <text x="57" y="144" fill="#cbd5e1" fontSize="7" textAnchor="middle">perfectly balanced</text>
+              <text x="57" y="156" fill="#34d399" fontSize="7" fontFamily="monospace" textAnchor="middle">If = Ea / Z₁</text>
+            </g>
+          </svg>
+          <p className="text-xs font-mono text-cyan-300 mt-2 text-center font-semibold">
+            {caption || "Asymmetrical Fault Sequence Topologies: Mathematical equivalence of series, parallel-opposed, and parallel-common sequence networks."}
+          </p>
+        </div>
+      );
+
+    case 'sch-ch14-capstone-system':
+    case 'circuit-ch14-capstone-system':
+    case 'circuit-ch14-substation-capstone':
+      return (
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-950 rounded-lg border border-slate-800 text-white w-full">
+          <svg viewBox="0 0 540 220" className="w-full max-w-xl h-52">
+            {/* Title */}
+            <text x="270" y="16" fill="#34d399" fontSize="10.5" fontWeight="bold" textAnchor="middle">
+              Industrial 11kV/415V Substation Single-Line Diagram (SLD) Capstone
+            </text>
+
+            {/* Utility Incomer 11kV */}
+            <line x1="20" y1="40" x2="65" y2="40" stroke="#ef4444" strokeWidth="3" />
+            <text x="15" y="32" fill="#ef4444" fontSize="8" fontWeight="bold">11kV Grid</text>
+
+            {/* VCB Incomer Breaker */}
+            <rect x="65" y="31" width="18" height="18" rx="2" fill="#1e293b" stroke="#ef4444" strokeWidth="1.5" />
+            <text x="74" y="43" fill="#fca5a5" fontSize="7" fontWeight="bold" textAnchor="middle">VCB</text>
+
+            {/* Transformer 1500 kVA */}
+            <line x1="83" y1="40" x2="110" y2="40" stroke="#ef4444" strokeWidth="2.5" />
+            <circle cx="120" cy="40" r="12" fill="none" stroke="#ef4444" strokeWidth="2" />
+            <circle cx="132" cy="40" r="12" fill="none" stroke="#f59e0b" strokeWidth="2" />
+            <text x="126" y="22" fill="#f59e0b" fontSize="7.5" fontWeight="bold" textAnchor="middle">1.5 MVA Dyn11</text>
+            <text x="126" y="62" fill="#94a3b8" fontSize="6.5" textAnchor="middle">11kV / 415V</text>
+
+            {/* Main LT ACB */}
+            <line x1="144" y1="40" x2="170" y2="40" stroke="#f59e0b" strokeWidth="3" />
+            <rect x="170" y="31" width="22" height="18" rx="2" fill="#1e293b" stroke="#f59e0b" strokeWidth="1.5" />
+            <text x="181" y="43" fill="#fef08a" fontSize="7" fontWeight="bold" textAnchor="middle">ACB</text>
+            <line x1="192" y1="40" x2="220" y2="40" stroke="#f59e0b" strokeWidth="3" />
+
+            {/* Main 415V 3P4W Busbar */}
+            <line x1="220" y1="35" x2="220" y2="185" stroke="#f59e0b" strokeWidth="5" strokeLinecap="round" />
+            <text x="215" y="28" fill="#f59e0b" fontSize="8" fontWeight="bold" textAnchor="end">415V LT Bus</text>
+
+            {/* CT/PT Metering Unit on Incomer */}
+            <circle cx="205" cy="40" r="8" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+            <text x="205" y="58" fill="#38bdf8" fontSize="6.5" textAnchor="middle">MFM Mtr</text>
+
+            {/* Feeder 1: Motor Control Center (MCC) */}
+            <line x1="220" y1="60" x2="265" y2="60" stroke="#38bdf8" strokeWidth="2" />
+            <rect x="265" y="51" width="70" height="18" rx="2" fill="#0c4a6e" stroke="#0284c7" />
+            <text x="300" y="63" fill="#bae6fd" fontSize="7.5" textAnchor="middle">MCC: 600 kW Motors</text>
+
+            {/* Feeder 2: VFD Drive Line with APF */}
+            <line x1="220" y1="95" x2="265" y2="95" stroke="#a855f7" strokeWidth="2" />
+            <rect x="265" y="86" width="70" height="18" rx="2" fill="#3b0764" stroke="#7e22ce" />
+            <text x="300" y="98" fill="#e9d5ff" fontSize="7.5" textAnchor="middle">VFDs: 300 kW</text>
+            {/* Shunt APF */}
+            <line x1="335" y1="95" x2="355" y2="95" stroke="#a855f7" strokeWidth="1.5" />
+            <rect x="355" y="86" width="45" height="18" rx="2" fill="#064e3b" stroke="#10b981" />
+            <text x="377" y="98" fill="#6ee7b7" fontSize="7" textAnchor="middle">APF Filter</text>
+
+            {/* Feeder 3: APFC Detuned Capacitor Bank */}
+            <line x1="220" y1="130" x2="265" y2="130" stroke="#10b981" strokeWidth="2" />
+            <rect x="265" y="121" width="90" height="18" rx="2" fill="#064e3b" stroke="#059669" />
+            <text x="310" y="133" fill="#a7f3d0" fontSize="7.5" textAnchor="middle">APFC 400 kVAR (7% Detuned)</text>
+
+            {/* Feeder 4: Single-Phase Lighting & Auxiliary */}
+            <line x1="220" y1="165" x2="265" y2="165" stroke="#f43f5e" strokeWidth="2" />
+            <rect x="265" y="156" width="75" height="18" rx="2" fill="#4c0519" stroke="#be123c" />
+            <text x="302" y="168" fill="#fecdd3" fontSize="7.5" textAnchor="middle">Facility 1-Ph Loads</text>
+
+            {/* Neutral Bar with Grounding Resistor / Solid switch */}
+            <line x1="220" y1="195" x2="265" y2="195" stroke="#94a3b8" strokeWidth="2" strokeDasharray="3,3" />
+            <rect x="265" y="188" width="45" height="14" rx="2" fill="#1e293b" stroke="#94a3b8" />
+            <text x="287" y="198" fill="#cbd5e1" fontSize="6.5" textAnchor="middle">Solid/NER</text>
+
+            {/* Substation KPI Box */}
+            <rect x="415" y="35" width="115" height="160" rx="4" fill="#020617" stroke="#334155" />
+            <text x="472" y="52" fill="#34d399" fontSize="8.5" fontWeight="bold" textAnchor="middle">Substation KPIs</text>
+            <text x="425" y="70" fill="#cbd5e1" fontSize="7.5">Trafo: 1500 kVA</text>
+            <text x="425" y="85" fill="#38bdf8" fontSize="7.5">Demand: 1080 kVA</text>
+            <text x="425" y="100" fill="#a7f3d0" fontSize="7.5">Load: 72% (Optimal)</text>
+            <text x="425" y="115" fill="#fbbf24" fontSize="7.5">True PF: 0.98 lag</text>
+            <text x="425" y="130" fill="#67e8f9" fontSize="7.5">THD_I: 3.8% (&lt;5%)</text>
+            <text x="425" y="145" fill="#e9d5ff" fontSize="7.5">VUF: 0.8% (&lt;2%)</text>
+            <line x1="425" y1="155" x2="520" y2="155" stroke="#334155" strokeWidth="1" />
+            <text x="472" y="172" fill="#34d399" fontSize="7.5" fontWeight="bold" textAnchor="middle">IEEE 519 &amp; NEMA</text>
+            <text x="472" y="185" fill="#34d399" fontSize="7" textAnchor="middle">Fully Compliant</text>
+          </svg>
+          <p className="text-xs font-mono text-emerald-300 mt-2 text-center font-semibold">
+            {caption || "Complete Industrial Substation Engineering Capstone: Single-line diagram showing utility transformer, APFC, APF harmonic mitigation, and protection topology."}
+          </p>
+        </div>
+      );
+
     default:
       // Canonical Ohm's Law circuit or fallback
       return (
