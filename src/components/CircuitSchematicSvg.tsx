@@ -1,5 +1,6 @@
 import React from 'react';
 import { renderChapter16Schematic } from './Chapter16Schematics';
+import { renderChapter17Schematic } from './Chapter17Schematics';
 
 interface CircuitSchematicSvgProps {
   svgType?: string;
@@ -9699,6 +9700,21 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
     case 'sch-ch16-power-system-stability': {
       const ch16Schematic = renderChapter16Schematic(svgType, caption);
       if (ch16Schematic) return ch16Schematic as React.ReactElement;
+      break;
+    }
+
+    case 'sch-ch17-protection-zones-overlap':
+    case 'sch-ch17-instrument-transformers-protection':
+    case 'sch-ch17-overcurrent-relay-coordination':
+    case 'sch-ch17-differential-protection-principles':
+    case 'sch-ch17-transformer-protection-inrush':
+    case 'sch-ch17-distance-protection-lines':
+    case 'sch-ch17-pilot-communication-line-protection':
+    case 'sch-ch17-circuit-breakers-arc-interruption':
+    case 'sch-ch17-numerical-relays-digital-substation':
+    case 'sch-ch17-industrial-protection-capstone': {
+      const ch17Schematic = renderChapter17Schematic(svgType, caption);
+      if (ch17Schematic) return ch17Schematic as React.ReactElement;
       break;
     }
 

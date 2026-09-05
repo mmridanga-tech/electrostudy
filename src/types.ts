@@ -8,6 +8,7 @@ export type MultilingualList = Record<Language, string[]>;
 export interface FormulaVariable {
   symbol: string;
   name: MultilingualText;
+  isVector?: boolean;
 }
 
 export interface FormulaItem {
@@ -109,11 +110,13 @@ export interface Lesson {
   formulas: FormulaItem[];
   sections?: LessonSection[];
   diagrams?: LessonDiagram[];
+  schematics?: any[];
   solvedExamples?: SolvedExample[];
   workedExamples?: SolvedExample[];
   examples?: SolvedExample[];
   practicalApplications?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   importantPoints?: MultilingualList | MultilingualText[] | Record<string, string[]>;
+  keyPoints?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   keyTakeaways?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   commonMistakes?: MultilingualList | MultilingualText[] | Record<string, string[]>;
   mcqs?: MCQQuestion[];

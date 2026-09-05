@@ -15,6 +15,7 @@ import { CHAPTER_13_LESSONS } from './chapter13Lessons';
 import { CHAPTER_14_LESSONS } from './chapter14Lessons';
 import { CHAPTER_15_LESSONS } from './chapter15Lessons';
 import { CHAPTER_16_LESSONS } from './chapter16Lessons';
+import { CHAPTER_17_LESSONS } from './chapter17Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
 import { MEASUREMENTS_SUBJECT } from './measurementsData';
@@ -2796,6 +2797,118 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             }
           }
         ]
+      },
+      {
+        id: 'ch-advanced-power-system-protection',
+        subjectId: 'basic-electrical',
+        order: 17,
+        title: {
+          en: 'Chapter 17: Advanced Power System Protection & Switchgear Engineering',
+          hi: 'अध्याय 17: उन्नत विद्युत शक्ति प्रणाली सुरक्षा एवं स्विचगियर इंजीनियरिंग',
+          bn: 'অধ্যায় ১৭: অ্যাডভান্সড পাওয়ার সিস্টেম প্রোটেকশন ও সুইচগিয়ার ইঞ্জিনিয়ারিং'
+        },
+        topics: [
+          {
+            id: 'tp-ch17-protection-philosophy-zones',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 1,
+            title: {
+              en: 'Philosophy of Protection, Zones, Primary & Backup Protection',
+              hi: 'सुरक्षा का दर्शन, सुरक्षा क्षेत्र, प्राथमिक एवं बैकअप सुरक्षा',
+              bn: 'সুরক্ষার দর্শন, সুরক্ষা অঞ্চল, প্রাথমিক ও ব্যাকআপ সুরক্ষা'
+            }
+          },
+          {
+            id: 'tp-ch17-instrument-transformers-protection',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 2,
+            title: {
+              en: 'Instrument Transformers for Protection: CTs, VTs & Saturation',
+              hi: 'सुरक्षा के लिए इंस्ट्रूमेंट ट्रांसफार्मर: CT, VT एवं संतृप्ति',
+              bn: 'সুরক্ষার জন্য ইনস্ট্রুমেন্ট ট্রান্সফরমার: সিটি, ভিটি ও স্যাচুরেশন'
+            }
+          },
+          {
+            id: 'tp-ch17-overcurrent-earth-fault-relays',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 3,
+            title: {
+              en: 'Overcurrent & Earth Fault Relay Coordination (IDMT, TMS & PSM)',
+              hi: 'ओवरकरंट एवं अर्थ फॉल्ट रिले समन्वय (IDMT, TMS एवं PSM)',
+              bn: 'ওভারকারেন্ট ও আর্থ ফল্ট রিলে সমন্বয় (IDMT, TMS ও PSM)'
+            }
+          },
+          {
+            id: 'tp-ch17-differential-protection-principles',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 4,
+            title: {
+              en: 'Differential Protection Principles & Percentage Biased Relays',
+              hi: 'डिफरेंशियल सुरक्षा सिद्धांत एवं प्रतिशत बायस्ड रिले',
+              bn: 'ডিফারেনশিয়াল সুরক্ষা নীতি ও পার্সেন্টেজ বায়াসড রিলে'
+            }
+          },
+          {
+            id: 'tp-ch17-transformer-protection-inrush',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 5,
+            title: {
+              en: 'Power Transformer Protection: Inrush, Overfluxing & Buchholz',
+              hi: 'पावर ट्रांसफार्मर सुरक्षा: इनरश, ओवरफ्लक्सिंग एवं बुखोल्ज़',
+              bn: 'পাওয়ার ট্রান্সফরমার সুরক্ষা: ইনরাশ, ওভারফ্লাক্সিং ও বুখহোলজ'
+            }
+          },
+          {
+            id: 'tp-ch17-distance-protection-transmission-lines',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 6,
+            title: {
+              en: 'Distance Protection of Transmission Lines: Impedance, Reactance & Mho Relays',
+              hi: 'पारेषण लाइनों की दूरी सुरक्षा: प्रतिबाधा, प्रतिघात एवं म्हो रिले',
+              bn: 'সঞ্চালন লাইনের দূরত্ব সুরক্ষা: ইম্পিডেন্স, রিঅ্যাক্ট্যান্স ও মো রিলে'
+            }
+          },
+          {
+            id: 'tp-ch17-carrier-pilot-wire-schemes',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 7,
+            title: {
+              en: 'Carrier-Aided & Pilot Protection Schemes (PUTT, POTT, Directional Comparison)',
+              hi: 'कैरियर-सहायता प्राप्त एवं पायलट सुरक्षा योजनाएं (PUTT, POTT, दिशात्मक तुलना)',
+              bn: 'ক্যারিয়ার-সহায়তাপ্রাপ্ত ও পাইলট সুরক্ষা স্কিম (PUTT, POTT, দিকভিত্তিক তুলনা)'
+            }
+          },
+          {
+            id: 'tp-ch17-generator-motor-protection',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 8,
+            title: {
+              en: 'Generator & Large Motor Protection Engineering',
+              hi: 'जनरेटर एवं वृहद मोटर सुरक्षा इंजीनियरिंग',
+              bn: 'জেনারেটর ও বৃহৎ মোটর সুরক্ষা ইঞ্জিনিয়ারিং'
+            }
+          },
+          {
+            id: 'tp-ch17-busbar-protection-breaker-failure',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 9,
+            title: {
+              en: 'Busbar Protection & Breaker Failure (LBB/50BF)',
+              hi: 'बसबार सुरक्षा एवं ब्रेकर विफलता (LBB/50BF)',
+              bn: 'বাসবার সুরক্ষা ও ব্রেকার ব্যর্থতা (LBB/50BF)'
+            }
+          },
+          {
+            id: 'tp-ch17-circuit-breakers-arc-interruption',
+            chapterId: 'ch-advanced-power-system-protection',
+            order: 10,
+            title: {
+              en: 'Circuit Breakers, Arc Interruption & IEC 61850 Substation Automation',
+              hi: 'सर्किट ब्रेकर, आर्क व्यवधान एवं IEC 61850 सबस्टेशन स्वचालन',
+              bn: 'সার্কিট ব্রেকার, আর্ক ইন্টারাপশন ও IEC 61850 সাবস্টেশন অটোমেশন'
+            }
+          }
+        ]
       }
     ]
   },
@@ -2968,6 +3081,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           }))
         };
       }
+      if (chapter.id === 'ch-advanced-power-system-protection') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_17_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
       return chapter;
     })
   };
@@ -3111,7 +3233,9 @@ export function getTopicContext(topicId: string): TopicContext | undefined {
       (topicId.includes('ch14') && c.order === 14) ||
       (topicId.includes('ch15') && c.order === 15) ||
       (topicId.includes('ch16') && c.order === 16) ||
-      (c.id === 'ch-advanced-power-system-analysis' && (topicId.includes('ch16') || topicId.includes('per-unit') || topicId.includes('power-flow') || topicId.includes('ybus') || topicId.includes('stability')))
+      (topicId.includes('ch17') && c.order === 17) ||
+      (c.id === 'ch-advanced-power-system-analysis' && (topicId.includes('ch16') || topicId.includes('per-unit') || topicId.includes('power-flow') || topicId.includes('ybus') || topicId.includes('stability'))) ||
+      (c.id === 'ch-advanced-power-system-protection' && (topicId.includes('ch17') || topicId.includes('protection') || topicId.includes('switchgear') || topicId.includes('relay') || topicId.includes('breaker')))
     );
 
     const chIdx = matchingChapterIdx !== -1 ? matchingChapterIdx : 0;

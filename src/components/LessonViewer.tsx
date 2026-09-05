@@ -190,6 +190,18 @@ import { ShortCircuitFaultAnalyzer } from './interactive/ShortCircuitFaultAnalyz
 import { AsymmetricalFaultAnalyzer } from './interactive/AsymmetricalFaultAnalyzer';
 import { EqualAreaCriterionSimulator } from './interactive/EqualAreaCriterionSimulator';
 
+// Chapter 17: Advanced Power System Protection & Switchgear Engineering
+import { ProtectionZoneVisualizer } from './interactive/ProtectionZoneVisualizer';
+import { CTSaturationAnalyzer } from './interactive/CTSaturationAnalyzer';
+import { RelayCoordinationSimulator } from './interactive/RelayCoordinationSimulator';
+import { DifferentialProtectionSimulator } from './interactive/DifferentialProtectionSimulator';
+import { TransformerProtectionAnalyzer } from './interactive/TransformerProtectionAnalyzer';
+import { DistanceRelayCharacteristic } from './interactive/DistanceRelayCharacteristic';
+import { LineProtectionCommunicationSimulator } from './interactive/LineProtectionCommunicationSimulator';
+import { CircuitBreakerArcSimulator } from './interactive/CircuitBreakerArcSimulator';
+import { NumericalRelaySimulator } from './interactive/NumericalRelaySimulator';
+import { IndustrialProtectionCoordinationCapstone } from './interactive/IndustrialProtectionCoordinationCapstone';
+
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
   const lessonId = lesson.id || '';
@@ -1361,6 +1373,127 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     topicId === 'tp-power-system-stability'
   ) {
     return <EqualAreaCriterionSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // ==========================================
+  // Chapter 17: Advanced Power System Protection & Switchgear Engineering
+  // ==========================================
+  // Lesson 1: Fundamentals of Power System Protection & Protection Zones
+  if (
+    lessonId === 'lsn-ch17-protection-philosophy-zones' ||
+    topicId === 'tp-ch17-protection-philosophy-zones' ||
+    lessonId === 'ch17-protection-philosophy-zones' ||
+    lessonId === 'lsn-ch17-protection-zones-overlap' ||
+    topicId === 'tp-ch17-protection-zones-overlap' ||
+    lessonId === 'ch17-protection-zones-overlap' ||
+    topicId === 'tp-protection-zones-overlap'
+  ) {
+    return <ProtectionZoneVisualizer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 2: Instrument Transformers for Protection (CTs and VTs/CVTs)
+  if (
+    lessonId === 'lsn-ch17-instrument-transformers-protection' ||
+    topicId === 'tp-ch17-instrument-transformers-protection' ||
+    lessonId === 'ch17-instrument-transformers-protection' ||
+    topicId === 'tp-instrument-transformers-protection'
+  ) {
+    return <CTSaturationAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 3: Overcurrent & Earth Fault Relay Coordination (IDMT, TMS & PSM)
+  if (
+    lessonId === 'lsn-ch17-overcurrent-earth-fault-relays' ||
+    topicId === 'tp-ch17-overcurrent-earth-fault-relays' ||
+    lessonId === 'ch17-overcurrent-earth-fault-relays' ||
+    lessonId === 'lsn-ch17-overcurrent-relay-coordination' ||
+    topicId === 'tp-ch17-overcurrent-relay-coordination' ||
+    lessonId === 'ch17-overcurrent-relay-coordination' ||
+    topicId === 'tp-overcurrent-relay-coordination'
+  ) {
+    return <RelayCoordinationSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 4: Differential Protection Principles & Applications
+  if (
+    lessonId === 'lsn-ch17-differential-protection-principles' ||
+    topicId === 'tp-ch17-differential-protection-principles' ||
+    lessonId === 'ch17-differential-protection-principles' ||
+    topicId === 'tp-differential-protection-principles'
+  ) {
+    return <DifferentialProtectionSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 5: Transformer Protection & Inrush Phenomena
+  if (
+    lessonId === 'lsn-ch17-transformer-protection-inrush' ||
+    topicId === 'tp-ch17-transformer-protection-inrush' ||
+    lessonId === 'ch17-transformer-protection-inrush' ||
+    topicId === 'tp-transformer-protection-inrush'
+  ) {
+    return <TransformerProtectionAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 6: Distance Protection of Transmission Lines
+  if (
+    lessonId === 'lsn-ch17-distance-protection-transmission-lines' ||
+    topicId === 'tp-ch17-distance-protection-transmission-lines' ||
+    lessonId === 'ch17-distance-protection-transmission-lines' ||
+    lessonId === 'lsn-ch17-distance-protection-lines' ||
+    topicId === 'tp-ch17-distance-protection-lines' ||
+    lessonId === 'ch17-distance-protection-lines' ||
+    topicId === 'tp-distance-protection-lines'
+  ) {
+    return <DistanceRelayCharacteristic currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 7: Carrier-Aided & Pilot Protection Schemes
+  if (
+    lessonId === 'lsn-ch17-carrier-pilot-wire-schemes' ||
+    topicId === 'tp-ch17-carrier-pilot-wire-schemes' ||
+    lessonId === 'ch17-carrier-pilot-wire-schemes' ||
+    lessonId === 'lsn-ch17-pilot-communication-line-protection' ||
+    topicId === 'tp-ch17-pilot-communication-line-protection' ||
+    lessonId === 'ch17-pilot-communication-line-protection' ||
+    topicId === 'tp-pilot-communication-line-protection'
+  ) {
+    return <LineProtectionCommunicationSimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 8: Generator & Large Motor Protection Engineering
+  if (
+    lessonId === 'lsn-ch17-generator-motor-protection' ||
+    topicId === 'tp-ch17-generator-motor-protection' ||
+    lessonId === 'ch17-generator-motor-protection' ||
+    lessonId === 'lsn-ch17-industrial-protection-capstone' ||
+    topicId === 'tp-ch17-industrial-protection-capstone' ||
+    lessonId === 'ch17-industrial-protection-capstone' ||
+    topicId === 'tp-industrial-protection-capstone'
+  ) {
+    return <IndustrialProtectionCoordinationCapstone currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 9: Busbar Protection & Breaker Failure (LBB/50BF)
+  if (
+    lessonId === 'lsn-ch17-busbar-protection-breaker-failure' ||
+    topicId === 'tp-ch17-busbar-protection-breaker-failure' ||
+    lessonId === 'ch17-busbar-protection-breaker-failure' ||
+    lessonId === 'lsn-ch17-numerical-relays-digital-substation' ||
+    topicId === 'tp-ch17-numerical-relays-digital-substation' ||
+    lessonId === 'ch17-numerical-relays-digital-substation' ||
+    topicId === 'tp-numerical-relays-digital-substation'
+  ) {
+    return <NumericalRelaySimulator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 10: Circuit Breakers, Arc Interruption & IEC 61850 Substation Automation
+  if (
+    lessonId === 'lsn-ch17-circuit-breakers-arc-interruption' ||
+    topicId === 'tp-ch17-circuit-breakers-arc-interruption' ||
+    lessonId === 'ch17-circuit-breakers-arc-interruption' ||
+    topicId === 'tp-circuit-breakers-arc-interruption'
+  ) {
+    return <CircuitBreakerArcSimulator currentLanguage={currentLanguage} />;
   }
 
   if (
