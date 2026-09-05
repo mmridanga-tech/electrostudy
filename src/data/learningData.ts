@@ -14,6 +14,7 @@ import { CHAPTER_12_LESSONS } from './chapter12Lessons';
 import { CHAPTER_13_LESSONS } from './chapter13Lessons';
 import { CHAPTER_14_LESSONS } from './chapter14Lessons';
 import { CHAPTER_15_LESSONS } from './chapter15Lessons';
+import { CHAPTER_16_LESSONS } from './chapter16Lessons';
 import { ELECTRICAL_MACHINES_SUBJECT } from './electricalMachinesData';
 import { POWER_SYSTEMS_SUBJECT } from './powerSystemsData';
 import { MEASUREMENTS_SUBJECT } from './measurementsData';
@@ -2683,6 +2684,118 @@ const RAW_DETAILED_SUBJECTS: DetailedSubject[] = [
             }
           }
         ]
+      },
+      {
+        id: 'ch-advanced-power-system-analysis',
+        subjectId: 'basic-electrical',
+        order: 16,
+        title: {
+          en: 'Chapter 16: Advanced Power System Analysis & Grid Engineering',
+          hi: 'अध्याय 16: उन्नत विद्युत शक्ति प्रणाली विश्लेषण एवं ग्रिड इंजीनियरिंग',
+          bn: 'অধ্যায় ১৬: অ্যাডভান্সড পাওয়ার সিস্টেম অ্যানালাইসিস ও গ্রিড ইঞ্জিনিয়ারিং'
+        },
+        topics: [
+          {
+            id: 'tp-ch16-per-unit-system',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 1,
+            title: {
+              en: 'Per-Unit System Formulation: Change of Base, Transformers & Multi-Voltage Networks',
+              hi: 'पर-यूनिट प्रणाली निरूपण: बेस का परिवर्तन, ट्रांसफार्मर एवं मल्टी-वोल्टेज नेटवर्क',
+              bn: 'পার-ইউনিট সিস্টেমের সূত্রায়ন: বেস পরিবর্তন, ট্রান্সফরমার ও মাল্টি-ভোল্টেজ নেটওয়ার্ক'
+            }
+          },
+          {
+            id: 'tp-ch16-single-line-diagram-pu-impedance',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 2,
+            title: {
+              en: 'Single-Line Diagram & Impedance / Reactance Network Modeling',
+              hi: 'सिंगल-लाइन आरेख एवं प्रतिबाधा / प्रतिघात नेटवर्क मॉडलिंग',
+              bn: 'সিঙ্গেল-লাইন ডায়াগ্রাম এবং ইম্পিডেন্স / রিঅ্যাক্ট্যান্স নেটওয়ার্ক মডেলিং'
+            }
+          },
+          {
+            id: 'tp-ch16-transmission-line-parameters',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 3,
+            title: {
+              en: 'Transmission Line Parameters: GMR, GMD, Inductance & Capacitance Calculations',
+              hi: 'पारेषण लाइन पैरामीटर: GMR, GMD, प्रेरकत्व एवं धारिता गणना',
+              bn: 'সঞ্চালন লাইন প্যারামিটার: GMR, GMD, ইন্ডাকট্যান্স ও ক্যাপাসিট্যান্স গণনা'
+            }
+          },
+          {
+            id: 'tp-ch16-transmission-line-models',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 4,
+            title: {
+              en: 'Transmission Line Models: Short, Medium (Nominal-T & Nominal-Pi), and Long Lines',
+              hi: 'पारेषण लाइन मॉडल: लघु, मध्यम (नाममात्र-T एवं नाममात्र-Pi), एवं दीर्घ लाइनें',
+              bn: 'সঞ্চালন লাইন মডেল: শর্ট, মিডিয়াম (নমিনাল-টি ও নমিনাল-পাই), এবং লং ট্রান্সমিশন লাইন'
+            }
+          },
+          {
+            id: 'tp-ch16-transmission-line-performance',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 5,
+            title: {
+              en: 'Transmission Line Performance: Regulation, Efficiency, Surge Impedance & Ferranti Effect',
+              hi: 'पारेषण लाइन प्रदर्शन: रेगुलेशन, दक्षता, सर्ज प्रतिबाधा एवं फेरांटी प्रभाव',
+              bn: 'সঞ্চালন লাইন কার্যক্ষমতা: রেগুলেশন, दक्षता, সার্জ ইম্পিডেন্স ও ফেরান্টি ইফেক্ট'
+            }
+          },
+          {
+            id: 'tp-ch16-ybus-formulation',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 6,
+            title: {
+              en: 'Bus Admittance Matrix (Y_bus) Formation: Direct Inspection & Singular Transformation',
+              hi: 'बस एडमिटेंस मैट्रिक्स (Y_bus) निर्माण: प्रत्यक्ष निरीक्षण एवं सिंगुलर ट्रांसफॉर्मेशन',
+              bn: 'বাস অ্যাডমিট্যান্স ম্যাট্রিক্স (Y_bus) গঠন: প্রত্যক্ষ পরিদর্শন ও সিঙ্গুলার ট্রান্সফরমেশন'
+            }
+          },
+          {
+            id: 'tp-ch16-power-flow-methods',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 7,
+            title: {
+              en: 'Power Flow Analysis: Gauss-Seidel, Newton-Raphson & Fast Decoupled',
+              hi: 'पावर फ्लो विश्लेषण: गॉस-सीडेल, न्यूटन-राफसन एवं फास्ट डिकपल्ड',
+              bn: 'পাওয়ার ফ্লো বিশ্লেষণ: গস-সাইডেল, নিউটন-র‌্যাফসন ও ফাস্ট ডিকাপল্ড'
+            }
+          },
+          {
+            id: 'tp-ch16-symmetrical-fault-analysis',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 8,
+            title: {
+              en: 'Symmetrical Fault Analysis: Thevenin Reactance, Subtransient Currents & Breaker Sizing',
+              hi: 'सममित फॉल्ट विश्लेषण: थेवेनिन प्रतिघात, सबट्रांजिएंट धाराएँ एवं ब्रेकर साइजिंग',
+              bn: 'প্রতিসম ফল্ট বিশ্লেষণ: থেভেনিন রিঅ্যাক্ট্যান্স, সাব-ট্রানজিয়েন্ট কারেন্ট ও ব্রেকার সাইজিং'
+            }
+          },
+          {
+            id: 'tp-ch16-unsymmetrical-faults',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 9,
+            title: {
+              en: 'Symmetrical Components & Unsymmetrical Faults (LG, LL, LLG)',
+              hi: 'सममित घटक एवं असममित फॉल्ट (LG, LL, LLG)',
+              bn: 'প্রতিসম উপাদান ও অপ্রতিসম ফল্ট (LG, LL, LLG)'
+            }
+          },
+          {
+            id: 'tp-ch16-power-system-stability',
+            chapterId: 'ch-advanced-power-system-analysis',
+            order: 10,
+            title: {
+              en: 'Power System Stability & Grid Modernization: Swing Equation, Equal-Area Criterion & FACTS',
+              hi: 'पावर सिस्टम स्थिरता एवं ग्रिड आधुनिकीकरण: स्विंग समीकरण, समान-क्षेत्र मानदंड एवं FACTS',
+              bn: 'পাওয়ার সিস্টেম স্থায়িত্ব ও গ্রিড আধুনিকীকরণ: সুইং সমীকরণ, ইকুয়াল-এরিয়া মানদণ্ড ও FACTS'
+            }
+          }
+        ]
       }
     ]
   },
@@ -2846,6 +2959,15 @@ export const DETAILED_SUBJECTS: DetailedSubject[] = RAW_DETAILED_SUBJECTS.map((s
           }))
         };
       }
+      if (chapter.id === 'ch-advanced-power-system-analysis') {
+        return {
+          ...chapter,
+          topics: chapter.topics.map((topic) => ({
+            ...topic,
+            lesson: CHAPTER_16_LESSONS[topic.id] || topic.lesson
+          }))
+        };
+      }
       return chapter;
     })
   };
@@ -2987,7 +3109,9 @@ export function getTopicContext(topicId: string): TopicContext | undefined {
       (topicId.includes('ch12') && c.order === 12) ||
       (topicId.includes('ch13') && c.order === 13) ||
       (topicId.includes('ch14') && c.order === 14) ||
-      (topicId.includes('ch15') && c.order === 15)
+      (topicId.includes('ch15') && c.order === 15) ||
+      (topicId.includes('ch16') && c.order === 16) ||
+      (c.id === 'ch-advanced-power-system-analysis' && (topicId.includes('ch16') || topicId.includes('per-unit') || topicId.includes('power-flow') || topicId.includes('ybus') || topicId.includes('stability')))
     );
 
     const chIdx = matchingChapterIdx !== -1 ? matchingChapterIdx : 0;

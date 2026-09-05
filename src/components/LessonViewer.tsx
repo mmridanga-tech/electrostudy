@@ -178,6 +178,18 @@ import { ThreePhasePowerQualityAnalyzer } from './interactive/ThreePhasePowerQua
 import { IndustrialMeteringTroubleshooter } from './interactive/IndustrialMeteringTroubleshooter';
 import { ThreePhaseIndustrialEngineeringCapstone } from './interactive/ThreePhaseIndustrialEngineeringCapstone';
 
+// Chapter 16: Advanced Power System Analysis & Grid Engineering
+import { PerUnitSystemCalculator } from './interactive/PerUnitSystemCalculator';
+import { SingleLinePowerSystemModeler } from './interactive/SingleLinePowerSystemModeler';
+import { TransmissionLineParameterCalculator } from './interactive/TransmissionLineParameterCalculator';
+import { TransmissionLineModelAnalyzer } from './interactive/TransmissionLineModelAnalyzer';
+import { TransmissionLinePerformanceAnalyzer } from './interactive/TransmissionLinePerformanceAnalyzer';
+import { PowerFlowPVQAnalyzer } from './interactive/PowerFlowPVQAnalyzer';
+import { NewtonRaphsonLoadFlowSolver } from './interactive/NewtonRaphsonLoadFlowSolver';
+import { ShortCircuitFaultAnalyzer } from './interactive/ShortCircuitFaultAnalyzer';
+import { AsymmetricalFaultAnalyzer } from './interactive/AsymmetricalFaultAnalyzer';
+import { EqualAreaCriterionSimulator } from './interactive/EqualAreaCriterionSimulator';
+
 const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
   const topicId = lesson.topicId || '';
   const lessonId = lesson.id || '';
@@ -1236,6 +1248,119 @@ const renderTopicAnimation = (lesson: Lesson, currentLanguage: Language) => {
     lessonId === 'ch14-industrial-substation-power-studio'
   ) {
     return <ThreePhaseIndustrialEngineeringCapstone currentLanguage={currentLanguage} />;
+  }
+
+  // ==========================================
+  // Chapter 16: Advanced Power System Analysis & Grid Engineering
+  // ==========================================
+  // Lesson 1: Per-Unit System Formulation
+  if (
+    lessonId === 'lsn-ch16-per-unit-system' ||
+    topicId === 'tp-ch16-per-unit-system' ||
+    lessonId === 'ch16-per-unit-system' ||
+    topicId === 'tp-per-unit-system'
+  ) {
+    return <PerUnitSystemCalculator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 2: Single-Line Diagram & Impedance / Reactance Network Modeling
+  if (
+    lessonId === 'lsn-ch16-single-line-diagram-pu-impedance' ||
+    topicId === 'tp-ch16-single-line-diagram-pu-impedance' ||
+    lessonId === 'lsn-ch16-single-line-diagram' ||
+    topicId === 'tp-ch16-single-line-diagram' ||
+    lessonId === 'ch16-single-line-diagram' ||
+    topicId === 'tp-single-line-diagram'
+  ) {
+    return <SingleLinePowerSystemModeler currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 3: Transmission Line Parameters (GMR, GMD, L, C)
+  if (
+    lessonId === 'lsn-ch16-transmission-line-parameters' ||
+    topicId === 'tp-ch16-transmission-line-parameters' ||
+    lessonId === 'lsn-ch16-line-parameters' ||
+    topicId === 'tp-ch16-line-parameters' ||
+    lessonId === 'ch16-transmission-line-parameters' ||
+    topicId === 'tp-line-parameters'
+  ) {
+    return <TransmissionLineParameterCalculator currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 4: Transmission Line Models (Short, Medium T/Pi, Long Lines)
+  if (
+    lessonId === 'lsn-ch16-transmission-line-models' ||
+    topicId === 'tp-ch16-transmission-line-models' ||
+    lessonId === 'lsn-ch16-line-models' ||
+    topicId === 'tp-ch16-line-models' ||
+    lessonId === 'ch16-transmission-line-models' ||
+    topicId === 'tp-line-models'
+  ) {
+    return <TransmissionLineModelAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 5: Transmission Line Performance (Regulation, Efficiency, Ferranti)
+  if (
+    lessonId === 'lsn-ch16-transmission-line-performance' ||
+    topicId === 'tp-ch16-transmission-line-performance' ||
+    lessonId === 'lsn-ch16-line-performance' ||
+    topicId === 'tp-ch16-line-performance' ||
+    lessonId === 'ch16-transmission-line-performance' ||
+    topicId === 'tp-line-performance'
+  ) {
+    return <TransmissionLinePerformanceAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 6: Bus Admittance Matrix (Y_bus) Formation
+  if (
+    lessonId === 'lsn-ch16-ybus-formulation' ||
+    topicId === 'tp-ch16-ybus-formulation' ||
+    lessonId === 'lsn-ch16-bus-admittance-matrix' ||
+    topicId === 'tp-ch16-bus-admittance-matrix' ||
+    lessonId === 'ch16-ybus-formulation' ||
+    topicId === 'tp-bus-admittance-matrix'
+  ) {
+    return <PowerFlowPVQAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 7: Power Flow Analysis (Gauss-Seidel, Newton-Raphson, Fast Decoupled)
+  if (
+    lessonId === 'lsn-ch16-power-flow-methods' ||
+    topicId === 'tp-ch16-power-flow-methods' ||
+    lessonId === 'ch16-power-flow-methods' ||
+    topicId === 'tp-power-flow-methods'
+  ) {
+    return <NewtonRaphsonLoadFlowSolver currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 8: Symmetrical Fault Analysis
+  if (
+    lessonId === 'lsn-ch16-symmetrical-fault-analysis' ||
+    topicId === 'tp-ch16-symmetrical-fault-analysis' ||
+    lessonId === 'ch16-symmetrical-fault-analysis' ||
+    topicId === 'tp-symmetrical-fault-analysis'
+  ) {
+    return <ShortCircuitFaultAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 9: Symmetrical Components & Unsymmetrical Faults (LG, LL, LLG)
+  if (
+    lessonId === 'lsn-ch16-unsymmetrical-faults' ||
+    topicId === 'tp-ch16-unsymmetrical-faults' ||
+    lessonId === 'ch16-unsymmetrical-faults' ||
+    topicId === 'tp-unsymmetrical-faults'
+  ) {
+    return <AsymmetricalFaultAnalyzer currentLanguage={currentLanguage} />;
+  }
+
+  // Lesson 10: Power System Stability & Grid Modernization
+  if (
+    lessonId === 'lsn-ch16-power-system-stability' ||
+    topicId === 'tp-ch16-power-system-stability' ||
+    lessonId === 'ch16-power-system-stability' ||
+    topicId === 'tp-power-system-stability'
+  ) {
+    return <EqualAreaCriterionSimulator currentLanguage={currentLanguage} />;
   }
 
   if (

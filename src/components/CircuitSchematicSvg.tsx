@@ -1,4 +1,5 @@
 import React from 'react';
+import { renderChapter16Schematic } from './Chapter16Schematics';
 
 interface CircuitSchematicSvgProps {
   svgType?: string;
@@ -9685,6 +9686,21 @@ export const CircuitSchematicSvg: React.FC<CircuitSchematicSvgProps> = ({ svgTyp
           </p>
         </div>
       );
+
+    case 'sch-ch16-per-unit-system':
+    case 'sch-ch16-single-line-pu-network':
+    case 'sch-ch16-transmission-parameters':
+    case 'sch-ch16-transmission-models':
+    case 'sch-ch16-transmission-performance':
+    case 'sch-ch16-ybus-matrix':
+    case 'sch-ch16-power-flow-jacobian':
+    case 'sch-ch16-symmetrical-fault':
+    case 'sch-ch16-unsymmetrical-faults':
+    case 'sch-ch16-power-system-stability': {
+      const ch16Schematic = renderChapter16Schematic(svgType, caption);
+      if (ch16Schematic) return ch16Schematic as React.ReactElement;
+      break;
+    }
 
     default:
       // Canonical Ohm's Law circuit or fallback
